@@ -99,7 +99,7 @@ downside market risk by Conditional Value-at-Risk (CVaR) subject to return
 constraints following the approach of \citet*{rockafellar2000,rockafellar2002%
 } and the extended framework of \citet*{kakouris14} through the use of
 multidimensional mixed archimedean copulas. We implement a dynamic investing
-strategy where the portfolios are optimized using three different length of
+viable strategy where the portfolios are optimized using three different length of
 rolling calibration windows. The out-of-sample performance is evaluated and
 compared against two benchmarks; a multidimensional gaussian copula model and a
 constant mix portfolio. Our empirical analysis shows that the Mixed Copula-CVaR
@@ -159,7 +159,7 @@ used in conjunction with scenario based optimization algorithms reducing the
 problem to a linear programming problem which allows us to optimize a
 portfolio with very large dimensions and stable numerical implementations.
 
-A well-known problem of the Markowitz model is its sensitivity to the input parameters. In practice, the implementation of strategies based on the risk-return trade-off remains a fundamental challenge in many areas of financial management, since estimation errors of the expected returns of the assets and the covariance matrix of these returns can significantly affect cause an impact in the asset allocations weights, no longer leading to an efficient portfolio. This issue can be overcome by employing robust optimization and
+A well-known problem of the Markowitz model is its sensitivity to the input parameters. In practice, the implementation of strategies based on the risk-return trade-off remains a fundamental challenge in many areas of financial management, since estimation errors of the expected returns of the assets and the covariance matrix of these returns can significantly affect the asset allocations weights, no longer leading to an efficient portfolio. This issue can be overcome by employing robust optimization and
 worst case techniques \citet*{zhu2009worst} in which assumptions about the
 distribution of the random variable are relaxed, and thus, we obtain the
 optimal portfolio solution by optimizing over a prescribed feasible set and
@@ -173,7 +173,7 @@ and investigate the advantage of such dependence structure through an
 empirical study. We evaluate the out-of-sample performance of the Worst Case Copula-CVaR and compare the relative performance of the strategy to the Gaussian Copula-CVaR, a naive 1/N (equally-weighted) and the S\&P 500
 index in the long term in terms of wealth accumulation and downside risk.
 
-The main novel contribution of this paper is to select a diversified set of assets that can be useful during crises and tranquil periods, i.e., that somehow involves hedging of decisions to protect the investors against any market conditions and evaluate the approaches using 50-dimensional archimedean and gaussian copula models without constructing hierarchical copulas.  
+The main novel contribution of this paper is to select a diversified set of assets that can be useful during crises and tranquil periods, i.e., that somehow involves hedging of decisions to protect the investors against any market conditions and evaluate the approaches using a 50-dimensional archimedean and gaussian copula models without constructing hierarchical copulas.  
 
 Our data set consists of daily data of adjusted closing prices of all
 shares that belong to S\&P 500 market index from July 2st, 1990 to December
@@ -188,9 +188,9 @@ To be effective in
 dealing with uncertainty, we select, among all listed assets in each
 formation period, a set of 50 stocks based on the ranked sum of absolute
 deviations (the twenty-five largest and smallest) between the normalized
-daily closing prices deviations (known as distance) of the S\&P 500 index
+daily closing prices deviations of the S\&P 500 index
 and all shares, adjusting them by dividends, stock splits and other
-corporate actions. By selecting a diversified set of assets that can be
+corporate actions. By selecting a diversified cluster of assets that can be
 useful during crises and tranquil periods we address the issue of asset
 allocation taking into account the purpose of risk diversification. These
 stocks are then evaluated over the next six months.
@@ -908,11 +908,10 @@ throughout in-sample (48-month formation period) and out-of-sample (6
 months) periods are included in the analysis.
 
 We want a diversified set of stocks that can be useful during crises and
-tranquil periods. To attain a robust portfolio construction, we select a set of 50 stocks out of S\&P 500 constituents in
-each formation period, based on the ranked sum of absolute
-spreads (the twenty-five largest and smallest) between the normalized
-daily closing prices deviations (known as distance, \citet*{ggr06}) of the
-S\&P 500 index and all shares. Distances are computed using data for January
+tranquil periods. To attain a robust portfolio construction, we select a set of 50 stocks (only S\&P 500 constituents) in
+each formation period, based on the ranked sum of absolute spreads\footnote{A L1-norm minimization is used for increase robustness.} (the twenty-five largest and smallest) between the normalized
+daily closing prices deviations of the
+S\&P 500 index and all shares. The distances are computed using data for January
 to December or from July to June. Prices are scaled to 1 at the beginning of
 each formation period and then evolve using the return series \footnote{%
 	Missing values have been interpolated.}. Specifically, the spread between
@@ -1289,8 +1288,9 @@ performance of the Worst Case Copula CVaR portfolio. In other words, we find tha
 Figure \ref{fig:fig01} depicts the wealth trajectories of the portfolios strategies for all rebalancing frequencies assuming an initial wealth of \$1 monetary unit. Panels (a) to (c) shows the excess returns for daily, weekly and monthly rebalancing, respectively.
 
 \begin{figure}[htbp]
-	\centering
-	\includegraphics[scale=0.3]{fig1_rpwcop.pdf}
+	%\centering
+	\hspace*{-2cm} 
+	\includegraphics[scale=0.7]{fig1_rpwcop.pdf}
 	\caption{\scriptsize Cumulative excess returns of the portfolio strategies without daily target mean return }
 	\caption*{This figure shows how an investment of \$1 evolves from July 1994 to December 2015 for each of the portfolios.}
 	\label{fig:fig01}
