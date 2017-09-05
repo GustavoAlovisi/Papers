@@ -418,24 +418,6 @@ By analyzing Table \ref{tab:table101}, it is possible to observe a series of imp
 
 Section 2 of Table \ref{tab:table101} shows results on fully invested capital scheme. We can note that this approach yields a higher Sharpe and Sortino ratios for the copula-based strategy and the excess return of the portfolio averaged 11.6\% a year (almost thrice the return of the committed capital approach), with large and significant Newey-West adjusted t-statistic of 4.26 for Top 5 pairs. Apart the tail risk (drawdown) measures, the mixed copula method consistently outperforms the distance strategy for all pairs considered.
 
-%albeit with higher volatility.
-
-
-
-
-
-In this case, we obtain mixed results. We can note that the copula strategy is superior or very comparable to the distance strategies on committed capital, particularly when considering a period of six months (MDD2) and is usually the worst on fully invested capital, especially for the drop between two consecutive days (MDD1).
-
-  Sharpe ratio on committed capital above 1 for Top 20 pairs (1.72 and 1.03 before and after costs, respectively), indicating that the returns on committed capital are greater than the risk taken. The Sortino ratio confirms that the copula method offers better risk-adjusted returns
-
-The copula-based method also shows the highest average excess returns on fully invested capital (up to 17.53\%) and before costs on committed capital. Although the outcomes are not the best on committed capital after costs, the strategy still has a competitive advantage since it delivers the highest risk-adjusted statistics among the strategies after considering the costs.
-	
-By analyzing Tables \ref{tab:table101} and \ref{tab:table102}, it is possible to observe a series of important facts. First, note that the copula-based pairs strategy outperforms the distance strategies when considering the Sharpe and Sortino risk-return ratios for Top 5 and Top 20 pairs, particularly before costs. The copula strategy yields a Sharpe ratio on committed capital above 1 for Top 20 pairs (1.72 and 1.03 before and after costs, respectively), indicating that the returns on committed capital are greater than the risk taken. The Sortino ratio confirms that the copula method offers better risk-adjusted returns. The statistics also indicate that the copula model delivers the highest t-statistics (all statistically and economically significant at 1\%) and a lower probability of a negative trade, especially for Top 5 pairs, where the share of days with negative returns (38\%-39\%) is consistently less than the market performance (47.45\% of negative returns over the period).
-
-Overall, the summary statistics show that copula method is a less risky strategy for Top 5 and Top 20 pairs, except when considering the drawdown measures. In this case, we obtain mixed results. We can note that the copula strategy is superior or very comparable to the distance strategies on committed capital, particularly when considering a period of six months (MDD2) and is usually the worst on fully invested capital, especially for the drop between two consecutive days (MDD1).
-
-The copula-based method also shows the highest average excess returns on fully invested capital (up to 17.53\%) and before costs on committed capital. Although the outcomes are not the best on committed capital after costs, the strategy still has a competitive advantage since it delivers the highest risk-adjusted statistics among the strategies after considering the costs.
-
 \begin{threeparttable}[H]
 	\centering \tiny
 	\caption{Excess returns of pairs trading strategies on portfolios of Top 5, 20 and 35 pairs after costs.}
@@ -488,114 +470,50 @@ The copula-based method also shows the highest average excess returns on fully i
 
 \vspace{0.6cm}
 
-%\begin{threeparttable}[H]
-%	\centering \tiny
-%	\caption{Excess returns on committed capital of pairs trading strategies on portfolios of Top 5, 20 and 35 pairs after costs  using a L1-norm minimization. }
-%	\begin{tabularx}{\textwidth}{@{\extracolsep{\fill}}llllllll@{}}
-%		\toprule
-%		Strategy & Mean  & Sharpe & Sortino & t-stat & \% of negative   & MDD1 & MDD2 \\
-%		& Return (\% ) & ratio &  ratio     &  &  trades     &       &  \\
-%		\midrule
-%		\multicolumn{8}{c}{\textbf{Section 1: Return on Committed Capital}} \\
-%		\multicolumn{8}{c}{\textit{Panel A - Top 5 pairs}} \\
-%		&       &       &       &       &       &       &  \\
-%		Distance &  3.83  & 0.46  & 0.85  & $2.64^{***}$  & 46.83 & -6.12    & -18.85 \\
-%		Mixed Copula & 3.51  &  0.58  & 1.00  &  $3.27^{***}$  &  40.74 &  -3.73  &  -11.12 \\
-%		\multicolumn{1}{r}{} & \multicolumn{1}{r}{} & \multicolumn{1}{r}{} & \multicolumn{1}{r}{} & \multicolumn{1}{r}{} & \multicolumn{1}{r}{} & \multicolumn{1}{r}{} & \multicolumn{1}{r}{} \\
-%		\multicolumn{8}{c}{\textit{Panel B - Top 20 pairs}} \\
-%		&       &       &       &       &       &       &  \\
-%		Distance &  2.85  & 0.57  & 1.00  & $ 2.94^{***}$  & 47.85 & -4.27  & -11.38 \\
-%		Mixed Copula  & 1.42  &  0.80  & 1.35  & $4.42^{***}$  & 40.34  & -1.29  & -3.02  \\
-%		\multicolumn{1}{r}{} & \multicolumn{1}{r}{} & \multicolumn{1}{r}{} & \multicolumn{1}{r}{} & \multicolumn{1}{r}{} & \multicolumn{1}{r}{} & \multicolumn{1}{r}{} & \multicolumn{1}{r}{} \\
-%		\multicolumn{8}{c}{\textit{Panel C - Top 35 pairs}} \\
-%		&       &       &       &       &       &       &  \\
-%		Distance &  3.49  &   0.84  & 1.49  & $4.30^{***}$  & 47.76 & -2.35  & -7.90 \\
-%		Mixed Copula & 0.83  & 0.80  & 1.35  & $4.40^{***}$  & 40.34 & -0.74  & -1.82  \\
-%		\multicolumn{1}{r}{} & \multicolumn{1}{r}{} & \multicolumn{1}{r}{} & \multicolumn{1}{r}{} & \multicolumn{1}{r}{} & \multicolumn{1}{r}{} & \multicolumn{1}{r}{} & \multicolumn{1}{r}{} \\
-%		\bottomrule
-%		\multicolumn{8}{c}{\textbf{Return on Fully Invested Capital}} \\
-%		\multicolumn{8}{c}{\textit{Panel A - Top 5 pairs}} \\
-%		&       &       &       &       &       &       &  \\
-%		Distance & 7.42  & 0.49  & 1.00  & $2.97^{***}$  & 46.83 & -7.87    & -28.40 \\
-%		Mixed Copula & 10.06  & 0.66  & 1.18  & $3.69^{***}$  & 40.73 & -12.93  & -43.71 \\
-%		\multicolumn{1}{r}{} & \multicolumn{1}{r}{} & \multicolumn{1}{r}{} & \multicolumn{1}{r}{} & \multicolumn{1}{r}{} & \multicolumn{1}{r}{} & \multicolumn{1}{r}{} & \multicolumn{1}{r}{} \\
-%		\multicolumn{8}{c}{\textit{Panel B - Top 20 pairs}} \\
-%		&       &       &       &       &       &       &  \\
-%		Distance & 5.49  & 0.59  & 1.05  & $ 3.15^{***}$  & 47.85 & -5.51  & -24.74 \\
-%		Mixed Copula  & 11.78  & 0.78  & 1.37  & $4.26^{***}$  & 40.32  & -12.93  & -42.81  \\
-%		\multicolumn{1}{r}{} & \multicolumn{1}{r}{} & \multicolumn{1}{r}{} & \multicolumn{1}{r}{} & \multicolumn{1}{r}{} & \multicolumn{1}{r}{} & \multicolumn{1}{r}{} & \multicolumn{1}{r}{} \\
-%		\multicolumn{8}{c}{\textit{Panel C - Top 35 pairs}} \\
-%		&       &       &       &       &       &       &  \\
-%		Distance & 6.62  & 0.85  & 1.55  & $4.49^{***}$  & 47.76 & -3.56  & -15.38 \\
-%		Mixed Copula & 11.61 & 0.77  & 1.35  & $4.22^{***}$  & 40.22 & 12.93 & 42.87 \\
-%		\multicolumn{1}{r}{} & \multicolumn{1}{r}{} & \multicolumn{1}{r}{} & \multicolumn{1}{r}{} & \multicolumn{1}{r}{} & \multicolumn{1}{r}{} & \multicolumn{1}{r}{} & \multicolumn{1}{r}{} \\
-%		\bottomrule
-%	\end{tabularx}
-%	\begin{tablenotes}
-%		\item \textit{Note:} \tiny Summary statistics of the annualized excess returns, annualized Sharpe and Sortino ratios on portfolios of top 5, 20 and 35 pairs between July 1991 and December 2015 (6,173 observations). \textcolor{blue} {Pairs are formed based on the smallest sum of absolute deviations}. The t-statistics are computed using Newey-West standard errors with a six-lag correction. The columns labeled MDD1 and MDD2 compute the largest drawdown in terms of maximum percentage drop between two consecutive days and between two days within a period of maximum six months, respectively.
-%		\item \scriptsize $^{\ast\ast\ast}$, $^{\ast\ast}$, $^{\ast}$  significant at 1\%, 5\% and 10\% levels, respectively.
-%	\end{tablenotes}
-%	\label{tab:table102}\%
-%\end{threeparttable}\%
+%albeit with higher volatility.
 
-	
-	
-All strategies have a significant alpha to make it a viable standalone trading strategy. Despite this, the strategies can be combined to improve the relative performance. (maybe at the conclusion as future recommendation)
+Figure \ref{fig:fig49} show cumulative excess returns through the full dataset for every strategy for Top 5 (top), Top 20 (center) and Top 35 (bottom) pairs. The left panels displays cumulative returns on committed capital, whereas the right panels on fully invested capital. The patterns found in the figure strengthen the mean returns and t-statistics displayed in Table \ref{tab:table101}. It should be noted that the mixed copula strategy achieves a very favorable out-of-sample performance relative to the distance approach after the subprime mortgage crisis, especially after 2010 for Top 5 pairs (when the number of trades is comparable) on committed capital. 
 
-	
-	\vspace{1.0cm}
-	
-	Table \ref{tab:table103} displays the results for Top 101-120 pairs, i.e., 20 pairs below the Top 100 pairs. The distance methods appear to have a better out-of-sample performance than in the Top 5 and Top 20 pairs, yielding higher values for most of the performance statistics computed. Compared to the copula strategy, the performance of the distance approaches is consistently better after costs, except for MDD2 on committed capital.
-	
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.7]{fig49.pdf}
+	\caption{\textbf{Cumulative excess returns of pairs trading strategies after costs}}
+	\caption*{\scriptsize This figure shows how an investment of \$1 evolves from July 1991 to December 2015 for each of the strategies.}
+	\label{fig:fig49}
+\end{figure}
+
+Figure \ref{fig:fig50} shows five-year rolling window Sharpe ratio after costs. The figure reveals mixed results over the long-term period. However, when the number of tradeable signals is similar (Top 5 pairs), the copula-based approach yields the highest five-year Sharpe ratio (up to 1.41) on committed capital in 68.94\% of the days. In 26.22\% of the days over the period the copula method delivers a rolling Sharpe ratio above 1, whereas the distance strategy never attains 1. In fact, in only 25.4\% of the full period the distance approach produces a five-year Sharpe ratio above 0.5 (and most often below zero after 2014), indicating that the strategy does not reward the risk taken.
+
+For Top 20 and Top 35 pairs on committed capital the strategies show a more competitive pattern. The distance model presents a greater rolling window Sharpe ratio in 53.37\% and 50.99\% of the days, respectively. However, as we will explore further, the distance approach is a more volatile strategy, identifying a greater number of trading opportunities (more opportunities to make profit) than the copula approach, making the comparison less reliable for a larger number of pairs.
+
+
+
+subperiod
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.7]{fig50.pdf}
+\caption{\textbf{Five-year rolling window Sharpe ratio after costs}}
+\caption*{\scriptsize This figure shows how the 5-year rolling window Sharpe ratio evolves from July 1996 to December 2015 for each of the strategies.}
+\label{fig:fig50}
+\end{figure}
+
+
+
+
 	
 	\vspace{0.3cm}
 	
-	Overall, we can notice that the copula strategy suffer considerably more when transaction costs are taking into account than the distance strategies. The excess returns of copula method are reduced by more than 40\% after costs, while the distance strategies profits are reduced by no more than 15\%.
 	
 
-	Figures \ref{fig:fig108} to \ref{fig:fig111} show cumulative excess returns through the full data set for every strategy. Figure \ref{fig:fig108} shows the returns with no delay and before costs for Top 5 (top), Top 20 (center) and Top 101-120 pairs (bottom) on committed (left) and fully invested capital (right) whereas Figure \ref{fig:fig109} displays the returns with no delay and after costs, Figure \ref{fig:fig110} with ``one-day rule'' after the signal and before costs, and Figure \ref{fig:fig111} with ``one-day rule'' after the signal and after costs.
-	
-	The patterns found in the figures bolster the average excess returns and t-statistics displayed in Tables \ref{tab:table101} to \ref{tab:table106}. Overall, we can observe that the copula strategy has a relatively stronger performance when no restrictions are imposed on trade, \emph{i.e.}, before costs and when trades can be executed quickly after the signal, in particular on fully invested capital. When only one of the constraints is attached to trade the performance measures show that the copula method still delivers a relative good out-performance over the whole data set. However, the distance strategies are clearly less affected by the restrictions for Top 5 and Top 20 pairs.
-	
-	It should be noted that the copula strategy displays, from Figures \ref{fig:fig108} to \ref{fig:fig110}, a very poor performance from 1998-2000 for Top 5 pairs. However, it achieves a very favorable out-of-sample performance relative to the benchmark approaches after the subprime mortgage crisis.
-	
-%	\begin{figure}[H]
-%		\centering
-%		\includegraphics[scale=0.6]{fig1_p1_rev.pdf}
-%		\caption{\textbf{Cumulative excess returns of pairs trading strategies before costs and without delay}}
-%		\caption*{This figure shows how an investment of \$1 evolves from July 1991 to December 2015 for each of the strategies.}
-%		\label{fig:fig108}
-%	\end{figure}
-%	
-%	\begin{figure}[H]
-%		\centering
-%		\includegraphics[scale=0.6]{fig2_p1_rev.pdf}
-%		\caption{\textbf{Cumulative excess returns of pairs trading strategies after costs and without delay}}
-%		\caption*{This figure shows how an investment of \$1 evolves from July 1991 to December 2015 for each of the strategies.}
-%		\label{fig:fig109}
-%	\end{figure}
-%	
-%	\begin{figure}[H]
-%		\centering
-%		\includegraphics[scale=0.6]{fig3_p1_rev.pdf}
-%		\caption{\textbf{Cumulative excess returns of pairs trading strategies before costs and with one-day waiting period}}
-%		\caption*{This figure shows how an investment of \$1 evolves from July 1991 to December 2015 for each of the strategies.}
-%		\label{fig:fig110}
-%	\end{figure}
 
-%	\begin{figure}[H]
-%	\centering
-%	\includegraphics[scale=0.6]{fig4_p1_rev.pdf}
-%	\caption{\textbf{Cumulative excess returns of pairs trading strategies after costs and with one-day waiting period}}
-%	\caption*{This figure shows how an investment of \$1 evolves from July 1991 to December 2015 for each of the strategies.}
-%	\label{fig:fig111}
-%\end{figure}
 	
 	\vspace{0.3cm}
 	
 	\subsection{Trading statistics}
 	
-	Table \ref{tab:table107} reports trading statistics. Panel A, B and C report results for Top 5, Top 20 and Top 101-120 pairs, respectively. The average price deviation trigger for opening pairs is listed in the first row of each panel. For any panel, we can observe that for the 0.75$\sigma$ trigger the positions are initiated before, relatively. The positions are initiated when prices have diverged by 3.09\\%, 3.53\\%, and 5.02\\% for Top 5, Top 20, and Top 101-120, respectively. Similar to \citet*{ggr06}, the trigger spread increases with the number of pairs for all approaches.
+	Table \ref{tab:table107} reports trading statistics. Panel A, B and C report results for Top 5, Top 20 and Top 101-120 pairs, respectively. The average price deviation trigger for opening pairs is listed in the first row of each panel. For any panel, we can observe that for the 0.75$\sigma$ trigger the positions are initiated before, relatively. The positions are initiated when prices have diverged by 3.09\%, 3.53\%, and 5.02\% for Top 5, Top 20, and Top 101-120, respectively. Similar to \citet*{ggr06}, the trigger spread increases with the number of pairs for all approaches.
 	
 	\begin{threeparttable}[H]
 		\centering \scriptsize
