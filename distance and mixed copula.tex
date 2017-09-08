@@ -498,6 +498,21 @@ For fully invested weighting scheme the mixed copula approach achieves the highe
 \end{figure}
 
 \vspace{0.6cm}
+
+Figure \ref{fig:fig51} shows the densities of the five-year Sharpe ratios after costs estimated by means of \citet*{sj1991} bandwidth. As can be observed, the densities reinforce our findings in Figure \ref{fig:fig50}, showing that the right-hand tail of the distribution of the copula-based strategy remains long for Top 5 pairs
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.65]{fig51_SJ.pdf}
+	\caption{\textbf{Densities of 5-year rolling window Sharpe ratio after costs}}
+	\caption*{\scriptsize This figure shows how the 5-year rolling window Sharpe ratio densities evolve from July 1996 to December 2015 for each of the strategies using the method of \citet*{sj1991} to select the bandwidths.}
+	\label{fig:fig51}
+\end{figure}
+
+\vspace{0.6cm}
+
+
 	
 	\subsection{Trading statistics}
 	
@@ -567,7 +582,7 @@ For fully invested weighting scheme the mixed copula approach achieves the highe
 \label{tab:table102}%
 \end{threeparttable}%
 	
-	\vspace{0.6cm}
+	\vspace{1.0cm}
 	
 	
 	
@@ -605,28 +620,32 @@ For fully invested weighting scheme the mixed copula approach achieves the highe
 
 	The main purpose of these regressions is to estimate the intercept alpha - the average excess return not explained by these factors. The standard errors have been adjusted for heteroscedasticity and autocorrelation by using Newey-West adjustment with six lags.
 	
-	Tables \ref{tab:table103} to \ref{tab:table105} report the coefficients and corresponding Newey-West t-statistics of regressing daily portfolio return series onto \citet*{ff15}'s five research factors plus momentum and long-term reversal factors for each of the strategies from 1991/2-2015, after transaction costs, for Top 5, Top 20 and Top 35 pairs, respectively. For each table, Section 1 lists the Return on Committed Capital and Section 2 on Fully Invested Capital. Panel A provides results after transaction costs and Panel B before transaction costs.
+	Tables \ref{tab:table103}, \ref{tab:table104} and \ref{tab:table105} report the coefficients and corresponding Newey-West t-statistics of regressing daily portfolio return series onto \citet*{ff15}'s five research factors plus momentum and long-term reversal factors for each of the strategies from 1991/2-2015, after transaction costs, for Top 5, Top 20 and Top 35 pairs, respectively. For each table, Section 1 lists the Return on Committed Capital and Section 2 on Fully Invested Capital. Panel A provides results after transaction costs and Panel B before transaction costs.
 	
-	Table \ref{tab:table103} shows the results for Top 5 pairs. It is clear that the mixed copula approach produces larger alphas than the distance method for both weighting schemes, especially on fully invested capital
+	Table \ref{tab:table103} shows the results for Top 5 pairs. It is clear that the mixed copula approach produces larger alphas than the distance method for both weighting schemes, especially on fully invested capital. It should also be noted that the alphas provided by copula and distance strategies are significant at 1\% and 10\%, respectively, after accouting for all the previously mentioned factors. Thus, the results show that the profits are not fully explained by the other factors.
 	
+	From Table \ref{tab:table103} one could also observe that the market premium slopes are larger for the distance method, especially on committed capital, and significant at 1\% for both strategies. The SMB coefficients are only significant at 10\% on committed capital for the mixed copula model, whereas the value effect premium (HML factor) slopes are significant at 5\% for the distance approach. In addition, we find that returns are negatively correlated with momentum loadings for both methods at 1\% on committed capital, although a larger negative effect on the performance is found when we use the 2.0 standard deviation threshold. We also find that excess returns are driven by the momentum factor on fully invested capital, although only significant at 5\% for the copula approach. Furthermore, the exposures of pairs trading return strategies to the reversal factor are negative for both weighting schemes and significant at 5\% for the distance approach on committed and fully invested capital, while it is only significant to the less conservative approach for the mixed copula strategy. The correlation of the excess returns with other traditional equity risk premia factors (RMA and CMW) is nearly zero. Finally, It should be noted that the results show that the exposures to the various	sources of systematic profile risk provide a low explanation of the average excess returns for any strategy as measured by the R-square and adjusted R-squared, particularly for the copula-based pairs strategy, 
+	indicating that the method is nearly factor-neutral over the whole sample period.
 	
-	 The momentum signal have the best ability to predict the excess returns performance. We find that the excess returns are driven by the momentum factor, ..., factor related to liquidity,...The other traditional equity risk premia uncover very low correlation or the correlation of the excess returns with the other traditional factors is nearly zero. While the...factor is negatively correlated to the excess returns, we find no evidence of their correlation to excess returns. We also find in addition that in addition to all strategies performing better during periods of significant volatility that the ... method is the superior strategy during turbulent market conditions.
-	
-	A large positive value implues that the factor has a positive effect on the performance. 
-	
-	
-	
-	By analyzing Tables \ref{tab:table103} and \ref{tab:table104}, we conclude that the copula approach usually provides larger alphas than the distance strategies, typically significant at 1\%, even after accounting all the factors, for Top 5 and Top 20 pairs without delay. Thus, the results show that the variations of the profits are not fully explained by the variation of the risk factors. Table \ref{tab:table105} presents results for Top 35 pairs. Here the alphas for copula method are still significantly different from zero at 1\% before costs. However, the strategy does not produce significant profits on fully invested capital after costs for both multi-factors models, differently from the distance approaches. The market premium slopes for distance strategies are typically larger and significant at 1\%.
-	
-	Analyzing the other risk factors from Tables \ref{tab:table108} to \ref{tab:table111} we can observe that the SMB coefficients are significant for copula method, at least at 10\%; the value effect premium (HML factor) slopes are significant for \citet*{ff15}'s five research factors at 1\% for 2.0 standard deviation threshold. We also can notice that the exposures of pairs trading return strategies to the reversal factor are positive, as suggested by \citet*{j90} and \citet*{l90fads}, and significant at 1\% for the distance strategies and usually at 1\% for the copula-based pairs strategy for all regression models from Tables \ref{tab:table108} to \ref{tab:table119}.  In addition, we find that the distance strategies' returns are negatively correlated with momentum loadings and highly significant (at 1\%) as in \citet*{ggr06} for all regressions. Furthermore, the return spread of firms that invest conservatively minus aggressively (CMA factor) is negatively correlated with 2.0 standard deviation strategy returns at least at 10\% for regression in Tables \ref{tab:table109} to \ref{tab:table111}.
-	
- From Tables \ref{tab:table112} and \ref{tab:table113} one could also observe that: the SMB factor is negatively correlated with profits generated by distance methods at 1\% for \citet*{ff93}'s three research factors plus momentum and short-term reversal and at least at 10\% for 2.0$\sigma$ threshold and \citet*{ff15}'s five research factors; the HML factor is positively correlated with the excess returns for 2.0$\sigma$ trigger point at 10\% for \citet*{ff15}'s five research factors.
+The regression on asset pricing factors for Top 5 pairs strengthen the patterns found in the Figure \ref{fig:fig49}, indicating that the mixed copula strategy is able to produce relatively economically larger profits after costs than the distance approach when the number of tradeable signals is equiparable. Tables \ref{tab:table104} and \ref{tab:table105} provided in Appendix report the regressions for Top 20 and Top 35 pairs. As expected, one could observe that the results are in agreement the patterns found in the center and bottom of Figure \ref{fig:fig49}.
 
-When we delay trades by one day (Tables \ref{tab:table114} to \ref{tab:table119}) one could observe that the intercepts for copula strategy are significant before costs, usually at least at 5\% for the \citet*{ff15}'s five research factors, whereas the distance approaches typically produce economically larger and significant alphas after costs, at least at 10\%. In addition, we can note that the market premium coefficients are not significant for the copula-based strategy. The SMB factor is negatively correlated with the excess returns from copula method at 10\% for Top 5 pairs and at least at 5\% with the profits generated by 2.0 standard deviation threshold. Moreover, the HML factor is positively associated with the returns for the 2.0 standard deviation trigger point at least at 5\% for Top 5 and Top 20 pairs when regressing the excess returns onto the \citet*{ff15}'s five research factors. Finally, the profits from the 2.0$\sigma$ strategy is negatively correlated with the CMA factor at 5\% for Top 5 and Top 20 pairs.
-
-The other risk-factors do not explain significantly the excess returns of the pairs trading strategies. It should be noted that the results show that the exposures to the various sources of systematic profile risk provide a low explanation of the variations of the average excess returns for any strategy as measured by the R-square and adjusted R-squared, particularly for the copula-based pairs strategy, indicating that the method is nearly factor-neutral over the whole sample period.
-
-
+%	Thus, the results show that the variations of the profits are not fully explained by the variation of the risk factors. Table \ref{tab:table105} presents results for Top 35 pairs. Here the alphas for copula method are still significantly different from zero at 1\% before costs. However, the strategy does not produce significant 
+%	profits on fully invested capital after costs for both multi-factors models, differently from the distance approaches. The market premium slopes for distance strategies are typically larger and significant at 1\%.
+	
+%	Analyzing the other risk factors from Tables \ref{tab:table108} to
+%	\ref{tab:table111} we can observe that the SMB coefficients are significant for copula method, at least at 10\%; the value effect premium (HML factor) slopes are significant for \citet*{ff15}'s five research factors at 1\% for 2.0 standard deviation threshold. We also can	notice that the exposures of pairs trading return strategies to the reversal factor are positive, as suggested by \citet*{j90} and \citet*{l90fads}, and significant at 1\% for the distance strategies and usually at 1\% for the copula-based pairs strategy for all regression models from Tables \ref{tab:table108} to \ref{tab:table119}. In addition, we find that the distance strategies' returns are negatively correlated with momentum loadings 
+%	and highly significant (at 1\%) as in \citet*{ggr06} for all regressions. Furthermore, the return spread of firms that invest conservatively minus aggressively (CMA factor) is negatively
+%	correlated with 2.0 standard deviation strategy returns at least at 10\% for regression in Tables \ref{tab:table109} to \ref{tab:table111}.
+	
+%	A large positive value implues that the factor has a positive effect on the performance. From Tables \ref{tab:table112} and \ref{tab:table113} one could also observe that
+%	
+%	The other traditional equity risk premia uncover very low correlation or the correlation of the excess returns with the other traditional factors is nearly zero. While the...factor is negatively correlated to the excess returns, we find no evidence of their correlation to excess returns. We also find in addition that in addition to all strategies performing better during periods of significant volatility that the ... method is the superior strategy during	turbulent market conditions.
+%	
+%	
+%	one could observe that the intercepts for copula strategy are significant before costs, usually at least at 5\% for the
+%	\citet*{ff15}'s five research factors, whereas the distance approaches typically produce economically larger and significant alphas after costs, at least at 10\%. In addition, we can
+%	note that the market premium coefficients are not significant for the copula-based strategy. The SMB factor is negatively correlated with the excess returns from copula method at 10\% for Top 5 pairs and at least at 5\% with the profits generated by 2.0 standard deviation threshold. Moreover, the HML factor is positively associated with the returns for the 2.0 standard deviation trigger point at least at 5\% for Top 5 and Top 20 pairs when regressing the excess returns onto the \citet*{ff15}'s five research factors. Finally, the profits from the 2.0$\sigma$ strategy is negatively correlated with the CMA factor at 5\% for Top 5 and Top 20 pairs.
+	 
 	\begin{sidewaystable}
 		\caption{Systematic risk of Top 5 pairs: \textcolor{blue}{Fama and French} \textcolor{blue}{(2016)}'s five factors plus Momentum and Long-Term Reversal.}
 		\begin{threeparttable}[H]
@@ -661,63 +680,6 @@ The other risk-factors do not explain significantly the excess returns of the pa
 		\label{tab:table103}%
 	\end{sidewaystable}%
 	
-	\begin{sidewaystable}
-		\caption{Systematic risk of Top 20 pairs: \textcolor{blue}{Fama and French} \textcolor{blue}{(2016)}'s five factors plus Momentum and Long-Term Reversal.}
-		\begin{threeparttable}[H]
-			\centering \tiny
-			\begin{tabularx}{\textwidth}{@{\extracolsep{\fill}}lllllllllllllllllll@{}}
-				\toprule
-				\multicolumn{1}{c}{Strategy} & \multicolumn{1}{c}{Intercept} & \multicolumn{1}{c}{t-stat} & \multicolumn{1}{c}{Rm-Rf} & \multicolumn{1}{c}{t-stat} & \multicolumn{1}{c}{SMB} & \multicolumn{1}{c}{t-stat} & \multicolumn{1}{c}{HML} & \multicolumn{1}{c}{t-stat} & \multicolumn{1}{c}{RMW} & \multicolumn{1}{c}{t-stat} & \multicolumn{1}{c}{CMA} & \multicolumn{1}{c}{t-stat} &
-				\multicolumn{1}{c}{Mom} & \multicolumn{1}{c}{t-stat} & \multicolumn{1}{c}{LRev} & \multicolumn{1}{c}{t-stat} & \multicolumn{1}{c}{$R^{2}$} & \multicolumn{1}{c}{$R^{2}_{adj}$} \\
-				\midrule
-				\multicolumn{19}{c}{\textbf{Section 1: Return on Committed Capital}} \\
-				\multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} &       &       &       &       &       &       &	  &  & \\
-				\multicolumn{1}{c}{Distance} & 0.0131 & $3.4717{***}$ & 0.0258 & $5.0243{***}$ & -0.0078 & -0.6229 & 0.0045 & 0.3818 & -0.0136 & -0.8488 & 0.0325 & $1.8151{*}$ & -0.0342 & $-4.9021{***}$ & -0.0330 & $-2.3743{**}$ & 0.0277 & 0.0266 \\
-				\multicolumn{1}{c}{Mixed Copula} & 0.0050 & $3.5317{***}$ & 0.0071 & $3.5187{***}$ & -0.0028 & -0.7514 & 0.0010 & 0.2195 & -0.0024 & -0.4938 & 0.0036 & 0.5762 & -0.0061 & $-2.1883{**}$ & -0.0058 & -1.1018 & 0.0091 & 0.0079 \\
-				\midrule
-				\multicolumn{19}{c}{\textbf{Section 2: Return on Fully Invested Capital}} \\
-				&       &       &       &       &       &       &       &       &       &       &       &       &       &       &       &       &       \\
-				\multicolumn{1}{c}{Distance} & 0.0255 & $3.6809{***}$ & 0.0485 & $5.1809{***}$ & -0.0128 & -0.5533 & 0.0210 & 0.8965 & -0.0099 & -0.3448 & 0.0604 & $1.7816{*}$ & -0.0710 & $-4.9449{***}$ & -0.0553 & $-2.0788{**}$ & 0.0305 & 0.0294 \\
-				\multicolumn{1}{c}{Mixed Copula} & 0.0490 & $4.4947{***}$ & 0.0674 & $3.3944{***}$ & -0.0419 & -1.5363 & 0.0644 & 1.4682 & -0.0295 & -0.7013 & 0.0410 & 0.7465 & -0.0233 & -1.3647 & -0.1186 & $-2.3591{**}$ & 0.0163 & 0.0152 \\
-				\bottomrule
-			\end{tabularx}
-			\begin{tablenotes}
-				\item \textit{Note:} \tiny  This table shows results of regressing daily portfolio return series onto \textcolor{blue}{Fama and French} \textcolor{blue}{(2016)}'s five factors factors plus momentum and long-term reversal over July 1991 and December 2015 (6173 observations). Section 1 shows the Return on Committed Capital and Section 2 on Fully Invested Capital after transaction costs. Pairs are formed based on the smallest sum of squared deviations. The t-statistics are computed using Newey-West standard errors with six lags.
-				\item \scriptsize $^{\ast\ast\ast}$, $^{\ast\ast}$, $^{\ast}$  significant at 1\%, 5\% and 10\% levels, respectively.
-			\end{tablenotes}
-		\end{threeparttable}%
-		\label{tab:table104}%
-	\end{sidewaystable}%
-	
-	\begin{sidewaystable}
-		\caption{Systematic risk of Top 35 pairs: \textcolor{blue}{Fama and French} \textcolor{blue}{(2016)}'s five factors plus Momentum and Long-Term Reversal.}
-		\begin{threeparttable}[H]
-			\centering \tiny
-			\begin{tabularx}{\textwidth}{@{\extracolsep{\fill}}lllllllllllllllllll@{}}
-				\toprule
-				\multicolumn{1}{c}{Strategy} & \multicolumn{1}{c}{Intercept} & \multicolumn{1}{c}{t-stat} & \multicolumn{1}{c}{Rm-Rf} & \multicolumn{1}{c}{t-stat} & \multicolumn{1}{c}{SMB} & \multicolumn{1}{c}{t-stat} & \multicolumn{1}{c}{HML} & \multicolumn{1}{c}{t-stat} & \multicolumn{1}{c}{RMW} & \multicolumn{1}{c}{t-stat} & \multicolumn{1}{c}{CMA} & \multicolumn{1}{c}{t-stat} &
-				\multicolumn{1}{c}{Mom} & \multicolumn{1}{c}{t-stat} & \multicolumn{1}{c}{LRev} & \multicolumn{1}{c}{t-stat} & \multicolumn{1}{c}{$R^{2}$} & \multicolumn{1}{c}{$R^{2}_{adj}$} \\
-				\midrule
-				\multicolumn{15}{c}{\textbf{Section 1: Return on Committed Capital}} \\
-				\multicolumn{15}{c}{\textit{Panel A: Minimum-Distance based on SSD}} \\
-				\multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} &       &       &       &       &       &       &	&	&  \\
-				\multicolumn{1}{c}{Distance} & 0.0122 & $3.9305{***}$ & 0.0279 & $5.5504{***}$ & -0.0046 & -0.5391 & -0.0048 & -0.4967 & 0.0050 & 0.4059 & 0.0283 & $1.9636{**}$ & -0.0322 & $-5.3765{***}$ & -0.0252 & $-1.9921{**}$ & 0.0343 & 0.0332 \\
-				\multicolumn{1}{c}{Mixed Copula} & 0.0033 & $3.9574{***}$ & 0.0044 & $3.8052{***}$ & -0.0015 & -0.6902 & -0.0001 & -0.0400 & -0.0020 & -0.6919 & 0.0035 & 0.9766 & -0.0035 & $-2.1733{**}$ & -0.0035 & -1.1366 & 0.0094 & 0.0082 \\
-				\midrule
-				\multicolumn{15}{c}{\textbf{Section 2: Return on Fully Invested Capital}} \\
-				\multicolumn{15}{c}{\textit{Panel A: Minimum-Distance based on SSD}} \\
-				&       &       &       &       &       &       &       &       &       &       &       &       &       &       &       &       &       \\
-				\multicolumn{1}{c}{Distance} & 0.0230 & $4.0660{***}$ & 0.0525 & $5.3566{***}$ & -0.0142 & -0.9048 & -0.0062 & -0.3052 & 0.0112 & 0.4935 & 0.0682 & $2.5580{**}$ & -0.0630 & $-5.4671{***}$ & -0.0515 & $-2.0365{**}$ & 0.0372 & 0.0361 \\
-				\multicolumn{1}{c}{Mixed Copula} & 0.0504 & $4.6266{***}$ & 0.0688 & $3.4792{***}$ & -0.0408 & -1.5037 & 0.0615 & 1.3997 & -0.0335 & -0.7938 & 0.0476 & 0.8707 & -0.0233 & -1.3632 & -0.1209 & $-2.4150{**}$ & 0.0167 & 0.0155 \\
-				\bottomrule
-			\end{tabularx}
-			\begin{tablenotes}
-				\item \textit{Note:} \tiny  This table shows results of regressing daily portfolio return series onto \textcolor{blue}{Fama and French} \textcolor{blue}{(2016)}'s five factors factors plus momentum and long-term reversal over July 1991 and December 2015 (6173 observations). Section 1 shows the Return on Committed Capital and Section 2 on Fully Invested Capital after transaction costs. Pairs are formed based on the smallest sum of squared deviations. The t-statistics are computed using Newey-West standard errors with six lags.
-				\item \scriptsize $^{\ast\ast\ast}$, $^{\ast\ast}$, $^{\ast}$  significant at 1\%, 5\% and 10\% levels, respectively.
-			\end{tablenotes}
-		\end{threeparttable}%
-		\label{tab:table105}%
-	\end{sidewaystable}%
 \newpage
 	
 	\subsection{Robustness checks of the performance of Excess Returns and Sharpe Ratios}
@@ -1145,7 +1107,65 @@ The main findings are summarized below.
 	\vspace{0.6cm}
 	
 	
-	This appendix contains additional figures representing Sharpe ratios patterns for each of the three strategies.
+%	This appendix contains additional figures representing Sharpe ratios patterns for each of the three strategies.
+	
+		\begin{sidewaystable}
+		\caption{Systematic risk of Top 20 pairs: \textcolor{blue}{Fama and French} \textcolor{blue}{(2016)}'s five factors plus Momentum and Long-Term Reversal.}
+		\begin{threeparttable}[H]
+			\centering \tiny
+			\begin{tabularx}{\textwidth}{@{\extracolsep{\fill}}lllllllllllllllllll@{}}
+				\toprule
+				\multicolumn{1}{c}{Strategy} & \multicolumn{1}{c}{Intercept} & \multicolumn{1}{c}{t-stat} & \multicolumn{1}{c}{Rm-Rf} & \multicolumn{1}{c}{t-stat} & \multicolumn{1}{c}{SMB} & \multicolumn{1}{c}{t-stat} & \multicolumn{1}{c}{HML} & \multicolumn{1}{c}{t-stat} & \multicolumn{1}{c}{RMW} & \multicolumn{1}{c}{t-stat} & \multicolumn{1}{c}{CMA} & \multicolumn{1}{c}{t-stat} &
+				\multicolumn{1}{c}{Mom} & \multicolumn{1}{c}{t-stat} & \multicolumn{1}{c}{LRev} & \multicolumn{1}{c}{t-stat} & \multicolumn{1}{c}{$R^{2}$} & \multicolumn{1}{c}{$R^{2}_{adj}$} \\
+				\midrule
+				\multicolumn{19}{c}{\textbf{Section 1: Return on Committed Capital}} \\
+				\multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} &       &       &       &       &       &       &	  &  & \\
+				\multicolumn{1}{c}{Distance} & 0.0131 & $3.4717{***}$ & 0.0258 & $5.0243{***}$ & -0.0078 & -0.6229 & 0.0045 & 0.3818 & -0.0136 & -0.8488 & 0.0325 & $1.8151{*}$ & -0.0342 & $-4.9021{***}$ & -0.0330 & $-2.3743{**}$ & 0.0277 & 0.0266 \\
+				\multicolumn{1}{c}{Mixed Copula} & 0.0050 & $3.5317{***}$ & 0.0071 & $3.5187{***}$ & -0.0028 & -0.7514 & 0.0010 & 0.2195 & -0.0024 & -0.4938 & 0.0036 & 0.5762 & -0.0061 & $-2.1883{**}$ & -0.0058 & -1.1018 & 0.0091 & 0.0079 \\
+				\midrule
+				\multicolumn{19}{c}{\textbf{Section 2: Return on Fully Invested Capital}} \\
+				&       &       &       &       &       &       &       &       &       &       &       &       &       &       &       &       &       \\
+				\multicolumn{1}{c}{Distance} & 0.0255 & $3.6809{***}$ & 0.0485 & $5.1809{***}$ & -0.0128 & -0.5533 & 0.0210 & 0.8965 & -0.0099 & -0.3448 & 0.0604 & $1.7816{*}$ & -0.0710 & $-4.9449{***}$ & -0.0553 & $-2.0788{**}$ & 0.0305 & 0.0294 \\
+				\multicolumn{1}{c}{Mixed Copula} & 0.0490 & $4.4947{***}$ & 0.0674 & $3.3944{***}$ & -0.0419 & -1.5363 & 0.0644 & 1.4682 & -0.0295 & -0.7013 & 0.0410 & 0.7465 & -0.0233 & -1.3647 & -0.1186 & $-2.3591{**}$ & 0.0163 & 0.0152 \\
+				\bottomrule
+			\end{tabularx}
+			\begin{tablenotes}
+				\item \textit{Note:} \tiny  This table shows results of regressing daily portfolio return series onto \textcolor{blue}{Fama and French} \textcolor{blue}{(2016)}'s five factors factors plus momentum and long-term reversal over July 1991 and December 2015 (6173 observations). Section 1 shows the Return on Committed Capital and Section 2 on Fully Invested Capital after transaction costs. Pairs are formed based on the smallest sum of squared deviations. The t-statistics are computed using Newey-West standard errors with six lags.
+				\item \scriptsize $^{\ast\ast\ast}$, $^{\ast\ast}$, $^{\ast}$  significant at 1\%, 5\% and 10\% levels, respectively.
+			\end{tablenotes}
+		\end{threeparttable}%
+		\label{tab:table104}%
+	\end{sidewaystable}%
+	
+	\begin{sidewaystable}
+		\caption{Systematic risk of Top 35 pairs: \textcolor{blue}{Fama and French} \textcolor{blue}{(2016)}'s five factors plus Momentum and Long-Term Reversal.}
+		\begin{threeparttable}[H]
+			\centering \tiny
+			\begin{tabularx}{\textwidth}{@{\extracolsep{\fill}}lllllllllllllllllll@{}}
+				\toprule
+				\multicolumn{1}{c}{Strategy} & \multicolumn{1}{c}{Intercept} & \multicolumn{1}{c}{t-stat} & \multicolumn{1}{c}{Rm-Rf} & \multicolumn{1}{c}{t-stat} & \multicolumn{1}{c}{SMB} & \multicolumn{1}{c}{t-stat} & \multicolumn{1}{c}{HML} & \multicolumn{1}{c}{t-stat} & \multicolumn{1}{c}{RMW} & \multicolumn{1}{c}{t-stat} & \multicolumn{1}{c}{CMA} & \multicolumn{1}{c}{t-stat} &
+				\multicolumn{1}{c}{Mom} & \multicolumn{1}{c}{t-stat} & \multicolumn{1}{c}{LRev} & \multicolumn{1}{c}{t-stat} & \multicolumn{1}{c}{$R^{2}$} & \multicolumn{1}{c}{$R^{2}_{adj}$} \\
+				\midrule
+				\multicolumn{15}{c}{\textbf{Section 1: Return on Committed Capital}} \\
+				\multicolumn{15}{c}{\textit{Panel A: Minimum-Distance based on SSD}} \\
+				\multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} &       &       &       &       &       &       &	&	&  \\
+				\multicolumn{1}{c}{Distance} & 0.0122 & $3.9305{***}$ & 0.0279 & $5.5504{***}$ & -0.0046 & -0.5391 & -0.0048 & -0.4967 & 0.0050 & 0.4059 & 0.0283 & $1.9636{**}$ & -0.0322 & $-5.3765{***}$ & -0.0252 & $-1.9921{**}$ & 0.0343 & 0.0332 \\
+				\multicolumn{1}{c}{Mixed Copula} & 0.0033 & $3.9574{***}$ & 0.0044 & $3.8052{***}$ & -0.0015 & -0.6902 & -0.0001 & -0.0400 & -0.0020 & -0.6919 & 0.0035 & 0.9766 & -0.0035 & $-2.1733{**}$ & -0.0035 & -1.1366 & 0.0094 & 0.0082 \\
+				\midrule
+				\multicolumn{15}{c}{\textbf{Section 2: Return on Fully Invested Capital}} \\
+				\multicolumn{15}{c}{\textit{Panel A: Minimum-Distance based on SSD}} \\
+				&       &       &       &       &       &       &       &       &       &       &       &       &       &       &       &       &       \\
+				\multicolumn{1}{c}{Distance} & 0.0230 & $4.0660{***}$ & 0.0525 & $5.3566{***}$ & -0.0142 & -0.9048 & -0.0062 & -0.3052 & 0.0112 & 0.4935 & 0.0682 & $2.5580{**}$ & -0.0630 & $-5.4671{***}$ & -0.0515 & $-2.0365{**}$ & 0.0372 & 0.0361 \\
+				\multicolumn{1}{c}{Mixed Copula} & 0.0504 & $4.6266{***}$ & 0.0688 & $3.4792{***}$ & -0.0408 & -1.5037 & 0.0615 & 1.3997 & -0.0335 & -0.7938 & 0.0476 & 0.8707 & -0.0233 & -1.3632 & -0.1209 & $-2.4150{**}$ & 0.0167 & 0.0155 \\
+				\bottomrule
+			\end{tabularx}
+			\begin{tablenotes}
+				\item \textit{Note:} \tiny  This table shows results of regressing daily portfolio return series onto \textcolor{blue}{Fama and French} \textcolor{blue}{(2016)}'s five factors factors plus momentum and long-term reversal over July 1991 and December 2015 (6173 observations). Section 1 shows the Return on Committed Capital and Section 2 on Fully Invested Capital after transaction costs. Pairs are formed based on the smallest sum of squared deviations. The t-statistics are computed using Newey-West standard errors with six lags.
+				\item \scriptsize $^{\ast\ast\ast}$, $^{\ast\ast}$, $^{\ast}$  significant at 1\%, 5\% and 10\% levels, respectively.
+			\end{tablenotes}
+		\end{threeparttable}%
+		\label{tab:table105}%
+	\end{sidewaystable}%
 	
 %		\begin{figure}[H]
 %		\centering
