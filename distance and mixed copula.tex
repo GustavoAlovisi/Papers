@@ -472,7 +472,7 @@ Section 2 of Table \ref{tab:table101} shows results on fully invested capital sc
 
 %albeit with higher volatility.
 
-Figure \ref{fig:fig49} show cumulative excess returns through the full dataset for every strategy for Top 5 (top), Top 20 (center) and Top 35 (bottom) pairs. The left panels displays cumulative returns on committed capital, whereas the right panels on fully invested capital. The patterns found in the figure strengthen the mean returns and t-statistics displayed in Table \ref{tab:table101}. It should be noted that the mixed copula strategy achieves a very favorable out-of-sample performance relative to the distance approach after the subprime mortgage crisis, especially after 2010 for Top 5 pairs (when the number of trades is comparable) on committed capital. 
+Figure \ref{fig:fig49} show cumulative excess returns through the full dataset for both strategies for Top 5 (top), Top 20 (center) and Top 35 (bottom) pairs. The left panels displays cumulative returns on committed capital, whereas the right panels on fully invested capital. The patterns found in the figure strengthen the mean returns and t-statistics displayed in Table \ref{tab:table101}. It should be noted that the mixed copula strategy achieves a very favorable out-of-sample performance relative to the distance approach after the subprime mortgage crisis, especially after 2010 for Top 5 pairs (when the number of trades is comparable) on committed capital. 
 
 \begin{figure}[H]
 	\centering
@@ -519,8 +519,6 @@ Figure \ref{fig:fig51} shows the densities of the five-year Sharpe ratios after 
 	Table \ref{tab:table102} reports trading statistics. Panel A, B and C report results for Top 5, Top 20 and Top 35 pairs, respectively. The average price deviation trigger for opening pairs is listed in the first row of each panel. We can observe that, in average, we initiate the positions before when using the distance approach. The positions are initiated when prices have diverged by 5.94\%, 6.81\%, and 7.29\% for Top 5, Top 20, and Top 35 pairs, respectively. Similar to \citet*{ggr06}, the trigger spread increases with the number of pairs for all approaches\footnote{citet*{ggr06} explains that the standard deviation of the prices increases as the proximity of the securities in price space decreases, thus increasing the trigger spreads.}.
 	
 	The table reveals that the average number of pairs traded per six-month period is only equiparable among the strategies for Top 5 pairs. For Top 20 and Top 35 pairs the total number of pairs opened is about 75\% and 138\% when starting positions based on the distance approach. This suggests that a two standard deviation trigger as opening criterion is less conservative than the opening threshold suggested by \citet*{rf15} using the cumulative mispriced indexed $M1$ and $M2$. Thus, the distance approach will be able to identify more trading opportunities to profit making the comparison less meaningful, although in practice the benefits are partly offset by the trading costs.
-	
-	
 	
 %	 This suggests that in practice one could be able to find an optimal criterion (trigger level) to initiate pairs trading as a function of trading costs and assumptions of the underlying pricing process. 
 
@@ -680,16 +678,24 @@ The regression on asset pricing factors for Top 5 pairs strengthen the patterns 
 		\label{tab:table103}%
 	\end{sidewaystable}%
 
-\vspace{1.0cm}
+\newpage
 
 \subsection{Sub-period analysis}
 
 We split the full sample period into five sub-periods: (1) July 1991 to December 1995, (2) January 1996 to December 2000, (3) January 2001 to December 2005, (4) January 2006 to December 2010, and (5) January 2010 to December 2015. The third sub-period corresponds to the bear market that comprises the dotcom crisis and the September 11th terrorist attack, whereas the fourth sub-period corresponds to the subprime mortgage financial crisis period.
 
+Figures \ref{fig:fig6} and \ref{fig:fig7} show the profitability and risk-adjusted patterns of both strategies for Top 5 (top), Top 20 (center) and Top 35 (bottom) pairs after costs, respectively, for each sub-period on commited capital (left) and fully invested capital (right). 
+
+Overall, the mixed copula strategy achieves a favorable out-of-sample performance relative to the distance approach in the second and third subperiods (1996-2000 and 2001-2005) and after the subprime mortgage crisis, while the distance method delivers a significant better performance in the first (1991-1995) and fourth subperiods when the number of trades (Top 5 pairs) are similar on committed capital. It should be noted that the distance strategy shows a more constant pattern during the main volatile periods, and a very poor performance (negative mean excess returns) after the financial crisis. For fully invested weighting scheme the results are consistent with we have found in the full period analysis (see the right panels in Figure \ref{fig:fig49}).
+
+The results for Top 20 and Top 35 pairs are in agreement with what we expected from previous analyses. The main difference is the performance of the strategies in the second subperiod on committed capital.
+
+The results suggest, since neither strategy is consistently superior in all subperiods, at least on committed capital, that the strategies may be combined to yield a viable long-short strategy.
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.65]{fig1_sub.pdf}
-	\caption{\textbf{Densities of 5-year rolling window Sharpe ratio after costs}}
+	\caption{\textbf{Average excess returns of pairs trading strategies after costs for each sub-period}}
 	\caption*{\scriptsize This figure shows how the 5-year rolling window Sharpe ratio densities evolve from July 1996 to December 2015 for each of the strategies using the method of \citet*{sj1991} to select the bandwidths.}
 	\label{fig:fig6}
 \end{figure}
@@ -697,60 +703,15 @@ We split the full sample period into five sub-periods: (1) July 1991 to December
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.65]{fig2_sub.pdf}
-	\caption{\textbf{Densities of 5-year rolling window Sharpe ratio after costs}}
+	\caption{\textbf{Sharpe Ratio of pairs trading strategies after costs for each sub-period}}
 	\caption*{\scriptsize This figure shows how the 5-year rolling window Sharpe ratio densities evolve from July 1996 to December 2015 for each of the strategies using the method of \citet*{sj1991} to select the bandwidths.}
 	\label{fig:fig7}
 \end{figure}
 
-Figures \ref{fig:fig102} to \ref{fig:fig105} show the profitability patterns of the three strategies for Top 5, 20 and 35 pairs, respectively, for each sub-period. Figure \ref{fig:fig102} displays the average excess returns when a fast trade can be executed and before costs for Top 5 (top), Top 20 (center) and Top 35 pairs (bottom) on committed (left) and fully invested capital (right). Figure \ref{fig:fig103} shows the excess returns with no delay and after costs, while Figure \ref{fig:fig104} and Figure \ref{fig:fig105} consider returns with “one-day rule”, before and after costs, respectively.
-
-The patterns found in the figures bolster the average and cumulative excess returns displayed in Tables \ref{tab:table101} to \ref{tab:table106} and Figures \ref{fig:fig108} to \ref{fig:fig111}, respectively. Overall, we can note that the copula strategy exhibit a relative-to-benchmark impressive out-performance in the last subperiod, \emph{i.e.}, after the subprime financial crisis, even after costs and waiting one day after the signal to start and close positions. However, it delivers a very poor performance from 2000-2002. We had previously pointed out the pattern from 1998-2000 when analyzing Figures \ref{fig:fig108} to \ref{fig:fig111}.
-
-It should also be observed that the copula method also delivers a very strong relative out-of-sample performance during the first subperiod (91/2-99), even after imposing both constraints for fully invested capital, and a very good performance from 2003-2007/1, at least for Top 20 pairs, and during the subprime mortgage crisis when a quick trade is executed.
-
-Figures \ref{fig:fig112} to \ref{fig:fig115} representing the Sharpe ratios patterns for each of the strategies are shown in the appendix. We can detect similar patterns to Figures \ref{fig:fig108} to \ref{fig:fig111}.
-
-
-%		\begin{figure}[H]
-%		\centering
-%		\includegraphics[scale=0.6]{fig6_p1_rev.pdf}
-%		\caption{Average excess returns of pairs trading strategies before costs and with no delay for each sub-period}
-%		\%\caption*{comments}
-%		\label{fig:fig102}
-%	\end{figure}
-%	
-%	\begin{figure}[H]
-%		\centering
-%		\includegraphics[scale=0.6]{fig7_p1_rev.pdf}
-%		\caption{Average excess returns of pairs trading strategies after costs and with no delay for each sub-period}
-%		\%\caption*{comments}
-%		\label{fig:fig103}
-%	\end{figure}
-%	
-%	\begin{figure}[H]
-%		\centering
-%		\includegraphics[scale=0.6]{fig8_p1_rev.pdf}
-%		\caption{Average excess returns of pairs trading strategies before costs and with one-day waiting period for each sub-period}
-%		\%\caption*{comments}
-%		\label{fig:fig104}
-%	\end{figure}
-%
-%\begin{figure}[H]
-%	\centering
-%	\includegraphics[scale=0.6]{fig9_p1_rev.pdf}
-%	\caption{Average excess returns of pairs trading strategies after costs and with one-day waiting period for each sub-period}
-%	\%\caption*{comments}
-%	\label{fig:fig105}
-%\end{figure}
-
-
-Finally, Tables \ref{tab:table121} to \ref{tab:table125} present the bootstrap $p$-values for testing the null hypotheses represented by (\ref{eq:eq153}) over the sub-periods.
-
-As we can observe, the results in the first sub-period (July 1991 to December 1999) reinforce some patterns seen in Figures \ref{fig:fig102} to \ref{fig:fig105}, eespecially when both constraints are not active on committed capital and before delay (significant at least at 5\\%) on fully invested capital. It is also clear the significant relative poor performance in the second subperiod (January 2000 to December 2002), eespecially when compared to the 2.0$\sigma$ trigger point, at least at 10\\%.
-
-For the next subperiod (January 2003 to June 2007) the copula strategy shows a significant better performance for Top 20 pairs, before costs and with no delay to start the positions. During the global financial crisis (July 2007 to June 2009) we do not find any significative superior performance of any of the strategies. Lastly, we find some evidences that the copula method outperforms the distance strategies in the last subperiod (July 2009 to December 2015) at least before costs.
 
 \medskip
+
+Finally, Tables \ref{tab:table121} to \ref{tab:table125} present the bootstrap $p$-values for testing the null hypotheses represented by (\ref{eq:eq153}) over the sub-periods.
 
 \begin{threeparttable}[H]
 	\centering \scriptsize
