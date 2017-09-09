@@ -679,8 +679,323 @@ The regression on asset pricing factors for Top 5 pairs strengthen the patterns 
 		\end{threeparttable}%
 		\label{tab:table103}%
 	\end{sidewaystable}%
+
+\vspace{1.0cm}
+
+\subsection{Sub-period analysis}
+
+We split the full sample period into five sub-periods: (1) July 1991 to December 1995, (2) January 1996 to December 2000, (3) January 2001 to December 2005, (4) January 2006 to December 2010, and (5) January 2010 to December 2015. The third sub-period corresponds to the bear market that comprises the dotcom crisis and the September 11th terrorist attack, whereas the fourth sub-period corresponds to the subprime mortgage financial crisis period.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.65]{fig1_sub.pdf}
+	\caption{\textbf{Densities of 5-year rolling window Sharpe ratio after costs}}
+	\caption*{\scriptsize This figure shows how the 5-year rolling window Sharpe ratio densities evolve from July 1996 to December 2015 for each of the strategies using the method of \citet*{sj1991} to select the bandwidths.}
+	\label{fig:fig6}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.65]{fig2_sub.pdf}
+	\caption{\textbf{Densities of 5-year rolling window Sharpe ratio after costs}}
+	\caption*{\scriptsize This figure shows how the 5-year rolling window Sharpe ratio densities evolve from July 1996 to December 2015 for each of the strategies using the method of \citet*{sj1991} to select the bandwidths.}
+	\label{fig:fig7}
+\end{figure}
+
+Figures \ref{fig:fig102} to \ref{fig:fig105} show the profitability patterns of the three strategies for Top 5, 20 and 35 pairs, respectively, for each sub-period. Figure \ref{fig:fig102} displays the average excess returns when a fast trade can be executed and before costs for Top 5 (top), Top 20 (center) and Top 35 pairs (bottom) on committed (left) and fully invested capital (right). Figure \ref{fig:fig103} shows the excess returns with no delay and after costs, while Figure \ref{fig:fig104} and Figure \ref{fig:fig105} consider returns with “one-day rule”, before and after costs, respectively.
+
+The patterns found in the figures bolster the average and cumulative excess returns displayed in Tables \ref{tab:table101} to \ref{tab:table106} and Figures \ref{fig:fig108} to \ref{fig:fig111}, respectively. Overall, we can note that the copula strategy exhibit a relative-to-benchmark impressive out-performance in the last subperiod, \emph{i.e.}, after the subprime financial crisis, even after costs and waiting one day after the signal to start and close positions. However, it delivers a very poor performance from 2000-2002. We had previously pointed out the pattern from 1998-2000 when analyzing Figures \ref{fig:fig108} to \ref{fig:fig111}.
+
+It should also be observed that the copula method also delivers a very strong relative out-of-sample performance during the first subperiod (91/2-99), even after imposing both constraints for fully invested capital, and a very good performance from 2003-2007/1, at least for Top 20 pairs, and during the subprime mortgage crisis when a quick trade is executed.
+
+Figures \ref{fig:fig112} to \ref{fig:fig115} representing the Sharpe ratios patterns for each of the strategies are shown in the appendix. We can detect similar patterns to Figures \ref{fig:fig108} to \ref{fig:fig111}.
+
+
+%		\begin{figure}[H]
+%		\centering
+%		\includegraphics[scale=0.6]{fig6_p1_rev.pdf}
+%		\caption{Average excess returns of pairs trading strategies before costs and with no delay for each sub-period}
+%		\%\caption*{comments}
+%		\label{fig:fig102}
+%	\end{figure}
+%	
+%	\begin{figure}[H]
+%		\centering
+%		\includegraphics[scale=0.6]{fig7_p1_rev.pdf}
+%		\caption{Average excess returns of pairs trading strategies after costs and with no delay for each sub-period}
+%		\%\caption*{comments}
+%		\label{fig:fig103}
+%	\end{figure}
+%	
+%	\begin{figure}[H]
+%		\centering
+%		\includegraphics[scale=0.6]{fig8_p1_rev.pdf}
+%		\caption{Average excess returns of pairs trading strategies before costs and with one-day waiting period for each sub-period}
+%		\%\caption*{comments}
+%		\label{fig:fig104}
+%	\end{figure}
+%
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[scale=0.6]{fig9_p1_rev.pdf}
+%	\caption{Average excess returns of pairs trading strategies after costs and with one-day waiting period for each sub-period}
+%	\%\caption*{comments}
+%	\label{fig:fig105}
+%\end{figure}
+
+
+Finally, Tables \ref{tab:table121} to \ref{tab:table125} present the bootstrap $p$-values for testing the null hypotheses represented by (\ref{eq:eq153}) over the sub-periods.
+
+As we can observe, the results in the first sub-period (July 1991 to December 1999) reinforce some patterns seen in Figures \ref{fig:fig102} to \ref{fig:fig105}, eespecially when both constraints are not active on committed capital and before delay (significant at least at 5\\%) on fully invested capital. It is also clear the significant relative poor performance in the second subperiod (January 2000 to December 2002), eespecially when compared to the 2.0$\sigma$ trigger point, at least at 10\\%.
+
+For the next subperiod (January 2003 to June 2007) the copula strategy shows a significant better performance for Top 20 pairs, before costs and with no delay to start the positions. During the global financial crisis (July 2007 to June 2009) we do not find any significative superior performance of any of the strategies. Lastly, we find some evidences that the copula method outperforms the distance strategies in the last subperiod (July 2009 to December 2015) at least before costs.
+
+\medskip
+
+\begin{threeparttable}[H]
+	\centering \scriptsize
+	\caption{Bootstrap p-values computed from B=10,000 replications for testing the null hypotheses of equality of the average excess returns and Sharpe Ratios over the period between July 1991 and December 1999.}
+	\begin{tabularx}{\textwidth}{@{\extracolsep{\fill}}lllllll@{}}
+		\toprule
+		& & \multicolumn{2}{c}{Copula vs Distance (0.75$\sigma$)} & \multicolumn{1}{c}{} & \multicolumn{2}{c}{Copula vs Distance (2.0$\sigma$)} \\
+		\cmidrule{3-4}  \cmidrule{6-7}
+		\multicolumn{1}{c}{Scenario} & & \multicolumn{1}{c}{Return} & Sharpe Ratio &       & \multicolumn{1}{c}{Return}& Sharpe Ratio \\
+		\midrule
+		& \multicolumn{6}{c}{Section 1: Committed Capital} \\
+		\midrule
+		d0p5c0 & & 0.2862 & $0.0174^{**}(>)$ &       & $0.0138^{**}(>)$ & $0.0016^{***}(>)$ \\
+		d0p5c1 & & 0.7096 & 0.1466 &       & 0.1244 & $0.0224^{**}(>)$ \\
+		d1p5c0 & & 0.5002 & 0.9110 &       & 0.7814 & 0.5614 \\
+		d1p5c1 & & 0.1574 & 0.2648 &       & 0.5350 & 0.6320 \\
+		d0p20c0 & & 0.1134 & $0.0000^{***}(>)$ &       & $0.0008^{***}(>)$ & $0.0000^{***}(>)$ \\
+		d0p20c1 & & 0.5824 & $0.0136^{**}(>)$ &       & $0.0410^{**}(>)$ & $0.0004^{***}(>)$ \\
+		d1p20c0 & & 0.7586 & $0.0830^{*}(>)$ &       & 0.1308 & $0.0138^{**}(>)$ \\
+		d1p20c1 & & 0.4178 & 0.9110 &       & 0.8390 & 0.4142 \\
+		d0p101c0 & & 0.7660 & 0.3432 &       & 0.9880 & 0.3018 \\
+		d0p101c1 & & 0.3328 & 0.9242 &       & 0.4166 & 0.9380 \\
+		d1p101c0 & & 0.8996 & 0.1396 &       & 0.5912 & $0.0912^{*}(>)$ \\
+		d1p101c1 & & 0.5790 & 0.6530 &       & 0.7846 & 0.5520 \\
+		\midrule
+		& \multicolumn{6}{c}{Section 2:  Fully Invested Capital } \\
+		\midrule
+		d0p5c0 & & $0.0030^{***}(>)$ & $0.0400^{**}(>)$ &       & $0.0004^{***}(>)$ & $0.0036^{***}(>)$ \\
+		d0p5c1 & & $0.0430^{**}(>)$ & 0.2024 &       & $0.0176^{**}(>)$ & $0.0412^{**}(>)$ \\
+		d1p5c0 & & 0.8012 & 0.9528 &       & 0.8346 & 0.9774 \\
+		d1p5c1 & & 0.7674 & 0.6314 &       & 0.7062 & 0.5830 \\
+		d0p20c0 & & $0.0000^{***}(>)$ & $0.0000^{***}(>)$ &       & $0.0000^{***}(>)$ & $0.0000^{***}(>)$ \\
+		d0p20c1 & & $0.0014^{***}(>)$ & $0.0230^{**}(>)$ &       & $0.0010^{***}(>)$ & $0.0042^{***}(>)$ \\
+		d1p20c0 & & $0.0324^{**}(>)$ & 0.2132 &       & $0.0890^{*}(>)$ & 0.3692 \\
+		d1p20c1 & & 0.2262 & 0.5686 &       & 0.4640 & 0.8886 \\
+		d0p101c0 & & $0.0434^{**}(>)$ & 0.5282 &       & 0.1272 & 0.4340 \\
+		d0p101c1 & & 0.4176 & 0.7758 &       & 0.6910 & 0.8386 \\
+		d1p101c0 & & $0.0378^{**}(>)$ & 0.4352 &       & $0.0470^{**}(>)$ & 0.2574 \\
+		d1p101c1 & & 0.1708 & 0.7622 &       & 0.1924 & 0.5740 \\
+		\bottomrule
+	\end{tabularx}\%
+	\begin{tablenotes}
+		\item \textit{Note:} \scriptsize This table reports the bootstrap p-values for testing the null hypothesis of equality of the average excess returns and the Sharpe Ratios of Copula and distance strategies for the Top 5, 20 and 35 pairs over the period between July 1991 and December 1999 (2149 observations). The column labeled Scenario contains symbol labels for trading with no delay or one day waiting period (d0 and d1, respectively), for Top 5, 20 and 35 pairs (p5, p20 and p101, respectively) and before or after costs (c0 and c1, respectively). The symbol labels (>) and (<) indicate that the respective null hypothesis is rejected in favor of the alternative and that the average excess returns and/or the Sharpe Ratio of the Copula strategy are found greater or less than the the average excess returns and/or the Sharpe Ratio of the distance strategies, respectively.
+		\item \scriptsize $^{\ast\ast\ast}$, $^{\ast\ast}$, $^{\ast}$  significant at 1\\%, 5\\% and 10\\% levels, respectively.
+	\end{tablenotes}
+	\label{tab:table121}\%
+\end{threeparttable}\%
+
+\medskip
+
+\begin{threeparttable}[H]
+	\centering \scriptsize
+	\caption{Bootstrap p-values computed from B=10,000 replications for testing the null hypotheses of equality of the average excess returns and Sharpe Ratios over the period between January 2000 and December 2002.}
+	\begin{tabularx}{\textwidth}{@{\extracolsep{\fill}}lllllll@{}}
+		\toprule
+		& & \multicolumn{2}{c}{Copula vs Distance (0.75$\sigma$)} & \multicolumn{1}{c}{} & \multicolumn{2}{c}{Copula vs Distance (2.0$\sigma$)} \\
+		\cmidrule{3-4}  \cmidrule{6-7}
+		\multicolumn{1}{c}{Scenario} & & \multicolumn{1}{c}{Return} & Sharpe Ratio &       & \multicolumn{1}{c}{Return}& Sharpe Ratio \\
+		\midrule
+		& \multicolumn{6}{c}{Section 1: Committed Capital} \\
+		\midrule
+		d0p5c0 & & 0.3914 & 0.4984 &       & $0.0806^{*}(<)$ & 0.1396 \\
+		d0p5c1 & & 0.2764 & 0.3224 &       & $0.0452^{**}(<)$ & $0.0740^{*}(<)$ \\
+		d1p5c0 & & 0.3354 & 0.3612 &       & 0.1222 & 0.1504 \\
+		d1p5c1 & & 0.2354 & 0.2236 &       & $0.0740^{*}(<)$ & $0.0862^{*}(<)$ \\
+		d0p20c0 & & 0.1446 & 0.3032 &       & 0.1396 & 0.2470 \\
+		d0p20c1 & & $0.0720^{*}(<)$ & 0.1186 &       & $0.0588^{*}(<)$ & $0.0916^{*}(<)$ \\
+		d1p20c0 & & $0.0932^{*}(<)$ & $0.0986^{*}(<)$ &       & $0.0584^{*}(<)$ & $0.0660^{*}(<)$ \\
+		d1p20c1 & & $0.0392^{**}(<)$ & $0.0262^{**}(<)$ &       & $0.0146^{**}(<)$ & $0.0140^{**}(<)$ \\
+		d0p101c0 & & $0.0610^{*}(<)$ & 0.2566 &       & $0.0454^{**}(<)$ & 0.1388 \\
+		d0p101c1 & & $0.0388^{**}(<)$ & 0.1282 &       & $0.0222^{**}(<)$ & $0.0616^{*}(<)$ \\
+		d1p101c0 & & $0.0902^{*}(<)$ & 0.2620 &       & 0.1224 & 0.2444 \\
+		d1p101c1 & & $0.0458^{**}(<)$ & 0.1188 &       & $0.0582^{*}(<)$ & 0.1132 \\
+		\midrule
+		& \multicolumn{6}{c}{Section 2:  Fully Invested Capital } \\
+		\midrule
+		d0p5c0 & & 0.6840 & 0.5996 &       & $0.0606^{*}(<)$ & $0.0572^{*}(<)$ \\
+		d0p5c1 & & 0.4476 & 0.3980 &       & $0.0226^{**}(<)$ & $0.0206^{**}(<)$ \\
+		d1p5c0 & & 0.2320 & 0.2652 &       & $0.0986^{*}(<)$ & $0.0882^{*}(<)$ \\
+		d1p5c1 & & 0.1588 & 0.1826 &       & $0.0614^{*}(<)$ & $0.0540^{*}(<)$ \\
+		d0p20c0 & & 0.3580 & 0.1770 &       & 0.2706 & 0.1848 \\
+		d0p20c1 & & $0.0994^{*}(<)$ & $0.0544^{*}(<)$ &       & $0.0750^{*}(<)$ & $0.0500^{**}(<)$ \\
+		d1p20c0 & & 0.2360 & 0.1310 &       & 0.1980 & 0.1156 \\
+		d1p20c1 & & 0.1212 & $0.0792^{*}(<)$ &       & $0.0898^{*}(<)$ & $0.0588^{*}(<)$ \\
+		d0p101c0 & & 0.2328 & $0.0480^{**}(<)$ &       & $0.0438^{**}(<)$ & $0.0118^{**}(<)$ \\
+		d0p101c1 & & $0.0786^{*}(<)$ & $0.0168^{**}(<)$ &       & $0.0106^{**}(<)$ & $0.0020^{***}(<)$ \\
+		d1p101c0 & & 0.3024 & $0.0914^{*}(<)$ &       & 0.2072 & $0.0864^{*}(<)$ \\
+		d1p101c1 & & 0.1916 & $0.0538^{*}(<)$ &       & 0.1254 & $0.0524^{*}(<)$ \\
+		\bottomrule
+	\end{tabularx}\%
+	\begin{tablenotes}
+		\item \textit{Note:} \scriptsize This table reports the bootstrap p-values for testing the null hypothesis of equality of the average excess returns and the Sharpe Ratios of Copula and distance strategies for the Top 5, 20 and 35 pairs over the period between January 2000 and December 2002 (752 observations). The column labeled Scenario contains symbol labels for trading with no delay or one day waiting period (d0 and d1, respectively), for Top 5, 20 and 35 pairs (p5, p20 and p101, respectively) and before or after costs (c0 and c1, respectively). The symbol labels (>) and (<) indicate that the respective null hypothesis is rejected in favor of the alternative and that the average excess returns and/or the Sharpe Ratio of the Copula strategy are found greater or less than the the average excess returns and/or the Sharpe Ratio of the distance strategies, respectively.
+		\item \scriptsize $^{\ast\ast\ast}$, $^{\ast\ast}$, $^{\ast}$  significant at 1\\%, 5\\% and 10\\% levels, respectively.
+	\end{tablenotes}
+	\label{tab:table122}\%
+\end{threeparttable}\%
+
+\medskip
+
+\begin{threeparttable}[H]
+	\centering \scriptsize
+	\caption{Bootstrap p-values computed from B=10,000 replications for testing the null hypotheses of equality of the average excess returns and Sharpe Ratios over the period between January 2003 and June 2007.}
+	\begin{tabularx}{\textwidth}{@{\extracolsep{\fill}}lllllll@{}}
+		\toprule
+		& & \multicolumn{2}{c}{Copula vs Distance (0.75$\sigma$)} & \multicolumn{1}{c}{} & \multicolumn{2}{c}{Copula vs Distance (2.0$\sigma$)} \\
+		\cmidrule{3-4}  \cmidrule{6-7}
+		\multicolumn{1}{c}{Scenario} & & \multicolumn{1}{c}{Return} & Sharpe Ratio &       & \multicolumn{1}{c}{Return}& Sharpe Ratio \\
+		\midrule
+		& \multicolumn{6}{c}{Section 1: Committed Capital} \\
+		\midrule
+		d0p5c0 & & 0.9748 & 0.7072 &       & 0.8790 & 0.9404 \\
+		d0p5c1 & & 0.5484 & 0.6316 &       & 0.3502 & 0.4134 \\
+		d1p5c0 & & 0.5212 & 0.5762 &       & 0.3666 & 0.4186 \\
+		d1p5c1 & & 0.1936 & 0.1368 &       & $0.0924^{*}(<)$ & $0.0764^{*}(<)$ \\
+		d0p20c0 & & $0.0480^{**}(>)$ & $0.0092^{***}(>)$ &       & $0.0394^{**}(>)$ & $0.0110^{**}(>)$ \\
+		d0p20c1 & & 0.3402 & 0.1932 &       & 0.3954 & 0.2632 \\
+		d1p20c0 & & 0.2902 & 0.1692 &       & 0.3224 & 0.2310 \\
+		d1p20c1 & & 0.9366 & 0.9652 &       & 0.8420 & 0.8446 \\
+		d0p101c0 & & 0.7730 & 0.4542 &       & 0.9202 & 0.8138 \\
+		d0p101c1 & & 0.6774 & 0.7870 &       & 0.3060 & 0.3956 \\
+		d1p101c0 & & 0.6842 & 0.4028 &       & 0.9522 & 0.6618 \\
+		d1p101c1 & & 0.7424 & 0.8132 &       & 0.4266 & 0.5018 \\
+		\midrule
+		& \multicolumn{6}{c}{Section 2:  Fully Invested Capital } \\
+		\midrule
+		d0p5c0 & & 0.5566 & 0.7082 &       & 0.8444 & 0.7436 \\
+		d0p5c1 & & 0.7146 & 0.6776 &       & 0.2672 & 0.2368 \\
+		d1p5c0 & & 0.9618 & 0.9348 &       & 0.4078 & 0.3650 \\
+		d1p5c1 & & 0.5844 & 0.6054 &       & 0.1768 & 0.1672 \\
+		d0p20c0 & & $0.0070^{***}(>)$ & $0.0326^{**}(>)$ &       & $0.0236^{**}(>)$ & $0.0702^{*}(>)$ \\
+		d0p20c1 & & 0.2512 & 0.3274 &       & 0.4532 & 0.5844 \\
+		d1p20c0 & & 0.3770 & 0.4910 &       & 0.5956 & 0.7804 \\
+		d1p20c1 & & 0.9174 & 0.9072 &       & 0.7832 & 0.7242 \\
+		d0p101c0 & & 0.2632 & 0.4464 &       & 0.6036 & 0.8858 \\
+		d0p101c1 & & 0.9454 & 0.8394 &       & 0.4932 & 0.3762 \\
+		d1p101c0 & & 0.9310 & 0.8746 &       & 0.8500 & 0.6382 \\
+		d1p101c1 & & 0.5476 & 0.4854 &       & 0.3678 & 0.2976 \\
+		\bottomrule
+	\end{tabularx}\%
+	\begin{tablenotes}
+		\item \textit{Note:} \scriptsize This table reports the bootstrap p-values for testing the null hypothesis of equality of the average excess returns and the Sharpe Ratios of Copula and distance strategies for the Top 5, 20 and 35 pairs over the period between January 2003 and June 2007 (1131 observations). The column labeled Scenario contains symbol labels for trading with no delay or one day waiting period (d0 and d1, respectively), for Top 5, 20 and 35 pairs (p5, p20 and p101, respectively) and before or after costs (c0 and c1, respectively). The symbol labels (>) and (<) indicate that the respective null hypothesis is rejected in favor of the alternative and that the average excess returns and/or the Sharpe Ratio of the Copula strategy are found greater or less than the the average excess returns and/or the Sharpe Ratio of the distance strategies, respectively.
+		\item \scriptsize $^{\ast\ast\ast}$, $^{\ast\ast}$, $^{\ast}$  significant at 1\\%, 5\\% and 10\\% levels, respectively.
+	\end{tablenotes}
+	\label{tab:table123}\%
+\end{threeparttable}\%
+
+\medskip
+
+\begin{threeparttable}[H]
+	\centering \scriptsize
+	\caption{Bootstrap p-values computed from B=10,000 replications for testing the null hypotheses of equality of the average excess returns and Sharpe Ratios over the period between July 2007 and June 2009.}
+	\begin{tabularx}{\textwidth}{@{\extracolsep{\fill}}lllllll@{}}
+		\toprule
+		& & \multicolumn{2}{c}{Copula vs Distance (0.75$\sigma$)} & \multicolumn{1}{c}{} & \multicolumn{2}{c}{Copula vs Distance (2.0$\sigma$)} \\
+		\cmidrule{3-4}  \cmidrule{6-7}
+		\multicolumn{1}{c}{Scenario} & & \multicolumn{1}{c}{Return} & Sharpe Ratio &       & \multicolumn{1}{c}{Return}& Sharpe Ratio \\
+		\midrule
+		& \multicolumn{6}{c}{Section 1: Committed Capital} \\
+		\midrule
+		d0p5c0 & & 0.5652 & 0.8164 &       & 0.9840 & 0.9146 \\
+		d0p5c1 & & 0.4254 & 0.6034 &       & 0.8110 & 0.8654 \\
+		d1p5c0 & & 0.3444 & 0.4184 &       & 0.9582 & 0.9562 \\
+		d1p5c1 & & 0.2780 & 0.3120 &       & 0.7614 & 0.7518 \\
+		d0p20c0 & & 0.5274 & 0.2944 &       & 0.3358 & 0.2324 \\
+		d0p20c1 & & 0.7578 & 0.5466 &       & 0.5816 & 0.4778 \\
+		d1p20c0 & & 0.3778 & 0.3880 &       & 0.6648 & 0.6528 \\
+		d1p20c1 & & 0.2318 & 0.2058 &       & 0.4030 & 0.3716 \\
+		d0p101c0 & & 0.5994 & 0.5164 &       & 0.5686 & 0.5222 \\
+		d0p101c1 & & 0.7750 & 0.7358 &       & 0.7444 & 0.7314 \\
+		d1p101c0 & & 0.3762 & 0.3534 &       & 0.5846 & 0.5588 \\
+		d1p101c1 & & 0.2728 & 0.2280 &       & 0.3586 & 0.3208 \\
+		\midrule
+		& \multicolumn{6}{c}{Section 2:  Fully Invested Capital } \\
+		\midrule
+		d0p5c0 & & 0.4966 & 0.7866 &       & 0.3286 & 0.4472 \\
+		d0p5c1 & & 0.7314 & 0.9780 &       & 0.5076 & 0.6158 \\
+		d1p5c0 & & 0.7524 & 0.6304 &       & 0.4776 & 0.4980 \\
+		d1p5c1 & & 0.6208 & 0.5276 &       & 0.6150 & 0.6194 \\
+		d0p20c0 & & 0.7252 & 0.9064 &       & 0.8984 & 0.9934 \\
+		d0p20c1 & & 0.8658 & 0.7756 &       & 0.7650 & 0.7102 \\
+		d1p20c0 & & 0.6632 & 0.5838 &       & 0.7268 & 0.6896 \\
+		d1p20c1 & & 0.4630 & 0.4450 &       & 0.5192 & 0.5156 \\
+		d0p101c0 & & 0.8368 & 0.8646 &       & 0.8282 & 0.8428 \\
+		d0p101c1 & & 0.8612 & 0.8820 &       & 0.8558 & 0.8566 \\
+		d1p101c0 & & 0.7516 & 0.7000 &       & 0.9924 & 0.9802 \\
+		d1p101c1 & & 0.5740 & 0.5582 &       & 0.7836 & 0.8258 \\
+		\bottomrule
+	\end{tabularx}\%
+	\begin{tablenotes}
+		\item \textit{Note:} \scriptsize This table reports the bootstrap p-values for testing the null hypothesis of equality of the average excess returns and the Sharpe Ratios of Copula and distance strategies for the Top 5, 20 and 35 pairs over the period between July 2007 and June 2009 (504 observations). The column labeled Scenario contains symbol labels for trading with no delay or one day waiting period (d0 and d1, respectively), for Top 5, 20 and 35 pairs (p5, p20 and p101, respectively) and before or after costs (c0 and c1, respectively). The symbol labels (>) and (<) indicate that the respective null hypothesis is rejected in favor of the alternative and that the average excess returns and/or the Sharpe Ratio of the Copula strategy are found greater or less than the the average excess returns and/or the Sharpe Ratio of the distance strategies, respectively.
+		\item \scriptsize $^{\ast\ast\ast}$, $^{\ast\ast}$, $^{\ast}$  significant at 1\\%, 5\\% and 10\\% levels, respectively.
+	\end{tablenotes}
+	\label{tab:table124}\%
+\end{threeparttable}\%
+
+\medskip
+
+\begin{threeparttable}[H]
+	\centering \scriptsize
+	\caption{Bootstrap p-values computed from B=10,000 replications for testing the null hypotheses of equality of the average excess returns and Sharpe Ratios over the period between July 2009 and December 2015.}
+	\begin{tabularx}{\textwidth}{@{\extracolsep{\fill}}lllllll@{}}
+		\toprule
+		& & \multicolumn{2}{c}{Copula vs Distance (0.75$\sigma$)} & \multicolumn{1}{c}{} & \multicolumn{2}{c}{Copula vs Distance (2.0$\sigma$)} \\
+		\cmidrule{3-4}  \cmidrule{6-7}
+		\multicolumn{1}{c}{Scenario} & & \multicolumn{1}{c}{Return} & Sharpe Ratio &       & \multicolumn{1}{c}{Return}& Sharpe Ratio \\
+		\midrule
+		& \multicolumn{6}{c}{Section 1: Committed Capital} \\
+		\midrule
+		d0p5c0 & & 0.2060 & $0.0994^{*}(>)$ &       & $0.0710^{*}(>)$ & $0.0406^{**}(>)$ \\
+		d0p5c1 & & 0.5712 & 0.4710 &       & 0.3468 & 0.3094 \\
+		d1p5c0 & & $0.0830^{*}(>)$ & $0.0276^{**}(>)$ &       & $0.0182^{**}(>)$ & $0.0060^{***}(>)$ \\
+		d1p5c1 & & 0.3084 & 0.1866 &       & 0.1264 & $0.0928^{*}(>)$ \\
+		d0p20c0 & & 0.5594 & 0.2600 &       & 0.4474 & 0.2568 \\
+		d0p20c1 & & 0.5856 & 0.6648 &       & 0.6202 & 0.6932 \\
+		d1p20c0 & & 0.2160 & $0.0446^{**}(>)$ &       & 0.1094 & $0.0388^{**}(>)$ \\
+		d1p20c1 & & 0.9232 & 0.6896 &       & 0.7646 & 0.6118 \\
+		d0p101c0 & & 0.4992 & 0.5374 &       & 0.5090 & 0.5412 \\
+		d0p101c1 & & 0.7700 & 0.4760 &       & 0.6410 & 0.4494 \\
+		d1p101c0 & & $0.0680^{*}(>)$ & $0.0540^{*}(>)$ &       & $0.0686^{*}(>)$ & $0.0552^{*}(>)$ \\
+		d1p101c1 & & 0.3662 & 0.4770 &       & 0.4906 & 0.5746 \\
+		\midrule
+		& \multicolumn{6}{c}{Section 2:  Fully Invested Capital } \\
+		\midrule
+		d0p5c0 & & $0.0378^{**}(>)$ & $0.0504^{*}(>)$ &       & $0.0678^{*}(>)$ & $0.0890^{*}(>)$ \\
+		d0p5c1 & & 0.2752 & 0.2888 &       & 0.4030 & 0.4274 \\
+		d1p5c0 & & 0.1300 & 0.1436 &       & $0.0890^{*}(>)$ & 0.1072 \\
+		d1p5c1 & & 0.3210 & 0.3274 &       & 0.2392 & 0.2546 \\
+		d0p20c0 & & $0.0360^{**}(>)$ & 0.1400 &       & 0.1152 & 0.2344 \\
+		d0p20c1 & & 0.7692 & 0.9662 &       & 0.9024 & 0.7640 \\
+		d1p20c0 & & 0.1242 & 0.2768 &       & 0.1948 & 0.3362 \\
+		d1p20c1 & & 0.5508 & 0.6892 &       & 0.7484 & 0.8818 \\
+		d0p101c0 & & 0.8060 & 0.9630 &       & 0.8984 & 0.9774 \\
+		d0p101c1 & & $0.0850^{*}(<)$ & 0.2150 &       & 0.1242 & 0.1908 \\
+		d1p101c0 & & 0.5292 & 0.4558 &       & 0.5538 & 0.5148 \\
+		d1p101c1 & & 0.8936 & 0.8688 &       & 0.8632 & 0.9894 \\
+		\bottomrule
+	\end{tabularx}\%
+	\begin{tablenotes}
+		\item \textit{Note:} \scriptsize This table reports the bootstrap p-values for testing the null hypothesis of equality of the average excess returns and the Sharpe Ratios of Copula and distance strategies for the Top 5, 20 and 35 pairs over the period between July 2009 and December 2015 (1637 observations). The column labeled Scenario contains symbol labels for trading with no delay or one day waiting period (d0 and d1, respectively), for Top 5, 20 and 35 pairs (p5, p20 and p101, respectively) and before or after costs (c0 and c1, respectively). The symbol labels (>) and (<) indicate that the respective null hypothesis is rejected in favor of the alternative and that the average excess returns and/or the Sharpe Ratio of the Copula strategy are found greater or less than the the average excess returns and/or the Sharpe Ratio of the distance strategies, respectively.
+		\item \scriptsize $^{\ast\ast\ast}$, $^{\ast\ast}$, $^{\ast}$  significant at 1\\%, 5\\% and 10\\% levels, respectively.
+	\end{tablenotes}
+	\label{tab:table125}\%
+\end{threeparttable}\%
 	
-\newpage
+\vspace{1.0cm}
 	
 	\subsection{Robustness checks of the performance of Excess Returns and Sharpe Ratios}
 	
@@ -707,7 +1022,7 @@ The regression on asset pricing factors for Top 5 pairs strengthen the patterns 
 	\end{equation}
 	where $\mathbb{I}$ is the indicator function, $t^{\ast(b)}$ are the values in each block stationary bootstrap replication, and B denotes the number of bootstrap replications.
 	
-	Table \ref{tab:table120} report the bootstrap $p$-values for testing the null hypotheses represented by (\ref{eq:eq153}). We compare the copula method with each of the distance approaches (0.75 and 2.0 standard deviations) from 1991/2-2015 for all investment scenarios, \emph{i.e.}, without delay and waiting one-day period for the Top 5, Top 20, and Top 101-120 pairs, respectively, and before and after costs.
+	Table \ref{tab:table120} report the bootstrap $p$-values for testing the null hypotheses represented by (\ref{eq:eq153}). We compare the copula method with each of the distance approaches (0.75 and 2.0 standard deviations) from 1991/2-2015 for all investment scenarios, \emph{i.e.}, without delay and waiting one-day period for the Top 5, Top 20, and Top 35 pairs, respectively, and before and after costs.
 	
 	Overall, these results reinforce the ones previously obtained. As can be observed, the copula approach significantly outperforms the distance strategies when ignoring the costs and when a rapid execution of the trade is made for Top 5 and Top 20 pairs, in particular in terms of risk-adjusted returns for both weighting structures.
 
@@ -756,7 +1071,7 @@ The regression on asset pricing factors for Top 5 pairs strengthen the patterns 
 			\bottomrule
 		\end{tabularx}\%
 		\begin{tablenotes}
-			\item \textit{Note:} \scriptsize This table reports the bootstrap p-values for testing the null hypothesis of equality of the average excess returns and the Sharpe Ratios of Copula and distance strategies for Top 5, 20 and 101-120 pairs over the period between July 1991 and December 2015 (6173 observations). The column labeled Scenario contains symbol labels for trading with no delay or a one-day waiting period (d0 and d1, respectively), for Top 5, 20 and 101-120 pairs (p5, p20 and p101, respectively) and before or after costs (c0 and c1, respectively). The symbol labels (>) and (<) indicate that the respective null hypothesis is rejected in favor of the alternative and that the average excess returns and/or the Sharpe Ratio of the Copula strategy are found greater or less than the the average excess returns and/or the Sharpe Ratio of the distance strategies, respectively.
+			\item \textit{Note:} \scriptsize This table reports the bootstrap p-values for testing the null hypothesis of equality of the average excess returns and the Sharpe Ratios of Copula and distance strategies for Top 5, 20 and 35 pairs over the period between July 1991 and December 2015 (6173 observations). The column labeled Scenario contains symbol labels for trading with no delay or a one-day waiting period (d0 and d1, respectively), for Top 5, 20 and 35 pairs (p5, p20 and p101, respectively) and before or after costs (c0 and c1, respectively). The symbol labels (>) and (<) indicate that the respective null hypothesis is rejected in favor of the alternative and that the average excess returns and/or the Sharpe Ratio of the Copula strategy are found greater or less than the the average excess returns and/or the Sharpe Ratio of the distance strategies, respectively.
 			\item \scriptsize $^{\ast\ast\ast}$, $^{\ast\ast}$, $^{\ast}$  significant at 1\\%, 5\\% and 10\\% levels, respectively.
 		\end{tablenotes}
 		\label{tab:table120}\%
@@ -764,313 +1079,6 @@ The regression on asset pricing factors for Top 5 pairs strengthen the patterns 
 	
 	\medskip
 	
-	\subsection{Sub-period analysis}
-	
-	We split the full sample period into five sub-periods: (1) July 1991 to December 1999, (2) January 2000 to December 2002, (3) January 2003 to June 2007, (4) July 2007 to June 2009, and (5) July 2009 to December 2015. The second sub-period corresponds to the bear market that comprises the dotcom crisis and the September 11th terrorist attack. The fourth sub-period corresponds to the subprime mortgage financial crisis.
-	
-	Figure \ref{fig:fig101} shows strong signs of the superiority of the copula approach regarding the average number of pairs traded per six-month in each sub-period - since every trading signal is an opportunity to profit - strengthening the results displayed in Table \ref{tab:table107}. There is a noticeable increase of tradeable signals in the last two sub-periods.
-	
-%	\begin{figure}[H]
-%		\centering
-%		\includegraphics[scale=0.6]{fig5_p1_rev.pdf}
-%		\caption{Average number of pairs traded per six-month for Top 5, 20 and 101-120 pairs for each sub-period}
-%		\%\caption*{comments}
-%		\label{fig:fig101}
-%	\end{figure}
-	
-
-	Figures \ref{fig:fig102} to \ref{fig:fig105} show the profitability patterns of the three strategies for Top 5, 20 an 101-120 pairs, respectively, for each sub-period. Figure \ref{fig:fig102} displays the average excess returns when a fast trade can be executed and before costs for Top 5 (top), Top 20 (center) and Top 101-120 pairs (bottom) on committed (left) and fully invested capital (right). Figure \ref{fig:fig103} shows the excess returns with no delay and after costs, while Figure \ref{fig:fig104} and Figure \ref{fig:fig105} consider returns with “one-day rule”, before and after costs, respectively.
-	
-	The patterns found in the figures bolster the average and cumulative excess returns displayed in Tables \ref{tab:table101} to \ref{tab:table106} and Figures \ref{fig:fig108} to \ref{fig:fig111}, respectively. Overall, we can note that the copula strategy exhibit a relative-to-benchmark impressive out-performance in the last subperiod, \emph{i.e.}, after the subprime financial crisis, even after costs and waiting one day after the signal to start and close positions. However, it delivers a very poor performance from 2000-2002. We had previously pointed out the pattern from 1998-2000 when analyzing Figures \ref{fig:fig108} to \ref{fig:fig111}.
-	
-	It should also be observed that the copula method also delivers a very strong relative out-of-sample performance during the first subperiod (91/2-99), even after imposing both constraints for fully invested capital, and a very good performance from 2003-2007/1, at least for Top 20 pairs, and during the subprime mortgage crisis when a quick trade is executed.
-	
-	Figures \ref{fig:fig112} to \ref{fig:fig115} representing the Sharpe ratios patterns for each of the strategies are shown in the appendix. We can detect similar patterns to Figures \ref{fig:fig108} to \ref{fig:fig111}.
-	
-	
-%		\begin{figure}[H]
-%		\centering
-%		\includegraphics[scale=0.6]{fig6_p1_rev.pdf}
-%		\caption{Average excess returns of pairs trading strategies before costs and with no delay for each sub-period}
-%		\%\caption*{comments}
-%		\label{fig:fig102}
-%	\end{figure}
-%	
-%	\begin{figure}[H]
-%		\centering
-%		\includegraphics[scale=0.6]{fig7_p1_rev.pdf}
-%		\caption{Average excess returns of pairs trading strategies after costs and with no delay for each sub-period}
-%		\%\caption*{comments}
-%		\label{fig:fig103}
-%	\end{figure}
-%	
-%	\begin{figure}[H]
-%		\centering
-%		\includegraphics[scale=0.6]{fig8_p1_rev.pdf}
-%		\caption{Average excess returns of pairs trading strategies before costs and with one-day waiting period for each sub-period}
-%		\%\caption*{comments}
-%		\label{fig:fig104}
-%	\end{figure}
-%
-%\begin{figure}[H]
-%	\centering
-%	\includegraphics[scale=0.6]{fig9_p1_rev.pdf}
-%	\caption{Average excess returns of pairs trading strategies after costs and with one-day waiting period for each sub-period}
-%	\%\caption*{comments}
-%	\label{fig:fig105}
-%\end{figure}
-	
-	
-	Finally, Tables \ref{tab:table121} to \ref{tab:table125} present the bootstrap $p$-values for testing the null hypotheses represented by (\ref{eq:eq153}) over the sub-periods.
-	
-	As we can observe, the results in the first sub-period (July 1991 to December 1999) reinforce some patterns seen in Figures \ref{fig:fig102} to \ref{fig:fig105}, eespecially when both constraints are not active on committed capital and before delay (significant at least at 5\\%) on fully invested capital. It is also clear the significant relative poor performance in the second subperiod (January 2000 to December 2002), eespecially when compared to the 2.0$\sigma$ trigger point, at least at 10\\%.
-	
-	For the next subperiod (January 2003 to June 2007) the copula strategy shows a significant better performance for Top 20 pairs, before costs and with no delay to start the positions. During the global financial crisis (July 2007 to June 2009) we do not find any significative superior performance of any of the strategies. Lastly, we find some evidences that the copula method outperforms the distance strategies in the last subperiod (July 2009 to December 2015) at least before costs.
-	
-	\medskip
-	
-	\begin{threeparttable}[H]
-		\centering \scriptsize
-		\caption{Bootstrap p-values computed from B=10,000 replications for testing the null hypotheses of equality of the average excess returns and Sharpe Ratios over the period between July 1991 and December 1999.}
-		\begin{tabularx}{\textwidth}{@{\extracolsep{\fill}}lllllll@{}}
-			\toprule
-			& & \multicolumn{2}{c}{Copula vs Distance (0.75$\sigma$)} & \multicolumn{1}{c}{} & \multicolumn{2}{c}{Copula vs Distance (2.0$\sigma$)} \\
-			\cmidrule{3-4}  \cmidrule{6-7}
-			\multicolumn{1}{c}{Scenario} & & \multicolumn{1}{c}{Return} & Sharpe Ratio &       & \multicolumn{1}{c}{Return}& Sharpe Ratio \\
-			\midrule
-			& \multicolumn{6}{c}{Section 1: Committed Capital} \\
-			\midrule
-			d0p5c0 & & 0.2862 & $0.0174^{**}(>)$ &       & $0.0138^{**}(>)$ & $0.0016^{***}(>)$ \\
-			d0p5c1 & & 0.7096 & 0.1466 &       & 0.1244 & $0.0224^{**}(>)$ \\
-			d1p5c0 & & 0.5002 & 0.9110 &       & 0.7814 & 0.5614 \\
-			d1p5c1 & & 0.1574 & 0.2648 &       & 0.5350 & 0.6320 \\
-			d0p20c0 & & 0.1134 & $0.0000^{***}(>)$ &       & $0.0008^{***}(>)$ & $0.0000^{***}(>)$ \\
-			d0p20c1 & & 0.5824 & $0.0136^{**}(>)$ &       & $0.0410^{**}(>)$ & $0.0004^{***}(>)$ \\
-			d1p20c0 & & 0.7586 & $0.0830^{*}(>)$ &       & 0.1308 & $0.0138^{**}(>)$ \\
-			d1p20c1 & & 0.4178 & 0.9110 &       & 0.8390 & 0.4142 \\
-			d0p101c0 & & 0.7660 & 0.3432 &       & 0.9880 & 0.3018 \\
-			d0p101c1 & & 0.3328 & 0.9242 &       & 0.4166 & 0.9380 \\
-			d1p101c0 & & 0.8996 & 0.1396 &       & 0.5912 & $0.0912^{*}(>)$ \\
-			d1p101c1 & & 0.5790 & 0.6530 &       & 0.7846 & 0.5520 \\
-			\midrule
-			& \multicolumn{6}{c}{Section 2:  Fully Invested Capital } \\
-			\midrule
-			d0p5c0 & & $0.0030^{***}(>)$ & $0.0400^{**}(>)$ &       & $0.0004^{***}(>)$ & $0.0036^{***}(>)$ \\
-			d0p5c1 & & $0.0430^{**}(>)$ & 0.2024 &       & $0.0176^{**}(>)$ & $0.0412^{**}(>)$ \\
-			d1p5c0 & & 0.8012 & 0.9528 &       & 0.8346 & 0.9774 \\
-			d1p5c1 & & 0.7674 & 0.6314 &       & 0.7062 & 0.5830 \\
-			d0p20c0 & & $0.0000^{***}(>)$ & $0.0000^{***}(>)$ &       & $0.0000^{***}(>)$ & $0.0000^{***}(>)$ \\
-			d0p20c1 & & $0.0014^{***}(>)$ & $0.0230^{**}(>)$ &       & $0.0010^{***}(>)$ & $0.0042^{***}(>)$ \\
-			d1p20c0 & & $0.0324^{**}(>)$ & 0.2132 &       & $0.0890^{*}(>)$ & 0.3692 \\
-			d1p20c1 & & 0.2262 & 0.5686 &       & 0.4640 & 0.8886 \\
-			d0p101c0 & & $0.0434^{**}(>)$ & 0.5282 &       & 0.1272 & 0.4340 \\
-			d0p101c1 & & 0.4176 & 0.7758 &       & 0.6910 & 0.8386 \\
-			d1p101c0 & & $0.0378^{**}(>)$ & 0.4352 &       & $0.0470^{**}(>)$ & 0.2574 \\
-			d1p101c1 & & 0.1708 & 0.7622 &       & 0.1924 & 0.5740 \\
-			\bottomrule
-		\end{tabularx}\%
-		\begin{tablenotes}
-			\item \textit{Note:} \scriptsize This table reports the bootstrap p-values for testing the null hypothesis of equality of the average excess returns and the Sharpe Ratios of Copula and distance strategies for the Top 5, 20 and 101-120 pairs over the period between July 1991 and December 1999 (2149 observations). The column labeled Scenario contains symbol labels for trading with no delay or one day waiting period (d0 and d1, respectively), for Top 5, 20 and 101-120 pairs (p5, p20 and p101, respectively) and before or after costs (c0 and c1, respectively). The symbol labels (>) and (<) indicate that the respective null hypothesis is rejected in favor of the alternative and that the average excess returns and/or the Sharpe Ratio of the Copula strategy are found greater or less than the the average excess returns and/or the Sharpe Ratio of the distance strategies, respectively.
-			\item \scriptsize $^{\ast\ast\ast}$, $^{\ast\ast}$, $^{\ast}$  significant at 1\\%, 5\\% and 10\\% levels, respectively.
-		\end{tablenotes}
-		\label{tab:table121}\%
-	\end{threeparttable}\%
-	
-	\medskip
-	
-	\begin{threeparttable}[H]
-		\centering \scriptsize
-		\caption{Bootstrap p-values computed from B=10,000 replications for testing the null hypotheses of equality of the average excess returns and Sharpe Ratios over the period between January 2000 and December 2002.}
-		\begin{tabularx}{\textwidth}{@{\extracolsep{\fill}}lllllll@{}}
-			\toprule
-			& & \multicolumn{2}{c}{Copula vs Distance (0.75$\sigma$)} & \multicolumn{1}{c}{} & \multicolumn{2}{c}{Copula vs Distance (2.0$\sigma$)} \\
-			\cmidrule{3-4}  \cmidrule{6-7}
-			\multicolumn{1}{c}{Scenario} & & \multicolumn{1}{c}{Return} & Sharpe Ratio &       & \multicolumn{1}{c}{Return}& Sharpe Ratio \\
-			\midrule
-			& \multicolumn{6}{c}{Section 1: Committed Capital} \\
-			\midrule
-			d0p5c0 & & 0.3914 & 0.4984 &       & $0.0806^{*}(<)$ & 0.1396 \\
-			d0p5c1 & & 0.2764 & 0.3224 &       & $0.0452^{**}(<)$ & $0.0740^{*}(<)$ \\
-			d1p5c0 & & 0.3354 & 0.3612 &       & 0.1222 & 0.1504 \\
-			d1p5c1 & & 0.2354 & 0.2236 &       & $0.0740^{*}(<)$ & $0.0862^{*}(<)$ \\
-			d0p20c0 & & 0.1446 & 0.3032 &       & 0.1396 & 0.2470 \\
-			d0p20c1 & & $0.0720^{*}(<)$ & 0.1186 &       & $0.0588^{*}(<)$ & $0.0916^{*}(<)$ \\
-			d1p20c0 & & $0.0932^{*}(<)$ & $0.0986^{*}(<)$ &       & $0.0584^{*}(<)$ & $0.0660^{*}(<)$ \\
-			d1p20c1 & & $0.0392^{**}(<)$ & $0.0262^{**}(<)$ &       & $0.0146^{**}(<)$ & $0.0140^{**}(<)$ \\
-			d0p101c0 & & $0.0610^{*}(<)$ & 0.2566 &       & $0.0454^{**}(<)$ & 0.1388 \\
-			d0p101c1 & & $0.0388^{**}(<)$ & 0.1282 &       & $0.0222^{**}(<)$ & $0.0616^{*}(<)$ \\
-			d1p101c0 & & $0.0902^{*}(<)$ & 0.2620 &       & 0.1224 & 0.2444 \\
-			d1p101c1 & & $0.0458^{**}(<)$ & 0.1188 &       & $0.0582^{*}(<)$ & 0.1132 \\
-			\midrule
-			& \multicolumn{6}{c}{Section 2:  Fully Invested Capital } \\
-			\midrule
-			d0p5c0 & & 0.6840 & 0.5996 &       & $0.0606^{*}(<)$ & $0.0572^{*}(<)$ \\
-			d0p5c1 & & 0.4476 & 0.3980 &       & $0.0226^{**}(<)$ & $0.0206^{**}(<)$ \\
-			d1p5c0 & & 0.2320 & 0.2652 &       & $0.0986^{*}(<)$ & $0.0882^{*}(<)$ \\
-			d1p5c1 & & 0.1588 & 0.1826 &       & $0.0614^{*}(<)$ & $0.0540^{*}(<)$ \\
-			d0p20c0 & & 0.3580 & 0.1770 &       & 0.2706 & 0.1848 \\
-			d0p20c1 & & $0.0994^{*}(<)$ & $0.0544^{*}(<)$ &       & $0.0750^{*}(<)$ & $0.0500^{**}(<)$ \\
-			d1p20c0 & & 0.2360 & 0.1310 &       & 0.1980 & 0.1156 \\
-			d1p20c1 & & 0.1212 & $0.0792^{*}(<)$ &       & $0.0898^{*}(<)$ & $0.0588^{*}(<)$ \\
-			d0p101c0 & & 0.2328 & $0.0480^{**}(<)$ &       & $0.0438^{**}(<)$ & $0.0118^{**}(<)$ \\
-			d0p101c1 & & $0.0786^{*}(<)$ & $0.0168^{**}(<)$ &       & $0.0106^{**}(<)$ & $0.0020^{***}(<)$ \\
-			d1p101c0 & & 0.3024 & $0.0914^{*}(<)$ &       & 0.2072 & $0.0864^{*}(<)$ \\
-			d1p101c1 & & 0.1916 & $0.0538^{*}(<)$ &       & 0.1254 & $0.0524^{*}(<)$ \\
-			\bottomrule
-		\end{tabularx}\%
-		\begin{tablenotes}
-			\item \textit{Note:} \scriptsize This table reports the bootstrap p-values for testing the null hypothesis of equality of the average excess returns and the Sharpe Ratios of Copula and distance strategies for the Top 5, 20 and 101-120 pairs over the period between January 2000 and December 2002 (752 observations). The column labeled Scenario contains symbol labels for trading with no delay or one day waiting period (d0 and d1, respectively), for Top 5, 20 and 101-120 pairs (p5, p20 and p101, respectively) and before or after costs (c0 and c1, respectively). The symbol labels (>) and (<) indicate that the respective null hypothesis is rejected in favor of the alternative and that the average excess returns and/or the Sharpe Ratio of the Copula strategy are found greater or less than the the average excess returns and/or the Sharpe Ratio of the distance strategies, respectively.
-			\item \scriptsize $^{\ast\ast\ast}$, $^{\ast\ast}$, $^{\ast}$  significant at 1\\%, 5\\% and 10\\% levels, respectively.
-		\end{tablenotes}
-		\label{tab:table122}\%
-	\end{threeparttable}\%
-	
-	\medskip
-	
-	\begin{threeparttable}[H]
-		\centering \scriptsize
-		\caption{Bootstrap p-values computed from B=10,000 replications for testing the null hypotheses of equality of the average excess returns and Sharpe Ratios over the period between January 2003 and June 2007.}
-		\begin{tabularx}{\textwidth}{@{\extracolsep{\fill}}lllllll@{}}
-			\toprule
-			& & \multicolumn{2}{c}{Copula vs Distance (0.75$\sigma$)} & \multicolumn{1}{c}{} & \multicolumn{2}{c}{Copula vs Distance (2.0$\sigma$)} \\
-			\cmidrule{3-4}  \cmidrule{6-7}
-			\multicolumn{1}{c}{Scenario} & & \multicolumn{1}{c}{Return} & Sharpe Ratio &       & \multicolumn{1}{c}{Return}& Sharpe Ratio \\
-			\midrule
-			& \multicolumn{6}{c}{Section 1: Committed Capital} \\
-			\midrule
-			d0p5c0 & & 0.9748 & 0.7072 &       & 0.8790 & 0.9404 \\
-			d0p5c1 & & 0.5484 & 0.6316 &       & 0.3502 & 0.4134 \\
-			d1p5c0 & & 0.5212 & 0.5762 &       & 0.3666 & 0.4186 \\
-			d1p5c1 & & 0.1936 & 0.1368 &       & $0.0924^{*}(<)$ & $0.0764^{*}(<)$ \\
-			d0p20c0 & & $0.0480^{**}(>)$ & $0.0092^{***}(>)$ &       & $0.0394^{**}(>)$ & $0.0110^{**}(>)$ \\
-			d0p20c1 & & 0.3402 & 0.1932 &       & 0.3954 & 0.2632 \\
-			d1p20c0 & & 0.2902 & 0.1692 &       & 0.3224 & 0.2310 \\
-			d1p20c1 & & 0.9366 & 0.9652 &       & 0.8420 & 0.8446 \\
-			d0p101c0 & & 0.7730 & 0.4542 &       & 0.9202 & 0.8138 \\
-			d0p101c1 & & 0.6774 & 0.7870 &       & 0.3060 & 0.3956 \\
-			d1p101c0 & & 0.6842 & 0.4028 &       & 0.9522 & 0.6618 \\
-			d1p101c1 & & 0.7424 & 0.8132 &       & 0.4266 & 0.5018 \\
-			\midrule
-			& \multicolumn{6}{c}{Section 2:  Fully Invested Capital } \\
-			\midrule
-			d0p5c0 & & 0.5566 & 0.7082 &       & 0.8444 & 0.7436 \\
-			d0p5c1 & & 0.7146 & 0.6776 &       & 0.2672 & 0.2368 \\
-			d1p5c0 & & 0.9618 & 0.9348 &       & 0.4078 & 0.3650 \\
-			d1p5c1 & & 0.5844 & 0.6054 &       & 0.1768 & 0.1672 \\
-			d0p20c0 & & $0.0070^{***}(>)$ & $0.0326^{**}(>)$ &       & $0.0236^{**}(>)$ & $0.0702^{*}(>)$ \\
-			d0p20c1 & & 0.2512 & 0.3274 &       & 0.4532 & 0.5844 \\
-			d1p20c0 & & 0.3770 & 0.4910 &       & 0.5956 & 0.7804 \\
-			d1p20c1 & & 0.9174 & 0.9072 &       & 0.7832 & 0.7242 \\
-			d0p101c0 & & 0.2632 & 0.4464 &       & 0.6036 & 0.8858 \\
-			d0p101c1 & & 0.9454 & 0.8394 &       & 0.4932 & 0.3762 \\
-			d1p101c0 & & 0.9310 & 0.8746 &       & 0.8500 & 0.6382 \\
-			d1p101c1 & & 0.5476 & 0.4854 &       & 0.3678 & 0.2976 \\
-			\bottomrule
-		\end{tabularx}\%
-		\begin{tablenotes}
-			\item \textit{Note:} \scriptsize This table reports the bootstrap p-values for testing the null hypothesis of equality of the average excess returns and the Sharpe Ratios of Copula and distance strategies for the Top 5, 20 and 101-120 pairs over the period between January 2003 and June 2007 (1131 observations). The column labeled Scenario contains symbol labels for trading with no delay or one day waiting period (d0 and d1, respectively), for Top 5, 20 and 101-120 pairs (p5, p20 and p101, respectively) and before or after costs (c0 and c1, respectively). The symbol labels (>) and (<) indicate that the respective null hypothesis is rejected in favor of the alternative and that the average excess returns and/or the Sharpe Ratio of the Copula strategy are found greater or less than the the average excess returns and/or the Sharpe Ratio of the distance strategies, respectively.
-			\item \scriptsize $^{\ast\ast\ast}$, $^{\ast\ast}$, $^{\ast}$  significant at 1\\%, 5\\% and 10\\% levels, respectively.
-		\end{tablenotes}
-		\label{tab:table123}\%
-	\end{threeparttable}\%
-	
-	\medskip
-	
-	\begin{threeparttable}[H]
-		\centering \scriptsize
-		\caption{Bootstrap p-values computed from B=10,000 replications for testing the null hypotheses of equality of the average excess returns and Sharpe Ratios over the period between July 2007 and June 2009.}
-		\begin{tabularx}{\textwidth}{@{\extracolsep{\fill}}lllllll@{}}
-			\toprule
-			& & \multicolumn{2}{c}{Copula vs Distance (0.75$\sigma$)} & \multicolumn{1}{c}{} & \multicolumn{2}{c}{Copula vs Distance (2.0$\sigma$)} \\
-			\cmidrule{3-4}  \cmidrule{6-7}
-			\multicolumn{1}{c}{Scenario} & & \multicolumn{1}{c}{Return} & Sharpe Ratio &       & \multicolumn{1}{c}{Return}& Sharpe Ratio \\
-			\midrule
-			& \multicolumn{6}{c}{Section 1: Committed Capital} \\
-			\midrule
-			d0p5c0 & & 0.5652 & 0.8164 &       & 0.9840 & 0.9146 \\
-			d0p5c1 & & 0.4254 & 0.6034 &       & 0.8110 & 0.8654 \\
-			d1p5c0 & & 0.3444 & 0.4184 &       & 0.9582 & 0.9562 \\
-			d1p5c1 & & 0.2780 & 0.3120 &       & 0.7614 & 0.7518 \\
-			d0p20c0 & & 0.5274 & 0.2944 &       & 0.3358 & 0.2324 \\
-			d0p20c1 & & 0.7578 & 0.5466 &       & 0.5816 & 0.4778 \\
-			d1p20c0 & & 0.3778 & 0.3880 &       & 0.6648 & 0.6528 \\
-			d1p20c1 & & 0.2318 & 0.2058 &       & 0.4030 & 0.3716 \\
-			d0p101c0 & & 0.5994 & 0.5164 &       & 0.5686 & 0.5222 \\
-			d0p101c1 & & 0.7750 & 0.7358 &       & 0.7444 & 0.7314 \\
-			d1p101c0 & & 0.3762 & 0.3534 &       & 0.5846 & 0.5588 \\
-			d1p101c1 & & 0.2728 & 0.2280 &       & 0.3586 & 0.3208 \\
-			\midrule
-			& \multicolumn{6}{c}{Section 2:  Fully Invested Capital } \\
-			\midrule
-			d0p5c0 & & 0.4966 & 0.7866 &       & 0.3286 & 0.4472 \\
-			d0p5c1 & & 0.7314 & 0.9780 &       & 0.5076 & 0.6158 \\
-			d1p5c0 & & 0.7524 & 0.6304 &       & 0.4776 & 0.4980 \\
-			d1p5c1 & & 0.6208 & 0.5276 &       & 0.6150 & 0.6194 \\
-			d0p20c0 & & 0.7252 & 0.9064 &       & 0.8984 & 0.9934 \\
-			d0p20c1 & & 0.8658 & 0.7756 &       & 0.7650 & 0.7102 \\
-			d1p20c0 & & 0.6632 & 0.5838 &       & 0.7268 & 0.6896 \\
-			d1p20c1 & & 0.4630 & 0.4450 &       & 0.5192 & 0.5156 \\
-			d0p101c0 & & 0.8368 & 0.8646 &       & 0.8282 & 0.8428 \\
-			d0p101c1 & & 0.8612 & 0.8820 &       & 0.8558 & 0.8566 \\
-			d1p101c0 & & 0.7516 & 0.7000 &       & 0.9924 & 0.9802 \\
-			d1p101c1 & & 0.5740 & 0.5582 &       & 0.7836 & 0.8258 \\
-			\bottomrule
-		\end{tabularx}\%
-		\begin{tablenotes}
-			\item \textit{Note:} \scriptsize This table reports the bootstrap p-values for testing the null hypothesis of equality of the average excess returns and the Sharpe Ratios of Copula and distance strategies for the Top 5, 20 and 101-120 pairs over the period between July 2007 and June 2009 (504 observations). The column labeled Scenario contains symbol labels for trading with no delay or one day waiting period (d0 and d1, respectively), for Top 5, 20 and 101-120 pairs (p5, p20 and p101, respectively) and before or after costs (c0 and c1, respectively). The symbol labels (>) and (<) indicate that the respective null hypothesis is rejected in favor of the alternative and that the average excess returns and/or the Sharpe Ratio of the Copula strategy are found greater or less than the the average excess returns and/or the Sharpe Ratio of the distance strategies, respectively.
-			\item \scriptsize $^{\ast\ast\ast}$, $^{\ast\ast}$, $^{\ast}$  significant at 1\\%, 5\\% and 10\\% levels, respectively.
-		\end{tablenotes}
-		\label{tab:table124}\%
-	\end{threeparttable}\%
-	
-	\medskip
-	
-	\begin{threeparttable}[H]
-		\centering \scriptsize
-		\caption{Bootstrap p-values computed from B=10,000 replications for testing the null hypotheses of equality of the average excess returns and Sharpe Ratios over the period between July 2009 and December 2015.}
-		\begin{tabularx}{\textwidth}{@{\extracolsep{\fill}}lllllll@{}}
-			\toprule
-			& & \multicolumn{2}{c}{Copula vs Distance (0.75$\sigma$)} & \multicolumn{1}{c}{} & \multicolumn{2}{c}{Copula vs Distance (2.0$\sigma$)} \\
-			\cmidrule{3-4}  \cmidrule{6-7}
-			\multicolumn{1}{c}{Scenario} & & \multicolumn{1}{c}{Return} & Sharpe Ratio &       & \multicolumn{1}{c}{Return}& Sharpe Ratio \\
-			\midrule
-			& \multicolumn{6}{c}{Section 1: Committed Capital} \\
-			\midrule
-			d0p5c0 & & 0.2060 & $0.0994^{*}(>)$ &       & $0.0710^{*}(>)$ & $0.0406^{**}(>)$ \\
-			d0p5c1 & & 0.5712 & 0.4710 &       & 0.3468 & 0.3094 \\
-			d1p5c0 & & $0.0830^{*}(>)$ & $0.0276^{**}(>)$ &       & $0.0182^{**}(>)$ & $0.0060^{***}(>)$ \\
-			d1p5c1 & & 0.3084 & 0.1866 &       & 0.1264 & $0.0928^{*}(>)$ \\
-			d0p20c0 & & 0.5594 & 0.2600 &       & 0.4474 & 0.2568 \\
-			d0p20c1 & & 0.5856 & 0.6648 &       & 0.6202 & 0.6932 \\
-			d1p20c0 & & 0.2160 & $0.0446^{**}(>)$ &       & 0.1094 & $0.0388^{**}(>)$ \\
-			d1p20c1 & & 0.9232 & 0.6896 &       & 0.7646 & 0.6118 \\
-			d0p101c0 & & 0.4992 & 0.5374 &       & 0.5090 & 0.5412 \\
-			d0p101c1 & & 0.7700 & 0.4760 &       & 0.6410 & 0.4494 \\
-			d1p101c0 & & $0.0680^{*}(>)$ & $0.0540^{*}(>)$ &       & $0.0686^{*}(>)$ & $0.0552^{*}(>)$ \\
-			d1p101c1 & & 0.3662 & 0.4770 &       & 0.4906 & 0.5746 \\
-			\midrule
-			& \multicolumn{6}{c}{Section 2:  Fully Invested Capital } \\
-			\midrule
-			d0p5c0 & & $0.0378^{**}(>)$ & $0.0504^{*}(>)$ &       & $0.0678^{*}(>)$ & $0.0890^{*}(>)$ \\
-			d0p5c1 & & 0.2752 & 0.2888 &       & 0.4030 & 0.4274 \\
-			d1p5c0 & & 0.1300 & 0.1436 &       & $0.0890^{*}(>)$ & 0.1072 \\
-			d1p5c1 & & 0.3210 & 0.3274 &       & 0.2392 & 0.2546 \\
-			d0p20c0 & & $0.0360^{**}(>)$ & 0.1400 &       & 0.1152 & 0.2344 \\
-			d0p20c1 & & 0.7692 & 0.9662 &       & 0.9024 & 0.7640 \\
-			d1p20c0 & & 0.1242 & 0.2768 &       & 0.1948 & 0.3362 \\
-			d1p20c1 & & 0.5508 & 0.6892 &       & 0.7484 & 0.8818 \\
-			d0p101c0 & & 0.8060 & 0.9630 &       & 0.8984 & 0.9774 \\
-			d0p101c1 & & $0.0850^{*}(<)$ & 0.2150 &       & 0.1242 & 0.1908 \\
-			d1p101c0 & & 0.5292 & 0.4558 &       & 0.5538 & 0.5148 \\
-			d1p101c1 & & 0.8936 & 0.8688 &       & 0.8632 & 0.9894 \\
-			\bottomrule
-		\end{tabularx}\%
-		\begin{tablenotes}
-			\item \textit{Note:} \scriptsize This table reports the bootstrap p-values for testing the null hypothesis of equality of the average excess returns and the Sharpe Ratios of Copula and distance strategies for the Top 5, 20 and 101-120 pairs over the period between July 2009 and December 2015 (1637 observations). The column labeled Scenario contains symbol labels for trading with no delay or one day waiting period (d0 and d1, respectively), for Top 5, 20 and 101-120 pairs (p5, p20 and p101, respectively) and before or after costs (c0 and c1, respectively). The symbol labels (>) and (<) indicate that the respective null hypothesis is rejected in favor of the alternative and that the average excess returns and/or the Sharpe Ratio of the Copula strategy are found greater or less than the the average excess returns and/or the Sharpe Ratio of the distance strategies, respectively.
-			\item \scriptsize $^{\ast\ast\ast}$, $^{\ast\ast}$, $^{\ast}$  significant at 1\\%, 5\\% and 10\\% levels, respectively.
-		\end{tablenotes}
-		\label{tab:table125}\%
-	\end{threeparttable}\%
 	
 	\vspace{1.0cm}
 	
