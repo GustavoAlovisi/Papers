@@ -13,6 +13,7 @@
 \usepackage{lmodern,caption}
 \usepackage{booktabs,array}
 \usepackage{epstopdf}
+\usepackage[figuresright]{rotating}
 \DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
 \usepackage{array,longtable}
 \usepackage[top=3cm, bottom=2cm, left=3cm, right=2cm]{geometry}
@@ -99,7 +100,7 @@
 	\makeatother
 	
 	\title{Performance of Pairs Trading on the S\&P 500 using Distance and Mixed Copula models}
-	\author[]{ Fernando A. Boeira Sabino da Silva\thanks{\texttt{Department of Statistics, Federal University of Rio Grande do Sul, Porto Alegre, RS 91509-900, Brazil, e-mail: fsabino@ufrgs.br}; Corresponding author.}}
+	\author[]{ Fernando A. Boeira-Silva\thanks{\texttt{Department of Statistics, Federal University of Rio Grande do Sul, Porto Alegre, RS 91509-900, Brazil, e-mail: fsabino@ufrgs.br}; Corresponding author.}}
 	\author[]{Flavio A. Ziegelmann\thanks{\texttt{Department of Statistics, Federal University of Rio Grande do Sul, Porto Alegre, RS 91509-900, Brazil, e-mail: flavioz@ufrgs.br}}}
 	\author[]{João F. Caldeira \thanks{\texttt{Department of Economics, Federal University of Rio Grande do Sul, Porto Alegre, RS 90040-000, Brazil, e-mail: joao.caldeira@ufrgs.br}}\thanks{We thank Cristina Tessari for her suggestions and for helping us obtaining the data we use.}}
 	\affil[]{}
@@ -138,42 +139,40 @@
 	
 	The performance of the distance method has been measured thoroughly using different data sets and financial markets \citep{ggr06,p09,df10,df12,bv12,cm13,rf15}. In an efficient market, strategies based on mean-reversion concepts should not generate consistent profits. However, \citet*{ggr06} find that pairs trading generates consistent statistical arbitrage profits in the U.S. equity market during 1962-2002 using CSRP data, although the profitability declines over the period. They obtain a mean excess return above 11\% a year during the reported period. The authors attribute the abnormal returns to a non-identified systematic risk factor. They support their view showing that there is a high degree of correlation between the excess returns of no overlapping top pairs even after accounting for risk factors from an augmented version of \citet*{ff93}'s three factors. \citet*{df10} extend their work expanding the data sample and also find a declining trend - 33 basis points (bps) mean excess return per month for 2003-09 versus 124 basis points mean excess return per month for 1962-88. \citet*{df12} show that the distance method is unprofitable after 2002 when trading costs are considered. \citet*{bv12} test the profitability of pairs trading under different weighting structures and trade initiation conditions using data from the Finnish stock market. They also find that their proposed strategy is profitable even after initiating the positions one day after the signal. \citet*{rf15} evaluates distance, cointegration and copula methods using a long-term comprehensive data-set spanning over five decades. They find that the copula method has a weaker performance than the distance and cointegration methods in terms of excess returns and various risk-adjusted metrics.
 	
-The distance strategy \citep{ggr06} uses the distance between normalized security prices to capture the degree of mispricing between stocks. According to \citet*{xie14} the distance method has a multivariate normal nature since it assumes a symmetric distribution of the spread between the normalized prices of the stocks within a pair and it uses a single distance measure, which can be seen as an alternative measurement of the linear association, to describe the relationship between two stocks. We know that if the series have joint normal distribution, then the linear correlation fully describes the dependence between securities. However, a main feature of joint distributions characterized by tail dependence is the presence of heavy and possibly asymmetric tails. it is well known that the dependence between two securities are rarely jointly normal and thus the traditional hypothesis of (multivariate) gaussianity is completely inadequate  \citep{campbell97,cont01,ane03,mcneil15}.  Therefore, a single distance measure may fail to catch the dynamics of the spread between a pair of securities, and thus initiate and close the trades at non-optimal positions.
+The distance strategy \citep{ggr06} uses the distance between normalized security prices to capture the degree of mispricing between stocks. According to \citet*{xie14} the distance method has a multivariate normal nature since it assumes a symmetric distribution of the spread between the normalized prices of the stocks within a pair and it uses a single distance measure, which can be seen as an alternative measurement of the linear association, to describe the relationship between two stocks. We know that if the series have joint normal distribution, then the linear correlation fully describes the dependence between securities. However, it is well known that the dependence between two securities are rarely jointly normal and thus the traditional hypothesis of (multivariate) gaussianity is completely inadequate\footnote{A main feature of joint distributions characterized by tail dependence is the presence of heavy and possibly asymmetric tails.} \citep{campbell97,cont01,ane03,mcneil15}.  Therefore, a single distance measure may fail to catch the dynamics of the spread between a pair of securities, and thus initiate and close the trades at non-optimal positions.
 	
-Due to the complex dependence patterns of financial markets, a high-dimensional multivariate approach to tail dependence analysis is surely more insightful than assuming multivariate normal returns. Since its flexibility, copulas are able to model better the empirically verified regularities normally attributed to multivariate financial returns: (1) asymmetric conditional variance with higher volatility for large negative returns and smaller volatility for positive returns \citep{h98}; (2) conditional skewness \citep{ait01,chen01,patton01}; (3) Leptokurdicity \citep{t01,andreou01}; and (4) nonlinear temporal dependence \citep{cont01,campbell97}. Thus, to address these issues, \citet*{lw2013} propose a pairs trading strategy based based on two-dimensional copulas to overcome the limitations of the distance method. However, they evaluate its performance using only three pre-selected pairs over a period of less than three years. \citet*{xie14} employ a similar methodology over a ten-year period with 89 stocks. Both studies find that the performance of copula strategy is superior to the distance strategy. \citet*{xw13} set out the distance and cointegration approaches as special cases of copulas under certain regularity conditions. The authors also recommend further research on how to incorporate copulas in pairs selection. It is suggested there is a possibility of larger profits in terms of returns since copulas deals better with non-linear dependency structures. The approach may sound plausible but it may not lead to a viable standalone trading quantitative strategy due to issues as overfitting, hence do not justifying the marginal performance improvement given by a more complex model. As cited above \citet*{rf15} use a more comprehensive data set consisting of all stocks in the US market from 1962 to 2014. Meanwhile, they find an opposite result. Particularly, the distance, cointegration and Copula-GARCH strategies show a mean monthly excess return of 36, 33, and 5 bps after transaction costs and 88, 83, and 43 bps before transaction costs.
+Due to the complex dependence patterns of financial markets, a high-dimensional multivariate approach to tail dependence analysis is surely more insightful than assuming multivariate normal returns. Due to its flexibility, copulas are able to model better the empirically verified regularities normally attributed to multivariate financial returns: (1) asymmetric conditional variance with higher volatility for negative returns than for positive returns \citep{h98}; (2) conditional skewness \citep{ait01,chen01,patton01}; (3) Leptokurdicity \citep{t01,andreou01}; and (4) nonlinear temporal dependence \citep{cont01,campbell97}. Thus, to address these issues, \citet*{lw2013} propose a pairs trading strategy based on two-dimensional copulas. However, they evaluate its performance using only three pre-selected pairs over a period of less than three years. \citet*{xie14} employ a similar methodology over a ten-year period with 89 stocks. Both studies find that the performance of copula strategy is superior to the distance strategy. \citet*{xw13} set out the distance and cointegration approaches as special cases of copulas under certain regularity conditions. The authors also recommend further research on how to incorporate copulas in pairs selection. It is suggested there is a possibility of larger profits in terms of returns since copulas deal better with non-linear dependence structures. The approach may sound plausible but it may not lead to a viable standalone trading quantitative strategy due to overfitting issues, hence not justifying the marginal performance improvement given by a more complex model. As cited above \citet*{rf15} use a more comprehensive data set consisting of all stocks in the US market from 1962 to 2014. Meanwhile, they find an opposite result. Particularly, the distance, cointegration and Copula-GARCH strategies show a mean monthly excess return of 36, 33, and 5 bps after transaction costs and 88, 83, and 43 bps before transaction costs.
 
-The main novel contribution of this paper is to employ a mixed copula model in order to capture linear/nonlinear associations and at the same time cover a wider range of possible dependencies structures. We aim to assess if build a more sophisticated model can take advantage of any market frictions/anomalies uncovering relationships and patterns. We find that the mixture copulas are selected for more than 90\% of the pairs in the scenarios investigated and that the strategy is able 
+The main novel contribution of our paper is to employ a mixed copula model in order to capture linear/nonlinear associations and at the same time cover a wider range of possible dependence structures. We aim to assess whether build a more sophisticated model can take advantage of any market frictions/anomalies uncovering relationships and patterns. We find that the mixture copula strategy is able 
 to generate a higher mean excess return than the distance method when the 
-number of trading signals is equiparable. We also want to investigate the sensitivity of copula method to different opening thresholds and how trading costs and different measures for pairs selection affect the profitability of these strategies.
+number of trading signals is equiparable. We also want to investigate the sensitivity of the copula method to different opening thresholds and how trading costs and different measures for pairs selection affect the profitability of these strategies.
 
- Our strategy consists in fitting, initially, the daily returns of the formation period using an ARMA(1,1)-GARCH(1,1) to model the marginals. For each pair, we test the following elliptical and Archimedean copula functions: Gaussian, t, Clayton, Frank, Gumbel, one Archimedean mixture copula consisting of the optimal linear combination of Clayton, Frank and Gumbel copulas and one mixture copula consisting of the optimal linear combination of Clayton, t and Gumbel copulas. Following \citet*{ggr06} we calculate returns using two weighting schemes: the return on committed capital and on fully invested capital. The former commits\footnote{We assume zero return for non-open pairs, although in practice one could earn returns on idle capital.} equal amounts of capital to each one of the pairs even if the pair has not been traded\footnote{The commited capital is considered more realistic as it takes into account the opportunity cost of the capital that has been allocated for trading.}, whereas the latter divides all capital between the pairs that are open.
+ Our strategy consists in fitting, initially, the daily returns of the formation period using an ARMA(1,1)-GARCH(1,1) to model the marginals. For each pair, we test the following elliptical and Archimedean copula functions: Gaussian, t, Clayton, Frank, Gumbel, one Archimedean mixture copula consisting of the optimal linear combination of Clayton, Frank and Gumbel copulas and one mixture copula consisting of the optimal linear combination of Clayton, t and Gumbel copulas. Following \citet*{ggr06} we calculate returns using two weighting schemes: the return on committed capital and on fully invested capital. The former commits\footnote{We assume zero return for non-open pairs, although in practice one could earn returns on idle capital.} equal amounts of capital to each one of the pairs even if the pair has not been traded\footnote{The commited capital is considered more realistic as it takes into account the opportunity cost of the capital that has been allocated for trading.}, whereas the latter divides all capital among the pairs that are open.
 	
-We compare the performance out-of-sample of the strategies using a variety of criteria, all of which are computed using a rolling period procedure similar to that used by \citet*{ggr06} with the exception that the time horizon of formation and trading periods are rolled forward by six months as in \citet*{bv12}. The main criteria we focus are: (1) mean and cumulative excess return, (2) risk-adjusted metrics as Sharpe and Sortino ratios, (3) \% of negative trades, (4) t-values for various risk factors, (5) maximum drawdown between two consecutive days and between two days within a period of maximum six month and (6) total number of pairs opened.
+We compare the performance out-of-sample of the strategies using a variety of criteria, all of which are computed using a rolling period procedure similar to that used by \citet*{ggr06} with the exception that the time horizon of formation and trading periods are rolled forward by six months as in \citet*{bv12}. The main criteria we focus on are: (1) mean and cumulative excess return, (2) risk-adjusted metrics as Sharpe and Sortino ratios, (3) percentage of negative trades, (4) t-values for various risk factors, (5) maximum drawdown between two consecutive days and between two days within a maximum period of six months and (6) total number of open pairs.
 	
-	In order to find if pairs trading profitability is associated to exposure to different systematic risk factors\footnote{The single-factor capital asset pricing model (CAPM) of \citet*{s64} and \citet*{l65}, as well as its consumption based version (\citet*{b79}), among other extensions, has been empirically tested and rejected by numerous studies, which show that the cross-sectional variation in expected equity returns cannot be explained by the market beta alone, providing evidence that investors demand compensation for not being able to diversify firm-specific characteristics.}, we regress daily excess returns on seven factors: daily \citet*{ff15}'s five research factors \footnote{\citet*{ff15} found evidences that the three factor model was not sufficient to explain a lot of the variation in average returns related to profitability and investment.} plus momentum and long-term reversal. We find that the intercept is statistically greater than zero for all regressions at 1\% level when considering the mixed copula strategy, showing that our results are robust to the augmented \citet*{ff15}'s risk adjustment factors. In addition, the share of observations with negative excess returns is smaller for the mixed copula than distance strategy.
+	In order to evaluate if pairs trading profitability is associated to exposure to different systematic risk factors\footnote{The single-factor capital asset pricing model (CAPM) of \citet*{s64} and \citet*{l65}, as well as its consumption based version \citep{b79}, among other extensions, has been empirically tested and rejected by numerous studies, which show that the cross-sectional variation in expected equity returns cannot be explained by the market beta alone, providing evidence that investors demand compensation for not being able to diversify firm-specific characteristics.}, we regress daily excess returns on seven factors: daily \citet*{ff15}'s five research factors \footnote{\citet*{ff15} found evidences that the three factor model was not sufficient to explain a lot of the variation in average returns related to profitability and investment.} plus momentum and long-term reversal. We find that the intercept is statistically greater than zero for all regressions at 1\% level when considering the mixed copula strategy, showing that our results are robust to the augmented \citet*{ff15}'s risk adjustment factors. In addition, the share of observations with negative excess returns is smaller for the mixed copula than for the distance strategy.
 	
-	To test the statistical significance of the returns, standard deviations and Sharpe ratio we use the stationary bootstrap of \citet*{pr94} using the automatic block-length selection of \citet*{pw04} and 10,000 bootstrap resamples. To compute the bootstrap p-values we use the methodology proposed by \citet*{lw08}. We aim to compare the results on a statistical basis to mitigate potential data snooping problems.
+	To test for differences in returns and Sharpe ratios we use the stationary bootstrap of \citet*{pr94} with the automatic block-length selection of \citet*{pw04} and 10,000 bootstrap resamples. To compute the bootstrap p-values we employ the methodology proposed by \citet*{lw08}. We aim to compare the results on a statistical basis to mitigate potential data snooping issues.
 	
-	The remainder of the paper is organized as follows. The data, a general review of the distance and copula models and the trading strategies we have used are discussed in Section 2. Section 3 summarizes the empirical results of the analysis. Finally, Section 4 provides a brief conclusion. Additional results are reported in the Appendix.
+	The remainder of the paper is organized as follows. A general review of the distance and copula models as well as the trading strategies we perform are discussed in Section 2. Section 3 summarizes the data and empirical results of the analysis. Finally, Section 4 provides a brief conclusion. Additional results are reported in the Appendix.
 	
 	\vspace{0.6cm}
 	
-	\section{Data and Methodology}
+	\section{Methodology}
 	
-	Our data set consists of daily data of adjusted closing prices of all stocks that belongs to the S\&P500 market index from July 2nd, 1990 to December 31st, 2015. We obtain adjusted closing prices from Bloomberg and returns on the Fama and French factors from French's website\footnote{\url{http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/Data_Library/det_st_rev_factor_daily.html}}. The data set sample period is made up of 6,426 days and includes a total of 1100 stocks over all periods. Only stocks that are listed during the formation period are included in the analysis, \emph{i.e.}, around 500 stocks in each trading period.
-	
-
-	Using data from the Center for Research in Security Prices (CRSP) from 1980 to 2006, \citet*{french2008} estimates that the cost of active investing, including total commissions, bid-ask spreads, and other cost investors pay for trading services, has dropped from 146 basis points in 1980 to 11 basis points in 2006. Considering the US stock live trades on the Nyse-Amex between August 1998 and September 2013 for a large institucional investor, \citet*{fim15} estimate that the average trading costs for market impact (MI) and implementation shortfall methodology (IS) are 8.81 and 9.13 basis points, respectively, while the median trading costs are 6.24 and 7.63 basis points, respectively. For our data we assume trading costs on the order of 10 and 20 basis points.
+	In this Section we describe the strategies employed in our paper. The distance approach is described in Section 2.1, whereas the copula method is outlined in Section 2.2. We generalize the existing copula method by employing a mixture copula model. We want to evaluate if we can improve the profitability of pairs trading by capturing a wider variety of dependence structures. 
 	
 	\subsection{Distance Framework}
 	
 	Our implementation of the distance strategy is similar to \citet*{ggr06} and \citet*{bv12}. We calculate the spread between the normalized daily closing prices (known as distance) of all combinations of stocks pairs during the next 12 months, named formation period, adjusting them by dividends, stock splits and other corporate actions. Specifically, the pairs are formed using data from January to December or from July to June. Prices are scaled to \$1 at the beginning of each formation period and then evolve using the return series\footnote{%
-		Missing values have been interpolated.}.  We then select the top 5, 10,...,35 of those combinations that have the smallest sum of squared spreads, allowing re-selection of a specific pair, during the formation period. These pairs are then traded in the next six months (trading period).
+		Missing values have been interpolated.}.  We then select 5, 10, 15, 20, 25, 30 and 35 of those pairs that have the smallest sum of squared spreads, allowing re-selection of a specific pair, during the formation period. These pairs are then traded in the next six months (trading period).
 	
 
-In \citet*{ggr06}, when the spread diverges by two or more standard deviations (which is calculated in the formation period) from the mean, the stocks are assumed to be mispriced in terms of their relative value to each other and thus we open a short position in the outperforming stock and a long in the underperforming one. 
+In \citet*{ggr06}, when the spread diverges by two or more standard deviations (which is calculated in the formation period) from the mean, the stocks are assumed to be mispriced in terms of their relative value to each other and thus one opens a short position in the outperforming stock and a long in the underperforming one. 
 
-The price divergence is expected to be temporary, i.e., the prices are expected to converge to its long-term mean value of 0 (mean-reverting behavior). Hence, the positions are closed once the normalized prices cross. The pair is then monitored for another divergence and thus a pair can complete multiple round-trip trades. Trades that do not converge can result in a loss if they are still open at the end of the trading period when they are automatically closed. This results in fat left tails. Therefore, since the conditional variance is empirically higher for large negative returns and smaller for positive returns, it may be inappropriate to use constant trigger points because the volatility differs at different price levels.
+%of 0 
+The price divergence is expected to be temporary, i.e., the prices are expected to converge to its long-term mean value(mean-reverting behavior). Hence, the positions are closed once the normalized prices cross. The pair is then monitored for another divergence and thus a pair can complete multiple round-trip trades. Trades that do not converge can result in a loss if they are still open at the end of the trading period when they are automatically closed. This results in fat left tails. Therefore, since the conditional variance is empirically higher for large negative returns and smaller for positive returns, it may be inappropriate to use constant trigger points because the volatility differs at different price levels.
 
 To calculate the daily percentage returns for a pair, we compute%
 	\begin{equation}
@@ -188,19 +187,19 @@ To calculate the daily percentage returns for a pair, we compute%
 	
 	\subsection{Copula Framework}
 	
-	The notion of copula was first introduced by \citet*{sklar1959}. Sklar's theorem states that any multivariate joint distribution can be written in terms of their univariate marginal distribution function and the dependence structure (represented in $C$) between the variables. We state the Sklar's Theorem below.
+	The notion of copula was first introduced by \citet*{sklar1959}. Sklar's theorem states that any multivariate joint distribution can be written in terms of the univariate marginal distribution functions and the dependence structure (represented in $C$) among the variables. We state the Sklar's Theorem below.
 	
 	\vspace{0.6cm}
 	
     \begin{theorem}
 		(Sklar's Theorem) Let $X_{1},...,X_{d}$ be random variables with
 		distribution functions $F_{1},...,F_{d}$, respectively. Then, there exists
-		an d-copula C such that,
+		a d-copula C such that,
 		\begin{equation}
 		F\left( x_{1},...,x_{d}\right) =C\left( F_{1}\left( x_{1}\right)
 		,...,F_{d}\left( x_{d}\right) \right) ,  \label{21}
 		\end{equation}
-	\end{theorem}for all $\mathbf{x}=\left( x_{1},...,x_{d}\right) \in
+	for all $\mathbf{x}=\left( x_{1},...,x_{d}\right) \in
 	%BeginExpansion
 	\mathbb{R}
 	%EndExpansion
@@ -209,10 +208,11 @@ To calculate the daily percentage returns for a pair, we compute%
 	dimensional distribution function with margins $F_{1},...,F_{d}$. Furthermore, if the marginals $F_{1},...,F_{d}$ are all continuous, $C$ is
 	unique. Otherwise $C$ is uniquely determined on $\Ima F_{1}\times ...\times \Ima %
 	F_{d}$.
+\end{theorem}
 	
-	Using the Sklar's theorem we can derive an important
+	Using Sklar's theorem we can derive an important
 	relation between the marginal distributions and a copula. Let $f$ be a
-	joint density function (of the $d-$dimensional distribution function $F$)
+	joint density function (derived from the $d-$dimensional distribution function $F$)
 	and $f_{1},...,f_{d}$ univariate density functions of the margins $%
 	F_{1},...,F_{d}$. Assuming that $F\left( \cdot \right) $ and $C\left( \cdot
 	\right) $ are differentiable, by $\left( \ref{21}\right)$ we have
@@ -225,14 +225,14 @@ To calculate the daily percentage returns for a pair, we compute%
 	&=&c\left( u_{1},...,u_{d}\right) \prod_{i=1}^{d}f_{i}\left( x_{i}\right),
 	\label{23}
 	\end{eqnarray}%
-	where $u_{i}$=$F_{i}\left( x_{i}\right) $, $i=1,...,d$. Thus, copulas are functions that connect a multivariate distribution function and their marginal distributions. Thereafter, copulas accommodate various forms of dependence through suitable choice of the copula ``correlation matrix'' since they conveniently separate marginals from dependence component. These carry on all relevant information about the dependence structure between random variables and allow a greater flexibility in modeling multivariate distributions and their margins. The methodology allows one to derive joint distributions from marginals, even when these are not normally distributed. In fact, copulas allow the marginal distributions to be modeled independently from each other, and no assumption on the joint behavior of the marginals is required, which provides a great deal of flexibility in modeling joint distributions.  From a modelling perspective, Sklar’s Theorem allow us to estimate the multivariate distribution in two parts: (i) finding the marginal distributions; (ii) finding the dependency between the filtered data from (i).
+	where $u_{i}$=$F_{i}\left( x_{i}\right) $, $i=1,...,d$. Thus, we can clearly see that copulas characterize the dependence structure among the variables. Thereafter, copulas accommodate various forms of dependence through suitable choice of the copula ``dependence matrix'' since they conveniently separate marginals from dependence component. Therefore, copulas carry on all relevant information about the dependence structure between random variables and allow a greater flexibility in modeling multivariate distributions and their margins. From a modelling perspective, Sklar’s Theorem allows us to estimate the multivariate distribution in two parts: (i) the marginal distributions; (ii) the dependence between the filtered data from (i).
 	
-	The choice of the copula function is also not dependent on the marginal distributions. Thus, by using copulas, the linearity restriction that applies to the dependence structure of multivariate random variables in a traditional dependence setting is relaxed. Therefore, depending on the chosen copulas, different dependence structures can be modeled to allow for any asymmetries\footnote{Copulas measures lower and upper tail dependencies and nonlinear and linear relationships in a rich set for describing dependencies between pairs. Copula is also invariant under strictly monotonic transformations \citep{cherubini04,nelsen06} and hence the same copula is obtained if we use price or return series, for example.}.
+	The choice of the copula function is also not dependent on the marginal distributions. Thus, by using copulas, different dependence structures can be modeled to allow for any non-linear dependences if necessary\footnote{Copulas measures lower and upper tail dependencies and nonlinear and linear relationships in a rich set for describing dependencies between pairs. Copula is also invariant under strictly monotonic transformations \citep{cherubini04,nelsen06} and hence the same copula is obtained if we use price or return series, for example.}.
 	
-	A further important property of copulas concerns the partial derivatives of a copula with respect to its variables. Let now $H$ be a bivariate function with marginal distribution functions $F$ and $G$. According to \citet*{sklar1959} then there exists a copula $C:\left[ 0,1\right] ^{2}\rightarrow \left[ 0,1\right] $ such that $H(x_{1},x_{2})=C(F(x_{1}),G(x_{2}))$ for all for all $x_{1},x_{2}$ $\in\mathbf{R^{2}}$. If $F$ and $G$ are continuous, then $C$ is unique; otherwise, $C$ is uniquely determined in $\Ima F\times \Ima G$. Conversely, if $C$ is a copula and $F$ and $G$ are distribution functions, then the function $H$ is a joint distribution function with marginals $F$ and $G$ and we can write
+	A further important property of copulas concerns the partial derivatives of a copula with respect to its variables. Let now $H$ be a bivariate function with marginal distribution functions $F$ and $G$. According to \citet*{sklar1959} there exists a copula $C:\left[ 0,1\right] ^{2}\rightarrow \left[ 0,1\right] $ such that $H(x_{1},x_{2})=C(F(x_{1}),G(x_{2}))$ for all $x_{1},x_{2}$ $\in\mathbb{R^{2}}$. If $F$ and $G$ are continuous, then $C$ is unique; otherwise, $C$ is uniquely determined in $\Ima F\times \Ima G$. Conversely, if $C$ is a copula and $F$ and $G$ are distribution functions, then the function $H$ is a joint distribution function with marginals $F$ and $G$ and we can write
 	\begin{equation}
 	\begin{aligned}
-	C(u_{1},u_{2})=H(F^{-1}(u_{1}),G^{-1}(u_{2})),
+	C(u_{1},u_{2})=H(F^{-1}(u_{1}),G^{-1}(u_{2}),
 	\end{aligned}
 	\label{eq:eq07}
 	\end{equation}
@@ -242,7 +242,7 @@ To calculate the daily percentage returns for a pair, we compute%
 	
 	\begin{proposition}
 		Let $U_{1}$ and $U_{2}$ be two random variables with distribution $U(0,1)$. Then,
-	\end{proposition}
+
 	\begin{eqnarray*}
 		P\left( U_{1}\leq u_{1}\left\vert U_{2}=u_{2}\right. \right)  &=&\frac{%
 			\partial C\left( u_{1},u_{2}\right) }{\partial u_{2}}=P\left( X_{1}\leq
@@ -254,8 +254,7 @@ To calculate the daily percentage returns for a pair, we compute%
 	where
 	\begin{equation}
 	\begin{aligned}
-	\frac{\partial C\left( u_{1},u_{2}\right) }{\partial u_{2}}=P\left( U_{1}\leq u_{1}\left\vert
-	U_{2}=u_{2}\right. \right) =\underset{h\rightarrow 0}{lim}P\left( U_{1}\leq u_{1}\left\vert
+	\frac{\partial C\left( u_{1},u_{2}\right) }{\partial u_{2}}=\underset{h\rightarrow 0}{lim}P\left( U_{1}\leq u_{1}\left\vert
 	u_{2}\leq U_{2}\leq u_{2}+h\right. \right)
 	\end{aligned}
 	\label{eq:eq08}
@@ -263,73 +262,86 @@ To calculate the daily percentage returns for a pair, we compute%
 	and
 	\begin{equation}
 	\begin{aligned}
-	\frac{\partial C\left( u_{1},u_{2}\right) }{\partial u_{1}}=P\left( U_{2}\leq u_{2}\left\vert
-	U_{1}=u_{1}\right. \right) =\underset{h\rightarrow 0}{lim}P\left( U_{2}\leq u_{2}\left\vert
+	\frac{\partial C\left( u_{1},u_{2}\right) }{\partial u_{1}}=\underset{h\rightarrow 0}{lim}P\left( U_{2}\leq u_{2}\left\vert
 	u_{1}\leq U_{1}\leq u_{1}+h\right. \right).
 	\end{aligned}
 	\label{eq:eq09}
 	\end{equation}
+		\end{proposition}
 	
 	By using the fact that the partial derivative of the copula function gives the conditional distribution function, \citet*{xie14} define a measure to denote the degree of mispricing:
 	
 	\vspace{0.6cm}
 	
 	\begin{definition}
-		(Mispricing Index) Let $R_{t}^{X}$ and $R_{t}^{Y}$ represent the random variables of the daily returns of stocks $X$ and $Y$ on time $t$, and
-		the realizations of those returns on time t are $r_{t}^{X}$ and $r_{t}^{Y}$, we have
-		\begin{eqnarray*}
-			MI_{X\mid Y}^{t} & = & P(R_{t}^{X}<r_{t}^{X}\mid R_{t}^{Y}=r_{t}^{Y}) \\
-			& \text{and}  & \\
-			MI_{Y\mid X}^{t} & = & P(R_{t}^{Y}<r_{t}^{Y}\mid R_{t}^{X}=r_{t}^{X}),
-		\end{eqnarray*}
-		where $MI_{X|Y}$ and $MI_{Y|X}$ are named the mispricing indexes.
-	\end{definition}
+		(Mispricing Index) Let $R_{t}^{X}$ and $R_{t}^{Y}$ represent the random daily returns of stocks $X$ and $Y$ at time $t$, and $r_{t}^{X}$ and $r_{t}^{Y}$ represent
+		the realizations of those returns at time t. Then define
+		\begin{equation}
+		\begin{aligned}
+		MI_{X\mid Y}^{t}& = &\frac{\partial C(u_{1},u_{2})}{\partial u_{2}} & = & P(R_{t}^{X}<r_{t}^{X}\mid R_{t}^{Y}=r_{t}^{Y}) \\
+		& \text{and} & \\
+		MI_{Y\mid X}^{t}& = &\frac{\partial C(u_{1},u_{2})}{\partial u_{1}}& = & P(R_{t}^{X}<r_{t}^{X}\mid R_{t}^{Y}=r_{t}^{Y}).
+		\end{aligned}
+		\label{eq:eq31}
+		\end{equation}
+		where $u_{1}=F_{X}\left( r_{t}^{X}\right) $ and $u_{2}=F_{Y}\left( r_{t}^{Y}\right) $.
+%		\begin{eqnarray*}
+%			MI_{X\mid Y}^{t} & = & P(R_{t}^{X}<r_{t}^{X}\mid R_{t}^{Y}=r_{t}^{Y}) \\
+%			& \text{and}  & \\
+%			MI_{Y\mid X}^{t} & = & P(R_{t}^{Y}<r_{t}^{Y}\mid R_{t}^{X}=r_{t}^{X}),
+%		\end{eqnarray*}
+%		where $MI_{X|Y}$ and $MI_{Y|X}$ are named the mispricing indexes.
+\end{definition}
 	
-	Therefore, the conditional probabilities $MI_{X\mid Y}^{t}$ and $MI_{Y\mid X}^{t}$ indicate whether the return of $X$ is considered high or low at time $t$, given the information on the return of $Y$ on the time $t$ and the historical relation between the two stocks' returns, and vice-versa. For example, if the value of $MI_{X\mid Y}^{t}$ is equal to $0.5$, $r_{t}^{X}$ is neither too high nor too low given $r_{t}^{Y}$ and their historical relation. In other words, the historical data indicate that, on average, there is an equal number of observations of the return of $X$ being larger or smaller than $r_{t}^{X}$ if the return of stock $Y$ is equal to $r_{t}^{Y}$ and therefore, a conditional value of 0.5 means that the two underlying stocks are considered fairly-valued. In this case, we can say that stock $X$ is fairly priced relative to stock $Y $ on day $t$. 
+	Therefore, the conditional probabilities $MI_{X\mid Y}^{t}$ and $MI_{Y\mid X}^{t}$ indicate whether the return of $X$ is considered high or low at time $t$, given the information on the return of $Y$ on the time $t$ and the historical relation between the two stocks' returns, and vice-versa. For example, if the value of $MI_{X\mid Y}^{t}$ is equal to $0.5$, $r_{t}^{X}$ is neither too high nor too low given $r_{t}^{Y}$ and their historical relation. In other words, the historical data indicates that, on average, there is an equal number of observations of the return of $X$ being larger or smaller than $r_{t}^{X}$ if the return of stock $Y$ is equal to $r_{t}^{Y}$ and therefore, a conditional value of 0.5 means that the two underlying stocks are considered fairly-valued. In this case, we can say that stock $X$ is fairly priced relative to stock $Y $ at day $t$. 
 	
-	Given current realizations $r_{t}^{X}$ and $r_{t}^{Y}$, if $F_{X}$ and $F_{Y} $ are the marginal distribution functions of $R_{t}^{X}$ and $R_{t}^{Y} $ and C is the copula connecting $F_{X}$ and $F_{Y}$ , we define $u_{1}=F_{X}\left( r_{t}^{X}\right) $ and $u_{2}=F_{Y}\left( r_{t}^{Y}\right) $, and have
+%	Given current realizations $r_{t}^{X}$ and $r_{t}^{Y}$, if $F_{X}$ and $F_{Y} $ are the marginal distribution functions of $R_{t}^{X}$ and $R_{t}^{Y} $ and C is the copula connecting $F_{X}$ and $F_{Y}$ , we define $u_{1}=F_{X}\left( r_{t}^{X}\right) $ and $u_{2}=F_{Y}\left( r_{t}^{Y}\right) $, and have
+%	
+%	\begin{equation}
+%	\begin{aligned}
+%	MI_{X\mid Y}^{t}& = &\frac{\partial C(u_{1},u_{2})}{\partial u_{2}} & = & P(R_{t}^{X}<r_{t}^{X}\mid R_{t}^{Y}=r_{t}^{Y}) \\
+%	& \text{and} & \\
+%	MI_{Y\mid X}^{t}& = &\frac{\partial C(u_{1},u_{2})}{\partial u_{1}}& = & P(R_{t}^{X}<r_{t}^{X}\mid R_{t}^{Y}=r_{t}^{Y}).
+%	\end{aligned}
+%	\label{eq:eq31}
+%	\end{equation}
+%	\vspace{0.6cm}
 	
-	\begin{equation}
-	\begin{aligned}
-	MI_{X\mid Y}^{t}& = &\frac{\partial C(u_{1},u_{2})}{\partial u_{2}} & = & P(R_{t}^{X}<r_{t}^{X}\mid R_{t}^{Y}=r_{t}^{Y}) \\
-	& \text{and} & \\
-	MI_{Y\mid X}^{t}& = &\frac{\partial C(u_{1},u_{2})}{\partial u_{1}}& = & P(R_{t}^{X}<r_{t}^{X}\mid R_{t}^{Y}=r_{t}^{Y}).
-	\end{aligned}
-	\label{eq:eq31}
-	\end{equation}
-	\vspace{0.6cm}
-	
-	Note that the conditional probabilities, $M_{t}^{X\left\vert Y\right. }$ and $%
-		M_{t}^{Y\left\vert X\right. }$ , only measure the degrees of relative
+	Note that the conditional probabilities, $MI_{t}^{X\left\vert Y\right. }$ and $%
+		MI_{t}^{Y\left\vert X\right. }$ , only measure the degrees of relative
 		mispricing for a single day. To determine an overall degree of relative
 		mispricing we follow \citet*{rf15}. Initially, let $m_{1,t}$ and $m_{2,t}$ be the
-		overall mispricing indexes of stocks $X_{1}$ and $X_{2}$, defined by $\left(
-		M_{t}^{X\left\vert Y\right. }-0.5\right) $ and $\left( M_{t}^{Y\left\vert
-			X\right. }-0.5\right) $, respectively. At beggining of each
-		trading period two cumulative mispriced indexed $M_{1}$ and $M_{2}$ are set
+		overall mispricing indexes of stocks $X$ and $Y$, defined by $\left(
+		MI_{t}^{X\left\vert Y\right. }-0.5\right) $ and $\left( MI_{t}^{Y\left\vert
+			X\right. }-0.5\right) $, respectively. At the beggining of each
+		trading period two cumulative mispricing indexes $M_{1,t}$ and $M_{2,t}$ are set
 		to zero and then evolve for each day through%
 
 	
 	\begin{eqnarray*}
 		M_{1,t} &=&M_{1,t-1}+m_{1,t} \\
-		M_{2,t} &=&M_{2,t-1}+m_{2,t}
+		M_{2,t} &=&M_{2,t-1}+m_{2,t}.
 	\end{eqnarray*}
 	
-	Positive (negative) $M_{1}$ and negative (positive) $M_{2}$ are interpreted
+	Positive (negative) $M_{1,t}$ and negative (positive) $M_{2,t}$ are interpreted
 		as stock 1 (stock 2) being overvalued relative to stock 2 (stock 1).
 		
 	We
 		perform a sensitivity analysis to open a long-short position once one of the
 		cumulative indexes is above 0.05, 0.10,..., 0.55 and the other one is below
-		-0.05, -0.10,....,-0.55 at the same time for Top 5, 10,....,35 pairs. The
-		positions are unwound when both cumulative mispriced indexes return to zero.
+		-0.05, -0.10,....,-0.55 at the same time for Top 5, 10,...,35 pairs. The
+		positions are closed when both cumulative mispricing indexes return to zero.
 		The pairs are then monitored for other possible trades throughout the
 		remainder of the trading period.
 		
 		%	For our copula approach, we find that 0.75 is a good combination for the mispricing indexes during our backtesting analysis\footnote{We search over a grid from 0.55 to 0.95 with a step of size 0.05.}. This would be similar to the 0.75$\sigma$ trigger point if data is normally distributed.
 	
-	\citet*{rf15} propose the following steps to obtain $M_{1,t}$ and $M_{2,t}$ using copulas: (1) First, we calculate daily returns for each stock during the formation period and
-estimate the marginal distributions of these returns separately by fitting an appropriate ARMA(p,q)-GARCH(1,1) model\footnote{We look for the best ARMA(p,q) model up to order (1,1).} to each univariate time series by obtaining the estimates $\widehat{\mu }_{i}$ and $\widehat{\sigma }_{i}$ of the conditional mean and variance of these processes, respectively. Moreover, using the estimated parametric models, we construct the standardized residuals vectors given, for each $i=1,...,t$, by
+	\citet*{rf15} propose the following steps to obtain $M_{1,t}$ and $M_{2,t}$ using copulas: 
+	
+	\begin{enumerate}
+		
+\item First, we calculate daily returns for each stock during the formation period and
+estimate the marginal distributions of these returns separately by fitting an appropriate ARMA(p,q)-GARCH(1,1) model\footnote{We look for the best ARMA(p,q) model up to order (1,1).} to each univariate time series by obtaining the estimates $\widehat{\mu }_{i}$ and $\widehat{\sigma }_{i}$ of the conditional mean and variance of these processes, respectively. Moreover, using the estimated parametric models, we construct the standardized residuals vectors given, for each $i=1,...,T$, by
 	\begin{equation}
 	\begin{aligned}
 	\widehat{\varepsilon }_{i}=\frac{x_{i}-\widehat{\mu }_{i}}{\widehat{\sigma }_{i}}.
@@ -337,21 +349,21 @@ estimate the marginal distributions of these returns separately by fitting an ap
 	\label{eq:eq32}
 	\end{equation}
 	
-	The standardized residuals vectors are then converted to the pseudo-observations $z_{i}=\frac{n}{n+1}F_{i}\left( \widehat{\varepsilon }_{i}\right) $, where $F_{i}$ is estimated by using their empirical distribution function; 
+	The standardized residuals vectors are then converted to the pseudo-observations $z_{i}=\frac{n}{n+1}F_{i}\left( \widehat{\varepsilon }_{i}\right) $, where $F_{i}$ is estimated by using their empirical distribution function \footnote{The asymptotically negligible scaling factor, $\frac{n}{n+1}$, is used to force the variates to fall inside the open unit hypercube to avoid, for example, problems with density evaluation at the boundaries.}; 
 	
 	\vspace{0.3cm}
 	\vspace{0.3cm}
 	
-	(2) After obtaining the estimated marginal distributions from the previous step
-	, we estimate the two-dimensional copula model to data that has been transformed to [0,1] margins to connect the joint distributions with the marginals $F_{X}$ and $F_{Y}$, i.e.,
+\item After obtaining the estimated marginal distributions from the previous step, we estimate the two-dimensional copula model to data that has been transformed to [0,1] margins to connect the joint distributions with the marginals $F_{X}$ and $F_{Y}$, i.e.,
 		\[
 		H\left( r_{t}^{X},r_{t}^{Y}\right) =C\left(F_{X}\left( r_{t}^{X}\right)
 		,F_{Y}\left( r_{t}^{Y}\right) \right) , 
 		\]%
 		where $H$ is the joint distribution, $r_{t}^{X}$ e $r_{t}^{Y}$ are stock
-		returns and $C$ is the copula that best fits the uniform marginals and estimate its parameter(s). Copulas that are tested in this step are Gaussian, t, Clayton, Frank, Gumbel, one Archimedean mixture copula consisting of the optimal linear combination of Clayton, Frank and Gumbel copulas and one mixture copula consisting of the optimal linear combination of Clayton, t and Gumbel copulas.\footnote{Archimedean copulas contain different tail dependence characteristics. Clayton and Gumbel are nonsymmetric copulas that describe more accurately lower and upper tail dependence, respectively. The Frank copula is the only bivariate reflection symmetric Archimedean family but it has different properties when compared to the bivariate gaussian and bivariate t copulas. Hence, by using mixture copulas we cover a wider range of possible dependencies within a single model.}.
+		returns and $C$ is the copula. Copulas that are tested in this step are Gaussian, t, Clayton, Frank, Gumbel, one Archimedean mixture copula consisting of the optimal linear combination of Clayton, Frank and Gumbel copulas and one mixture copula consisting of the optimal linear combination of Clayton, t and Gumbel copulas.
+%		\footnote{Archimedean copulas contain different tail dependence characteristics. Clayton and Gumbel are nonsymmetric copulas that describe more accurately lower and upper tail dependence, respectively. The Frank copula is the only bivariate reflection symmetric Archimedean family but it has different properties when compared to the bivariate gaussian and bivariate t copulas. Hence, by using mixture copulas we cover a wider range of possible dependencies within a single model.}.
 	
-	Specifically, a mixture of Clayton, Frank and Gumbel copulas and a mixture of  Clayton, t and Gumbel copulas can be written, respectively, as
+	Specifically, mixtures of Clayton, Frank and Gumbel copulas and Clayton, t and Gumbel copulas can be written, respectively, as
 	\begin{equation}
 	\mathcal{C}_{\theta}^{CFG}\left(u_{1},u_{2}\right)=\pi_{1}\mathcal{C}_{\alpha}^{C}\left(u_{1},u_{2}\right)+\pi_{2}\mathcal{C}_{\beta}^{F}\left(u_{1},u_{2}\right)+\left(1-\pi_{1}-\pi_{2}\right)\mathcal{C}_{\delta}^{G}\left(u_{1},u_{2}\right),
 	\label{eq:eq24}
@@ -360,7 +372,7 @@ estimate the marginal distributions of these returns separately by fitting an ap
 	and
 	
 	\begin{equation}
-	\mathcal{C}_{\xi}^{CFG}\left(u_{1},u_{2}\right)=\pi_{1}\mathcal{C}_{\alpha}^{C}\left(u_{1},u_{2}\right)+\pi_{2}\mathcal{C}_{\Sigma,\nu}^{t}\left(u_{1},u_{2}\right)+\left(1-\pi_{1}-\pi_{2}\right)\mathcal{C}_{\delta}^{G}\left(u_{1},u_{2}\right),
+	\mathcal{C}_{\xi}^{CtG}\left(u_{1},u_{2}\right)=\pi_{1}\mathcal{C}_{\alpha}^{C}\left(u_{1},u_{2}\right)+\pi_{2}\mathcal{C}_{\Sigma,\nu}^{t}\left(u_{1},u_{2}\right)+\left(1-\pi_{1}-\pi_{2}\right)\mathcal{C}_{\delta}^{G}\left(u_{1},u_{2}\right),
 	\label{eq:eq25}
 	\end{equation}
 	where $\theta=\left(\alpha,\beta,\delta\right)'$ are the Clayton, Frank and Gumbel copula (dependence) parameters and $\xi=\left(\alpha,(\Sigma,\nu),\delta\right)'$ are the Clayton, t and Gumbel copula parameters, respectively, and $\pi_{1}$, $\pi_{2} \in [0,1]$. The estimates are obtained by the minimization of the negative log-likelihood consisting of the weighted densities of the copulas; 
@@ -368,28 +380,36 @@ estimate the marginal distributions of these returns separately by fitting an ap
 	\vspace{0.3cm}
 	\vspace{0.3cm}
 	
-	(3) Take the first derivative of the copula function to compute conditional
+\item Take the first derivative of the copula function to compute conditional
 		probabilities and measure mispricing degrees $MI_{X\mid Y}$ and $MI_{Y\mid X}$ for each day in the trading period using the copula and estimated parameters;
 		
 	\vspace{0.3cm}
 	\vspace{0.3cm}
 		
-	(4) Build long and short positions of $Y$ and $X$ on the days that $M_{1,t}>\Delta_{1}$ and $M_{2,t}<\Delta_{2}$ if there is no positions in $X$ or $Y$. Conversely, build positions long/short of $X$ and $Y$ on the day that $M_{1,t}<\Delta_{2}$ and $M_{2,t}>\Delta_{1}$ if there is no positions in $X$ or $Y$;
+\item Build long and short positions of $Y$ and $X$ in the days that $M_{1,t}>\Delta_{1}$ and $M_{2,t}<\Delta_{2}$ if there are no positions in $X$ or $Y$. Conversely, build positions long/short of $X$ and $Y$ in the day that $M_{1,t}<\Delta_{2}$ and $M_{2,t}>\Delta_{1}$ if there are no positions in $X$ or $Y$;
 	
 	\vspace{0.6cm}
 		
-	(5) All positions are closed if $M_{1,t}$ reaches $\Delta_{3}$ or $M_{2,t}$ reaches $\Delta_{4}$, where $\Delta_{1},\Delta_{2},\Delta_{3}$ and $\Delta_{4}$ are predetermined thresholds or are automatically closed out on the last day of the trading period if they do not reach the thresholds. Here we use $\Delta_{1}=0.2, \Delta_{2}=-0.2$ and $\Delta_{3}=\Delta_{4}=0$.
+\item All positions are closed if $M_{1,t}$ reaches $\Delta_{3}$ or $M_{2,t}$ reaches $\Delta_{4}$, where $\Delta_{1},\Delta_{2},\Delta_{3}$ and $\Delta_{4}$ are predetermined thresholds or are automatically closed out at the last day of the trading period if they do not reach the thresholds. Here we use $\Delta_{1}=0.2, \Delta_{2}=-0.2$ and $\Delta_{3}=\Delta_{4}=0$.
+
+\end{enumerate}
 	
 	
 	\vspace{0.6cm}
 	
-	\section{Empirical Results}
+	\section{Data and Empirical Results}
+	
+	Our data set consists of daily data of adjusted closing prices of all stocks that belongs to the S\&P500 market index from July 2nd, 1990 to December 31st, 2015. We obtain adjusted closing prices from Bloomberg, whereas returns on the Fama and French factors are obtained from French's website\footnote{\url{http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/Data_Library/det_st_rev_factor_daily.html}}. The data set spans 6,426 days and includes a total of 1100 stocks over all periods. Only stocks that are listed during the formation period are included in the analysis, \emph{i.e.}, around 500 stocks in each trading period.
+	
+	
+	Using data from the Center for Research in Security Prices (CRSP) from 1980 to 2006, \citet*{french2008} estimates that the cost of active investing, including total commissions, bid-ask spreads, and other cost investors pay for trading services, has dropped from 146 basis points in 1980 to 11 basis points in 2006. Considering the US stock live trades on the Nyse-Amex between August 1998 and September 2013 for a large institucional investor, \citet*{fim15} estimate that the average trading costs for market impact (MI) and implementation shortfall methodology (IS) are 8.81 and 9.13 basis points, respectively, while the median trading costs are 6.24 and 7.63 basis points, respectively. For our data we assume trading costs on the order of 10 and 20 basis points.
 	
 	\vspace{0.3cm}
 	
+	
 	\subsection{Profitability of the Strategies}
 	
-First, we analyze the sensitivity of the outcomes when the opening thresholds are changed to top 5-35 pairs we provide multiple boxplots in Figures \ref{fig:fig25} and \ref{fig:fig42}. They report annualized excess returns (Figure \ref{fig:fig25}) and annualized Sharpe ratios (Figure \ref{fig:fig42}) for each of the strategies from 1991/2-2015 on commited capital and on fully invested capital after costs (10 bps)\footnote{The numerical experiments show that the performances out-of-sample stay very similar when we consider 20 bps. Since the results are very much alike they are not presented here and are available under request. Hereafter, we consider 10 basis points as transaction costs to report results for the remainder of this paper}. Pairs are formed based on the smallest sum of squared deviations. The last boxplot (from left to right) show the performance for the distance strategy, while the others report the outcomes using multiple opening trigger points for the cumulative mispriced indexes $M_{1}$ and $M_{2}$ (0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, and 0.55). Based on these outcomes we perform the subsequent analyses considering 0.2 as the opening threshold for the mixed copula strategy.
+First, we provide multiple boxplots in Figures \ref{fig:fig25} and \ref{fig:fig42} to analyze the sensitivity of the annualized excess returns (Figure \ref{fig:fig25}) and annualized Sharpe ratios (Figure \ref{fig:fig42}) when the opening thresholds $\Delta_{1}$ and $\Delta_{2}$ are changed to top 5, 10, 15, 20, 25, 30 and 35 pairs for each of the strategies from 1991/2-2015 on commited capital and on fully invested capital after costs (10 bps)\footnote{The numerical experiments show that the performances out-of-sample stay very similar when we consider 20 bps. Since the results are very much alike they are not presented here and are available under request. Hereafter, we consider 10 basis points as transaction costs to report results for the remainder of this paper}. Pairs are formed based on the smallest sum of squared deviations. The last boxplot (from left to right) shows the performance for the distance strategy, while the others report the outcomes using multiple opening trigger points for the cumulative mispricing indexes $M_{1,t}$ and $M_{2,t}$ (one above 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, and 0.55 and the other one below their negative counterparts). Based on these outcomes we perform the subsequent analyses considering 0.2 and -0.2 as the opening thresholds for the mixed copula strategy.
 
 \begin{figure}[H]
 	\centering
@@ -465,11 +485,11 @@ Section 2 of Table \ref{tab:table101} shows results on fully invested capital sc
 		Mixed Copula & $12.73^{**(>)}$  & 0.88  & 1.59  & $4.73^{***}$  & 41.28 & -9.00  & -25.68  \\
 		\multicolumn{1}{r}{} & \multicolumn{1}{r}{} & \multicolumn{1}{r}{} & \multicolumn{1}{r}{} & \multicolumn{1}{r}{} & \multicolumn{1}{r}{} & \multicolumn{1}{r}{} & \multicolumn{1}{r}{} \\
 		\bottomrule
-	\end{tabularx}\%
+	\end{tabularx}
 	\begin{tablenotes}
-		\item \textit{Note:} \scriptsize \tiny Summary statistics of the annualized excess returns, annualized Sharpe and Sortino ratios on portfolios of top 5, 20 and 35 pairs between July 1991 and December 2015 (6,173 observations). \textcolor{blue} {Pairs are formed based on the smallest sum of squared deviations}. The t-statistics are computed using Newey-West standard errors with a six-lag correction. The columns labeled MDD1 and MDD2 compute the largest drawdown in terms of maximum percentage drop between two consecutive days and between two days within a period of maximum six months, respectively.
-		\item \scriptsize $^{\ast\ast\ast}$, $^{\ast\ast}$, $^{\ast}$  significant at 1\%, 5\% and 10\% levels, respectively.
-		\item \tiny The symbol labels (>) and (<) indicate that the null hypothesis represented in \ref{eq:eq153} is rejected in favor of the alternative and that the average excess returns and/or the Sharpe Ratio of the mixed copula strategy are found greater (>) or lower (<) than the average excess returns and/or the Sharpe Ratio of the distance strategy, respectively.
+		\item \textit{Note:} \footnotesize Summary statistics of the annualized excess returns, annualized Sharpe and Sortino ratios on portfolios of top 5, 20 and 35 pairs between July 1991 and December 2015 (6,173 observations). \textcolor{blue} {Pairs are formed based on the smallest sum of squared deviations}. The t-statistics are computed using Newey-West standard errors with a six-lag correction. The columns labeled MDD1 and MDD2 compute the largest drawdown in terms of maximum percentage drop between two consecutive days and between two days within a period of maximum six months, respectively.
+		\item \footnotesize $^{\ast\ast\ast}$, $^{\ast\ast}$, $^{\ast}$  significant at 1\%, 5\% and 10\% levels, respectively.
+		\item \footnotesize The symbol labels (>) and (<) indicate that the null hypothesis represented in \ref{eq:eq153} is rejected in favor of the alternative and that the average excess returns and/or the Sharpe Ratio of the mixed copula strategy are found greater (>) or lower (<) than the average excess returns and/or the Sharpe Ratio of the distance strategy, respectively.
 	\end{tablenotes}
 	\label{tab:table101}
 \end{threeparttable}
@@ -479,7 +499,7 @@ Section 2 of Table \ref{tab:table101} shows results on fully invested capital sc
 
 %albeit with higher volatility.
 
-Figure \ref{fig:fig49} show cumulative excess returns through the full dataset for both strategies for Top 5 (top), Top 20 (center) and Top 35 (bottom) pairs. The left panels displays cumulative returns on committed capital, whereas the right panels on fully invested capital. The patterns found in the figure strengthen the mean returns and t-statistics displayed in Table \ref{tab:table101}. It should be noted that the mixed copula strategy achieves a very favorable out-of-sample performance relative to the distance approach after the subprime mortgage crisis, especially after 2010 for Top 5 pairs (when the number of trades is comparable) on committed capital. 
+Figure \ref{fig:fig49} shows cumulative excess returns through the full dataset for both strategies for Top 5 (top), Top 20 (center) and Top 35 (bottom) pairs. The left panels displays cumulative returns on committed capital, whereas the right panels on fully invested capital. The patterns found in the figure strengthen the mean returns and t-statistics displayed in Table \ref{tab:table101}. It should be noted that the mixed copula strategy achieves a very favorable out-of-sample performance relative to the distance approach after the subprime mortgage crisis, especially after 2010 for Top 5 pairs (when the number of trades is comparable) on committed capital. 
 
 \begin{figure}[H]
 	\centering
@@ -538,7 +558,7 @@ H_{0}:\mu_{c}-\mu_{d}=0  \ \ \textrm{and}
 \ \  H_{0}:\frac{\mu_{c}}{\sigma_{c}}-\frac{\mu_{d}}{\sigma_{d}}=0,
 \label{eq:eq153}
 \end{equation}
-we compute, following \citet*{davison1997}, a two-sized $p$-value using $B=10000$ (stationary) bootstrap re-samples as follows:
+we compute, following \citet*{davison1997}, a two-sided $p$-value using $B=10,000$ (stationary) bootstrap re-samples as follows:
 \begin{equation}
 p_{sboot}=
 \begin{cases}
@@ -564,7 +584,7 @@ Overall, these results reinforce the ones previously obtained. As can be observe
 	
 	Table \ref{tab:table102} reports trading statistics. Panel A, B and C report results for Top 5, Top 20 and Top 35 pairs, respectively. The average price deviation trigger for opening pairs is listed in the first row of each panel. We can observe that, in average, we initiate the positions before when using the distance approach. The positions are initiated when prices have diverged by 5.94\%, 6.81\%, and 7.29\% for Top 5, Top 20, and Top 35 pairs, respectively. Similar to \citet*{ggr06}, the trigger spread increases with the number of pairs for all approaches\footnote{\citet*{ggr06} explains that the standard deviation of the prices increases as the proximity of the securities in price space decreases, thus increasing the trigger spreads.}.
 	
-	The table reveals that the average number of pairs traded per six-month period is only equiparable among the strategies for Top 5 pairs. For Top 20 and Top 35 pairs the total number of pairs opened is about 75\% and 138\% when starting positions based on the distance approach. This suggests that a two standard deviation trigger as opening criterion is less conservative than the opening threshold suggested by \citet*{rf15} using the cumulative mispriced indexed $M1$ and $M2$. Thus, the distance approach will be able to identify more trading opportunities to profit making the comparison less meaningful, although in practice the benefits are partly offset by the trading costs.
+	The table reveals that the average number of pairs traded per six-month period is only equiparable among the strategies for Top 5 pairs. For Top 20 and Top 35 pairs the total number of pairs opened is about 75\% and 138\% when starting positions based on the distance approach. This suggests that a two standard deviation trigger as opening criterion is less conservative than the opening threshold suggested by \citet*{rf15} using the cumulative mispricing indexes $M1$ and $M2$. Thus, the distance approach will be able to identify more trading opportunities to profit making the comparison less meaningful, although in practice the benefits are partly offset by the trading costs.
 	
 %	 This suggests that in practice one could be able to find an optimal criterion (trigger level) to initiate pairs trading as a function of trading costs and assumptions of the underlying pricing process. 
 
@@ -582,11 +602,11 @@ Overall, these results reinforce the ones previously obtained. As can be observe
 	\begin{threeparttable}[H]
 		\centering \scriptsize
 		\caption{Trading statistics.}
-		\begin{tabularx}{\textwidth}{@{\extracolsep{\fill}}p{5cm}p{1cm}p{1cm}p{1cm}p{1cm}@{}}
+		\begin{tabularx}{\textwidth}{@{\extracolsep{\fill}}p{7cm}p{1cm}p{1cm}p{1cm}p{1cm}@{}}
 			\toprule
 			\multicolumn{1}{c}{Strategy} & Distance & Mixed Copula \\
 			\midrule
-			& \multicolumn{4}{c}{\textit{Panel A: Top 5}} \\
+			& \multicolumn{2}{c}{\textit{Panel A: Top 5}} \\
 			& &  \\
 			Average price deviation trigger for opening pairs & 0.0594 & 0.0665  \\
 			Total number of pairs opened &  352   &  348   \\
@@ -597,7 +617,7 @@ Overall, these results reinforce the ones previously obtained. As can be observe
 			~~Standard Deviation & 39.24 & 38.93    \\
 			Median time pairs are open in days &  38.5  &  19          \\
 			& &  \\
-			& \multicolumn{4}{c}{\textit{Panel B: Top20}} \\
+			& \multicolumn{2}{c}{\textit{Panel B: Top20}} \\
 			& & \\
 			Average price deviation trigger for opening pairs & 0.0681 & 0.0821    \\
 			Total number of pairs opened &  1312  &  749     \\
@@ -608,7 +628,7 @@ Overall, these results reinforce the ones previously obtained. As can be observe
 			~Standard Deviation & 39.62 & 32.90    \\
 			Median time pairs are open in days & 41    & 9           \\
 			& & \\
-			& \multicolumn{4}{c}{\textit{Panel C: Top 35}} \\
+			& \multicolumn{2}{c}{\textit{Panel C: Top 35}} \\
 			& & \\
 			Average price deviation trigger for opening pairs & 0.0729 & 0.0893   \\
 			Total number of pairs opened & 2238  & 941   \\
@@ -621,7 +641,7 @@ Overall, these results reinforce the ones previously obtained. As can be observe
 	\bottomrule
 \end{tabularx}%
 \begin{tablenotes}
-\item \textit{Note:} \tiny  Trading statistics for portfolio of top 5, 20 and 35 pairs between July 1991 and December 2015 (49 periods). \textcolor{blue} {Pairs are formed over a 12-month period according to a minimum-distance (sum of squared deviations) criterion} and then traded over the subsequent 6-month period. Average price deviation trigger for opening a pair is calculated as the price difference divided by the average of the prices.
+\item \textit{Note:} \footnotesize  Trading statistics for portfolio of top 5, 20 and 35 pairs between July 1991 and December 2015 (49 periods). \textcolor{blue} {Pairs are formed over a 12-month period according to a minimum-distance (sum of squared deviations) criterion} and then traded over the subsequent 6-month period. Average price deviation trigger for opening a pair is calculated as the price difference divided by the average of the prices.
 \end{tablenotes}
 \label{tab:table102}%
 \end{threeparttable}%
@@ -632,7 +652,7 @@ Overall, these results reinforce the ones previously obtained. As can be observe
 	
 	\subsection{Regression on Fama-French asset pricing factors}
 	
-	In one attempt to understand the economic drivers behind our data and to evaluate whether pairs trading profitability is a compensation for risk, we regress daily excess returns onto various risk factors: daily \citet*{ff15}'s five research factors, the excess return on a broad market portfolio, ($R_{m} - R_{f}$), the difference between the return on a portfolio of small stocks and the return on a portfolio of large stocks ($SMB$, small minus big), the difference between the return on a portfolio of high book-to-market stocks and the return on a portfolio of low book-to-market stocks ($HML$, high minus low), the difference between the return of the most profitable stocks and the return of the least profitable stocks ($RMW$, robust minus weak), the difference between the return of stocks that invest conservatively and the return of stocks that invest aggressively ($CMA$, conservative minus aggressive) plus momentum (Mom),  short-term reversal (SRev), and long-term reversal (Rev) factors, \emph{i.e.},
+	In an attempt to understand the economic drivers behind our data and to evaluate whether pairs trading profitability is a compensation for risk, we regress daily excess returns onto various risk factors: daily \citet*{ff15}'s five research factors, the excess return on a broad market portfolio, ($R_{m} - R_{f}$), the difference between the return on a portfolio of small stocks and the return on a portfolio of large stocks ($SMB$, small minus big), the difference between the return on a portfolio of high book-to-market stocks and the return on a portfolio of low book-to-market stocks ($HML$, high minus low), the difference between the return of the most profitable stocks and the return of the least profitable stocks ($RMW$, robust minus weak), the difference between the return of stocks that invest conservatively and the return of stocks that invest aggressively ($CMA$, conservative minus aggressive) plus momentum (Mom),  short-term reversal (SRev), and long-term reversal (Rev) factors, \emph{i.e.},
 %	\footnote{Mom is the average return on two (big and small) high prior return portfolios minus the average return on the two low prior return portfolios
 
 	\begin{equation}
@@ -643,7 +663,7 @@ Overall, these results reinforce the ones previously obtained. As can be observe
 	\label{eq:eq101}
 	\end{equation}
 	
-		All the data used to fit the above regressions are described in and obtained from Kenneth French’s data library\footnote{\url{http://http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html}}. We select the model in terms of an approximation to the mean squared prediction error using Bayesian Information Criterion (BIC) (\citet*{Schwarz1978}). Based on this variable selection procedure we remove the short-term reversal factor from the model. 
+		All the data used to fit the above regressions are described in and obtained from Kenneth French’s data library\footnote{\url{http://http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html}}. We select the model in terms of an approximation to the mean squared prediction error using Bayesian Information Criterion (BIC) \citep{Schwarz1978}. Based on this variable selection procedure we remove the short-term reversal factor from the model. 
 	
 %	\citet*{fama2016} acknowledge that, similar to the 3-factor model, the 5-factor model is unable to explain the momentum effect. They also mention that the focus of the model is on explaining long-term expected returns rather than short-term variation in returns. (Blitz, 2016). We also consider sorts involving prior returns (Momentum, Short and Long-Term Reversals factors).
 	
@@ -668,10 +688,10 @@ Overall, these results reinforce the ones previously obtained. As can be observe
 	
 	Table \ref{tab:table103} shows the results for Top 5 pairs. It is clear that the mixed copula approach produces larger alphas than the distance method for both weighting schemes, especially on fully invested capital. It should also be noted that the alphas provided by copula and distance strategies are significant at 1\% and 10\%, respectively, after accouting for all the previously mentioned factors. Thus, the results show that the profits are not fully explained by the other factors.
 	
-	From Table \ref{tab:table103} one could also observe that the market premium slopes are larger for the distance method, especially on committed capital, and significant at 1\% for both strategies. The SMB coefficients are only significant at 10\% on committed capital for the mixed copula model, whereas the value effect premium (HML factor) slopes are significant at 5\% for the distance approach. In addition, we find that returns are negatively correlated with momentum loadings for both methods at 1\% on committed capital, although a larger negative effect on the performance is found when we use the 2.0 standard deviation threshold. We also find that excess returns are driven by the momentum factor on fully invested capital, although only significant at 5\% for the copula approach. Furthermore, the exposures of pairs trading return strategies to the reversal factor are negative for both weighting schemes and significant at 5\% for the distance approach on committed and fully invested capital, while it is only significant to the less conservative approach for the mixed copula strategy. The correlation of the excess returns with other traditional equity risk premia factors (RMA and CMW) is nearly zero. Finally, It should be noted that the results show that the exposures to the various	sources of systematic profile risk provide a low explanation of the average excess returns for any strategy as measured by the R-square and adjusted R-squared, particularly for the copula-based pairs strategy, 
+	From Table \ref{tab:table103} one could also observe that the market premium slopes are larger for the distance method, especially on committed capital, and significant at 1\% for both strategies. The SMB coefficients are only significant at 10\% on committed capital for the mixed copula model, whereas the value effect premium (HML factor) slopes are significant at 5\% for the distance approach. In addition, we find that returns are negatively correlated with momentum loadings for both methods at 1\% on committed capital, although a larger negative effect on the performance is found when we use the 2.0 standard deviation threshold. We also find that excess returns are driven by the momentum factor on fully invested capital, although only significant at 5\% for the copula approach. Furthermore, the exposures of pairs trading return strategies to the reversal factor are negative for both weighting schemes and significant at 5\% for the distance approach on committed and fully invested capital, while it is only significant to the less conservative approach for the mixed copula strategy. The correlation of the excess returns with other traditional equity risk premia factors (RMA and CMW) is nearly zero. Finally, It should be noted that the results show that the exposures to the various	sources of systematic profile risk provide a low explanation of the average excess returns for any strategy as measured by the R-squared and adjusted R-squared, particularly for the copula-based pairs strategy, 
 	indicating that the method is nearly factor-neutral over the whole sample period.
 	
-The regression on asset pricing factors for Top 5 pairs strengthen the patterns found in the Figure \ref{fig:fig49}, indicating that the mixed copula strategy is able to produce relatively economically larger profits after costs than the distance approach when the number of tradeable signals is equiparable. Tables \ref{tab:table104} and \ref{tab:table105} provided in Appendix report the regressions for Top 20 and Top 35 pairs. As expected, one could observe that the results are in agreement the patterns found in the center and bottom of Figure \ref{fig:fig49}.
+The regression on asset pricing factors for Top 5 pairs strengthen the patterns found in the Figure \ref{fig:fig49}, indicating that the mixed copula strategy is able to produce relatively economically larger profits after costs than the distance approach when the number of tradeable signals is equiparable. Tables \ref{tab:table104} and \ref{tab:table105} provided in Appendix report the regressions for Top 20 and Top 35 pairs. As expected, one could observe that the results are in agreement to the patterns found in the center and bottom of Figure \ref{fig:fig49}.
 
 %	Thus, the results show that the variations of the profits are not fully explained by the variation of the risk factors. Table \ref{tab:table105} presents results for Top 35 pairs. Here the alphas for copula method are still significantly different from zero at 1\% before costs. However, the strategy does not produce significant 
 %	profits on fully invested capital after costs for both multi-factors models, differently from the distance approaches. The market premium slopes for distance strategies are typically larger and significant at 1\%.
@@ -718,8 +738,8 @@ The regression on asset pricing factors for Top 5 pairs strengthen the patterns 
 				\bottomrule
 			\end{tabularx}
 			\begin{tablenotes}
-				\item \textit{Note:} \tiny  This table shows results of regressing daily portfolio return series onto \textcolor{blue}{Fama and French} \textcolor{blue}{(2016)}'s five factors factors plus momentum and long-term reversal over July 1991 and December 2015 (6173 observations). Section 1 shows the Return on Committed Capital and Section 2 on Fully Invested Capital after transaction costs. Pairs are formed based on the smallest sum of squared deviations. The t-statistics (shown in parentheses) are computed using Newey-West standard errors with six lags.
-				\item \scriptsize $^{\ast\ast\ast}$, $^{\ast\ast}$, $^{\ast}$  significant at 1\%, 5\% and 10\% levels, respectively.
+				\item \textit{Note:} \footnotesize  This table shows results of regressing daily portfolio return series onto \textcolor{blue}{Fama and French} \textcolor{blue}{(2016)}'s five factors factors plus momentum and long-term reversal over July 1991 and December 2015 (6173 observations). Section 1 shows the Return on Committed Capital and Section 2 on Fully Invested Capital after transaction costs. Pairs are formed based on the smallest sum of squared deviations. The t-statistics (shown in parentheses) are computed using Newey-West standard errors with six lags.
+				\item \footnotesize $^{\ast\ast\ast}$, $^{\ast\ast}$, $^{\ast}$  significant at 1\%, 5\% and 10\% levels, respectively.
 			\end{tablenotes}
 			\end{threeparttable}%
 		\label{tab:table103}%
@@ -746,7 +766,7 @@ The results suggest, since neither strategy is consistently superior in all subp
 		singlelinecheck=false
 	}
 	\caption{\textbf{Average excess returns of pairs trading strategies after costs for each sub-period}}
-	\caption*{\scriptsize This figure shows how the 5-year rolling window Sharpe ratio densities evolve from July 1996 to December 2015 for each of the strategies using the method of \citet*{sj1991} to select the bandwidths.}
+	\caption*{\scriptsize This figure shows how the 5-year rolling window Sharpe ratio densities evolve from July 1996 to December 2015 for each of the strategies.}
 	\label{fig:fig6}
 \end{figure}
 
@@ -757,7 +777,7 @@ The results suggest, since neither strategy is consistently superior in all subp
 		singlelinecheck=false
 	}
 	\caption{\textbf{Sharpe Ratio of pairs trading strategies after costs for each sub-period}}
-	\caption*{\scriptsize This figure shows how the 5-year rolling window Sharpe ratio densities evolve from July 1996 to December 2015 for each of the strategies using the method of \citet*{sj1991} to select the bandwidths.}
+	\caption*{\scriptsize This figure shows how the 5-year rolling window Sharpe ratio densities evolve from July 1996 to December 2015 for each of the strategies.}
 	\label{fig:fig7}
 \end{figure}
 
@@ -790,7 +810,7 @@ The main findings are summarized below.
 
 \vspace{0.3cm}
 	
-	Finally, we provide some suggestions for future research to improve our findings. First, we could create similar copula-based arbitrage for triplets to increase information dependency information and measure relative pricing more comprehensively. Second, since daily returns only capture close-to-close volatility, leaving much to be said regarding the actual volatility of the stocks intra-day, the inclusion of realized measures of volatility using higher frequency data may indeed prove beneficial. Third, we could borrow some ideas from statistical/machine learning and perform a model validation during the formation period rather than simply selecting the pairs. After choosing the pairs by whatever criterion has been adopted, we could check its predictive power by splitting data into two subsets. The idea is to select and fit the model based entirely on one part of the data, and then test it on the remaining part. Fourth, we could improve the method of pairs selection before using the copula approach. Since copulas capture better nonlinear dependence structures, we suspect that if we use a nonlinear association measurement such as the randomized dependency coefficient \citep{lopez2013randomized}, or a procedure based on data mining tools as random forest \citep{dlrz10} to select the pairs, the performance of the copula method may be enhanced.
+	Finally, we provide some suggestions for future research to improve our findings. First, we could create similar copula-based arbitrage for triplets to increase dependency information and measure relative pricing more comprehensively. Second, since daily returns only capture close-to-close volatility, leaving much to be said regarding the actual volatility of the stocks intra-day, the inclusion of realized measures of volatility using higher frequency data may indeed prove beneficial. Third, we could borrow some ideas from statistical/machine learning and perform a model validation during the formation period rather than simply selecting the pairs. After choosing the pairs by whatever criterion has been adopted, we could check its predictive power by splitting data into two subsets. The idea is to select and fit the model based entirely on one part of the data, and then test it on the remaining part. Fourth, we could improve the method of pairs selection before using the copula approach. Since copulas capture better nonlinear dependence structures, we suspect that if we use a nonlinear association measurement such as the randomized dependence coefficient \citep{lopez2013randomized}, or a procedure based on data mining tools as random forest \citep{dlrz10} to select the pairs, the performance of the copula method may be enhanced.
 	
 	\vspace{0.6cm} 
 	
@@ -805,6 +825,7 @@ The main findings are summarized below.
 	
 	This appendix contains the regressions on asset pricing factors for Top 20 and Top 35 pairs for both strategies.
 	
+
 		\begin{sidewaystable}
 		\centering \scriptsize
 		\caption{Systematic risk of Top 20 pairs: \textcolor{blue}{Fama and French} \textcolor{blue}{(2016)}'s five factors plus Momentum and Long-Term Reversal.}
@@ -833,7 +854,7 @@ The main findings are summarized below.
 			\end{tabularx}
 			\begin{tablenotes}
 				\item \textit{Note:} \tiny  This table shows results of regressing daily portfolio return series onto \textcolor{blue}{Fama and French} \textcolor{blue}{(2016)}'s five factors factors plus momentum and long-term reversal over July 1991 and December 2015 (6173 observations). Section 1 shows the Return on Committed Capital and Section 2 on Fully Invested Capital after transaction costs. Pairs are formed based on the smallest sum of squared deviations. The t-statistics (shown in parentheses) are computed using Newey-West standard errors with six lags.
-				\item \scriptsize $^{\ast\ast\ast}$, $^{\ast\ast}$, $^{\ast}$  significant at 1\%, 5\% and 10\% levels, respectively.
+				\item \footnotesize $^{\ast\ast\ast}$, $^{\ast\ast}$, $^{\ast}$  significant at 1\%, 5\% and 10\% levels, respectively.
 			\end{tablenotes}
 		\end{threeparttable}%
 		\label{tab:table104}%
@@ -867,7 +888,7 @@ The main findings are summarized below.
 			\end{tabularx}
 			\begin{tablenotes}
 				\item \textit{Note:} \tiny  This table shows results of regressing daily portfolio return series onto \textcolor{blue}{Fama and French} \textcolor{blue}{(2016)}'s five factors factors plus momentum and long-term reversal over July 1991 and December 2015 (6173 observations). Section 1 shows the Return on Committed Capital and Section 2 on Fully Invested Capital after transaction costs. Pairs are formed based on the smallest sum of squared deviations. The t-statistics (shown in parentheses) are computed using Newey-West standard errors with six lags.
-				\item \scriptsize $^{\ast\ast\ast}$, $^{\ast\ast}$, $^{\ast}$  significant at 1\%, 5\% and 10\% levels, respectively.
+				\item \footnotesize $^{\ast\ast\ast}$, $^{\ast\ast}$, $^{\ast}$  significant at 1\%, 5\% and 10\% levels, respectively.
 			\end{tablenotes}
 		\end{threeparttable}%
 		\label{tab:table105}%
