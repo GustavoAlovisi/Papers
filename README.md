@@ -6,7 +6,7 @@ This repository aims to provide information (data, codes) of my current working 
 Further studies should evaluate market risk, using micro and macro variables, together with machine learning and economic information such as newswire and press-releases. 
 
 * Fernando A.B. Sabino da Silva, Flavio A. Ziegelmann, Cristina Tessari. **Worst Case CVaR Portfolio Optimization with Multidimensional
-Copulas.**
+Copulas.** (https://bitbucket.org/fsabino/papers/src/5601d600ab79217059f326492cd882c6901cf77a/Nonparametric%20Smoothing/?at=master)
 
 Software: R, Matlab;
 
@@ -29,7 +29,7 @@ JEL Codes: C51, C58, G11;
 Data used: daily data of adjusted closing prices of all stocks that belong to S&P 500 market index from July 2st, 1990 to December 31st, 2015.
 
 
-* Fernando A.B. Sabino da Silva, Tainan B.F. Boff, Flavio A. Ziegelmann. **High-Frequency Pairs Trading: A Mixed Copula Approach.** 
+* Fernando A.B. Sabino da Silva, Tainan B.F. Boff, Flavio A. Ziegelmann. **High-Frequency Pairs Trading: A Mixed Copula Approach.** (https://bitbucket.org/fsabino/papers/src/5601d600ab79217059f326492cd882c6901cf77a/Pairs%20Trading%20High%20Frequency/?at=master)
 
 Software: R, Matlab;
 
