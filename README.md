@@ -42,7 +42,7 @@ Data used: We select 41 assets that had non-zero returns in more than eighty per
 Software: R;
 
 Data used: Minutes of the Copom (Monetary Policy Committee of the Central Bank of Brazil) from 01/19/2000 to 07/20/2016. Auxiliary data is collected from the project quandl (public data platform from around the world).
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 * Fernando A.B. Sabino da Silva. **Additive nonparametric regression estimation via backfitting
 and marginal integration: Small sample performance** (published at Brazilian Review of Econometrics, 2002). Codes had been written in Gauss. The code attached written in R is a modified version.
 
