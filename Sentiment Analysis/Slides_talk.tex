@@ -153,6 +153,14 @@
 
 \begin{frame}\frametitle{Methodology - Sentiment Analysis}
 \begin{itemize}
+	\item When human readers approach a text, we use our understanding of the emotional intent of words to infer whether a section of text is positive or negative, or perhaps characterized by some other more nuanced emotion like surprise or disgust (Robinson and Silge, 2017).
+	\item An often-used approach to analyze the sentiment of a text is to consider the text as a combination of its individual words and the sentiment content of the whole text as the sum of the sentiment content of the individual words. 
+	\item We use lexicon that are based on unigrams, i.e., single words. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Methodology - Sentiment Analysis}
+\begin{itemize}
 		\item The strategy is to first collect a small set of opinion words manually with known orientations, and then to grow this set by searching in an online dictionary for their synonyms and antonyms.
 		\item The newly found words are added to the seed list. Then, the next iteration starts. It stops when no more words are found.
 		\item We use the Inquirer dictionary provided by Harvard University (Stone, Dumphy and Smith (1966)) which classifies 11,788 words into semantic groups (\emph{positive}, \emph{negative}, \emph{strong}, \emph{weak}, among others).

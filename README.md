@@ -1,10 +1,43 @@
-Tese
+Working Papers
 ==============
 
-A partir da crescente importância da macroeconomia para o desenvolvimento da teoria econômica e também sua contribuição para a macroeconometria, a tese apresentou três ensaios em macroeconomia aplicada que utilizam de técnicas estatísticas e econométricas em problemas macroeconômicos.
+This repository aims to provide information (data, codes) of my current working papers in empirical finance, econometrics, and text mining/webscraping. 
 
-O primeiro ensaio contribui para a literatura brasileira na medida que aplica a abordagem DSGE-VAR na discussão sobre a reação da autoridade monetária às oscilações nata taxa de câmbio, especificamente para o caso de uma economia sob metas de inflação. Além disso, estudadmos o grau de má especificação do modelo DSGE proposto. Mais especificamente, comparamos a verossimilhança marginal do modelo DSGE às do modelo DSGE-VAR e examinamos se o Banco Central conseguiu isolar a economia brasileira, em particular a inflação, de choques externos.
+Further studies should evaluate market risk, using micro and macro variables, together with machine learning and economic information such as newswire and press-releases. 
 
-No seguindo ensaio, abordamos uma aplicação de macroeconomia em finanças. Dada a importância da correlação entre ativos para a diversificação de carteiras, as imperfeições nas quais estão sujeitas as medidas lineares de correlação, o ensaio teve como objetivo contribuir para a pesquisa brasileira na medida em que examina empiricamente o comportamento da correlação entre o retorno das ações listadas na BMF&BOVESPA no período de 2000 a 2015. Para tanto, utilizamos modelos GARCH multivariados para extrair a série temporal das matrizes de correlação condicional dos retornos das ações.
+* Fernando A.B. Sabino da Silva, Flavio A. Ziegelmann, Cristina Tessari. Worst Case CVaR Portfolio Optimization with Multidimensional
+Copulas.
+Software: R, Matlab;
+Keywords: Asset Allocation; Capital Requirement Loss; Copula; Portfolio Selection; Risk Management;
+S&P 500; Superior Predictive Ability; Stationary Bootstrap; WCCVaR; 
+JEL Codes: C15; C52; C53; C61; C63; G11;
+Data used: daily data of adjusted closing prices of all stocks that belong to S&P 500
+market index from July 2st, 1990 to December 31st, 2015.
+* Fernando A.B. Sabino da Silva, Flavio A. Ziegelmann, Joao F. Caldeira. Performance of Pairs Trading on the S&P 500: Distance and Mixed
+Copula models.
+Software: Matlab, R;
+Keywords: Distance; Mixed Copula; Two-Dimensional Pairs Trading; S&P 500; Statistical Arbitrage;
+JEL Codes: C51, C58, G11;
+Data used: daily data of adjusted closing prices of all stocks that belong to S&P 500
+market index from July 2st, 1990 to December 31st, 2015.
+* Fernando A.B. Sabino da Silva, Tainan B.F. Boff, Flavio A. Ziegelmann. High-Frequency Pairs Trading: A Mixed Copula Approach. 
+Software: R, Matlab;
+Keywords: Pairs Trading, Copula, Distance, Statistical Arbitrage, High-Frequency, Realized Variance;
+JEL: G11, G12, G14;
+Data used: We select 41 assets that had non-zero returns in more than eighty percent of the time intervals at a sampling frequency of 5 minutes. All stocks belong to BMF&BOVESPA (Brazil) from January 2nd, 2010 to December 31st, 2016.
+* Hudson C. Costa, Sabino P. da Silva Junior, Fernando A. B. Sabino da Silva. How Big Data, Machine Learning and Text Mining can help predicting economic activity?
+Software: R;
+Data used: 157 minutes of the Copom(Monetary Policy Committee of the Central Bank of Brazil) from 01/19/2000 to 07/20/2016. Auxiliary data is collected from the project quandl(public data platform from around the world).
+* Fernando A.B. Sabino da Silva. Additive nonparametric regression estimation via backfitting
+and marginal integration: Small sample performance (published at Brazilian Review of Econometrics, 2002. Codes had been written in Gauss. The code attached writenn in R is a modified version.
+Software: R;
+Key Words: Additive nonparametric regression, Local polynomial estimation, Automatic bandwidth selection, Backfitting estimation, Marginal integration.
+JEL Code: C14, C15.
+*Data used: Simulated.
 
-Já no terceiro ensaio, apontamos a necessidade em aproveitar as oportunidades atuais que surgem em função da maior disponibilidade de dados e recursos computacionais para alavancar as pesquisas em macroeconomia aplicada. É sabido que recente revolução (*Big Data*) que está mudando radicalmente a forma como os dados são produzidos, gerenciados, armazenados e analisados tem produzido implicações para governos, empresas e a sociedaade. Neste sentido, o terceiro ensaio teve como principal objetivo contribuir para a pesquisa brasileira em economia por meio da apresentação de pesquisas que utilizaram *Big Data, Machine Learning e Text Mining* em problemas macroeconômicos, discutir as principais técnicas e tecnologias adotadas bem como aplicá-las na análise de sentimento do Banco Central do Brasil (BCB) sobre a economia.
+
+
+---
+** Note **: Any code and data available here can be used as long as it is referenced. Contact me if you have any questions or suggestions at fsabino@ufrgs.br or create an issue (https://bitbucket.org/hudsonchaves/tese/issues?status=new&status=open). As soon as possible I will try to solve and leave comments so that other people also have access to the information.
+
+---
