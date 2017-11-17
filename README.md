@@ -5,8 +5,7 @@ This repository aims to provide information (data, codes) of my current working 
 
 Further studies should evaluate market risk, using micro and macro variables, together with machine learning and economic information such as newswire and press-releases. 
 
-* Fernando A.B. Sabino da Silva, Flavio A. Ziegelmann, Cristina Tessari. **[Worst Case CVaR Portfolio Optimization with Multidimensional Copulas](https://bitbucket.org/fsabino/papers/src/7e53921673a66c9cb7c5bfa28b4c1af2209e34e0/Portfolio%20Optimization%20with%20Multidimensional%20Copulas/?at=master)****Worst Case CVaR Portfolio Optimization with Multidimensional
-Copulas.** 
+* Fernando A.B. Sabino da Silva, Flavio A. Ziegelmann, Cristina Tessari. **[Worst Case CVaR Portfolio Optimization with Multidimensional Copulas](https://bitbucket.org/fsabino/papers/src/7e53921673a66c9cb7c5bfa28b4c1af2209e34e0/Portfolio%20Optimization%20with%20Multidimensional%20Copulas/?at=master)**
 
 Software: R, Matlab;
 
@@ -17,8 +16,9 @@ JEL Codes: C15; C52; C53; C61; C63; G11;
 Data used: daily data of adjusted closing prices of all stocks that belong to S&P 500 market index from July 2st, 1990 to December 31st, 2015.
 
 
-* Fernando A.B. Sabino da Silva, Flavio A. Ziegelmann, Joao F. Caldeira. **Performance of Pairs Trading on the S&P 500: Distance and Mixed
-Copula models.**
+* Fernando A.B. Sabino da Silva, Flavio A. Ziegelmann, Joao F. Caldeira. 
+* Fernando A.B. Sabino da Silva, Flavio A. Ziegelmann, Cristina Tessari. **[Performance of Pairs Trading on the S&P 500: Distance and Mixed Copula Models](https://bitbucket.org/fsabino/papers/src/7e53921673a66c9cb7c5bfa28b4c1af2209e34e0/Portfolio%20Optimization%20with%20Multidimensional%20Copulas/?at=master)****[Performance of Pairs Trading on the S&P 500: Distance and Mixed
+
 
 Software: Matlab, R;
 
