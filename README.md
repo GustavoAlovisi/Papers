@@ -5,7 +5,7 @@ This repository aims to provide information (data, codes) of my current working 
 
 Further studies should evaluate market risk, using micro and macro variables, together with machine learning and economic information such as newswire and press-releases. 
 
-* Fernando A.B. Sabino da Silva, Flavio A. Ziegelmann, Cristina Tessari. **[Papers](https://bitbucket.org/fsabino/papers)****Worst Case CVaR Portfolio Optimization with Multidimensional
+* Fernando A.B. Sabino da Silva, Flavio A. Ziegelmann, Cristina Tessari. **[Worst Case CVaR Portfolio Optimization with Multidimensional Copulas](https://bitbucket.org/fsabino/papers/src/7e53921673a66c9cb7c5bfa28b4c1af2209e34e0/Portfolio%20Optimization%20with%20Multidimensional%20Copulas/?at=master)****Worst Case CVaR Portfolio Optimization with Multidimensional
 Copulas.** 
 
 Software: R, Matlab;
