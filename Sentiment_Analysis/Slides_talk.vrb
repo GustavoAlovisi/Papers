@@ -1,0 +1,21 @@
+\frametitle{Methodology - Web Scraping}
+  \begin{block}{Example of the minutes collection algorithm}
+\begin{Schunk}
+\begin{Sinput}
+> main.page = read_html(x = "http://www.bcb.gov.br/?MINUTES")
+> urls = main.page %>%
++   html_nodes("#cronoAno a") %>%
++   html_attr("href")
+> ano = main.page %>%
++   html_nodes("#cronoAno a") %>%
++   html_text()
+>
+> # 2016 http://www.bcb.gov.br/?id=MINUTES&ano=2016
+\end{Sinput}
+\end{Schunk}
+  \end{block}
+  \begin{itemize}
+    \item We have developed a system that carries out massive collection and then uploads the information to a database, based on a logical and scalable architecture solution
+    \item It interacts with the web pages, extracts the information and stores the data
+    \item Data Collectors: Google, Facebook.
+  \end{itemize}

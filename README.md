@@ -38,6 +38,6 @@ JEL Code: C14, C15.
 
 
 ---
-** Note **: Any code and data available here can be used as long as it is referenced. Contact me if you have any questions or suggestions at fsabino@ufrgs.br or create an issue (https://bitbucket.org/hudsonchaves/tese/issues?status=new&status=open). As soon as possible I will try to solve and leave comments so that other people also have access to the information.
+** Note **: Any code and data available here can be used as long as it is referenced. Please contact me at fsabino@ufrgs.br or create an issue (https://bitbucket.org/hudsonchaves/tese/issues?status=new&status=open) if you have any questions or suggestions or want any additional material. As soon as possible I will try to solve and leave comments so that other people also have access to the information.
 
 ---
