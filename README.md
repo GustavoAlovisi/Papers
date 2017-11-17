@@ -6,7 +6,7 @@ This repository aims to provide information (data, codes) of my current working 
 Further studies should evaluate market risk, using micro and macro variables, together with machine learning and economic information such as newswire and press-releases. 
 
 * Fernando A.B. Sabino da Silva, Flavio A. Ziegelmann, Cristina Tessari. **Worst Case CVaR Portfolio Optimization with Multidimensional
-Copulas.** (https://bitbucket.org/fsabino/papers/src/5601d600ab79217059f326492cd882c6901cf77a/Nonparametric%20Smoothing/?at=master)
+Copulas.** 
 
 Software: R, Matlab;
 
@@ -48,7 +48,7 @@ Data used: Minutes of the Copom (Monetary Policy Committee of the Central Bank o
 
 
 * Fernando A.B. Sabino da Silva. **Additive nonparametric regression estimation via backfitting
-and marginal integration: Small sample performance** (published at Brazilian Review of Econometrics, 2002). Codes had been written in Gauss. The code attached written in R is a modified version.
+and marginal integration: Small sample performance** [Additive Nonparametric Regression] (https://bitbucket.org/fsabino/papers/src/5601d600ab79217059f326492cd882c6901cf77a/Nonparametric%20Smoothing/?at=master)(published at Brazilian Review of Econometrics, 2002). Codes had been written in Gauss. The code attached written in R is a modified version.
 
 Software: R;
 
