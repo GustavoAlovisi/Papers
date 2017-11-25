@@ -40,7 +40,7 @@ JEL: G11, G12, G14.
 Data used: We select 41 assets that had non-zero returns in more than eighty percent of the time intervals at a sampling frequency of 5 minutes. All stocks belong to BMF&BOVESPA (Brazil) from January 2nd, 2010 to December 31st, 2016.
 
 
-* Hudson C. Costa, Sabino P. da Silva Junior, Fernando A. B. Sabino da Silva. **[How Big Data, Machine Learning and Text Mining can help predicting economic activity?](https://bitbucket.org/fsabino/papers/src/97175ceddb49f2471fc8324b921d381b23442b1f/Sentiment%20Analysis/?at=master)**
+* Hudson C. Costa, Sabino P. da Silva Junior, Fernando A. B. Sabino da Silva. **[Can Big Data, Machine Learning and Text Mining predict economic activity effectively?](https://bitbucket.org/fsabino/papers/src/97175ceddb49f2471fc8324b921d381b23442b1f/Sentiment%20Analysis/?at=master)**
 
 Software: R.
 
