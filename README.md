@@ -7,7 +7,7 @@ Further studies should evaluate market risk, using micro and macro variables, to
 newswire, press-releases and sentiment indexes. 
 
 
-* Fernando A.B. Sabino da Silva, Flavio A. Ziegelmann, Cristina Tessari. **[Worst Case CVaR Portfolio Optimization with Multidimensional Copulas](https://bitbucket.org/fsabino/papers/src/7e53921673a66c9cb7c5bfa28b4c1af2209e34e0/Portfolio%20Optimization%20with%20Multidimensional%20Copulas/?at=master).**
+* Fernando A.B. Sabino da Silva, Flavio A. Ziegelmann, Cristina Tessari. **[Robust Portfolio Optimization with Multivariate Copulas: an approach to protect investors against any market conditions](https://bitbucket.org/fsabino/papers/src/7e53921673a66c9cb7c5bfa28b4c1af2209e34e0/Portfolio%20Optimization%20with%20Multidimensional%20Copulas/?at=master).**
 
 Software: R, Matlab.
 
