@@ -7,7 +7,7 @@ Further studies should evaluate market risk, using micro and macro variables, to
 newswire, press-releases and sentiment indexes. 
 
 
-* Fernando A.B. Sabino da Silva, Flavio A. Ziegelmann, Cristina Tessari. **[Robust Portfolio Optimization with Multivariate Copulas: an approach to protect investors against any market conditions](https://bitbucket.org/fsabino/papers/src/7e53921673a66c9cb7c5bfa28b4c1af2209e34e0/Portfolio%20Optimization%20with%20Multidimensional%20Copulas/?at=master).**
+* Fernando A.B. Sabino da Silva, Flavio A. Ziegelmann, Cristina Tessari. **[Robust Portfolio Optimization with Multivariate Copulas: a Worst-Case CVaR approach](https://bitbucket.org/fsabino/papers/src/7e53921673a66c9cb7c5bfa28b4c1af2209e34e0/Portfolio%20Optimization%20with%20Multidimensional%20Copulas/?at=master).**
 
 Software: R, Matlab.
 
@@ -29,7 +29,7 @@ JEL Codes: C51, C58, G11.
 Data used: daily data of adjusted closing prices of all stocks that belong to S&P 500 market index from July 2st, 1990 to December 31st, 2015.
 
 
-* Fernando A.B. Sabino da Silva, Tainan B.F. Boff, Flavio A. Ziegelmann. **[High-Frequency Pairs Trading at the Brazilian Financial Market: A Mixed Copula Approach](https://bitbucket.org/fsabino/papers/src/97175ceddb49f2471fc8324b921d381b23442b1f/Pairs_Trading_High_Frequency/?at=master).**
+* Fernando A.B. Sabino da Silva, Tainan B.F. Boff, Flavio A. Ziegelmann. **[High-Frequency Pairs Trading at the Brazilian Financial Market: A Mixed Copula Method](https://bitbucket.org/fsabino/papers/src/97175ceddb49f2471fc8324b921d381b23442b1f/Pairs_Trading_High_Frequency/?at=master).**
 
 Software: R, Matlab.
 

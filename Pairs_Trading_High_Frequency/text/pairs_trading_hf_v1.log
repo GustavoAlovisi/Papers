@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.8.22)  23 NOV 2017 02:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.8.22)  5 DEC 2017 01:52
 entering extended mode
 **./pairs_trading_hf_v1.tex
 (pairs_trading_hf_v1.tex
@@ -314,7 +314,8 @@ Missing character: There is no § in font cmti8!
  [1
 
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] (pairs_trading_hf_v1.bbl
+{C:/Users/fsabino/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] (pairs_tr
+ading_hf_v1.bbl
 
 Package natbib Warning: Empty `thebibliography' environment on input line 8.
 
@@ -348,7 +349,7 @@ sy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti7.pfb><C:/Progr
 am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Program Files/
 MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on pairs_trading_hf_v1.pdf (2 pages, 148898 bytes).
+Output written on pairs_trading_hf_v1.pdf (2 pages, 148931 bytes).
 PDF statistics:
  115 PDF objects out of 1000 (max. 8388607)
  18 named destinations out of 1000 (max. 500000)
