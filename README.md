@@ -18,7 +18,7 @@ JEL Codes: C15; C52; C53; C61; C63; G11.
 Data used: daily data of adjusted closing prices of all stocks that belong to S&P 500 market index from July 2st, 1990 to December 31st, 2015.
 
 
-* Fernando A.B. Sabino da Silva, Flavio A. Ziegelmann, Joao F. Caldeira. **[Profitability of Pairs Trading with S&P 500 companies: Distance and Mixed Copula Models](https://bitbucket.org/fsabino/papers/src/97175ceddb49f2471fc8324b921d381b23442b1f/Pairs%20Trading%20Daily%20Frequency/?at=master).**
+* Fernando A.B. Sabino da Silva, Flavio A. Ziegelmann, Joao F. Caldeira. **[Profitability of pairs trading with S&P 500 companies: distance and mixed copula models](https://bitbucket.org/fsabino/papers/src/97175ceddb49f2471fc8324b921d381b23442b1f/Pairs%20Trading%20Daily%20Frequency/?at=master).**
 
 Software: Matlab, R.
 
