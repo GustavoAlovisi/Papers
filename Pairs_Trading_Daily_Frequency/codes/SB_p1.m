@@ -1,0 +1,103 @@
+clear all; close all; clc; 
+
+addpath('C:\Users\fsabino\Dropbox\paper1\PDS\cvx\kevinsheppard_multivariate\multivariate');
+addpath('C:\Users\fsabino\Dropbox\paper1\PDS\cvx\utility ');
+addpath('C:\Users\fsabino\Dropbox\paper1\PDS\cvx');
+addpath('C:\Users\fsabino\Dropbox\Fernando\MFE');
+addpath('C:\Users\fsabino\Dropbox\Fernando\PTCop'); 
+addpath('C:\Program Files\MATLAB\R2013b\toolbox\stats');
+addpath('C:\Users\fsabino\Dropbox\Fernando\PTCop\Patton_copula_toolbox');
+addpath('C:\Users\fsabino\Dropbox\Fernando\PTCop\ARMAX_GARCH_K_Toolbox');
+addpath('C:\Users\fsabino\Dropbox\Fernando\MFE\MFEToolbox\univariate');
+addpath('C:\Users\fsabino\Dropbox\Fernando\MFE\MFEToolbox\distributions');
+addpath('C:\Users\fsabino\Dropbox\Fernando\MFE\MFEToolbox\mex_source');
+addpath('C:\Users\fsabino\Dropbox\Fernando\PairsTrading_FEX\PairsTrading_FEX\m_Files');
+addpath('C:\Users\fsabino\Dropbox\Fernando\MFE\Matlab5\TOOLBOX\MATLAB\OMAT');
+addpath('C:\Users\fsabino\Dropbox\Fernando\__MACOSX\PDS\códigos');
+addpath('C:\Users\fsabino\Dropbox\Fernando\Garch');
+addpath('C:\Users\fsabino\Desktop\Fernando\dist_sq');
+addpath('C:\Users\fsabino\Desktop\Fernando\sq_mix');
+addpath('C:\Users\fsabino\Dropbox\paper_pairs_trading_realized\fillts\paper3');
+addpath('C:\Users\fsabino\Desktop\Fernando\Codes Matlab');
+addpath('C:\Users\fsabino\Desktop\Fernando\papers');
+addpath('C:\Users\fsabino\Desktop\Fernando\Results_tables_paper1');
+
+load('dist_p5c0_sq2.0.mat','Rp_vw_cc','Rp_vw_fi'); 
+cc_dist_p5c0 = Rp_vw_cc; fi_dist_p5c0 = Rp_vw_fi;
+load('mixcop_p5c0_0.2.mat','Rp_vw_cc','Rp_vw_fi','RmRf');
+cc_mixcop_p5c0 = Rp_vw_cc; fi_mixcop_p5c0 = Rp_vw_fi;
+load('dist_p5c1_sq2.0.mat','Rp_vw_cc','Rp_vw_fi'); 
+cc_dist_p5c1 = Rp_vw_cc; fi_dist_p5c1 = Rp_vw_fi;
+load('mixcop_p5c1_0.2.mat','Rp_vw_cc','Rp_vw_fi','RmRf');
+cc_mixcop_p5c1 = Rp_vw_cc; fi_mixcop_p5c1 = Rp_vw_fi;
+load('dist_p5c2_sq2.0.mat','Rp_vw_cc','Rp_vw_fi'); 
+cc_dist_p5c2 = Rp_vw_cc; fi_dist_p5c2 = Rp_vw_fi;
+load('mixcop_p5c2_0.2.mat','Rp_vw_cc','Rp_vw_fi','RmRf');
+cc_mixcop_p5c2 = Rp_vw_cc; fi_mixcop_p5c2 = Rp_vw_fi;
+load('dist_p20c0_sq2.0.mat','Rp_vw_cc','Rp_vw_fi'); 
+cc_dist_p20c0 = Rp_vw_cc; fi_dist_p20c0 = Rp_vw_fi;
+load('mixcop_p20c0_0.2.mat','Rp_vw_cc','Rp_vw_fi','RmRf');
+cc_mixcop_p20c0 = Rp_vw_cc; fi_mixcop_p20c0 = Rp_vw_fi;
+load('dist_p20c1_sq2.0.mat','Rp_vw_cc','Rp_vw_fi'); 
+cc_dist_p20c1 = Rp_vw_cc; fi_dist_p20c1 = Rp_vw_fi;
+load('mixcop_p20c1_0.2.mat','Rp_vw_cc','Rp_vw_fi','RmRf');
+cc_mixcop_p20c1 = Rp_vw_cc; fi_mixcop_p20c1 = Rp_vw_fi;
+load('dist_p20c2_sq2.0.mat','Rp_vw_cc','Rp_vw_fi'); 
+cc_dist_p20c2 = Rp_vw_cc; fi_dist_p20c2 = Rp_vw_fi;
+load('mixcop_p20c2_0.2.mat','Rp_vw_cc','Rp_vw_fi','RmRf');
+cc_mixcop_p20c2 = Rp_vw_cc; fi_mixcop_p20c2 = Rp_vw_fi;
+load('dist_p35c0_sq2.0.mat','Rp_vw_cc','Rp_vw_fi'); 
+cc_dist_p35c0 = Rp_vw_cc; fi_dist_p35c0 = Rp_vw_fi;
+load('mixcop_p35c0_0.2.mat','Rp_vw_cc','Rp_vw_fi','RmRf');
+cc_mixcop_p35c0 = Rp_vw_cc; fi_mixcop_p35c0 = Rp_vw_fi;
+load('dist_p35c1_sq2.0.mat','Rp_vw_cc','Rp_vw_fi'); 
+cc_dist_p35c1 = Rp_vw_cc; fi_dist_p35c1 = Rp_vw_fi;
+load('mixcop_p35c1_0.2.mat','Rp_vw_cc','Rp_vw_fi','RmRf');
+cc_mixcop_p35c1 = Rp_vw_cc; fi_mixcop_p35c1 = Rp_vw_fi;
+load('dist_p35c2_sq2.0.mat','Rp_vw_cc','Rp_vw_fi'); 
+cc_dist_p35c2 = Rp_vw_cc; fi_dist_p35c2 = Rp_vw_fi;
+load('mixcop_p35c2_0.2.mat','Rp_vw_cc','Rp_vw_fi','RmRf');
+cc_mixcop_p35c2 = Rp_vw_cc; fi_mixcop_p35c2 = Rp_vw_fi;
+
+Bstar = opt_block_length([cc_dist_p5c0, cc_mixcop_p5c0]);
+SBstar = Bstar(1,:);
+Bstar2 = opt_block_length([fi_dist_p5c0, fi_mixcop_p5c0]);
+SBstar2 = Bstar2(1,:);
+Bstar3 = opt_block_length([cc_dist_p5c1, cc_mixcop_p5c1]);
+SBstar3 = Bstar(1,:);
+Bstar4 = opt_block_length([fi_dist_p5c1, fi_mixcop_p5c1]);
+SBstar4 = Bstar2(1,:);
+
+[pSR_p5c0_cc, pmean_p5c0_cc, pSTD_p5c0_cc] = PolitisRomano_p1(cc_dist_p5c0, cc_mixcop_p5c0, max(mean(SBstar),1));
+[pSR_p5c0_fi, pmean_p5c0_fi, pSTD_p5c0_fi] = PolitisRomano_p1(fi_dist_p5c0, fi_mixcop_p5c0, max(mean(SBstar2),1));
+[pSR_p5c1_cc, pmean_p5c1_cc, pSTD_p5c1_cc] = PolitisRomano_p1(cc_dist_p5c1, cc_mixcop_p5c1, max(mean(SBstar3),1));
+[pSR_p5c1_fi, pmean_p5c1_fi, pSTD_p5c1_fi] = PolitisRomano_p1(fi_dist_p5c1, fi_mixcop_p5c1, max(mean(SBstar4),1));
+
+Bstar = opt_block_length([cc_dist_p20c0, cc_mixcop_p20c0]);
+SBstar = Bstar(1,:);
+Bstar2 = opt_block_length([fi_dist_p20c0, fi_mixcop_p20c0]);
+SBstar2 = Bstar2(1,:);
+Bstar3 = opt_block_length([cc_dist_p20c1, cc_mixcop_p20c1]);
+SBstar3 = Bstar(1,:);
+Bstar4 = opt_block_length([fi_dist_p20c1, fi_mixcop_p20c1]);
+SBstar4 = Bstar2(1,:);
+
+[pSR_p20c0_cc, pmean_p20c0_cc, pSTD_p20c0_cc] = PolitisRomano_p1(cc_dist_p20c0, cc_mixcop_p20c0, max(mean(SBstar),1));
+[pSR_p20c0_fi, pmean_p20c0_fi, pSTD_p20c0_fi] = PolitisRomano_p1(fi_dist_p20c0, fi_mixcop_p20c0, max(mean(SBstar2),1));
+[pSR_p20c1_cc, pmean_p20c1_cc, pSTD_p20c1_cc] = PolitisRomano_p1(cc_dist_p20c1, cc_mixcop_p20c1, max(mean(SBstar3),1));
+[pSR_p20c1_fi, pmean_p20c1_fi, pSTD_p20c1_fi] = PolitisRomano_p1(fi_dist_p20c1, fi_mixcop_p20c1, max(mean(SBstar4),1));
+
+Bstar = opt_block_length([cc_dist_p35c0, cc_mixcop_p35c0]);
+SBstar = Bstar(1,:);
+Bstar2 = opt_block_length([fi_dist_p35c0, fi_mixcop_p35c0]);
+SBstar2 = Bstar2(1,:);
+Bstar3 = opt_block_length([cc_dist_p35c1, cc_mixcop_p35c1]);
+SBstar3 = Bstar(1,:);
+Bstar4 = opt_block_length([fi_dist_p35c1, fi_mixcop_p35c1]);
+SBstar4 = Bstar2(1,:);
+
+[pSR_p35c0_cc, pmean_p35c0_cc, pSTD_p35c0_cc] = PolitisRomano_p1(cc_dist_p35c0, cc_mixcop_p35c0, max(mean(SBstar),1));
+[pSR_p35c0_fi, pmean_p35c0_fi, pSTD_p35c0_fi] = PolitisRomano_p1(fi_dist_p35c0, fi_mixcop_p35c0, max(mean(SBstar2),1));
+[pSR_p35c1_cc, pmean_p35c1_cc, pSTD_p35c1_cc] = PolitisRomano_p1(cc_dist_p35c1, cc_mixcop_p35c1, max(mean(SBstar3),1));
+[pSR_p35c1_fi, pmean_p35c1_fi, pSTD_p35c1_fi] = PolitisRomano_p1(fi_dist_p35c1, fi_mixcop_p35c1, max(mean(SBstar4),1));
+
