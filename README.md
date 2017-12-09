@@ -29,7 +29,7 @@ JEL Codes: G11; G12; G14.
 Data used: daily data of adjusted closing prices of all stocks that belong to S&P 500 market index from July 2st, 1990 to December 31st, 2015.
 
 
-* Fernando A.B. Sabino da Silva, Tainan B.F. Boff, Flavio A. Ziegelmann. **[High-Frequency Pairs Trading at the Brazilian Financial Market: A Mixed Copula Method](https://bitbucket.org/fsabino/papers/src/8c2891b93c632ee77fcc5639738a005c17530cd1/Pairs_Trading_High_Frequency/?at=master).**
+* Fernando A.B. Sabino da Silva, Tainan B.F. Boff, Flavio A. Ziegelmann. **[High-Frequency Pairs Trading at the Brazilian Financial Market: A Mixed Copula Method](https://bitbucket.org/fsabino/papers/src/482db82bfc3b109b6ce3408792bfb38adae63fd3/Pairs_Trading_High_Frequency/?at=master).**
 
 Software: R, Matlab.
 
