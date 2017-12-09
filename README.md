@@ -22,7 +22,7 @@ Data used: daily data of adjusted closing prices of all stocks that belong to S&
 
 Software: Matlab, R.
 
-Keywords: Distance; Copula; Long-Short; Pairs Trading; Quantitative Strategies; S&P 500; Statistical Arbitrage.
+Keywords: Pairs Trading; Distance; Copula; Long-Short; Quantitative Strategies; S&P 500; Statistical Arbitrage.
 
 JEL Codes: G11; G12; G14.
 
@@ -33,7 +33,8 @@ Data used: daily data of adjusted closing prices of all stocks that belong to S&
 
 Software: R, Matlab.
 
-Keywords: Pairs Trading, Copula, Distance, Statistical Arbitrage, High-Frequency, Realized Variance.
+Keywords: Pairs Trading; Copula, Distance, Long-
+Short; Quantitative Strategies; Statistical Arbitrage, High-Frequency, Realized Variance.
 
 JEL: G11, G12, G14.
 
