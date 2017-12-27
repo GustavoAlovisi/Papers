@@ -18,7 +18,7 @@ JEL Codes: G11; G12; G17.
 Data used: daily data of adjusted closing prices of all stocks that belong to S&P 500 market index from July 2st, 1990 to December 31st, 2015.
 
 
-* Fernando A.B. Sabino da Silva, Flavio A. Ziegelmann, Joao F. Caldeira. **[Performance of Pairs Trading with Distance and Mixed Copula Models: Evidence from S&P 500 Companies](https://bitbucket.org/fsabino/papers/src/8c2891b93c632ee77fcc5639738a005c17530cd1/Pairs_Trading_Daily_Frequency/?at=master).**
+* Fernando A.B. Sabino da Silva, Flavio A. Ziegelmann, Joao F. Caldeira. **[Pairs Trading: Optimizing via Mixed Copula versus Distance Method for S&P 500 Assets](https://bitbucket.org/fsabino/papers/src/8c2891b93c632ee77fcc5639738a005c17530cd1/Pairs_Trading_Daily_Frequency/?at=master).**
 
 Software: Matlab, R.
 
