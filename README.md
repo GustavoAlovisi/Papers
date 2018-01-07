@@ -3,9 +3,7 @@ Working Papers
 
 This repository aims to provide information (data, codes) of my current working papers in empirical finance, econometrics, and text mining/webscraping. 
 
-Further studies should evaluate market risk, using micro and macro variables, together with machine learning and economic information such as 
-newswire, press-releases and sentiment indexes. 
-
+Further studies should pursue applications to asset allocation under conditions of market distress or to a user-specified scenario. In addition, I want to identify impactful news articles and construct news factor. One can apply machine learning techniques to identify relevant tags for a story and to understand which patterns can impact the market most.
 
 * Fernando A.B. Sabino da Silva, Flavio A. Ziegelmann, Cristina Tessari. **[Robust Portfolio Optimization with Multivariate Copulas: a Worst-Case CVaR approach](https://bitbucket.org/fsabino/papers/src/8c2891b93c632ee77fcc5639738a005c17530cd1/Portfolio_Optimization_with_Multidimensional_Copulas/?at=master).**
 
@@ -46,6 +44,12 @@ Data used: We select 41 assets that had non-zero returns in more than eighty per
 Software: R.
 
 Data used: Minutes of the Copom (Monetary Policy Committee of the Central Bank of Brazil) from 01/19/2000 to 07/20/2016. Auxiliary data is collected from the project quandl (public data platform from around the world).
+
+* Fernando A. B. Sabino da Silva and Denis Martinez **[Novel Facebook technology to confirm sleep laboratory data]
+
+Software: R, Python.
+
+Data used: The retrospectively analyzed database include patients of both sexes who underwent in-laboratory baseline polysomnography to investigate any complaint of disordered sleep. 
 
 
 Published
