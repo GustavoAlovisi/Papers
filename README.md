@@ -45,7 +45,7 @@ Software: R.
 
 Data used: Minutes of the Copom (Monetary Policy Committee of the Central Bank of Brazil) from 01/19/2000 to 07/20/2016. Auxiliary data is collected from the project quandl (public data platform from around the world).
 
-* Fernando A. B. Sabino da Silva and Denis Martinez **[Novel Facebook technology to confirm sleep laboratory data]
+* Fernando A. B. Sabino da Silva and Denis Martinez **[Novel Facebook technology to confirm sleep laboratory data]**
 
 Software: R, Python.
 
