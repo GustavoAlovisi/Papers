@@ -66,6 +66,16 @@ JEL Code: C14, C15.
 *Data used: Simulated.
 
 
+Teaching
+==============
+
+* Linear Regression**[Diagnostics](https://bitbucket.org/fsabino/papers/src/08088f1e12a8e90fb70aa5f9f8eeaf2495c70750/Linear_Regression_Analysis/?at=master)**
+
+Software: R.
+
+*Data used: Simulated and Professor Kenneth French's data library website (http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/Data_Library/det_st_rev_factor_daily.html).
+
+
 
 ---
 ** Note **: Any code and data available here can be used as long as it is referenced. Please contact me at fsabino@ufrgs.br or create an issue (https://bitbucket.org/fsabino/papers/issues?status=new&status=open) if you have any questions or suggestions or want any additional material. As soon as possible I will try to solve and leave comments so that other people also have access to the requested information.
