@@ -69,7 +69,7 @@ JEL Code: C14, C15.
 Teaching
 ==============
 
-* Linear Regression**[Diagnostics](https://bitbucket.org/fsabino/papers/src/08088f1e12a8e90fb70aa5f9f8eeaf2495c70750/Linear_Regression_Analysis/?at=master)**
+* Linear Regression. **[Diagnostics](https://bitbucket.org/fsabino/papers/src/08088f1e12a8e90fb70aa5f9f8eeaf2495c70750/Linear_Regression_Analysis/?at=master)**
 
 Software: R.
 
