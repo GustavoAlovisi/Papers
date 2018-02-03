@@ -75,7 +75,7 @@ hrefFun = function(x) {
 toSpace <- content_transformer(function(x, pattern) gsub(pattern, "", x))
 
 #####
-## FUNCTION READ PDF FILES FROM A DIRECTORY AND TRANSFORM IN TEXTUAL FORMAT
+## FUNCTION TO READ PDF FILES FROM A DIRECTORY AND TRANSFORM INTO TEXTUAL FORMAT
 #####
 
 readerPDF <- function(fname) {
@@ -84,17 +84,17 @@ readerPDF <- function(fname) {
 }
 
 
-## FUNCTION TO CONVERT TEXT IN SENTENCES
+## FUNCTION TO CONVERT TEXT INTO SENTENCES
 #####
 
 convert_text_to_sentences <- function(text, lang = "en") {
   # Function to compute sentence annotations using the Apache OpenNLP Maxent sentence detector using the "Portuguese" language
   sentence_token_annotator <- Maxent_Sent_Token_Annotator(language = lang)
   
-  # Convert text to string using NLP package
+  # Convert text into string using NLP package
   text <- as.String(text)
   
-  # Limits of sentences in text
+  # Limits of sentences in the text
   sentence.boundaries <- annotate(text, sentence_token_annotator)
   
   # Extract the sentences
@@ -109,7 +109,7 @@ convert_text_to_sentences <- function(text, lang = "en") {
 #####
 
 reshape_corpus <- function(current.corpus, FUN, ...) {
-  # Extract the text of each document in the corpus and put it in a list
+  # Extract the text of each document in the corpus and put it on a list
   text <- lapply(current.corpus, content)  
   
   # Basically, it converts the text
@@ -180,7 +180,7 @@ for(i in 1:length(urls.yearly)) {
 
 # Merge "link" and "urls" into a data.frame
 atas = data.frame(reuniao = unlist(links.yearly), urls = unlist(urls.yearly), stringsAsFactors = FALSE)
-# atas(minutes of Copom in portuguese)
+# atas(minutes of Copom in Portuguese)
 atas = atas[-c(170,171),] # remove minutes that are from 1999 or double publication of the first minute in 2000
 
 atas[2,"reuniao"] = "210th" # Change minute with wrong name
@@ -272,7 +272,7 @@ docs <- Corpus(VectorSource(notes))
 # ensuring that the document is a plain text.
 docs = tm_map(docs, content_transformer(tolower))
 
-# Converting all letters for lowercase letters
+# Converting all letters to lowercase letters
 docs = tm_map(docs, content_transformer(tolower))
 
 # removing repeated words that do not help in the analysis
@@ -308,7 +308,7 @@ docs = tm_map(docs, toSpace, "/|@|\\|")
 # removing "the"
 docs = tm_map(docs, toSpace, "the|\003|â???|\023")
 
-# Remove numbers from text. I still do not know if it's worth it, it may or may not be useful
+# Remove numbers from text. I still do not know if it's worth, it may or may not be useful
 docs = tm_map(docs, removeNumbers)
 
 # Remove the punctuation. Provides grammatical context that supports understanding. We ignore
@@ -345,7 +345,7 @@ dtm2 = removeSparseTerms(dtm, 0.90)
 # find words that occur at least 100 times
 table = findFreqTerms(dtm2, 400)
 
-# Extract the latex format to insert in the article
+# Extract the latex format to insert into the article
 table = matrix(table[1:150], nrow = 30, ncol = 5, byrow = TRUE)
 xtable(table)
 
@@ -371,9 +371,8 @@ eng.lex$Entry = gsub("# 1", "", eng.lex$Entry)
 eng.lex = eng.lex[! grepl("#", eng.lex$Entry),]
 
 # Extract the positive and negative words from lexicon. Here, we also guarantee that all the letters are in lowercase
-neg.lex = tolower(eng.lex$Entry[eng.lex$Negativ! = ""])
-
-pos.lex = tolower(eng.lex$Entry[eng.lex$Positiv! = ""])
+neg.lex = tolower(eng.lex$Entry[eng.lex$Negativ != ""])
+pos.lex = tolower(eng.lex$Entry[eng.lex$Positiv != ""])
 
 # Extract the terms from the Terms x Documents array. So, I have all the terms used in the writing of the minutes
 terms = colnames(dtm)
@@ -422,7 +421,7 @@ plot(selic.m, type = "l", xlab = "", ylab = "Cumulative annual rate in month")
 plot(ipca.m, type = "l", xlab = "", ylab = "IPCA in 12 months")
 plot(ipca.meta, type = "l", xlab = "", ylab = "Annual Inflation Target")
 
-# Positive and negative word clouds present in the text
+# Positive and negative word clouds presented in the text
 
 par(mfrow = c(1,1))
 wordcloud(pos.terms, colSums(as.matrix(dtm[ , pos.terms])), min.freq = 1, scale = c(4,0.7), color = brewer.pal(n = 9, "Blues")[6:9])
