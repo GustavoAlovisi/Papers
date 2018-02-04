@@ -2,25 +2,25 @@
 ######### PACKAGES #######
 #############################################
 
-install.packages("rprojroot")
-devtools::install_github("hadley/haven")
-install.packages("tm")
-install.packages("tm.plugin.webmining")
-install.packages("tm.plugin.sentiment")
-install.packages("SnowballC")
-install.packages("wordcloud")
-install.packages("RColorBrewer")
-install.packages("XML")
-install.packages("rJava")
-install.packages("RCurl")
-install.packages("rvest")
-install.packages("schoolmath")
-install.packages("openNLP")
-# install the openNLPmodels.pt package available at this link(http://datacube.wu.ac.at/src/contrib/) to # add Portuguese to openNLP
+# install.packages("rprojroot")
+# devtools::install_github("hadley/haven")
+# install.packages("tm")
+# install.packages("tm.plugin.webmining")
+# install.packages("tm.plugin.sentiment")
+# install.packages("SnowballC")
+# install.packages("wordcloud")
+# install.packages("RColorBrewer")
+# install.packages("XML")
+# install.packages("rJava")
+# install.packages("RCurl")
+# install.packages("rvest")
+# install.packages("schoolmath")
+# install.packages("openNLP")
+# # install the openNLPmodels.pt package available at this link(http://datacube.wu.ac.at/src/contrib/) to # add Portuguese to openNLP
 # install.packages("openNLPmodels.pt", repos = "http://datacube.wu.ac.at/", type = "source")
-install.packages("dplyr")
-install.packages("Quandl")
-install.packages("xtable")
+# install.packages("dplyr")
+# install.packages("Quandl")
+# install.packages("xtable")
 
 
 require(rprojroot) # Used to find the directory where the R project is located
@@ -58,7 +58,7 @@ mydir = root$find_file() # Finds the directory where the current project is save
 ## FUNCTION TO TRANSFORM HTML INTO TEXT
 #####
 
-source(paste0(mydir, ' /Codes/papers/Sentiment_Analysis/htmlToText.R'))
+source(paste0(mydir,'/TESE/Ensaio1/Artigo/code/htmlToText.R'))
 
 #####
 ## FUNCTION TO EXTRACT THE href ATTRIBUTE OF EACH KNOT OF AN HTML FILE
@@ -137,13 +137,13 @@ reshape_corpus <- function(current.corpus, FUN, ...) {
 main.page = read_html(x = "http://www.bcb.gov.br/?MINUTES")
 
 # Get the text of the links(in this case the urls)
-urls = main.page%>% # feed the `main.page` to the next step
-  html_nodes("# chronoAno a")%>% # get the CSS nodes. Here I use http://selectorgadget.com/to get the rule "#cronoAno a"
+urls = main.page %>% # feed the `main.page` to the next step
+  html_nodes("#cronoAno a") %>% # get the CSS nodes. Here I use http://selectorgadget.com/to get the rule "#cronoAno a"
   html_attr("href") # extract the text of the link
 
 # Get the text of the link(in this case the year)
-links = main.page%>%
-  html_nodes("# chronoAno a")%>% # get the CSS nodes
+links = main.page %>% 
+  html_nodes("#cronoAno a") %>% # get the CSS nodes
   html_text() # extract the text of the link(the year)
 
 for(i in 1:length(urls)) {
@@ -159,15 +159,15 @@ main.page.yearly = list()
 urls.yearly = list()
 links.yearly = list()
 
-for (i in 1:length(urls)) {# change "urls" to "yearly_page$urls" if apply temporal filter
+for (i in 1:length(urls)) { # change "urls" to "yearly_page$urls" if apply temporal filter
   main.page.yearly = read_html(x = urls[i])
   # Get the text of the link (in this case the urls) for each year
-  urls.yearly[[i]] = main.page.yearly%>%
-    html_nodes("# cronoGrupoMes a ")%>% # get the CSS nodes
+  urls.yearly[[i]] = main.page.yearly %>%
+    html_nodes("#cronoGrupoMes a") %>% # get the CSS nodes
     html_attr("href") # extract the text of the link
   
   # Get the text of the link(in this case the year) for each year
-  links.yearly[[i]] = main.page.yearly%>%
+  links.yearly[[i]] = main.page.yearly %>%
     html_nodes("#cronoGrupoMes a") %>% # get the CSS nodes
     html_text() # extract the the text of the link(the year)
 }
@@ -238,7 +238,7 @@ atas = data.frame(atas, data = date, stringsAsFactors = FALSE)
 # Aggregate the location where each minute is saved
 
 for (i in 1:nrow(atas)) {
-  atas$path[i] = paste0(mydir, "/Codes/papers/Sentiment_Analysis/data/text/pdf/", atas$reuniao[i], ".pdf", sep = '')
+  atas$path[i] = paste0(mydir, "/TESE/Ensaio1/Artigo/dados/text/pdf/", atas$reuniao[i], ".pdf", sep = '')
 }
 
 #####
@@ -248,7 +248,7 @@ for (i in 1:nrow(atas)) {
 # This only needs to be done once because it is the download of the minutes. If you want to run, uncomment the lines below the "for".
 for (i in 1:length(atas$urls)) {
   pdf.url = atas$urls[i]
-  pdf.name = paste0(mydir, "/Codes/papers/Sentiment_Analysis/data/text/pdf/", atas$reuniao[i], ".pdf", sep = '')
+  pdf.name = paste0(mydir, "/TESE/Ensaio1/Artigo/dados/text/pdf/", atas$reuniao[i], ".pdf", sep = '')
   download.file(pdf.url, pdf.name, method = 'wininet', quiet = FALSE, mode = "wb", cacheOK = TRUE, extra = getOption("download.file.extra"))
 }
 
@@ -362,7 +362,7 @@ wordcloud(names(freq), freq, min.freq = 100, scale = c(3, .5), colors = brewer.p
 #####
 
 # Upload Sentiment lexicon. Saved in project directory as csv file.
-eng.lex = read.csv(paste0(mydir,'/Codes/papers/Sentiment_Analysis/data/text/lexico/inquirerbasic.csv'), sep = ";", encoding = "UTF-8", stringsAsFactors = FALSE)
+eng.lex = read.csv(paste0(mydir,'/TESE/Ensaio1/Artigo/dados/text/lexico/inquirerbasic.csv'), sep = ";", encoding = "UTF-8", stringsAsFactors = FALSE)
 
 # Remove tags # 1
 eng.lex$Entry = gsub("# 1", "", eng.lex$Entry)
@@ -406,9 +406,9 @@ Quandl.api_key('xvSrAztygUphvYp9q1bs')
 # BCB/13521 IS THE ANNUAL INFLATION TARGET - ANNUAL
 # BCB/4189 IS THE SELIC RATE ACCUMULATED IN THE MONTH IN ANNUAL TERMS - MONTHLY
 
-ipca.m = Quandl("BCB/13522", type = type, collapse = "monthly", start_date = date.inicio, end_date = data.fim)
-ipca.meta = Quandl("BCB/13521", type = type, collapse = "annual", start_date = date.inicio, end_date = data.fim)
-selic.m = Quandl("BCB/4189", type = type, collapse = "monthly", start_date = date.inicio, end_date = data.fim)
+ipca.m = Quandl("BCB/13522", type = tipo, collapse = "monthly", start_date = data.inicio, end_date = data.fim)
+ipca.meta = Quandl("BCB/13521", type = tipo, collapse = "annual", start_date = data.inicio, end_date = data.fim)
+selic.m = Quandl("BCB/4189", type = tipo, collapse = "monthly", start_date = data.inicio, end_date = data.fim) 
 
 ##########################
 #### FIGURES ####
