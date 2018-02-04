@@ -22,7 +22,6 @@
 # install.packages("Quandl")
 # install.packages("xtable")
 
-
 require(rprojroot) # Used to find the directory where the R project is located
 require(haven) # Used to load data from Stata 13 into R
 require(tm) # used for text mining
@@ -47,6 +46,8 @@ require(xtable)
 ######### OPTIONS #######
 ##############################################
 
+setwd("C:\\Users\\fsabino\\Desktop\\Codes\\tese\\TESE\\Ensaio1")
+
 root = rprojroot::is_rstudio_project
 mydir = root$find_file() # Finds the directory where the current project is saved
 
@@ -54,7 +55,6 @@ mydir = root$find_file() # Finds the directory where the current project is save
 ######### FUNCTIONS #######
 ##############################################
 
-#####
 ## FUNCTION TO TRANSFORM HTML INTO TEXT
 #####
 
