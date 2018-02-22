@@ -21,7 +21,10 @@
 # install.packages("dplyr")
 # install.packages("Quandl")
 # install.packages("xtable")
+<<<<<<< HEAD
 # install.packages("SentimentAnalysis")
+=======
+>>>>>>> d4b1f005bf0b89d6507ac8a0fd191e1cf2850c86
 
 require(rprojroot) # Used to find the directory where the R project is located
 # require(haven) # Used to load data from Stata 13 into R
@@ -140,7 +143,11 @@ main.page = read_html(x = "http://www.bcb.gov.br/?MINUTES")
 
 # Get the text of the links(in this case the urls)
 urls = main.page %>% # feed the `main.page` to the next step
+<<<<<<< HEAD
   html_nodes("#cronoAno a") %>% # get the CSS nodes. Here I use http://selectorgadget.com to get the rule "#cronoAno a"
+=======
+  html_nodes("#cronoAno a") %>% # get the CSS nodes. Here I use http://selectorgadget.com/to get the rule "#cronoAno a"
+>>>>>>> d4b1f005bf0b89d6507ac8a0fd191e1cf2850c86
   html_attr("href") # extract the text of the link
 
 # Get the text of the link(in this case the year)
