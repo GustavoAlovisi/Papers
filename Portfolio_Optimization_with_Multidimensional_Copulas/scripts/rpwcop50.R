@@ -1,30 +1,69 @@
+# Clear all
 rm(list=ls())
 # memory.limit(size=200000)
 
-# load dataset and packages
+# Set working directory
+setwd("C:/Users/fsabino/Desktop/Codes/papers/Portfolio_Optimization_with_Multidimensional_Copulas/scripts")
 
-library(fGarch)
-library(fPortfolio)
-library(copula)
-library(QRM)
-library(R.matlab)
-library(psych)
-library(readr)
-library(rugarch)
-library(imputeTS)
-library(quantmod)
-library(readxl)
+# Install packages
+# install.packages(c("data.table", "fGarch", "fPortfolio", "copula", "QRM", "R.matlab", "psych", 
+#                    "readr", "rugarch", "imputeTS", "quantmod", "readxl", "dplyr"))
 
-Rt <- read.csv("D:\\Rt.csv", header = FALSE)
-Rm <- read.csv("C:\\Users\\Fernando\\Desktop\\paper3\\revisao\\Rm.csv", header = FALSE)
-Pt <- read.csv("C:\\Users\\Fernando\\Desktop\\paper3\\revisao\\Pt.csv", header = FALSE)
+# Load packages
+require(data.table)
+require(fGarch)
+require(fPortfolio)
+require(copula)
+require(QRM)
+require(R.matlab)
+require(psych)
+require(readr)
+require(rugarch)
+require(imputeTS)
+require(quantmod)
+require(readxl)
+require(dplyr)
 
-div50 <- read.csv("C:\\Users\\Fernando\\Desktop\\paper3\\div50_1706.csv", header = FALSE)
-per48 <- read.csv("C:\\Users\\Fernando\\Desktop\\paper3\\Periods_48.csv", header = FALSE)
+# Load datasets
+filename1 <- "Rt.csv"
+filename2 <- "Rm.csv"
+filename3 <- "Pt.csv"
+filename4 <- "Periods_48.csv"
+filename5 <- "div50_1706.csv"
+filename6 <- "per48.csv"
+filename7 <- "Rf.csv" 
+
+# Rt <- fread(filename1)
+# Rm <- fread(filename2)
+# Pt <- fread(filename3)
+# Periods <- fread(filename4)
+# div50 <- fread(filename5)
+# per48 <- fread(filename6)
+# Rf <- fread(filename7)
+
+Rt<- read.csv(file="Rt.csv", header = F)
+Rm<- read.csv(file="Rm.csv", header = F)
+Periods<- read.csv(file="Periods_48.csv", header = F)
+div50<- read.csv(file="div50_1706.csv", header = F)
+per48<- read.csv(file="per48.csv", header = F)
+Rf<- read.csv(file="Rf.csv", header = F)
+
+# Data Exploration
+head(Rt) # View the first rows 
+str(Rt) # View a condensed summary of the data
+class(Rt) # Check the class 
+dim(Rt) # Check the dimensions
+glimpse(Rt) # Check the structure
+View(div50)
+View(per48)
+
+per48$V1 <- NULL # delete the first column
 
 window = matrix(0,43,1)
 
-for (i in 1:43) {window[i]= sum(per48[9:(8+i),1])}
+for (i in 1:43) 
+  {window[i]= sum(per48$V1[9:(8+i)])}
+
 int_w = rbind(0,window);
 
 #aux = c(1,2,4,5)
@@ -47,7 +86,7 @@ empDist <- function(data)
 m = nrow(Rt);  n = ncol(div50); 
 L = m; # m obs
 
-# bad programming, but I wanted to check one by one
+# I wanted to check one by one
 
 gfit1 = vector('list',int_w[44]); gfit2 = vector('list',int_w[44]); gfit3 = vector('list',int_w[44]); 
 gfit4 = vector('list',int_w[44]); gfit5 = vector('list',int_w[44]); gfit6 = vector('list',int_w[44]); 

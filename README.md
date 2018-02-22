@@ -43,7 +43,7 @@ Data used: We select 41 assets that had non-zero returns in more than eighty per
 
 Software: R.
 
-Data used: Minutes of the Copom (Monetary Policy Committee of the Central Bank of Brazil) from 01/19/2000 to 07/20/2016. Auxiliary data is collected from the project quandl (public data platform from around the world).
+Data used: Minutes of the Copom (Monetary Policy Committee of the Central Bank of Brazil) and Fed from 2000 to 2017. Auxiliary data is collected from the project quandl (public data platform from around the world).
 
 * Fernando A. B. Sabino da Silva and Denis Martinez. **Novel Facebook technology to confirm sleep laboratory data.**
 
@@ -69,7 +69,8 @@ JEL Code: C14, C15.
 Teaching
 ==============
 
-* Linear Regression. **[Diagnostics](https://bitbucket.org/fsabino/papers/src/08088f1e12a8e90fb70aa5f9f8eeaf2495c70750/Linear_Regression_Analysis/?at=master).**
+* Econometrics. **[Diagnostics](https://bitbucket.org/fsabino/papers/src/08088f1e12a8e90fb70aa5f9f8eeaf2495c70750/Linear_Regression_Analysis/?at=master).**
+**[Data Science Homework Solutions](https://bitbucket.org/fsabino/papers/src/08088f1e12a8e90fb70aa5f9f8eeaf2495c70750/Linear_Regression_Analysis/?at=master).**
 
 Software: R.
 
