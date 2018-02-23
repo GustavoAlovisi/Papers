@@ -29,7 +29,7 @@ Data used: Daily data of adjusted closing prices of all stocks that belong to S&
 Press Coverage: **[Quantpedia](https://quantpedia.com/Blog/Details/mixed-copula-pairs-trading-strategy).**
 
 
-* Fernando A.B. Sabino da Silva, Tainan B.F. Boff, Flavio A. Ziegelmann. **[High-Frequency Pairs Trading at the Brazilian Financial Market: A Mixed Copula Method](https://bitbucket.org/fsabino/papers/src/482db82bfc3b109b6ce3408792bfb38adae63fd3/Pairs_Trading_High_Frequency/?at=master).**
+* Fernando A.B. Sabino da Silva, Tainan B.F. Boff, Flavio A. Ziegelmann. **[Mixed Copula Pairs Trading Strategy with High Frequency Data](https://bitbucket.org/fsabino/papers/src/482db82bfc3b109b6ce3408792bfb38adae63fd3/Pairs_Trading_High_Frequency/?at=master).**
 
 Software: R, Matlab.
 
