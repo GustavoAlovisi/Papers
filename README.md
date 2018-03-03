@@ -47,11 +47,17 @@ Software: R.
 
 Data used: Web scraping minutes of the Copom (Monetary Policy Committee of the Central Bank of Brazil - https://www.bcb.gov.br/?id=MINUTES) and FOMC meetings (https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm) from 2000 to 2017. Auxiliary data is collected from the Quandl API (public data platform from around the world).
 
-* Fernando A. B. Sabino da Silva and Denis Martinez. **Novel Facebook technology to confirm sleep laboratory data.**
+* Fernando A. B. Sabino da Silva and Cristina Tessari. **A Nonparametric Approach to Conditional Factor Models**
 
-Software: R, Python.
+Software: Python.
 
-Data used: The retrospectively analyzed database include patients of both sexes who underwent in-laboratory baseline polysomnography to investigate any complaint of disordered sleep. 
+Data used: Downloaded from Professor Kenneth French's data library website (http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/Data_Library/det_st_rev_factor_daily.html).
+
+* Fernando A. B. Sabino da Silva. **An Application of Suppes-Bayes Causal Nets to Scenario Modeling**
+
+Software: R.
+
+Data used: Downloaded from Professor Kenneth French's data library website (http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/Data_Library/det_st_rev_factor_daily.html).
 
 
 Published
