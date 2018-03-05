@@ -89,9 +89,9 @@ Software: R.
 
 *Data used: Simulated and official datasets for the Medicare.gov downloaded from (https://data.medicare.gov/data/physician-compare).
 
-* Introductory Statistics I (in portuguese). **[Intro Statistics I](https://bitbucket.org/fsabino/papers/src/27466fb393107c4b44b13ec38b377e692cee6869/Data%20Science/?at=master).**
+* Introductory Statistics I (in portuguese). **[Intro Statistics I](https://bitbucket.org/fsabino/papers/src/ec1dad89c69217b15a113f3129b6214e6464c4ea/Introductory_Stat_I/?at=master).**
 
-* Introductory Statistics II (in portuguese). **[Intro Statistics II](https://bitbucket.org/fsabino/papers/src/27466fb393107c4b44b13ec38b377e692cee6869/Data%20Science/?at=master).**
+* Introductory Statistics II (in portuguese). **[Intro Statistics II](https://bitbucket.org/fsabino/papers/src/63f37d602bba6d4b08556de12ce0f787d9f6ca5b/Introductory_Stat_II/?at=master).**
 
 Software: R, Latex.
 
