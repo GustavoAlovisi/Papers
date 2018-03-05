@@ -47,11 +47,17 @@ Software: R.
 
 Data used: Web scraping minutes of the Copom (Monetary Policy Committee of the Central Bank of Brazil - https://www.bcb.gov.br/?id=MINUTES) and FOMC meetings (https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm) from 2000 to 2017. Auxiliary data is collected from the Quandl API (public data platform from around the world).
 
-* Fernando A. B. Sabino da Silva and Denis Martinez. **Novel Facebook technology to confirm sleep laboratory data.**
+* Fernando A. B. Sabino da Silva and Cristina Tessari. **A Nonparametric Approach to Conditional Factor Models.**
 
-Software: R, Python.
+Software: Python, R.
 
-Data used: The retrospectively analyzed database include patients of both sexes who underwent in-laboratory baseline polysomnography to investigate any complaint of disordered sleep. 
+Data used: Downloaded from Professor Kenneth French's data library website (http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/Data_Library/det_st_rev_factor_daily.html).
+
+* Fernando A. B. Sabino da Silva. **An Application of Suppes-Bayes Causal Nets to Scenario Modeling.**
+
+Software: R.
+
+Data used: Downloaded from Professor Kenneth French's data library website (http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/Data_Library/det_st_rev_factor_daily.html).
 
 
 Published
@@ -82,6 +88,12 @@ Software: R.
 Software: R.
 
 *Data used: Simulated and official datasets for the Medicare.gov downloaded from (https://data.medicare.gov/data/physician-compare).
+
+* Statistics I. (MAT02214) **[Statistics I](https://bitbucket.org/fsabino/papers/src/27466fb393107c4b44b13ec38b377e692cee6869/Data%20Science/?at=master).**
+
+* Statistics II. (MAT02215) **[Statistics II](https://bitbucket.org/fsabino/papers/src/27466fb393107c4b44b13ec38b377e692cee6869/Data%20Science/?at=master).**
+
+Software: R, Latex.
 
 ---
 ** Note **: Any code and data available here can be used as long as it is referenced. Please contact me at fsabino@ufrgs.br or create an issue (https://bitbucket.org/fsabino/papers/issues?status=new&status=open) if you have any questions or suggestions or want any additional material. As soon as possible I will try to solve and leave comments so that other people also have access to the requested information.
