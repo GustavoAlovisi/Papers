@@ -1,0 +1,40 @@
+---
+title: \large{\textbf{Estatística Geral II - LISTA 1}}
+author: \scriptsize{Fernando B. Sabino da Silva - 2018/01}
+header-includes:
+   - \usepackage{titling}
+   - \pretitle{\begin{center}\small\includegraphics[height=1.2cm]{Figure/ufrgsLogo.jpg}\\[\bigskipamount]}
+   - \posttitle{\end{center}}
+urlcolor: blue
+output: 
+  pdf_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Estes exercícios têm como objetivo praticar os temas estudados em sala de aula no dia 05/03/18. 
+
+A lista compreende exercícios sobre Econometria, Teoria Econômica, Modelos Econômicos, Modelos Econométricos e Estrutura dos Dados Econômicos. Se você ficar com alguma dúvida entre em contato comigo (fsabino@ufrgs.br), por favor.
+
+
+#### **ECONOMETRIA E TEORIA ECONÔMICA:**
+
+1. Explique os benefícios da Econometria e sua viabilidade.
+2. Apresente os diversos campos de atuação da Econometria e sua relação com a Teoria Econômica
+
+#### **MODELO ECONÔMICO E MODELO ECONOMÉTRICO:**
+
+1. Apresente um exemplo de Modelo Econômico e seu respectivo Modelo Econométrico (lembre-se do exemplo sobre produtividade do trabalhador discutido em sala de aula)
+
+
+#### **ESTRUTURA DE DADOS ECONÔMICOS**
+
+1. Exiba exemplos de dados econômicos para os tipos abaixo e descreva suas características:
+
+    * Corte Transversal
+    * Série Temporal
+    * Dados em Painel
+
