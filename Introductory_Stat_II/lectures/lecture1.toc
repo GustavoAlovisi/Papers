@@ -1,0 +1,12 @@
+\beamer@sectionintoc {1}{Objetivos}{3}{0}{1}
+\beamer@sectionintoc {2}{Introdu\IeC {\c c}\IeC {\~a}o}{4}{0}{2}
+\beamer@subsectionintoc {2}{1}{Econometria e Teoria Econ\IeC {\^o}mica}{4}{0}{2}
+\beamer@subsectionintoc {2}{2}{Modelo Econ\IeC {\^o}mico}{5}{0}{2}
+\beamer@subsectionintoc {2}{3}{Modelo Econom\IeC {\'e}trico}{6}{0}{2}
+\beamer@subsectionintoc {2}{4}{Ci\IeC {\^e}ncia de Dados}{7}{0}{2}
+\beamer@subsubsectionintoc {2}{4}{1}{Defini\IeC {\c c}\IeC {\~a}o}{7}{0}{2}
+\beamer@subsubsectionintoc {2}{4}{2}{Dados e Tomada de Decis\IeC {\~a}o}{8}{0}{2}
+\beamer@subsubsectionintoc {2}{4}{3}{O Processo de Ci\IeC {\^e}ncia de Dados}{9}{0}{2}
+\beamer@subsectionintoc {2}{5}{Big Data}{10}{0}{2}
+\beamer@subsubsectionintoc {2}{5}{1}{Dados Gerados por Minuto}{10}{0}{2}
+\beamer@subsubsectionintoc {2}{5}{2}{Velocidade de Crescimento dos Dados}{11}{0}{2}

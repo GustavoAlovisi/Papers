@@ -1,0 +1,10 @@
+\beamer@sectionintoc {1}{Probabilidade}{3}{0}{1}
+\beamer@sectionintoc {2}{Estat\IeC {\'\i }stica}{4}{0}{2}
+\beamer@subsectionintoc {2}{1}{Aplica\IeC {\c c}\IeC {\~o}es de Probabilidade e Estat\IeC {\'\i }stica}{5}{0}{2}
+\beamer@subsectionintoc {2}{2}{Machine Learning (Aprendizado de M\IeC {\'a}quina)}{6}{0}{2}
+\beamer@subsectionintoc {2}{3}{Aplica\IeC {\c c}\IeC {\~a}o: An\IeC {\'a}lise de Imagens M\IeC {\'e}dicas}{7}{0}{2}
+\beamer@subsectionintoc {2}{4}{Big Data e Analytics}{8}{0}{2}
+\beamer@subsubsectionintoc {2}{4}{1}{O M\IeC {\'e}todo Cient\IeC {\'\i }fico}{11}{0}{2}
+\beamer@subsectionintoc {2}{5}{Evid\IeC {\^e}ncias}{12}{0}{2}
+\beamer@subsubsectionintoc {2}{5}{1}{Evid\IeC {\^e}ncias}{12}{0}{2}
+\beamer@subsubsectionintoc {2}{5}{2}{Cosmos}{13}{0}{2}

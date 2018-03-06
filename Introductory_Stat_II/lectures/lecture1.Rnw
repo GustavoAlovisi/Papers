@@ -150,7 +150,7 @@ onde termo $u$ contém todos os outros fatores não incluídos na equação (sej
 \textbf{Definição 1}: Ciência de Dados é o termo usado para o processo de extrair \emph{insigths (valor)} de dados que são coletados de várias fontes (estruturados e não estruturados) \\~\\
 \textbf{Definição 2}: Consiste de um conjunto de especialidades, tais como estatística, matemática, programação, computação e \emph{business}
 \begin{itemize}
-\item Leia mais em http://datascience.columbia.edu/data-for-good-preface
+\item Leia mais em \url{http://datascience.columbia.edu/data-for-good-preface}
 \end{itemize}
 
 \end{frame}
