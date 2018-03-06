@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.8.22)  6 MAR 2018 14:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.8.22)  6 MAR 2018 14:59
 entering extended mode
 **./lecture1.tex
 (lecture1.tex
@@ -1609,10 +1609,10 @@ Package rerunfilecheck Info: File `lecture1.out' has not changed.
 (rerunfilecheck)             Checksum: BB44B065EB7E953A77F0DE78F987F4F8;449.
  ) 
 Here is how much of TeX's memory you used:
- 20916 strings out of 493323
- 386986 string characters out of 3139060
- 456924 words of memory out of 3000000
- 23857 multiletter control sequences out of 15000+200000
+ 20912 strings out of 493323
+ 386931 string characters out of 3139060
+ 456938 words of memory out of 3000000
+ 23853 multiletter control sequences out of 15000+200000
  44365 words of font info for 45 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,15n,96p,880b,554s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1626,7 +1626,7 @@ lmss8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmss9.pfb><C:/Prog
 ram Files/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.pfb><C:/Program Files/MiKTe
 X 2.9/fonts/type1/public/lm/lmsso9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
 /public/lm/lmtt9.pfb>
-Output written on lecture1.pdf (11 pages, 439336 bytes).
+Output written on lecture1.pdf (11 pages, 439529 bytes).
 PDF statistics:
  387 PDF objects out of 1000 (max. 8388607)
  35 named destinations out of 1000 (max. 500000)
