@@ -1,0 +1,311 @@
+We want to know ‘How much is the data spread out from the middle?’
+Just looking at the data gives us a sense of this 
+But we want break it down to one number so we can compare sample distributions
+
+Nós queremos saber 'Quanto é que os dados se espalham do meio?'
+Basta olhar para os dados nos dá uma sensação disso
+Mas queremos dividi-lo em um número para que possamos comparar as distribuições de amostras
+
+We could just take the differnce between all points and the mean and add it up 
+But that would equal 0. Thats the idea of the mean.
+# Look at the difference between each point and the mean
+sum(x - mean(x))
+
+Nós poderíamos apenas tomar a diferença entre todos os pontos e o significado e adicioná-lo
+Mas isso equivaleria a 0. Essa é a idéia da média.
+# Olhe a diferença entre cada ponto e a média
+soma (x - média (x))
+
+So we can square the difference 
+But this number will keep getting bigger as you add more observations
+We want something that is stable
+# Square each difference to get rid of negatives then sum
+sum((x - mean(x))^2)
+
+Então podemos marcar a diferença
+Mas esse número continuará ficando maior à medida que você adiciona mais observações
+Queremos algo que seja estável
+# Praça cada diferença para se livrar dos negativos, então a soma
+soma ((x - média (x)) ^ 2)
+
+Variance
+so we divide by n - 1
+This is called the sample variance. One of the most useful measures of a sample distriution
+
+Variância
+então dividimos por n - 1
+Isso é chamado de variância da amostra. Uma das medidas mais úteis de uma distribuição de amostras
+
+Standard Deviation
+Another very useful metric is the sample standard deviation
+This is just the square root of the variance
+The nice thing about the std dev is that it is in the same units as the original data
+In this case its 1.17 years
+sqrt(sum((x - mean(x))^2)/(length(x) - 1))
+
+Desvio padrão
+Outra métrica muito útil é o desvio padrão da amostra
+Esta é apenas a raiz quadrada da variância
+A coisa boa sobre o dev de std é que ele está nas mesmas unidades que os dados originais
+Neste caso, são 1.17 anos
+sqrt (soma ((x - média (x)) ^ 2) / (comprimento (x) - 1))
+
+Inter Quartile Range
+The IQR is the middle 50% of the data
+The nice thing about this one is that it is not sensitve to extreme values
+All of the other measures listed here are sensitive to extreme values
+
+Inter Quartile Range
+O IQR é o meio de 50% dos dados
+A coisa agradável sobre isso é que não é sensível a valores extremos
+Todas as outras medidas listadas aqui são sensíveis a valores extremos
+
+IQR(x)
+
+Range
+max and min are also interesting
+as is the range, or the difference between max and min
+
+Alcance
+max e min também são interessantes
+como é o intervalo, ou a diferença entre o máximo e o mínimo
+max (x)
+max(x)
+
+min(x)
+
+diff(range(x))
+
+The measure of relative variability is the coefficient of variation (CV). Unlike measures of absolute variability, the CV is unitless when it comes to comparisons between the dispersions of two distributions of different units of measurement.
+
+A medida da variabilidade relativa é o coeficiente de variação (CV). Ao contrário das medidas de variabilidade absoluta, o CV é sem unidade quando se trata de comparações entre as dispersões de duas distribuições de diferentes unidades de medida.
+
+<!-- * The **range** is the difference of the largest and smallest observation. -->
+<!-- * The **(empirical) variance** is the average of the squared deviations from the mean: -->
+<!--       $$ -->
+<!--         s^2=\frac{1}{n-1}\sum_{i=1}^n (y_i-\bar{y})^2. -->
+<!--       $$ -->
+<!-- * **sd** $=$ **standard deviation** $= s=\sqrt{s^2}$. -->
+<!-- * Note:\ If the observations are measured in meter,\ the **variance** has unit $\text{meter}^2$ which is hard to interpret. The **standard deviation** on the other hand has the same unit as the observations. -->
+<!-- * The standard deviation describes how much data varies around the (empirical) mean. -->
+
+<!-- ## Calculation of mean, median and standard deviation using **R** -->
+<!-- The mean, median and standard deviation are just some of the summaries that  -->
+<!-- can be read of the `favstats` output (shown on previous page). They may also -->
+<!-- be calculated separately in the following way: -->
+
+<!-- * Mean of `WDS`: -->
+<!-- ```{r} -->
+<!-- mean( ~ WDS, data = magAds) -->
+<!-- ``` -->
+<!-- * Median of `WDS`: -->
+<!-- ```{r} -->
+<!-- median( ~ WDS, data = magAds) -->
+<!-- ``` -->
+<!-- * Standard deviation for `WDS`: -->
+<!-- ```{r} -->
+<!-- sd( ~ WDS, data = magAds) -->
+<!-- ``` -->
+
+<!-- We may also calculate the summaries for each group (variable `GROUP`), e.g. for  -->
+<!-- the mean: -->
+<!-- ```{r} -->
+<!-- mean( ~ WDS | GROUP, data = magAds) -->
+<!-- ``` -->
+
+
+<!-- ```{r echo=FALSE,results='hide'} -->
+<!-- xx <- sort(y) -->
+<!-- ``` -->
+
+
+
+<!-- ## A word about terminology -->
+
+<!-- * **Standard deviation**:\ a measure of variability of a population or a sample. -->
+<!-- * **Standard error**:\ a measure of variability of an estimate. For example, a measure of variability of the sample mean. -->
+
+
+
+<!-- ## The empirical rule -->
+
+<!-- ```{r empRule,echo=FALSE,fig.width=12,fig.height=6} -->
+<!-- set.seed(5) -->
+<!-- x <- rnorm(900) -->
+<!-- x <- (x-mean(x))/sd(x) -->
+<!-- hist(x,axes=F,xlab="",breaks="FD",ylab="",main="",cex.main = 1.5,ylim=c(-.21,.4),probability=TRUE) -->
+<!-- axis(1,at=-3:3,labels=F,pos=0) -->
+<!-- axis(1,at=-3,labels=substitute(bar(y)-3*s),pos=0) -->
+<!-- axis(1,at=-2,labels=substitute(bar(y)-2*s),pos=0) -->
+<!-- axis(1,at=-1,labels=substitute(bar(y)-s),pos=0) -->
+<!-- axis(1,at=0,labels=substitute(bar(y)),pos=0) -->
+<!-- axis(1,at=1,labels=substitute(bar(y)+s),pos=0) -->
+<!-- axis(1,at=2,labels=substitute(bar(y)+2*s),pos=0) -->
+<!-- axis(1,at=3,labels=substitute(bar(y)+3*s),pos=0) -->
+<!-- arrows(-1,-.1,1,-.1,col="red",code=3,length=.1) -->
+<!-- text(-.01,-.115,"About 68% of measurements",col="red") -->
+<!-- arrows(-2,-.15,2,-.15,col="blue",code=3,length=.1) -->
+<!-- text(-.01,-.1655,"About 95% of measurements",col="blue") -->
+<!-- arrows(-3,-.2,3,-.2,code=3,length=.1) -->
+<!-- text(-.01,-.215,"All or nearly all measurements") -->
+<!-- ``` -->
+
+<!-- If the histogram of the sample looks like a bell shaped curve, then -->
+
+<!-- * about 68% of the observations lie between $\bar{y}-s$ and $\bar{y}+s$. -->
+<!-- * about 95% of the observations lie between $\bar{y}-2s$ and $\bar{y}+2s$. -->
+<!-- * All or almost all (99.7%) of the observations lie between $\bar{y}-3s$ and $\bar{y}+3s$. -->
+
+
+
+<!-- ## Percentiles -->
+
+<!-- * **The $p$th percentile** is a value such that about $p$% of the population (or sample) lies below or at this value and about $(100-p)$% of the population (or sample) lies above it. -->
+
+<!-- ### Percentile calculation for a sample: -->
+
+<!-- * First, sort data in increasing order. For the `WDS` variable in the magazine data: -->
+<!--     $$ -->
+<!--       y_{(1)}=`r xx[1]`, y_{(2)}=`r xx[2]`, y_{(3)}=`r xx[3]`, \ldots, y_{(n)} = `r xx[nn]`. -->
+<!--     $$ -->
+<!-- Here the number of observations is $n=`r nn`$.  -->
+<!-- * Find the $5$th percentile (i. e.\ $p = 5$):\  -->
+<!--     * The observation number corresponding to the 5-percentile is $N =  \frac{n\cdot p}{100} = 2.7$.  -->
+<!--     * That is, the 5-percentile must lie between the observations $x_{(k)}=32$ and $x_{(k+1)}=34$, where $k = 2 < N < 3$. -->
+<!--     * Let $d = N - k = 0.7$. One of several methods for estimating the 5-percentile: -->
+<!--     $$ -->
+<!--       x_{(k)} + d(x_{(k+1)} - x_{(k)}) = 32 + 0.7 \cdot 2 = 33.4 -->
+<!--     $$ -->
+
+
+
+<!-- ## Median, quartiles and interquartile range -->
+
+<!-- Recall -->
+<!-- ```{r} -->
+<!-- favstats( ~ WDS, data = magAds) -->
+<!-- ``` -->
+
+<!-- * 50-percentile = 96 is the **median** and it is a measure of the center of data. -->
+<!-- * 0-percentile = 31 is the **minimum** value. -->
+<!-- * 25-percentile = 69 is called the **lower quartile** (Q1).\ Median of lower 50% of data. -->
+<!-- * 75-percentile = 201.5 is called the **upper quartile** (Q3).\ Median of upper 50% of data. -->
+<!-- * 100-percentile = 230 is the **maximum** value. -->
+<!-- * **Interquartile Range (IQR)**:\ a measure of variability -->
+<!--   given by the difference of the upper and lower quartiles: 201.5 - 69 = 132.5. -->
+
+
+<!-- # More graphics -->
+<!-- ## Box-and-whiskers plots (or simply box plots) -->
+
+<!-- How to draw a box-and-whiskers plot: -->
+
+<!-- * Box: -->
+<!--     * Calculate the median, lower and upper quartiles. -->
+<!--     * Plot a line by the median and draw a box between the upper and -->
+<!--       lower quartiles. -->
+<!-- * Whiskers:  -->
+<!--     * Calculate interquartile range and call it IQR. -->
+<!--     * Calculate the following values: -->
+<!--         * L = lower quartile - 1.5*IQR -->
+<!--         * U = upper quartile + 1.5*IQR -->
+<!--     * Draw a line from lower quartile to the smallest measurement, -->
+<!--     which is larger than *L*.  -->
+<!--     * Similarly, draw a line from upper quartile to the largest measurement  -->
+<!--     which is smaller than *U*. -->
+<!-- * Outliers: Measurements smaller than *L* or larger than *U* are drawn as circles. -->
+
+<!-- *Note: Whiskers are minimum and maximum of the observations that are not deemed to be outliers.* -->
+
+<!-- ---- -->
+
+<!-- ### Boxplot for Ericksen data -->
+
+<!-- Boxplot of the poverty rates separately for cities and states (variable `city`): -->
+
+<!-- ```{r boxplot} -->
+<!-- gf_boxplot(poverty ~ city, data = Ericksen) -->
+<!-- ``` -->
+
+<!-- * There seems to be more poverty in the cities. -->
+<!-- * A single state differs noticeably from the others with a high poverty rate. -->
+
+<!-- ## 2 quantitative variables: Scatter plot -->
+
+<!-- For two quantitative variables the usual graphic is a scatter plot: -->
+<!-- ```{r scatter0} -->
+<!-- gf_point(poverty ~ highschool, data = Ericksen) -->
+<!-- ``` -->
+
+<!-- This can be either split or coloured according to the value of `city`: -->
+
+<!-- ```{r} -->
+<!-- gf_point(poverty ~ highschool | city, data = Ericksen) -->
+<!-- gf_point(poverty ~ highschool, col = ~city, data = Ericksen) -->
+<!-- ``` -->
+
+<!-- If we want a regression line along with the points we can do: -->
+<!-- ```{r scatter05} -->
+<!-- gf_point(poverty ~ highschool, col = ~city, data = Ericksen) %>% gf_lm() -->
+<!-- ``` -->
+
+
+
+
+<!-- # Appendix -->
+
+<!-- ## Recoding variables -->
+
+<!-- * The function `factor` will directly convert a vector to be of type `factor`.\ E.g.: -->
+<!-- ```{r} -->
+<!-- head(magAds$GROUP)   -->
+<!-- f <- factor(magAds$GROUP) -->
+<!-- magAds$GROUP <- f -->
+<!-- head(magAds$GROUP) -->
+<!-- ``` -->
+<!-- * Custom labels for the levels can also be used: -->
+<!-- ```{r} -->
+<!-- f <- factor(magAds$GROUP,  -->
+<!--             levels = c("1", "2", "3"), -->
+<!--             labels = c("high", "medium", "low")) -->
+<!-- magAds$GROUP <- f -->
+<!-- head(magAds$GROUP) -->
+<!-- ``` -->
+<!-- * In this way the numbers are replaced by more informative labels describing the educational level. -->
+
+
+<!-- # Point and click plotting -->
+<!-- ## `mplot` -->
+
+<!-- * If `mosaic` is loaded and the package `manipulate` is installed you can construct plots using point and click using the function `mplot`. -->
+<!-- * You simply use `mplot` on your dataset and answer the question and then you can change things by pressing the settings button (cog wheel) in the top left of the plot window. -->
+<!-- ```{r eval = FALSE} -->
+<!-- mplot(Ericksen) -->
+<!-- ``` -->
+<!-- * In the end you can press "Show expression" to get the code for the plot. -->
+
+Shape and transformations
+4 chracteristics of a distribution that are of interest:
+center 
+already covered
+spread or variablity 
+already covered
+shape 
+modality: number of prominent humps (uni, bi, multi, or uniform - no humps)
+skew (right, left, or symetric)
+Can transform to fix skew
+outliers
+
+Forma e transformações
+4 características de uma distribuição que são de interesse:
+Centro
+já coberto
+propagação ou variabilidade
+já coberto
+forma
+modalidade: número de bossas proeminentes (uni, bi, multi ou uniforme - sem javali)
+inclinação (direita, esquerda ou simétrica)
+Pode se transformar para consertar distorção
+outliers
+
+– Describe the shape

@@ -1,0 +1,110 @@
+---
+title: "Estimation Examples"
+author: "Tom Fletcher"
+date: "November 7, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Sampling Distribution of a Statistic
+
+Consider a random sample $X_1, X_2, \ldots, X_n$. Remember, that the $X_i$ are iid (independent and identically distributed). Consider a statistic, such as the sample mean:
+$$\bar{X}_n = \frac{1}{n} \sum_{i=1}^n X_i.$$
+
+Also recall that a statistic is a random variable. That means that $\bar{X}_n$ has a probability distribution. One way to think about this is that if we repeated an experiment multiple times, we would get different outcomes for the $X_i$. The distribution of a statistic is called the __sampling distribution__. This would in turn result in different values for the sample mean statistic, $\bar{X}_n$.
+
+Let's demonstrate this in an R simulation. Here we will use Gaussian random variables as our data: $X_i \sim N(0, 1)$.
+
+```{r}
+n = 100
+x = rnorm(n)
+```
+
+The distribution of the $X_i$ is approximated by a histogram of our random data. We'll plot the Gaussian density over top of it to see how close it is.
+```{r}
+hist(x, freq = FALSE)
+
+s = seq(-3,3,0.05)
+lines(s, dnorm(s), col = 'red', lwd = 2)
+```
+
+Let's look at the sample mean statistic:
+```{r}
+mean(x)
+```
+
+Next, what if we repeated this "experiment" many times? What would the sampling distribution of the mean statistic look like? From the class notes, we know that the sample mean has a Gaussian sampling distribution with the same $\mu$ parameter and variance that is divided by $n$. In other words, $\bar{X}_n \sim N(\mu, \sigma^2 / n)$.
+
+```{r}
+numSims = 100000
+
+## Each column in this matrix is a simulation
+sims = matrix(rnorm(n * numSims), n, numSims) 
+mean.vals = colMeans(sims)
+
+hist(mean.vals, freq = FALSE, main = "Histogram of Mean Statistics")
+s = seq(-0.3, 0.3, 0.005)
+lines(s, dnorm(s, 0, 0.1), col = 'red', lwd = 2)
+```
+
+
+# Estimating the Parameters of the Gaussian
+
+Here is an example data set in R, which consists of widths of tree rings from a single bristlecone pine tree in California. (Notice its almost 8,000 years old!) Let's first take a look at our data with a histogram.
+```{r}
+hist(treering, main = "Tree Ring Data", freq=FALSE)
+```
+
+The data has a single "peak" and is fairly symmetric, so we might feel pretty good about using a Gaussian random variable to model it. But what is the $\mu$ and $\sigma^2$ parameter for that Gaussian random variable? As we discussed in class, the sample mean and sample variance are unbiased estimators for these parameters.
+```{r}
+(mu.hat = mean(treering))
+(sigma2.hat = var(treering))
+```
+
+Let's plot a Gaussian pdf with these parameters over the histogram:
+```{r}
+hist(treering, main = "Tree Ring Data", freq = FALSE)
+s = seq(mu.hat - 3*sd(treering), mu.hat + 3*sd(treering), 0.01*sd(treering))
+lines(s, dnorm(s, mean(treering), sd(treering)), col = 'red', lwd = 2)
+```
+
+Notice that this is not a perfect fit. The data is slightly skewed towards the right.
+
+# Estimation for an Exponential Distribution
+
+Here is data from the 2016 New York Marathon. We will take the finish times for the top 100 racers and compute the difference between consecutive runners (converted to seconds). This data is from
+
+http://www.tcsnycmarathon.org/about-the-race/results/overall-men
+
+```{r}
+marathon = read.csv("marathon.csv", header = FALSE, sep = "\t")
+
+times = as.difftime(as.character(marathon$V4))
+diffs = as.numeric(times[2:100] - times[1:99]) * 60 * 60
+```
+
+Let's look at this data in a histogram:
+```{r}
+hist(diffs, freq = FALSE, main = "Time Difference Between Consecutive NYC Marathon Finish Times", xlab = "time difference in sec.")
+```
+
+It looks like an exponential distribution might be a good fit for this data, i.e., $X_i \sim \mathrm{Exp}(\lambda)$. But what is the rate parameter $\lambda$? We know the expected value for an exponential random variable is $E[X_i] = \frac{1}{\lambda}$. Therefore, an unbiased estimate for $\frac{1}{\lambda}$ is the mean statistic. We will take the estimate:
+$$\hat{\lambda} = \frac{1}{\bar{X}_n}.$$
+
+```{r}
+(lambda.hat = 1 / mean(diffs))
+```
+
+Let's see how well this particular distribution fits our data:
+```{r}
+hist(diffs, freq = FALSE, main = "Time Difference Between Consecutive NYC Marathon Finish Times", xlab = "time difference in sec.")
+s = 0:max(diffs)
+lines(s, dexp(s, rate = lambda.hat), col = 'red', lwd = 2)
+```
+
+See this Wikipedia page for more examples of modeling data with the exponential distribution:
+
+https://en.wikipedia.org/wiki/Exponential_distribution

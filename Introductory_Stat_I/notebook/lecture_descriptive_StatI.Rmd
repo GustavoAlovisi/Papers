@@ -1,0 +1,594 @@
+---
+title: "Introdução e Estatística Descritiva"
+author: "Fernando B. Sabino da Silva"
+output:
+  slidy_presentation:
+    css: https://asta.math.aau.dk/course/asta/2018-1/?file=lecture_style.css
+    fig_caption: no
+    highlight: tango
+    theme: cerulean
+  beamer_presentation:
+    highlight: tango
+  pdf_document:
+    fig_caption: no
+    highlight: tango
+    number_section: yes
+    toc: yes
+  ioslides_presentation:
+    highlight: tango
+---
+
+```{r, include = FALSE}
+options(digits = 2)
+## Remember to add all packages used in the code below!
+missing_pkgs <- setdiff(c("mosaic"), rownames(installed.packages()))
+if(length(missing_pkgs)>0) install.packages(missing_pkgs)
+```
+
+
+##  **Rstudio** 
+
+* Faça uma pasta no seu computador onde você deseja manter os arquivos para usar no **Rstudio**.
+* Defina o diretório de trabalho nesta pasta:
+`Session -> Set Working Directory -> Choose Directory`
+(atalho: Ctrl+Shift+H).
+* Torne a alteração permanente definindo o diretório padrão em:
+`Tools -> Global Options -> Choose Directory`.
+
+
+
+## **R** básico
+
+* Cálculos simples:
+```{r}
+4.6 * (2 + 3)^4 
+```
+* Defina um objeto (escalar) e o imprima:
+```{r}
+a <- 4 
+a
+```
+* Defina um objeto (vetor) e o imprima:
+```{r}
+b <- c(2, 5, 7)
+b
+```
+* Defina uma sequência de números e a imprima:
+```{r}
+s <- 1:4
+s
+```
+* Nota: Um comando mais flexível para sequências:
+```{r}
+s <- seq(1, 4, by = 1)
+```
+
+* **R** faz cálculos elemento a elemento:
+```{r}
+a * b
+a + b
+b ^ 2
+```
+* Soma e produto de elementos:
+```{r}
+sum(b)
+prod(b)
+```
+
+
+
+## Extensões do **R**
+
+* O **R** não precisa ser usado apenas como calculadora ou para atribuição de objetos simples. A sua funcionalidade pode ser estendida atráves de bibliotecas ou pacotes (muito similar a utilização de Plug-ins nos navegadores ou baixar aplicativos no google play). Alguns já vem instalados (automaticamente, by default) no **R** e você precisa apenas carregá-los (como fazemos depois que baixamos um aplicativo no celular e queremos usá-lo, por exemplo).
+* Para instalar um novo pacote no  **Rstudio**  você pode usar o menu:
+`Tools -> Install Packages`
+* Você precisa saber o nome do pacote que deseja instalar. Você também pode fazê-lo através do comando install.packages como abaixo:
+```{r eval=FALSE}
+install.packages("mosaic")
+```
+* Uma vez que o pacote esteja instalado, você pode carregá-lo através do comando `library` (ou `require`):
+```{r results="hide", message=FALSE}
+library(mosaic)
+```
+* Isto carrega o pacote `mosaic` que possuí muitas funções convenientes para este curso (voltaremos a isso mais tarde). Ele também imprime muitas informações sobre as funções que foram alteradas pelo pacote `mosaic`, mas você pode ignorar isto com segurança.
+
+
+
+## Ajuda do **R**
+
+* Você pode receber ajuda (help) via `?<command>`:
+```{r eval=FALSE}
+?sum
+```
+<!-- * Use `tab` to make  **Rstudio**  guess what you have started typing. -->
+* Procurando por ajuda:
+```{r eval=FALSE}
+help.search("plot")
+```
+
+* Você pode encontrar um cheat sheet com funções do **R** que usaremos neste curso 
+[aqui](https://drive.google.com/open?id=1678x0r9WNYQJlQPlovgIbwgp1hN5dt5c). Caso o arquivo não apareça, clique com o botão direito em cima do link e escolha `Open link in a new tab`.
+* Você pode salvar os comandos que você porventura tenha digitado em um arquivo para uso posterior:
+      + Selecione o guia History no painel superior direito no  **Rstudio** .
+      + Marque os comandos que você deseja salvar.
+      + Pressione o botão `To Source`.
+* Pratique as suas habilidades básicas em: 
+<http://tryr.codeschool.com>
+
+
+
+## Dados: Exemplos
+
+* Data: [Legibilidade de Anúncios em Revistas](http://lib.stat.cmu.edu/DASL/Datafiles/magadsdat.html)
+* Trinta revistas foram classificadas pelo nível educacional de seus leitores.
+* Três revistas foram selecionadas **aleatoriamente** de cada um dos seguintes grupos:
+    * Grupo 1: maior nível educacional
+    * Grupo 2: nível educacional médio
+    * Grupo 3: n;ivel educacional mais baixo.
+* Seis anúncios foram selecionados **aleatoriamente** de cada uma das nove revistas selecionadas:
+    * Grupo 1: [1] Scientific American, [2] Fortune, [3] The New Yorker
+    * Grupo 2: [4] Sports Illustrated, [5] Newsweek, [6] People
+    * Grupo 3: [7] National Enquirer, [8] Grit, [9] True Confessions
+* Logo, os dados contém informações sobre um total de 54 anúncios. 
+
+
+## Exemplo (continuação) - variáveis e formato
+* Para cada anúncio (54 casos), os dados abaixo foram observados.
+* **Nome das variáveis**:
+    * WDS = número de palavras na propaganda
+    * SEN = número de frases na propaganda
+    * 3SYL = número de palavras com 3 ou mais sílabas no anúncio
+    * MAG = revista (1 a 9 como na página anterior)
+    * GROUP = nível educacional (1 a 3 como na página anterior)
+* Dê uma olhada nos dados usando **Rstudio**:
+```{r}
+magAds <- read.delim("C:/Users/fsabino/Desktop/Codes/papers/Introductory_Stat_I/notebook/datasets_ads.txt")
+head(magAds)
+```
+* Os nomes das variáveis estão na linha superior. Não é permitido começar o nome de uma variável com um dígito, então um `X` foi adicionado em `X3SYL`.
+
+
+
+## Tipos de Dados
+
+### Variáveis Quantitativas
+
+* Medições contém valores numéricos.
+* Os dados quantitativos geralmente surgem das seguintes maneiras:
+    * **Variáveis contínuas**: `medições` de, por exemplo, tempo de espera em uma fila, receitas, preços de ações, etc.
+    * **Variáveis discretas**: `contagens` de, por exemplo, palavras em um texto, acessos de um website, números de chegadas em uma fila em uma hora, etc.
+* Medidas como esta têm um escala bem definida e no **R** elas são armazenadas como numéricas (**numeric**).
+<!-- * É importante distinguir entre variáveis discretas e contínuas, uma vez que isto determina frequentemente como nós descrevemos a incerteza de uma medida. -->
+
+
+### Variáveis Categóricas/Qualitativas
+
+* A medida é um fator proveniente de um conjunto de determinadas categorias. Exemplos: sexo (masculino/feminino), classe social, escore de satisfação (baixo/médio/alto), etc.
+* A medida é normalmente armazenada (o que é altamente recomendável) como um fator (**factor**) no **R**. As categorias possíveis são chamadas de níveis (**levels**). Examplo: os níveis do fator "sexo" são masculino/feminino.
+* Fatores têm duas possíveis escalas:
+    + **Escala Nominal**: Não há ordenação natural entre os níveis dos fatores. Exemplos: sexo e cor do cabelo.
+    + **Escala Ordinal**: Há uma ordenação natural entre os níveis dos fatores. Exemplos: classe social e escore de satisfação. Um fator no **R** pode ter um chamado atributo (**attribute**) atribuído, informando que a escala é ordinal (veja a função ordered()).
+
+# População e Amostra
+
+## Objetivo da Estatística
+
+* O objetivo da Estatística é "dizer algo" sobre a população.
+* Tipicamente, isso é feito utilizando as informações de uma amostra aleatória retirada da população de interesse.
+* Antes de retirar a amostra podemos ter alguma hipótese sobre a população. A amostra é então analisada como o objetivo de testar esta hipótese.
+* O processo de fazer conclusões para uma população com base em uma amostra é chamado de **inferência estatística**.
+
+## Seleção **aleatória**
+* Exemplo: Para os dados das revistas:
+    * Primeiro nós selecionamos **aleatoriamente** 3 revistas de cada grupo.
+    * Na sequência, nós selecionamos, **aleatoriamente**, 6 anúncios de cada revista.
+    * Um detalhe importante é que a seleção é feita de maneira completamente
+        **aleatória**, i.e.
+        * cada revista dentro de um grupo tem a mesma chance de ser escolhida e
+        * cada anúncio dentro de uma revista tem a mesma chance de ser escolhido.
+* No que veremos neste curso é fundamental que os dados coletados respeitem o princípio da aleatoriedade. Sempre que utilizarmos a palavra **amostra** daqui em diante, estaremos nos referindo a uma a.a. (amostra aleatória).
+* Mais geralmente:
+    * Nós temos uma **população** de objetos.
+    * Nós escolhemos aleatoriamente $n$ destes objetos, e do $j$-ésimo objeto nós obtemos a medição $y_j$, $j=1,2,\ldots,n$.
+    * As medições $y_1, y_2, \ldots, y_n$ são então chamadas de **amostra**. Só uma amostra (que contém $n$ elementos) e não várias amostras. 
+* Se nós, por exemplo, estivermos medindo a qualidade da água 4 vezes em um ano é uma má ideia coletarmos dados apenas com tempo bom. A amostragem escolhida ao longo do tempo não pode ser influenciada por algo que possa influenciar a medida em si.
+
+
+# Tabelas de agrupamento e frequência
+
+## Dividir toda a gama de valores em uma série de intervalos: "Binning"
+
+* A função `cut` irá dividir o intervalo de uma variável numérica em vários intervalos de tamanho igual e registrar a qual intervalo pertence cada observação. Por exemplo, para a variável `X3SYL` (o número de palavras com mais de 3 sílabas):
+```{r}
+# Antes de 'cortar':
+magAds$X3SYL[1:5]
+
+# Após 'cortar' (dividir) em 4 intervalos:
+syll <- cut(magAds$X3SYL, 4)
+syll[1:5]
+```
+* O resultado é um fator (`factor`) e os rótulos são os intervalos. Os itens personalizados podem ser atribuídos através do argumento `labels` (rótulos):
+```{r}
+labs <- c("poucas", "algumas", "muitas", "demais")
+syll <- cut(magAds$X3SYL, 4, labels = labs) # Nota: isso sobreescreverá a variável 'syll' definida acima
+syll[1:5]
+magAds$syll <- syll # Adicionando uma nova coluna ao conjunto de dados
+```
+
+
+
+## Tabelas
+
+* Para resumir os resultados nós podemos utilizar a função `tally` (contagem) do pacote`mosaic` (relembre que o pacote **deve ser carregado** escrevendo `library(mosaic)` se você ainda não o fez):
+```{r}
+tally( ~ syll, data = magAds)
+```
+* Em porcentagem:
+```{r}
+tally( ~ syll, data = magAds, format = "percent")
+```
+* Aqui nós usamos uma `fórmula` (caracterizada pelo til) para indicar que nós queremos a variável syll do conjunto de dados `magAds` (sem o til o **R** iria procurar por uma variável global chamada `syll` caso ela exista (se não existir dará certo) e a utilizaria ao invés da que queremos).
+
+
+## 2 fatores: Tabulação Cruzada
+
+* Para fazer uma tabela da combinação de dois fatores nós utilizamos a função `tally` novamente:
+```{r size="small"}
+tally( ~ syll + GROUP, data = magAds)
+```
+* Frequências relativas (em porcentagem) por coluna:
+```{r size="small"}
+tally( ~ syll | GROUP, data = magAds, format = "percent")
+```
+* A tabela acima mostra, por exemplo, qual a porcentagem de anúncios no grupo 1 que tem 'poucas', 'algumas', 'muitas' ou 'demais' com mais de 3 sílabas. 
+
+# Gráficos
+
+## Gráfico de barras
+
+* Para criar um gráfico de barras com os dados da tabela nós usamos a função `gf_bar` do pacote `mosaic`.
+  Para cada nível do fator uma caixa é desenhada com a altura proporcional a frequência (contagem) daquele nível.
+```{r bargraph}
+gf_bar( ~ syll, data = magAds)
+```
+<!-- Outro tema de cores pode ser escolhido, como por exemplo um fornecido pelo pacote `mosaic`: -->
+
+<!-- ```{r} -->
+<!-- trellis.par.set(theme = theme.mosaic()) -->
+<!-- ``` -->
+* O gráfico de barras também pode ser dividido por grupo:
+```{r bargraph_grouped}
+gf_bar( ~ syll | GROUP, data = magAds)
+```
+
+## Os dados de Ericksen
+
+* Descrição dos dados: [Ericksen 1980 U.S. Census Undercount](http://www.rdocumentation.org/packages/car/functions/Ericksen).
+* Este conjunto de dados contém as seguintes variáveis:
+    * `minority`: Percentual de negros ou hispânicos.
+    * `crime`: Taxa de crimes graves por 1000 indivíduos na população.
+    * `poverty`: Percentual de pobres.
+    * `language`: Percentual com dificuldade em falar ou escrever Inglês.
+    * `highschool`: Percentual com idade igual ou superior a 25 anos que não terminou o ensino médio.
+    * `housing`: Percentual de habitação em pequenos edifícios de unidades múltiplas.
+    * `city`: Um fator com níveis: `city` (cidade principal) ou `state` (estado or estado-resto).
+    * `conventional`: Percentual de domicílios contados por enumeração pessoal convencional.
+    * `undercount`: Estimativa preliminar de subentendimento percentual.
+* Os dados de Ericksen têm 66 linhas/observações e 9 colunas/variáveis.
+* As observações são medidas em 16 grandes cidades, as partes restantes dos estados em que essas cidades estão localizadas, e os outros estados dos EUA.
+
+```{r}
+Ericksen <- read.delim("C:/Users/fsabino/Desktop/Codes/papers/Introductory_Stat_I/notebook/datasets_Ericksen.txt")
+head(Ericksen)
+```
+* Quer fazer um histograma para a taxa de criminalidade - como? 
+
+## Histograma (usado para variáveis quantitativas)
+
+* Como fazer um histograma para alguma variável `x`:
+    * Divida o intervalo do valor mínimo de `x` para o valor máximo de` x` em um número apropriado de sub-intervalos de tamanho igual.
+    * Desenhe uma caixa em cada sub-intervalo, sendo a altura proporcional ao número de observações no subintervalo.
+* Histograma de taxas de criminalidade para os dados de Ericksen
+```{r hist}
+gf_histogram( ~ crime, data = Ericksen)
+```
+
+# Resumo de Variáveis Quantitativas
+
+## Medidas de centro dos dados (tendência central/posição): Média, Mediana e Moda
+
+* Retornemos ao exemplo de anúncios da revista (`WDS` =  número de palavras no anúncio). 
+Uma série de resumos numéricos para `WDS` pode ser encontrada usando a função ` favstats`:
+```{r}
+favstats( ~ WDS, data = magAds)
+```
+
+```{r echo=FALSE,results='hide'}
+y <- magAds$WDS
+nn <- length(y)
+```
+* Os valores observados da variável `WDS` são $y_1=`r y[1]`$, $y_2=`r y[2]`,\ldots,y_n=`r y[nn]`$, onde existe um total de $n=`r nn`$ valores.
+Conforme definido anteriormente, isso constitui uma **amostra**.
+* `r round(mean(y))` é a **média** da amostra, que é calculada por
+    $$
+      \bar{y}=\frac{1}{n}\sum_{i=1}^n y_i
+    $$
+    Nós chamamos $\bar{y}$ de **média amostral**.
+```{r}
+mean(y)
+```
+* A média é o ponto de equilíbro dos dados.
+* A média é sensível a valores extremos.
+    
+* **median** = `r round(median(y))` é o percentil 50,
+    i.e. o valor que divide a amostra em 2 grupos de igual tamanho.
+```{r}
+median(y)
+```
+
+    * Veja como calcular a mediana (e qualquer outro percentil) na página 75 do livro-texto recomendado (está na página do curso no moodle). Resolva os exemplos das páginas 75-77.
+* A **mediana** é robusta a valores extremos.
+* É uma medida mais apropriada quando trabalhamos com dados assimétricos.
+* Uma propriedade importante da **média** e da **mediana** é que elas têm a mesma unidade de medida que as observações.
+
+* **moda** = `r names(sort(-table(y)))[1]` é o valor mais frequente do banco de dados.
+```{r}
+names(sort(-table(y)))[1]
+```
+
+
+## Medidas de variabilidade: amplitude, amplitude interquartílica, variância, desvio padrão, e coeficiente de variação
+
+* Nós queremos saber "Quanto as observações estão desviadas do seu valor central?"
+    * Ao olhar os dados e gráficos podemos ter uma sensação disto.
+    * Porém, é comum estarmos interessados em um número para que possamos comparar as distribuições amostrais.
+    
+
+* **Amplitude** é a diferença entre o maior (máximo) e o menor (mínimo) valor.
+    * Ela só usa dois valores para o seu cálculo, isto é, não leva todos em consideração.
+    * Como trabalhamos com uma amostra, a amplitude que encontraremos será a amostral, isto é, em geral, temos uma subestimativa da verdadeira amplitude.
+* A **amplitude interquartílica** é a diferença entre os valores do terceiro quartil e do primeiro quartil, isto é, $Q_{3} - Q_{1}$.
+    * Ela utiliza 50% dos valores para o seu cálculo.
+* The **variância (empírica)** é a média dos desvios quadrados em relação à média:
+      $$
+        s^2=\frac{1}{n-1}\sum_{i=1}^n (y_i-\bar{y})^2.
+      $$
+* **sd** $=$ **desvio padrão** $= s=\sqrt{s^2}$.
+* Nota:\ Por exemplo, se as observações são medidas em metros,\ a unidade de medida da **variância** será $\text{metro}^2$ o que usualmente dificulta a interpretação. Por outro lado, o **desvio padrão** tem a mesma unidade de medida das observações.
+* O desvio-padrão descreve describes how much data varies around the (empirical) mean.
+* O **coeficiente de variação** (CV) é uma medida adimensional que serve para comparar a variabilidade de variáveis medidas em diferentes unidade de medida ou cujas médias e desvios-padrão sejam muito diferentes (mesma unidade de medida e grandezas muito diferentes). Portanto, o **CV** é uma medida de variabilidade relativa, ao contrários das demais vistas que são medidas de variabilidade absolutas. Defin-se o CV como a razão entre o desvio-padrão e a média (frequentemente é multiplicado por 100% para ser representado como uma variação percentual).
+
+$$ CV = \frac{s}{\bar{x}} $$
+
+## Cálculo da média, mediana, amplitude interquartílica e desvio-padrão usando a função favstats do pacote mosaic
+
+* Medidas Resumo de `WDS`:
+```{r}
+favstats( ~ WDS, data = magAds)
+```
+
+**Exercício**: Interprete os resultados acima.
+
+<!-- They may also -->
+<!-- be calculated separately in the following way: -->
+
+<!-- * Mean of `WDS`: -->
+<!-- ```{r} -->
+<!-- mean( ~ WDS, data = magAds) -->
+<!-- ``` -->
+<!-- * Median of `WDS`: -->
+<!-- ```{r} -->
+<!-- median( ~ WDS, data = magAds) -->
+<!-- ``` -->
+<!-- * Standard deviation for `WDS`: -->
+<!-- ```{r} -->
+<!-- sd( ~ WDS, data = magAds) -->
+<!-- ``` -->
+
+<!-- We may also calculate the summaries for each group (variable `GROUP`), e.g. for -->
+<!-- the mean: -->
+<!-- ```{r} -->
+<!-- mean( ~ WDS | GROUP, data = magAds) -->
+<!-- ``` -->
+
+
+```{r echo=FALSE,results='hide'}
+xx <- sort(y)
+```
+
+
+
+## Uma palavra sobre terminologia
+
+* **Desvio padrão**:\ uma medida de variabilidade de uma variável na amostra (ou população).
+* **Erro padrão**:\ uma medida de variabilidade de uma estimativa (um particular valor de uma função da amostra). Por exemplo, uma medida de variabilidade da média amostral.
+
+
+
+## Uma regra empírica (veremos detalhes mais à frente)
+
+```{r empRule,echo=FALSE,fig.width=12,fig.height=6}
+set.seed(5)
+x <- rnorm(900)
+x <- (x-mean(x))/sd(x)
+hist(x,axes=F,xlab="",breaks="FD",ylab="",main="",cex.main = 1.5,ylim=c(-.21,.4),probability=TRUE)
+axis(1,at=-3:3,labels=F,pos=0)
+axis(1,at=-3,labels=substitute(bar(y)-3*s),pos=0)
+axis(1,at=-2,labels=substitute(bar(y)-2*s),pos=0)
+axis(1,at=-1,labels=substitute(bar(y)-s),pos=0)
+axis(1,at=0,labels=substitute(bar(y)),pos=0)
+axis(1,at=1,labels=substitute(bar(y)+s),pos=0)
+axis(1,at=2,labels=substitute(bar(y)+2*s),pos=0)
+axis(1,at=3,labels=substitute(bar(y)+3*s),pos=0)
+arrows(-1,-.1,1,-.1,col="red",code=3,length=.1)
+text(-.01,-.115,"Cerca de 68% das medidas",col="red")
+arrows(-2,-.15,2,-.15,col="blue",code=3,length=.1)
+text(-.01,-.1655,"Cerca de 95% das medidas",col="blue")
+arrows(-3,-.2,3,-.2,code=3,length=.1)
+text(-.01,-.215,"Todas ou quase todas as medidas")
+```
+
+Se o histograma com base na amostra parece uma função em forma de sino, então
+
+* cerca de 68% das observações estão entre $\bar{y}-s$ e $\bar{y}+s$.
+* acerca de 95% das observações estão entre $\bar{y}-2s$ e $\bar{y}+2s$.
+* Todas ou quase todas as observações (99.7%) estão entre $\bar{y}-3s$ e $\bar{y}+3s$.
+
+
+
+## Percentis
+
+* **O $p$-ésimo percentil** é um valor tal que pelo menos $p$% das observações são menores ou iguais a esse valor e pelo menos.
+
+  * Veja como calcular os percentis nas páginas 75-77 do livro texto.
+  
+<!-- ### Percentile calculation for a sample: -->
+
+<!-- * First, sort data in increasing order. For the `WDS` variable in the magazine data: -->
+<!--     $$ -->
+<!--       y_{(1)}=`r xx[1]`, y_{(2)}=`r xx[2]`, y_{(3)}=`r xx[3]`, \ldots, y_{(n)} = `r xx[nn]`. -->
+<!--     $$ -->
+<!-- Here the number of observations is $n=`r nn`$. -->
+<!-- * Find the $5$th percentile (i. e.\ $p = 5$):\ -->
+<!--     * The observation number corresponding to the 5-percentile is $N =  \frac{n\cdot p}{100} = 2.7$. -->
+<!--     * That is, the 5-percentile must lie between the observations $x_{(k)}=32$ and $x_{(k+1)}=34$, where $k = 2 < N < 3$. -->
+<!--     * Let $d = N - k = 0.7$. One of several methods for estimating the 5-percentile: -->
+<!--     $$ -->
+<!--       x_{(k)} + d(x_{(k+1)} - x_{(k)}) = 32 + 0.7 \cdot 2 = 33.4 -->
+<!--     $$ -->
+
+
+
+## Mediana, quartis e amplitude interquartílica
+
+Recordando
+```{r}
+favstats( ~ WDS, data = magAds)
+```
+
+* 50-percentil = 96 é a **median** e é uma medida de tendência central/posição (centro dos dados).
+* 0-percentil = 31 é o valor **mínimo**.
+* 25-percentil = 69 é o  **primeiro quartil** ou **quartil inferior** (Q1).\ Mediana dos 50% menores valores.
+* 75-percentil = 201.5 é o **terceiro quartil** ou **quartil superior** (Q3).\ Mediana dos 50% maiores valores.
+* 100-percentil = 230 é o valor **máximo**.
+* **Amplitude Interquartílica (IQR)**:\ uma medida de variabilidade dada pela diferença entre o quartil superior e o quartil inferior: 201.5 - 69 = 132.5.
+
+
+# Mais gráficos
+## Box plots
+
+Como desenhar um box plot:
+
+* Box:
+    * Calcule a mediana, e os quartis inferior e superior.
+    * Trace uma linha na mediana e desenhe uma caixa entre os quartis superior e inferior.
+    * Calcule a amplitude interquartílica e a chame de IQR.
+    * Calcule os seguintes valores:
+        * L = quartil inferior - 1.5*IQR
+        * U = quartil superior + 1.5*IQR
+    * Desenhe uma linha ligando o quartil inferior até a menor medida que seja maior do que *L*.
+    * Similarmente, desenhe uma linha ligando o quartil superior até a maior medida que seja inferior a *U*.
+* Outliers: Observações com valor menor do que *L* ou maior do que *U* são desenhadas como círculos.
+
+*Nota: As caixas são fechadas (em inglês, as extremidades são chamadas de "Whiskers") no mínimo e no máximo das observações que não são consideradas outliers.*
+
+----
+
+### Boxplot para os dados de Ericksen
+
+Boxplot das taxas de pobreza separadamente para cidados e estados (variável `city`):
+
+```{r boxplot}
+gf_boxplot(poverty ~ city, data = Ericksen)
+```
+
+* Parece haver mais pobreza nas cidades.
+* Um único estado difere notoriamente dos outros com alta taxa de pobreza.
+
+## 2 variáveis quantitativas variables: Gráfico de dispersão ("Scatter plot")
+
+Para duas variáveis quantitativas, um gráfico frequentemente utilizado é o de dispersão:
+```{r scatter0}
+gf_point(poverty ~ highschool, data = Ericksen)
+```
+
+Isto pode ser colorido ou dividido de acordo com o valor de `city`:
+
+```{r}
+gf_point(poverty ~ highschool | city, data = Ericksen)
+gf_point(poverty ~ highschool, col = ~city, data = Ericksen)
+```
+
+Se nos quisermos adicionar uma linha de regressão (uma equação da reta neste caso) nós podemos usar as funções abaixo:
+
+```{r scatter05}
+gf_point(poverty ~ highschool, col = ~city, data = Ericksen) %>% gf_lm()
+```
+
+
+
+
+# Apêndice
+
+## Recodificando variáveis
+
+* A função `factor` converterá diretamente um vetor em uma variável qualitativa (escala nominal).\ Por exemplo:
+
+```{r}
+head(magAds$GROUP)
+class(magAds$GROUP)
+f <- factor(magAds$GROUP)
+class(f)
+# magAds$GROUP <- f
+# head(magAds$GROUP)
+```
+<!-- * Custom labels for the levels can also be used: -->
+<!-- ```{r} -->
+<!-- f <- factor(magAds$GROUP, -->
+<!--             levels = c("1", "2", "3"), -->
+<!--             labels = c("high", "medium", "low")) -->
+<!-- magAds$GROUP <- f -->
+<!-- head(magAds$GROUP) -->
+<!-- ``` -->
+<!-- * In this way the numbers are replaced by more informative labels describing the educational level. -->
+
+
+<!-- # Point and click plotting -->
+<!-- ## `mplot` -->
+
+<!-- * If `mosaic` is loaded and the package `manipulate` is installed you can construct plots using point and click using the function `mplot`. -->
+<!-- * You simply use `mplot` on your dataset and answer the question and then you can change things by pressing the settings button (cog wheel) in the top left of the plot window. -->
+<!-- ```{r eval = FALSE} -->
+<!-- mplot(Ericksen) -->
+<!-- ``` -->
+<!-- * In the end you can press "Show expression" to get the code for the plot. -->
+
+<!-- Shape and transformations -->
+<!-- 4 chracteristics of a distribution that are of interest: -->
+<!-- center  -->
+<!-- already covered -->
+<!-- spread or variablity  -->
+<!-- already covered -->
+<!-- shape  -->
+<!-- modality: number of prominent humps (uni, bi, multi, or uniform - no humps) -->
+<!-- skew (right, left, or symetric) -->
+<!-- Can transform to fix skew -->
+<!-- outliers -->
+
+<!-- Forma e transformações -->
+<!-- 4 características de uma distribuição que são de interesse: -->
+<!-- Centro -->
+<!-- já coberto -->
+<!-- propagação ou variabilidade -->
+<!-- já coberto -->
+<!-- forma -->
+<!-- modalidade: número de bossas proeminentes (uni, bi, multi ou uniforme - sem javali) -->
+<!-- inclinação (direita, esquerda ou simétrica) -->
+<!-- Pode se transformar para consertar distorção -->
+<!-- outliers -->
+
+<!-- - Describe the shape -->
+
+
+
+

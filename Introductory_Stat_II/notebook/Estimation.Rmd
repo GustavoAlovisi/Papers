@@ -1,0 +1,204 @@
+---
+title: "Estimação, Viés e Variância. Distribuição Amostral de uma Estatística."
+author: "Fernando B. Sabino da Silva"
+date: "March 7, 2018"  
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+  
+
+**Parâmetros de uma Distribuição**
+
+Todas as distribuições que foram discutidas em Estatística I contém um conjunto de parâmetros que descreve completamente a função densidade de probabilidade (ou função massa de probabilidade). Por exemplo, uma variável aleatória gaussiana, $X \sim N(\mu, \sigma^2)$, tem como parâmetros a média $\mu$ e a variância $\sigma^2$. Uma variável aleatória com distribuição exponencial, $X \sim Exp(\lambda)$, tem a taxa $\lambda$ como parâmetro. Uma variável aleatória Bernoulli, $X \sim Ber(p)$, tem como único parâmetro a probabilidade de sucesso $p$. É importante relembrar que parâmetros são constantes desconhecidas. Em Estatística I, os parâmetros eram informados ("God gave us").
+
+**Notação**: Quando queremos fazer uma declaração genérica sobre parâmetros, é costume usar a letra grega $\theta$.
+
+**Estimação dos Parâmetros de uma Distribuição**. Algumas vezes nós fazemos suposições de que os dados provém de uma determinada distribuição. Por exemplo, se nós acreditamos que os dados são provenientes da soma de efeitos aleatórios, nós argumentamos que a distribuição que rege o fenômeno é a gaussiana como resultado do Teorema Central do Limite (CLT). Outras vezes, porém, é necessário tomar uma decisão de modelagem, isto é, nós devemos decidir qual modelo (qual particular tipo de distribuição) se ajusta melhor aos nossos dados. Às vezes, podemos decidir até olhando um histograma. 
+
+Uma vez que decidimos qual distribuição utilizar, a próxima questao é: quais devem ser os parâmetros para esta distribuição? Por exemplo, se nós escolhemos modelar nossos dados utilizando a distribuição normal, nós temos que escolher entre um número infinito de distribuições gaussianas, pois existe um número infinito de parâmetros $\mu$ e $\sigma^2$. Nós poderíamos, talvez, fazer algumas suposições adicionais e escolher valores particulares para $\mu$ e $\sigma^2$. No entanto, se assim o fizermos, as decisões começaram a ser extremamente restritivas e muito difíceis de justificá-las. Felizmente, podemos usar a amostra para *estimar* estes parâmetros. No caso de uma distribuição normal, a média amostral $\bar{X}_n$ e a variância $s^{2}_n$ parecem candidatos naturais para estimar os parâmetros $\mu$ e $\sigma^{2}$.
+
+**Definição 1**: Seja $X_{1}, X_{2},..., X_{n}$ variáveis aleatórias iid provenientes de uma distribuição com parâmetro $\theta$. Um estimador de $\theta$ é a estatística $\hat{\theta} = T(X_{1}, X_{2},..., X_{n})$.
+
+Nota: A notação de "chapéu" serve para indicar que estamos estimando um parâmetro particular. Por exemplo, se estivermos tentando estimar o parâmetro $\mu$ de uma distribuição normal, nós costumamos chamar o estimador de $\hat{\mu}$.
+
+**Definição 2**: O estimador $\hat{\theta}$ para o parâmetro $\theta$ é dito **não-viesado** se $E[\hat{\theta}] = \theta$.
+
+O **viés** de $\hat{\theta}$ é definido por $b(\hat{\theta}) = E[\hat{\theta}] - \theta$.
+
+
+
+**Exercício 1**: Estime a média $\mu$ de uma distribuição normal. Se nós escolhermos a média amostral como nosso estimador, isto é, $\hat{\mu} = \bar{X}_n$, mostre que este estimador é não-viesado, isto é,  $E[\bar{X}_n] = \mu$.
+
+**Exercício 2**: Estime a variância $\sigma^{2}$ de uma distribuição normal. Se nós escolhermos a variância amostral como nosso estimador, isto é, $\hat{\sigma}^{2} = s^{2}_{n}$, iremos encontrar um motivo para usar $(n-1)$ no denominador. O objetivo é tornar o estimador não-viesado. Primeiro, relembre que $Var(X) = E[X^{2}] - [E(X)]^{2}$. Usando isto, é fácil deduzir que $$E[X_{i}^{2}] = Var(X_{i}) + [E(X_{i})]^{2} = \sigma^{2} + \mu^{2}$$, e $$E[\bar{X_{n}^{2}}] = Var(\bar{X_{n}}) + [E(\bar{X_{n}})]^{2} = \frac{\sigma^{2}}{n} + \mu^{2}.$$
+
+<!-- Note também que $Cov(X_{i}, X_{j}) = 0$ se $i \neq j$, devido a independência entre os componentes de $X$. Logo, para $i \neq j$, $$E[X_{i} X_{j}] = Cov(X_{i}, X_{j}) + E[X_{i}]E[X_{j}] = \mu^{2}$$. -->
+
+<!-- Usando isto, nós podemos calcular $$E\bigg[X_{i}\frac{1}{n}\sum_{j=1}^n X_{j}\bigg] = \frac{1}{n}\sum_{i=1}^nE[X_{i} X_{j}] = \frac{\sigma^2}{n} + \mu^{2}$$. -->
+
+Usando os resultados acima **mostre que** $$E[s_{n}^2] = E\bigg[\frac{1}{n-1}\sum_{i=1}^n(X_{i} - \bar{X_{n}})^{2}\bigg]$$
+<!-- $$=\frac{1}{n-1}\sum_{i=1}^nE[X_{i}^{2} - 2X_{i}\bar{X_{n}} + \bar{X_{n}^{2}}]$$ -->
+é um estimador não-viesado para $\sigma^2$.
+<!-- $$= \frac{1}{n-1}\sum_{i=1}^n(E[X_{i}^{2}] - 2E[X_{i}\bar{X_{n}}] + E[\bar{X_{n}^{2}}]$$ -->
+<!-- $$= \frac{1}{n-1}\sum_{i=1}^n(\sigma^{2} + \mu^{2} - \frac{\sigma^{2}}{n} - \mu^{2})$$ -->
+<!-- $$= \frac{1}{n-1}\sum_{i=1}^n \frac{n-1}{n} \sigma^{2} = \sigma^{2}.$$ -->
+
+* Obs: Se tivéssemos colocado $n$ no denominador, nós teríamos encontrado
+
+$$E\bigg[\frac{1}{n}\sum_{i=1}^n(X_{i}-\bar{X_{n}})^{2}\bigg]= \frac{n-1}{n}\sigma^{2}.$$
+**Exercício 3**: Se $X_{i}$ são variáveis aleatórias iid com distribuição $Ber(p)$, mostre que $E[X_{i}]=p$ e que $E[\bar{X_{n}}] = p$, isto é,$\bar{X_{n}}$ é um estimador não-viesado para $p$.
+
+É possível que dois estimadores, $\hat{\theta_{1}}$, $\hat{\theta_{2}}$, para um parâmetro $\theta$ sejam *ambos* não-viesados (vocês conseguem pensar em um exemplo?). Se não-viés for algo que consideramos necessário, como decidimos qual dos dois estimadores iremos usar? Bem, neste caso é usual preferir aquele que tenha menor variabilidade, isto é, que tenha uma probabilidade maior de estar mais perto do verdadeiro valor do parâmetro (o nosso trabalho é feito geralmente com uma amostra). 
+
+**Definição 3**: Sejam dois estimadores $\hat{\theta_{1}}$ e $\hat{\theta_{2}}$ não-viesados para $\theta$. O estimador $\hat{\theta_{1}}$ é dito ser **mais eficiente** que o estimador $\hat{\theta_{2}}$ se $$Var(\hat{\theta_{1}}) < Var(\hat{\theta_{2}}).$$
+
+**Consistência**: Outro conceito importante para ser definido é o de consistência de um estimador. Por exemplo, conforme o tamanho amostral $n$ aumenta, a distribuição da média amostral $\bar{X_{n}}$ torna-se cada vez mais concentrada em torno da média populacional $\mu$. Quando um estimador converge (em probabilidade) para um parâmetro, nós dizemos que este estimador é consistente para o parâmetro (ou converge em probabilidade para ele).
+
+**Definição 4**: Um estimador $\hat{\theta_{n}}$ é dito consistente se: 
+
+$$ \lim_{n\to\infty}P\bigg(\left|\hat{\theta_{n}} -\theta \right| < \epsilon\bigg) = 1 $$, isto é, $$ plim\hat{\theta_{n}} = \theta$$, ou ainda, $$\hat{\theta_{n}} \overset{p}{\to} \theta $$, ou seja, se $\hat{\theta_{n}}$ converge em probabilidade para a constante $\theta$, que é o valor verdadeiro do parâmetro.
+
+**Proposição 1**: Um estimador $\hat{\theta_{n}}$ é dito consistente se: 
+
+$$\lim_{n\to\infty}E(\hat{\theta_{n}}) = \theta $$ e 
+
+$$\lim_{n\to\infty}Var(\hat{\theta_{n}}) = 0 $$, ou
+
+$$\lim_{n\to\infty}EQM(\hat{\theta_{n}}) = 0 $$, onde
+
+$EQM(\hat{\theta_{n}}) = Var(\hat{\theta_{n}}) + b^{2}(\hat{\theta_{n}})$. EQM é chamado de *erro quadrático médio*.
+
+* Nota: Consistência do EQM implica consistência de $\hat{\theta_{n}}$, mas o inverso não necessariamente é verdadeiro, isto é, $\hat{\theta_{n}}$ pode ser consistente para $\theta$ sem que a proposição acima seja válida. Mas se valer o estimador $\hat{\theta_{n}}$ será consistente.
+
+
+
+# Distribuição Amostral de uma Estatística
+
+Considere uma amostra aleatória $X_1, X_2, \ldots, X_n$. Relembre que então as realizações $X_i$ são iid (independentes e identicamente distribuídas). Considere a estatística (qualquer função apenas da amostra é dita uma estatística) média amostral,
+$$\bar{X}_n = \frac{1}{n} \sum_{i=1}^n X_i.$$, no exemplo a seguir.
+
+Lembre-se de que uma estatística é uma variável aleatória (se é função da amostra ela depende daquela particular amostra). Isto significa $\bar{X}_n$ tem uma distribuição de probabilidade. Em outras palavras, se repetirmos o experimentos várias vezes, nós iremos obter resultados diferentes para os $X_i$. Isso por sua vez resultaria em diferentes valores para a estatística média amostral, $\bar{X}_n$. A distribuição de uma estatística é chamada de __distribuição amostral__. 
+
+Vamos fazer simulações no R para ilustrar isto. Assuma, inicialmente, que $X_i \sim N(0, 1)$ e simulamos 100 realizações da variável aleatória:
+
+```{r}
+n = 100
+x = rnorm(n)
+```
+
+Um histograma representando a distribuição amostral destas 100 realizações (aleatórias) de $X_i$ está a seguir. Nós também traçamos a densidade da distribuição normal (a verdadeira, pois os dados foram simulados de uma distribuição normal padrão) sobre o histograma para checar quão perto ela está.
+```{r}
+hist(x, freq = FALSE)
+
+s = seq(-3,3,0.05)
+lines(s, dnorm(s), col = 'red', lwd = 2)
+```
+
+Vejamos qual a média amostral destas 100 realizações
+```{r}
+mean(x)
+```
+
+E se nós repetíssemos este "experimento" muitas vezes? Qual seria a distribuição amostral da estatística média? Anteriormente, nós mostramos que a média amostral também tem uma distribuição normal com a mesma média $\mu$ e variância dividida por $n$. Em outras palavras, $\bar{X}_n \sim N(\mu, \sigma^2 / n)$.
+
+Abaixo fazemos 100000 simulações (repetições do experimento anterior)
+
+```{r}
+numSims = 100000
+
+## Cada coluna nesta matriz representa uma simulação
+sims = matrix(rnorm(n * numSims), n, numSims) 
+mean.vals = colMeans(sims)
+
+hist(mean.vals, freq = FALSE, main = "Histograma das Médias Amostrais")
+s = seq(-0.3, 0.3, 0.005)
+lines(s, dnorm(s, 0, 0.1), col = 'red', lwd = 2)
+```
+
+
+# Exemplo 1: Estimando os Parâmetros de uma Distribuição Normal
+
+Abaixo temos o histograma de um conjunto de dados contido no R. Ele consiste de larguras de anéis de árvores de um determinado tipo de pinheiro (bristlecone) na Califórnia. Veja uma breve explicação para medirmos o tamanho dos anéis [aqui](http://www.ebc.com.br/infantil/voce-sabia/2012/09/voce-sabia-que-e-possivel-descobrir-a-idade-de-uma-arvore-olhando-o).
+
+```{r}
+hist(treering, main = "Dados dos anéis da árvore", freq=FALSE)
+```
+
+Os dados têm um unico "pico" e são aproximadamente simétricos, então talvez possamos nos sentir confortáveis com o uso de variável aleatória com distribuição normal para modelá-los. Mas e quanto aos parâmetros $\mu$ e $\sigma^2$? Como discutimos anteriormente, a média e a variância amostral são estimadores não-viesados para esses parâmetros.
+
+```{r}
+(mu.hat = mean(treering))
+(sigma2.hat = var(treering))
+```
+
+Vamos traçar a função densidade de probabilidade da distribuição normal com base nos valores amostrais sobre o histograma:
+
+```{r}
+hist(treering, main = "Dados dos Anéis das Árvores", freq = FALSE)
+s = seq(mu.hat - 3*sd(treering), mu.hat + 3*sd(treering), 0.01*sd(treering))
+lines(s, dnorm(s, mean(treering), sd(treering)), col = 'red', lwd = 2)
+```
+
+Observe que este não é um ajuste perfeito. Os dados são ligeiramente assimétricos à direita.
+
+# Exemplo 2: Estimando o Parâmetro de uma Distribuição Exponencial
+
+Para este exemplo, vamos usar dados dos tempos dos primeiros 100 colocados na maratona de New York em 2016 e calcular a diferença entre os tempos (consecutivos) entre eles em segundos. Os dados podem ser encontrados na página do curso no moodle. Similarmente, veja os dados para a última maratona em 2017 no link abaixo:
+
+http://www.tcsnycmarathon.org/about-the-race/results/overall-men
+
+```{r}
+marathon = read.csv("marathon.csv", header = FALSE, sep = "\t")
+
+times = as.difftime(as.character(marathon$V4))
+diffs = as.numeric(times[2:100] - times[1:99]) * 60 * 60
+```
+
+Vejamos o histograma deste conjunto de dados:
+```{r}
+hist(diffs, freq = FALSE, main = "Diferença de Tempo entre Tempos Finais Consecutivos na Maratona de NYC em 2016", xlab = "Diferença de Tempo em segundos")
+```
+
+Aparentemente, uma distribuição exponencial se ajustaria bem a estes dados, isto é, $T_i \sim \mathrm{Exp}(\lambda)$. Mas e quanto ao parâmetro (taxa) $\lambda$? Nós sabemos que o valor esperado para uma variável aleatória com distrição exponencial é $E[T_i] = \frac{1}{\lambda}$. Portanto, um estimador não-viesado para $\frac{1}{\lambda}$ é a média amostral e, portanto, 
+$$\hat{\lambda} = \frac{1}{\bar{X}_n}.$$
+
+```{r}
+(lambda.hat = 1 / mean(diffs))
+```
+
+Vejamos quão bem esta particular distribuição se ajusta aos nossos dados:
+
+```{r}
+hist(diffs, freq = FALSE, main = "Diferença de Tempo entre Tempos Finais Consecutivos na Maratona de NYC em 2016", xlab = "Diferença de Tempo em segundos")
+s = 0:max(diffs)
+lines(s, dexp(s, rate = lambda.hat), col = 'red', lwd = 2)
+```
+
+Veja a página a seguir do Wikipedia para ver mais exemplos de modelagem com a distribuição exponencial:
+
+https://en.wikipedia.org/wiki/Exponential_distribution
+
+## Lista de Exercícios
+
+# Questão 1
+
+(a) O que é um parâmetro e o que é um estimador?
+(b) Defina viés e o que significa um estimador ser não-viesado?
+(c) Calcule o viés e a variância da média amostral assumindo que a amostra foi retirada de uma população com (i) distribuição normal com média $\mu$ e variância $\sigma^{2}$ e (ii) bernoulli com probabilidade de sucesso $p$.
+
+# Questão 2
+
+Sua amiga arremessou uma moeda justa $n$ vezes e lhe disse o número de caras que apareceram no experimento. Porém, ela não lhe contou quantas vezes ela arremessou a moeda. Ela repetiu este experimento 10 vezes, isto é, em cada experimentos ela arremessou a moeda $n$ vezes, e lhe informou o número de caras em cada experimento: $x_{1}, x_{2},..., x_{10}$.
+
+(a) Indique uma estatística não-viesada, $\hat{n}$ para estimar $n$. Explique por que o viés será zero.
+(b) Simule este experimento 10000 vezes com $n = 25$. Cada simulação deverá produzir uma lista com 10 números. Use a estatística qud você sugeriu em (a) para estimar $n$ em cada simulação, isto é, no final você deverá ter 10000 valores para $\hat{n}$. Isto é semelhante a simulação feita acima para a média de uma distribuição normal.
+
+Dica: Use a função rbinom do **R** da seguinte forma: rbinom(10, 25, 0.5), onde 10 representa o número de experimentos, $n = 25$ e $p = 0.5$ é a probabilidade de sucesso de uma moeda justa.
+
+(c) Faça um boxplot para os 10000 valores de $\hat{n}$. Desenhe uma linha horizontal vermelha representando o verdadeiro valor de $n$. Os valores que você encontrou estão centrados em torno do verdadeiro valor de $n$?
+
+Dica: Para fazer um boxplot você pode usar, por exemplo, as funções boxplot ou gf_boxplot (esta contida na library ggplot2) do **R** (dentre outras, não esqueça que o **R** tem em torno de 10000 pacotes e alguns devem conter a possibilidade de fazer este gráfico). Veja um exemplo do uso da função gf_plot [aqui](https://rpubs.com/fsabino_da_silva/367934).
+
+(d) Faça um histograma para os seus 10000 valores de $\hat{n}$. Usando a função lines, trace a função de distribuição de probabilidade (pdf) de uma distribuição normal em cima do seu histograma. Use como parâmetros $\mu$ e $\sigma^{2}$ a média e a variância amostrais que você encontrou para os seus $\hat{n}$ valores.

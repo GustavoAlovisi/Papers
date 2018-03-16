@@ -1,0 +1,94 @@
+---
+title: "Statistics Plots"
+author: "Tom Fletcher"
+date: "November 2, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, comment = "")
+```
+
+We'll use the Old Faithful data that comes with R. Type just "faithful" and hit enter to see the raw data:
+```{r}
+faithful
+```
+
+To get information on this data, see the help file by typing this in the R prompt:
+```{r, eval=FALSE}
+?faithful
+```
+
+Notice this is a "data frame" in R, which just means a table of data with named columns. To retrieve a single column, use the "$" operator:
+```{r}
+faithful$eruptions
+```
+
+Here's the other column:
+```{r}
+faithful$waiting
+```
+
+The "summary" command in R will give you some basic statistics:
+```{r}
+summary(faithful)
+```
+
+The usual sample statistics are also commands:
+```{r}
+mean(faithful$eruptions)   # mean
+median(faithful$eruptions) # median
+var(faithful$eruptions)    # variance
+sd(faithful$eruptions)     # standard deviation
+```
+
+As a first visualization, we could look at the histogram.
+```{r}
+hist(faithful$eruptions, main="Histogram of Old Faithful Eruption Time")
+```
+
+You can change the number of bins in the histogram with the `breaks` option.
+```{r}
+hist(faithful$eruptions, main="Histogram of Old Faithful Eruption Time", breaks=20)
+```
+
+The vertical axis on the histogram plots denotes the counts of how many data points land in a bin. We can convert this to an estimate of the probability density function by dividing by the total number of data points. This is done by using the `freq = FALSE` option.
+
+The `density()` command in R is another way to visualize the estimated pdf from a data set. Here we will plot it on top of our histogram to compare:
+```{r]}
+hist(faithful$eruptions, main="Histogram of Old Faithful Eruption Time", breaks=20, freq=FALSE)
+lines(density(faithful$eruptions, bw = 0.1), col = 'red', lw = 2)
+```
+
+The empirical cdf is plotted using the `ecdf` command.
+```{r}
+plot(ecdf(faithful$eruptions), cex.points=0.5, main="Empirical CDF for Old Faithful Eruption Time")
+```
+
+Here's how to do box plots:
+```{r}
+boxplot(faithful$eruptions, main="Box Plot of Old Faithful Eruption Time")
+```
+
+We can look at joint statistics such as sample covariance and correlation also.
+```{r}
+cov(faithful$waiting, faithful$eruptions)
+cor(faithful$waiting, faithful$eruptions)
+```
+
+Scatter plots are useful for looking at two random variables, $X, Y$, and their relationships.
+```{r}
+plot(faithful$eruptions, faithful$waiting, main="Scatter Plot of Old Faithful Waiting vs Eruption Times")
+```
+
+This example is taken from Wikipedia. It is a box plot of the Michelson-Morley speed of light experiments.
+```{r}
+morley$Expt <- factor(morley$Expt)
+par(las=1, mar=c(5.1, 5.1, 2.1, 2.1))
+boxplot(Speed ~ Expt, morley, xlab = "Experiment No.",
+        ylab="Speed of light (km/s minus 299,000)")
+abline(h=792.458, col="red")
+text(3,792.458,"true\nspeed")
+```
+
+Another nice example of a box plot is at the bottom of the help page for boxplot (type `?boxplot` at the R prompt).

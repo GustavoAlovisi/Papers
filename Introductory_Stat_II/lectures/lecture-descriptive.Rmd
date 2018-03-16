@@ -1,0 +1,122 @@
+---
+title: "Breve Introdução ao Software R"
+author: "Fernando B. Sabino da Silva"
+output:
+  slidy_presentation:
+    css: https://asta.math.aau.dk/course/asta/2018-1/?file=lecture_style.css
+    fig_caption: no
+    highlight: tango
+    theme: cerulean
+  beamer_presentation:
+    highlight: tango
+  pdf_document:
+    fig_caption: no
+    highlight: tango
+    number_section: yes
+    toc: yes
+  ioslides_presentation:
+    highlight: tango
+---
+
+```{r, include = FALSE}
+options(digits = 2)
+## Remember to add all packages used in the code below!
+missing_pkgs <- setdiff(c("mosaic"), rownames(installed.packages()))
+if(length(missing_pkgs)>0) install.packages(missing_pkgs)
+```
+
+
+##  **Rstudio** 
+
+* Faça uma pasta no seu computador onde você deseja manter os arquivos para usar no **Rstudio**.
+* Defina o diretório de trabalho nesta pasta:
+`Session -> Set Working Directory -> Choose Directory`
+(atalho: Ctrl+Shift+H).
+* Torne a alteração permanente definindo o diretório padrão em:
+`Tools -> Global Options -> Choose Directory`.
+
+
+
+## **R** básico
+
+* Cálculos simples:
+```{r}
+4.6 * (2 + 3)^4 
+```
+* Defina um objeto (escalar) e o imprima:
+```{r}
+a <- 4 
+a
+```
+* Defina um objeto (vetor) e o imprima:
+```{r}
+b <- c(2, 5, 7)
+b
+```
+* Defina uma sequência de números e a imprima:
+```{r}
+s <- 1:4
+s
+```
+* Nota: Um comando mais flexível para sequências:
+```{r}
+s <- seq(1, 4, by = 1)
+```
+
+* **R** faz cálculos elemento a elemento:
+```{r}
+a * b
+a + b
+b ^ 2
+```
+* Soma e produto de elementos:
+```{r}
+sum(b)
+prod(b)
+```
+
+
+
+## Extensões do **R**
+
+* O **R** não precisa ser usado apenas como calculadora ou para atribuição de objetos simples. A sua funcionalidade pode ser estendida atráves de bibliotecas ou pacotes (muito similar a utilização de Plug-ins nos navegadores ou baixar aplicativos no google play). Alguns já vem instalados (automaticamente, by default) no **R** e você precisa apenas carregá-los (como fazemos depois que baixamos um aplicativo no celular e queremos usá-lo, por exemplo).
+* Para instalar um novo pacote no  **Rstudio**  você pode usar o menu:
+`Tools -> Install Packages`
+* Você precisa saber o nome do pacote que deseja instalar. Você também pode fazê-lo através do comando install.packages como abaixo:
+```{r eval=FALSE}
+install.packages("mosaic")
+```
+* Uma vez que o pacote esteja instalado, você pode carregá-lo através do comando `library` (ou `require`):
+```{r results="hide", message=FALSE}
+library(mosaic)
+```
+* Isto carrega o pacote `mosaic` que possuí muitas funções convenientes para este curso (voltaremos a isso mais tarde). Ele também imprime muitas informações sobre as funções que foram alteradas pelo pacote `mosaic`, mas você pode ignorar isto com segurança.
+
+
+
+## Ajuda do **R**
+
+* Você pode receber ajuda (help) via `?<command>`:
+```{r eval=FALSE}
+?sum
+```
+<!-- * Use `tab` to make  **Rstudio**  guess what you have started typing. -->
+* Procurando por ajuda:
+```{r eval=FALSE}
+help.search("plot")
+```
+
+* Você pode encontrar um cheat sheet com funções do **R** que usaremos neste curso 
+[aqui](https://drive.google.com/open?id=1678x0r9WNYQJlQPlovgIbwgp1hN5dt5c). Caso o arquivo não apareça, clique com o botão direito em cima do link e escolha `Open link in a new tab`.
+* Você pode salvar os comandos que você porventura tenha digitado em um arquivo para uso posterior:
+      + Selecione o guia History no painel superior direito no  **Rstudio** .
+      + Marque os comandos que você deseja salvar.
+      + Pressione o botão `To Source`.
+* Pratique as suas habilidades básicas em: 
+<http://tryr.codeschool.com>
+
+
+
+
+
+
