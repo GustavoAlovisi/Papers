@@ -5,7 +5,7 @@ This repository aims to provide information (data, codes) of my current working 
 
 Further studies should pursue applications to asset allocation under conditions of market distress or to a user-specified scenario. In addition, I want to identify impactful news articles and construct news factor. One can apply machine learning techniques to identify relevant tags for a story and to understand which patterns can impact the market most.
 
-* Fernando A.B. Sabino da Silva, Flavio A. Ziegelmann, Cristina Tessari. **[Robust Portfolio Optimization with Multivariate Copulas: a Worst-Case CVaR approach](https://bitbucket.org/fsabino/papers/src/8c2891b93c632ee77fcc5639738a005c17530cd1/Portfolio_Optimization_with_Multidimensional_Copulas/?at=master).**
+* Fernando A.B. Sabino da Silva, Flavio A. Ziegelmann. **[Robust Portfolio Optimization with Multivariate Copulas: a Worst-Case CVaR approach](https://bitbucket.org/fsabino/papers/src/8c2891b93c632ee77fcc5639738a005c17530cd1/Portfolio_Optimization_with_Multidimensional_Copulas/?at=master).**
 
 Software: R, Matlab.
 
@@ -29,7 +29,7 @@ Data used: Daily data of adjusted closing prices of all stocks that belong to S&
 Press Coverage: **[Quantpedia](https://quantpedia.com/Blog/Details/mixed-copula-pairs-trading-strategy).**
 
 
-* Fernando A.B. Sabino da Silva, Tainan B.F. Boff, Flavio A. Ziegelmann. **[Mixed Copula Pairs Trading Strategy with High Frequency Data](https://bitbucket.org/fsabino/papers/src/482db82bfc3b109b6ce3408792bfb38adae63fd3/Pairs_Trading_High_Frequency/?at=master).**
+* Fernando A.B. Sabino da Silva, Tainan B.F. Boff, Cristina Tessari. **[Mixed Copula Pairs Trading Strategy with High Frequency Data](https://bitbucket.org/fsabino/papers/src/482db82bfc3b109b6ce3408792bfb38adae63fd3/Pairs_Trading_High_Frequency/?at=master).**
 
 Software: R, Matlab.
 
@@ -41,7 +41,7 @@ JEL: G11, G12, G14.
 Data used: We select 41 assets that had non-zero returns in more than eighty percent of the time intervals at a sampling frequency of 5 minutes. All stocks belong to BMF&BOVESPA (Brazil) from January 2nd, 2010 to December 31st, 2016.
 
 
-* Hudson C. Costa, Sabino P. da Silva Junior, Fernando A. B. Sabino da Silva. **[Can Big Data, Machine Learning and Text Mining predict economic activity effectively?](https://bitbucket.org/fsabino/papers/src/8c2891b93c632ee77fcc5639738a005c17530cd1/Sentiment_Analysis/?at=master)**
+* Hudson C. Costa, Fernando A. B. Sabino da Silva,  Sabino P. da Silva Junior. **[Can Big Data, Machine Learning and Text Mining predict economic activity effectively?](https://bitbucket.org/fsabino/papers/src/8c2891b93c632ee77fcc5639738a005c17530cd1/Sentiment_Analysis/?at=master)**
 
 Software: R.
 
