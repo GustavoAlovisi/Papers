@@ -1,0 +1,834 @@
+---
+title: "Probabilidade"
+author: "Fernando B. Sabino da Silva"
+output:
+  slidy_presentation:
+    css: "https://asta.math.aau.dk/course/asta/2018-1/?file=lecture_style.css"
+    fig_caption: no
+    highlight: tango
+    theme: cerulean
+  pdf_document:
+    fig_caption: no
+    keep_tex: yes
+    highlight: tango
+    number_section: yes
+    toc: yes
+---
+
+```{r, include = FALSE}
+## Remember to add all packages used in the code below!
+missing_pkgs <- setdiff(c("mosaic", "pander", "VennDiagram"), rownames(installed.packages()))
+if(length(missing_pkgs)>0) install.packages(missing_pkgs)
+library(VennDiagram)
+```
+
+# Probability of events
+
+## The concept of probability
+
+* Experiment: Measure the waiting times in a queue where we note 1, if it
+    exceeds 2 minutes and 0 otherwise.
+* The experiment is carried out $n$ times with results
+    $y_1,y_2,\ldots,y_n$. There is **random variation** in the outcome, 
+    i.e. sometimes we get a 1 other times a 0.
+* **Empirical probability** of exceeding 2 minutes:\
+    $$ 
+    p_n = \frac{\sum_{i=1}^n y_i}{n}.
+    $$
+* **Theoretical probability** of exceeding 2 minutes:\ 
+    $$
+    \pi = \lim_{n\rightarrow\infty} p_n.
+    $$.
+* We try to make inference about $\pi$ based on a sample, 
+  e.g. "Is $\pi > 0.1$?" 
+  ("do more than 10\% of the customers experience a waiting time in excess of 2 minutes?").
+* Statistical inference is concerned with such questions when we only have a
+    finite sample.
+
+
+
+## Actual experiment
+
+* On February 23,\ 2017,\ a group of students were asked how long time (in minutes) they waited in line last time they went to the canteen at AAU's Copenhagen campus:
+```{r}
+y_canteen <- c(2, 5, 1, 6, 1, 1, 1, 1, 3, 4, 1, 2, 1, 2, 2, 2, 4, 2, 2, 5, 20, 2, 1, 1, 1, 1)
+x_canteen <- ifelse(y_canteen > 2, 1, 0)
+x_canteen
+```
+* Empirical probability of waiting more than 2 minutes:
+```{r}
+p_canteen <- sum(x_canteen) / length(x_canteen)
+p_canteen
+```
+* Question: Is the population probability $\pi > 1/3$?
+* Notice: One student said he had waited for 20 minutes (we doubt that; he was trying to make himself interesting. Could consider ignoring that observation).
+
+```{r, include = FALSE}
+# set.seed(1)
+#y<-y_canteen
+# y_ref <- replicate(1000, sample(y, replace = TRUE))
+# p_ref <- apply(y_ref, 2, function(x) mean(x > 2))
+# quantile(p_ref, c(0.025, 0.975))
+# 
+# f <- function(x) quantile(p_ref, x, names = FALSE) - 1/3
+# 1 - uniroot(f, c(0, 1))$root
+# mean(p_ref > 1/3)
+```
+
+
+
+## Another experiment
+
+* John Kerrich, a South African mathematician, was visiting Copenhagen
+  when World War II broke out.  Two days before he was scheduled to
+  fly to England, the Germans invaded Denmark. Kerrich spent the rest
+  of the war interned at a camp in Hald Ege near Viborg, Jutland, 
+  and to pass the time he
+  carried out a series of experiments in probability theory. In one,
+  he tossed a coin 10,000 times. His results are shown in the
+  following graph.
+* Below, `x` is a vector with the first 2,000 outcomes of John Kerrich's experiment
+(0 = tail,\ 1 = head):
+```{r, include = FALSE}
+x <- c(0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 
+0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 
+0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 
+1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 
+0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 
+1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 
+0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 
+1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 
+1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 
+0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 
+1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 
+1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 
+1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 
+0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 
+0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 
+1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 
+1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 
+0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 
+0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 
+1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 
+1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 
+1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 
+1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 
+0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 
+1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 
+0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 
+0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 
+1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 
+1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 
+0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 
+0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 
+0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 
+1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 
+1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 
+0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 
+0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 
+0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 
+1, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 
+1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 1, 1, 1, 
+0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 
+0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 
+1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 
+1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 
+1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 
+0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 
+0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 
+0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 
+0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 
+1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 
+0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 
+0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 
+1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 
+0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 
+0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 
+0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 
+0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 
+0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 
+0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 
+0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 
+1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 
+1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 
+0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 
+0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 
+1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 
+0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 
+1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 
+0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 
+0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 
+0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 
+1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 
+0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 
+1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 
+0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 
+1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 
+0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 
+1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 
+1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 
+0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 
+1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 
+0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 
+0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 
+0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 
+1, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 
+0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 
+0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 
+1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 
+1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 
+0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 
+0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 
+0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 
+1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 
+0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 
+0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 
+1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 
+1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 
+0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 
+1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 
+1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 
+1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 
+0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 
+1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 
+1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 
+1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 
+0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 
+1, 1, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 
+1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 
+1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 
+0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 
+1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 
+0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 
+1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 
+0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 
+1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 
+0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 
+0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 
+1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 
+1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 
+1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 
+0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 
+0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 
+1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 
+0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 
+0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 
+1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 
+1)
+```
+```{r}
+head(x, 10)
+```
+* Plot of the empirical probability $p_n$ of getting a head against the number of tosses $n$:
+
+```{r, echo=FALSE, fig.height = 5, fig.width = 6, fig.align = "center"}
+plot(cumsum(x)/seq_along(x), type = "l", log = "x", xlab = "n", ylab = expression(p[n]))
+abline(h = 0.5, lty = 2)
+```
+
+(The horizontal axis is on a log scale).
+
+
+
+## Definitions
+
+* **Sample space**:\ All possible outcomes of the experiment.
+* **Event**:\ A subset of the sample space.
+
+We conduct the experiment $n$ times. Let $\#(A)$ denote how many
+times we observe the event $A$.
+
+* **Empirical probability** of the event $A$:
+  $$
+  p_n(A)=\frac{\#(A)}{n}.
+  $$
+* **Theoretical probability** of the event $A$:
+  $$
+  P(A)=\lim_{n\to\infty}p_n(A)
+  $$
+* We always have $0\leq P(A)\leq 1$.
+
+
+
+## Theoretical probabilites of two events
+
+* If the two events $A$ and $B$ are **disjoint** (non-overlapping) then  
+    + $\#(A \text{ and } B) = 0$ implying that $P(A \text{ and } B)=0.$
+    + $\#(A \text{ or } B)=\#(A)+\#(B)$ implying that $P(A \text{ or } B)=P(A)+P(B).$
+  
+```{r, echo = FALSE, fig.height = 3.5, fig.width = 4.5}
+venn.plot <- draw.pairwise.venn(area1 = 70, area2 = 70, cross.area = 0, 
+                                category = c("A", "B"), cex = 0, cat.cex = 4)
+grid.draw(venn.plot)
+grid.newpage()
+```
+
+* If the two events $A$ and $B$ **are not disjoint** then the more general formula is 
+  $$
+  P(A \text{ or } B) = P(A) + P(B) - P(A \text{ and } B).
+  $$
+
+```{r, echo = FALSE, fig.height = 3.5, fig.width = 4.5}
+venn.plot <- draw.pairwise.venn(area1 = 70, area2 = 70, cross.area = 30, 
+                                category = c("A", "B"), cex = 0, cat.cex = 4)
+grid.draw(venn.plot)
+grid.newpage()
+```
+
+
+
+## Conditional probability 
+
+* Say we consider two events $A$ and $B$.\ Then the **conditional probability** of $A$ given 
+(or conditional on) the event $B$ is written $P(A \mid B)$ and is defined by
+$$P(A \mid B)=\frac{P(A \text{ and } B)}{P(B)}.$$
+* The above probability can be understood as: "how probable $A$ is if we know that $B$ has happened". 
+
+---- 
+
+### Example with magazine data:
+```{r message=FALSE}
+magAds <- read.delim("https://asta.math.aau.dk/datasets?file=magazineAds.txt")
+
+# Create two new factors 'words' and 'education':
+magAds$words <- cut(magAds$WDS, breaks = c(31, 72, 146, 230), include.lowest = TRUE)
+magAds$education <- factor(magAds$GROUP, levels = c(1, 2, 3), labels = c("high", "medium", "low"))
+
+library(mosaic)
+tab <- tally( ~ words + education, data = magAds)
+tab
+```
+
+* The event $A$=$\{$words=`r levels(magAds$words)[3]`$\}$ (the ad is a "difficult" text) has empirical probability
+$$ p_n(A) = \frac{9 + 6 + 5}{54} = \frac{20}{54} \approx 37 \%.$$
+* Say we only are interested in the probability of a "difficult" text (event $A$) for high education magazines, i.e. conditioning on the event          $B=\{$education=high$\}$. Then the empirical conditional probability can be calculated from the table:
+  
+  $$
+  p_n(A \mid B) = \frac{9}{4+5+9} = \frac{9}{18} = 0.5 = 50\%.
+  $$
+  
+* The conditional probability of $A$ given $B$ may theoretically be expressed as
+
+  $$
+  \begin{aligned}
+  P(A \mid B) 
+  &= P(\text{words} =`r levels(magAds$words)[3]` \mid \text{education = high})  \\[0.5em]
+  &= \frac{P(\text{words} =`r levels(magAds$words)[3]` \text{ and } \text{education = high})}{P(\text{education = high})},  \\
+  \end{aligned}
+  $$
+  which translated to empirical probabilities (substituting $P$ with $p_n$) will give
+
+  $$
+  \begin{aligned}
+  p_n(A \mid B) 
+  &= \frac{p_n(\text{words} =`r levels(magAds$words)[3]` \text{ and } \text{education = high})}{p_n(\text{education = high})}  \\
+  &= \frac{\frac{9}{54}}{\frac{4+5+9}{54}} \\
+  &= \frac{9}{4+5+9} \\[0.5em]
+  &= 50\%
+  \end{aligned}
+  $$
+  as calculated above.
+
+
+
+## Conditional probability and independence
+* If information about $B$ does not change the probability of $A$ we talk
+  about independence, i.e. $A$ is **independent** of $B$ if
+  $$
+  P(A \mid B) = P(A) \quad \Leftrightarrow  \quad P(A \text{ and } B) = P(A)P(B)
+  $$
+  The last relation is symmetric in $A$ and $B$, and we simply say that
+  $A$ and $B$ are **independent events**.
+* In general the events $A_1, A_2, ..., A_k$ are independent if
+  $$
+  P(A_1 \text{ and } A_2 \text{ and } ... \text{ and } A_k) = P(A_1) P(A_2) \cdots P(A_k).
+  $$
+
+### Magazine data revisited
+* Recall the empirical probabilities calculated above:
+$$ 
+p_n(A) = 37 \%
+\quad \text{and} \quad
+p_n(A \mid B) = 50\%. 
+$$
+* These indicate (we cannot say for sure as we only consider a finite sample - we will later see how to test for this) that the theoretical probability
+$$
+P(A) \neq P(A \mid B)
+$$
+and hence that knowledge about $B$ (high education level) may convey information about the probability of $A$ (the ad containing a "difficult" text).
+
+## Discrete distribution
+### Example: Magazine data
+```{r size="small",tidy=FALSE,message=FALSE}
+# Table with the percentage of ads in each combination of the levels of 'words' and 'education'
+tab <- tally( ~ words + education, data = magAds, format = "percent")
+round(tab, 2) # Round digits
+```
+
+
+* The 9 disjoint events above (corresponding to combinations of `words` and 
+  `education`) make up the whole sample space for the two variables. The 
+  empirical probabilities of each event is given in the table.
+
+### General discrete distribution
+* In general:
+    + Let $A_1,A_2,\ldots,A_k$ be a subdivision of the sample space into
+    pairwise disjoint events.
+    + The probabilities $P(A_1), P(A_2), ..., P(A_k)$ are called a
+    **discrete distribution** and satisfy
+    $$\sum_{i=1}^kP(A_i)=1.$$
+
+----
+
+
+### Example: 3 coin tosses
+
+* **Random/stochastic variable**: A function $Y$ that translates an outcome of the experiment into a number.
+* Possible outcomes in an experiment with 3 coin tosses:
+    + 0 heads (TTT)
+    + 1 head (HTT, THT, TTH)
+    + 2 heads (HHT, HTH, THH)
+    + 3 heads (HHH)
+* The above events are disjoint and make up the whole sample space. 
+* Let $Y$ be the number of heads in the experiment: $Y(TTT) = 0, Y(HTT) = 1, \ldots$
+* Assume that each outcome is equally likely, i.e. probability 1/8 for each event. 
+  Then, 
+    + $P(\text{no heads}) = P(Y = 0) = P(TTT) = 1/8.$
+    + $P(\text{one head}) = P(Y = 1) = P(HTT \text{ or } THT \text{ or } TTH) = P(HTT) + P(THT) + P(TTH) = 3/8.$
+    + Similarly for 2 or 3 heads.
+* So, the distribution of $Y$ is
+
+  Number of heads, $Y$   0   1   2   3 
+  --------------------- --- --- --- ---
+  Probability           1/8 3/8 3/8 1/8
+
+
+
+# Distribution of general random variables
+
+## Probability distribution
+* We are conducting an experiment where we make a quantitative
+  measurement $Y$ (a random variable), e.g. the number of words in an ad or 
+  the waiting time in a queue.
+* In advance there are many possible outcomes of the experiment, 
+  i.e. $Y$'s value has an uncertainty, which we quantify by the
+  **probability distribution** of $Y$.
+* For any interval $(a, b$), the
+  distribution states the probability of observing a value of the random variable 
+  $Y$ in this interval:
+  $$ P(a<Y<b),\qquad -\infty < a < b < \infty.$$
+* $Y$ is **discrete** if we can enumerate all the
+    possible values of $Y$, e.g. the number of words in an ad.
+* $Y$ is **continuous** if $Y$ can take any value in a
+    interval, e.g. a measurement of waiting time in a queue.
+
+### Sample
+
+  We conduct an experiment $n$ times, where the outcome of the $i$th
+  experiment corresponds to a measurement of a random variable $Y_i$,
+  where we assume
+
+* The experiments are **independent**
+* The variables $Y_1,\ldots,Y_n$ have the **same distribution**
+
+## Population parameters
+
+* When the sample size grows, then e.g. the mean of the sample, $\overline{y}$, will stabilize around a fixed value, $\mu$, which is usually unknown. The value $\mu$ is called the **population mean**.
+* Correspondingly, the standard deviation of the sample, $s$, will stabilize around a fixed value, $\sigma$, which is usually unknown. The value $\sigma$ is called the **population standard deviation**.
+* Notation:
+	+ $\mu$ (mu) denotes the population mean.
+	+ $\sigma$ (sigma) denotes the population standard deviation.
+
+| Population | Sample       |
+|:----------:|:------------:|
+|$\mu$       |$\overline{y}$|
+|$\sigma$    |$s$           |
+
+----
+
+### Distribution of a discrete random variable
+
+* Possible values for $Y$:\ $\{y_1,y_2,\ldots,y_k\}$.
+* The **distribution** of $Y$ is the probabilities of each possible value:\ $p_i=P(Y=y_i), \quad i=1,2,\ldots,k$.
+* The distribution satisfies: $\sum_{i=1}^kp_i=1$.
+
+## Expected value (mean) for a discrete distribution
+
+* The **expected value** or **(population) mean** of $Y$ is
+  $$
+      \mu = \sum_{i=1}^k y_ip_i
+  $$
+* An important property of the expected value is that it has the same unit as the observations (e.g. meter).
+
+### Example: number of heads in 3 coin flips
+* Recall the distribution of $Y$ (number of heads):
+      
+      | y (number of heads) | 0 | 1 | 2 | 3 |
+      |:--------------------|:-:|:-:|:-:|:-:|
+      |     $P(Y = y)$      |1/8|3/8|3/8|1/8|
+          
+* Then the expected value is
+
+  $$
+  \mu = 0\frac{1}{8}+1\frac{3}{8}+2\frac{3}{8}+3\frac{1}{8}=1.5.
+  $$
+
+  *Note that the expected value is not a possible outcome of the experiment itself.*
+
+
+
+## Variance and standard deviation  for a discrete distribution
+
+* The **(population) variance** of $Y$ is
+    $$
+        \sigma^2 = \sum_{i=1}^k (y_i - \mu)^2 p_i
+    $$
+* The **(population) standard deviation** is $\sigma = \sqrt{\sigma^2}$.
+* Note: If the observations have unit meter, the **variance** has unit $\text{meter}^2$ which is hard to interpret. The **standard deviation** on the other hand has the same unit as the observations (e.g. meter).
+
+### Example: number of heads in 3 coin flips
+
+The distribution of the random variable 'number of heads in 3 coin flops' has variance 
+    $$ \sigma^2 
+    = (0-1.5)^2\frac{1}{8} + (1-1.5)^2\frac{3}{8} + (2-1.5)^2 \frac{3}{8} + (3-1.5)^2 \frac{1}{8} = 0.75.
+    $$
+
+and standard deviation
+    $$  \sigma = \sqrt{\sigma^2} = \sqrt{0.75} = 0.866.  $$
+
+
+## The binomial distribution
+
+
+* The **binomial distribution** is a discrete distribution
+* The distribution occurs when we conduct a
+    success/failure experiment $n$ times with probability $\pi$ for
+    success. If $Y$ denotes the number of successes it can be shown that
+    $$p_Y(y) = P(Y = y) = \binom{n}{y} \pi^y (1-\pi)^{n-y},$$
+    where $\binom{n}{y}=\frac{n!}{y!(n-y)!}$ and $m!$ is the product of the
+    first $m$ integers.
+* Expected value: $\mu = n \pi$.
+* Variance: $\sigma^2 = n \pi (1-\pi)$.
+* Standard deviation: $\sigma = \sqrt{n \pi (1-\pi)}$.
+
+
+```{r dbinom}
+# The binomial distribution with n = 10 and pi = 0.35:
+plotDist("binom", size = 10, prob = 0.35, 
+         ylab = "Probability", xlab = "Number of successes", main = "binom(n = 10, prob = 0.35)")
+```
+
+
+
+## Distribution of a continuous random variable
+
+* The distribution of a continuous random variable $Y$ is characterized by the so-called
+  probability density function $f_Y$.
+
+```{r normprobs,echo=FALSE,fig.width=6,fig.height=4}
+x <- (-70:70)/20
+par(mar=c(3,0,0,0))
+plot(x, dnorm(x), axes=F, xlab="", ylab="", type="l", ylim=c(-.01,.4), main="")
+abline(h=0)
+lines(c(0,0),c(0,dnorm(0)))
+lines(c(1.5,1.5),c(0,dnorm(1.5)))
+x <- (0:30)/20
+y <- c(0,dnorm(x),0)
+polygon(c(0,x,1.5),y,density=20)#,col="cyan")
+axis(1,at=0,labels="a",pos=0,cex.axis=1.5)
+axis(1,at=1.5,labels="b",pos=0,cex.axis=1.5)
+```
+
+* The area under the graph of the probability density function between $a$ and $b$ 
+  is equal to the probability of an observation in this interval.
+* $f_Y(y)\geq 0$ for all real numbers $y$.
+* The area under the graph for $f_Y$ is equal to 1.
+* For example the **uniform distribution** from $A$ to $B$:
+    $$
+    f_Y(y)=
+    \begin{cases}
+      \frac{1}{B-A} & A<y<B \\
+      0 & \text{otherwise}
+    \end{cases}
+    $$
+```{r unifdist,echo=FALSE,fig.width=6,fig.height=4}
+par(mar=c(3,3,0,0))
+plot(c(1,2,2,4,4,5)-1, c(0,0,.5,.5,0,0), axes=F, xlab="", ylab="", type="l", main="", lwd = 3, ylim = c(0,.6))
+lines(c(0,0),c(0,.6))
+lines(c(0,4.1),c(0,0))
+axis(1,at=1,labels="A",pos=0,cex.axis=1.5)
+axis(1,at=3,labels="B",pos=0,cex.axis=1.5)
+axis(2,at=0,pos=0,cex.axis=1.5)
+axis(2,at=.5,labels=expression(frac(1,B-A)),pos=0,cex.axis=1.5)
+```
+
+
+## Density function
+### Increasing number of observations
+
+* Another way to think about the density is in terms of the histogram.
+* If we draw a histogram for a sample where the area of each box corresponds to the relative frequency of each interval, then the total area will be 1.
+* When the number of observations (sample size) increase we can make a finer interval division and get a more smooth histogram.
+* We can imagine an infinite number of observations, which would produce a nice smooth curve, where the area below the curve is $1$.\ A function derived this way is also what we call the **probability density function**.
+
+```{r histToPop,echo=FALSE,results='hide',fig.width=10,fig.height=4}
+par(mfrow=c(1,3),cex.main = 2,cex.lab = 2,mar=c(5,5,4,1))
+set.seed(100)
+varValue <- rnorm(50,10,2)
+hist(varValue,breaks="FD",ylab="Density",xlab = "y",ylim=c(0,.25),freq=F,main="Histogram of 50 obs.")
+text(7,.22,bquote(bar(y) == .(round(mean(varValue),2))),cex=1.5)
+text(14,.22,bquote(s == .(round(sd(varValue),2))),cex=1.5)
+varValue <- rnorm(1000,10,2)
+hist(varValue,breaks="FD",freq=F,ylab="Density",xlab = "y",ylim=c(0,.25),main="Histogram of 500 obs.")
+text(7,.22,bquote(bar(y) == .(round(mean(varValue),2))),cex=1.5)
+text(14,.22,bquote(s == .(round(sd(varValue),2))),cex=1.5)
+varValue <- (20:180)/10
+plot(varValue,dnorm(varValue,10,2),ylab="Density",xlab = "y",ylim=c(0,.25),type="l",main="Histogram of population")
+text(7,.22,bquote(mu == 10),cex=1.5)
+text(14,.22,bquote(sigma == 2),cex=1.5)
+```
+
+----
+
+### Density shapes
+
+```{r densities, echo=FALSE, results='hide', fig.width=8, fig.height=4, out.width='\\textwidth'}
+par(mfrow=c(2,2), cex.lab = 1, cex.main = 1, mar=c(1,5,4,1))
+
+#x <- (0:200)/100
+#y <- .5+(x-1)^2
+#plot(x,y,axes=F,type="l",ylab="Density",xlab = "")
+
+x <- seq(0, 1, length.out = 100)
+plot(x,dbeta(x, 1/2, 1/2),axes=F,type="l",ylab="Density",xlab = "")
+axis(1,labels=F)
+axis(2,labels=F)
+title("Symmetric density\n U-shaped")
+
+x <- (0:200)/100
+plot(x,dnorm(x,1,.35),axes=F,type="l",ylab="Density",xlab = "")
+axis(1,labels=F)
+axis(2,labels=F)
+title("Symmetric density\n Bell-shaped")
+
+x <- (0:400)/100
+plot(x,dgamma(x,1.5,1.5),axes=F,type="l",ylab="Density",xlab = "")
+axis(1,labels=F)
+axis(2,labels=F)
+title("Right skew density")
+
+plot(x,dgamma(rev(x),1.5,1.5),axes=F,type="l",ylab="Density",xlab = "")
+axis(1,labels=F)
+axis(2,labels=F)
+title("Left skew density")
+```
+
+## Normal distribution
+
+* The normal distribution is a continuous distribution determined by two parameters:
+    * $\mu$: the **mean** (expected value), which determines
+        where the distribution is centered.
+    * $\sigma$: the **standard deviation**, which determines
+        the spread of the distribution about the mean.
+* The distribution has a bell-shaped probability density function:
+    $$ f_Y(y;\mu,\sigma) = \frac{1}{\sqrt{2\pi\sigma^2}}\exp \left (-\frac{1}{2\sigma^2}(y-\mu)^2 \right ) $$
+* When a random variable $Y$ follows a normal distribution with mean $\mu$ and standard
+  deviation $\sigma$, then we write $Y \sim \texttt{norm}(\mu,\sigma)$.
+* We call $\texttt{norm}(0, 1)$ the **standard normal distribution**. 
+
+----
+
+### Reach of the normal distribution
+
+```{r normalreach,echo=FALSE, fig.width=10, fig.height=5}
+x <- (-70:70)/20
+par(xpd=TRUE)
+plot(x,dnorm(x),axes=F,xlab="",ylab="",type="l",ylim=c(-.21,.4), main="Density of the normal distribution", cex.main = 1.5)
+axis(1,at=-3:3,labels=F,pos=0)
+axis(1,at=-3,labels=substitute(mu-3*sigma),pos=0)
+axis(1,at=-2,labels=substitute(mu-2*sigma),pos=0)
+axis(1,at=-1,labels=substitute(mu-sigma),pos=0)
+axis(1,at=0,labels=substitute(mu),pos=0)
+axis(1,at=1,labels=substitute(mu+sigma),pos=0)
+axis(1,at=2,labels=substitute(mu+2*sigma),pos=0)
+axis(1,at=3,labels=substitute(mu+3*sigma),pos=0)
+arrows(-1,-.1,1,-.1,col="red",code=3,length=.1)
+text(-.01,-.115,"68%",col="red")
+arrows(-2,-.15,2,-.15,col="blue",code=3,length=.1)
+text(-.01,-.1655,"95%",col="blue")
+arrows(-3,-.2,3,-.2,col="green",code=3,length=.1)
+text(-.01,-.215,"99.7%",col="green")
+text(0,-.28, substitute(paste("mean ",mu," and standard deviation ",sigma)), cex=1.5)
+```
+
+Interpretation of standard deviation:
+
+* $\approx$ 68\% of the population is within 1 standard deviation of the mean.
+* $\approx$ 95\% of the population is within 2 standard deviations of the mean.
+* $\approx$ 99.7\% of the population is within 3 standard deviations of the mean.
+
+----
+
+### Normal $z$-score
+* If $Y\sim \texttt{norm}(\mu,\sigma)$ then the corresponding $z$-score is
+  $$Z=\frac{Y-\mu}{\sigma}=\frac{\mathtt{observation-mean}}{\mathtt{standard\
+      deviation}}$$
+*  I.e. $Z$ counts the number of standard deviations that the
+  observation lies away from the mean, where a negative value tells
+  that we are below the mean.
+* We have that $Z\sim \texttt{norm}(0,1)$, i.e. $Z$ has zero mean
+   and standard deviation one. 
+* This implies that 
+    * $Z$ lies between $-1$ and $1$ with probability 68\%
+    * $Z$ lies between $-2$ and $2$ with probability 95\%
+    * $Z$ lies between $-3$ and $3$ with probability 99.7\%
+* It also implies that: 
+    * The probability of $Y$ being between $\mu - z\sigma$ and $\mu + z\sigma$ 
+      is equal to the probability of $Z$ being between $-z$ and $z$. 
+
+----
+
+### Calculating probabilities in the standard normal distribution
+
+* The function `pdist` always outputs the area to the left of the $z$-value (quantile/percentile) we give as input (variable `q` in the function), i.e. it outputs the probability of getting a value less than $z$. The first argument of `pdist` denotes the distribution we are considering.
+
+```{r}
+# For a standard normal distribution the probability of getting a value less than 1 is:
+left_prob <- pdist("norm", q = 1, mean = 0, sd = 1)
+left_prob
+```
+
+* Here there is a conflict between **R** and the textbook, since in the book we always consider right probabilities in the normal distribution. Since the total area is 1 and we have the left probability we easily get the right probability:
+
+```{r}
+right_prob <- 1 - left_prob
+right_prob
+```
+
+* For $z=1$ we have a right probability of $p=0.1587$, so the probability of an observation between $-1$ and $1$ is $1 - 2 \cdot 0.1587 = 0.6826 = 68.26\%$ due to symmetry.
+
+----
+
+### Calculating $z$-values (quantiles) in the standard normal distribution
+
+* If we have a probability and want to find the corresponding $z$-value we again need to decide on left/right probability. The default in **R** is to find the left probability, so if we want the $z$-value with e.g. 0.5% probability to the left we get:
+```{r}
+left_z <- qdist("norm", p = 0.005, mean = 0, sd = 1, xlim = c(-4, 4))
+left_z
+```
+
+* However, in all the formulas in the course we follow the textbook and consider $z$-values for a given right probability.\ E.g. with 0.5% probability to the right we get:
+```{r}
+right_z <- qdist("norm", p = 1-0.005, mean = 0, sd = 1, xlim = c(-4, 4))
+right_z
+```
+
+* Thus, the probability of an observation between $-2.576$ and $2.576$ equals $1 - 2 \cdot 0.005 = 99\%$.
+
+----
+
+### Example
+  The Stanford-Binet Intelligence Scale is calibrated to be approximately normal
+  with mean 100 and standard deviation 16.
+
+  What is the 99-percentile of IQ scores?
+
+* The corresponding $z$-score is $Z=\frac{IQ-100}{16}$, which
+    means that $IQ=16Z+100$.
+* The 99-percentile of $z$-scores has the value 2.326 (can be calculated using `qdist`).
+* Then, the 99-percentile of IQ scores is: 
+  $$
+  IQ=16\cdot 2.326+100=137.2.
+  $$
+* So we expect that one out of hundred has an IQ exceeding 137.
+
+
+# Distribution of sample statistic
+
+## Estimates and their variability
+
+  We are given a sample $y_1,y_2,\ldots,y_n$.
+
+* The sample mean $\bar{y}$ is the most common
+  estimate of the population mean $\mu$.
+* The sample standard deviation, $s$, is the most common
+  estimate of the population standard deviation $\sigma$.
+
+  We notice that there is an uncertainty (from sample to sample) connected to 
+  these statistics and therefore we are interested in describing their **distribution**.
+
+
+## Distribution of sample mean
+* We are given a sample $y_1,y_2,\ldots,y_n$ from a population with
+  mean $\mu$ and standard deviation $\sigma$.
+* The sample mean $$\bar{y}=\frac{1}{n}(y_1+y_2+\ldots+y_n)$$ then has
+  a distribution where
+    + the distribution has mean $\mu$,
+    + the distribution has standard deviation
+        $\frac{\sigma}{\sqrt{n}}$ (also called
+        the **standard error**), and
+    + when $n$ grows, the distribution approaches a normal
+        distribution. This result is called **the central limit theorem**.
+
+----
+
+### Central limit theorem
+*  The points above can be summarized as $${\bar{y}}\approx
+  \texttt{norm}(\mu,\frac{\sigma}{\sqrt{n}})$$ i.e. $\bar{y}$ is approximately
+  normally distributed with mean $\mu$ and standard error
+  $\frac{\sigma}{\sqrt{n}}$.
+* When our sample is sufficiently large (such that the above approximation is good) 
+  this allows us to make the following observations:
+    * We are $95\%$ certain that $\bar{y}$ lies in the interval from
+        $\mu-2\frac{\sigma}{\sqrt{n}}$ to $\mu+2\frac{\sigma}{\sqrt{n}}$.
+    * We are almost completely certain that $\bar{y}$ lies in the
+        interval from $\mu-3\frac{\sigma}{\sqrt{n}}$ to $\mu+3\frac{\sigma}{\sqrt{n}}$.
+* This is not useful when $\mu$ is unknown, but let us rephrase the
+  first statement to:
+    * We are $95\%$ certain that $\mu$ lies in the interval from
+    $\bar{y}-2\frac{\sigma}{\sqrt{n}}$ to
+    $\bar{y}+2\frac{\sigma}{\sqrt{n}}$, i.e. we are directly talking
+    about the uncertainty of determining $\mu$.
+
+----
+
+### Illustration of CLT
+   The central limit theorem is illustrated in Agresti:
+
+![Central limit theorem illustrated in Agresti](https://asta.sfx.aau.dk/static-files/asta/img/AgrestiCLT.png)
+
+----
+
+### Example
+
+* Body Mass Index (BMI) of people in Northern Jutland (2010) has mean
+  $\mu=25.8$ kg/$\mathtt{m}^2$ and standard deviation $4.8$ kg/$\mathtt{m}^2$.
+* A random sample of $n=100$ costumers at a burger bar had an average BMI
+  given by $\bar{y}=27.2$. 
+* If "burger bar" has "no influence" on BMI (and the sample
+  is representative of the population/people in Northern Jutland), then
+  $$\bar{y} \approx \texttt{norm}(\mu,\frac{\sigma}{\sqrt{n}})=\texttt{norm}(25.8,0.48).$$
+* For the actual sample this gives the observed $z$-score
+  $$z_{obs}=\frac{27.2-25.8}{0.48}=2.92$$
+* Recalling that the $z$-score is (here approximately) standard normal, 
+  the probability of getting a higher $z$-score is:
+
+```{r}
+1 - pdist("norm", mean = 0, sd = 1, q = 2.92, xlim = c(-4, 4)) 
+```
+
+* Thus, it is highly unlikely to get a random sample with such a high
+  $z$-score. This indicates that costumers at the burger bar has a mean
+  BMI, which is higher than the population mean.
+
+
+
+```{r, include = FALSE}
+# Waiting times
+# set.seed(1)
+# y_canteen_tmp <- y_canteen[y_canteen < 20]
+# y <- cbind(y_canteen_tmp, replicate(4, sample(y_canteen_tmp, replace = TRUE)))
+# hist(apply(y, 1, mean), breaks = "FD")
+```
+

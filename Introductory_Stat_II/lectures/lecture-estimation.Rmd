@@ -1,0 +1,253 @@
+---
+title: "Estimação"
+author: "Fernando B. Sabino da Silva"
+output:
+  slidy_presentation:
+    css: "https://asta.math.aau.dk/course/asta/2018-1/?file=lecture_style.css"
+    fig_caption: no
+    highlight: tango
+    theme: cerulean
+  pdf_document:
+    fig_caption: no
+    highlight: tango
+    number_section: yes
+    toc: yes
+---
+
+```{r, include = FALSE}
+## Remember to add all packages used in the code below!
+missing_pkgs <- setdiff(c("mosaic"), rownames(installed.packages()))
+if(length(missing_pkgs)>0) install.packages(missing_pkgs)
+```
+
+# Estimação por ponto e por intervalo
+
+## Estimação por ponto e por intervalo
+
+* Nós queremos investigar hipóteses sobre parâmetros (constantes populacionais). Exemplo: a média $\mu$ e o desvio-padrão $\sigma$.
+    * Se $\mu$ for o tempo médio de espera em uma fila, então pode ser relevante estudar se o tempo médio excede, por exemplo, a 2 minutos.
+
+* Com base em uma amostra, nós calculamos uma **estimativa pontual** que de maneira coloquial é o nosso melhor "chute" para o valor do parâmetro.
+
+    * Por exemplo, nós usamos  $\bar{y}$ como uma estimativa para $\mu$ e $s$ como uma estimativa para $\sigma$.
+* Em geral, nós estamos também interessados em calcular uma **estimativa por intervalo** (também chamada de **intervalo de confiança**). Este intervalo é construído em torno da estimativa por ponto.
+* A estimativa do parâmetro (e o intervalo de confiança) pode ser utilizado para investigar a hipótese. 
+
+
+## Estimadores por ponto: Viés
+
+* Se queremos estimar a média da população $\mu$, nós temos várias possibilidades (a princípio). Exemplos:
+    * a média amostral $\bar{y}$
+    * a média amostral $y_T$ dos quartis superior ($Q_{3}$) e inferior ($Q_{1}$).
+* Vantagem de  $y_T$: Pouca influência de outliers (observações com valor muito alto/baixo), i.e. não teremos praticamente nenhum efeito se houver alguns erros no banco de dados.
+* Desvantagem de $y_T$: Se a distribuição da população for assimétrica, então $y_T$ será um estimador **viesado**, o que significa que no longo prazo este estimador sistematicamente será acima ou abaixo do verdadeiro valor de $\mu$.
+* Geralmente, nós preferimos que um estimador seja **não viesado**, isto é, que a sua distriuição seja centrada em volta do verdadeiro valor do parâmetro.
+* Relembre que para uma população com média $\mu$, a média amostral   $\bar{y}$ também tem média $\mu$, i.e., $\bar{y}$ é um estimador não viesado da média populacional $\mu$.  
+
+
+## Estimadores por ponto: Eficiência
+
+* Nós já sabemos (mostramos em aula - verifique se você sabe **provar** isto) que o erro padrão de $\bar{y}$ é $\frac{\sigma}{\sqrt{n}}$,  i.e. o erro padrão converge para zero quando o tamanho da amostra aumenta (você saberia explicar a intuição disto?).
+* É difícil expressar o erro padrão de $y_T$, mas é possível provar que ele será maior do que o erro padrão de $\bar{y}$. Este é um bom motivo para que, usualmente, $\bar{y}$ seja um estimador preferível.
+* Em geral, nós preferimos que um estimador seja **eficiente**. De maneira coloquial, isto significa que o erro padrão converge para zero quando o tamanho da amostra aumenta. O estimador **mais eficiente** será aquele que converge para zero a uma velocidade maior. No nosso exemplo, para a maioria das populações, $y_T$ é ineficiente.
+
+
+
+## Notação
+* O símbolo $\hat{\ }$ acima de um parâmetro é frequentemente utilizado para denotar uma estimativa (pontual) de um parâmetro. Exemplos:
+    * estimativa da média populacional:\ $\hat{\mu}=\bar{y}$
+    * estimativa do desvio padrão:\ $\hat{\sigma}=s$
+* Quando observamos uma variável binária ($0/1$), o que, por exemplo, é utilizada para denotar sim/não ou masculino/feminino, então nós usamos a notação $$\pi=P(Y=1)$$ para a proporção da população com a característica $Y=1$.
+* A estimativa $\hat{\pi}=(y_1+y_2+\ldots+y_n)/n$ é a frequência relativa amostral de $Y=1$.
+
+
+## Intervalo de Confiança
+
+* A definição geral de um intervalo de confiança para um parâmetro populacional é a seguinte:
+    * Um **intervalo de confiança** para um parâmetro é um intervalo construído com base na amostra, isto é, ele é aleatório (depende da amostra em particular). Esperamos que este intervalo contenha o verdadeiro valor do parâmetro (que não é aleatório, é uma constante populacional).
+    * A "probabilidade" de que esta construção produza um intervalo que inclua o verdadeiro valor do parâmetro é chamada de **nível de confiança**. Tipicamente, o nível de confiança escolhido é de $95\%$. 
+    * (1-nível de confiança) é chamado de 
+      **nível de significância** (neste exemplo, $1-0.95=0.05$,\ i.e.\ $5\%$).
+* Frequentemente, o intervalo é construído como um intervalo simétrico em torno de uma estimativa por ponto:
+    * **estimativa por ponto $\pm$margem de erro**
+    * Regra de bolso: Com uma margem de erro de aproximadamente 2 vezes o erro padrão você obtém um intervalo de confiança de aproximadamente $95\%$.
+    * I.e: **estimativa por ponto** $\pm$ **2 x erro padrão** tem nível de confiança de aproximadamente $95\%$.
+
+
+## Intervalo de Confiança para a Proporção
+
+* Considere uma população com uma distribuição onde a probabilidade de ter uma determinada característica seja $\pi$ e a probabilidade de não ter seja $1-\pi$.
+* Quando as categorias $não/sim$ são denotadas por $0/1$, i.e. $y$ é $0$
+  ou $1$, a distribuição de $y$ tem um desvio padrão de : 
+  $$
+  \quad \sigma=\sqrt{\pi(1-\pi)}.
+  $$
+  Isto é, o desvio padrão não é um parâmetro "livre" para uma variável $0/1, pois o seu valor está diretamente ligado a probabilidade $\pi$.
+* Com uma amostra de tamanho $n$ o erro padrão de $\hat{\pi}$ será (dado que $\hat{\pi} = \frac{\sum_{i=1}^n y_i}{n}$): 
+  $$
+  \quad \sigma_{\hat{\pi}}=
+  \frac{\sigma}{\sqrt{n}} =\sqrt{\frac{\pi(1-\pi)}{n}}.
+  $$
+* Nós não sabemos o valor de $\pi$, mas se inserirmos a estimativa iremos obter o **erro padrão estimado** de $\hat{\pi}$:
+  $$
+  se=\sqrt{\frac{\hat{\pi}(1-\hat{\pi})}{n}}.
+  $$
+* A regra de bolso nos diz que o intervalo
+  $$\hat{\pi}\pm 2\sqrt{\frac{\hat{\pi}(1-\hat{\pi})}{n}}$$
+  tem nível de confiança de aproximadamente $95\%$. i.e., antes que os dados sejam conhecidos, o intervalo aleatório dado pela fórmula acima tem aproximadamente 95% de "probabilidade" de conter o verdadeiro valor de $\pi$.
+
+----
+
+### Exemplo: Estimativa por ponto e por intervalo para a proporção
+
+* Vamos dar uma olhada em dados de uma pesquisa nacional conduzida no Chile entre Abril e Maio de 1988. Informações sobre os dados podem ser encontradas [aqui](https://www.rdocumentation.org/packages/car/versions/2.1-6/topics/Chile).
+```{r}
+Chile <- read.delim("C:/Users/fsabino/Desktop/Codes/papers/Introductory_Stat_II/notebook/Chile.txt")
+```
+* Concentremo-nos na variável `sex`,\ i.e. a distribuição de gênero na amostra.
+```{r message=FALSE}
+library(mosaic)
+tally( ~ sex, data = Chile)
+tally( ~ sex, data = Chile, format = "prop")
+```
+* Proporção da população (desconhecida) de mulheres (F),\ $\pi$.
+* Estimativa de $\pi$: $\quad \hat{\pi} = \frac{1379}{1379+1321} = 0.5107$
+* Regra de bolso : $\quad \hat{\pi} \pm 2 \times se = 0.5107 \pm 2  \sqrt{\frac{0.5107(1-0.5107)}{1379 + 1321}} = (0.49, 0.53)$ é um intervalo de confiança aproximado de 95% para $\pi$.  
+
+----
+
+### Exemple: Intervalos de confiança para a proporção no  **R**
+* **R** automaticamente calcula o intervalo de confiança para a proporção de pessoas do sexo feminino quando nós fazemos um teste de hipóteses (voltaremos a isso mais adiante):
+```{r}
+prop.test( ~ sex, data = Chile, correct = FALSE)
+```
+* O argumento `correct = FALSE` é necessário para pedir ao  **R** para fazer uma aproximação para a distribuição normal como feito nestas notas. Quando
+`correct = TRUE` (o default) uma correção matemática que você não aprendeu se aplica e os resultados serão ligeiramente diferentes.
+
+----
+
+## Intervalos de confiança aproximados para a proporção
+
+* Com base no teorema central do limite (CLT), nós temos :
+  $$\hat{\pi}\approx N \left (\pi,\sqrt{\frac{\pi(1-\pi)}{n}} \right)$$
+  **se** $n\hat{\pi}$ e $n(1-\hat{\pi})$ são grandes o suficiente para que a aproximação seja válida (maiores do que $15$, por exemplo).
+* Para construir um intervalo de confiança com nível de confiança (aproximado) $1-\alpha$:
+    1) Encontre o valor crítico $z_{crit}$ para o qual a probabilidade na cauda superior da distribuição normal seja $\alpha/2$.  <!-- i.e. nós temos $z=1.96$ quando $\alpha=5\%$.-->
+    2) Calcule $se=\sqrt{\frac{\hat{\pi}(1-\hat{\pi})}{n}}$
+    3) Então $\hat{\pi}\pm z_{crit}\times se$ é um intervalo de confiança com nível de confiança $1-\alpha$.
+
+----
+
+### Exemplo: Dados do Chile
+Para os dados do `Chile` calcule os intervalos de confiança 99% e 95% para a probabilidade de que uma pessoa seja do sexo feminino:
+
+* Para um nível de confiança de $99\%$, temos $\alpha=1\%$ e
+    1) $z_{crit}$=`qdist("norm", 1 - 0.01/2)`=2.576.
+    2) Sabemos que $\hat{\pi}=0.5107$ e $n=2700$, então $se = \sqrt{\frac{\hat{\pi}(1-\hat{\pi})}{n}} = 0.0096$.
+    3) Assim, um intervalo de confiança de 99% é: $\hat{\pi}\pm z_{crit}\times se=(0.4859, 0.5355)$.
+* Para um nível de confiança de $95\%$, temos $\alpha=5\%$ e
+    1) $z_{crit}$=`qdist("norm", 1 - 0.05/2)`=1.96.
+    2) Novamente, $\hat{\pi}=0.5107$ and $n=2700$ e assim $se=0.0096$.
+    3) Deste modo, nós encontramos um intervalo de confiança de 95%: $\hat{\pi}\pm z_{crit}\times se=(0.4918, 0.5295)$ (como resultado de `prop.test`).
+
+
+
+## Intervalo de confiança para a média - amostra retirada de uma população com distribuição normal
+* Quando é razoável supor que a distribuição da população é normal, nós temos o resultado **exato**
+  $$
+  \bar{y}\sim \texttt{N}\bigg(\mu,\frac{\sigma}{\sqrt{n}}\bigg),
+  $$
+  i.e.\ $\bar{y}\pm z_{crit}\times \frac{\sigma}{\sqrt{n}}$ não é mais apenas um intervalo de confiança aproximado (como no caso da proporção - por que é aproximado neste caso?), mas sim um intervalo de confiança exato para a média populacional, $\mu$.
+* Na prática, porém, **nós não conhecemos ** $\sigma$ e ao invés disso, nós somos obrigados a utilizar o desvio padrão da amostra $s$ para encontrar o **erro padrão estimado** $se=\frac{s}{\sqrt{n}}.$
+* Esta incerteza extra, no entanto, implica que um intervalo de confiança exato para a média populacional $\mu$ não pode ser construído usando o escore-$z$.
+* Um intervalo exato ainda pode ser construído usando o chamado **escore-$t$**, que além do nível de confiança depende dos **graus de liberdade** (degrees of freedom = df), que neste caso são $df = n-1$. Isto é, o intervalo de confiança toma agora a forma
+  $$
+  \bar{y}\pm t_{crit}\times se.
+  $$
+* Nota: É importante aprender as relações entre as distribuições normal, t de Student, qui-quadrado e F. Veja mais detalhes em Costa Neto (Estatística) e Casella and Berger (Statistical Inference, traduzido para português). Mais detalhes serão vistos em sala de aula.
+
+
+## A distribuição $t$ e o escore $t$
+ * O cálculo do escore $t$ é baseado na **distribuição $t$**, que é semelhante a distribuição normal padrão $z$:
+    * ela é simétrica em torno de zero e é uma função em forma de "sino", mas
+    * como vimos tem caudas mais "pesadas" e portanto
+    * um desvio padrão maior do que  o desvio padrão da distribuição normal padrão.
+    * Note que o desvio padrão da distribuição $t$ decaí em função de seus  **graus de liberdade** (que denotamos por $df$).
+    * e quando $df$ cresce a distribuição $t$ se aproxima da distribuição normal padrão.
+
+A expressão da função densidade não será indicada aqui (pode ser encontrada nos livros sugeridos ou no google). Ao invés disso, a distribução $t$ é representada abaixo para $df =1,2,10$ e $\infty$.
+
+```{r echo=FALSE, fig.keep="last", fig.width=12}
+cols <- c("black", "gray40", "gray60", "gray80")
+figkey <- list(lines = list(col=rev(cols), lwd = 3),
+               space = "right",
+               text = list(c("t(df=1)", "t(df=2)", "t(df=10)", expression(paste("t(df=", infinity,")=N(0,1)")))))
+plotDist("norm", mean = 0, sd = 1, key = figkey, col = cols[1], xlim = c(-5, 5), lwd = 3)
+plotDist("t", df = 10, add = TRUE, col = cols[2], lwd = 3)
+plotDist("t", df = 2, add = TRUE, col = cols[3], lwd = 3)
+plotDist("t", df = 1, add = TRUE, col = cols[4], lwd = 3)
+```
+
+----
+
+### Cálculo do escore $t$ no **R**
+
+```{r}
+qdist("t", p = 1 - 0.025, df = 4)
+```
+* Um escore $t$ é o quantil (i.e. o valor no eixo x) para o qual temos uma dada probabilidade na **cauda direita**.
+* Para obter, por exemplo, um escore $t$ correspondente a uma probabilidade na cauda direita de 2.5 % nós temos que procurar o quantil 97.5 % usando `qdist` with `p = 1 - 0.025`, pois `qdist` olha a área para o **lado esquerdo**.
+* Os graus de liberdade são determinados pelo tamanho da amostra. No exemplo anterior usamos df = 4 para ilustração.
+* Como um escore $t$ para uma probabilidade na cauda direita de 2.5 % é 2.776 e a distribuição $t$ é simétrica em torno do 0, nós temos que uma observação tem probabilidade de 1 - 2 $\cdot$ 0.025 = 95 % de estar entre -2.776 and 2.776 para uma distribuição $t$ com 4 graus de liberdade.
+
+
+## Exemplo: Intervalo de Confiança para a média
+* Em estatística I usamos o conjunto de dados de `Ericksen`. Queremos agora construir um intervalo de confiança de $95\%$ para a média da população mean $\mu$ da variável `crime`.
+```{r}
+Ericksen <- read.delim("C:/Users/fsabino/Desktop/Codes/papers/Introductory_Stat_I/notebook/datasets_Ericksen.txt")
+stats <- favstats( ~ crime, data = Ericksen)
+stats
+qdist("t", 1 - 0.025, df = 66 - 1, plot = FALSE)
+```
+* i.e., nós temos
+    * $\bar{y} = `r round(stats$mean, 3)`$
+    * $s = `r round(stats$sd, 3)`$
+    * $n = `r stats$n`$
+    * $df = n-1 = `r stats$n-1`$
+    * $t_{crit} = `r round(qt( 1 - 0.025, df = 66 - 1), 3)`$.
+* O intervalo de confiança é $\bar{y}\pm t_{crit}\frac{s}{\sqrt{n}} =
+        (`r round( confint( t.test( ~ crime, data = Ericksen))$lower, 3)` ,
+        `r round( confint( t.test( ~ crime, data = Ericksen))$upper, 3)`)$
+* Todos estes cálculos podem ser feitos automaticamente no **R**:
+```{r}
+t.test( ~ crime, data = Ericksen, conf.level = 0.95)
+```
+
+
+## Exemplo: Fazendo vários intervalos de confiança no **R**
+
+* Vamos olhar o conjunto de dados `chickwts` que já vem integrado no **R**.
+* `?chickwts` produz uma página com a seguinte informação
+
+  > Um experimento foi conduzido para medir e comparar a eficácia de vários suplementos alimentares sobre a taxa de crescimento de galinhas
+  > Os filhotes recém-nascidos foram alocados aleatoriamente em seis grupos, e cada grupo recebeu um suplemento alimeantar diferente. Seus pesos em gramas após seis semanas são dados juntamente com os tipos de alimentação.
+
+* `chickwts` é um data frame com 71 observações e 2 variáveis:
+    * `weight`:\ é uma variável numérica que representa o peso do filhote.
+    * `feed`:\ um fator (variável qualitativa/categórica) que representa o tipo de alimentação.
+* Calcule um intervalo de confiança para o peso médio de cada alimentação separadamente;
+o intervalo de confiança é de inferior(`lower`) para superior (`upper`) dado por média $\pm$ escore t * erro padrão (`mean`$\pm$`tscore * se`):
+```{r}
+cwei <- favstats( weight ~ feed, data = chickwts)
+se <- cwei$sd / sqrt(cwei$n) # Erros padrão
+tscore <- qdist("t", p = .975, df = cwei$n - 1, plot = FALSE) # Escores t para uma probabilidade de cada à direita de 2.5%
+cwei$lower <- cwei$mean - tscore * se
+cwei$upper <- cwei$mean + tscore * se
+cwei[, c("feed", "mean", "lower", "upper")]
+```
+* Nós podemos traçar os intervalos de confinaça como segmentos de linhas horizontais usando a função  `gf_errorbarh`:
+```{r message=FALSE}
+gf_errorbarh(feed ~ mean + lower + upper, data = cwei) %>% 
+  gf_point(feed ~ mean)
+```
+
