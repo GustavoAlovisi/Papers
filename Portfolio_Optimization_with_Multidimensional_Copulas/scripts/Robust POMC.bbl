@@ -1,0 +1,262 @@
+\begin{thebibliography}{46}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+
+\bibitem[{Alexander and Baptista(2002)}]{alexander2002}
+Alexander, G.~J., and A.~M. Baptista. 2002.
+\newblock Economic implications of using a mean-VaR model for portfolio
+  selection: A comparison with mean-variance analysis.
+\newblock \emph{Journal of Economic Dynamics and Control} 26:1159--1193.
+
+\bibitem[{Allen and Karjalainen(1999)}]{allen1999}
+Allen, F., and R.~Karjalainen. 1999.
+\newblock Using genetic algorithms to find technical trading rules.
+\newblock \emph{Journal of financial Economics} 51:245--271.
+
+\bibitem[{Ane and Kharoubi(2003)}]{ane03}
+Ane, T., and C.~Kharoubi. 2003.
+\newblock Dependence Structure and Risk Measure.
+\newblock \emph{The journal of business} 76:411--438.
+
+\bibitem[{Artzner et~al.(1999)Artzner, Delbaen, Eber, and Heath}]{artzner1999}
+Artzner, P., F.~Delbaen, J.-M. Eber, and D.~Heath. 1999.
+\newblock Coherent measures of risk.
+\newblock \emph{Mathematical finance} 9:203--228.
+
+\bibitem[{Bessembinder and Chan(1995)}]{bessembinder1995}
+Bessembinder, H., and K.~Chan. 1995.
+\newblock The Profitability of Technical Trading Rules in the Asian Stock
+  Markets.
+\newblock \emph{Pacific-Basin Finance Journal} 3:257--284.
+
+\bibitem[{Campbell et~al.(1997)Campbell, Lo, and MacKinlay}]{campbell97}
+Campbell, J.~Y., A.~W.-C. Lo, and A.~C. MacKinlay. 1997.
+\newblock \emph{The econometrics of financial markets}.
+\newblock princeton University press.
+
+\bibitem[{Chan and Kroese(2010)}]{chan2010}
+Chan, J.~C., and D.~P. Kroese. 2010.
+\newblock Efficient estimation of large portfolio loss probabilities in
+  t-copula models.
+\newblock \emph{European Journal of Operational Research} 205:361--367.
+
+\bibitem[{Cherubini et~al.(2004)Cherubini, Luciano, and
+  Vecchiato}]{cherubini04}
+Cherubini, U., E.~Luciano, and W.~Vecchiato. 2004.
+\newblock \emph{Copula methods in finance}.
+\newblock John Wiley \& Sons.
+
+\bibitem[{Cont(2001)}]{cont01}
+Cont, R. 2001.
+\newblock Empirical properties of asset returns: stylized facts and statistical
+  issues.
+\newblock \emph{Quantitative Finance} 1:223--236.
+
+\bibitem[{D’Amico and Petroni(2017)}]{damico2017}
+D’Amico, G., and F.~Petroni. 2017.
+\newblock Copula based multivariate semi-Markov models with applications in
+  high-frequency finance.
+\newblock \emph{European Journal of Operational Research} .
+
+\bibitem[{Embrechts et~al.(2001)Embrechts, Lindskog, and
+  McNeil}]{embrechts2001}
+Embrechts, P., F.~Lindskog, and A.~McNeil. 2001.
+\newblock Modelling dependence with copulas.
+\newblock \emph{Rapport technique, D{\'e}partement de math{\'e}matiques,
+  Institut F{\'e}d{\'e}ral de Technologie de Zurich, Zurich} .
+
+\bibitem[{Fertis et~al.(2012)Fertis, Baes, and L{\"u}thi}]{fertis2012}
+Fertis, A., M.~Baes, and H.-J. L{\"u}thi. 2012.
+\newblock Robust risk management.
+\newblock \emph{European Journal of Operational Research} 222:663--672.
+
+\bibitem[{Gabrel et~al.(2014)Gabrel, Murat, and Thiele}]{gabrel2014}
+Gabrel, V., C.~Murat, and A.~Thiele. 2014.
+\newblock Recent advances in robust optimization: An overview.
+\newblock \emph{European journal of operational research} 235:471--483.
+
+\bibitem[{Gatev et~al.(2006)Gatev, Goetzmann, and Rouwenhorst}]{ggr06}
+Gatev, E., W.~N. Goetzmann, and K.~G. Rouwenhorst. 2006.
+\newblock Pairs Trading: Performance of a Relative-Value Arbitrage Rule.
+\newblock \emph{Review of Financial Studies} 19:797--827.
+
+\bibitem[{Giovanni De~Luca and Zuccolotto(2010)}]{dlrz10}
+Giovanni De~Luca, G.~R., and P.~Zuccolotto. 2010.
+\newblock Combining random forest and copula functions: a heuristic approach
+  for selecting assets from a financial crisis perspective.
+\newblock \emph{Intelligent Systems in Accounting, Finance and Management}
+  17.2:91--109.
+
+\bibitem[{Han(2006)}]{han2006}
+Han, Y. 2006.
+\newblock Asset Allocation with a High Dimensional Latent Factor Stochastic
+  Volatility Model.
+\newblock \emph{Review of Financial Studies} 19:237--271.
+
+\bibitem[{Hansen(2005)}]{hansen2005test}
+Hansen, P.~R. 2005.
+\newblock A test for superior predictive ability.
+\newblock \emph{Journal of Business \& Economic Statistics} 23:365--380.
+
+\bibitem[{Jegadeesh and Titman(1993)}]{jega1993}
+Jegadeesh, N., and S.~Titman. 1993.
+\newblock Returns to buying winners and selling losers: Implications for stock
+  market efficiency.
+\newblock \emph{The Journal of finance} 48:65--91.
+
+\bibitem[{Joe(1997)}]{joe97}
+Joe, H. 1997.
+\newblock \emph{Multivariate models and multivariate dependence concepts}.
+\newblock CRC Press.
+
+\bibitem[{Kakouris and Rustem(2014)}]{kakouris14}
+Kakouris, I., and B.~Rustem. 2014.
+\newblock Robust portfolio optimization with copulas.
+\newblock \emph{European Journal of Operational Research} 235:28--37.
+
+\bibitem[{Krokhmal et~al.(2002)Krokhmal, Palmquist, and Uryasev}]{krokhmal2002}
+Krokhmal, P., J.~Palmquist, and S.~Uryasev. 2002.
+\newblock Portfolio Optimization with Conditional Value-At-Risk Objective and
+  Constraints.
+\newblock \emph{Journal of Risk} 4:43--68.
+
+\bibitem[{Laih(2014)}]{laih2014}
+Laih, Y.-W. 2014.
+\newblock Measuring rank correlation coefficients between financial time
+  series: A GARCH-copula based sequence alignment algorithm.
+\newblock \emph{European Journal of Operational Research} 232:375--382.
+
+\bibitem[{Lopez-Paz et~al.(2013)Lopez-Paz, Hennig, and
+  Sch{\"o}lkopf}]{lopez2013randomized}
+Lopez-Paz, D., P.~Hennig, and B.~Sch{\"o}lkopf. 2013.
+\newblock The Randomized Dependence Coefficient.
+\newblock In \emph{Advances in Neural Information Processing Systems}, pp.
+  1--9.
+
+\bibitem[{Markowitz(1952)}]{markowitz1952}
+Markowitz, H. 1952.
+\newblock Portfolio selection.
+\newblock \emph{The journal of finance} 7:77--91.
+
+\bibitem[{McNeil et~al.(2015)McNeil, Frey, and Embrechts}]{mcneil15}
+McNeil, A.~J., R.~Frey, and P.~Embrechts. 2015.
+\newblock \emph{Quantitative risk management: Concepts, techniques and tools}.
+\newblock Princeton university press.
+
+\bibitem[{Mcneil and Neshelova(2009)}]{mcneil2009}
+Mcneil, A.~J., and J.~Neshelova. 2009.
+\newblock Multivariate Archimedean Copulas, d-Monotone Functions and
+  $\ell$1-norm Symmetric Distributions.
+\newblock \emph{Annals of statistics} 37:3059--3097.
+
+\bibitem[{Melchiori(2006)}]{melchiori2006}
+Melchiori, M.~R. 2006.
+\newblock Tools for sampling multivariate archimedean copulas .
+
+\bibitem[{Nelsen(2006)}]{nelsen06}
+Nelsen, R.~B. 2006.
+\newblock \emph{An introduction to copulas, 2nd}.
+\newblock New York: Springer Science Business Media.
+
+\bibitem[{Patton(2006)}]{patton2006}
+Patton, A.~J. 2006.
+\newblock Modelling asymmetric exchange rate dependence.
+\newblock \emph{International economic review} 47:527--556.
+
+\bibitem[{Pflug(2000)}]{pflug2000}
+Pflug, G.~C. 2000.
+\newblock Some remarks on the value-at-risk and the conditional value-at-risk.
+\newblock In \emph{Probabilistic constrained optimization}, pp. 272--281.
+  Springer.
+
+\bibitem[{Polak et~al.(2010)Polak, Rogers, and Sweeney}]{polak2010}
+Polak, G.~G., D.~F. Rogers, and D.~J. Sweeney. 2010.
+\newblock Risk management strategies via minimax portfolio optimization.
+\newblock \emph{European Journal of Operational Research} 207:409--419.
+
+\bibitem[{Politis and Romano(1994)}]{pr94}
+Politis, D.~N., and J.~P. Romano. 1994.
+\newblock The stationary bootstrap.
+\newblock \emph{Journal of the American Statistical association}
+  89.428:1303--1313.
+
+\bibitem[{Politis and White(2004)}]{pw04}
+Politis, D.~N., and H.~White. 2004.
+\newblock Automatic block-length selection for the dependent bootstrap.
+\newblock \emph{Econometric Reviews} 23.1:53--70.
+
+\bibitem[{Rockafellar and Uryasev(2000)}]{rockafellar2000}
+Rockafellar, R.~T., and S.~Uryasev. 2000.
+\newblock Optimization of conditional value-at-risk.
+\newblock \emph{Journal of risk} 2:21--42.
+
+\bibitem[{Rockafellar and Uryasev(2002)}]{rockafellar2002}
+Rockafellar, R.~T., and S.~Uryasev. 2002.
+\newblock Conditional value-at-risk for general loss distributions.
+\newblock \emph{Journal of banking \& finance} 26:1443--1471.
+
+\bibitem[{Sak et~al.(2010)Sak, H{\"o}rmann, and Leydold}]{sak2010}
+Sak, H., W.~H{\"o}rmann, and J.~Leydold. 2010.
+\newblock Efficient risk simulations for linear asset portfolios in the
+  t-copula model.
+\newblock \emph{European Journal of Operational Research} 202:802--809.
+
+\bibitem[{Santos and Tessari(2012)}]{santos2012}
+Santos, A. A.~P., and C.~Tessari. 2012.
+\newblock T{\'e}cnicas Quantitativas de Otimiza{\c{c}}{\~a}o de Carteiras
+  Aplicadas ao Mercado de A{\c{c}}{\~o}es Brasileiro (Quantitative Portfolio
+  Optimization Techniques Applied to the Brazilian Stock Market).
+\newblock \emph{Revista Brasileira de Finan{\c{c}}as} 10:369.
+
+\bibitem[{Schweizer and Sklar(2011)}]{schweizer2011}
+Schweizer, B., and A.~Sklar. 2011.
+\newblock \emph{Probabilistic Metric Spaces}.
+\newblock Courier Corporation.
+
+\bibitem[{Sklar(1959)}]{sklar1959}
+Sklar, M. 1959.
+\newblock \emph{Fonctions de r{\'e}partition {\`a} n dimensions et leurs
+  marges}.
+\newblock Universit{\'e} Paris 8.
+
+\bibitem[{Sortino and Price(1994)}]{sortino1994}
+Sortino, F.~A., and L.~N. Price. 1994.
+\newblock Performance Measurement in a Downside Risk Framework.
+\newblock \emph{The Journal of Investing} 3:59--64.
+
+\bibitem[{Szeg{\"o}(2005)}]{szego2005}
+Szeg{\"o}, G. 2005.
+\newblock Measures of risk.
+\newblock \emph{European Journal of Operational Research} 163:5--19.
+
+\bibitem[{Unger(2014)}]{unger2014}
+Unger, A. 2014.
+\newblock \emph{The Use of Risk Budgets in Portfolio Optimization}.
+\newblock Springer.
+
+\bibitem[{Uryasev(2013)}]{uryasev2013}
+Uryasev, S. 2013.
+\newblock \emph{Probabilistic Constrained Optimization: Methodology and
+  Applications}, vol.~49.
+\newblock Springer Science \& Business Media.
+
+\bibitem[{Uryasev and Rockafellar(1999)}]{uryasev1999}
+Uryasev, S., and R.~T. Rockafellar. 1999.
+\newblock \emph{Optimization of Conditional Value-At-Risk}.
+\newblock Department of Industrial \& Systems Engineering, University of
+  Florida.
+
+\bibitem[{Uryasev and Rockafellar(2001)}]{uryasev2001}
+Uryasev, S., and R.~T. Rockafellar. 2001.
+\newblock Conditional value-at-risk: optimization approach.
+\newblock In \emph{Stochastic optimization: algorithms and applications}, pp.
+  411--435. Springer.
+
+\bibitem[{Zhu and Fukushima(2009)}]{zhu2009worst}
+Zhu, S., and M.~Fukushima. 2009.
+\newblock Worst-case conditional value-at-risk with application to robust
+  portfolio management.
+\newblock \emph{Operations research} 57:1155--1168.
+
+\end{thebibliography}
