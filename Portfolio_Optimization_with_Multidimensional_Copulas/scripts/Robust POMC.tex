@@ -95,20 +95,7 @@ urlcolor=blue
 \maketitle
 
 \begin{abstract}
-Using data from the S\&P 500 stocks from 1990 to 2015, we measure the
-downside market risk by Conditional Value-at-Risk (CVaR) subject to return
-constraints following the approach of \citet*{rockafellar2000,rockafellar2002%
-} and the extended framework of \citet*{kakouris14} through the use of
-multidimensional mixed archimedean copulas. We implement a dynamic investing
-viable strategy where the portfolios are optimized using three different length of
-rolling calibration windows. The out-of-sample performance is evaluated and
-compared against two benchmarks; a multidimensional gaussian copula model and a
-constant mix portfolio. Our empirical analysis shows that the Mixed Copula-CVaR
-approach generates portfolios with better downside risk statistics for any rebalancing period and it is more profitable than the Gaussian Copula-CVaR and 1/N portfolios for daily and weekly rebalancing. %Particularly, the mixture copula and benchmark
-%methods show a mean annualized excess return as high as 11.29\%, 10.59\% and
-%10.52\%. 
-To cope with the dimensionality problem we employ a similar approach to that used by \citet{ggr06} to select a set of assets that are the most
-diversified, in some sense, to the S\&P 500 index in the constituent set. We find that copula-based approaches offer better hedges against losses than the 1/N portfolio. The accuracy of VaR forecasts is determined by how well they minimize a capital requirement loss function (CR). In order to mitigate data-snooping problems we apply a test for superior predictive ability (SPA) proposed by  \citet*{hansen2005test} to determine which model significantly minimizes this expected loss function. The test is implemented via stationary bootstrap of \citet*{pr94} using the automatic block-length selection of \citet*{pw04} and 10,000 bootstrap resamples. We find that the minimum average loss of the mixed Copula-CVaR approach is smaller than the average performances of the Gaussian Copula-CVaR and the naive equally weighted portfolio.
+Using data from the S\&P 500 stocks from 1990 to 2015, we measure the downside market risk by Conditional Value-at-Risk (CVaR) subject to return constraints through the use of multidimensional mixed archimedean copulas. We implement a dynamic investing viable strategy where the portfolios are optimized using three different length of rolling calibration windows. The out-of-sample performance is evaluated and compared against two benchmarks; a multidimensional gaussian copula model and a constant mix portfolio. Our empirical analysis shows that the Mixed Copula-CVaR approach generates portfolios with better downside risk statistics for any rebalancing period and it is more profitable than the Gaussian Copula-CVaR and 1/N portfolios for daily and weekly rebalancing. To cope with the dimensionality problem we select a set of assets that are the most diversified, in some sense, to the S\&P 500 index in the constituent set. The accuracy of VaR forecasts is determined by how well they minimize a capital requirement loss function. In order to mitigate data-snooping problems we apply a test for superior predictive ability to determine which model significantly minimizes this expected loss function. We find that the minimum average loss of the mixed Copula-CVaR approach is smaller than the average performance of the Gaussian Copula-CVaR.
 
 
 \smallskip
@@ -679,7 +666,7 @@ The reader interested in the history of copulas is referred to \citet*{%
 	schweizer2011} and \citet*{nelsen06}. For an extensive list of parametric
 copula families see \citet*{joe97} and \citet*{nelsen06} and references
 therein. After late 1990's the theory and application of copulas grew
-enormously. The versatility for modeling dependencies have been extensively used in financial analysis \citep{cherubini04,patton2006,chan2010,sak2010,laih2014,damico2017}. 
+enormously. The versatility for modeling dependencies have been extensively used in financial analysis \citep{cherubini04,patton2006,chan2010,sak2010,laih2014,d2017}. 
 
 Here we focus in a special class of copulas called Archimedean. An
 Archimedean copula has the form
