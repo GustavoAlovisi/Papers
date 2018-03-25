@@ -85,7 +85,7 @@ urlcolor=blue
 \begin{document}
 
 \title{Robust Portfolio Optimization with Multivariate Copulas: a Worst-Case CVaR approach}
-\author[]{ Fernando A. B. Sabino da Silva\thanks{\texttt{Department of Statistics, Federal University of Rio Grande do Sul, Porto Alegre, RS 91509-900, Brazil, e-mail: fsabino@ufrgs.br}; Corresponding author.}}
+\author[]{ Fernando A. B. Sabino da Silva\thanks{\texttt{Department of Statistics, Federal University of Rio Grande do Sul, Porto Alegre, RS 91509-900, Brazil, e-mail: dasilvafbs@gmail.com}; Corresponding author.}}
 \author[]{Flavio A. Ziegelmann\thanks{\texttt{Department of Statistics, Federal University of Rio Grande do Sul, Porto Alegre, RS 91509-900, Brazil, e-mail: flavioz@ufrgs.br}}}
 \author[]{Cristina Tessari \thanks{\texttt{Finance Division, Columbia Business School, Columbia University, New York, NY 10027, USA,
 			e-mail: ct2759@columbia.edu}}}
@@ -102,8 +102,7 @@ Using data from the S\&P 500 stocks from 1990 to 2015, we measure the downside m
 
 \smallskip
 
-\noindent \textbf{Keywords:} Asset Allocation; Convex Programming; Copula; Portfolio
-Selection; Risk Management; S\&P 500; WCCVaR.
+\noindent \textbf{Keywords:} Asset Allocation; Finance; Gaussian Copula; Linear Programming; Mixed Copula; Risk Management; S\&P 500; Scenarios; WCCVaR.
 
 \noindent \textbf{JEL Codes:} G11; G12; G17.
 \end{abstract}
@@ -666,7 +665,7 @@ The reader interested in the history of copulas is referred to \citet*{%
 	schweizer2011} and \citet*{nelsen06}. For an extensive list of parametric
 copula families see \citet*{joe97} and \citet*{nelsen06} and references
 therein. After late 1990's the theory and application of copulas grew
-enormously. The versatility for modeling dependencies have been extensively used in financial analysis \citep{cherubini04,patton2006,chan2010,sak2010,laih2014,d2017}. 
+enormously. The versatility for modeling dependencies have been extensively used in financial analysis \citep{cherubini04,patton2006,chan2010,sak2010,laih2014,d2017copula}. 
 
 Here we focus in a special class of copulas called Archimedean. An
 Archimedean copula has the form
@@ -1153,7 +1152,7 @@ the copula-based allocations consistently outperform the other benchmarks in ter
 
 Although our main objective is to protect investors from the worst possible scenarios it is worthwhile noticing that the WCCVaR strategy
 consistently outperforms the other strategies since July 1994 in terms of cumulative excess returns for
-any daily and weekly rebalancing frequencies without a minimum expected return constraint \footnote{The numerical experiments show that the performances out-of-sample stay very similar when we consider a daily constraint $\overline{r}{\geq }VaR_{10\%}$. Since the resuls are very much alike they are not presented here and are available under request.}. However, the breakeven costs show that the profits of the copula strategies do not survive for transactions costs greater than 6.2 basis points.
+any daily and weekly rebalancing frequencies without a minimum expected return constraint\footnote{The numerical experiments show that the performances out-of-sample stay very similar when we consider a daily constraint $\overline{r}{\geq }VaR_{10\%}$. Since the resuls are very much alike they are not presented here and are available under request.}. However, the breakeven costs show that the profits of the copula strategies do not survive for transactions costs greater than 6.2 basis points.
 
 
 \begin{threeparttable}[H]
@@ -1250,7 +1249,7 @@ Figure \ref{fig:fig01} depicts the wealth trajectories of the portfolios strateg
 	\label{fig:fig01}
 \end{figure}
 
-The copula-based approaches are more profitable for daily and weekly rebalancing over time, especially after 2009. We can note the copula methods present a hump-shaped pattern in 1999, while the other benchmarks show a sharp decline in the subperiod that corresponds to the bear market that comprises the dotcom crisis and the September 11th terrorist attack (2000-2002). All portfolios show a hump-shaped pattern during the subprime mortgage financial crisis in 2007-2008. Overall, we can observe that after 2002 the patterns are similar, but the figure indicates that the copula methods, even though the objective function is the minimization of CVaR under a constraint on expected return, preserve more wealth in the long-term period, particularly the WCCVaR portfolio, for daily and weekly rebalancing \footnote{Transaction costs should not be neglected as we could notice after the breakeven analysis}.
+The copula-based approaches are more profitable for daily and weekly rebalancing over time, especially after 2009. We can note the copula methods present a hump-shaped pattern in 1999, while the other benchmarks show a sharp decline in the subperiod that corresponds to the bear market that comprises the dotcom crisis and the September 11th terrorist attack (2000-2002). All portfolios show a hump-shaped pattern during the subprime mortgage financial crisis in 2007-2008. Overall, we can observe that after 2002 the patterns are similar, but the figure indicates that the copula methods, even though the objective function is the minimization of CVaR under a constraint on expected return, preserve more wealth in the long-term period, particularly the WCCVaR portfolio, for daily and weekly rebalancing \footnote{Transaction costs should not be neglected as we could notice after the breakeven analysis.}.
 
 
 
