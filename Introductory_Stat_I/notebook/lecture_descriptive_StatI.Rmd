@@ -124,7 +124,7 @@ help.search("plot")
 * Três revistas foram selecionadas **aleatoriamente** de cada um dos seguintes grupos:
     * Grupo 1: maior nível educacional
     * Grupo 2: nível educacional médio
-    * Grupo 3: n;ivel educacional mais baixo.
+    * Grupo 3: nível educacional mais baixo.
 * Seis anúncios foram selecionados **aleatoriamente** de cada uma das nove revistas selecionadas:
     * Grupo 1: [1] Scientific American, [2] Fortune, [3] The New Yorker
     * Grupo 2: [4] Sports Illustrated, [5] Newsweek, [6] People
@@ -498,6 +498,10 @@ Como desenhar um box plot:
         * U = quartil superior + 1.5*IQR
     * Desenhe uma linha ligando o quartil inferior até a menor medida que seja maior do que *L*.
     * Similarmente, desenhe uma linha ligando o quartil superior até a maior medida que seja inferior a *U*.
+    <!-- * Regras de decisão -->
+    <!--   + Max($X_[1]$, L) -->
+    <!--   + Min($X_[n]$, U) -->
+
 * Outliers: Observações com valor menor do que *L* ou maior do que *U* são desenhadas como círculos.
 
 *Nota: As caixas são fechadas (em inglês, as extremidades são chamadas de "Whiskers") no mínimo e no máximo das observações que não são consideradas outliers.*

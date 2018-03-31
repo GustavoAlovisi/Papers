@@ -1,17 +1,22 @@
 ---
-title: "EstimaÁ„o"
+title: "Estima√ß√£o"
 author: "Fernando B. Sabino da Silva"
 output:
-  slidy_presentation:
-    css: "https://asta.math.aau.dk/course/asta/2018-1/?file=lecture_style.css"
-    fig_caption: no
-    highlight: tango
-    theme: cerulean
   pdf_document:
     fig_caption: no
     highlight: tango
     number_section: yes
     toc: yes
+  beamer_presentation:
+    highlight: tango
+  html_document:
+    df_print: paged
+    toc: yes
+  slidy_presentation:
+    css: https://asta.math.aau.dk/course/asta/2018-1/?file=lecture_style.css
+    fig_caption: no
+    highlight: tango
+    theme: cerulean
 ---
 
 ```{r, include = FALSE}
@@ -20,162 +25,162 @@ missing_pkgs <- setdiff(c("mosaic"), rownames(installed.packages()))
 if(length(missing_pkgs)>0) install.packages(missing_pkgs)
 ```
 
-# EstimaÁ„o por ponto e por intervalo
+# Estima√ß√£o por ponto e por intervalo
 
-## EstimaÁ„o por ponto e por intervalo
+## Estima√ß√£o por ponto e por intervalo
 
-* NÛs queremos investigar hipÛteses sobre par‚metros (constantes populacionais). Exemplo: a mÈdia $\mu$ e o desvio-padr„o $\sigma$.
-    * Se $\mu$ for o tempo mÈdio de espera em uma fila, ent„o pode ser relevante estudar se o tempo mÈdio excede, por exemplo, a 2 minutos.
+* N√≥s queremos investigar hip√≥teses sobre par√¢metros (constantes populacionais). Exemplo: a m√©dia $\mu$ e o desvio-padr√£o $\sigma$.
+    * Se $\mu$ for o tempo m√©dio de espera em uma fila, ent√£o pode ser relevante estudar se o tempo m√©dio excede, por exemplo, a 2 minutos.
 
-* Com base em uma amostra, nÛs calculamos uma **estimativa pontual** que de maneira coloquial È o nosso melhor "chute" para o valor do par‚metro.
+* Com base em uma amostra, n√≥s calculamos uma **estimativa pontual** que de maneira coloquial √© o nosso melhor "chute" para o valor do par√¢metro.
 
-    * Por exemplo, nÛs usamos  $\bar{y}$ como uma estimativa para $\mu$ e $s$ como uma estimativa para $\sigma$.
-* Em geral, nÛs estamos tambÈm interessados em calcular uma **estimativa por intervalo** (tambÈm chamada de **intervalo de confianÁa**). Este intervalo È construÌdo em torno da estimativa por ponto.
-* A estimativa do par‚metro (e o intervalo de confianÁa) pode ser utilizado para investigar a hipÛtese. 
-
-
-## Estimadores por ponto: ViÈs
-
-* Se queremos estimar a mÈdia da populaÁ„o $\mu$, nÛs temos v·rias possibilidades (a princÌpio). Exemplos:
-    * a mÈdia amostral $\bar{y}$
-    * a mÈdia amostral $y_T$ dos quartis superior ($Q_{3}$) e inferior ($Q_{1}$).
-* Vantagem de  $y_T$: Pouca influÍncia de outliers (observaÁıes com valor muito alto/baixo), i.e. n„o teremos praticamente nenhum efeito se houver alguns erros no banco de dados.
-* Desvantagem de $y_T$: Se a distribuiÁ„o da populaÁ„o for assimÈtrica, ent„o $y_T$ ser· um estimador **viesado**, o que significa que no longo prazo este estimador sistematicamente ser· acima ou abaixo do verdadeiro valor de $\mu$.
-* Geralmente, nÛs preferimos que um estimador seja **n„o viesado**, isto È, que a sua distriuiÁ„o seja centrada em volta do verdadeiro valor do par‚metro.
-* Relembre que para uma populaÁ„o com mÈdia $\mu$, a mÈdia amostral   $\bar{y}$ tambÈm tem mÈdia $\mu$, i.e., $\bar{y}$ È um estimador n„o viesado da mÈdia populacional $\mu$.  
+    * Por exemplo, n√≥s usamos  $\bar{y}$ como uma estimativa para $\mu$ e $s$ como uma estimativa para $\sigma$.
+* Em geral, n√≥s estamos tamb√©m interessados em calcular uma **estimativa por intervalo** (tamb√©m chamada de **intervalo de confian√ßa**). Este intervalo √© constru√≠do em torno da estimativa por ponto.
+* A estimativa do par√¢metro (e o intervalo de confian√ßa) pode ser utilizado para investigar a hip√≥tese. 
 
 
-## Estimadores por ponto: EficiÍncia
+## Estimadores por ponto: Vi√©s
 
-* NÛs j· sabemos (mostramos em aula - verifique se vocÍ sabe **provar** isto) que o erro padr„o de $\bar{y}$ È $\frac{\sigma}{\sqrt{n}}$,  i.e. o erro padr„o converge para zero quando o tamanho da amostra aumenta (vocÍ saberia explicar a intuiÁ„o disto?).
-* … difÌcil expressar o erro padr„o de $y_T$, mas È possÌvel provar que ele ser· maior do que o erro padr„o de $\bar{y}$. Este È um bom motivo para que, usualmente, $\bar{y}$ seja um estimador preferÌvel.
-* Em geral, nÛs preferimos que um estimador seja **eficiente**. De maneira coloquial, isto significa que o erro padr„o converge para zero quando o tamanho da amostra aumenta. O estimador **mais eficiente** ser· aquele que converge para zero a uma velocidade maior. No nosso exemplo, para a maioria das populaÁıes, $y_T$ È ineficiente.
-
-
-
-## NotaÁ„o
-* O sÌmbolo $\hat{\ }$ acima de um par‚metro È frequentemente utilizado para denotar uma estimativa (pontual) de um par‚metro. Exemplos:
-    * estimativa da mÈdia populacional:\ $\hat{\mu}=\bar{y}$
-    * estimativa do desvio padr„o:\ $\hat{\sigma}=s$
-* Quando observamos uma vari·vel bin·ria ($0/1$), o que, por exemplo, È utilizada para denotar sim/n„o ou masculino/feminino, ent„o nÛs usamos a notaÁ„o $$\pi=P(Y=1)$$ para a proporÁ„o da populaÁ„o com a caracterÌstica $Y=1$.
-* A estimativa $\hat{\pi}=(y_1+y_2+\ldots+y_n)/n$ È a frequÍncia relativa amostral de $Y=1$.
+* Se queremos estimar a m√©dia da popula√ß√£o $\mu$, n√≥s temos v√°rias possibilidades (a princ√≠pio). Exemplos:
+    * a m√©dia amostral $\bar{y}$
+    * a m√©dia amostral $y_T$ dos quartis superior ($Q_{3}$) e inferior ($Q_{1}$).
+* Vantagem de  $y_T$: Pouca influ√™ncia de outliers (observa√ß√µes com valor muito alto/baixo), i.e. n√£o teremos praticamente nenhum efeito se houver alguns erros no banco de dados.
+* Desvantagem de $y_T$: Se a distribui√ß√£o da popula√ß√£o for assim√©trica, ent√£o $y_T$ ser√° um estimador **viesado**, o que significa que no longo prazo este estimador sistematicamente ser√° acima ou abaixo do verdadeiro valor de $\mu$.
+* Geralmente, n√≥s preferimos que um estimador seja **n√£o viesado**, isto √©, que a sua distriui√ß√£o seja centrada em volta do verdadeiro valor do par√¢metro.
+* Relembre que para uma popula√ß√£o com m√©dia $\mu$, a m√©dia amostral   $\bar{y}$ tamb√©m tem m√©dia $\mu$, i.e., $\bar{y}$ √© um estimador n√£o viesado da m√©dia populacional $\mu$.  
 
 
-## Intervalo de ConfianÁa
+## Estimadores por ponto: Efici√™ncia
 
-* A definiÁ„o geral de um intervalo de confianÁa para um par‚metro populacional È a seguinte:
-    * Um **intervalo de confianÁa** para um par‚metro È um intervalo construÌdo com base na amostra, isto È, ele È aleatÛrio (depende da amostra em particular). Esperamos que este intervalo contenha o verdadeiro valor do par‚metro (que n„o È aleatÛrio, È uma constante populacional).
-    * A "probabilidade" de que esta construÁ„o produza um intervalo que inclua o verdadeiro valor do par‚metro È chamada de **nÌvel de confianÁa**. Tipicamente, o nÌvel de confianÁa escolhido È de $95\%$. 
-    * (1-nÌvel de confianÁa) È chamado de 
-      **nÌvel de signific‚ncia** (neste exemplo, $1-0.95=0.05$,\ i.e.\ $5\%$).
-* Frequentemente, o intervalo È construÌdo como um intervalo simÈtrico em torno de uma estimativa por ponto:
+* N√≥s j√° sabemos (mostramos em aula - verifique se voc√™ sabe **provar** isto) que o erro padr√£o de $\bar{y}$ √© $\frac{\sigma}{\sqrt{n}}$,  i.e. o erro padr√£o converge para zero quando o tamanho da amostra aumenta (voc√™ saberia explicar a intui√ß√£o disto?).
+* √â dif√≠cil expressar o erro padr√£o de $y_T$, mas √© poss√≠vel provar que ele ser√° maior do que o erro padr√£o de $\bar{y}$. Este √© um bom motivo para que, usualmente, $\bar{y}$ seja um estimador prefer√≠vel.
+* Em geral, n√≥s preferimos que um estimador seja **eficiente**. De maneira coloquial, isto significa que o erro padr√£o converge para zero quando o tamanho da amostra aumenta. O estimador **mais eficiente** ser√° aquele que converge para zero a uma velocidade maior. No nosso exemplo, para a maioria das popula√ß√µes, $y_T$ √© ineficiente.
+
+
+
+## Nota√ß√£o
+* O s√≠mbolo $\hat{\ }$ acima de um par√¢metro √© frequentemente utilizado para denotar uma estimativa (pontual) de um par√¢metro. Exemplos:
+    * estimativa da m√©dia populacional:\ $\hat{\mu}=\bar{y}$
+    * estimativa do desvio padr√£o:\ $\hat{\sigma}=s$
+* Quando observamos uma vari√°vel bin√°ria ($0/1$), o que, por exemplo, √© utilizada para denotar sim/n√£o ou masculino/feminino, ent√£o n√≥s usamos a nota√ß√£o $$p=P(Y=1)$$ para a propor√ß√£o da popula√ß√£o com a caracter√≠stica $Y=1$.
+* A estimativa $\hat{p}=(y_1+y_2+\ldots+y_n)/n$ √© a frequ√™ncia relativa amostral de $Y=1$.
+
+
+## Intervalo de Confian√ßa
+
+* A defini√ß√£o geral de um intervalo de confian√ßa para um par√¢metro populacional √© a seguinte:
+    * Um **intervalo de confian√ßa** para um par√¢metro √© um intervalo constru√≠do com base na amostra, isto √©, ele √© aleat√≥rio (depende da amostra em particular). Esperamos que este intervalo contenha o verdadeiro valor do par√¢metro (que n√£o √© aleat√≥rio, √© uma constante populacional).
+    * A "probabilidade" de que esta constru√ß√£o produza um intervalo que inclua o verdadeiro valor do par√¢metro √© chamada de **n√≠vel de confian√ßa** (ou de cobertura). Tipicamente, o n√≠vel de confian√ßa escolhido √© de $95\%$. 
+    * (1-n√≠vel de confian√ßa) √© chamado de 
+      **n√≠vel de signific√¢ncia** (neste exemplo, $1-0.95=0.05$,\ i.e.\ $5\%$).
+* Frequentemente, o intervalo √© constru√≠do como um intervalo sim√©trico em torno de uma estimativa por ponto:
     * **estimativa por ponto $\pm$margem de erro**
-    * Regra de bolso: Com uma margem de erro de aproximadamente 2 vezes o erro padr„o vocÍ obtÈm um intervalo de confianÁa de aproximadamente $95\%$.
-    * I.e: **estimativa por ponto** $\pm$ **2 x erro padr„o** tem nÌvel de confianÁa de aproximadamente $95\%$.
+    * Regra de bolso: Com uma margem de erro de aproximadamente 1.96 vezes o erro padr√£o voc√™ obt√©m um intervalo de confian√ßa de aproximadamente $95\%$.
+    * i.e: **estimativa por ponto** $\pm$ **1.96 x erro padr√£o** tem n√≠vel de confian√ßa de aproximadamente $95\%$.
 
 
-## Intervalo de ConfianÁa para a ProporÁ„o
+## Intervalo de Confian√ßa para a Propor√ß√£o
 
-* Considere uma populaÁ„o com uma distribuiÁ„o onde a probabilidade de ter uma determinada caracterÌstica seja $\pi$ e a probabilidade de n„o ter seja $1-\pi$.
-* Quando as categorias $n„o/sim$ s„o denotadas por $0/1$, i.e. $y$ È $0$
-  ou $1$, a distribuiÁ„o de $y$ tem um desvio padr„o de : 
+* Considere uma popula√ß√£o com uma distribui√ß√£o onde a probabilidade de ter uma determinada caracter√≠stica seja $p$ e a probabilidade de n√£o ter seja $1-p$.
+* Quando as categorias $n√£o/sim$ s√£o denotadas por $0/1$, i.e. $y$ √© $0$
+  ou $1$, a distribui√ß√£o de $y$ tem um desvio padr√£o de : 
   $$
-  \quad \sigma=\sqrt{\pi(1-\pi)}.
+  \quad \sigma=\sqrt{p(1-p)}.
   $$
-  Isto È, o desvio padr„o n„o È um par‚metro "livre" para uma vari·vel $0/1, pois o seu valor est· diretamente ligado a probabilidade $\pi$.
-* Com uma amostra de tamanho $n$ o erro padr„o de $\hat{\pi}$ ser· (dado que $\hat{\pi} = \frac{\sum_{i=1}^n y_i}{n}$): 
+  Isto √©, o desvio padr√£o n√£o √© um par√¢metro "livre" para uma vari√°vel $0/1$, pois o seu valor est√° diretamente ligado a probabilidade $p$.
+* Com uma amostra de tamanho $n$ o erro padr√£o de $\hat{p}$ ser√° (dado que $\hat{p} = \frac{\sum_{i=1}^n y_i}{n}$): 
   $$
-  \quad \sigma_{\hat{\pi}}=
-  \frac{\sigma}{\sqrt{n}} =\sqrt{\frac{\pi(1-\pi)}{n}}.
+  \quad \sigma_{\hat{p}}=
+  \frac{\sigma}{\sqrt{n}} =\sqrt{\frac{p(1-p)}{n}}.
   $$
-* NÛs n„o sabemos o valor de $\pi$, mas se inserirmos a estimativa iremos obter o **erro padr„o estimado** de $\hat{\pi}$:
+* N√≥s n√£o sabemos o valor de $p$, mas se inserirmos a estimativa iremos obter o **erro padr√£o estimado** de $\hat{p}$:
   $$
-  se=\sqrt{\frac{\hat{\pi}(1-\hat{\pi})}{n}}.
+  ep=\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}.
   $$
 * A regra de bolso nos diz que o intervalo
-  $$\hat{\pi}\pm 2\sqrt{\frac{\hat{\pi}(1-\hat{\pi})}{n}}$$
-  tem nÌvel de confianÁa de aproximadamente $95\%$. i.e., antes que os dados sejam conhecidos, o intervalo aleatÛrio dado pela fÛrmula acima tem aproximadamente 95% de "probabilidade" de conter o verdadeiro valor de $\pi$.
+  $$\hat{p}\pm 1.96\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$$
+  tem n√≠vel de confian√ßa de aproximadamente $95\%$. i.e., antes que os dados sejam conhecidos, o intervalo aleat√≥rio dado pela f√≥rmula acima tem aproximadamente 95% de "probabilidade" de conter o verdadeiro valor de $p$.
 
 ----
 
-### Exemplo: Estimativa por ponto e por intervalo para a proporÁ„o
+### Exemplo: Estimativa por ponto e por intervalo para a propor√ß√£o
 
-* Vamos dar uma olhada em dados de uma pesquisa nacional conduzida no Chile entre Abril e Maio de 1988. InformaÁıes sobre os dados podem ser encontradas [aqui](https://www.rdocumentation.org/packages/car/versions/2.1-6/topics/Chile).
+* Vamos dar uma olhada em dados de uma pesquisa nacional conduzida no Chile entre Abril e Maio de 1988. Informa√ß√µes sobre os dados podem ser encontradas [aqui](https://www.rdocumentation.org/packages/car/versions/2.1-6/topics/Chile).
 ```{r}
 Chile <- read.delim("C:/Users/fsabino/Desktop/Codes/papers/Introductory_Stat_II/notebook/Chile.txt")
 ```
-* Concentremo-nos na vari·vel `sex`,\ i.e. a distribuiÁ„o de gÍnero na amostra.
+* Concentremo-nos na vari√°vel `sex`,\ i.e. a distribui√ß√£o de g√™nero na amostra.
 ```{r message=FALSE}
 library(mosaic)
 tally( ~ sex, data = Chile)
 tally( ~ sex, data = Chile, format = "prop")
 ```
-* ProporÁ„o da populaÁ„o (desconhecida) de mulheres (F),\ $\pi$.
-* Estimativa de $\pi$: $\quad \hat{\pi} = \frac{1379}{1379+1321} = 0.5107$
-* Regra de bolso : $\quad \hat{\pi} \pm 2 \times se = 0.5107 \pm 2  \sqrt{\frac{0.5107(1-0.5107)}{1379 + 1321}} = (0.49, 0.53)$ È um intervalo de confianÁa aproximado de 95% para $\pi$.  
+* Propor√ß√£o da popula√ß√£o (desconhecida) de mulheres (F),\ $p$.
+* Estimativa de $p$: $\quad \hat{p} = \frac{1379}{1379+1321} = 0.5107$
+* Regra de bolso : $\quad \hat{p} \pm 1.96 \times ep = 0.5107 \pm 2  \sqrt{\frac{0.5107(1-0.5107)}{1379 + 1321}} = (0.4919, 0.5296)$ √© um intervalo de confian√ßa aproximado de 95% para $p$.  
 
 ----
 
-### Exemple: Intervalos de confianÁa para a proporÁ„o no  **R**
-* **R** automaticamente calcula o intervalo de confianÁa para a proporÁ„o de pessoas do sexo feminino quando nÛs fazemos um teste de hipÛteses (voltaremos a isso mais adiante):
+### Exemple: Intervalos de confian√ßa para a propor√ß√£o no  **R**
+* **R** automaticamente calcula o intervalo de confian√ßa para a propor√ß√£o de pessoas do sexo feminino quando n√≥s fazemos um teste de hip√≥teses (voltaremos a isso mais adiante):
 ```{r}
 prop.test( ~ sex, data = Chile, correct = FALSE)
 ```
-* O argumento `correct = FALSE` È necess·rio para pedir ao  **R** para fazer uma aproximaÁ„o para a distribuiÁ„o normal como feito nestas notas. Quando
-`correct = TRUE` (o default) uma correÁ„o matem·tica que vocÍ n„o aprendeu se aplica e os resultados ser„o ligeiramente diferentes.
+* O argumento `correct = FALSE` √© necess√°rio para pedir ao  **R** para fazer uma aproxima√ß√£o para a distribui√ß√£o normal como feito nestas notas. Quando
+`correct = TRUE` (o default) uma corre√ß√£o matem√°tica que voc√™ n√£o aprendeu se aplica e os resultados ser√£o ligeiramente diferentes.
 
 ----
 
-## Intervalos de confianÁa aproximados para a proporÁ„o
+## Intervalos de confian√ßa aproximados para a propor√ß√£o
 
-* Com base no teorema central do limite (CLT), nÛs temos :
-  $$\hat{\pi}\approx N \left (\pi,\sqrt{\frac{\pi(1-\pi)}{n}} \right)$$
-  **se** $n\hat{\pi}$ e $n(1-\hat{\pi})$ s„o grandes o suficiente para que a aproximaÁ„o seja v·lida (maiores do que $15$, por exemplo).
-* Para construir um intervalo de confianÁa com nÌvel de confianÁa (aproximado) $1-\alpha$:
-    1) Encontre o valor crÌtico $z_{crit}$ para o qual a probabilidade na cauda superior da distribuiÁ„o normal seja $\alpha/2$.  <!-- i.e. nÛs temos $z=1.96$ quando $\alpha=5\%$.-->
-    2) Calcule $se=\sqrt{\frac{\hat{\pi}(1-\hat{\pi})}{n}}$
-    3) Ent„o $\hat{\pi}\pm z_{crit}\times se$ È um intervalo de confianÁa com nÌvel de confianÁa $1-\alpha$.
+* Com base no teorema central do limite (CLT), n√≥s temos :
+  $$\hat{p}\approx N \left (p,{\frac{p(1-p)}{n}} \right)$$
+  **ep** $n\hat{p}$ e $n(1-\hat{p})$ s√£o grandes o suficiente para que a aproxima√ß√£o seja v√°lida (maiores do que $15$, por exemplo).
+* Para construir um intervalo de confian√ßa com n√≠vel de confian√ßa (aproximado) $1-\alpha$:
+    1) Encontre o valor cr√≠tico $z_{crit}$ para o qual a probabilidade na cauda superior da distribui√ß√£o normal seja $\alpha/2$.  <!-- i.e. n√≥s temos $z=1.96$ quando $\alpha=5\%$.-->
+    2) Calcule $ep=\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$
+    3) Ent√£o $\hat{p}\pm z_{crit}\times ep$ √© um intervalo de confian√ßa com n√≠vel de confian√ßa $1-\alpha$.
 
 ----
 
 ### Exemplo: Dados do Chile
-Para os dados do `Chile` calcule os intervalos de confianÁa 99% e 95% para a probabilidade de que uma pessoa seja do sexo feminino:
+Para os dados do `Chile` calcule os intervalos de confian√ßa 99% e 95% para a probabilidade de que uma pessoa seja do sexo feminino:
 
-* Para um nÌvel de confianÁa de $99\%$, temos $\alpha=1\%$ e
+* Para um n√≠vel de confian√ßa de $99\%$, temos $\alpha=1\%$ e
     1) $z_{crit}$=`qdist("norm", 1 - 0.01/2)`=2.576.
-    2) Sabemos que $\hat{\pi}=0.5107$ e $n=2700$, ent„o $se = \sqrt{\frac{\hat{\pi}(1-\hat{\pi})}{n}} = 0.0096$.
-    3) Assim, um intervalo de confianÁa de 99% È: $\hat{\pi}\pm z_{crit}\times se=(0.4859, 0.5355)$.
-* Para um nÌvel de confianÁa de $95\%$, temos $\alpha=5\%$ e
+    2) Sabemos que $\hat{p}=0.5107$ e $n=2700$, ent√£o $ep = \sqrt{\frac{\hat{p}(1-\hat{p})}{n}} = 0.0096$.
+    3) Assim, um intervalo de confian√ßa de 99% √©: $\hat{p}\pm z_{crit}\times ep=(0.4859, 0.5355)$.
+* Para um n√≠vel de confian√ßa de $95\%$, temos $\alpha=5\%$ e
     1) $z_{crit}$=`qdist("norm", 1 - 0.05/2)`=1.96.
-    2) Novamente, $\hat{\pi}=0.5107$ and $n=2700$ e assim $se=0.0096$.
-    3) Deste modo, nÛs encontramos um intervalo de confianÁa de 95%: $\hat{\pi}\pm z_{crit}\times se=(0.4918, 0.5295)$ (como resultado de `prop.test`).
+    2) Novamente, $\hat{p}=0.5107$ and $n=2700$ e assim $ep=0.0096$.
+    3) Deste modo, n√≥s encontramos um intervalo de confian√ßa de 95%: $\hat{p}\pm z_{crit}\times ep=(0.4918, 0.5295)$ (como resultado de `prop.test`).
 
 
 
-## Intervalo de confianÁa para a mÈdia - amostra retirada de uma populaÁ„o com distribuiÁ„o normal
-* Quando È razo·vel supor que a distribuiÁ„o da populaÁ„o È normal, nÛs temos o resultado **exato**
+## Intervalo de confian√ßa para a m√©dia - amostra retirada de uma popula√ß√£o com distribui√ß√£o normal
+* Quando √© razo√°vel supor que a distribui√ß√£o da popula√ß√£o √© normal, n√≥s temos o resultado **exato**
   $$
-  \bar{y}\sim \texttt{N}\bigg(\mu,\frac{\sigma}{\sqrt{n}}\bigg),
+  \bar{y}\sim \texttt{N}\bigg(\mu,\frac{\sigma^{2}}{{n}}\bigg),
   $$
-  i.e.\ $\bar{y}\pm z_{crit}\times \frac{\sigma}{\sqrt{n}}$ n„o È mais apenas um intervalo de confianÁa aproximado (como no caso da proporÁ„o - por que È aproximado neste caso?), mas sim um intervalo de confianÁa exato para a mÈdia populacional, $\mu$.
-* Na pr·tica, porÈm, **nÛs n„o conhecemos ** $\sigma$ e ao invÈs disso, nÛs somos obrigados a utilizar o desvio padr„o da amostra $s$ para encontrar o **erro padr„o estimado** $se=\frac{s}{\sqrt{n}}.$
-* Esta incerteza extra, no entanto, implica que um intervalo de confianÁa exato para a mÈdia populacional $\mu$ n„o pode ser construÌdo usando o escore-$z$.
-* Um intervalo exato ainda pode ser construÌdo usando o chamado **escore-$t$**, que alÈm do nÌvel de confianÁa depende dos **graus de liberdade** (degrees of freedom = df), que neste caso s„o $df = n-1$. Isto È, o intervalo de confianÁa toma agora a forma
+  i.e.\ $\bar{y}\pm z_{crit}\times \frac{\sigma}{\sqrt{n}}$ n√£o √© mais apenas um intervalo de confian√ßa aproximado (como no caso da propor√ß√£o - por que √© aproximado neste caso?), mas sim um intervalo de confian√ßa exato para a m√©dia populacional, $\mu$.
+* Na pr√°tica, por√©m, **n√≥s n√£o conhecemos ** $\sigma$ e ao inv√©s disso, n√≥s somos obrigados a utilizar o desvio padr√£o da amostra $s$ para encontrar o **erro padr√£o estimado** $ep=\frac{s}{\sqrt{n}}.$
+* Esta incerteza extra, no entanto, implica que um intervalo de confian√ßa exato para a m√©dia populacional $\mu$ n√£o pode ser constru√≠do usando o escore-$z$.
+* Um intervalo exato ainda pode ser constru√≠do usando o chamado **escore-$t$**, que al√©m do n√≠vel de confian√ßa depende dos **graus de liberdade** (degrees of freedom = df), que neste caso s√£o $df = n-1$. Isto √©, o intervalo de confian√ßa toma agora a forma
   $$
-  \bar{y}\pm t_{crit}\times se.
+  \bar{y}\pm t_{crit}\times ep.
   $$
-* Nota: … importante aprender as relaÁıes entre as distribuiÁıes normal, t de Student, qui-quadrado e F. Veja mais detalhes em Costa Neto (EstatÌstica) e Casella and Berger (Statistical Inference, traduzido para portuguÍs). Mais detalhes ser„o vistos em sala de aula.
+* Nota: √â importante aprender as rela√ß√µes entre as distribui√ß√µes normal, t de Student, qui-quadrado e F. Veja mais detalhes em Costa Neto (Estat√≠stica) e Casella and Berger (Statistical Inference, traduzido para portugu√™s). Mais detalhes ser√£o vistos em sala de aula.
 
 
-## A distribuiÁ„o $t$ e o escore $t$
- * O c·lculo do escore $t$ È baseado na **distribuiÁ„o $t$**, que È semelhante a distribuiÁ„o normal padr„o $z$:
-    * ela È simÈtrica em torno de zero e È uma funÁ„o em forma de "sino", mas
+## A distribui√ß√£o $t$ e o escore $t$
+ * O c√°lculo do escore $t$ √© baseado na **distribui√ß√£o $t$**, que √© semelhante a distribui√ß√£o normal padr√£o $z$:
+    * ela √© sim√©trica em torno de zero e √© uma fun√ß√£o em forma de "sino", mas
     * como vimos tem caudas mais "pesadas" e portanto
-    * um desvio padr„o maior do que  o desvio padr„o da distribuiÁ„o normal padr„o.
-    * Note que o desvio padr„o da distribuiÁ„o $t$ decaÌ em funÁ„o de seus  **graus de liberdade** (que denotamos por $df$).
-    * e quando $df$ cresce a distribuiÁ„o $t$ se aproxima da distribuiÁ„o normal padr„o.
+    * um desvio padr√£o maior do que  o desvio padr√£o da distribui√ß√£o normal padr√£o.
+    * Note que o desvio padr√£o da distribui√ß√£o $t$ deca√≠ em fun√ß√£o de seus  **graus de liberdade** (que denotamos por $df$).
+    * e quando $df$ cresce a distribui√ß√£o $t$ se aproxima da distribui√ß√£o normal padr√£o.
 
-A express„o da funÁ„o densidade n„o ser· indicada aqui (pode ser encontrada nos livros sugeridos ou no google). Ao invÈs disso, a distribuÁ„o $t$ È representada abaixo para $df =1,2,10$ e $\infty$.
+A express√£o da fun√ß√£o densidade n√£o ser√° indicada aqui (pode ser encontrada nos livros sugeridos ou no google). Ao inv√©s disso, a distribu√ß√£o $t$ √© representada abaixo para $df =1,2,10$ e $\infty$.
 
 ```{r echo=FALSE, fig.keep="last", fig.width=12}
 cols <- c("black", "gray40", "gray60", "gray80")
@@ -190,64 +195,141 @@ plotDist("t", df = 1, add = TRUE, col = cols[4], lwd = 3)
 
 ----
 
-### C·lculo do escore $t$ no **R**
+### C√°lculo do escore $t$ no **R**
 
 ```{r}
 qdist("t", p = 1 - 0.025, df = 4)
 ```
-* Um escore $t$ È o quantil (i.e. o valor no eixo x) para o qual temos uma dada probabilidade na **cauda direita**.
-* Para obter, por exemplo, um escore $t$ correspondente a uma probabilidade na cauda direita de 2.5 % nÛs temos que procurar o quantil 97.5 % usando `qdist` with `p = 1 - 0.025`, pois `qdist` olha a ·rea para o **lado esquerdo**.
-* Os graus de liberdade s„o determinados pelo tamanho da amostra. No exemplo anterior usamos df = 4 para ilustraÁ„o.
-* Como um escore $t$ para uma probabilidade na cauda direita de 2.5 % È 2.776 e a distribuiÁ„o $t$ È simÈtrica em torno do 0, nÛs temos que uma observaÁ„o tem probabilidade de 1 - 2 $\cdot$ 0.025 = 95 % de estar entre -2.776 and 2.776 para uma distribuiÁ„o $t$ com 4 graus de liberdade.
+* Um escore $t$ √© o quantil (i.e. o valor no eixo x) para o qual temos uma dada probabilidade na **cauda direita**.
+* Para obter, por exemplo, um escore $t$ correspondente a uma probabilidade na cauda direita de 2.5 % n√≥s temos que procurar o quantil 97.5 % usando `qdist` with `p = 1 - 0.025`, pois `qdist` olha a √°rea para o **lado esquerdo**.
+* Os graus de liberdade s√£o determinados pelo tamanho da amostra. No exemplo anterior usamos df = 4 para ilustra√ß√£o.
+* Como um escore $t$ para uma probabilidade na cauda direita de 2.5 % √© 2.776 e a distribui√ß√£o $t$ √© sim√©trica em torno do 0, n√≥s temos que uma observa√ß√£o tem probabilidade de 1 - 2 $\cdot$ 0.025 = 95 % de estar entre -2.776 and 2.776 para uma distribui√ß√£o $t$ com 4 graus de liberdade.
 
 
-## Exemplo: Intervalo de ConfianÁa para a mÈdia
-* Em estatÌstica I usamos o conjunto de dados de `Ericksen`. Queremos agora construir um intervalo de confianÁa de $95\%$ para a mÈdia da populaÁ„o mean $\mu$ da vari·vel `crime`.
+## Exemplo: Intervalo de Confian√ßa para a m√©dia
+* Em estat√≠stica I usamos o conjunto de dados de `Ericksen`. Queremos agora construir um intervalo de confian√ßa de $95\%$ para a m√©dia da popula√ß√£o mean $\mu$ da vari√°vel `crime`.
 ```{r}
 Ericksen <- read.delim("C:/Users/fsabino/Desktop/Codes/papers/Introductory_Stat_I/notebook/datasets_Ericksen.txt")
 stats <- favstats( ~ crime, data = Ericksen)
 stats
 qdist("t", 1 - 0.025, df = 66 - 1, plot = FALSE)
 ```
-* i.e., nÛs temos
+* i.e., n√≥s temos
     * $\bar{y} = `r round(stats$mean, 3)`$
     * $s = `r round(stats$sd, 3)`$
     * $n = `r stats$n`$
     * $df = n-1 = `r stats$n-1`$
     * $t_{crit} = `r round(qt( 1 - 0.025, df = 66 - 1), 3)`$.
-* O intervalo de confianÁa È $\bar{y}\pm t_{crit}\frac{s}{\sqrt{n}} =
-        (`r round( confint( t.test( ~ crime, data = Ericksen))$lower, 3)` ,
-        `r round( confint( t.test( ~ crime, data = Ericksen))$upper, 3)`)$
-* Todos estes c·lculos podem ser feitos automaticamente no **R**:
+* O intervalo de confian√ßa √© $\bar{y}\pm t_{crit}\frac{s}{\sqrt{n}} =
+        (`r round( confint( t.test( ~ crime, data = Ericksen))$lower, 2)` ,
+        `r round( confint( t.test( ~ crime, data = Ericksen))$upper, 2)`)$
+* Todos estes c√°lculos podem ser feitos automaticamente no **R**:
 ```{r}
 t.test( ~ crime, data = Ericksen, conf.level = 0.95)
 ```
 
 
-## Exemplo: Fazendo v·rios intervalos de confianÁa no **R**
+## Exemplo: Fazendo v√°rios intervalos de confian√ßa no **R**
 
-* Vamos olhar o conjunto de dados `chickwts` que j· vem integrado no **R**.
-* `?chickwts` produz uma p·gina com a seguinte informaÁ„o
+* Vamos olhar o conjunto de dados `chickwts` que j√° vem integrado no **R**.
+* `?chickwts` produz uma p√°gina com a seguinte informa√ß√£o
 
-  > Um experimento foi conduzido para medir e comparar a efic·cia de v·rios suplementos alimentares sobre a taxa de crescimento de galinhas
-  > Os filhotes recÈm-nascidos foram alocados aleatoriamente em seis grupos, e cada grupo recebeu um suplemento alimeantar diferente. Seus pesos em gramas apÛs seis semanas s„o dados juntamente com os tipos de alimentaÁ„o.
+  > Um experimento foi conduzido para medir e comparar a efic√°cia de v√°rios suplementos alimentares sobre a taxa de crescimento de galinhas
+  > Os filhotes rec√©m-nascidos foram alocados aleatoriamente em seis grupos, e cada grupo recebeu um suplemento alimeantar diferente. Seus pesos em gramas ap√≥s seis semanas s√£o dados juntamente com os tipos de alimenta√ß√£o.
 
-* `chickwts` È um data frame com 71 observaÁıes e 2 vari·veis:
-    * `weight`:\ È uma vari·vel numÈrica que representa o peso do filhote.
-    * `feed`:\ um fator (vari·vel qualitativa/categÛrica) que representa o tipo de alimentaÁ„o.
-* Calcule um intervalo de confianÁa para o peso mÈdio de cada alimentaÁ„o separadamente;
-o intervalo de confianÁa È de inferior(`lower`) para superior (`upper`) dado por mÈdia $\pm$ escore t * erro padr„o (`mean`$\pm$`tscore * se`):
+* `chickwts` √© um data frame com 71 observa√ß√µes e 2 vari√°veis:
+    * `weight`:\ √© uma vari√°vel num√©rica que representa o peso do filhote.
+    * `feed`:\ um fator (vari√°vel qualitativa/categ√≥rica) que representa o tipo de alimenta√ß√£o.
+* Calcule um intervalo de confian√ßa para o peso m√©dio de cada alimenta√ß√£o separadamente;
+o intervalo de confian√ßa √© de inferior(`lower`) para superior (`upper`) dado por m√©dia $\pm$ escore t * erro padr√£o (`mean`$\pm$`tscore * ep`):
 ```{r}
 cwei <- favstats( weight ~ feed, data = chickwts)
-se <- cwei$sd / sqrt(cwei$n) # Erros padr„o
-tscore <- qdist("t", p = .975, df = cwei$n - 1, plot = FALSE) # Escores t para uma probabilidade de cada ‡ direita de 2.5%
-cwei$lower <- cwei$mean - tscore * se
-cwei$upper <- cwei$mean + tscore * se
+ep <- cwei$sd / sqrt(cwei$n) # Erros padr√£o
+tscore <- qdist("t", p = .975, df = cwei$n - 1, plot = FALSE) # Escores t para uma probabilidade de cada √† direita de 2.5%
+cwei$lower <- cwei$mean - tscore * ep
+cwei$upper <- cwei$mean + tscore * ep
 cwei[, c("feed", "mean", "lower", "upper")]
 ```
-* NÛs podemos traÁar os intervalos de confinaÁa como segmentos de linhas horizontais usando a funÁ„o  `gf_errorbarh`:
+* N√≥s podemos tra√ßar os intervalos de confina√ßa como segmentos de linhas horizontais usando a fun√ß√£o  `gf_errorbarh`:
 ```{r message=FALSE}
 gf_errorbarh(feed ~ mean + lower + upper, data = cwei) %>% 
   gf_point(feed ~ mean)
 ```
 
+# Determinando o tamanho da amostra
+
+## Tamanho da amostra para a propor√ß√£o
+
+* O intervalo de confian√ßa √© da forma estimativa por ponto $\pm$ margem de erro estimada.
+* Quando n√≥s estimamos uma propor√ß√£o, a margem de erro √©
+    $$
+    e=z_{crit}\sqrt{\frac{p(1-p)}{n}},
+    $$
+   onde o escore $z$ cr√≠tico, $z_{crit}$, √© determinado pelo n√≠vel de confian√ßa especificado.
+* Imagine que n√≥s queremos planejar um experimento, onde **desejamos obter uma certa margem de erro $e$** (e portanto uma largura espec√≠fica do intervalo de confian√ßa associado).
+* Se n√≥s resolvermos a equa√ß√£o acima, √© poss√≠vel notar:
+    * Se $n=p(1-p)(\frac{z_{crit}}{e})^2$, n√≥s obtemos uma estimativa de $p$ com margem de erro $e$.
+* Se n√£o tivermos um bom palpite para o valor de $p$, n√≥s podemos usar o valor do "pior" caso, isto √©, $p=50\%$ ($1/4$ √© o maior valor poss√≠vel que pode assumir a fun√ß√£o $p(1-p)$). O tamanho amostral correspondente $n=(\frac{z_{crit}}{2e})^2$ garante que n√≥s iremos obter uma estimativa com uma margem de erro que √© no *m√°ximo* $e$.
+
+----
+
+### Exemplo
+* Vamos escolher $z_{crit}=1.96$, i.e\ o n√≠vel de confian√ßa √© de 95\%.
+* Qual o n√∫mero de eleitores que devemos entrevistar para obter uma margem de erro igual a $1\%$?
+* O pior caso √© $p=0.5$, o que nos leva a:
+  $$
+  n=p(1-p)\left(\frac{z_{crit}}{e}\right)^2=\frac{1}{4}\left(\frac{1.96}{0.01}\right)^2 = 9604.
+  $$
+* Se n√≥s estivermos interessados na propor√ß√£o de votos para o candidato de um partido cujo um bom palpite √© de no m√°ximo $p=0.23$, ter√≠amos
+  $$
+  n=p(1-p)\left(\frac{z_{crit}}{e}\right)^2=0.23(1-0.23)\left(\frac{1.96}{0.01}\right)^2 = 6804.
+  $$
+* Se n√≥s estivermos interessados na propor√ß√£o de votos para o candidato de um partido cujo um bom palpite √© de no m√°ximo $p=0.05$, 
+  ter√≠amos
+  $$ 
+  n=p(1-p)\left(\frac{z_{crit}}{e}\right)^2 = 0.05(1-0.05)\left(\frac{1.96}{0.01}\right)^2 = 1825.
+  $$
+
+
+
+## Tamanho da amostra para a m√©dia
+* O intervalo de confian√ßa √© da forma estimativa por ponto $\pm$ margem de erro estimada.
+* Quando estimamos uma m√©dia com desvio-padr√£o conhecido a margem de erro √©
+  $$
+  e=z_{crit}\frac{\sigma}{\sqrt{n}},
+  $$
+  onde um escore $z$ cr√≠tico, $z_{crit}$, √© determinado pelo n√≠vel especificado de confian√ßa.
+  * Imagine que n√≥s queremos planejar um experimento, onde **desejamos obter uma certa margem de erro $e$**.
+* Se n√≥s resolvermos a equa√ß√£o acima, √© poss√≠vel notar:
+    * Se $n=(\frac{z_{crit}\sigma}{e})^2$, n√≥s obtemos uma estimativa com margem de erro $e$.
+* Problema: N√≥s usualmente n√£o sabemos $\sigma$. Poss√≠veis solu√ß√µes:
+    * Com base em estudos similares realizados anteriormente, n√≥s fazemos um palpite "educado" sobre o valor de $\sigma$.
+    * Baseado em um estudo piloto estimamos o valor de $\sigma$.
+    
+# Exerc√≠cios e Leituras Recomendadadas
+
+$1$. Qual deve ser o valor do desvio padr√£o para que uma distribui√ß√£o normal com m√©dia 9 cubra o intervalo 0-18 com probabilidade de 99.73%? Experimente com diferentes valores de $n$.
+
+$2$. Leia a se√ß√£o 3.4 de Costa Neto (doravante CN) e verifique o que foi dado em aula sobre o assunto.
+
+$3$. Leia as se√ß√µes 4.4 e 4.5 de CN e refa√ßa os exemplos (tem solu√ß√£o).
+
+$4$. Fa√ßa os exerc√≠cios 1, 3, 5, 7, 14, 16, 17, 18 e 21 da se√ß√£o 4.6 (Exerc√≠cios propostos) de CN.
+
+
+# Ap√™ndice
+
+* Instale o pacote TeachingDemos: install.packages("TeachingDemos"). Ap√≥s a instala√ß√£o carregue o pacote para poder us√°-lo: library(TeachingDemos).
+* Use a fun√ß√£o ci.examp() para visualizar 50 intervalos de confian√ßa. Voc√™ pode visualizar os argumentos usados (by default) na fun√ß√£o pedindo ajuda: ?ci.examp
+* Tente alterar alguns dos argumentos da fun√ß√£o e utilize method = "t". Experimente, por exemplo, gerar 40 amostras aleat√≥rias (reps = 40) e "depois pe√ßa os gr√°ficos correspondentes com "plote" os correspondentes 40 intervalos de confian√ßa usando um n√≠vel de confian√ßa de 90% (conf.level = 0.90).
+* Conven√ßa-se de que esperamos que 4 destes intervalos de confian√ßa n√£o contenham a verdadeira m√©dia populacional. Como isso se encaixa com o que voc√™ est√° vendo?
+
+* Visualize melhor usando o seguinte aplicativo: http://shiny.calvin.edu/rpruim/CIs/
+
+* Experimente tamb√©m a fun√ß√£o clt.examp(). Visualize os argumentos pedindo ajuda: ?clt.examp
+
+* Use a fun√ß√£o windows() para abrir um dispositivo gr√°fico.
+      + clt.examp()
+      + clt.examp(5)
+      + clt.examp(30)
+      + clt.examp(50)

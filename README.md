@@ -9,7 +9,7 @@ Further studies should pursue applications to asset allocation under conditions 
 
 Software: R, Matlab.
 
-Keywords: Asset Allocation; Convex Programming; Copula; Portfolio Selection; Risk Management; S&P 500; WCCVaR. 
+Keywords: Asset Allocation; Finance; Gaussian Copula; Linear Programming; Mixed Copula; Risk Management; S&P 500; Scenarios; WCCVaR. 
 
 JEL Codes: G11; G12; G17.
 

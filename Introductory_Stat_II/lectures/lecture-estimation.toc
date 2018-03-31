@@ -1,0 +1,22 @@
+\contentsline {section}{\numberline {1}Estima\IeC {\c c}\IeC {\~a}o por ponto e por intervalo}{1}{section.1}
+\contentsline {subsection}{\numberline {1.1}Estima\IeC {\c c}\IeC {\~a}o por ponto e por intervalo}{1}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Estimadores por ponto: Vi\IeC {\'e}s}{1}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Estimadores por ponto: Efici\IeC {\^e}ncia}{2}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}Nota\IeC {\c c}\IeC {\~a}o}{2}{subsection.1.4}
+\contentsline {subsection}{\numberline {1.5}Intervalo de Confian\IeC {\c c}a}{2}{subsection.1.5}
+\contentsline {subsection}{\numberline {1.6}Intervalo de Confian\IeC {\c c}a para a Propor\IeC {\c c}\IeC {\~a}o}{3}{subsection.1.6}
+\contentsline {subsubsection}{\numberline {1.6.1}Exemplo: Estimativa por ponto e por intervalo para a propor\IeC {\c c}\IeC {\~a}o}{3}{subsubsection.1.6.1}
+\contentsline {subsubsection}{\numberline {1.6.2}Exemple: Intervalos de confian\IeC {\c c}a para a propor\IeC {\c c}\IeC {\~a}o no \textbf {R}}{4}{subsubsection.1.6.2}
+\contentsline {subsection}{\numberline {1.7}Intervalos de confian\IeC {\c c}a aproximados para a propor\IeC {\c c}\IeC {\~a}o}{4}{subsection.1.7}
+\contentsline {subsubsection}{\numberline {1.7.1}Exemplo: Dados do Chile}{5}{subsubsection.1.7.1}
+\contentsline {subsection}{\numberline {1.8}Intervalo de confian\IeC {\c c}a para a m\IeC {\'e}dia - amostra retirada de uma popula\IeC {\c c}\IeC {\~a}o com distribui\IeC {\c c}\IeC {\~a}o normal}{5}{subsection.1.8}
+\contentsline {subsection}{\numberline {1.9}A distribui\IeC {\c c}\IeC {\~a}o \(t\) e o escore \(t\)}{5}{subsection.1.9}
+\contentsline {subsubsection}{\numberline {1.9.1}C\IeC {\'a}lculo do escore \(t\) no \textbf {R}}{6}{subsubsection.1.9.1}
+\contentsline {subsection}{\numberline {1.10}Exemplo: Intervalo de Confian\IeC {\c c}a para a m\IeC {\'e}dia}{7}{subsection.1.10}
+\contentsline {subsection}{\numberline {1.11}Exemplo: Fazendo v\IeC {\'a}rios intervalos de confian\IeC {\c c}a no \textbf {R}}{7}{subsection.1.11}
+\contentsline {section}{\numberline {2}Determinando o tamanho da amostra}{9}{section.2}
+\contentsline {subsection}{\numberline {2.1}Tamanho da amostra para a propor\IeC {\c c}\IeC {\~a}o}{9}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Exemplo}{9}{subsubsection.2.1.1}
+\contentsline {subsection}{\numberline {2.2}Tamanho da amostra para a m\IeC {\'e}dia}{10}{subsection.2.2}
+\contentsline {section}{\numberline {3}Exerc\IeC {\'\i }cios e Leituras Recomendadadas}{10}{section.3}
+\contentsline {section}{\numberline {4}Ap\IeC {\^e}ndice}{10}{section.4}

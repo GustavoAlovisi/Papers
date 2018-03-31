@@ -22,46 +22,42 @@ if(length(missing_pkgs)>0) install.packages(missing_pkgs)
 library(VennDiagram)
 ```
 
-# Probability of events
+# Probabilidade de eventos
 
-## The concept of probability
+## O conceito de probabilidade
 
-* Experiment: Measure the waiting times in a queue where we note 1, if it
-    exceeds 2 minutes and 0 otherwise.
-* The experiment is carried out $n$ times with results
-    $y_1,y_2,\ldots,y_n$. There is **random variation** in the outcome, 
-    i.e. sometimes we get a 1 other times a 0.
-* **Empirical probability** of exceeding 2 minutes:\
+* Experimento: Medir o tempo de espera em uma fila. Se o tempo exceder 2 minutos marque $1$ e 0, caso contrário.
+* O experimento é realizado $n$ vezes com resultados $y_1,y_2,\ldots,y_n$. Há uma **variação aleatória** no resultado, i.e. às vezes ocorre $1$ e em outras vezes ocorre 0.
+* **Probabilidade empírica** de exceder 2 minutos:\
     $$ 
     p_n = \frac{\sum_{i=1}^n y_i}{n}.
     $$
-* **Theoretical probability** of exceeding 2 minutes:\ 
+* **Probabilidade teórica** de exceder 2 minutos:\ 
     $$
     \pi = \lim_{n\rightarrow\infty} p_n.
     $$.
-* We try to make inference about $\pi$ based on a sample, 
-  e.g. "Is $\pi > 0.1$?" 
-  ("do more than 10\% of the customers experience a waiting time in excess of 2 minutes?").
-* Statistical inference is concerned with such questions when we only have a
-    finite sample.
+* Tentamos inferir o verdadeiro valor de $\pi$ com base em uma amostra.
+  Por exemplo, "$\pi > 0.1$?" 
+  ("mais de 10\% dos clientes experimentaram um tempo de espera superior a 2 minutos?").
+* A (inferência) estatística está preocupada com tais questões que são úteis para a tomada de decisões. Em geral, só temos acesso a uma amostra finita.
 
 
 
-## Actual experiment
+## Experimento real
 
-* On February 23,\ 2017,\ a group of students were asked how long time (in minutes) they waited in line last time they went to the canteen at AAU's Copenhagen campus:
+* Em um determinado mês de 2017,\ um grupo de estudantes respondeu a pergunta de quanto tempo eles precisaram esperar na fila em uma determinada cantina (em minutos):
 ```{r}
-y_canteen <- c(2, 5, 1, 6, 1, 1, 1, 1, 3, 4, 1, 2, 1, 2, 2, 2, 4, 2, 2, 5, 20, 2, 1, 1, 1, 1)
-x_canteen <- ifelse(y_canteen > 2, 1, 0)
-x_canteen
+y_cantina <- c(2, 5, 1, 6, 1, 1, 1, 1, 3, 4, 1, 2, 1, 2, 2, 2, 4, 2, 2, 5, 20, 2, 1, 1, 1, 1)
+x_cantina <- ifelse(y_cantina > 2, 1, 0)
+x_cantina
 ```
-* Empirical probability of waiting more than 2 minutes:
+* Probabilidade empírica de esperar mais de 2 minutos:
 ```{r}
-p_canteen <- sum(x_canteen) / length(x_canteen)
-p_canteen
+p_cantina <- sum(x_cantina) / length(x_cantina)
+p_cantina
 ```
-* Question: Is the population probability $\pi > 1/3$?
-* Notice: One student said he had waited for 20 minutes (we doubt that; he was trying to make himself interesting. Could consider ignoring that observation).
+* Questão: A probabilidade na população é  $\pi > 1/3$?
+* Nota: Um estudante disse que esperou por 20 minutos. Dado os outros resultados, podemos duvidar da veracidade e ignorar essa observação).
 
 ```{r, include = FALSE}
 # set.seed(1)
@@ -77,18 +73,11 @@ p_canteen
 
 
 
-## Another experiment
+## Outro experimento
 
-* John Kerrich, a South African mathematician, was visiting Copenhagen
-  when World War II broke out.  Two days before he was scheduled to
-  fly to England, the Germans invaded Denmark. Kerrich spent the rest
-  of the war interned at a camp in Hald Ege near Viborg, Jutland, 
-  and to pass the time he
-  carried out a series of experiments in probability theory. In one,
-  he tossed a coin 10,000 times. His results are shown in the
-  following graph.
-* Below, `x` is a vector with the first 2,000 outcomes of John Kerrich's experiment
-(0 = tail,\ 1 = head):
+* John Kerrich, um matemático sul-africano, estava visitando Copenhague quando a segunda Guerra Mundial eclodiu. Dois dias antes ele estava programado para viajar para a Inglaterra quando os alemães invadiram a Dinamarca. Kerrich passou o resto da guerra em um acampamento e para passar o tempo realizou uma série de experimentos. Em um destes, ele jogou uma moeda 10,000 vezes. Os resultados são mostrados a seguir.
+* Abaixo, `x` é um vetor com os primeiros 2000 resultados do experimento de John Kerrich.
+(0 = coroa,\ $1$ = cara):
 ```{r, include = FALSE}
 x <- c(0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 
 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 
@@ -220,42 +209,41 @@ x <- c(0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1,
 ```{r}
 head(x, 10)
 ```
-* Plot of the empirical probability $p_n$ of getting a head against the number of tosses $n$:
+* Gráfico da probabilidade empírica $p_n$ de sair cara contra o número de lançamentos $n$:
 
 ```{r, echo=FALSE, fig.height = 5, fig.width = 6, fig.align = "center"}
 plot(cumsum(x)/seq_along(x), type = "l", log = "x", xlab = "n", ylab = expression(p[n]))
 abline(h = 0.5, lty = 2)
 ```
 
-(The horizontal axis is on a log scale).
+(O eixo horizontal está na escala log).
 
 
 
-## Definitions
+## Definições
 
-* **Sample space**:\ All possible outcomes of the experiment.
-* **Event**:\ A subset of the sample space.
+* **Espaço Amostral**:\ Todos os possíveis resultados de um experimento.
+* **Evento**:\ Qualquer subconjunto do espaço amostral.
 
-We conduct the experiment $n$ times. Let $\#(A)$ denote how many
-times we observe the event $A$.
+Nós conduzimos o experimento $n$ vezes. Seja $\#(A)$ o numero de vezes que observamos o evento $A$.
 
-* **Empirical probability** of the event $A$:
+* **Probabilidade empírica** do evento $A$:
   $$
   p_n(A)=\frac{\#(A)}{n}.
   $$
-* **Theoretical probability** of the event $A$:
+* **Probabilidade teórica** do evento $A$:
   $$
   P(A)=\lim_{n\to\infty}p_n(A)
   $$
-* We always have $0\leq P(A)\leq 1$.
+* Nota: $0\leq P(A)\leq 1$.
 
 
 
-## Theoretical probabilites of two events
+## Probabilidades teóricas de dois eventos
 
-* If the two events $A$ and $B$ are **disjoint** (non-overlapping) then  
-    + $\#(A \text{ and } B) = 0$ implying that $P(A \text{ and } B)=0.$
-    + $\#(A \text{ or } B)=\#(A)+\#(B)$ implying that $P(A \text{ or } B)=P(A)+P(B).$
+* Se dois eventos $A$ e $B$ são **disjuntos** (sem intersecção) então  
+    + $\#(A \text{e} B) = 0$ implica que $P(A \cap B)=0.$
+    + $\#(A \text{ou} B)=\#(A)+\#(B)$ implica que $P(A \cup B)=P(A)+P(B).$
   
 ```{r, echo = FALSE, fig.height = 3.5, fig.width = 4.5}
 venn.plot <- draw.pairwise.venn(area1 = 70, area2 = 70, cross.area = 0, 
@@ -264,9 +252,9 @@ grid.draw(venn.plot)
 grid.newpage()
 ```
 
-* If the two events $A$ and $B$ **are not disjoint** then the more general formula is 
+* Se dois eventos $A$ e $B$ **não são disjuntos** então a fórmula mais geral é
   $$
-  P(A \text{ or } B) = P(A) + P(B) - P(A \text{ and } B).
+  P(A \cup B) = P(A) + P(B) - P(A \cap B).
   $$
 
 ```{r, echo = FALSE, fig.height = 3.5, fig.width = 4.5}
@@ -278,20 +266,20 @@ grid.newpage()
 
 
 
-## Conditional probability 
+## Probabilidade Condicional
 
-* Say we consider two events $A$ and $B$.\ Then the **conditional probability** of $A$ given 
-(or conditional on) the event $B$ is written $P(A \mid B)$ and is defined by
-$$P(A \mid B)=\frac{P(A \text{ and } B)}{P(B)}.$$
-* The above probability can be understood as: "how probable $A$ is if we know that $B$ has happened". 
+* Digamos que consideramos dois eventos $A$ e $B$.\ Então a **probabilidade condicional** de $A$ dado 
+(ou condicional ao) o evento $B$ é escrito $P(A \mid B)$ e é definido por
+$$P(A \mid B)=\frac{P(A \cap B)}{P(B)}.$$
+* A probabilidade acima pode ser entendida do seguinte modo: "quão provável é o evento $A$ se nós sabemos que $B$ ocorreu". 
 
 ---- 
 
-### Example with magazine data:
+### Exemplo com os dados das revistas:
 ```{r message=FALSE}
-magAds <- read.delim("https://asta.math.aau.dk/datasets?file=magazineAds.txt")
+magAds <- read.delim("C:/Users/fsabino/Desktop/Codes/papers/Introductory_Stat_I/notebook/datasets_ads.txt")
 
-# Create two new factors 'words' and 'education':
+# Criando dois novos fatores: 'words' e 'education':
 magAds$words <- cut(magAds$WDS, breaks = c(31, 72, 146, 230), include.lowest = TRUE)
 magAds$education <- factor(magAds$GROUP, levels = c(1, 2, 3), labels = c("high", "medium", "low"))
 
@@ -300,15 +288,15 @@ tab <- tally( ~ words + education, data = magAds)
 tab
 ```
 
-* The event $A$=$\{$words=`r levels(magAds$words)[3]`$\}$ (the ad is a "difficult" text) has empirical probability
+* O evento $A$=$\{$words=`r levels(magAds$words)[3]`$\}$ (o anúncio é um texto "difícil") tem probabilidade empírica
 $$ p_n(A) = \frac{9 + 6 + 5}{54} = \frac{20}{54} \approx 37 \%.$$
-* Say we only are interested in the probability of a "difficult" text (event $A$) for high education magazines, i.e. conditioning on the event          $B=\{$education=high$\}$. Then the empirical conditional probability can be calculated from the table:
+* Digamos que só estamos interessados na probabilidade de um texto "difícil" (evento $A$) para revistas de educação superior (high education), i.e. condicionando no evento         $B=\{$education=high$\}$. Então a probabilidade condicional empírica pode ser calculada a partir da tabela acima:
   
   $$
   p_n(A \mid B) = \frac{9}{4+5+9} = \frac{9}{18} = 0.5 = 50\%.
   $$
   
-* The conditional probability of $A$ given $B$ may theoretically be expressed as
+* A probabilidade condicional de $A$ dado $B$ pode ser (teoricamente) expressada por
 
   $$
   \begin{aligned}
@@ -317,7 +305,7 @@ $$ p_n(A) = \frac{9 + 6 + 5}{54} = \frac{20}{54} \approx 37 \%.$$
   &= \frac{P(\text{words} =`r levels(magAds$words)[3]` \text{ and } \text{education = high})}{P(\text{education = high})},  \\
   \end{aligned}
   $$
-  which translated to empirical probabilities (substituting $P$ with $p_n$) will give
+  que traduzindo para probabilidade empíricas (substituindo $P$ por $p_n$) dará
 
   $$
   \begin{aligned}
@@ -328,22 +316,22 @@ $$ p_n(A) = \frac{9 + 6 + 5}{54} = \frac{20}{54} \approx 37 \%.$$
   &= 50\%
   \end{aligned}
   $$
-  as calculated above.
+  como calculado acima.
 
 
 
-## Conditional probability and independence
-* If information about $B$ does not change the probability of $A$ we talk
-  about independence, i.e. $A$ is **independent** of $B$ if
+## Probabilidade condicional e independência
+* Se a informação sobre $B$ não muda a probabilidade de $A$ nós dizemos que $A$ é **independente** de $B$ e escrevemos
   $$
-  P(A \mid B) = P(A) \quad \Leftrightarrow  \quad P(A \text{ and } B) = P(A)P(B)
+  P(A \mid B) = P(A) \quad \Leftrightarrow  \quad P(A \cap B) = P(A)P(B)
   $$
-  The last relation is symmetric in $A$ and $B$, and we simply say that
-  $A$ and $B$ are **independent events**.
-* In general the events $A_1, A_2, ..., A_k$ are independent if
+  Quando isto acontecer nós dizemos que
+  $A$ e $B$ são **eventos independentes**.
+* Em geral, os eventos $A_1, A_2, ..., A_k$ são independentes se
   $$
-  P(A_1 \text{ and } A_2 \text{ and } ... \text{ and } A_k) = P(A_1) P(A_2) \cdots P(A_k).
+  P(A_1 \cap A_2 \cap ... \cap A_k) = P(A_1) P(A_2) \cdots P(A_k)
   $$
+  e se o produto de todas as combinações de ordem 2 a k-1 também são válidas, i.e., k eventos são ditos independentes se são **independentes k a k, (k-1) a (k-1),..., dois a dois**.
 
 ### Magazine data revisited
 * Recall the empirical probabilities calculated above:
