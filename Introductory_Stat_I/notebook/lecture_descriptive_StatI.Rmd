@@ -2,13 +2,6 @@
 title: "Introdução e Estatística Descritiva"
 author: "Fernando B. Sabino da Silva"
 output:
-  slidy_presentation:
-    css: https://asta.math.aau.dk/course/asta/2018-1/?file=lecture_style.css
-    fig_caption: no
-    highlight: tango
-    theme: cerulean
-  beamer_presentation:
-    highlight: tango
   pdf_document:
     fig_caption: no
     highlight: tango
@@ -16,6 +9,13 @@ output:
     toc: yes
   ioslides_presentation:
     highlight: tango
+  beamer_presentation:
+    highlight: tango
+  slidy_presentation:
+    css: https://asta.math.aau.dk/course/asta/2018-1/?file=lecture_style.css
+    fig_caption: no
+    highlight: tango
+    theme: cerulean
 ---
 
 ```{r, include = FALSE}
@@ -498,9 +498,9 @@ Como desenhar um box plot:
         * U = quartil superior + 1.5*IQR
     * Desenhe uma linha ligando o quartil inferior até a menor medida que seja maior do que *L*.
     * Similarmente, desenhe uma linha ligando o quartil superior até a maior medida que seja inferior a *U*.
-    <!-- * Regras de decisão -->
-    <!--   + Max($X_[1]$, L) -->
-    <!--   + Min($X_[n]$, U) -->
+    * Regras de decisão
+      + Max($X_\left[1 \right]$, L)
+      + Min($X_\left[n \right]$, U)
 
 * Outliers: Observações com valor menor do que *L* ou maior do que *U* são desenhadas como círculos.
 

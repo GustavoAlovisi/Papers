@@ -1,0 +1,1485 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Introdução e Estatística Descritiva},
+            pdfauthor={Fernando B. Sabino da Silva},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+  \title{Introdução e Estatística Descritiva}
+  \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+  \author{Fernando B. Sabino da Silva}
+  \preauthor{\centering\large\emph}
+  \postauthor{\par}
+  \date{}
+  \predate{}\postdate{}
+
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\subsection{\texorpdfstring{\textbf{Rstudio}}{Rstudio}}\label{rstudio}
+
+\begin{itemize}
+\tightlist
+\item
+  Faça uma pasta no seu computador onde você deseja manter os arquivos
+  para usar no \textbf{Rstudio}.
+\item
+  Defina o diretório de trabalho nesta pasta:
+  \texttt{Session\ -\textgreater{}\ Set\ Working\ Directory\ -\textgreater{}\ Choose\ Directory}
+  (atalho: Ctrl+Shift+H).
+\item
+  Torne a alteração permanente definindo o diretório padrão em:
+  \texttt{Tools\ -\textgreater{}\ Global\ Options\ -\textgreater{}\ Choose\ Directory}.
+\end{itemize}
+
+\subsection{\texorpdfstring{\textbf{R}
+básico}{R básico}}\label{r-basico}
+
+\begin{itemize}
+\tightlist
+\item
+  Cálculos simples:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FloatTok{4.6} \OperatorTok{*}\StringTok{ }\NormalTok{(}\DecValTok{2} \OperatorTok{+}\StringTok{ }\DecValTok{3}\NormalTok{)}\OperatorTok{^}\DecValTok{4} 
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2875
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  Defina um objeto (escalar) e o imprima:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a <-}\StringTok{ }\DecValTok{4} 
+\NormalTok{a}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 4
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  Defina um objeto (vetor) e o imprima:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{b <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{7}\NormalTok{)}
+\NormalTok{b}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2 5 7
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  Defina uma sequência de números e a imprima:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{s <-}\StringTok{ }\DecValTok{1}\OperatorTok{:}\DecValTok{4}
+\NormalTok{s}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1 2 3 4
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  Nota: Um comando mais flexível para sequências:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{s <-}\StringTok{ }\KeywordTok{seq}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DataTypeTok{by =} \DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{R} faz cálculos elemento a elemento:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a }\OperatorTok{*}\StringTok{ }\NormalTok{b}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  8 20 28
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a }\OperatorTok{+}\StringTok{ }\NormalTok{b}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  6  9 11
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{b }\OperatorTok{^}\StringTok{ }\DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  4 25 49
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  Soma e produto de elementos:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{sum}\NormalTok{(b)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 14
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{prod}\NormalTok{(b)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 70
+\end{verbatim}
+
+\subsection{\texorpdfstring{Extensões do
+\textbf{R}}{Extensões do R}}\label{extensoes-do-r}
+
+\begin{itemize}
+\tightlist
+\item
+  O \textbf{R} não precisa ser usado apenas como calculadora ou para
+  atribuição de objetos simples. A sua funcionalidade pode ser estendida
+  atráves de bibliotecas ou pacotes (muito similar a utilização de
+  Plug-ins nos navegadores ou baixar aplicativos no google play). Alguns
+  já vem instalados (automaticamente, by default) no \textbf{R} e você
+  precisa apenas carregá-los (como fazemos depois que baixamos um
+  aplicativo no celular e queremos usá-lo, por exemplo).
+\item
+  Para instalar um novo pacote no \textbf{Rstudio} você pode usar o
+  menu: \texttt{Tools\ -\textgreater{}\ Install\ Packages}
+\item
+  Você precisa saber o nome do pacote que deseja instalar. Você também
+  pode fazê-lo através do comando install.packages como abaixo:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"mosaic"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  Uma vez que o pacote esteja instalado, você pode carregá-lo através do
+  comando \texttt{library} (ou \texttt{require}):
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(mosaic)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'mosaic' was built under R version 3.4.3
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'dplyr' was built under R version 3.4.3
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'ggformula' was built under R version 3.4.3
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'ggplot2' was built under R version 3.4.3
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'mosaicData' was built under R version 3.4.3
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  Isto carrega o pacote \texttt{mosaic} que possuí muitas funções
+  convenientes para este curso (voltaremos a isso mais tarde). Ele
+  também imprime muitas informações sobre as funções que foram alteradas
+  pelo pacote \texttt{mosaic}, mas você pode ignorar isto com segurança.
+\end{itemize}
+
+\subsection{\texorpdfstring{Ajuda do
+\textbf{R}}{Ajuda do R}}\label{ajuda-do-r}
+
+\begin{itemize}
+\tightlist
+\item
+  Você pode receber ajuda (help) via
+  \texttt{?\textless{}command\textgreater{}}:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{?sum}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  Procurando por ajuda:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{help.search}\NormalTok{(}\StringTok{"plot"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  Você pode encontrar um cheat sheet com funções do \textbf{R} que
+  usaremos neste curso
+  \href{https://drive.google.com/open?id=1678x0r9WNYQJlQPlovgIbwgp1hN5dt5c}{aqui}.
+  Caso o arquivo não apareça, clique com o botão direito em cima do link
+  e escolha \texttt{Open\ link\ in\ a\ new\ tab}.
+\item
+  Você pode salvar os comandos que você porventura tenha digitado em um
+  arquivo para uso posterior:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Selecione o guia History no painel superior direito no
+    \textbf{Rstudio} .
+  \item
+    Marque os comandos que você deseja salvar.
+  \item
+    Pressione o botão \texttt{To\ Source}.
+  \end{itemize}
+\item
+  Pratique as suas habilidades básicas em:
+  \url{http://tryr.codeschool.com}
+\end{itemize}
+
+\subsection{Dados: Exemplos}\label{dados-exemplos}
+
+\begin{itemize}
+\tightlist
+\item
+  Data:
+  \href{http://lib.stat.cmu.edu/DASL/Datafiles/magadsdat.html}{Legibilidade
+  de Anúncios em Revistas}
+\item
+  Trinta revistas foram classificadas pelo nível educacional de seus
+  leitores.
+\item
+  Três revistas foram selecionadas \textbf{aleatoriamente} de cada um
+  dos seguintes grupos:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Grupo 1: maior nível educacional
+  \item
+    Grupo 2: nível educacional médio
+  \item
+    Grupo 3: nível educacional mais baixo.
+  \end{itemize}
+\item
+  Seis anúncios foram selecionados \textbf{aleatoriamente} de cada uma
+  das nove revistas selecionadas:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Grupo 1: {[}1{]} Scientific American, {[}2{]} Fortune, {[}3{]} The
+    New Yorker
+  \item
+    Grupo 2: {[}4{]} Sports Illustrated, {[}5{]} Newsweek, {[}6{]}
+    People
+  \item
+    Grupo 3: {[}7{]} National Enquirer, {[}8{]} Grit, {[}9{]} True
+    Confessions
+  \end{itemize}
+\item
+  Logo, os dados contém informações sobre um total de 54 anúncios.
+\end{itemize}
+
+\subsection{Objetivos do Capítulo}\label{objetivos-do-capitulo}
+
+\begin{itemize}
+\tightlist
+\item
+  Identificar o tipo de variável (por exemplo, numérica ou categórica;
+  discreta ou contínua; ordenada ou não)
+\item
+  Usar visualizações apropriadas para diferentes tipos de dados (por
+  exemplo, histograma, gráfico de barras (barplot), gráfico de dispersão
+  (scatterplot), boxplot, etc.)
+\item
+  Criar e interpretar tabelas de contingência e de distribuições de
+  frequência (tabelas uni e bidirecionais - de uma e duas entradas)
+\item
+  Usar diferentes medidas de tendência central e dispersão e ser capaz
+  de descrever a robustez de diferentes estatística (por exemplo, quando
+  devemos usar cada uma e até que ponto elas podem ser usadas)
+\item
+  Descrever a forma das distribuições (usando também gráficos como o
+  histograma e o boxplot)
+\end{itemize}
+
+\subsection{Exemplo (continuação) - variáveis e
+formato}\label{exemplo-continuacao---variaveis-e-formato}
+
+\begin{itemize}
+\tightlist
+\item
+  Para cada anúncio (54 casos), os dados abaixo foram observados.
+\item
+  \textbf{Nome das variáveis}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    WDS = número de palavras na propaganda
+  \item
+    SEN = número de frases na propaganda
+  \item
+    3SYL = número de palavras com 3 ou mais sílabas no anúncio
+  \item
+    MAG = revista (1 a 9 como na página anterior)
+  \item
+    GROUP = nível educacional (1 a 3 como na página anterior)
+  \end{itemize}
+\item
+  Dê uma olhada nos dados usando \textbf{Rstudio}:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{magAds <-}\StringTok{ }\KeywordTok{read.delim}\NormalTok{(}\StringTok{"C:/Users/fsabino/Desktop/Codes/papers/Introductory_Stat_I/notebook/datasets_ads.txt"}\NormalTok{)}
+\KeywordTok{head}\NormalTok{(magAds)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   WDS SEN X3SYL MAG GROUP
+## 1 205   9    34   1     1
+## 2 203  20    21   1     1
+## 3 229  18    37   1     1
+## 4 208  16    31   1     1
+## 5 146   9    10   1     1
+## 6 230  16    24   1     1
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  Os nomes das variáveis estão na linha superior. Não é permitido
+  começar o nome de uma variável com um dígito, então um \texttt{X} foi
+  adicionado em \texttt{X3SYL}.
+\end{itemize}
+
+\subsection{Tipos de Dados}\label{tipos-de-dados}
+
+\subsubsection{Variáveis Quantitativas}\label{variaveis-quantitativas}
+
+\begin{itemize}
+\tightlist
+\item
+  Medições contém valores numéricos.
+\item
+  Os dados quantitativos geralmente surgem das seguintes maneiras:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{Variáveis contínuas}: \texttt{medições} de, por exemplo,
+    tempo de espera em uma fila, receitas, preços de ações, etc.
+  \item
+    \textbf{Variáveis discretas}: \texttt{contagens} de, por exemplo,
+    palavras em um texto, acessos de um website, números de chegadas em
+    uma fila em uma hora, etc.
+  \end{itemize}
+\item
+  Medidas como esta têm um escala bem definida e no \textbf{R} elas são
+  armazenadas como numéricas (\textbf{numeric}). 
+\end{itemize}
+
+\subsubsection{Variáveis
+Categóricas/Qualitativas}\label{variaveis-categoricasqualitativas}
+
+\begin{itemize}
+\tightlist
+\item
+  A medida é um fator proveniente de um conjunto de determinadas
+  categorias. Exemplos: sexo (masculino/feminino), classe social, escore
+  de satisfação (baixo/médio/alto), etc.
+\item
+  A medida é normalmente armazenada (o que é altamente recomendável)
+  como um fator (\textbf{factor}) no \textbf{R}. As categorias possíveis
+  são chamadas de níveis (\textbf{levels}). Examplo: os níveis do fator
+  ``sexo'' são masculino/feminino.
+\item
+  Fatores têm duas possíveis escalas:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{Escala Nominal}: Não há ordenação natural entre os níveis
+    dos fatores. Exemplos: sexo e cor do cabelo.
+  \item
+    \textbf{Escala Ordinal}: Há uma ordenação natural entre os níveis
+    dos fatores. Exemplos: classe social e escore de satisfação. Um
+    fator no \textbf{R} pode ter um chamado atributo
+    (\textbf{attribute}) atribuído, informando que a escala é ordinal
+    (veja a função ordered()).
+  \end{itemize}
+\end{itemize}
+
+\section{População e Amostra}\label{populacao-e-amostra}
+
+\subsection{Objetivo da Estatística}\label{objetivo-da-estatistica}
+
+\begin{itemize}
+\tightlist
+\item
+  O objetivo da Estatística é ``dizer algo'' sobre a população.
+\item
+  Tipicamente, isso é feito utilizando as informações de uma amostra
+  aleatória retirada da população de interesse.
+\item
+  Antes de retirar a amostra podemos ter alguma hipótese sobre a
+  população. A amostra é então analisada como o objetivo de testar esta
+  hipótese.
+\item
+  O processo de fazer conclusões para uma população com base em uma
+  amostra é chamado de \textbf{inferência estatística}.
+\end{itemize}
+
+\subsection{\texorpdfstring{Seleção
+\textbf{aleatória}}{Seleção aleatória}}\label{selecao-aleatoria}
+
+\begin{itemize}
+\tightlist
+\item
+  Exemplo: Para os dados das revistas:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Primeiro nós selecionamos \textbf{aleatoriamente} 3 revistas de cada
+    grupo.
+  \item
+    Na sequência, nós selecionamos, \textbf{aleatoriamente}, 6 anúncios
+    de cada revista.
+  \item
+    Um detalhe importante é que a seleção é feita de maneira
+    completamente \textbf{aleatória}, i.e.
+
+    \begin{itemize}
+    \tightlist
+    \item
+      cada revista dentro de um grupo tem a mesma chance de ser
+      escolhida e
+    \item
+      cada anúncio dentro de uma revista tem a mesma chance de ser
+      escolhido.
+    \end{itemize}
+  \end{itemize}
+\item
+  No que veremos neste curso é fundamental que os dados coletados
+  respeitem o princípio da aleatoriedade. Sempre que utilizarmos a
+  palavra \textbf{amostra} daqui em diante, estaremos nos referindo a
+  uma a.a. (amostra aleatória).
+\item
+  Mais geralmente:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Nós temos uma \textbf{população} de objetos.
+  \item
+    Nós escolhemos aleatoriamente \(n\) destes objetos, e do \(j\)-ésimo
+    objeto nós obtemos a medição \(y_j\), \(j=1,2,\ldots,n\).
+  \item
+    As medições \(y_1, y_2, \ldots, y_n\) são então chamadas de
+    \textbf{amostra}. Só uma amostra (que contém \(n\) elementos) e não
+    várias amostras.
+  \end{itemize}
+\item
+  Se nós, por exemplo, estivermos medindo a qualidade da água 4 vezes em
+  um ano é uma má ideia coletarmos dados apenas com tempo bom. A
+  amostragem escolhida ao longo do tempo não pode ser influenciada por
+  algo que possa influenciar a medida em si.
+\end{itemize}
+
+\section{Tabelas de agrupamento e
+frequência}\label{tabelas-de-agrupamento-e-frequencia}
+
+\subsection{\texorpdfstring{Dividir toda a gama de valores em uma série
+de intervalos:
+``Binning''}{Dividir toda a gama de valores em uma série de intervalos: Binning}}\label{dividir-toda-a-gama-de-valores-em-uma-serie-de-intervalos-binning}
+
+\begin{itemize}
+\tightlist
+\item
+  A função \texttt{cut} irá dividir o intervalo de uma variável numérica
+  em vários intervalos de tamanho igual e registrar a qual intervalo
+  pertence cada observação. Por exemplo, para a variável \texttt{X3SYL}
+  (o número de palavras com mais de 3 sílabas):
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Antes de 'cortar':}
+\NormalTok{magAds}\OperatorTok{$}\NormalTok{X3SYL[}\DecValTok{1}\OperatorTok{:}\DecValTok{5}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 34 21 37 31 10
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Após 'cortar' (dividir) em 4 intervalos:}
+\NormalTok{syll <-}\StringTok{ }\KeywordTok{cut}\NormalTok{(magAds}\OperatorTok{$}\NormalTok{X3SYL, }\DecValTok{4}\NormalTok{)}
+\NormalTok{syll[}\DecValTok{1}\OperatorTok{:}\DecValTok{5}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] (32.2,43]     (10.8,21.5]   (32.2,43]     (21.5,32.2]   (-0.043,10.8]
+## Levels: (-0.043,10.8] (10.8,21.5] (21.5,32.2] (32.2,43]
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  O resultado é um fator (\texttt{factor}) e os rótulos são os
+  intervalos. Os itens personalizados podem ser atribuídos através do
+  argumento \texttt{labels} (rótulos):
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{labs <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"poucas"}\NormalTok{, }\StringTok{"algumas"}\NormalTok{, }\StringTok{"muitas"}\NormalTok{, }\StringTok{"demais"}\NormalTok{)}
+\NormalTok{syll <-}\StringTok{ }\KeywordTok{cut}\NormalTok{(magAds}\OperatorTok{$}\NormalTok{X3SYL, }\DecValTok{4}\NormalTok{, }\DataTypeTok{labels =}\NormalTok{ labs) }\CommentTok{# Nota: isso sobreescreverá a variável 'syll' definida acima}
+\NormalTok{syll[}\DecValTok{1}\OperatorTok{:}\DecValTok{5}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] demais  algumas demais  muitas  poucas 
+## Levels: poucas algumas muitas demais
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{magAds}\OperatorTok{$}\NormalTok{syll <-}\StringTok{ }\NormalTok{syll }\CommentTok{# Adicionando uma nova coluna ao conjunto de dados}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Tabelas}\label{tabelas}
+
+\begin{itemize}
+\tightlist
+\item
+  Para resumir os resultados nós podemos utilizar a função
+  \texttt{tally} (contagem) do pacote\texttt{mosaic} (relembre que o
+  pacote \textbf{deve ser carregado} escrevendo \texttt{library(mosaic)}
+  se você ainda não o fez):
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{tally}\NormalTok{( }\OperatorTok{~}\StringTok{ }\NormalTok{syll, }\DataTypeTok{data =}\NormalTok{ magAds)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## syll
+##  poucas algumas  muitas  demais 
+##      26      14      10       4
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  Em porcentagem:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{tally}\NormalTok{( }\OperatorTok{~}\StringTok{ }\NormalTok{syll, }\DataTypeTok{data =}\NormalTok{ magAds, }\DataTypeTok{format =} \StringTok{"percent"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## syll
+##  poucas algumas  muitas  demais 
+##    48.1    25.9    18.5     7.4
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  Aqui nós usamos uma \texttt{fórmula} (caracterizada pelo til) para
+  indicar que nós queremos a variável syll do conjunto de dados
+  \texttt{magAds} (sem o til o \textbf{R} iria procurar por uma variável
+  global chamada \texttt{syll} caso ela exista (se não existir dará
+  certo) e a utilizaria ao invés da que queremos).
+\end{itemize}
+
+\subsection{2 fatores: Tabulação
+Cruzada}\label{fatores-tabulacao-cruzada}
+
+\begin{itemize}
+\tightlist
+\item
+  Para fazer uma tabela da combinação de dois fatores nós utilizamos a
+  função \texttt{tally} novamente:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{tally}\NormalTok{( }\OperatorTok{~}\StringTok{ }\NormalTok{syll }\OperatorTok{+}\StringTok{ }\NormalTok{GROUP, }\DataTypeTok{data =}\NormalTok{ magAds)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##          GROUP
+## syll       1  2  3
+##   poucas   8 11  7
+##   algumas  4  2  8
+##   muitas   3  5  2
+##   demais   3  0  1
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  Frequências relativas (em porcentagem) por coluna:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{tally}\NormalTok{( }\OperatorTok{~}\StringTok{ }\NormalTok{syll }\OperatorTok{|}\StringTok{ }\NormalTok{GROUP, }\DataTypeTok{data =}\NormalTok{ magAds, }\DataTypeTok{format =} \StringTok{"percent"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##          GROUP
+## syll         1    2    3
+##   poucas  44.4 61.1 38.9
+##   algumas 22.2 11.1 44.4
+##   muitas  16.7 27.8 11.1
+##   demais  16.7  0.0  5.6
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  A tabela acima mostra, por exemplo, qual a porcentagem de anúncios no
+  grupo 1 que tem `poucas', `algumas', `muitas' ou `demais' com mais de
+  3 sílabas.
+\end{itemize}
+
+\section{Gráficos}\label{graficos}
+
+\subsection{Gráfico de barras}\label{grafico-de-barras}
+
+\begin{itemize}
+\tightlist
+\item
+  Para criar um gráfico de barras com os dados da tabela nós usamos a
+  função \texttt{gf\_bar} do pacote \texttt{mosaic}. Para cada nível do
+  fator uma caixa é desenhada com a altura proporcional a frequência
+  (contagem) daquele nível.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{gf_bar}\NormalTok{( }\OperatorTok{~}\StringTok{ }\NormalTok{syll, }\DataTypeTok{data =}\NormalTok{ magAds)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{lecture_descriptive_StatI_files/figure-latex/bargraph-1.pdf}
+
+\begin{itemize}
+\tightlist
+\item
+  O gráfico de barras também pode ser dividido por grupo:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{gf_bar}\NormalTok{( }\OperatorTok{~}\StringTok{ }\NormalTok{syll }\OperatorTok{|}\StringTok{ }\NormalTok{GROUP, }\DataTypeTok{data =}\NormalTok{ magAds)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{lecture_descriptive_StatI_files/figure-latex/bargraph_grouped-1.pdf}
+
+\subsection{Os dados de Ericksen}\label{os-dados-de-ericksen}
+
+\begin{itemize}
+\tightlist
+\item
+  Descrição dos dados:
+  \href{http://www.rdocumentation.org/packages/car/functions/Ericksen}{Ericksen
+  1980 U.S. Census Undercount}.
+\item
+  Este conjunto de dados contém as seguintes variáveis:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{minority}: Percentual de negros ou hispânicos.
+  \item
+    \texttt{crime}: Taxa de crimes graves por 1000 indivíduos na
+    população.
+  \item
+    \texttt{poverty}: Percentual de pobres.
+  \item
+    \texttt{language}: Percentual com dificuldade em falar ou escrever
+    Inglês.
+  \item
+    \texttt{highschool}: Percentual com idade igual ou superior a 25
+    anos que não terminou o ensino médio.
+  \item
+    \texttt{housing}: Percentual de habitação em pequenos edifícios de
+    unidades múltiplas.
+  \item
+    \texttt{city}: Um fator com níveis: \texttt{city} (cidade principal)
+    ou \texttt{state} (estado or estado-resto).
+  \item
+    \texttt{conventional}: Percentual de domicílios contados por
+    enumeração pessoal convencional.
+  \item
+    \texttt{undercount}: Estimativa preliminar de subentendimento
+    percentual.
+  \end{itemize}
+\item
+  Os dados de Ericksen têm 66 linhas/observações e 9 colunas/variáveis.
+\item
+  As observações são medidas em 16 grandes cidades, as partes restantes
+  dos estados em que essas cidades estão localizadas, e os outros
+  estados dos EUA.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Ericksen <-}\StringTok{ }\KeywordTok{read.delim}\NormalTok{(}\StringTok{"C:/Users/fsabino/Desktop/Codes/papers/Introductory_Stat_I/notebook/datasets_Ericksen.txt"}\NormalTok{)}
+\KeywordTok{head}\NormalTok{(Ericksen)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   minority crime poverty language highschool housing  city conventional
+## 1     26.1    49      19      0.2         44     7.6 state            0
+## 2      5.7    62      11      1.7         18    23.6 state          100
+## 3     18.9    81      13      3.2         28     8.1 state           18
+## 4     16.9    38      19      0.2         44     7.0 state            0
+## 5     24.3    73      10      5.0         26    11.8 state            4
+## 6     15.2    73      10      1.2         21     9.2 state           19
+##   undercount
+## 1      -0.04
+## 2       3.35
+## 3       2.48
+## 4      -0.74
+## 5       3.60
+## 6       1.34
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  Quer fazer um histograma para a taxa de criminalidade - como?
+\end{itemize}
+
+\subsection{Histograma (usado para variáveis
+quantitativas)}\label{histograma-usado-para-variaveis-quantitativas}
+
+\begin{itemize}
+\tightlist
+\item
+  Como fazer um histograma para alguma variável \texttt{x}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Divida o intervalo do valor mínimo de \texttt{x} para o valor máximo
+    de\texttt{x} em um número apropriado de sub-intervalos de tamanho
+    igual.
+  \item
+    Desenhe uma caixa em cada sub-intervalo, sendo a altura proporcional
+    ao número de observações no subintervalo.
+  \end{itemize}
+\item
+  Histograma de taxas de criminalidade para os dados de Ericksen
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{gf_histogram}\NormalTok{( }\OperatorTok{~}\StringTok{ }\NormalTok{crime, }\DataTypeTok{data =}\NormalTok{ Ericksen)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{lecture_descriptive_StatI_files/figure-latex/hist-1.pdf}
+
+Questão: Explique como o histograma é construído.
+
+\section{Resumo de Variáveis
+Quantitativas}\label{resumo-de-variaveis-quantitativas}
+
+\subsection{Medidas de centro dos dados (tendência central/posição):
+Média, Mediana e
+Moda}\label{medidas-de-centro-dos-dados-tendencia-centralposicao-media-mediana-e-moda}
+
+\begin{itemize}
+\tightlist
+\item
+  Retornemos ao exemplo de anúncios da revista (\texttt{WDS} = número de
+  palavras no anúncio). Uma série de resumos numéricos para \texttt{WDS}
+  pode ser encontrada usando a função \texttt{favstats}:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{favstats}\NormalTok{( }\OperatorTok{~}\StringTok{ }\NormalTok{WDS, }\DataTypeTok{data =}\NormalTok{ magAds)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  min Q1 median  Q3 max mean sd  n missing
+##   31 69     96 202 230  123 66 54       0
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  Os valores observados da variável \texttt{WDS} são \(y_1=205\),
+  \(y_2=203,\ldots,y_n=208\), onde existe um total de \(n=54\) valores.
+  Conforme definido anteriormente, isso constitui uma \textbf{amostra}.
+\item
+  123 é a \textbf{média} da amostra, que é calculada por \[
+    \bar{y}=\frac{1}{n}\sum_{i=1}^n y_i
+  \] Nós chamamos \(\bar{y}\) de \textbf{média amostral}.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{mean}\NormalTok{(y)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 123
+\end{verbatim}
+
+\begin{itemize}
+\item
+  A média é o ponto de equilíbro dos dados.
+\item
+  A média é sensível a valores extremos.
+\item
+  \textbf{mediana} = 96 é o percentil 50, i.e.~o valor que divide a
+  amostra em 2 grupos de igual tamanho.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{median}\NormalTok{(y)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 96
+\end{verbatim}
+
+\begin{verbatim}
+* Veja como calcular a mediana (e qualquer outro percentil) na página 75 do livro "Estatística Aplicada à Administração e Economia" (está na página do curso no moodle). Resolva os exemplos das páginas 75-77.
+\end{verbatim}
+
+\begin{itemize}
+\item
+  A \textbf{mediana} é robusta a valores extremos.
+\item
+  É uma medida mais apropriada quando trabalhamos com dados
+  assimétricos.
+\item
+  Uma propriedade importante da \textbf{média} e da \textbf{mediana} é
+  que elas têm a mesma unidade de medida que as observações.
+\item
+  \textbf{moda} = 208 é o valor mais frequente do banco de dados.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{names}\NormalTok{(}\KeywordTok{sort}\NormalTok{(}\OperatorTok{-}\KeywordTok{table}\NormalTok{(y)))[}\DecValTok{1}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "208"
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  Exercício: Faça o exercício 1 da página 24 do livro Estatística (Costa
+  Neto). A resposta está na página 258.
+\end{itemize}
+
+\subsection{Medidas de variabilidade: amplitude, amplitude
+interquartílica, variância, desvio padrão, e coeficiente de
+variação}\label{medidas-de-variabilidade-amplitude-amplitude-interquartilica-variancia-desvio-padrao-e-coeficiente-de-variacao}
+
+\begin{itemize}
+\tightlist
+\item
+  Nós queremos saber ``Quanto as observações estão desviadas do seu
+  valor central?''
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Ao olhar os dados e gráficos podemos ter uma sensação disto.
+  \item
+    Porém, é comum estarmos interessados em um número para que possamos
+    comparar as distribuições amostrais.
+  \end{itemize}
+\item
+  \textbf{Amplitude} é a diferença entre o maior (máximo) e o menor
+  (mínimo) valor.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Ela só usa dois valores para o seu cálculo, isto é, não leva todos
+    em consideração.
+  \item
+    Como trabalhamos com uma amostra, a amplitude que encontraremos será
+    a amostral, isto é, em geral, temos uma subestimativa da verdadeira
+    amplitude.
+  \end{itemize}
+\item
+  A \textbf{amplitude interquartílica} é a diferença entre os valores do
+  terceiro quartil e do primeiro quartil, isto é, \(Q_{3} - Q_{1}\).
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Ela utiliza 50\% dos valores para o seu cálculo.
+  \end{itemize}
+\item
+  The \textbf{variância (empírica)} é a média dos desvios quadrados em
+  relação à média: \[
+      s^2=\frac{1}{n-1}\sum_{i=1}^n (y_i-\bar{y})^2.
+    \]
+\item
+  \textbf{sd} \(=\) \textbf{desvio padrão} \(= s=\sqrt{s^2}\).
+\item
+  Nota:~Por exemplo, se as observações são medidas em metros,~a unidade
+  de medida da \textbf{variância} será \(\text{metro}^2\) o que
+  usualmente dificulta a interpretação. Por outro lado, o \textbf{desvio
+  padrão} tem a mesma unidade de medida das observações. 
+\item
+  O \textbf{coeficiente de variação} (CV) é uma medida adimensional que
+  serve para comparar a variabilidade de variáveis medidas em diferentes
+  unidade de medida ou cujas médias e desvios-padrão sejam muito
+  diferentes (mesma unidade de medida e grandezas muito diferentes).
+  Portanto, o \textbf{CV} é uma medida de variabilidade relativa, ao
+  contrário das demais vistas que são medidas de variabilidade
+  absolutas. Define-se o CV como a razão entre o desvio-padrão e a média
+  (frequentemente é multiplicado por 100\% para ser representado como
+  uma variação percentual).
+\end{itemize}
+
+\[ CV = \frac{s}{\bar{x}} \] * Exercício: Faça o exercício 4 da página
+32 do livro Estatística (Costa Neto). O objetivo do exercício é treinar
+o cálculo. A resposta está na página 258.
+
+\subsection{Cálculo da média, mediana, amplitude interquartílica e
+desvio-padrão usando a função favstats do pacote
+mosaic}\label{calculo-da-media-mediana-amplitude-interquartilica-e-desvio-padrao-usando-a-funcao-favstats-do-pacote-mosaic}
+
+\begin{itemize}
+\tightlist
+\item
+  Medidas Resumo de \texttt{WDS}:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{favstats}\NormalTok{( }\OperatorTok{~}\StringTok{ }\NormalTok{WDS, }\DataTypeTok{data =}\NormalTok{ magAds)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  min Q1 median  Q3 max mean sd  n missing
+##   31 69     96 202 230  123 66 54       0
+\end{verbatim}
+
+\textbf{Exercício}: Interprete os resultados acima.
+
+\subsection{Uma palavra sobre
+terminologia}\label{uma-palavra-sobre-terminologia}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Desvio padrão}:~uma medida de variabilidade de uma variável na
+  amostra (ou população).
+\item
+  \textbf{Erro padrão}:~uma medida de variabilidade de uma estimativa
+  (um particular valor de uma função da amostra). Por exemplo, uma
+  medida de variabilidade da média amostral.
+\end{itemize}
+
+\subsection{Uma regra empírica (veremos detalhes mais à
+frente)}\label{uma-regra-empirica-veremos-detalhes-mais-a-frente}
+
+\includegraphics{lecture_descriptive_StatI_files/figure-latex/empRule-1.pdf}
+
+Se o histograma com base na amostra parece uma função em forma de sino,
+então
+
+\begin{itemize}
+\tightlist
+\item
+  cerca de 68\% das observações estão entre \(\bar{y}-s\) e
+  \(\bar{y}+s\).
+\item
+  acerca de 95\% das observações estão entre \(\bar{y}-2s\) e
+  \(\bar{y}+2s\).
+\item
+  Todas ou quase todas as observações (99.7\%) estão entre
+  \(\bar{y}-3s\) e \(\bar{y}+3s\).
+\end{itemize}
+
+\subsection{Percentis}\label{percentis}
+
+\begin{itemize}
+\item
+  \textbf{O \(p\)-ésimo percentil} é um valor tal que pelo menos \(p\)\%
+  das observações são menores ou iguais a esse valor e pelo menos.
+\item
+  Veja como calcular os percentis nas páginas 75-77 do livro texto.
+\end{itemize}
+
+\subsection{Mediana, quartis e amplitude
+interquartílica}\label{mediana-quartis-e-amplitude-interquartilica}
+
+Recordando
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{favstats}\NormalTok{( }\OperatorTok{~}\StringTok{ }\NormalTok{WDS, }\DataTypeTok{data =}\NormalTok{ magAds)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  min Q1 median  Q3 max mean sd  n missing
+##   31 69     96 202 230  123 66 54       0
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  50-percentil = 96 é a \textbf{mediana} e é uma medida de tendência
+  central/posição (centro dos dados).
+\item
+  0-percentil = 31 é o valor \textbf{mínimo}.
+\item
+  25-percentil = 69 é o \textbf{primeiro quartil} ou \textbf{quartil
+  inferior} (Q1).~Mediana dos 50\% menores valores.
+\item
+  75-percentil = 201.5 é o \textbf{terceiro quartil} ou \textbf{quartil
+  superior} (Q3).~Mediana dos 50\% maiores valores.
+\item
+  100-percentil = 230 é o valor \textbf{máximo}.
+\item
+  \textbf{Amplitude Interquartílica (IQR)}:~uma medida de variabilidade
+  dada pela diferença entre o quartil superior e o quartil inferior:
+  201.5 - 69 = 132.5.
+\end{itemize}
+
+\section{Mais gráficos}\label{mais-graficos}
+
+\subsection{Box plots}\label{box-plots}
+
+Como desenhar um box plot:
+
+\begin{itemize}
+\tightlist
+\item
+  Box:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Calcule a mediana, e os quartis inferior e superior.
+  \item
+    Trace uma linha na mediana e desenhe uma caixa entre os quartis
+    superior e inferior.
+  \item
+    Calcule a amplitude interquartílica e a chame de IQR.
+  \item
+    Calcule os seguintes valores:
+
+    \begin{itemize}
+    \tightlist
+    \item
+      L = quartil inferior - 1.5*IQR
+    \item
+      U = quartil superior + 1.5*IQR
+    \end{itemize}
+  \item
+    Desenhe uma linha ligando o quartil inferior até a menor medida que
+    seja maior do que \emph{L}.
+  \item
+    Similarmente, desenhe uma linha ligando o quartil superior até a
+    maior medida que seja inferior a \emph{U}.
+  \item
+    Regras de decisão
+  \item
+    Max(\(X_\left[1 \right]\), L)
+  \item
+    Min(\(X_\left[n \right]\), U)
+  \end{itemize}
+\item
+  Outliers: Observações com valor menor do que \emph{L} ou maior do que
+  \emph{U} são desenhadas como círculos.
+\end{itemize}
+
+\emph{Nota: As caixas são fechadas (em inglês, as extremidades são
+chamadas de ``Whiskers'') no mínimo e no máximo das observações que não
+são consideradas outliers.}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\subsubsection{Boxplot para os dados de
+Ericksen}\label{boxplot-para-os-dados-de-ericksen}
+
+Boxplot das taxas de pobreza separadamente para cidados e estados
+(variável \texttt{city}):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{gf_boxplot}\NormalTok{(poverty }\OperatorTok{~}\StringTok{ }\NormalTok{city, }\DataTypeTok{data =}\NormalTok{ Ericksen)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{lecture_descriptive_StatI_files/figure-latex/boxplot-1.pdf}
+
+\begin{itemize}
+\tightlist
+\item
+  Parece haver mais pobreza nas cidades.
+\item
+  Um único estado difere notoriamente dos outros com alta taxa de
+  pobreza.
+\end{itemize}
+
+\subsection{\texorpdfstring{2 variáveis quantitativas variables: Gráfico
+de dispersão (``Scatter
+plot'')}{2 variáveis quantitativas variables: Gráfico de dispersão (Scatter plot)}}\label{variaveis-quantitativas-variables-grafico-de-dispersao-scatter-plot}
+
+Para duas variáveis quantitativas, um gráfico frequentemente utilizado é
+o de dispersão:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{gf_point}\NormalTok{(poverty }\OperatorTok{~}\StringTok{ }\NormalTok{highschool, }\DataTypeTok{data =}\NormalTok{ Ericksen)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{lecture_descriptive_StatI_files/figure-latex/scatter0-1.pdf}
+
+Isto pode ser colorido ou dividido de acordo com o valor de
+\texttt{city}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{gf_point}\NormalTok{(poverty }\OperatorTok{~}\StringTok{ }\NormalTok{highschool }\OperatorTok{|}\StringTok{ }\NormalTok{city, }\DataTypeTok{data =}\NormalTok{ Ericksen)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{lecture_descriptive_StatI_files/figure-latex/unnamed-chunk-29-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{gf_point}\NormalTok{(poverty }\OperatorTok{~}\StringTok{ }\NormalTok{highschool, }\DataTypeTok{col =} \OperatorTok{~}\NormalTok{city, }\DataTypeTok{data =}\NormalTok{ Ericksen)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{lecture_descriptive_StatI_files/figure-latex/unnamed-chunk-29-2.pdf}
+
+Se nos quisermos adicionar uma linha de regressão (uma equação da reta
+neste caso) nós podemos usar as funções abaixo:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{gf_point}\NormalTok{(poverty }\OperatorTok{~}\StringTok{ }\NormalTok{highschool, }\DataTypeTok{col =} \OperatorTok{~}\NormalTok{city, }\DataTypeTok{data =}\NormalTok{ Ericksen) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{gf_lm}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{lecture_descriptive_StatI_files/figure-latex/scatter05-1.pdf}
+
+\subsection{Assimetria e Curtose}\label{assimetria-e-curtose}
+
+\begin{itemize}
+\tightlist
+\item
+  O conteúdo pode ser estudado nas páginas 30-31 do livro
+  ``Estatística'' (Costa Neto).
+\end{itemize}
+
+\subsection{Covariância e Correlação}\label{covariancia-e-correlacao}
+
+\begin{verbatim}
+* O conteúdo pode ser estudado nas páginas 98-104 do livro "Estatística Aplicada à Administração e Economia" (edição que está no moodle).
+\end{verbatim}
+
+\section{Apêndice}\label{apendice}
+
+\subsection{Recodificando variáveis}\label{recodificando-variaveis}
+
+\begin{itemize}
+\tightlist
+\item
+  A função \texttt{factor} converterá diretamente um vetor em uma
+  variável qualitativa (escala nominal).~Por exemplo:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{head}\NormalTok{(magAds}\OperatorTok{$}\NormalTok{GROUP)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1 1 1 1 1 1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class}\NormalTok{(magAds}\OperatorTok{$}\NormalTok{GROUP)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "integer"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{f <-}\StringTok{ }\KeywordTok{factor}\NormalTok{(magAds}\OperatorTok{$}\NormalTok{GROUP)}
+\KeywordTok{class}\NormalTok{(f)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "factor"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# magAds$GROUP <- f}
+\CommentTok{# head(magAds$GROUP)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  Desta forma, os números são substituídos por rótulos mais informativos
+  descrevendo o nível educacional.
+\end{itemize}
+
+\section{Apontar e clicar no gráfico}\label{apontar-e-clicar-no-grafico}
+
+\subsection{\texorpdfstring{\texttt{mplot}}{mplot}}\label{mplot}
+
+\begin{itemize}
+\tightlist
+\item
+  Se os pacotes \texttt{mosaic} e \texttt{manipulate} forem instalados e
+  estiverem carregados, nós podemos construir gráficos usando a função
+  \texttt{mplot} simplesmente apontando e clicando.
+\item
+  Usando \texttt{mplot} você pode fazer alterações pressionando o botão
+  de configurações (uma roda dentada) no canto superior esquerdo da
+  janela gráfica.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{mplot}\NormalTok{(Ericksen)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  No final, você pode pressionar ``Mostrar expressão'' (Show expression)
+  para obter o código.
+\end{itemize}
+
+
+\end{document}
