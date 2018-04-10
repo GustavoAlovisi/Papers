@@ -362,7 +362,7 @@ To calculate the daily percentage returns for a pair, we compute%
 		\label{eq:eq32}
 		\end{equation}
 		
-		The standardized residuals vectors are then converted to the pseudo-observations $z_{i}=\frac{n}{n+1}F_{i}\left( \widehat{\varepsilon }_{i}\right) $, where $F_{i}$ is estimated by using their empirical distribution function \footnote{The asymptotically negligible scaling factor, $\frac{n}{n+1}$, is used to force the variates to fall inside the open unit hypercube to avoid, for example, problems with density evaluation at the boundaries.}; \bigskip
+		The estimated standardized residuals vectors are then converted to the pseudo-observations $u_{i}=\frac{T}{T+1}F_{i}\left( \widehat{\varepsilon }_{i}\right) $, where $F_{i}$ is estimated by using their empirical distribution function \footnote{The asymptotically negligible scaling factor, $\frac{T}{T+1}$, is used to force the variates to fall inside the open unit hypercube to avoid, for example, problems with density evaluation at the boundaries.}; \bigskip
 		
 		\item After obtaining the estimated marginal distributions from the previous step, we estimate the two-dimensional copula model to data that has been transformed to [0,1] margins to connect the joint distributions with the marginals $F_{X}$ and $F_{Y}$, i.e.,
 		\[
@@ -413,9 +413,9 @@ To calculate the daily percentage returns for a pair, we compute%
 	
 	\subsection{Profitability of the Strategies}
 	
-First, we provide multiple boxplots in Figures \ref{fig:Figure1} and \ref{fig:Figure2} to analyze the sensitivity of the annualized excess returns (Figure \ref{fig:Figure1}) and annualized Sharpe ratios (Figure \ref{fig:Figure2}) when the opening thresholds $\Delta_{1}$ and $\Delta_{2}$ are changed to top 5, 10, 15, 20, 25, 30 and 35 pairs for each of the strategies from 1991/2-2015 on commited capital and on fully invested capital after costs (10 bps)\footnote{The numerical experiments show that the relative performances out-of-sample stay very similar when we consider 20 bps. Since the results are very much alike they are not presented here and are available under request. Hereafter, we consider 10 basis points as transaction costs to report results for the remainder of this paper}. Pairs are formed based on the smallest sum of squared deviations. The last boxplot (from left to right) shows the performance for the distance strategy (2.0$\sigma$), while the others report the outcomes using multiple opening trigger points for the cumulative mispricing indexes $M_{1,t}$ and $M_{2,t}$ (one above 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, and 0.55 and the other one below their negative counterparts). Based on these outcomes we perform the subsequent analyses considering 0.2 and -0.2 as the opening thresholds for the mixed copula strategy.
+First, we provide multiple boxplots in Figures \ref{fig:Figure1} and \ref{fig:Figure2} to analyze the sensitivity of the annualized excess returns (Figure \ref{fig:Figure1}) and annualized Sharpe ratios (Figure \ref{fig:Figure2}) when the opening thresholds $\Delta_{1}$ and $\Delta_{2}$ are changed to top 5, 10, 15, 20, 25, 30 and 35 pairs for each of the strategies from 1991/2-2015 on commited capital and on fully invested capital after costs (10 bps)\footnote{The numerical experiments show that the relative performances out-of-sample stay very similar when we consider 20 bps. Since the results are very much alike they are not presented here and are available under request. Hereafter, we consider 10 basis points as transaction costs to report results for the remainder of this paper.}. Pairs are formed based on the smallest sum of squared deviations. The last boxplot (from left to right) shows the performance for the distance strategy (2.0$\sigma$), while the others report the outcomes using multiple opening trigger points for the cumulative mispricing indexes $M_{1,t}$ and $M_{2,t}$ (one above 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, and 0.55 and the other one below their negative counterparts). Based on these outcomes we perform the subsequent analyses considering 0.2 and -0.2 as the opening thresholds for the mixed copula strategy.
 
-\begin{figure}[H]
+\begin{figure}[!ht]
 	\centering
 	%\includegraphics[scale=0.26]{fig26.pdf}
 	%\includegraphics[width=\linewidth,height=7.5cm]{fig26.pdf}
@@ -432,7 +432,7 @@ First, we provide multiple boxplots in Figures \ref{fig:Figure1} and \ref{fig:Fi
 	\label{fig:Figure1}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[!ht]
 	\centering
 %	\includegraphics[width=\linewidth,height=7.5cm]{Figure2.pdf}
 %	\resizebox{\linewidth}{!}{\input{Figure2.tex}}
@@ -537,7 +537,7 @@ Section 2 of Table \ref{tab:table101} shows results on fully invested capital sc
 
 Figure \ref{fig:Figure3} shows cumulative excess returns through the full dataset for both strategies for Top 5 (top), Top 20 (center) and Top 35 (bottom) pairs. The left panels display cumulative returns on committed capital, whereas the right panels on fully invested capital. The patterns found in the figure strengthen the mean returns and t-statistics displayed in Table \ref{tab:table101}. It should be noted that the mixed copula strategy shows a superior out-of-sample performance relative to the distance approach after the subprime mortgage crisis, especially after 2010 for Top 5 pairs (when the number of trades is comparable) on committed capital. 
 
-\begin{figure}[H]
+\begin{figure}[!ht]
 	\centering
 	\includegraphics[width=\linewidth]{Figure3.eps}
 	\captionsetup{justification=raggedright,
@@ -555,7 +555,7 @@ For Top 20 and Top 35 pairs on committed capital the strategies show a more comp
 For fully invested weighting scheme the mixed copula approach achieves the highest five-year risk-adjusted statistic over the long-term period in 88.5\%, 69.14\% and 61.8\% of the data sample for Top 5, Top 20 and Top 35 pairs, respectively.
 
 
-\begin{figure}[H]
+\begin{figure}[!ht]
 \centering
 \includegraphics[width=\linewidth]{Figure4.eps}
 \captionsetup{justification=raggedright,
@@ -571,7 +571,7 @@ For fully invested weighting scheme the mixed copula approach achieves the highe
 Figure \ref{fig:Figure5} shows the densities of the five-year Sharpe ratios after costs estimated by means of \citet*{sj1991} bandwidth. As one can see, the densities reinforce our findings in Figure \ref{fig:Figure4}, showing that the right-hand tail of the distribution of the copula-based strategy remains long for Top 5 pairs.
 
 
-\begin{figure}[H]
+\begin{figure}[!ht]
 	\centering
 	\includegraphics[width=\linewidth]{Figure5.eps}
 	\captionsetup{justification=raggedright,
@@ -694,15 +694,16 @@ with $E(\varepsilon _{i,t})=0$, $Var(\varepsilon _{i,t})=\sigma_{\varepsilon _{i
 	
 		All the data used to fit the above regressions are described in and obtained from Kenneth French’s data library\footnote{\url{http://http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html}}. We select the model in terms of an approximation to the mean squared prediction error using Bayesian Information Criterion (BIC) \citep{Schwarz1978}. Based on this variable selection procedure we remove the short-term reversal factor from the model. 
 	
-	The main purpose of these regressions is to estimate the intercept alpha, the average excess return not explained by these factors, as a measure of risk-adjusted performance. The errors have been adjusted for heteroskedasticity and autocorrelation by using Newey-West adjustment with six lags.
+	The main purpose of these regressions is to estimate the intercept alpha, the average excess return not explained after controlling for these factors, as a measure of risk-adjusted performance. The errors have been adjusted for heteroskedasticity and autocorrelation by using Newey-West adjustment with six lags.
 	
-	Tables \ref{tab:table103}, \ref{tab:table104} and \ref{tab:table105} report the coefficients and corresponding Newey-West $t$-statistics of regressing monthly portfolio return series onto \citet*{ff15}'s five research factors plus momentum and long-term reversal factors for each of the strategies from 1991/2-2015, after transaction costs, for Top 5, Top 20 and Top 35 pairs, respectively. For each table, Section 1 lists the Return on Committed Capital and Section 2 on Fully Invested Capital. Panel A provides results after transaction costs and Panel B before transaction costs. Tables \ref{tab:table104} and \ref{tab:table105} are provided in Appendix since we want to focus on the case where the number of tradeable signals is comparable. As expected, one could observe that the results for Top 20 and Top 35 pairs are in agreement with the patterns found in the center and bottom of Figure \ref{fig:Figure3}.
+	Tables \ref{tab:table103}, \ref{tab:table104} and \ref{tab:table105} report the coefficients and corresponding Newey-West $t$-statistics of regressing monthly portfolio return series onto \citet*{ff15}'s five research factors plus momentum and long-term reversal factors for each of the strategies from 1991/2-2015, after transaction costs, for Top 5, Top 20 and Top 35 pairs, respectively. For each table, Section 1 lists the Return on Committed Capital and Section 2 on Fully Invested Capital. Panel A provides results after transaction costs and Panel B before transaction costs. Tables \ref{tab:table104} and \ref{tab:table105} are provided in Appendix since we want to focus on the case where the number of tradeable signals is comparable. As expected, one could observe that the seven-factor adjusted alphas for Top 20 and Top 35 pairs are in agreement with the patterns found in the center and bottom of Figure \ref{fig:Figure3}.
 	
-	Table \ref{tab:table103} shows the results for Top 5 pairs. It is clear that the mixed copula approach produces larger alphas than the distance method for both weighting schemes, especially on fully invested capital. It should also be noted that the risk-adjusted returns provided by copula and distance strategies are positive and significant at 1\% and 10\%, respectively, after accounting for all the previously mentioned factors. In addition, we find that the alphas of the regressions are significantly positive and higher than the raw excess returns by about 2-7 bps per month, indicating that only a small part of the excess returns can be attributed to their exposures to the seven risk determinants.
+	Table \ref{tab:table103} shows the results for Top 5 pairs. It is clear that the mixed copula approach produces higher adjusted alphas than the distance method for both weighting schemes, especially on fully invested capital (98 basis points with a t-value of 4.17). It should also be noted that the risk-adjusted returns provided by copula and distance strategies are positive and significant at 1\% and 10\%, respectively, after accounting for all the previously mentioned factors. In addition, we find that the alphas of the regressions are significantly positive and higher than the raw excess returns by about 2-7 bps per month, indicating that only a small part of the excess returns can be attributed to their exposures to the seven risk determinants.
 
-	From Table \ref{tab:table103} one could also observe that the market premium slopes are larger for the distance method, especially on committed capital, and significant at 1\% for both strategies. The SMB coefficients are only significant at 10\% on committed capital for the mixed copula model, whereas the value effect premium (HML factor) slopes are significant at 5\% for the distance approach. In addition, we find that returns are negatively correlated with momentum loadings for both methods at 1\% on committed capital, although a larger negative effect on the performance is found when we use the 2.0 standard deviation threshold. We also find that excess returns are driven by the momentum factor on fully invested capital, although only significant at 5\% for the copula approach. Furthermore, the exposures of pairs trading return strategies to the reversal factor are negative for both weighting schemes and significant at 5\% for the distance approach on committed and fully invested capital, while it is only significant to the less conservative approach for the mixed copula strategy. The correlation of the excess returns with other traditional equity risk premia factors (RMA and CMW) is nearly zero. Finally, it should be noted that the results show that the exposures to the various	sources of systematic profile risk provide a low explanation of the average excess returns for any strategy, with adjusted $R^2$ ranging from  1.4\% to 2.7\%, particularly for the copula-based pairs strategy, indicating that the method is nearly factor-neutral over the whole sample period.
+	From Table \ref{tab:table103} one could also observe that the magnitude of the loadings on the market factor are larger and with higher t-values for the distance method, and significant at 1\% for both strategies, thus contributing to the pairs trading profitability. Among the other factors, the loadings on the momentum factor are negative and significant at 1\% on committed capital. Furthermore, the portfolios load positively on the HML and load negatively on the SMB and long-term reversal. In addition, the correlation of the excess returns with other traditional equity risk premia factors (RMA and CMW) is nearly zero. Finally, it should be noted that the results show that the exposures to the various sources of systematic profile risk provide a low explanation of the average excess returns for any strategy, with adjusted $R^2$ ranging from  1.4\% to 2.7\%, particularly for the copula-based pairs strategy, indicating that the method is nearly factor-neutral over the whole sample period.
 	
-The regression on asset pricing factors for Top 5 pairs strengthen the patterns found in the Figure \ref{fig:Figure3}, indicating that the mixed copula strategy is able to produce relatively economically larger profits after costs than the distance approach when the number of tradable signals is similar. 
+%	The SMB coefficients are only significant at 10\% on committed capital for the mixed copula model, whereas the value effect premium (HML factor) slopes are significant at 5\% for the distance approach. In addition, we find that returns are negatively correlated with momentum loadings for both methods at 1\% on committed capital, although a larger negative effect on the performance is found when we use the 2.0 standard deviation threshold. We also find that excess returns are driven by the momentum factor on fully invested capital, although only significant at 5\% for the copula approach. Furthermore, the exposures of pairs trading return strategies to the reversal factor are negative for both weighting schemes and significant at 5\% for the distance approach on committed and fully invested capital, while it is only significant to the less conservative approach for the mixed copula strategy. 
+ The regression on asset pricing factors for Top 5 pairs strengthen the patterns found in the Figure \ref{fig:Figure3}, indicating that the mixed copula strategy is able to produce relatively economically larger profits after costs than the distance approach when the number of tradable signals is similar. 
 
 	%\begin{sidewaystable}
 	\begin{table}
@@ -745,7 +746,7 @@ The regression on asset pricing factors for Top 5 pairs strengthen the patterns 
 \subsection{Sub-period analysis}
 The existing literature on trading strategies provides evidence of the sensitivity of performance over different market conditions.  To identify how robust these results are to changes in the market state, we split the full sample period into five sub-periods: (1) July 1991 to December 1995, (2) January 1996 to December 2000, (3) January 2001 to December 2005, (4) January 2006 to December 2010, and (5) January 2011 to December 2015. The third sub-period corresponds to the bear market that comprises the dotcom crisis and the September 11th terrorist attack, whereas the fourth sub-period corresponds to the subprime mortgage financial crisis period.
 
-Figures \ref{fig:fig6} and \ref{fig:fig7} show the profitability and risk-adjusted patterns of both strategies for Top 5 (top), Top 20 (center) and Top 35 (bottom) pairs after costs, respectively, for each sub-period on commited capital (left) and fully invested capital (right). 
+Figures \ref{fig:Figure6} and \ref{fig:Figure7} show the profitability and risk-adjusted patterns of both strategies for Top 5 (top), Top 20 (center) and Top 35 (bottom) pairs after costs, respectively, for each sub-period on commited capital (left) and fully invested capital (right). 
 
 Overall, the mixed copula strategy yields a superior out-of-sample performance relative to the distance approach in the second and third subperiods (1996-2000 and 2001-2005) and after the subprime mortgage crisis (2011-2015), while the distance method delivers a significant better performance in the first (1991-1995) and fourth subperiods (2006-2010) when the number of trades (Top 5 pairs) are similar on committed capital. Particularly, the distance and mixed copula strategies generated an average annualized excess returns of 3.48\% and 6.84\%, and 3.67\% and 1.56\% over the 2001-2005 and 2006-2010 periods, respectively, which exceeds by far the S\&P 500's average excess returns of -2.28\% and -1.71\% over the same subperiods.
 
@@ -753,7 +754,7 @@ For fully invested weighting scheme the results are consistent with those we hav
 
 The results for Top 20 and Top 35 pairs are in agreement with what we expected from previous analyses. The main difference is the performance of the strategies in the second subperiod on committed capital.
 
-\begin{figure}[H]
+\begin{figure}[!ht]
 	\centering
 		\includegraphics[width=\linewidth]{Figure6.eps}
 	\captionsetup{justification=raggedright,
@@ -764,7 +765,7 @@ The results for Top 20 and Top 35 pairs are in agreement with what we expected f
 	\label{fig:Figure6}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[!ht]
 	\centering
 		\includegraphics[width=\linewidth]{Figure7.eps}
 	\captionsetup{justification=raggedright,
