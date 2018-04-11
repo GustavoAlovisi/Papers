@@ -1,0 +1,734 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Teste de Hipóteses: Introdução},
+            pdfauthor={Fernando B. Sabino da Silva},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+  \title{Teste de Hipóteses: Introdução}
+  \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+  \author{Fernando B. Sabino da Silva}
+  \preauthor{\centering\large\emph}
+  \postauthor{\par}
+  \date{}
+  \predate{}\postdate{}
+
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\section{Inferência Estatística: Hipóteses e
+teste}\label{inferencia-estatistica-hipoteses-e-teste}
+
+\subsection{Conceito de hipóteses}\label{conceito-de-hipoteses}
+
+\begin{itemize}
+\tightlist
+\item
+  Uma \textbf{hipótese} é uma afirmação sobre uma dada população.
+  Geralmente, é uma declaração sobre o valor de um parâmetro
+  populacional (ou sobre o intervalo onde eles estão).
+\item
+  Exemplos:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Controle de qualidade de produtos: Uma hipótese é que os produtos
+    tenham, por exemplo, um determinado peso, um determinado consumo de
+    energia ou uma determinada durabilidade mínima.
+  \item
+    Economia: Por exemplo, não há dependência entre a idade de uma
+    empresa e o nível de retorno.
+  \end{itemize}
+\end{itemize}
+
+\subsection{Teste de significância}\label{teste-de-significancia}
+
+\begin{itemize}
+\item
+  Um teste de significância é usado para investigar se os dados
+  contradizem uma hipótese ou não. Lembre-se do que estudamos sobre
+  distribuições amostrais. A ideia aqui é usar as informações de maneira
+  efetiva para poder tomar decisões mais educadas e com maior precisão.
+\item
+  Se a hipótese diz que um parâmetro assume determinado valor, então o
+  teste deve dizer qual a probabilidade de que uma determinada amostra
+  retirada desta população hipotética gere uma amostra com as
+  características encontradas. Exemplo: Se \(\mu = 10\), qual a
+  probabilidade de que uma amostra retirada desta população apresente
+  \(\bar{X}_n = 8\)? Se a probabilidade for grande, não iremos descartar
+  a hipótese e diremos (ficará mais claro adiante) que ``não há
+  evidências suficientes para que rejeitemos a hipótese''. Se a
+  probabilidade for pequena, fará mais sentido imaginarmos que a amostra
+  foi retirada de outra população (não foi retirada da hipotética). Qual
+  população? Uma que tenha mais probabilidade de ter gerado aquela
+  amostra.
+\item
+  Exemplos:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Tempo de espera em uma fila. Nós coletamos uma amostra de \(n\)
+    clientes e contamos quantos esperaram mais de 5 minutos. A política
+    da empresa é de que no máximo \(10\%\) dos clientes devem esperar
+    mais do que 5 minutos. Em uma amostra de tamanho \(n=32\), nós
+    observamos 4 com tempo de espera superior a 5 minutos, i.e.~a
+    proporção estimada é de \(\hat{\pi} = \frac{4}{32} = 12.5\%\).
+    Sabendo que \(\hat{\pi}\) depende da amostra, podemos nos perguntar
+    se o valor encontrado é significativamente diferente de \(10\%\)? Em
+    outras palavras, se a proporção populacional é de fato \(10\%\),
+    qual a probabilidade de encontrarmos \(12.5\%\) em uma amostra de 32
+    clientes?
+  \item
+    O nível de álcool no sangue de um estudante é medido 4 vezes e
+    apresenta os seguintes valores \(0.504,0.500,0.512,0.524\), i.e.~a
+    média estimada é \(\bar{y}=0.51\). Isto é muito diferente de,
+    digamos, um limite de \(0.5\)?
+  \end{itemize}
+\end{itemize}
+
+\subsection{Hipótese nula e
+alternativa}\label{hipotese-nula-e-alternativa}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{A hipótese nula} - denotada por \(H_0\) - geralmente
+  especifica que um parâmetro da população tem algum valor determinado.
+  Por exemplo, se \(\mu\) é a média do nível de álcool no sangue, nós
+  podemos escrever a hipótese nula como
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \(H_0 : \mu = 0.5\).
+  \end{itemize}
+\item
+  A \textbf{hipótese alternativa} - denotada por \(H_1\) - especifica
+  que o parâmetro populacional está contido em um conjunto de valores
+  diferentes do especificado na hipótese nula. Por exemplo,
+
+  \begin{itemize}
+  \tightlist
+  \item
+    a hipótese nula é \(H_0 : \mu = 0.5\)
+  \item
+    a hipótese alternativa é \(H_1 : \mu \neq 0.5\).
+  \end{itemize}
+\item
+  A \textbf{hipótese alternativa} - denotada \(H_a\) - geralmente
+  especifica que o parâmetro populacional está contido em um dado
+  conjunto de valores diferentes da hipótese nula. Por exemplo, se
+  \(\mu\) é a média populacional de uma medição do nível de álcool no
+  sangue,
+\item
+  a hipótese nula é \(H_0: \mu = 0.5\)
+\item
+  a hipótese alternativa é \(H_a: \mu \neq 0.5\).
+\end{itemize}
+
+\subsection{Estatística de teste}\label{estatistica-de-teste}
+
+\begin{itemize}
+\tightlist
+\item
+  Considere um parâmetro populacional \(\mu\) e \[
+    H_0:\mu = \mu_0,
+    \] onde \(\mu_0\) é um número conhecido, digamos, ~\(\mu_0 = 0.5\).
+\item
+  Com base na amostra, nós temos uma estimativa \(\hat{\mu}\).
+\item
+  Uma \textbf{estatística de teste} \(T\) dependerá tipicamente de
+  \(\hat{\mu}\) e \(\mu_0\) (podemos escrever \(T(\hat{\mu}, \mu_0)\)) e
+  medirá quão ``longe \(\hat{\mu}\) está de \(\mu_0\)''
+\item
+  Frequentemente nós usamos \(T(\hat{\mu},\mu_0)\) = ``o número de
+  desvios padrão entre \(\hat{\mu}\) e \(\mu_0\)''.
+\item
+  Por exemplo, é improvável que a distância esteja acima de 3 desvios
+  padrão. Se isto acontecer \(\mu_0\) não será provavelmente o valor
+  correto do parâmetro (populacional).
+\end{itemize}
+
+\subsection{\texorpdfstring{\(P\)-valor}{P-valor}}\label{p-valor}
+
+\begin{itemize}
+\tightlist
+\item
+  Nós consideramos
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \(H_0\):~uma hipótese nula.
+  \item
+    \(H_a\):~uma hipótese alternativa.
+  \item
+    \(T\):~uma estatística de teste, onde o valor calculado com base na
+    amostra atual é denotado por \(t_{obs}\).
+  \end{itemize}
+\item
+  Para investigar a plausibilidade de \(H_0\), nós medimos a evidência
+  de \(H_0\) usando o que chamamos de \(p\)-valor:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    O \(p\)-valor é a probabilidade de se observar um valor mais extremo
+    \(T \geq t_{obs}\) (se repetíssemos o experimento) \emph{sob a
+    suposição de que \(H_0\) seja verdadeira}, isto é, calculamos a
+    probabilidade condicional de obter um valor mais extremo do que
+    \(t_{obs}\) (dependendo da hipótese do que o valor absoluto de
+    \(t_{obs}\)) quando a hipótese nula é verdadeira.
+  \item
+    Se o \(p\)-valor é pequeno, então haverá evidências de que a nula
+    não seja verdadeira, pois existe uma probabilidade pequena de
+    observar um valor mais extremo do que \(t_{obs}\) se \(H_0\) for
+    verdadeira. Podemos concluir que \[
+      \textbf{Quanto menor for o  $p$-valor, menor será a evidência contrária a $H_0$.} 
+      \]
+  \end{itemize}
+\item
+  Mas o que é um valor pequeno para o \(p\)-valor? Isto depende do
+  \textbf{tamanho da amostra} e de outras considerações que não iremos
+  ver neste curso. Se o \(p\)-valor for abaixo de \(5\%\) dizemos que o
+  valor da estatística de teste (\(t_{obs}\)) é \textbf{significante} ao
+  nível de \(5\%\).
+\end{itemize}
+
+\subsection{Nível de significância}\label{nivel-de-significancia}
+
+\begin{itemize}
+\tightlist
+\item
+  Nós consideramos
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \(H_0\): uma hipótese nula.
+  \item
+    \(H_a\): uma hipótese alternativa.
+  \item
+    \(T\): uma estatística de teste, onde o valor calculado baseado na
+    amostral atual é denotedo por \(t_{obs}\) é o correspondente
+    \(p\)-valor é simplesmente \(p\) (ou \(p_{obs}\)).
+  \end{itemize}
+\item
+  Na prática, nós usualmente queremos usar as informações para uma
+  tomada de decisão. Em outras palavras, nós queremos decidir se vamos
+  ou não rejeitar \(H_0\).
+\item
+  A decisão dentro deste framework pode ser feita se nós estabelecermos
+  de antemão o chamado \textbf{nível de significância \(\alpha\)}, onde
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \(\alpha\) é uma dada percentagem
+  \item
+    nós rejeitamos \(H_0\), se \(p\) for menor ou igial a \(\alpha\)
+  \item
+    \(\alpha\) é chamado de \textbf{nível de significância} do teste
+  \item
+    valores típicos de \(\alpha\) são \(5\%\) ou \(1\%\).
+  \end{itemize}
+\end{itemize}
+
+\subsection{Teste de significância para a
+média}\label{teste-de-significancia-para-a-media}
+
+\subsubsection{\texorpdfstring{Teste \(t\) (bilateral) para a
+média:}{Teste t (bilateral) para a média:}}\label{teste-t-bilateral-para-a-media}
+
+\begin{itemize}
+\tightlist
+\item
+  Assuma que retiramos uma amostra de uma população com distribuição
+  \(\texttt{N}(\mu,\sigma^{2})\).
+\item
+  As estimativas dos parâmetros populacionais são \(\hat{\mu}=\bar{y}\)
+  e \(\hat{\sigma}=s\) com base em \(n\) observações.
+\item
+  Hipótese nula:~\(H_0:\ \mu = \mu_0\), onde \(\mu_0\) é um valor
+  conhecido.
+\item
+  \textbf{Hipótese alternativa bilateral}:~ \(H_a:\ \mu \neq \mu_0\).
+\item
+  Estatística de teste
+  observada:~\(t_{obs} = \frac{\bar{y} - \mu_0}{ep(\bar{y})}\), onde
+  \(ep(\bar{y}) = \frac{s}{\sqrt{n}}\).
+\item
+  I.e.~\(t_{obs}\) mede quantos desvios padrao (com sinal \(\pm\)) a
+  média empírica está afastada de \(\mu_0\).
+\item
+  Se \(H_0\) é verdadeira (sob \(H_0\)), \(t_{obs}\) é uma observação
+  retirada de uma população com distribuição \(t\) com \(df = n - 1\)
+  graus de liberdade
+\item
+  \(P\)-valor = 2 x ``probabilidade da cauda superior de
+  \(|t_{obs}|\)''. A probabilidade é calculada usando a distribuição
+  \(t\) com \(df\) graus de liberdade, onde \(df = n - 1\), pois
+  perdemos um grau de liberdade ao estimar \(\bar{y}\).
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\subsubsection{\texorpdfstring{Exemplo: Teste \(t\)
+bilateral}{Exemplo: Teste t bilateral}}\label{exemplo-teste-t-bilateral}
+
+\begin{itemize}
+\tightlist
+\item
+  Medições do nível de álcool no sangue: \(0.504, 0.500, 0.512, 0.524\).
+\item
+  Assuma que a amostra foi retirada de uma população com distribuição
+  normal .
+\item
+  Nós calculamos
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \(\bar{y} = 0.51\) and \(s = 0.0106\)
+  \item
+    \(ep_{\bar{y}} = \frac{s}{\sqrt{n}} = \frac{0.0106}{\sqrt{4}} = 0.0053\)
+  \item
+    \(H_0: \mu = 0.5\),~i.e.~\(\mu_0 = 0.5\)
+  \item
+    \(t_{obs} = \frac{\bar{y}-\mu_0}{ep_\bar{y}} = \frac{0.51-0.5}{0.0053} = 1.89\)
+  \end{itemize}
+\item
+  Portanto, estamos a quase 2 desvios padrão de \(0.5\).~Isso é um valor
+  extremo em uma distribuição \(t\) com 3 graus de liberdade?
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(mosaic)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'mosaic' was built under R version 3.4.3
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'dplyr' was built under R version 3.4.3
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'ggformula' was built under R version 3.4.3
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'ggplot2' was built under R version 3.4.3
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'mosaicData' was built under R version 3.4.3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1} \OperatorTok{-}\StringTok{ }\KeywordTok{pdist}\NormalTok{(}\StringTok{"t"}\NormalTok{, }\DataTypeTok{q =} \FloatTok{1.89}\NormalTok{, }\DataTypeTok{df =} \DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Hypothesis_Test_Intro_files/figure-latex/unnamed-chunk-2-1.pdf}
+
+\begin{verbatim}
+## [1] 0.07757725
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  O \(p\)-valor é 2\(\cdot\) 0.078,~ i.e.~mais do que 15\%. Com base
+  nisso, nós não rejeitamos \(H_0\).
+\end{itemize}
+
+\subsection{\texorpdfstring{Teste \(t\) unilateral para a
+média}{Teste t unilateral para a média}}\label{teste-t-unilateral-para-a-media}
+
+Todo o nível de significância será colocado em um lado apenas, tal como
+um limite inferior ou superior de confiança. Veja mais exemplos no livro
+do Costa Neto.
+
+\subsection{\texorpdfstring{Visão geral do teste
+\(t\)}{Visão geral do teste t}}\label{visao-geral-do-teste-t}
+
+\includegraphics{https://asta.math.aau.dk/static-files/asta/img/t-testOversigt.jpg}
+
+\subsection{Teste de significância para a
+proporção}\label{teste-de-significancia-para-a-proporcao}
+
+\begin{itemize}
+\tightlist
+\item
+  Considere uma amostra de tamanho \(n\), onde observamos se uma
+  determinada propriedade está presente ou não.
+\item
+  A frequência relativa desta propriedade na população é \(p\), estimada
+  por \(\hat{p}\).
+\item
+  Hipotése Nula:~\(H_0: p = p_0\), onde \(p_0\) é um número conhecido.
+\item
+  \textbf{Alternativa bilateral}:~\(H_a: p \neq p_0\).
+\item
+  \emph{Se \(H_0\) é verdadeira} o erro padrão \(\hat{p}\) é dado por
+  \(ep_0 = \sqrt{\frac{p_0(1-p_0)}{n}}\).
+\item
+  Estatística de teste observada: \(z_{obs} = \frac{\hat{p}-p_0}{ep_0}\)
+\item
+  I.e. \(z_{obs}\) mede quantos desvios padrão há entre \(\hat{p}\) to
+  \(p_0\).
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\subsubsection{Teste Aproximado}\label{teste-aproximado}
+
+\begin{itemize}
+\tightlist
+\item
+  Se \(n\hat{p}\) e \(n(1 - \hat{p})\) são maiores do que \(15\), nós
+  sabemos que \(\hat{p}\) segue aproximadamente uma distribuição normal,
+  i.e.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Se \(H_0\) é verdadeira e a amostra é grande o suficiente, então
+    \(z_{obs}\) é uma observação de uma distribuição normal padrão.
+  \end{itemize}
+\item
+  \(P\)-valor = 2 x ``probabilidade da cauda superior de
+  \(|z_{obs}|\)''. A probabilidade é calculada usando a distribuição
+  normal padrão.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\subsubsection{Exemplo: Teste
+Aproximado}\label{exemplo-teste-aproximado}
+
+\begin{itemize}
+\tightlist
+\item
+  Considere o seguinte estudo:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Uma amostra aleatória de 1200 indivíduos (Florida, 2006) foi
+    consultada se preferiam menos serviços ou aumentos de impostos.
+  \item
+    52\% preferiam aumentos de impostos. Isto é suficiente para dizer
+    que a proporção é significativamente diferente de 0.5 ?
+  \end{itemize}
+\item
+  Amostra com \(n = 1200\) observações e proporção \(\hat{p} = 0.52\).
+\item
+  Hipotése Nula \(H_0: p = 0.5\).
+\item
+  Hipótese Alternativa \(H_a: p \neq 0.5\).
+\item
+  Erro padrão
+  \(ep_0 = \sqrt{\frac{p_0(1-p_0)}{n}} = \sqrt{\frac{0.5\times0.5}{1200}} = 0.0144\)
+\item
+  Estatística de teste observada
+  \(z_{obs} = \frac{\hat{p}-p_0}{ep_0}=\frac{0.52-0.5}{0.0144}=1.39\)
+\item
+  ``A cauda superior para 1.39'' na distribuição normal padrão é 0.0823,
+  i.e.~o \(p\)-valor é 2\(\cdot\) 0.0823\(=\) 16.46\%.
+\item
+  Conclusão: Não há evidências suficientes para rejeitar \(H_0\),
+  i.e.~nós não rejeitamos que a preferência na população é de 50\%.
+\item
+  Os cálculos acima também podem ser calculados automaticamente no
+  \textbf{R} por (os resultados são um pouco diferentes, devido aos
+  arredondamentos feitos acima):
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{count <-}\StringTok{ }\DecValTok{1200} \OperatorTok{*}\StringTok{ }\FloatTok{0.52} \CommentTok{# número de pessoas que preferem o aumento de imposto}
+\KeywordTok{prop.test}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ count, }\DataTypeTok{n =} \DecValTok{1200}\NormalTok{, }\DataTypeTok{correct =}\NormalTok{ F)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  1-sample proportions test without continuity correction
+## 
+## data:  count out of 1200
+## X-squared = 1.92, df = 1, p-value = 0.1659
+## alternative hypothesis: true p is not equal to 0.5
+## 95 percent confidence interval:
+##  0.4917142 0.5481581
+## sample estimates:
+##    p 
+## 0.52
+\end{verbatim}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\subsubsection{Teste Binomial (exato)}\label{teste-binomial-exato}
+
+\begin{itemize}
+\tightlist
+\item
+  Considere novamente uma amostra de tamanho \(n\), onde observamos se
+  uma determinada propriedade está presente ou não.
+\item
+  A frequência relativa da propriedade na população é \(p\), estimada
+  por \(\hat{p}\).
+\item
+  Let \(y_+=n\hat{p}\) a frequência (contagem total) da propriedade na
+  amostra.
+\item
+  Pode ser mostrado que \(y_+\) segue a \textbf{distribuição binomial}
+  com parâmetros \(n\) e probabilidade de sucesso \(p\). Usamos
+  \(Bin(n,p)\) para denotar esta distribuição.
+\item
+  Hipótese nula:~\(H_0: p=p_0\), onde \(p_0\) é um número conhecido.
+\item
+  Hipótese alternativa:~\(H_a: p \neq p_0\).
+\item
+  \(P\)-valor para o teste binomial \textbf{bilateral}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Se \(y_+\geq np_0\):~2 x ``probabilidade na cauda superior para
+    \(y_+\) na distribuição \(Bin(n,p_0)\).
+  \item
+    Se \(y_+< np_0\):~2 x ``probabilidade na cauda superior para
+    \(y_+\)'' na distribuição \(Bin(n,p_0)\).
+  \end{itemize}
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\subsubsection{Exemplo: Teste Binomial}\label{exemplo-teste-binomial}
+
+\begin{itemize}
+\tightlist
+\item
+  Experimento com \(n=30\), onde obtivemos \(y_+=14\) sucessos.
+\item
+  Queremos testar \(H_0: p=0.3\) vs.~\(H_a: p \not=0.3\).
+\item
+  Como \(y_+>np_0=9\), usamos a probabilidade de cauda superior
+  correspondente à soma das alturas das linhas vermelhas à direita de 14
+  no gráfico abaixo. (O gráfico continua no lado direito acima de
+  \(n=30\), mas foi cortado para fins ilustrativos.)
+\item
+  A probabilidade da cauda superior de 14 para cima (i.e.~maior do que
+  13) é:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{lower_tail <-}\StringTok{ }\KeywordTok{pdist}\NormalTok{(}\StringTok{"binom"}\NormalTok{, }\DataTypeTok{q =} \DecValTok{13}\NormalTok{, }\DataTypeTok{size =} \DecValTok{30}\NormalTok{, }\DataTypeTok{prob =} \FloatTok{0.3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Hypothesis_Test_Intro_files/figure-latex/unnamed-chunk-4-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1} \OperatorTok{-}\StringTok{ }\NormalTok{lower_tail}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.04005255
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  O \(p\)-valor é então 2 x 0.04 = 0.08.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\subsubsection{\texorpdfstring{Teste Binomial no
+\textbf{R}}{Teste Binomial no R}}\label{teste-binomial-no-r}
+
+\begin{itemize}
+\tightlist
+\item
+  Voltemos aos dados do Chile, onde novamente olhamos a variável
+  \texttt{sex}.
+\item
+  Vamos testar se a proporção de mulheres é diferente de 0.5, i.e.,
+  queremos testar \(H_0:\ p=0.5\) and \(H_a:\ p \neq 0.5\), onde \(p\) é
+  a proporção populacional desconhecida de mulheres.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Chile <-}\StringTok{ }\KeywordTok{read.delim}\NormalTok{(}\StringTok{"C://Users//fsabino//Desktop//Codes//papers//Introductory_Stat_II//notebook//Chile.txt"}\NormalTok{)}
+\KeywordTok{binom.test}\NormalTok{( }\OperatorTok{~}\StringTok{ }\NormalTok{sex, }\DataTypeTok{data =}\NormalTok{ Chile, }\DataTypeTok{p =} \FloatTok{0.5}\NormalTok{, }\DataTypeTok{conf.level =} \FloatTok{0.95}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## 
+## 
+## data:  Chile$sex  [with success = F]
+## number of successes = 1379, number of trials = 2700, p-value =
+## 0.2727
+## alternative hypothesis: true probability of success is not equal to 0.5
+## 95 percent confidence interval:
+##  0.4916971 0.5297610
+## sample estimates:
+## probability of success 
+##              0.5107407
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  O \(p\)-valor para o teste exato (usando a distribuição binomial) é de
+  \(27\%\), portanto não há uma diferença significativa entre a
+  proporção de homens e mulheres.
+\item
+  O teste aproximado tem um valor \(p\) de \(26\%\), que pode ser
+  calculado pelo comando
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{prop.test}\NormalTok{( }\OperatorTok{~}\StringTok{ }\NormalTok{sex, }\DataTypeTok{data =}\NormalTok{ Chile, }\DataTypeTok{p =} \FloatTok{0.5}\NormalTok{, }\DataTypeTok{conf.level =} \FloatTok{0.95}\NormalTok{, }\DataTypeTok{correct =} \OtherTok{FALSE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+(observe o argumento adicional \texttt{correct\ =\ FALSE}).
+
+\subsection{Visão Geral dos testes para média e
+proporção}\label{visao-geral-dos-testes-para-media-e-proporcao}
+
+\includegraphics{https://asta.math.aau.dk/static-files/asta/img/AGRoversigt.jpg}
+
+
+\end{document}

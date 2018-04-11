@@ -1,0 +1,238 @@
+---
+title: 'Teste de Hipóteses: Introdução'
+author: "Fernando B. Sabino da Silva"
+output:
+  pdf_document:
+    fig_caption: no
+    highlight: tango
+    number_section: yes
+    toc: yes
+  html_document:
+    df_print: paged
+    toc: yes
+  slidy_presentation:
+    css: https://asta.math.aau.dk/course/asta/2018-1/?file=lecture_style.css
+    fig_caption: no
+    highlight: tango
+    theme: cerulean
+---
+
+```{r, include = FALSE}
+## Remember to add all packages used in the code below!
+missing_pkgs <- setdiff(c("mosaic"), rownames(installed.packages()))
+if(length(missing_pkgs)>0) install.packages(missing_pkgs)
+```
+
+# Inferência Estatística: Hipóteses e teste
+## Conceito de hipóteses
+
+* Uma **hipótese** é uma afirmação sobre uma dada população. Geralmente, é uma declaração sobre o valor de um parâmetro populacional (ou sobre o intervalo onde eles estão).
+* Exemplos:
+    * Controle de qualidade de produtos: Uma hipótese é que os produtos tenham, por exemplo, um determinado peso, um determinado consumo de energia ou uma determinada durabilidade mínima.
+    * Economia:  Por exemplo, não há dependência entre a idade de uma empresa e o nível de retorno.
+
+## Teste de significância
+* Um teste de significância é usado para investigar se os dados contradizem uma hipótese ou não. Lembre-se do que estudamos sobre distribuições amostrais. A ideia aqui é usar as informações de maneira efetiva para poder tomar decisões mais educadas e com maior precisão.
+* Se a hipótese diz que um parâmetro assume determinado valor, então o teste deve dizer qual a probabilidade de que uma determinada amostra retirada desta população hipotética gere uma amostra com as características encontradas. Exemplo: Se $\mu = 10$, qual a probabilidade de que uma amostra retirada desta população apresente $\bar{X}_n = 8$? Se a probabilidade for grande, não iremos descartar a hipótese e diremos (ficará mais claro adiante) que "não há evidências suficientes para que rejeitemos a hipótese". Se a probabilidade for pequena, fará mais sentido imaginarmos que a amostra foi retirada de outra população (não foi retirada da hipotética). Qual população? Uma que tenha mais probabilidade de ter gerado aquela amostra.
+
+* Exemplos:
+    * Tempo de espera em uma fila. Nós coletamos uma amostra de $n$ clientes e contamos quantos esperaram mais de 5 minutos. A política da empresa é de que no máximo $10\%$ dos clientes devem esperar mais do que 5 minutos. Em uma amostra de tamanho $n=32$, nós observamos 4 com tempo de espera superior a 5 minutos, i.e. a proporção estimada é de
+        $\hat{\pi} = \frac{4}{32} = 12.5\%$. Sabendo que $\hat{\pi}$ depende da amostra, podemos nos perguntar se o valor encontrado é significativamente diferente de $10\%$? Em outras palavras, se a proporção populacional é de fato $10\%$, qual a probabilidade de encontrarmos $12.5\%$ em uma amostra de 32 clientes?
+    * O nível de álcool no sangue de um estudante é medido 4 vezes e apresenta os seguintes valores $0.504,0.500,0.512,0.524$, i.e. a média estimada é $\bar{y}=0.51$. Isto é muito diferente de, digamos, um limite de $0.5$?
+
+## Hipótese nula e alternativa
+
+* **A hipótese nula** - denotada por $H_0$ - geralmente especifica que um parâmetro da população tem algum valor determinado. Por exemplo, se $\mu$ é a média do nível de álcool no sangue, nós podemos escrever a hipótese nula como 
+    * $H_0 : \mu = 0.5$.
+* A **hipótese alternativa** - denotada por $H_1$ - especifica que o parâmetro populacional está contido em um conjunto de valores diferentes do especificado na hipótese nula. Por exemplo, 
+    * a hipótese nula é $H_0 : \mu = 0.5$
+    * a hipótese alternativa é $H_1 : \mu \neq 0.5$.
+    
+* A **hipótese alternativa** - denotada $H_a$ - geralmente especifica que o parâmetro populacional está contido em um dado conjunto de valores diferentes da hipótese nula. Por exemplo, se $\mu$ é a média populacional de uma medição do nível de álcool no sangue,
+* a hipótese nula é $H_0: \mu = 0.5$
+* a hipótese alternativa é $H_a: \mu \neq 0.5$.
+
+
+
+## Estatística de teste
+
+* Considere um parâmetro populacional $\mu$ e 
+  $$
+  H_0:\mu = \mu_0,
+  $$
+  onde $\mu_0$ é um número conhecido, digamos, \ $\mu_0 = 0.5$.
+* Com base na amostra, nós temos uma estimativa $\hat{\mu}$.
+* Uma **estatística de teste** $T$ dependerá tipicamente de $\hat{\mu}$ e
+  $\mu_0$ (podemos escrever $T(\hat{\mu}, \mu_0)$) e medirá quão "longe $\hat{\mu}$ está de $\mu_0$"
+* Frequentemente nós usamos $T(\hat{\mu},\mu_0)$ = "o número de desvios padrão entre $\hat{\mu}$
+          e $\mu_0$".
+* Por exemplo, é improvável que a distância esteja acima de 3 desvios padrão. Se isto acontecer $\mu_0$ não será provavelmente o valor correto do parâmetro (populacional).
+  
+## $P$-valor
+
+* Nós consideramos
+    * $H_0$:\ uma hipótese nula.
+    * $H_a$:\ uma hipótese alternativa.
+    * $T$:\ uma estatística de teste, onde o valor calculado com base na amostra atual é denotado por $t_{obs}$.
+* Para investigar a plausibilidade de $H_0$, nós medimos a evidência de $H_0$ usando o que chamamos de $p$-valor:
+    * O $p$-valor é a probabilidade de se observar um valor mais extremo $T \geq t_{obs}$ (se repetíssemos o experimento) 
+    *sob a suposição de que 
+      $H_0$ seja verdadeira*, isto é, calculamos a probabilidade condicional de obter um valor mais extremo do que $t_{obs}$ (dependendo da hipótese do que o valor absoluto de $t_{obs}$) quando a hipótese nula é verdadeira.
+    * Se o $p$-valor é pequeno, então haverá evidências de que a nula não seja verdadeira, pois existe uma probabilidade pequena de observar um valor mais extremo do que $t_{obs}$ se $H_0$ for verdadeira. Podemos concluir que      $$
+      \textbf{Quanto menor for o  $p$-valor, menor será a evidência contrária a $H_0$.} 
+      $$
+* Mas o que é um valor pequeno para o $p$-valor? Isto depende do **tamanho da amostra** e de outras considerações que não iremos ver neste curso. Se o $p$-valor for abaixo de $5\%$ dizemos que o valor da estatística de teste ($t_{obs}$) é **significante** ao nível de $5\%$.
+
+
+## Nível de significância
+
+* Nós consideramos
+    * $H_0$: uma hipótese nula.
+    * $H_a$: uma hipótese alternativa.
+    * $T$: uma estatística de teste, onde o valor calculado baseado na amostral atual é denotedo por $t_{obs}$ é o correspondente $p$-valor é simplesmente $p$ (ou $p_{obs}$).
+* Na prática, nós usualmente queremos usar as informações para uma tomada de decisão. Em outras palavras, nós queremos decidir se vamos ou não rejeitar $H_0$.
+* A decisão dentro deste framework pode ser feita se nós estabelecermos de antemão o chamado **nível de significância $\alpha$**, onde 
+    * $\alpha$ é uma dada percentagem
+    * nós rejeitamos $H_0$, se $p$ for menor ou igial a $\alpha$
+    * $\alpha$ é chamado de **nível de significância** do teste
+    * valores típicos de $\alpha$ são $5\%$ ou $1\%$.
+
+## Teste de significância para a média
+
+### Teste $t$ (bilateral) para a média:
+
+* Assuma que retiramos uma amostra de uma população com distribuição $\texttt{N}(\mu,\sigma^{2})$.
+* As estimativas dos parâmetros populacionais são $\hat{\mu}=\bar{y}$ e 
+$\hat{\sigma}=s$ com base em $n$ observações.
+* Hipótese nula:\ $H_0:\ \mu = \mu_0$, onde $\mu_0$ é um valor conhecido.
+* **Hipótese alternativa bilateral**:\  $H_a:\ \mu \neq \mu_0$.
+* Estatística de teste observada:\ $t_{obs} = \frac{\bar{y} - \mu_0}{ep(\bar{y})}$, onde
+  $ep(\bar{y}) = \frac{s}{\sqrt{n}}$.
+*  I.e.\ $t_{obs}$ mede quantos desvios padrao (com sinal $\pm$) a média empírica está afastada de $\mu_0$.
+* Se $H_0$ é verdadeira (sob $H_0$),  $t_{obs}$ é uma observação retirada de uma população com distribuição $t$ com $df = n - 1$ graus de liberdade
+* $P$-valor = 2 x "probabilidade da cauda superior de
+  $|t_{obs}|$". A probabilidade é calculada usando a distribuição $t$ com $df$ graus de liberdade, onde $df = n - 1$, pois perdemos um grau de liberdade ao estimar $\bar{y}$.
+
+----
+
+### Exemplo: Teste $t$ bilateral
+* Medições do nível de álcool no sangue: $0.504, 0.500, 0.512, 0.524$.
+* Assuma que a amostra foi retirada de uma população com distribuição normal .
+* Nós calculamos
+    * $\bar{y} = 0.51$ and $s = 0.0106$
+    * $ep_{\bar{y}} = \frac{s}{\sqrt{n}} = \frac{0.0106}{\sqrt{4}} = 0.0053$
+    * $H_0: \mu = 0.5$,\ i.e.\ $\mu_0 = 0.5$
+    * $t_{obs} = \frac{\bar{y}-\mu_0}{ep_\bar{y}} = \frac{0.51-0.5}{0.0053} = 1.89$
+* Portanto, estamos a quase 2 desvios padrão de $0.5$.\ Isso é um valor extremo em uma distribuição $t$ com 3 graus de liberdade?
+
+```{r message=FALSE}
+library(mosaic)
+1 - pdist("t", q = 1.89, df = 3)
+```
+
+* O $p$-valor é 2$\cdot$ `r round(abs(pt(-1.89, df = 3)),3)`,\  i.e. mais do que 15\%. Com base nisso, nós não rejeitamos $H_0$.
+
+
+
+## Teste $t$ unilateral para a média
+
+Todo o nível de significância será colocado em um lado apenas, tal como um limite inferior ou superior de confiança. Veja mais exemplos no livro do Costa Neto.
+
+
+
+## Visão geral do teste $t$
+
+  ![](https://asta.math.aau.dk/static-files/asta/img/t-testOversigt.jpg)
+
+## Teste de significância para a proporção
+
+* Considere uma amostra de tamanho $n$, onde observamos se uma determinada propriedade está presente ou não.
+* A frequência relativa desta propriedade na população é $p$, estimada por $\hat{p}$.
+* Hipotése Nula:\ $H_0: p = p_0$, onde $p_0$ é um número conhecido.
+* **Alternativa bilateral**:\ $H_a: p \neq p_0$.
+* *Se $H_0$ é verdadeira* o erro padrão $\hat{p}$ é dado por $ep_0 = \sqrt{\frac{p_0(1-p_0)}{n}}$.
+* Estatística de teste observada: $z_{obs} = \frac{\hat{p}-p_0}{ep_0}$
+* I.e. $z_{obs}$ mede quantos desvios padrão há entre $\hat{p}$ to $p_0$.
+
+----
+
+
+### Teste Aproximado
+
+* Se $n\hat{p}$ e $n(1 - \hat{p})$ são maiores do que $15$, nós sabemos que $\hat{p}$ segue aproximadamente uma distribuição normal, i.e.
+    * Se $H_0$ é verdadeira e a amostra é grande o suficiente, então $z_{obs}$ é uma observação de uma distribuição normal padrão.
+* $P$-valor = 2 x "probabilidade da cauda superior de $|z_{obs}|$". A probabilidade é calculada usando a distribuição normal padrão.
+
+----
+
+### Exemplo: Teste Aproximado
+* Considere o seguinte estudo:
+    * Uma amostra aleatória de 1200 indivíduos (Florida, 2006) foi consultada se preferiam menos serviços ou aumentos de impostos.
+    * 52% preferiam aumentos de impostos. Isto é suficiente para dizer que a proporção é significativamente diferente de 0.5 ?
+* Amostra com $n = 1200$ observações e proporção
+  $\hat{p} = 0.52$. 
+* Hipotése Nula $H_0: p = 0.5$.
+* Hipótese Alternativa $H_a: p \neq 0.5$.
+* Erro padrão
+  $ep_0 = \sqrt{\frac{p_0(1-p_0)}{n}} = \sqrt{\frac{0.5\times0.5}{1200}} = 0.0144$
+* Estatística de teste observada
+  $z_{obs} = \frac{\hat{p}-p_0}{ep_0}=\frac{0.52-0.5}{0.0144}=1.39$
+* "A cauda superior para 1.39" na distribuição normal padrão é 0.0823, i.e. o
+  $p$-valor é 2$\cdot$ 0.0823$=$ 16.46%.
+* Conclusão: Não há evidências suficientes para rejeitar $H_0$, i.e. nós não rejeitamos que a preferência na população é de 50%.
+* Os cálculos acima também podem ser calculados automaticamente no **R** por 
+  (os resultados são um pouco diferentes, devido aos arredondamentos feitos acima):
+  
+```{r}
+count <- 1200 * 0.52 # número de pessoas que preferem o aumento de imposto
+prop.test(x = count, n = 1200, correct = F)
+```
+
+----
+
+### Teste Binomial (exato)
+
+* Considere novamente uma amostra de tamanho $n$, onde observamos se uma determinada propriedade está presente ou não.
+* A frequência relativa da propriedade na população é $p$, estimada por $\hat{p}$.
+* Let $y_+=n\hat{p}$ a frequência (contagem total) da propriedade na amostra.
+* Pode ser mostrado que $y_+$ segue a **distribuição binomial** com parâmetros $n$ e probabilidade de sucesso $p$.
+  Usamos $Bin(n,p)$ para denotar esta distribuição.
+* Hipótese nula:\ $H_0: p=p_0$, onde $p_0$ é um número conhecido.
+* Hipótese alternativa:\ $H_a: p \neq p_0$.
+* $P$-valor para o teste binomial **bilateral**:
+    * Se $y_+\geq np_0$:\ 2 x "probabilidade na cauda superior para $y_+$ na distribuição $Bin(n,p_0)$.
+    * Se $y_+< np_0$:\ 2 x "probabilidade na cauda superior para $y_+$" na distribuição $Bin(n,p_0)$.
+
+----
+
+### Exemplo: Teste Binomial
+
+* Experimento com $n=30$, onde obtivemos $y_+=14$ sucessos.
+* Queremos testar $H_0: p=0.3$ vs.\ $H_a: p \not=0.3$.
+* Como $y_+>np_0=9$, usamos a probabilidade de cauda superior correspondente à soma das alturas das
+linhas vermelhas à direita de 14 no gráfico abaixo. (O gráfico continua no lado direito acima de $n=30$, mas foi cortado para fins ilustrativos.)
+* A probabilidade da cauda superior de 14 para cima (i.e. maior do que 13) é:
+```{r}
+lower_tail <- pdist("binom", q = 13, size = 30, prob = 0.3)
+1 - lower_tail
+```
+* O $p$-valor é então 2 x `r round(1-lower_tail, 2)` = `r 2 * round(1-lower_tail, 2)`.
+
+----
+
+### Teste Binomial no **R**
+* Voltemos aos dados do Chile, onde novamente olhamos a variável `sex`. 
+* Vamos testar se a proporção de mulheres é diferente de 0.5, i.e., queremos testar  $H_0:\ p=0.5$ and $H_a:\ p \neq 0.5$, onde $p$ é a proporção populacional desconhecida de mulheres.
+```{r}
+Chile <- read.delim("C://Users//fsabino//Desktop//Codes//papers//Introductory_Stat_II//notebook//Chile.txt")
+binom.test( ~ sex, data = Chile, p = 0.5, conf.level = 0.95)
+```
+* O $p$-valor para o teste exato (usando a distribuição binomial) é de $27\%$, portanto não há uma diferença significativa entre a proporção de homens e mulheres. 
+* O teste aproximado tem um valor $p$ de $26\%$, que pode ser calculado pelo comando
+```{r eval = F}
+prop.test( ~ sex, data = Chile, p = 0.5, conf.level = 0.95, correct = FALSE)
+```
+(observe o argumento adicional `correct = FALSE`).
+
+## Visão Geral dos testes para média e proporção
+![](https://asta.math.aau.dk/static-files/asta/img/AGRoversigt.jpg)
