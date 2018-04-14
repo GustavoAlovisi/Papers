@@ -2,19 +2,19 @@
 title: 'Teste de Hipóteses: Introdução'
 author: "Fernando B. Sabino da Silva"
 output:
-  pdf_document:
-    fig_caption: no
-    highlight: tango
-    number_section: yes
-    toc: yes
-  html_document:
-    df_print: paged
-    toc: yes
   slidy_presentation:
     css: https://asta.math.aau.dk/course/asta/2018-1/?file=lecture_style.css
     fig_caption: no
     highlight: tango
     theme: cerulean
+  html_document:
+    df_print: paged
+    toc: yes
+  pdf_document:
+    fig_caption: no
+    highlight: tango
+    number_section: yes
+    toc: yes
 ---
 
 ```{r, include = FALSE}
@@ -37,7 +37,7 @@ if(length(missing_pkgs)>0) install.packages(missing_pkgs)
 
 * Exemplos:
     * Tempo de espera em uma fila. Nós coletamos uma amostra de $n$ clientes e contamos quantos esperaram mais de 5 minutos. A política da empresa é de que no máximo $10\%$ dos clientes devem esperar mais do que 5 minutos. Em uma amostra de tamanho $n=32$, nós observamos 4 com tempo de espera superior a 5 minutos, i.e. a proporção estimada é de
-        $\hat{\pi} = \frac{4}{32} = 12.5\%$. Sabendo que $\hat{\pi}$ depende da amostra, podemos nos perguntar se o valor encontrado é significativamente diferente de $10\%$? Em outras palavras, se a proporção populacional é de fato $10\%$, qual a probabilidade de encontrarmos $12.5\%$ em uma amostra de 32 clientes?
+        $\hat{p} = \frac{4}{32} = 12.5\%$. Sabendo que $\hat{p}$ depende da amostra, podemos nos perguntar se o valor encontrado é significativamente diferente de $10\%$? Em outras palavras, se a proporção populacional é de fato $10\%$, qual a probabilidade de encontrarmos $12.5\%$ em uma amostra de 32 clientes?
     * O nível de álcool no sangue de um estudante é medido 4 vezes e apresenta os seguintes valores $0.504,0.500,0.512,0.524$, i.e. a média estimada é $\bar{y}=0.51$. Isto é muito diferente de, digamos, um limite de $0.5$?
 
 ## Hipótese nula e alternativa
@@ -48,9 +48,9 @@ if(length(missing_pkgs)>0) install.packages(missing_pkgs)
     * a hipótese nula é $H_0 : \mu = 0.5$
     * a hipótese alternativa é $H_1 : \mu \neq 0.5$.
     
-* A **hipótese alternativa** - denotada $H_a$ - geralmente especifica que o parâmetro populacional está contido em um dado conjunto de valores diferentes da hipótese nula. Por exemplo, se $\mu$ é a média populacional de uma medição do nível de álcool no sangue,
+* A **hipótese alternativa** - denotada $H_1$ - geralmente especifica que o parâmetro populacional está contido em um dado conjunto de valores diferentes da hipótese nula. Por exemplo, se $\mu$ é a média populacional de uma medição do nível de álcool no sangue,
 * a hipótese nula é $H_0: \mu = 0.5$
-* a hipótese alternativa é $H_a: \mu \neq 0.5$.
+* a hipótese alternativa é $H_1: \mu \neq 0.5$.
 
 
 
@@ -72,7 +72,7 @@ if(length(missing_pkgs)>0) install.packages(missing_pkgs)
 
 * Nós consideramos
     * $H_0$:\ uma hipótese nula.
-    * $H_a$:\ uma hipótese alternativa.
+    * $H_1$:\ uma hipótese alternativa.
     * $T$:\ uma estatística de teste, onde o valor calculado com base na amostra atual é denotado por $t_{obs}$.
 * Para investigar a plausibilidade de $H_0$, nós medimos a evidência de $H_0$ usando o que chamamos de $p$-valor:
     * O $p$-valor é a probabilidade de se observar um valor mais extremo $T \geq t_{obs}$ (se repetíssemos o experimento) 
@@ -88,7 +88,7 @@ if(length(missing_pkgs)>0) install.packages(missing_pkgs)
 
 * Nós consideramos
     * $H_0$: uma hipótese nula.
-    * $H_a$: uma hipótese alternativa.
+    * $H_1$: uma hipótese alternativa.
     * $T$: uma estatística de teste, onde o valor calculado baseado na amostral atual é denotedo por $t_{obs}$ é o correspondente $p$-valor é simplesmente $p$ (ou $p_{obs}$).
 * Na prática, nós usualmente queremos usar as informações para uma tomada de decisão. Em outras palavras, nós queremos decidir se vamos ou não rejeitar $H_0$.
 * A decisão dentro deste framework pode ser feita se nós estabelecermos de antemão o chamado **nível de significância $\alpha$**, onde 
@@ -105,7 +105,7 @@ if(length(missing_pkgs)>0) install.packages(missing_pkgs)
 * As estimativas dos parâmetros populacionais são $\hat{\mu}=\bar{y}$ e 
 $\hat{\sigma}=s$ com base em $n$ observações.
 * Hipótese nula:\ $H_0:\ \mu = \mu_0$, onde $\mu_0$ é um valor conhecido.
-* **Hipótese alternativa bilateral**:\  $H_a:\ \mu \neq \mu_0$.
+* **Hipótese alternativa bilateral**:\  $H_1:\ \mu \neq \mu_0$.
 * Estatística de teste observada:\ $t_{obs} = \frac{\bar{y} - \mu_0}{ep(\bar{y})}$, onde
   $ep(\bar{y}) = \frac{s}{\sqrt{n}}$.
 *  I.e.\ $t_{obs}$ mede quantos desvios padrao (com sinal $\pm$) a média empírica está afastada de $\mu_0$.
@@ -149,7 +149,7 @@ Todo o nível de significância será colocado em um lado apenas, tal como um limit
 * Considere uma amostra de tamanho $n$, onde observamos se uma determinada propriedade está presente ou não.
 * A frequência relativa desta propriedade na população é $p$, estimada por $\hat{p}$.
 * Hipotése Nula:\ $H_0: p = p_0$, onde $p_0$ é um número conhecido.
-* **Alternativa bilateral**:\ $H_a: p \neq p_0$.
+* **Alternativa bilateral**:\ $H_1: p \neq p_0$.
 * *Se $H_0$ é verdadeira* o erro padrão $\hat{p}$ é dado por $ep_0 = \sqrt{\frac{p_0(1-p_0)}{n}}$.
 * Estatística de teste observada: $z_{obs} = \frac{\hat{p}-p_0}{ep_0}$
 * I.e. $z_{obs}$ mede quantos desvios padrão há entre $\hat{p}$ to $p_0$.
@@ -172,7 +172,7 @@ Todo o nível de significância será colocado em um lado apenas, tal como um limit
 * Amostra com $n = 1200$ observações e proporção
   $\hat{p} = 0.52$. 
 * Hipotése Nula $H_0: p = 0.5$.
-* Hipótese Alternativa $H_a: p \neq 0.5$.
+* Hipótese Alternativa $H_1: p \neq 0.5$.
 * Erro padrão
   $ep_0 = \sqrt{\frac{p_0(1-p_0)}{n}} = \sqrt{\frac{0.5\times0.5}{1200}} = 0.0144$
 * Estatística de teste observada
@@ -198,7 +198,7 @@ prop.test(x = count, n = 1200, correct = F)
 * Pode ser mostrado que $y_+$ segue a **distribuição binomial** com parâmetros $n$ e probabilidade de sucesso $p$.
   Usamos $Bin(n,p)$ para denotar esta distribuição.
 * Hipótese nula:\ $H_0: p=p_0$, onde $p_0$ é um número conhecido.
-* Hipótese alternativa:\ $H_a: p \neq p_0$.
+* Hipótese alternativa:\ $H_1: p \neq p_0$.
 * $P$-valor para o teste binomial **bilateral**:
     * Se $y_+\geq np_0$:\ 2 x "probabilidade na cauda superior para $y_+$ na distribuição $Bin(n,p_0)$.
     * Se $y_+< np_0$:\ 2 x "probabilidade na cauda superior para $y_+$" na distribuição $Bin(n,p_0)$.
@@ -208,7 +208,7 @@ prop.test(x = count, n = 1200, correct = F)
 ### Exemplo: Teste Binomial
 
 * Experimento com $n=30$, onde obtivemos $y_+=14$ sucessos.
-* Queremos testar $H_0: p=0.3$ vs.\ $H_a: p \not=0.3$.
+* Queremos testar $H_0: p=0.3$ vs.\ $H_1: p \not=0.3$.
 * Como $y_+>np_0=9$, usamos a probabilidade de cauda superior correspondente à soma das alturas das
 linhas vermelhas à direita de 14 no gráfico abaixo. (O gráfico continua no lado direito acima de $n=30$, mas foi cortado para fins ilustrativos.)
 * A probabilidade da cauda superior de 14 para cima (i.e. maior do que 13) é:
@@ -222,7 +222,7 @@ lower_tail <- pdist("binom", q = 13, size = 30, prob = 0.3)
 
 ### Teste Binomial no **R**
 * Voltemos aos dados do Chile, onde novamente olhamos a variável `sex`. 
-* Vamos testar se a proporção de mulheres é diferente de 0.5, i.e., queremos testar  $H_0:\ p=0.5$ and $H_a:\ p \neq 0.5$, onde $p$ é a proporção populacional desconhecida de mulheres.
+* Vamos testar se a proporção de mulheres é diferente de 0.5, i.e., queremos testar  $H_0:\ p=0.5$ and $H_1:\ p \neq 0.5$, onde $p$ é a proporção populacional desconhecida de mulheres.
 ```{r}
 Chile <- read.delim("C://Users//fsabino//Desktop//Codes//papers//Introductory_Stat_II//notebook//Chile.txt")
 binom.test( ~ sex, data = Chile, p = 0.5, conf.level = 0.95)
@@ -236,3 +236,299 @@ prop.test( ~ sex, data = Chile, p = 0.5, conf.level = 0.95, correct = FALSE)
 
 ## Visão Geral dos testes para média e proporção
 ![](https://asta.math.aau.dk/static-files/asta/img/AGRoversigt.jpg)
+## Regressando (variável resposta) e regressores (variáveis explicativas)
+
+* Relizamos um experimento, no qual escolhemos aleatoriamente 50 empresas de TI e 50 empresas de serviços e medimos as suas tacas de lucro. Existe associação entre o tipo de empresa (TI/serviço) e a taxa de lucro? 
+* Em outras palavras, nós queremos comparar amostras de 2 populações diferentes. Para cada empresa registramos:
+    * A variável binária `tipo da empresa`: chamamos de **regressor ou variável explicativa**. Ela divide os dados em 2 grupos.
+    * A variável quantitativa `taxa de lucro`: chamamos de
+      **regressando ou variável resposta**.
+
+
+
+## Amostras dependentes/independentes
+
+* No exemplo com a taxa de lucro das 50 empresas de TI e 50 empresas de serviços, nós temos
+ **amostras independentes**, uma vez que a mesma empresa não pode estar em ambos os grupos.
+* Agora, pense em outro tipo de experimento, onde escolhemos aleatoriamente 50 empresas de TI e medimos as suas taxas de lucro em 2009 e 2010. Então, podemos estar interessados em saber se há associação entre o ano e a taxa de lucro.
+* Neste exemplo, nós temos **amostras dependentes**, uma vez que a mesma companhia está em ambos os grupos.
+* Nos referimos, costumeiramente, a amostras dependentes como **amostras pareadas**. 
+
+
+## Comparação de 2 médias
+
+* Consideremos a situação em que temos duas amostras de variáveis quantitativas:
+    * População 1 tem média $\mu_1$, que é estimada por
+      $\hat{\mu}_1=\bar{y}_1$ com base em uma amostra de tamanho $n_1$.
+    * População 2 tem média $\mu_2$, que é estimada por       $\hat{\mu}_2=\bar{y}_2$ com base em uma amostra de tamanho $n_2$.
+    * Estamos interessados na diferença $\mu_2-\mu_1$, que é estimada por
+      $d=\bar{y}_2-\bar{y}_1$.
+    * Suponha que queremos encontrar o **eerro padrão estimado**
+      $ep_d$ da diferença e que isto tem $df$ graus de liberdade.
+    * Suponha que as amostras sejam grandes ou que sejam provenientes de populações com distribuição normal. 
+* Então podemos construir um 
+    * intervalo de confiança para a diferença, i.e.,
+      $$
+      (\bar{y}_2-\bar{y}_1)\pm t_{crit}ep_d,
+      $$ 
+      onde o escore crítico $t$, $t_{crit}$, determina o nível de confiança.
+    * teste de significância:
+          * para a hipótese nula $H_0:\ \mu_2-\mu_1=0$ e a hipótese alternativa 
+          $H_1:\ \mu_2-\mu_1\neq 0$.
+          * usamos a estatística de teste:\ $t_{obs} = \frac{\bar{y}_2-\bar{y}_1}{ep_d}$, que tem que ser avaliada em uma distribuição $t$ com $df$ graus de liberdade.
+
+
+## Comparação de duas médias: Amostras independentes
+* Na situação em que as amostras são independentes pode ser demonstrado que
+  $$
+  ep_d=\sqrt{ep_1^2+ep_2^2},
+  $$
+  onde $ep_1$ e $ep_2$ são erros padrão estimados para as médias amostrais nas populações 1 e 2, respectivamente.
+* Relembre que neste caso nós temos $ep=\frac{s}{\sqrt{n}}$, i.e.
+   $$
+   ep_d=\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}},
+   $$
+   onde $s_1$ e $s_2$ são desvios padrão estimados para as populações 1 e 
+   2, respectivamente.
+<!-- * **Os graus de liberdade** $df$ para $ep_d$ podem ser estimados por uma fórmula complicada, a qual não apresentaremos aqui. -->
+* For the intervalo de confiança and the significance test we
+  note that:
+    * If both $n_1$ and $n_2$ are above 30, then we can use the standard normal 
+      distribution ($z$-score) rather than the $t$-distribution ($t$-score).
+    * If $n_1$ or $n_2$ are below 30, then we let **R** 
+      calculate the graus de liberdade and $p$-valor/intervalo de confiança.
+
+
+
+## Example: Comparing two means (independent samples)
+We return to the `Chile` data. We study the association
+between the variables `sex` and `statusquo` (scale of support for the
+status-quo). So, we will perform a significance test to test for difference 
+in the mean of `statusquo` for male and females. 
+
+```{r message=FALSE, R.options=list(digits=3)}
+Chile <- read.delim("https://asta.math.aau.dk/datasets?file=Chile.txt")
+library(mosaic)
+fv <- favstats(statusquo ~ sex, data = Chile)
+fv
+```
+
+```{r echo=FALSE}
+m1 <- fv[1, "mean"]
+m2 <- fv[2, "mean"]
+d <- m1 - m2
+sd1 <- fv[1, "sd"]
+sd2 <- fv[2, "sd"]
+n1 <- fv[1, "n"] 
+n2 <- fv[2, "n"]
+ep_d <- sqrt( sd1^2/n1 + sd2^2/n2 )
+t_obs <- d / ep_d
+```
+
+* Difference:\ $d = `r round(m1, 4)` - (`r round(m2, 4)`) = `r round(d, 4)`$.
+* estimados standard deviations:\ $s_1 = `r round(sd1, 4)`$ (females) and  $s_2 = `r round(sd2, 4)`$ (males). 
+* Sample sizes:\ $n_1 = `r n1`$ and  $n_2 = `r n2`$.
+* estimados standard error of difference:\  $ep_d = \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}} =
+  \sqrt{\frac{`r round(sd1, 4)`^2}{`r n1`} + \frac{`r round(sd2, 4)`^2}{`r n2`}} = `r round(ep_d, 4)`$.
+* Observed $t$-score for $H_0:\ \mu_1-\mu_2=0$ is: $\quad t_{obs} = \frac{d-0}{ep_d} = \frac{`r round(d, 4)`}{`r round(ep_d, 4)`} = `r round(t_obs, 4)`$.
+* Since both sample sizes are "pretty large" (> 30), we can use the $z$-score 
+  instead of the $t$-score for finding the $p$-valor (i.e. we use the
+  standard normal distribution):
+```{r}
+1 - pdist("norm", q = 3.4786, xlim = c(-4, 4))
+```
+* Then the $p$-valor is $2\cdot 0.00025 = 0.0005$, so we reject the null
+  hypothesis.
+* We can leave all the calculations to **R** by using `t.test`: 
+```{r}
+t.test(statusquo ~ sex, data = Chile)
+```
+* We recognize the $t$-score
+  $3.4786$ and the $p$-valor $0.0005$. The estimados graus de liberdade 
+  $df = 2679$ is so large that we can not tell the difference between results
+  obtained using $z$-score and $t$-score.
+
+
+
+## Comparação of two means: intervalo de confiança (independent samples)
+* We have already found all the ingredients to construct a
+  **intervalo de confiança for $\mu_2-\mu_1$**:
+    * $d=\bar{y}_2-\bar{y}_1$ estimates $\mu_2-\mu_1$.
+    * $ep_d=\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}$ estimates
+      the standard error of $d$.
+* Then: 
+  $$
+  d\pm t_{crit}ep_d
+  $$ 
+  is a intervalo de confiança for $\mu_2-\mu_1$.
+* The critical $t$-score, $t_{crit}$ is chosen corresponding to the wanted
+  confidence level. If $n_1$ and $n_2$ both are greater than 30, then
+  $t_{crit} = 2$ yields a confidence level of approximately 95\%.
+
+
+
+## Comparação of two means: paired $t$-test (dependent samples)
+
+* Experiment:
+    * You choose 10 Netto stores at random, where you measure the
+      average expedition time by the cash registers over some period
+      of time.
+    * Now, new cash registers are installed in all 10 stores, and
+      you repeat the experiment.
+* It is interesting to investigate whether or not the new cash
+  registers have changed the expedition time.
+* So we have 2 samples corresponding to old/new technology. In
+  this case we have **dependent** samples, since we have 2
+  measurement in each store.
+* We use the following strategy for analysis:
+    * For each store calculate **the change** in average
+      expedition time when we change from old to new technology.
+    * The changes $d_1,d_2,\ldots,d_{10}$ are now considered as
+      **ONE** sample from a população with mean $\mu$.
+    * Test the hypothesis $H_0: \mu=0$ as usual (using a $t$-test for testing the 
+      mean as in the previous lecture). 
+
+----
+
+### Netto store example
+* Data is organized in a data frame with 2 variables, `before`
+and `after`, containing the average expedition time before and
+after installation of the new technology. Instead of doing manual calculations
+we let **R** perform the significance test (using `t.test` with `paired = TRUE` as
+our samples are paired/dependent):
+```{r}
+Netto <- read.delim("https://asta.math.aau.dk/datasets?file=Netto.txt")
+head(Netto, n = 3)
+t.test(Netto$before, Netto$after, paired = TRUE)
+```
+* With a $p$-valor of $0.00029$ we reject that the expedition time is the same
+after installing new technology.
+
+# Comparação of two proportions
+## Comparação of two proportions
+* We consider the situation, where we have two qualitative samples
+  and we investigate whether a given property is present or not:
+    * Let the proportion of população 1 which has the property be $p_1$, which
+      is estimados by $\hat{p}_1$ based on a sample of size $n_1$.
+    * Let the proportion of população 2 which has the property be $p_2$, which
+      is estimados by $\hat{p}_2$ based on a sample of size $n_2$.
+    * We are interested in the difference $p_2-p_1$, which is estimados
+      by $d=\hat{p}_2-\hat{p}_1$.
+    * Assume that we can find the **estimados standard error**
+      $ep_d$ of the difference.
+* Then we can construct
+    * an approximate intervalo de confiança for the difference, $p_2 - p_1$.
+    * a significance test. 
+
+
+
+## Comparação of two proportions: Independent samples
+* In the situation where we have independent samples we know that
+  $$
+  ep_d=\sqrt{ep_1^2+ep_2^2},
+  $$
+  where $ep_1$ and $ep_2$ are the estimados erros padrão for
+  the sample proportion in população 1 and 2, respectively.
+* We recall, that these are given by $se=\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$, i.e.
+  $$
+  ep_d = \sqrt{\frac{\hat{p}_1(1-\hat{p}_1)}{n_1}+\frac{\hat{p}_2(1-\hat{p}_2)}{n_2}}.
+  $$
+* A (approximate) intervalo de confiança for $p_2-p_1$ is obtained by the 
+  usual construction:   
+  $$
+  (\hat{p}_2-\hat{p}_1)\pm z_{crit}ep_d,
+  $$ 
+  where the 
+  critical $z$-score determines the confidence level.
+
+
+## Approximate test for comparing two proportions (independent samples)
+
+* We consider the hipótese nula $H_0$: $p_1=p_2$ (equivalently 
+  $H_0: p_1 - p_2 = 0$) and the hipótese alternativa $H_1$: $p_1 \neq p_2$.
+* Assuming $H_0$ is true, we have a common proportion $p$, which is
+  estimados by
+  $$
+  \hat{p}=\frac{n_1\hat{p}_1+n_2\hat{p}_2}{n_1+n_2},
+  $$ 
+  i.e. we aggregate the populaçãos and calculate the relative frequency of the 
+  property (with other words: we estimate the proportion, $p$, as if the two
+  samples were one).
+* Rather than using the estimados standard error of the difference from previous, 
+  we use the following that holds under $H_0$:
+  $$
+  ep_0=\sqrt{\hat{p}(1-\hat{p})\left(\frac{1}{n_1}+\frac{1}{n_2}\right)}
+  $$
+* The observed test statistic/$z$-score for $H_0$ is then:
+  $$
+  z_{obs}=\frac{\hat{p}_2-\hat{p}_1}{ep_0},
+  $$ 
+  which is evaluated in the standard normal distribution.
+* The $p$-valor is calculated in the usual way.
+
+**WARNING**: The approximation is only good, when $n_1\hat{p},\
+n_1(1-\hat{p}),\ n_2\hat{p},\ n_2(1-\hat{p})$ all are greater than 5.
+
+
+
+## Example: Approximate intervalo de confiança and test for comparing proportions
+
+We return to the `Chile` dataset. We make a new binary
+variable indicating whether the
+person intends to vote no or something else (and we remember to
+tell  **R**  that it should think of this as a grouping variable, 
+i.e. a `factor`):
+```{r}
+Chile$voteNo <- relevel(factor(Chile$vote == "N"), ref = "TRUE")
+```
+
+We study the association between the variables `sex` and `voteNo`:
+```{r}
+tab <- tally( ~ sex + voteNo, data = Chile, useNA = "no")
+tab
+```
+This gives us all the ingredients needed in the hypothesis test:
+
+* estimados proportion of men that vote no:\ $\hat{p}_1=\frac{526}{526+697}=0.430$
+* estimados proportion of women that vote no:\ $\hat{p}_2=\frac{363}{363+946}=0.277$ 
+* estimados common proportion:\ $\hat{p}=\frac{1223 \times 0.430 + 1309 \times 0.277}{1309+1223}=\frac{526 + 363}{1309+1223}=0.351.$
+* estimados difference $d=\hat{p}_2-\hat{p}_1=0.277-0.430=-0.153$
+
+Further, 
+
+* Standard error of difference:\
+  $ep_d=\sqrt{\frac{\hat{p}_1(1-\hat{p}_1)}{n_1}+\frac{\hat{p}_2(1-\hat{p}_2)}{n_2}}
+      = \sqrt{\frac{0.430(1-0.430)}{1223}+\frac{0.277(1-0.277)}{1309}}= 0.0188$.
+* Approximate 95\% intervalo de confiança for difference:\ $d\pm
+  1.96ep_d=(-0.190, -0.116)$.
+* Standard error of difference when $H_0:\ p_1=p_2$ is true:\
+  $ep_0=\sqrt{\hat{p}(1-\hat{p})(\frac{1}{n_1}+\frac{1}{n_2})} = 0.0190$.
+* The observed test statistic/$z$-score:\ $z_{obs}=\frac{d}{ep_0}=-8.06$. The test for $H_0$ against $H_1:
+  p_1\not=p_2$ yields a $p$-valor that is practically zero,
+  i.e.\ we can reject that the proportions are equal. 
+
+### Automatic calculation in **R**
+
+```{r}
+Chile2 <- subset(Chile, !is.na(voteNo))
+prop.test(voteNo ~ sex, data = Chile2, correct = FALSE)
+```
+
+
+
+## Fisher's exact test
+* If $n_1\hat{p},\ n_1(1-\hat{p}),\ n_2\hat{p},\ n_2(1-\hat{p})$ are not all
+greater than 5, then the approximate test cannot be
+trusted. Instead you can use Fisher's exact test:
+
+```{r}
+fisher.test(tab)
+```
+
+* Again the $p$-valor is seen to be extremely small, so we
+definitely reject the hipótese nula of equal `voteNo`
+proportions for women and men.
+
+## Visão geral da comparação de 2 grupos
+
+![](https://asta.math.aau.dk/static-files/asta/img/agrSummaryTwoGroups.jpg)

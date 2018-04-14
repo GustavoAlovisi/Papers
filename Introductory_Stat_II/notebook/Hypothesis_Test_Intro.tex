@@ -729,6 +729,592 @@ Aproximado}\label{exemplo-teste-aproximado}
 proporção}\label{visao-geral-dos-testes-para-media-e-proporcao}
 
 \includegraphics{https://asta.math.aau.dk/static-files/asta/img/AGRoversigt.jpg}
+\#\# Response variable and explanatory variable
+
+\begin{itemize}
+\tightlist
+\item
+  We conduct an experiment, where we at random choose 50 IT-companies
+  and 50 service companies and measure their profit ratio. Is there
+  association between company type (IT/service) and profit ratio?
+\item
+  In other words we compare samples from 2 different populations. For
+  each company we register:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    The binary variable \texttt{company\ type}, which is called
+    \textbf{the explanatory variable} and divides data in 2 groups.
+  \item
+    The quantitative variable \texttt{profit\ ratio}, which is called
+    \textbf{the response variable}.
+  \end{itemize}
+\end{itemize}
+
+\subsection{Dependent/independent
+samples}\label{dependentindependent-samples}
+
+\begin{itemize}
+\tightlist
+\item
+  In the example with profit ratio of 50 IT-companies and 50 service
+  companies we have \textbf{independent samples}, since the same company
+  cannot be in both groups.
+\item
+  Now, think of another type of experiment, where we at random choose 50
+  IT-companies and measure their profit ratio in both 2009 and 2010.
+  Then we may be interested in whether there is association between year
+  and profit ratio?
+\item
+  In this example we have \textbf{dependent samples}, since the same
+  company is in both groups.
+\item
+  Dependent samples may also be referred to as paired samples.
+\end{itemize}
+
+\subsection{Comparison of two means}\label{comparison-of-two-means}
+
+\begin{itemize}
+\tightlist
+\item
+  We consider the situation, where we have two quantitative samples:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Population 1 has mean \(\mu_1\), which is estimated by
+    \(\hat{\mu}_1=\bar{y}_1\) based on a sample of size \(n_1\).
+  \item
+    Population 2 has mean \(\mu_2\), which is estimated by
+    \(\hat{\mu}_2=\bar{y}_2\) based on a sample of size \(n_2\).
+  \item
+    We are interested in the difference \(\mu_2-\mu_1\), which is
+    estimated by \(d=\bar{y}_2-\bar{y}_1\).
+  \item
+    Assume that we can find the \textbf{estimated standard error}
+    \(se_d\) of the difference and that this has degrees of freedom
+    \(df\).
+  \item
+    Assume that the samples either are large or come from a normal
+    population.
+  \end{itemize}
+\item
+  Then we can construct a
+
+  \begin{itemize}
+  \tightlist
+  \item
+    confidence interval for the difference by \[
+      (\bar{y}_2-\bar{y}_1)\pm t_{crit}se_d,
+      \] where the critical \(t\)-score, \(t_{crit}\), determines the
+    confidence level.
+  \item
+    significance test:
+
+    \begin{itemize}
+    \tightlist
+    \item
+      for the null hypothesis \(H_0:\ \mu_2-\mu_1=0\) and alternative
+      hypothesis \(H_a:\ \mu_2-\mu_1\neq 0\).
+    \item
+      which uses the test
+      statistic:~\(t_{obs} = \frac{\bar{y}_2-\bar{y}_1}{se_d}\), that
+      has to be evaluated in a \(t\)-distribution with \(df\) degrees of
+      freedom.
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\subsection{Comparison of two means: Independent
+samples}\label{comparison-of-two-means-independent-samples}
+
+\begin{itemize}
+\tightlist
+\item
+  In the independent samples situation it can be shown that \[
+    se_d=\sqrt{se_1^2+se_2^2},
+    \] where \(se_1\) and \(se_2\) are estimated standard errors for the
+  sample means in populations 1 and 2, respectively.
+\item
+  We recall, that for these we have \(se=\frac{s}{\sqrt{n}}\), i.e. \[
+     se_d=\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}},
+     \] where \(s_1\) and \(s_2\) are estimated standard deviations for
+  population 1 and 2, respectively.
+\item
+  \textbf{The degrees of freedom} \(df\) for \(se_d\) can be estimated
+  by a complicated formula, which we will not present here.
+\item
+  For the confidence interval and the significance test we note that:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    If both \(n_1\) and \(n_2\) are above 30, then we can use the
+    standard normal distribution (\(z\)-score) rather than the
+    \(t\)-distribution (\(t\)-score).
+  \item
+    If \(n_1\) or \(n_2\) are below 30, then we let \textbf{R} calculate
+    the degrees of freedom and \(p\)-value/confidence interval.
+  \end{itemize}
+\end{itemize}
+
+\subsection{Example: Comparing two means (independent
+samples)}\label{example-comparing-two-means-independent-samples}
+
+We return to the \texttt{Chile} data. We study the association between
+the variables \texttt{sex} and \texttt{statusquo} (scale of support for
+the status-quo). So, we will perform a significance test to test for
+difference in the mean of \texttt{statusquo} for male and females.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Chile <-}\StringTok{ }\KeywordTok{read.delim}\NormalTok{(}\StringTok{"https://asta.math.aau.dk/datasets?file=Chile.txt"}\NormalTok{)}
+\KeywordTok{library}\NormalTok{(mosaic)}
+\NormalTok{fv <-}\StringTok{ }\KeywordTok{favstats}\NormalTok{(statusquo }\OperatorTok{~}\StringTok{ }\NormalTok{sex, }\DataTypeTok{data =}\NormalTok{ Chile)}
+\NormalTok{fv}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   sex   min     Q1 median    Q3  max    mean    sd    n missing
+## 1   F -1.80 -0.975  0.121 1.033 2.02  0.0657 1.003 1368      11
+## 2   M -1.74 -1.032 -0.216 0.861 2.05 -0.0684 0.993 1315       6
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  Difference:~\(d = 0.0657 - (-0.0684) = 0.1341\).
+\item
+  Estimated standard deviations:~\(s_1 = 1.0032\) (females) and
+  \(s_2 = 0.9928\) (males).
+\item
+  Sample sizes:~\(n_1 = 1368\) and \(n_2 = 1315\).
+\item
+  Estimated standard error of difference:~
+  \(se_d = \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}} =  \sqrt{\frac{1.0032^2}{1368} + \frac{0.9928^2}{1315}} = 0.0385\).
+\item
+  Observed \(t\)-score for \(H_0:\ \mu_1-\mu_2=0\) is:
+  \(\quad t_{obs} = \frac{d-0}{se_d} = \frac{0.1341}{0.0385} = 3.4786\).
+\item
+  Since both sample sizes are ``pretty large'' (\textgreater{} 30), we
+  can use the \(z\)-score instead of the \(t\)-score for finding the
+  \(p\)-value (i.e.~we use the standard normal distribution):
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1} \OperatorTok{-}\StringTok{ }\KeywordTok{pdist}\NormalTok{(}\StringTok{"norm"}\NormalTok{, }\DataTypeTok{q =} \FloatTok{3.4786}\NormalTok{, }\DataTypeTok{xlim =} \KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{4}\NormalTok{, }\DecValTok{4}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Hypothesis_Test_Intro_files/figure-latex/unnamed-chunk-9-1.pdf}
+
+\begin{verbatim}
+## [1] 0.0002520202
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  Then the \(p\)-value is \(2\cdot 0.00025 = 0.0005\), so we reject the
+  null hypothesis.
+\item
+  We can leave all the calculations to \textbf{R} by using
+  \texttt{t.test}:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{t.test}\NormalTok{(statusquo }\OperatorTok{~}\StringTok{ }\NormalTok{sex, }\DataTypeTok{data =}\NormalTok{ Chile)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  Welch Two Sample t-test
+## 
+## data:  statusquo by sex
+## t = 3.4786, df = 2678.7, p-value = 0.0005121
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  0.05849179 0.20962982
+## sample estimates:
+## mean in group F mean in group M 
+##      0.06570627     -0.06835453
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  We recognize the \(t\)-score \(3.4786\) and the \(p\)-value
+  \(0.0005\). The estimated degrees of freedom \(df = 2679\) is so large
+  that we can not tell the difference between results obtained using
+  \(z\)-score and \(t\)-score.
+\end{itemize}
+
+\subsection{Comparison of two means: confidence interval (independent
+samples)}\label{comparison-of-two-means-confidence-interval-independent-samples}
+
+\begin{itemize}
+\tightlist
+\item
+  We have already found all the ingredients to construct a
+  \textbf{confidence interval for \(\mu_2-\mu_1\)}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \(d=\bar{y}_2-\bar{y}_1\) estimates \(\mu_2-\mu_1\).
+  \item
+    \(se_d=\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}\) estimates the
+    standard error of \(d\).
+  \end{itemize}
+\item
+  Then: \[
+    d\pm t_{crit}se_d
+    \] is a confidence interval for \(\mu_2-\mu_1\).
+\item
+  The critical \(t\)-score, \(t_{crit}\) is chosen corresponding to the
+  wanted confidence level. If \(n_1\) and \(n_2\) both are greater than
+  30, then \(t_{crit} = 2\) yields a confidence level of approximately
+  95\%.
+\end{itemize}
+
+\subsection{\texorpdfstring{Comparison of two means: paired \(t\)-test
+(dependent
+samples)}{Comparison of two means: paired t-test (dependent samples)}}\label{comparison-of-two-means-paired-t-test-dependent-samples}
+
+\begin{itemize}
+\tightlist
+\item
+  Experiment:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    You choose 10 Netto stores at random, where you measure the average
+    expedition time by the cash registers over some period of time.
+  \item
+    Now, new cash registers are installed in all 10 stores, and you
+    repeat the experiment.
+  \end{itemize}
+\item
+  It is interesting to investigate whether or not the new cash registers
+  have changed the expedition time.
+\item
+  So we have 2 samples corresponding to old/new technology. In this case
+  we have \textbf{dependent} samples, since we have 2 measurement in
+  each store.
+\item
+  We use the following strategy for analysis:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    For each store calculate \textbf{the change} in average expedition
+    time when we change from old to new technology.
+  \item
+    The changes \(d_1,d_2,\ldots,d_{10}\) are now considered as
+    \textbf{ONE} sample from a population with mean \(\mu\).
+  \item
+    Test the hypothesis \(H_0: \mu=0\) as usual (using a \(t\)-test for
+    testing the mean as in the previous lecture).
+  \end{itemize}
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\subsubsection{Netto store example}\label{netto-store-example}
+
+\begin{itemize}
+\tightlist
+\item
+  Data is organized in a data frame with 2 variables, \texttt{before}
+  and \texttt{after}, containing the average expedition time before and
+  after installation of the new technology. Instead of doing manual
+  calculations we let \textbf{R} perform the significance test (using
+  \texttt{t.test} with \texttt{paired\ =\ TRUE} as our samples are
+  paired/dependent):
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Netto <-}\StringTok{ }\KeywordTok{read.delim}\NormalTok{(}\StringTok{"https://asta.math.aau.dk/datasets?file=Netto.txt"}\NormalTok{)}
+\KeywordTok{head}\NormalTok{(Netto, }\DataTypeTok{n =} \DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##     before    after
+## 1 3.730611 3.440214
+## 2 2.623338 2.314733
+## 3 3.795295 3.586334
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{t.test}\NormalTok{(Netto}\OperatorTok{$}\NormalTok{before, Netto}\OperatorTok{$}\NormalTok{after, }\DataTypeTok{paired =} \OtherTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  Paired t-test
+## 
+## data:  Netto$before and Netto$after
+## t = 5.7204, df = 9, p-value = 0.0002868
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  0.1122744 0.2591578
+## sample estimates:
+## mean of the differences 
+##               0.1857161
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  With a \(p\)-value of \(0.00029\) we reject that the expedition time
+  is the same after installing new technology.
+\end{itemize}
+
+\section{Comparison of two
+proportions}\label{comparison-of-two-proportions}
+
+\subsection{Comparison of two
+proportions}\label{comparison-of-two-proportions-1}
+
+\begin{itemize}
+\tightlist
+\item
+  We consider the situation, where we have two qualitative samples and
+  we investigate whether a given property is present or not:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Let the proportion of population 1 which has the property be
+    \(\pi_1\), which is estimated by \(\hat{\pi}_1\) based on a sample
+    of size \(n_1\).
+  \item
+    Let the proportion of population 2 which has the property be
+    \(\pi_2\), which is estimated by \(\hat{\pi}_2\) based on a sample
+    of size \(n_2\).
+  \item
+    We are interested in the difference \(\pi_2-\pi_1\), which is
+    estimated by \(d=\hat{\pi}_2-\hat{\pi}_1\).
+  \item
+    Assume that we can find the \textbf{estimated standard error}
+    \(se_d\) of the difference.
+  \end{itemize}
+\item
+  Then we can construct
+
+  \begin{itemize}
+  \tightlist
+  \item
+    an approximate confidence interval for the difference,
+    \(\pi_2 - \pi_1\).
+  \item
+    a significance test.
+  \end{itemize}
+\end{itemize}
+
+\subsection{Comparison of two proportions: Independent
+samples}\label{comparison-of-two-proportions-independent-samples}
+
+\begin{itemize}
+\tightlist
+\item
+  In the situation where we have independent samples we know that \[
+    se_d=\sqrt{se_1^2+se_2^2},
+    \] where \(se_1\) and \(se_2\) are the estimated standard errors for
+  the sample proportion in population 1 and 2, respectively.
+\item
+  We recall, that these are given by
+  \(se=\sqrt{\frac{\hat{\pi}(1-\hat{\pi})}{n}}\), i.e. \[
+    se_d = \sqrt{\frac{\hat{\pi}_1(1-\hat{\pi}_1)}{n_1}+\frac{\hat{\pi}_2(1-\hat{\pi}_2)}{n_2}}.
+    \]
+\item
+  A (approximate) confidence interval for \(\pi_2-\pi_1\) is obtained by
+  the usual construction:\\
+  \[
+    (\hat{\pi}_2-\hat{\pi}_1)\pm z_{crit}se_d,
+    \] where the critical \(z\)-score determines the confidence level.
+\end{itemize}
+
+\subsection{Approximate test for comparing two proportions (independent
+samples)}\label{approximate-test-for-comparing-two-proportions-independent-samples}
+
+\begin{itemize}
+\tightlist
+\item
+  We consider the null hypothesis \(H_0\): \(\pi_1=\pi_2\) (equivalently
+  \(H_0: \pi_1 - \pi_2 = 0\)) and the alternative hypothesis \(H_a\):
+  \(\pi_1 \neq \pi_2\).
+\item
+  Assuming \(H_0\) is true, we have a common proportion \(\pi\), which
+  is estimated by \[
+    \hat{\pi}=\frac{n_1\hat{\pi}_1+n_2\hat{\pi}_2}{n_1+n_2},
+    \] i.e.~we aggregate the populations and calculate the relative
+  frequency of the property (with other words: we estimate the
+  proportion, \(\pi\), as if the two samples were one).
+\item
+  Rather than using the estimated standard error of the difference from
+  previous, we use the following that holds under \(H_0\): \[
+    se_0=\sqrt{\hat{\pi}(1-\hat{\pi})\left(\frac{1}{n_1}+\frac{1}{n_2}\right)}
+    \]
+\item
+  The observed test statistic/\(z\)-score for \(H_0\) is then: \[
+    z_{obs}=\frac{\hat{\pi}_2-\hat{\pi}_1}{se_0},
+    \] which is evaluated in the standard normal distribution.
+\item
+  The \(p\)-value is calculated in the usual way.
+\end{itemize}
+
+\textbf{WARNING}: The approximation is only good, when \(n_1\hat{\pi},\
+n_1(1-\hat{\pi}),\ n_2\hat{\pi},\ n_2(1-\hat{\pi})\) all are greater
+than 5.
+
+\subsection{Example: Approximate confidence interval and test for
+comparing
+proportions}\label{example-approximate-confidence-interval-and-test-for-comparing-proportions}
+
+We return to the \texttt{Chile} dataset. We make a new binary variable
+indicating whether the person intends to vote no or something else (and
+we remember to tell \textbf{R} that it should think of this as a
+grouping variable, i.e.~a \texttt{factor}):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Chile}\OperatorTok{$}\NormalTok{voteNo <-}\StringTok{ }\KeywordTok{relevel}\NormalTok{(}\KeywordTok{factor}\NormalTok{(Chile}\OperatorTok{$}\NormalTok{vote }\OperatorTok{==}\StringTok{ "N"}\NormalTok{), }\DataTypeTok{ref =} \StringTok{"TRUE"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+We study the association between the variables \texttt{sex} and
+\texttt{voteNo}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tab <-}\StringTok{ }\KeywordTok{tally}\NormalTok{( }\OperatorTok{~}\StringTok{ }\NormalTok{sex }\OperatorTok{+}\StringTok{ }\NormalTok{voteNo, }\DataTypeTok{data =}\NormalTok{ Chile, }\DataTypeTok{useNA =} \StringTok{"no"}\NormalTok{)}
+\NormalTok{tab}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    voteNo
+## sex TRUE FALSE
+##   F  363   946
+##   M  526   697
+\end{verbatim}
+
+This gives us all the ingredients needed in the hypothesis test:
+
+\begin{itemize}
+\tightlist
+\item
+  Estimated proportion of men that vote
+  no:~\(\hat{\pi}_1=\frac{526}{526+697}=0.430\)
+\item
+  Estimated proportion of women that vote
+  no:~\(\hat{\pi}_2=\frac{363}{363+946}=0.277\)
+\item
+  Estimated common
+  proportion:~\(\hat{\pi}=\frac{1223 \times 0.430 + 1309 \times 0.277}{1309+1223}=\frac{526 + 363}{1309+1223}=0.351.\)
+\item
+  Estimated difference \(d=\hat{\pi}_2-\hat{\pi}_1=0.277-0.430=-0.153\)
+\end{itemize}
+
+Further,
+
+\begin{itemize}
+\tightlist
+\item
+  Standard error of difference:\\
+  \(se_d=\sqrt{\frac{\hat{\pi}_1(1-\hat{\pi}_1)}{n_1}+\frac{\hat{\pi}_2(1-\hat{\pi}_2)}{n_2}}  = \sqrt{\frac{0.430(1-0.430)}{1223}+\frac{0.277(1-0.277)}{1309}}= 0.0188\).
+\item
+  Approximate 95\% confidence interval for
+  difference:~\(d\pm  1.96se_d=(-0.190, -0.116)\).
+\item
+  Standard error of difference when \(H_0:\ \pi_1=\pi_2\) is true:\\
+  \(se_0=\sqrt{\hat{\pi}(1-\hat{\pi})(\frac{1}{n_1}+\frac{1}{n_2})} = 0.0190\).
+\item
+  The observed test
+  statistic/\(z\)-score:~\(z_{obs}=\frac{d}{se_0}=-8.06\). The test for
+  \(H_0\) against \(H_a:  \pi_1\not=\pi_2\) yields a \(p\)-value that is
+  practically zero, i.e.~we can reject that the proportions are equal.
+\end{itemize}
+
+\subsubsection{\texorpdfstring{Automatic calculation in
+\textbf{R}}{Automatic calculation in R}}\label{automatic-calculation-in-r}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Chile2 <-}\StringTok{ }\KeywordTok{subset}\NormalTok{(Chile, }\OperatorTok{!}\KeywordTok{is.na}\NormalTok{(voteNo))}
+\KeywordTok{prop.test}\NormalTok{(voteNo }\OperatorTok{~}\StringTok{ }\NormalTok{sex, }\DataTypeTok{data =}\NormalTok{ Chile2, }\DataTypeTok{correct =} \OtherTok{FALSE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  2-sample test for equality of proportions without continuity
+##  correction
+## 
+## data:  tally(voteNo ~ sex)
+## X-squared = 64.777, df = 1, p-value = 8.389e-16
+## alternative hypothesis: two.sided
+## 95 percent confidence interval:
+##  -0.1896305 -0.1159275
+## sample estimates:
+##    prop 1    prop 2 
+## 0.2773109 0.4300899
+\end{verbatim}
+
+\subsection{Fisher's exact test}\label{fishers-exact-test}
+
+\begin{itemize}
+\tightlist
+\item
+  If
+  \(n_1\hat{\pi},\ n_1(1-\hat{\pi}),\ n_2\hat{\pi},\ n_2(1-\hat{\pi})\)
+  are not all greater than 5, then the approximate test cannot be
+  trusted. Instead you can use Fisher's exact test:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{fisher.test}\NormalTok{(tab)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  Fisher's Exact Test for Count Data
+## 
+## data:  tab
+## p-value = 1.04e-15
+## alternative hypothesis: true odds ratio is not equal to 1
+## 95 percent confidence interval:
+##  0.4292768 0.6021525
+## sample estimates:
+## odds ratio 
+##  0.5085996
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  Again the \(p\)-value is seen to be extremely small, so we definitely
+  reject the null hypothesis of equal \texttt{voteNo} proportions for
+  women and men.
+\end{itemize}
+
+\subsection{Agresti: Overview of comparison of two
+groups}\label{agresti-overview-of-comparison-of-two-groups}
+
+\includegraphics{https://asta.math.aau.dk/static-files/asta/img/agrSummaryTwoGroups.jpg}
 
 
 \end{document}
