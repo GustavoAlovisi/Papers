@@ -79,7 +79,7 @@ if(length(missing_pkgs)>0) install.packages(missing_pkgs)
     *sob a suposição de que 
       $H_0$ seja verdadeira*, isto é, calculamos a probabilidade condicional de obter um valor mais extremo do que $t_{obs}$ (dependendo da hipótese do que o valor absoluto de $t_{obs}$) quando a hipótese nula é verdadeira.
     * Se o $p$-valor é pequeno, então haverá evidências de que a nula não seja verdadeira, pois existe uma probabilidade pequena de observar um valor mais extremo do que $t_{obs}$ se $H_0$ for verdadeira. Podemos concluir que      $$
-      \textbf{Quanto menor for o  $p$-valor, menor será a evidência contrária a $H_0$.} 
+      \textbf{Quanto menor for o  $p$-valor, maior será a evidência contrária a $H_0$.} 
       $$
 * Mas o que é um valor pequeno para o $p$-valor? Isto depende do **tamanho da amostra** e de outras considerações que não iremos ver neste curso. Se o $p$-valor for abaixo de $5\%$ dizemos que o valor da estatística de teste ($t_{obs}$) é **significante** ao nível de $5\%$.
 
@@ -130,7 +130,7 @@ library(mosaic)
 1 - pdist("t", q = 1.89, df = 3)
 ```
 
-* O $p$-valor é 2$\cdot$ `r round(abs(pt(-1.89, df = 3)),3)`,\  i.e. mais do que 15\%. Com base nisso, nós não rejeitamos $H_0$.
+* O $p$-valor é 2$\cdot$ `r round(abs(pt(-1.89, df = 3)),3)`,\  i.e. mais do que $15$\% se a hipótese alternativa for bilateral. Com base nisso, nós não rejeitamos $H_0$.
 
 
 
@@ -159,7 +159,7 @@ Todo o nível de significância será colocado em um lado apenas, tal como um limit
 
 ### Teste Aproximado
 
-* Se $n\hat{p}$ e $n(1 - \hat{p})$ são maiores do que $15$, nós sabemos que $\hat{p}$ segue aproximadamente uma distribuição normal, i.e.
+* Se $n\hat{p}$ e $n(1 - \hat{p})$ são maiores do que $5$, nós sabemos que $\hat{p}$ segue aproximadamente uma distribuição normal, i.e.
     * Se $H_0$ é verdadeira e a amostra é grande o suficiente, então $z_{obs}$ é uma observação de uma distribuição normal padrão.
 * $P$-valor = 2 x "probabilidade da cauda superior de $|z_{obs}|$". A probabilidade é calculada usando a distribuição normal padrão.
 
@@ -177,7 +177,7 @@ Todo o nível de significância será colocado em um lado apenas, tal como um limit
   $ep_0 = \sqrt{\frac{p_0(1-p_0)}{n}} = \sqrt{\frac{0.5\times0.5}{1200}} = 0.0144$
 * Estatística de teste observada
   $z_{obs} = \frac{\hat{p}-p_0}{ep_0}=\frac{0.52-0.5}{0.0144}=1.39$
-* "A cauda superior para 1.39" na distribuição normal padrão é 0.0823, i.e. o
+* "A cauda superior para $1.39$" na distribuição normal padrão é 0.0823, i.e. o
   $p$-valor é 2$\cdot$ 0.0823$=$ 16.46%.
 * Conclusão: Não há evidências suficientes para rejeitar $H_0$, i.e. nós não rejeitamos que a preferência na população é de 50%.
 * Os cálculos acima também podem ser calculados automaticamente no **R** por 
@@ -210,8 +210,8 @@ prop.test(x = count, n = 1200, correct = F)
 * Experimento com $n=30$, onde obtivemos $y_+=14$ sucessos.
 * Queremos testar $H_0: p=0.3$ vs.\ $H_1: p \not=0.3$.
 * Como $y_+>np_0=9$, usamos a probabilidade de cauda superior correspondente à soma das alturas das
-linhas vermelhas à direita de 14 no gráfico abaixo. (O gráfico continua no lado direito acima de $n=30$, mas foi cortado para fins ilustrativos.)
-* A probabilidade da cauda superior de 14 para cima (i.e. maior do que 13) é:
+linhas vermelhas à direita de $14$ no gráfico abaixo. (O gráfico continua no lado direito acima de $n=30$, mas foi cortado para fins ilustrativos.)
+* A probabilidade da cauda superior de $14$ para cima (i.e. maior do que $13$) é:
 ```{r}
 lower_tail <- pdist("binom", q = 13, size = 30, prob = 0.3)
 1 - lower_tail
@@ -236,9 +236,11 @@ prop.test( ~ sex, data = Chile, p = 0.5, conf.level = 0.95, correct = FALSE)
 
 ## Visão Geral dos testes para média e proporção
 ![](https://asta.math.aau.dk/static-files/asta/img/AGRoversigt.jpg)
+
+
 ## Regressando (variável resposta) e regressores (variáveis explicativas)
 
-* Relizamos um experimento, no qual escolhemos aleatoriamente 50 empresas de TI e 50 empresas de serviços e medimos as suas tacas de lucro. Existe associação entre o tipo de empresa (TI/serviço) e a taxa de lucro? 
+* Realizamos um experimento, no qual escolhemos aleatoriamente 50 empresas de TI e 50 empresas de serviços e medimos as suas tacas de lucro. Existe associação entre o tipo de empresa (TI/serviço) e a taxa de lucro? 
 * Em outras palavras, nós queremos comparar amostras de 2 populações diferentes. Para cada empresa registramos:
     * A variável binária `tipo da empresa`: chamamos de **regressor ou variável explicativa**. Ela divide os dados em 2 grupos.
     * A variável quantitativa `taxa de lucro`: chamamos de
@@ -258,7 +260,7 @@ prop.test( ~ sex, data = Chile, p = 0.5, conf.level = 0.95, correct = FALSE)
 ## Comparação de 2 médias
 
 * Consideremos a situação em que temos duas amostras de variáveis quantitativas:
-    * População 1 tem média $\mu_1$, que é estimada por
+    * População $1$ tem média $\mu_1$, que é estimada por
       $\hat{\mu}_1=\bar{y}_1$ com base em uma amostra de tamanho $n_1$.
     * População 2 tem média $\mu_2$, que é estimada por       $\hat{\mu}_2=\bar{y}_2$ com base em uma amostra de tamanho $n_2$.
     * Estamos interessados na diferença $\mu_2-\mu_1$, que é estimada por
@@ -283,31 +285,29 @@ prop.test( ~ sex, data = Chile, p = 0.5, conf.level = 0.95, correct = FALSE)
   $$
   ep_d=\sqrt{ep_1^2+ep_2^2},
   $$
-  onde $ep_1$ e $ep_2$ são erros padrão estimados para as médias amostrais nas populações 1 e 2, respectivamente.
+  onde $ep_1$ e $ep_2$ são erros padrão estimados para as médias amostrais nas populações $1$ e 2, respectivamente.
 * Relembre que neste caso nós temos $ep=\frac{s}{\sqrt{n}}$, i.e.
    $$
    ep_d=\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}},
    $$
-   onde $s_1$ e $s_2$ são desvios padrão estimados para as populações 1 e 
+   onde $s_1$ e $s_2$ são desvios padrão estimados para as populações $1$ e 
    2, respectivamente.
-<!-- * **Os graus de liberdade** $df$ para $ep_d$ podem ser estimados por uma fórmula complicada, a qual não apresentaremos aqui. -->
-* For the intervalo de confiança and the significance test we
-  note that:
-    * If both $n_1$ and $n_2$ are above 30, then we can use the standard normal 
-      distribution ($z$-score) rather than the $t$-distribution ($t$-score).
-    * If $n_1$ or $n_2$ are below 30, then we let **R** 
-      calculate the graus de liberdade and $p$-valor/intervalo de confiança.
+* Veja os **graus de liberdade** no capítulo 5 de Costa Neto.
+<!-- * Para o intervalo de confiança and the significance test we -->
+<!--   note that: -->
+<!--     * If both $n_1$ and $n_2$ are above 30, then we can use the standard normal  -->
+<!--       distribution ($z$-score) rather than the $t$-distribution ($t$-score). -->
+<!--     * If $n_1$ or $n_2$ are below 30, then we let **R**  -->
+<!--       calculate the graus de liberdade and $p$-valor/intervalo de confiança. -->
 
 
 
-## Example: Comparing two means (independent samples)
-We return to the `Chile` data. We study the association
-between the variables `sex` and `statusquo` (scale of support for the
-status-quo). So, we will perform a significance test to test for difference 
-in the mean of `statusquo` for male and females. 
+## Exemplo: Comparando duas médias (amostras independentes)
+Voltamos aos dados do `Chile`. Nós estudamos a associação entre as variáveis `sex` e `statusquo`. Vamos, então, fazer um teste de significância para testar a diferença
+entre as médidas de `statusquo` para homens e mulheres. 
 
 ```{r message=FALSE, R.options=list(digits=3)}
-Chile <- read.delim("https://asta.math.aau.dk/datasets?file=Chile.txt")
+Chile <- read.delim("C://Users//fsabino//Desktop//Codes//papers//Introductory_Stat_II//notebook//Chile.txt")
 library(mosaic)
 fv <- favstats(statusquo ~ sex, data = Chile)
 fv
@@ -325,189 +325,157 @@ ep_d <- sqrt( sd1^2/n1 + sd2^2/n2 )
 t_obs <- d / ep_d
 ```
 
-* Difference:\ $d = `r round(m1, 4)` - (`r round(m2, 4)`) = `r round(d, 4)`$.
-* estimados standard deviations:\ $s_1 = `r round(sd1, 4)`$ (females) and  $s_2 = `r round(sd2, 4)`$ (males). 
-* Sample sizes:\ $n_1 = `r n1`$ and  $n_2 = `r n2`$.
-* estimados standard error of difference:\  $ep_d = \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}} =
+* Diferença:\ $d = `r round(m1, 4)` - (`r round(m2, 4)`) = `r round(d, 4)`$.
+* Desvio padrão estimado:\ $s_1 = `r round(sd1, 4)`$ (mulheres) and  $s_2 = `r round(sd2, 4)`$ (homens). 
+* Tamanhos amostrais:\ $n_1 = `r n1`$ e  $n_2 = `r n2`$.
+* Erro padrão estimado da diferença:\  $ep_d = \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}} =
   \sqrt{\frac{`r round(sd1, 4)`^2}{`r n1`} + \frac{`r round(sd2, 4)`^2}{`r n2`}} = `r round(ep_d, 4)`$.
-* Observed $t$-score for $H_0:\ \mu_1-\mu_2=0$ is: $\quad t_{obs} = \frac{d-0}{ep_d} = \frac{`r round(d, 4)`}{`r round(ep_d, 4)`} = `r round(t_obs, 4)`$.
-* Since both sample sizes are "pretty large" (> 30), we can use the $z$-score 
-  instead of the $t$-score for finding the $p$-valor (i.e. we use the
-  standard normal distribution):
+* $t$-escore observado para $H_0:\ \mu_1-\mu_2=0$ é: $\quad t_{obs} = \frac{d-0}{ep_d} = \frac{`r round(d, 4)`}{`r round(ep_d, 4)`} = `r round(t_obs, 4)`$.
+* Como os tamanhos das amostras são "grandes", nós podemos usar o escore-$z$ ao invés do escore-$t$ para encontrar o $p$-valor aproximado:
 ```{r}
 1 - pdist("norm", q = 3.4786, xlim = c(-4, 4))
 ```
-* Then the $p$-valor is $2\cdot 0.00025 = 0.0005$, so we reject the null
-  hypothesis.
-* We can leave all the calculations to **R** by using `t.test`: 
+* Então o $p$-valor é $2\cdot 0.00025 = 0.0005$, e, portanto, nós rejeitamos a hipótese nula.
+* Podemos deixar todos os cálculos para o **R** usando `t.test`: 
 ```{r}
 t.test(statusquo ~ sex, data = Chile)
 ```
-* We recognize the $t$-score
-  $3.4786$ and the $p$-valor $0.0005$. The estimados graus de liberdade 
-  $df = 2679$ is so large that we can not tell the difference between results
-  obtained using $z$-score and $t$-score.
+* Nós reconhecemos o escore-$t$
+  $3.4786$ e o $p$-valor $0.0005$. Os graus de liberdade 
+  $df = 2679$ são grandes e neste caso os resultados obtidos utilizando os escores-$z$ e $t$ são muito similares.
 
 
 
-## Comparação of two means: intervalo de confiança (independent samples)
-* We have already found all the ingredients to construct a
-  **intervalo de confiança for $\mu_2-\mu_1$**:
-    * $d=\bar{y}_2-\bar{y}_1$ estimates $\mu_2-\mu_1$.
-    * $ep_d=\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}$ estimates
-      the standard error of $d$.
+## Comparação entre duas médias: intervalo de confiança (amostras independentes)
+* Nós já temos todos os "ingredientes" para construir um
+  **intervalo de confiança para $\mu_2-\mu_1$**:
+    * $d=\bar{y}_2-\bar{y}_1$ é um estimador por pornto para $\mu_2-\mu_1$.
+    * $ep_d=\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}$ é um estimador por ponto para o erro padrão de $d$.
 * Then: 
   $$
   d\pm t_{crit}ep_d
   $$ 
-  is a intervalo de confiança for $\mu_2-\mu_1$.
-* The critical $t$-score, $t_{crit}$ is chosen corresponding to the wanted
-  confidence level. If $n_1$ and $n_2$ both are greater than 30, then
-  $t_{crit} = 2$ yields a confidence level of approximately 95\%.
+  é um intervalo de confiança para $\mu_2-\mu_1$.
+* O escore-$t$ crítico, $t_{crit}$ é escolhido de acordo com o nível de confiança desejado. 
+<!-- Se $n_1$ e $n_2$ both are greater than 30, then -->
+<!--   $t_{crit} = 2$ yields a confidence level of approximately 95\%. -->
 
 
 
-## Comparação of two means: paired $t$-test (dependent samples)
+## Comparação entre duas médias: teste-$t$ pareado (amostras dependentes)
 
-* Experiment:
-    * You choose 10 Netto stores at random, where you measure the
-      average expedition time by the cash registers over some period
-      of time.
-    * Now, new cash registers are installed in all 10 stores, and
-      you repeat the experiment.
-* It is interesting to investigate whether or not the new cash
-  registers have changed the expedition time.
-* So we have 2 samples corresponding to old/new technology. In
-  this case we have **dependent** samples, since we have 2
-  measurement in each store.
-* We use the following strategy for analysis:
-    * For each store calculate **the change** in average
-      expedition time when we change from old to new technology.
-    * The changes $d_1,d_2,\ldots,d_{10}$ are now considered as
-      **ONE** sample from a população with mean $\mu$.
-    * Test the hypothesis $H_0: \mu=0$ as usual (using a $t$-test for testing the 
-      mean as in the previous lecture). 
+* Experimento:
+    * Você escolhe $10$ supermercados Zaffari/Nacional (ou outro) aleatoriamente, e mede o tempo médio de serviço das caixas registradoras durante algum período de tempo.
+    * Agora, novas caixas registradoras são instaladas nos $10$ supermercados e você repete o experimento. 
+* É interessante investigar se as novas caixas registradoras mudaram ou não o tempo médio de serviço.
+* Portanto, nós temos 2 amostras correspondentes à tecnologia nova e antiga. Neste caso, as amostras são **dependentes**, já que temos duas medições em cada loja (assuma que outras variáveis sejam mantidas fixas).
+* Usamos a seguinte estratégia para análise:
+    * Para cada loja calcule **a mudança** no tempo médio de serviço quando mudamos da tecnologia antiga para a nova.
+    * As alterações $d_1,d_2,\ldots,d_{10}$ formam 
+      **UMA** amostra de uma população com média $\mu$.
+    * Teste a hipótese $H_0: \mu=0$ como de costume (usando um teste-$t$-test para testar a média). 
 
 ----
 
-### Netto store example
-* Data is organized in a data frame with 2 variables, `before`
-and `after`, containing the average expedition time before and
-after installation of the new technology. Instead of doing manual calculations
-we let **R** perform the significance test (using `t.test` with `paired = TRUE` as
-our samples are paired/dependent):
+### Exemplo do Supermercado
+* Os dados são organizados em um "data frame" com 2 variáveis, `before`
+e `after`, contendo o tempo médio de serviço antes e depois da instalação da nova tecnologia. Ao invés de fazer cálculos manuais, nós deixamos o **R** executar o teste de significância (usando `t.test` com `paired = TRUE` dado que as nossas amostras são emparelhadas/dependentes):
 ```{r}
-Netto <- read.delim("https://asta.math.aau.dk/datasets?file=Netto.txt")
-head(Netto, n = 3)
-t.test(Netto$before, Netto$after, paired = TRUE)
+super <- read.delim("C://Users//fsabino//Desktop//Codes//papers//Introductory_Stat_II//notebook//supermarket.txt")
+head(super, n = 3)
+t.test(super$before, super$after, paired = TRUE)
 ```
-* With a $p$-valor of $0.00029$ we reject that the expedition time is the same
-after installing new technology.
+* Com um $p$-valor de $0.00029$, nós rejeitamos que o tempo médio de serviço seja o mesmo após a instalação da nova tecnologia.
 
-# Comparação of two proportions
-## Comparação of two proportions
-* We consider the situation, where we have two qualitative samples
-  and we investigate whether a given property is present or not:
-    * Let the proportion of população 1 which has the property be $p_1$, which
-      is estimados by $\hat{p}_1$ based on a sample of size $n_1$.
-    * Let the proportion of população 2 which has the property be $p_2$, which
-      is estimados by $\hat{p}_2$ based on a sample of size $n_2$.
-    * We are interested in the difference $p_2-p_1$, which is estimados
-      by $d=\hat{p}_2-\hat{p}_1$.
-    * Assume that we can find the **estimados standard error**
-      $ep_d$ of the difference.
-* Then we can construct
-    * an approximate intervalo de confiança for the difference, $p_2 - p_1$.
-    * a significance test. 
+# Comparação de duas proporções
+## Comparação de duas proporções
+* Considere a situação em que temos amostras de duas variáveis qualitativas e queremos investigar se uma determinada propriedade está presente ou não:
+    * Seja a proporção da população $1$ igual $p_1$, estimada por $\hat{p}_1$ com base em uma amostra de tamanho $n_1$.
+    * Seja a proporção da população 2 igual $p_2$, estimada por $\hat{p}_2$ com base em uma amostra de tamanho $n_2$.
+    * Nós estamos interessados na diferença $p_2-p_1$, que é estimada por $d=\hat{p}_2-\hat{p}_1$.
+    * Calculando o **erro padrão estimado**
+      $ep_d$ da diferença, nós podemos:
+* Construir um
+    * intervalo de confiança aproximado para a diferença, $p_2 - p_1$.
+    * um teste de significância. 
 
 
 
-## Comparação of two proportions: Independent samples
-* In the situation where we have independent samples we know that
+## Comparação de duas proporções: Amostras independentes
+* Na situação em que temos amostras independentes, nós sabemos que
   $$
   ep_d=\sqrt{ep_1^2+ep_2^2},
   $$
-  where $ep_1$ and $ep_2$ are the estimados erros padrão for
-  the sample proportion in população 1 and 2, respectively.
-* We recall, that these are given by $se=\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$, i.e.
+  onde $ep_1$ e $ep_2$ são os erros padrão estimados para as proporções amostrais na população $1$ e 2, respectivamente.
+* Relembre que estes erros padrão são $ep=\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$, e, portanto,
   $$
   ep_d = \sqrt{\frac{\hat{p}_1(1-\hat{p}_1)}{n_1}+\frac{\hat{p}_2(1-\hat{p}_2)}{n_2}}.
   $$
-* A (approximate) intervalo de confiança for $p_2-p_1$ is obtained by the 
-  usual construction:   
+* Um intervalo de confiança (aproximado) para $p_2-p_1$ é obtido pela construção usual:   
   $$
   (\hat{p}_2-\hat{p}_1)\pm z_{crit}ep_d,
   $$ 
-  where the 
-  critical $z$-score determines the confidence level.
+  onde o escore-$z$ crítico determina o nível de confiança.
 
 
-## Approximate test for comparing two proportions (independent samples)
+## Teste aproximado para comparar duas proporções (amostras independentes)
 
-* We consider the hipótese nula $H_0$: $p_1=p_2$ (equivalently 
-  $H_0: p_1 - p_2 = 0$) and the hipótese alternativa $H_1$: $p_1 \neq p_2$.
-* Assuming $H_0$ is true, we have a common proportion $p$, which is
-  estimados by
+* Considere a hipótese nula $H_0$: $p_1=p_2$ (equivalentemente 
+  $H_0: p_1 - p_2 = 0$) e a hipótese alternativa $H_1$: $p_1 \neq p_2$.
+* Assumindo que $H_0$ é verdadeira, nós temos uma proporção comum $p$, que é estimada por
   $$
   \hat{p}=\frac{n_1\hat{p}_1+n_2\hat{p}_2}{n_1+n_2},
   $$ 
-  i.e. we aggregate the populaçãos and calculate the relative frequency of the 
-  property (with other words: we estimate the proportion, $p$, as if the two
-  samples were one).
-* Rather than using the estimados standard error of the difference from previous, 
-  we use the following that holds under $H_0$:
+  i.e. nós agregamos as populações e calculamos a frequência relativa da propriedade (em outras palavras: nós estimamos a proporção, $p$, como se as duas amostras fossem uma só).
+* Em vez de usar o erro padrão estimado da diferença como anteriormente, nós estimamos da seguinte maneira sob $H_0$:
   $$
   ep_0=\sqrt{\hat{p}(1-\hat{p})\left(\frac{1}{n_1}+\frac{1}{n_2}\right)}
   $$
-* The observed test statistic/$z$-score for $H_0$ is then:
+* A estatística de teste observada (escore-$z$) sob $H_0$ é então:
   $$
-  z_{obs}=\frac{\hat{p}_2-\hat{p}_1}{ep_0},
+  z_{obs}=\frac{\hat{p}_2-\hat{p}_1}{ep_0}.
   $$ 
-  which is evaluated in the standard normal distribution.
-* The $p$-valor is calculated in the usual way.
+<!-- * O $p$-valor is calculated in the usual way. -->
 
-**WARNING**: The approximation is only good, when $n_1\hat{p},\
-n_1(1-\hat{p}),\ n_2\hat{p},\ n_2(1-\hat{p})$ all are greater than 5.
-
+**ATENçÃO**: A aproximação só será boa se o tamanho da amostra for grande o suficiente. Costuma-se considerar como tal quando $n_1\hat{p},\
+n_1(1-\hat{p}),\ n_2\hat{p},\ n_2(1-\hat{p})$ são todos maiores do que 5.
 
 
-## Example: Approximate intervalo de confiança and test for comparing proportions
 
-We return to the `Chile` dataset. We make a new binary
-variable indicating whether the
-person intends to vote no or something else (and we remember to
-tell  **R**  that it should think of this as a grouping variable, 
-i.e. a `factor`):
+## Exemplo: Intervalo de confiança aproximado e teste para comparação de proporções
+
+Voltemos ao conjunto de dados do `Chile`. Seja uma variável binária indicando se a pessoa pretende votar não (no **R**  devemos informar que se trata de um fator - `factor`):
 ```{r}
 Chile$voteNo <- relevel(factor(Chile$vote == "N"), ref = "TRUE")
 ```
 
-We study the association between the variables `sex` and `voteNo`:
+Nós estudamos a associação entre as variáveis `sex` e `voteNo`:
 ```{r}
 tab <- tally( ~ sex + voteNo, data = Chile, useNA = "no")
 tab
 ```
-This gives us all the ingredients needed in the hypothesis test:
+Isto nos dá todos os ingredientes necessários para fazer o teste de hipóteses:
 
-* estimados proportion of men that vote no:\ $\hat{p}_1=\frac{526}{526+697}=0.430$
-* estimados proportion of women that vote no:\ $\hat{p}_2=\frac{363}{363+946}=0.277$ 
-* estimados common proportion:\ $\hat{p}=\frac{1223 \times 0.430 + 1309 \times 0.277}{1309+1223}=\frac{526 + 363}{1309+1223}=0.351.$
-* estimados difference $d=\hat{p}_2-\hat{p}_1=0.277-0.430=-0.153$
+* proporção estimada de homens que votam não:\ $\hat{p}_1=\frac{526}{526+697}=0.430$
+* proporção estimada de mulheres que votam não:\ $\hat{p}_2=\frac{363}{363+946}=0.277$ 
+* proporção comum estimada:\ $\hat{p}=\frac{1223 \times 0.430 + 1309 \times 0.277}{1309+1223}=\frac{526 + 363}{1309+1223}=0.351.$
+* diferença estimada $d=\hat{p}_2-\hat{p}_1=0.277-0.430=-0.153$
 
-Further, 
+Além disso, 
 
-* Standard error of difference:\
+* Erro padrão da diferença:\
   $ep_d=\sqrt{\frac{\hat{p}_1(1-\hat{p}_1)}{n_1}+\frac{\hat{p}_2(1-\hat{p}_2)}{n_2}}
       = \sqrt{\frac{0.430(1-0.430)}{1223}+\frac{0.277(1-0.277)}{1309}}= 0.0188$.
-* Approximate 95\% intervalo de confiança for difference:\ $d\pm
+* Intervalo de confiança (aproximado) 95\% para a diferença:\ $d\pm
   1.96ep_d=(-0.190, -0.116)$.
-* Standard error of difference when $H_0:\ p_1=p_2$ is true:\
+* Erro padrão da diferença quando $H_0:\ p_1=p_2$ 
+é verdadeira:\
   $ep_0=\sqrt{\hat{p}(1-\hat{p})(\frac{1}{n_1}+\frac{1}{n_2})} = 0.0190$.
-* The observed test statistic/$z$-score:\ $z_{obs}=\frac{d}{ep_0}=-8.06$. The test for $H_0$ against $H_1:
-  p_1\not=p_2$ yields a $p$-valor that is practically zero,
-  i.e.\ we can reject that the proportions are equal. 
+* A estatística de teste observada/escore-$z$ é:\ $z_{obs}=\frac{d}{ep_0}=-8.06$. O teste para $H_0$ versus $H_1:
+  p_1\not=p_2$ encontra um $p$-valor que é praticamente zero,
+  i.e.\ podemos rejeitar que as proporções sejam iguais (com base nesta amostra temos fortes evidências de que elas não são iguais). 
 
-### Automatic calculation in **R**
+### Cálculo automático no **R**
 
 ```{r}
 Chile2 <- subset(Chile, !is.na(voteNo))
@@ -516,19 +484,43 @@ prop.test(voteNo ~ sex, data = Chile2, correct = FALSE)
 
 
 
-## Fisher's exact test
-* If $n_1\hat{p},\ n_1(1-\hat{p}),\ n_2\hat{p},\ n_2(1-\hat{p})$ are not all
-greater than 5, then the approximate test cannot be
-trusted. Instead you can use Fisher's exact test:
+## Teste exato de Fisher
+* Se $n_1\hat{p},\ n_1(1-\hat{p}),\ n_2\hat{p},\ n_2(1-\hat{p})$ não são todos maiores do que 5, então o teste aproximado não é confiável. Ao invés disso, você pode usar o teste exato de Fisher:
 
 ```{r}
 fisher.test(tab)
 ```
 
-* Again the $p$-valor is seen to be extremely small, so we
-definitely reject the hipótese nula of equal `voteNo`
-proportions for women and men.
+* O $p$-valor é extremamente pequeno, rejeitando definitivamente a hipótese nula de igualdade de proporções entre homens e mulheres.
 
 ## Visão geral da comparação de 2 grupos
 
 ![](https://asta.math.aau.dk/static-files/asta/img/agrSummaryTwoGroups.jpg)
+
+## Costa Neto
+
+Continuaremos agora o estudo utilizando o capítulo 5 do livro do Costa Neto.
+
+* Erros do Tipo I e II, Poder do Teste
+* Testes de uma Média Populacional com $\sigma$ conhecido
+* Testes de uma Média Populacional com $\sigma$ desconhecido
+* Testes de uma variância populacional
+* Testes de uma proporção populacional, Correção de Continuidade
+* Comparação de duas Médias (Amostras Independentes - desvios conhecidos, desconhecidos - e Pareadas)
+* Comparação de duas Variâncias
+* Comparação de duas Proporções
+* Intervalo de Confiança para a Diferença entre Parâmetros
+* Tamanhos das amostras
+
+Refaça os exemplos e pelo menos os exercícios com resposta resumida no final do livro: 3, 5, 7, 10, 14, 15, 16, 19, 25, 26, 34 e 35.
+
+
+## Resumo
+
+Ao final deste estudo você deve:
+
+* Saber definir qual a hipótese nula relevante e a alternativa correspondente
+* Escolher adequadamente e calcular a estatística de teste
+* Calcular o p-valor, interpretá-lo e estar apto para tomar a decisão e concluir a análise
+* Calcular e interpretar os intervalos de confiança 
+* Determinar o tamanho da amostra quando a amostragem é aleatória simples

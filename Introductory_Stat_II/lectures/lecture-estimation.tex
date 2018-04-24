@@ -1,0 +1,990 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={EstimaÃ§Ã£o},
+            pdfauthor={Fernando B. Sabino da Silva},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+  \title{EstimaÃ§Ã£o}
+  \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+  \author{Fernando B. Sabino da Silva}
+  \preauthor{\centering\large\emph}
+  \postauthor{\par}
+  \date{}
+  \predate{}\postdate{}
+
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\section{EstimaÃ§Ã£o por ponto e por
+intervalo}\label{estimaaao-por-ponto-e-por-intervalo}
+
+\subsection{EstimaÃ§Ã£o por ponto e por
+intervalo}\label{estimaaao-por-ponto-e-por-intervalo-1}
+
+\begin{itemize}
+\item
+  NÃ³s queremos investigar hipÃ³teses sobre parÃ¢metros (constantes
+  populacionais). Exemplo: a mÃ©dia \(\mu\) e o desvio-padrÃ£o
+  \(\sigma\).
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Se \(\mu\) for o tempo mÃ©dio de espera em uma fila, entÃ£o pode ser
+    relevante estudar se o tempo mÃ©dio excede, por exemplo, a 2
+    minutos.
+  \end{itemize}
+\item
+  Com base em uma amostra, nÃ³s calculamos uma \textbf{estimativa
+  pontual} que de maneira coloquial Ã© o nosso melhor ``chute'' para o
+  valor do parÃ¢metro.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Por exemplo, nÃ³s usamos \(\bar{y}\) como uma estimativa para
+    \(\mu\) e \(s\) como uma estimativa para \(\sigma\).
+  \end{itemize}
+\item
+  Em geral, nÃ³s estamos tambÃ©m interessados em calcular uma
+  \textbf{estimativa por intervalo} (tambÃ©m chamada de
+  \textbf{intervalo de confianÃ§a}). Este intervalo Ã© construÃ­do em
+  torno da estimativa por ponto.
+\item
+  A estimativa do parÃ¢metro (e o intervalo de confianÃ§a) pode ser
+  utilizado para investigar a hipÃ³tese.
+\end{itemize}
+
+\subsection{Estimadores por ponto:
+ViÃ©s}\label{estimadores-por-ponto-vias}
+
+\begin{itemize}
+\tightlist
+\item
+  Se queremos estimar a mÃ©dia da populaÃ§Ã£o \(\mu\), nÃ³s temos
+  vÃ¡rias possibilidades (a princÃ­pio). Exemplos:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    a mÃ©dia amostral \(\bar{y}\)
+  \item
+    a mÃ©dia amostral \(y_T\) dos quartis superior (\(Q_{3}\)) e
+    inferior (\(Q_{1}\)).
+  \end{itemize}
+\item
+  Vantagem de \(y_T\): Pouca influÃªncia de outliers (observaÃ§Ãµes com
+  valor muito alto/baixo), i.e.~nÃ£o teremos praticamente nenhum efeito
+  se houver alguns erros no banco de dados.
+\item
+  Desvantagem de \(y_T\): Se a distribuiÃ§Ã£o da populaÃ§Ã£o for
+  assimÃ©trica, entÃ£o \(y_T\) serÃ¡ um estimador \textbf{viesado}, o
+  que significa que no longo prazo este estimador sistematicamente serÃ¡
+  acima ou abaixo do verdadeiro valor de \(\mu\).
+\item
+  Geralmente, nÃ³s preferimos que um estimador seja \textbf{nÃ£o
+  viesado}, isto Ã©, que a sua distriuiÃ§Ã£o seja centrada em volta do
+  verdadeiro valor do parÃ¢metro.
+\item
+  Relembre que para uma populaÃ§Ã£o com mÃ©dia \(\mu\), a mÃ©dia
+  amostral \(\bar{y}\) tambÃ©m tem mÃ©dia \(\mu\), i.e., \(\bar{y}\) Ã©
+  um estimador nÃ£o viesado da mÃ©dia populacional \(\mu\).
+\end{itemize}
+
+\subsection{Estimadores por ponto:
+EficiÃªncia}\label{estimadores-por-ponto-eficiancia}
+
+\begin{itemize}
+\tightlist
+\item
+  NÃ³s jÃ¡ sabemos (mostramos em aula - verifique se vocÃª sabe
+  \textbf{provar} isto) que o erro padrÃ£o de \(\bar{y}\) Ã©
+  \(\frac{\sigma}{\sqrt{n}}\), i.e.~o erro padrÃ£o converge para zero
+  quando o tamanho da amostra aumenta (vocÃª saberia explicar a
+  intuiÃ§Ã£o disto?).
+\item
+  Ã difÃ­cil expressar o erro padrÃ£o de \(y_T\), mas Ã© possÃ­vel
+  provar que ele serÃ¡ maior do que o erro padrÃ£o de \(\bar{y}\). Este
+  Ã© um bom motivo para que, usualmente, \(\bar{y}\) seja um estimador
+  preferÃ­vel.
+\item
+  Em geral, nÃ³s preferimos que um estimador seja \textbf{eficiente}. De
+  maneira coloquial, isto significa que o erro padrÃ£o converge para
+  zero quando o tamanho da amostra aumenta. O estimador \textbf{mais
+  eficiente} serÃ¡ aquele que converge para zero a uma velocidade maior.
+  No nosso exemplo, para a maioria das populaÃ§Ãµes, \(y_T\) Ã©
+  ineficiente.
+\end{itemize}
+
+\subsection{NotaÃ§Ã£o}\label{notaaao}
+
+\begin{itemize}
+\tightlist
+\item
+  O sÃ­mbolo \(\hat{\ }\) acima de um parÃ¢metro Ã© frequentemente
+  utilizado para denotar uma estimativa (pontual) de um parÃ¢metro.
+  Exemplos:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    estimativa da mÃ©dia populacional:~\(\hat{\mu}=\bar{y}\)
+  \item
+    estimativa do desvio padrÃ£o:~\(\hat{\sigma}=s\)
+  \end{itemize}
+\item
+  Quando observamos uma variÃ¡vel binÃ¡ria (\(0/1\)), o que, por
+  exemplo, Ã© utilizada para denotar sim/nÃ£o ou masculino/feminino,
+  entÃ£o nÃ³s usamos a notaÃ§Ã£o \[p=P(Y=1)\] para a proporÃ§Ã£o da
+  populaÃ§Ã£o com a caracterÃ­stica \(Y=1\).
+\item
+  A estimativa \(\hat{p}=(y_1+y_2+\ldots+y_n)/n\) Ã© a frequÃªncia
+  relativa amostral de \(Y=1\).
+\end{itemize}
+
+\subsection{Intervalo de ConfianÃ§a}\label{intervalo-de-confianaa}
+
+\begin{itemize}
+\tightlist
+\item
+  A definiÃ§Ã£o geral de um intervalo de confianÃ§a para um parÃ¢metro
+  populacional Ã© a seguinte:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Um \textbf{intervalo de confianÃ§a} para um parÃ¢metro Ã© um
+    intervalo construÃ­do com base na amostra, isto Ã©, ele Ã©
+    aleatÃ³rio (depende da amostra em particular). Esperamos que este
+    intervalo contenha o verdadeiro valor do parÃ¢metro (que nÃ£o Ã©
+    aleatÃ³rio, Ã© uma constante populacional).
+  \item
+    A ``probabilidade'' de que esta construÃ§Ã£o produza um intervalo
+    que inclua o verdadeiro valor do parÃ¢metro Ã© chamada de
+    \textbf{nÃ­vel de confianÃ§a} (ou de cobertura). Tipicamente, o
+    nÃ­vel de confianÃ§a escolhido Ã© de \(95\%\).
+  \item
+    (1-nÃ­vel de confianÃ§a) Ã© chamado de \textbf{nÃ­vel de
+    significÃ¢ncia} (neste exemplo, \(1-0.95=0.05\),~i.e.~\(5\%\)).
+  \end{itemize}
+\item
+  Frequentemente, o intervalo Ã© construÃ­do como um intervalo
+  simÃ©trico em torno de uma estimativa por ponto:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{estimativa por ponto \(\pm\)margem de erro}
+  \item
+    Regra de bolso: Com uma margem de erro de aproximadamente 1.96 vezes
+    o erro padrÃ£o vocÃª obtÃ©m um intervalo de confianÃ§a de
+    aproximadamente \(95\%\).
+  \item
+    i.e: \textbf{estimativa por ponto} \(\pm\) \textbf{1.96 x erro
+    padrÃ£o} tem nÃ­vel de confianÃ§a de aproximadamente \(95\%\).
+  \end{itemize}
+\end{itemize}
+
+\subsection{Intervalo de ConfianÃ§a para a
+ProporÃ§Ã£o}\label{intervalo-de-confianaa-para-a-proporaao}
+
+\begin{itemize}
+\tightlist
+\item
+  Considere uma populaÃ§Ã£o com uma distribuiÃ§Ã£o onde a probabilidade
+  de ter uma determinada caracterÃ­stica seja \(p\) e a probabilidade de
+  nÃ£o ter seja \(1-p\).
+\item
+  Quando as categorias \(nÃ£o/sim\) sÃ£o denotadas por \(0/1\), i.e.
+  \(y\) Ã© \(0\) ou \(1\), a distribuiÃ§Ã£o de \(y\) tem um desvio
+  padrÃ£o de : \[
+    \quad \sigma=\sqrt{p(1-p)}.
+    \] Isto Ã©, o desvio padrÃ£o nÃ£o Ã© um parÃ¢metro ``livre'' para
+  uma variÃ¡vel \(0/1\), pois o seu valor estÃ¡ diretamente ligado a
+  probabilidade \(p\).
+\item
+  Com uma amostra de tamanho \(n\) o erro padrÃ£o de \(\hat{p}\) serÃ¡
+  (dado que \(\hat{p} = \frac{\sum_{i=1}^n y_i}{n}\)): \[
+    \quad \sigma_{\hat{p}}=
+    \frac{\sigma}{\sqrt{n}} =\sqrt{\frac{p(1-p)}{n}}.
+    \]
+\item
+  NÃ³s nÃ£o sabemos o valor de \(p\), mas se inserirmos a estimativa
+  iremos obter o \textbf{erro padrÃ£o estimado} de \(\hat{p}\): \[
+    ep=\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}.
+    \]
+\item
+  A regra de bolso nos diz que o intervalo
+  \[\hat{p}\pm 1.96\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\] tem nÃ­vel de
+  confianÃ§a de aproximadamente \(95\%\). i.e., antes que os dados sejam
+  conhecidos, o intervalo aleatÃ³rio dado pela fÃ³rmula acima tem
+  aproximadamente 95\% de ``probabilidade'' de conter o verdadeiro valor
+  de \(p\).
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\subsubsection{Exemplo: Estimativa por ponto e por intervalo para a
+proporÃ§Ã£o}\label{exemplo-estimativa-por-ponto-e-por-intervalo-para-a-proporaao}
+
+\begin{itemize}
+\tightlist
+\item
+  Vamos dar uma olhada em dados de uma pesquisa nacional conduzida no
+  Chile entre Abril e Maio de 1988. InformaÃ§Ãµes sobre os dados podem
+  ser encontradas
+  \href{https://www.rdocumentation.org/packages/car/versions/2.1-6/topics/Chile}{aqui}.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Chile <-}\StringTok{ }\KeywordTok{read.delim}\NormalTok{(}\StringTok{"C:/Users/fsabino/Desktop/Codes/papers/Introductory_Stat_II/notebook/Chile.txt"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  Concentremo-nos na variÃ¡vel \texttt{sex},~i.e.~a distribuiÃ§Ã£o de
+  gÃªnero na amostra.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(mosaic)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'mosaic' was built under R version 3.4.3
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'dplyr' was built under R version 3.4.3
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'ggformula' was built under R version 3.4.3
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'ggplot2' was built under R version 3.4.3
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'mosaicData' was built under R version 3.4.3
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'Matrix' was built under R version 3.4.4
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{tally}\NormalTok{( }\OperatorTok{~}\StringTok{ }\NormalTok{sex, }\DataTypeTok{data =}\NormalTok{ Chile)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## sex
+##    F    M 
+## 1379 1321
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{tally}\NormalTok{( }\OperatorTok{~}\StringTok{ }\NormalTok{sex, }\DataTypeTok{data =}\NormalTok{ Chile, }\DataTypeTok{format =} \StringTok{"prop"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## sex
+##         F         M 
+## 0.5107407 0.4892593
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  ProporÃ§Ã£o da populaÃ§Ã£o (desconhecida) de mulheres (F),~\(p\).
+\item
+  Estimativa de \(p\):
+  \(\quad \hat{p} = \frac{1379}{1379+1321} = 0.5107\)
+\item
+  Regra de bolso :
+  \(\quad \hat{p} \pm 1.96 \times ep = 0.5107 \pm 2 \sqrt{\frac{0.5107(1-0.5107)}{1379 + 1321}} = (0.4919, 0.5296)\)
+  Ã© um intervalo de confianÃ§a aproximado de 95\% para \(p\).
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\subsubsection{\texorpdfstring{Exemple: Intervalos de confianÃ§a para a
+proporÃ§Ã£o no
+\textbf{R}}{Exemple: Intervalos de confianÃ§a para a proporÃ§Ã£o no R}}\label{exemple-intervalos-de-confianaa-para-a-proporaao-no-r}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{R} automaticamente calcula o intervalo de confianÃ§a para a
+  proporÃ§Ã£o de pessoas do sexo feminino quando nÃ³s fazemos um teste
+  de hipÃ³teses (voltaremos a isso mais adiante):
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{prop.test}\NormalTok{( }\OperatorTok{~}\StringTok{ }\NormalTok{sex, }\DataTypeTok{data =}\NormalTok{ Chile, }\DataTypeTok{correct =} \OtherTok{FALSE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  1-sample proportions test without continuity correction
+## 
+## data:  Chile$sex  [with success = F]
+## X-squared = 1.2459, df = 1, p-value = 0.2643
+## alternative hypothesis: true p is not equal to 0.5
+## 95 percent confidence interval:
+##  0.4918835 0.5295675
+## sample estimates:
+##         p 
+## 0.5107407
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  O argumento \texttt{correct\ =\ FALSE} Ã© necessÃ¡rio para pedir ao
+  \textbf{R} para fazer uma aproximaÃ§Ã£o para a distribuiÃ§Ã£o normal
+  como feito nestas notas. Quando \texttt{correct\ =\ TRUE} (o default)
+  uma correÃ§Ã£o matemÃ¡tica que vocÃª nÃ£o aprendeu se aplica e os
+  resultados serÃ£o ligeiramente diferentes.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\subsection{Intervalos de confianÃ§a aproximados para a
+proporÃ§Ã£o}\label{intervalos-de-confianaa-aproximados-para-a-proporaao}
+
+\begin{itemize}
+\tightlist
+\item
+  Com base no teorema central do limite (CLT), nÃ³s temos :
+  \[\hat{p}\approx N \left (p,{\frac{p(1-p)}{n}} \right)\] \textbf{ep}
+  \(n\hat{p}\) e \(n(1-\hat{p})\) sÃ£o grandes o suficiente para que a
+  aproximaÃ§Ã£o seja vÃ¡lida (maiores do que \(15\), por exemplo).
+\item
+  Para construir um intervalo de confianÃ§a com nÃ­vel de confianÃ§a
+  (aproximado) \(1-\alpha\):
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi})}
+  \tightlist
+  \item
+    Encontre o valor crÃ­tico \(z_{crit}\) para o qual a probabilidade
+    na cauda superior da distribuiÃ§Ã£o normal seja \(\alpha/2\). 
+  \item
+    Calcule \(ep=\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\)
+  \item
+    EntÃ£o \(\hat{p}\pm z_{crit}\times ep\) Ã© um intervalo de
+    confianÃ§a com nÃ­vel de confianÃ§a \(1-\alpha\).
+  \end{enumerate}
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\subsubsection{Exemplo: Dados do Chile}\label{exemplo-dados-do-chile}
+
+Para os dados do \texttt{Chile} calcule os intervalos de confianÃ§a 99\%
+e 95\% para a probabilidade de que uma pessoa seja do sexo feminino:
+
+\begin{itemize}
+\tightlist
+\item
+  Para um nÃ­vel de confianÃ§a de \(99\%\), temos \(\alpha=1\%\) e
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi})}
+  \tightlist
+  \item
+    \(z_{crit}\)=\texttt{qdist("norm",\ 1\ -\ 0.01/2)}=2.576.
+  \item
+    Sabemos que \(\hat{p}=0.5107\) e \(n=2700\), entÃ£o
+    \(ep = \sqrt{\frac{\hat{p}(1-\hat{p})}{n}} = 0.0096\).
+  \item
+    Assim, um intervalo de confianÃ§a de 99\% Ã©:
+    \(\hat{p}\pm z_{crit}\times ep=(0.4859, 0.5355)\).
+  \end{enumerate}
+\item
+  Para um nÃ­vel de confianÃ§a de \(95\%\), temos \(\alpha=5\%\) e
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi})}
+  \tightlist
+  \item
+    \(z_{crit}\)=\texttt{qdist("norm",\ 1\ -\ 0.05/2)}=1.96.
+  \item
+    Novamente, \(\hat{p}=0.5107\) and \(n=2700\) e assim \(ep=0.0096\).
+  \item
+    Deste modo, nÃ³s encontramos um intervalo de confianÃ§a de 95\%:
+    \(\hat{p}\pm z_{crit}\times ep=(0.4918, 0.5295)\) (como resultado de
+    \texttt{prop.test}).
+  \end{enumerate}
+\end{itemize}
+
+\subsection{Intervalo de confianÃ§a para a mÃ©dia - amostra retirada de
+uma populaÃ§Ã£o com distribuiÃ§Ã£o
+normal}\label{intervalo-de-confianaa-para-a-madia---amostra-retirada-de-uma-populaaao-com-distribuiaao-normal}
+
+\begin{itemize}
+\tightlist
+\item
+  Quando Ã© razoÃ¡vel supor que a distribuiÃ§Ã£o da populaÃ§Ã£o Ã©
+  normal, nÃ³s temos o resultado \textbf{exato} \[
+    \bar{y}\sim \texttt{N}\bigg(\mu,\frac{\sigma^{2}}{{n}}\bigg),
+    \] i.e.~\(\bar{y}\pm z_{crit}\times \frac{\sigma}{\sqrt{n}}\) nÃ£o
+  Ã© mais apenas um intervalo de confianÃ§a aproximado (como no caso da
+  proporÃ§Ã£o - por que Ã© aproximado neste caso?), mas sim um intervalo
+  de confianÃ§a exato para a mÃ©dia populacional, \(\mu\).
+\item
+  Na prÃ¡tica, porÃ©m, \textbf{nÃ³s nÃ£o conhecemos } \(\sigma\) e ao
+  invÃ©s disso, nÃ³s somos obrigados a utilizar o desvio padrÃ£o da
+  amostra \(s\) para encontrar o \textbf{erro padrÃ£o estimado}
+  \(ep=\frac{s}{\sqrt{n}}.\)
+\item
+  Esta incerteza extra, no entanto, implica que um intervalo de
+  confianÃ§a exato para a mÃ©dia populacional \(\mu\) nÃ£o pode ser
+  construÃ­do usando o escore-\(z\).
+\item
+  Um intervalo exato ainda pode ser construÃ­do usando o chamado
+  \textbf{escore-\(t\)}, que alÃ©m do nÃ­vel de confianÃ§a depende dos
+  \textbf{graus de liberdade} (degrees of freedom = df), que neste caso
+  sÃ£o \(df = n-1\). Isto Ã©, o intervalo de confianÃ§a toma agora a
+  forma \[
+    \bar{y}\pm t_{crit}\times ep.
+    \]
+\item
+  Nota: Ã importante aprender as relaÃ§Ãµes entre as distribuiÃ§Ãµes
+  normal, t de Student, qui-quadrado e F. Veja mais detalhes em Costa
+  Neto (EstatÃ­stica) e Casella and Berger (Statistical Inference,
+  traduzido para portuguÃªs). Mais detalhes serÃ£o vistos em sala de
+  aula.
+\end{itemize}
+
+\subsection{\texorpdfstring{A distribuiÃ§Ã£o \(t\) e o escore
+\(t\)}{A distribuiÃ§Ã£o t e o escore t}}\label{a-distribuiaao-t-e-o-escore-t}
+
+\begin{itemize}
+\tightlist
+\item
+  O cÃ¡lculo do escore \(t\) Ã© baseado na \textbf{distribuiÃ§Ã£o
+  \(t\)}, que Ã© semelhante a distribuiÃ§Ã£o normal padrÃ£o \(z\):
+
+  \begin{itemize}
+  \tightlist
+  \item
+    ela Ã© simÃ©trica em torno de zero e Ã© uma funÃ§Ã£o em forma de
+    ``sino'', mas
+  \item
+    como vimos tem caudas mais ``pesadas'' e portanto
+  \item
+    um desvio padrÃ£o maior do que o desvio padrÃ£o da distribuiÃ§Ã£o
+    normal padrÃ£o.
+  \item
+    Note que o desvio padrÃ£o da distribuiÃ§Ã£o \(t\) decaÃ­ em funÃ§Ã£o
+    de seus \textbf{graus de liberdade} (que denotamos por \(df\)).
+  \item
+    e quando \(df\) cresce a distribuiÃ§Ã£o \(t\) se aproxima da
+    distribuiÃ§Ã£o normal padrÃ£o.
+  \end{itemize}
+\end{itemize}
+
+A expressÃ£o da funÃ§Ã£o densidade nÃ£o serÃ¡ indicada aqui (pode ser
+encontrada nos livros sugeridos ou no google). Ao invÃ©s disso, a
+distribuÃ§Ã£o \(t\) Ã© representada abaixo para \(df =1,2,10\) e
+\(\infty\).
+
+\includegraphics{lecture-estimation_files/figure-latex/unnamed-chunk-5-1.pdf}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\subsubsection{\texorpdfstring{CÃ¡lculo do escore \(t\) no
+\textbf{R}}{CÃ¡lculo do escore t no R}}\label{calculo-do-escore-t-no-r}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{qdist}\NormalTok{(}\StringTok{"t"}\NormalTok{, }\DataTypeTok{p =} \DecValTok{1} \OperatorTok{-}\StringTok{ }\FloatTok{0.025}\NormalTok{, }\DataTypeTok{df =} \DecValTok{4}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{lecture-estimation_files/figure-latex/unnamed-chunk-6-1.pdf}
+
+\begin{verbatim}
+## [1] 2.776445
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  Um escore \(t\) Ã© o quantil (i.e.~o valor no eixo x) para o qual
+  temos uma dada probabilidade na \textbf{cauda direita}.
+\item
+  Para obter, por exemplo, um escore \(t\) correspondente a uma
+  probabilidade na cauda direita de 2.5 \% nÃ³s temos que procurar o
+  quantil 97.5 \% usando \texttt{qdist} with \texttt{p\ =\ 1\ -\ 0.025},
+  pois \texttt{qdist} olha a Ã¡rea para o \textbf{lado esquerdo}.
+\item
+  Os graus de liberdade sÃ£o determinados pelo tamanho da amostra. No
+  exemplo anterior usamos df = 4 para ilustraÃ§Ã£o.
+\item
+  Como um escore \(t\) para uma probabilidade na cauda direita de 2.5 \%
+  Ã© 2.776 e a distribuiÃ§Ã£o \(t\) Ã© simÃ©trica em torno do 0, nÃ³s
+  temos que uma observaÃ§Ã£o tem probabilidade de 1 - 2 \(\cdot\) 0.025
+  = 95 \% de estar entre -2.776 and 2.776 para uma distribuiÃ§Ã£o \(t\)
+  com 4 graus de liberdade.
+\end{itemize}
+
+\subsection{Exemplo: Intervalo de ConfianÃ§a para a
+mÃ©dia}\label{exemplo-intervalo-de-confianaa-para-a-madia}
+
+\begin{itemize}
+\tightlist
+\item
+  Em estatÃ­stica I usamos o conjunto de dados de \texttt{Ericksen}.
+  Queremos agora construir um intervalo de confianÃ§a de \(95\%\) para a
+  mÃ©dia da populaÃ§Ã£o mean \(\mu\) da variÃ¡vel \texttt{crime}.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Ericksen <-}\StringTok{ }\KeywordTok{read.delim}\NormalTok{(}\StringTok{"C:/Users/fsabino/Desktop/Codes/papers/Introductory_Stat_I/notebook/datasets_Ericksen.txt"}\NormalTok{)}
+\NormalTok{stats <-}\StringTok{ }\KeywordTok{favstats}\NormalTok{( }\OperatorTok{~}\StringTok{ }\NormalTok{crime, }\DataTypeTok{data =}\NormalTok{ Ericksen)}
+\NormalTok{stats}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  min Q1 median Q3 max     mean       sd  n missing
+##   25 48     55 73 143 63.06061 24.89107 66       0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{qdist}\NormalTok{(}\StringTok{"t"}\NormalTok{, }\DecValTok{1} \OperatorTok{-}\StringTok{ }\FloatTok{0.025}\NormalTok{, }\DataTypeTok{df =} \DecValTok{66} \OperatorTok{-}\StringTok{ }\DecValTok{1}\NormalTok{, }\DataTypeTok{plot =} \OtherTok{FALSE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1.997138
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  i.e., nÃ³s temos
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \(\bar{y} = 63.061\)
+  \item
+    \(s = 24.891\)
+  \item
+    \(n = 66\)
+  \item
+    \(df = n-1 = 65\)
+  \item
+    \(t_{crit} = 1.997\).
+  \end{itemize}
+\item
+  O intervalo de confianÃ§a Ã©
+  \(\bar{y}\pm t_{crit}\frac{s}{\sqrt{n}} =  (56.94 ,  69.18)\)
+\item
+  Todos estes cÃ¡lculos podem ser feitos automaticamente no \textbf{R}:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{t.test}\NormalTok{( }\OperatorTok{~}\StringTok{ }\NormalTok{crime, }\DataTypeTok{data =}\NormalTok{ Ericksen, }\DataTypeTok{conf.level =} \FloatTok{0.95}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  One Sample t-test
+## 
+## data:  crime
+## t = 20.582, df = 65, p-value < 2.2e-16
+## alternative hypothesis: true mean is not equal to 0
+## 95 percent confidence interval:
+##  56.94162 69.17960
+## sample estimates:
+## mean of x 
+##  63.06061
+\end{verbatim}
+
+\subsection{\texorpdfstring{Exemplo: Fazendo vÃ¡rios intervalos de
+confianÃ§a no
+\textbf{R}}{Exemplo: Fazendo vÃ¡rios intervalos de confianÃ§a no R}}\label{exemplo-fazendo-varios-intervalos-de-confianaa-no-r}
+
+\begin{itemize}
+\tightlist
+\item
+  Vamos olhar o conjunto de dados \texttt{chickwts} que jÃ¡ vem
+  integrado no \textbf{R}.
+\item
+  \texttt{?chickwts} produz uma pÃ¡gina com a seguinte informaÃ§Ã£o
+\end{itemize}
+
+\begin{quote}
+Um experimento foi conduzido para medir e comparar a eficÃ¡cia de
+vÃ¡rios suplementos alimentares sobre a taxa de crescimento de galinhas
+Os filhotes recÃ©m-nascidos foram alocados aleatoriamente em seis
+grupos, e cada grupo recebeu um suplemento alimeantar diferente. Seus
+pesos em gramas apÃ³s seis semanas sÃ£o dados juntamente com os tipos de
+alimentaÃ§Ã£o.
+\end{quote}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{chickwts} Ã© um data frame com 71 observaÃ§Ãµes e 2
+  variÃ¡veis:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{weight}:~Ã© uma variÃ¡vel numÃ©rica que representa o peso do
+    filhote.
+  \item
+    \texttt{feed}:~um fator (variÃ¡vel qualitativa/categÃ³rica) que
+    representa o tipo de alimentaÃ§Ã£o.
+  \end{itemize}
+\item
+  Calcule um intervalo de confianÃ§a para o peso mÃ©dio de cada
+  alimentaÃ§Ã£o separadamente; o intervalo de confianÃ§a Ã© de
+  inferior(\texttt{lower}) para superior (\texttt{upper}) dado por
+  mÃ©dia \(\pm\) escore t * erro padrÃ£o
+  (\texttt{mean}\(\pm\)\texttt{tscore\ *\ ep}):
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{cwei <-}\StringTok{ }\KeywordTok{favstats}\NormalTok{( weight }\OperatorTok{~}\StringTok{ }\NormalTok{feed, }\DataTypeTok{data =}\NormalTok{ chickwts)}
+\NormalTok{ep <-}\StringTok{ }\NormalTok{cwei}\OperatorTok{$}\NormalTok{sd }\OperatorTok{/}\StringTok{ }\KeywordTok{sqrt}\NormalTok{(cwei}\OperatorTok{$}\NormalTok{n) }\CommentTok{# Erros padrÃ£o}
+\NormalTok{tscore <-}\StringTok{ }\KeywordTok{qdist}\NormalTok{(}\StringTok{"t"}\NormalTok{, }\DataTypeTok{p =}\NormalTok{ .}\DecValTok{975}\NormalTok{, }\DataTypeTok{df =}\NormalTok{ cwei}\OperatorTok{$}\NormalTok{n }\OperatorTok{-}\StringTok{ }\DecValTok{1}\NormalTok{, }\DataTypeTok{plot =} \OtherTok{FALSE}\NormalTok{) }\CommentTok{# Escores t para uma probabilidade de cada Ã  direita de 2.5%}
+\NormalTok{cwei}\OperatorTok{$}\NormalTok{lower <-}\StringTok{ }\NormalTok{cwei}\OperatorTok{$}\NormalTok{mean }\OperatorTok{-}\StringTok{ }\NormalTok{tscore }\OperatorTok{*}\StringTok{ }\NormalTok{ep}
+\NormalTok{cwei}\OperatorTok{$}\NormalTok{upper <-}\StringTok{ }\NormalTok{cwei}\OperatorTok{$}\NormalTok{mean }\OperatorTok{+}\StringTok{ }\NormalTok{tscore }\OperatorTok{*}\StringTok{ }\NormalTok{ep}
+\NormalTok{cwei[, }\KeywordTok{c}\NormalTok{(}\StringTok{"feed"}\NormalTok{, }\StringTok{"mean"}\NormalTok{, }\StringTok{"lower"}\NormalTok{, }\StringTok{"upper"}\NormalTok{)]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##        feed     mean    lower    upper
+## 1    casein 323.5833 282.6440 364.5226
+## 2 horsebean 160.2000 132.5687 187.8313
+## 3   linseed 218.7500 185.5610 251.9390
+## 4  meatmeal 276.9091 233.3083 320.5099
+## 5   soybean 246.4286 215.1754 277.6818
+## 6 sunflower 328.9167 297.8875 359.9458
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  NÃ³s podemos traÃ§ar os intervalos de confinaÃ§a como segmentos de
+  linhas horizontais usando a funÃ§Ã£o \texttt{gf\_errorbarh}:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{gf_errorbarh}\NormalTok{(feed }\OperatorTok{~}\StringTok{ }\NormalTok{mean }\OperatorTok{+}\StringTok{ }\NormalTok{lower }\OperatorTok{+}\StringTok{ }\NormalTok{upper, }\DataTypeTok{data =}\NormalTok{ cwei) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{gf_point}\NormalTok{(feed }\OperatorTok{~}\StringTok{ }\NormalTok{mean)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{lecture-estimation_files/figure-latex/unnamed-chunk-10-1.pdf}
+
+\section{Determinando o tamanho da
+amostra}\label{determinando-o-tamanho-da-amostra}
+
+\subsection{Tamanho da amostra para a
+proporÃ§Ã£o}\label{tamanho-da-amostra-para-a-proporaao}
+
+\begin{itemize}
+\tightlist
+\item
+  O intervalo de confianÃ§a Ã© da forma estimativa por ponto \(\pm\)
+  margem de erro estimada.
+\item
+  Quando nÃ³s estimamos uma proporÃ§Ã£o, a margem de erro Ã© \[
+  e=z_{crit}\sqrt{\frac{p(1-p)}{n}},
+  \] onde o escore \(z\) crÃ­tico, \(z_{crit}\), Ã© determinado pelo
+  nÃ­vel de confianÃ§a especificado.
+\item
+  Imagine que nÃ³s queremos planejar um experimento, onde
+  \textbf{desejamos obter uma certa margem de erro \(e\)} (e portanto
+  uma largura especÃ­fica do intervalo de confianÃ§a associado).
+\item
+  Se nÃ³s resolvermos a equaÃ§Ã£o acima, Ã© possÃ­vel notar:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Se \(n=p(1-p)(\frac{z_{crit}}{e})^2\), nÃ³s obtemos uma estimativa
+    de \(p\) com margem de erro \(e\).
+  \end{itemize}
+\item
+  Se nÃ£o tivermos um bom palpite para o valor de \(p\), nÃ³s podemos
+  usar o valor do ``pior'' caso, isto Ã©, \(p=50\%\) (\(1/4\) Ã© o maior
+  valor possÃ­vel que pode assumir a funÃ§Ã£o \(p(1-p)\)). O tamanho
+  amostral correspondente \(n=(\frac{z_{crit}}{2e})^2\) garante que nÃ³s
+  iremos obter uma estimativa com uma margem de erro que Ã© no
+  \emph{mÃ¡ximo} \(e\).
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\subsubsection{Exemplo}\label{exemplo}
+
+\begin{itemize}
+\tightlist
+\item
+  Vamos escolher \(z_{crit}=1.96\), i.e~o nÃ­vel de confianÃ§a Ã© de
+  95\%.
+\item
+  Qual o nÃºmero de eleitores que devemos entrevistar para obter uma
+  margem de erro igual a \(1\%\)?
+\item
+  O pior caso Ã© \(p=0.5\), o que nos leva a: \[
+    n=p(1-p)\left(\frac{z_{crit}}{e}\right)^2=\frac{1}{4}\left(\frac{1.96}{0.01}\right)^2 = 9604.
+    \]
+\item
+  Se nÃ³s estivermos interessados na proporÃ§Ã£o de votos para o
+  candidato de um partido cujo um bom palpite Ã© de no mÃ¡ximo
+  \(p=0.23\), terÃ­amos \[
+    n=p(1-p)\left(\frac{z_{crit}}{e}\right)^2=0.23(1-0.23)\left(\frac{1.96}{0.01}\right)^2 = 6804.
+    \]
+\item
+  Se nÃ³s estivermos interessados na proporÃ§Ã£o de votos para o
+  candidato de um partido cujo um bom palpite Ã© de no mÃ¡ximo
+  \(p=0.05\), terÃ­amos \[ 
+    n=p(1-p)\left(\frac{z_{crit}}{e}\right)^2 = 0.05(1-0.05)\left(\frac{1.96}{0.01}\right)^2 = 1825.
+    \]
+\end{itemize}
+
+\subsection{Tamanho da amostra para a
+mÃ©dia}\label{tamanho-da-amostra-para-a-madia}
+
+\begin{itemize}
+\tightlist
+\item
+  O intervalo de confianÃ§a Ã© da forma estimativa por ponto \(\pm\)
+  margem de erro estimada.
+\item
+  Quando estimamos uma mÃ©dia com desvio-padrÃ£o conhecido a margem de
+  erro Ã© \[
+    e=z_{crit}\frac{\sigma}{\sqrt{n}},
+    \] onde um escore \(z\) crÃ­tico, \(z_{crit}\), Ã© determinado pelo
+  nÃ­vel especificado de confianÃ§a.
+\item
+  Imagine que nÃ³s queremos planejar um experimento, onde
+  \textbf{desejamos obter uma certa margem de erro \(e\)}.
+\item
+  Se nÃ³s resolvermos a equaÃ§Ã£o acima, Ã© possÃ­vel notar:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Se \(n=(\frac{z_{crit}\sigma}{e})^2\), nÃ³s obtemos uma estimativa
+    com margem de erro \(e\).
+  \end{itemize}
+\item
+  Problema: NÃ³s usualmente nÃ£o sabemos \(\sigma\). PossÃ­veis
+  soluÃ§Ãµes:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Com base em estudos similares realizados anteriormente, nÃ³s fazemos
+    um palpite ``educado'' sobre o valor de \(\sigma\).
+  \item
+    Baseado em um estudo piloto estimamos o valor de \(\sigma\).
+  \end{itemize}
+\end{itemize}
+
+\section{ExercÃ­cios e Leituras
+Recomendadadas}\label{exercacios-e-leituras-recomendadadas}
+
+\(1\). Qual deve ser o valor do desvio padrÃ£o para que uma
+distribuiÃ§Ã£o normal com mÃ©dia 9 cubra o intervalo 0-18 com
+probabilidade de 99.73\%? Experimente com diferentes valores de \(n\).
+
+\(2\). Leia a seÃ§Ã£o 3.4 de Costa Neto (doravante CN) e verifique o que
+foi dado em aula sobre o assunto.
+
+\(3\). Leia as seÃ§Ãµes 4.4 e 4.5 de CN e refaÃ§a os exemplos (tem
+soluÃ§Ã£o).
+
+\(4\). FaÃ§a os exercÃ­cios 1, 3, 5, 7, 14, 16, 17, 18 e 21 da seÃ§Ã£o
+4.6 (ExercÃ­cios propostos) de CN.
+
+\section{ApÃªndice}\label{apandice}
+
+\begin{itemize}
+\item
+  Instale o pacote TeachingDemos: install.packages(``TeachingDemos'').
+  ApÃ³s a instalaÃ§Ã£o carregue o pacote para poder usÃ¡-lo:
+  library(TeachingDemos).
+\item
+  Use a funÃ§Ã£o ci.examp() para visualizar 50 intervalos de confianÃ§a.
+  VocÃª pode visualizar os argumentos usados (by default) na funÃ§Ã£o
+  pedindo ajuda: ?ci.examp
+\item
+  Tente alterar alguns dos argumentos da funÃ§Ã£o e utilize method =
+  ``t''. Experimente, por exemplo, gerar 40 amostras aleatÃ³rias (reps =
+  40) e ``depois peÃ§a os grÃ¡ficos correspondentes com''plote" os
+  correspondentes 40 intervalos de confianÃ§a usando um nÃ­vel de
+  confianÃ§a de 90\% (conf.level = 0.90).
+\item
+  ConvenÃ§a-se de que esperamos que 4 destes intervalos de confianÃ§a
+  nÃ£o contenham a verdadeira mÃ©dia populacional. Como isso se encaixa
+  com o que vocÃª estÃ¡ vendo?
+\item
+  Visualize melhor usando o seguinte aplicativo:
+  \url{http://shiny.calvin.edu/rpruim/CIs/}
+\item
+  Experimente tambÃ©m a funÃ§Ã£o clt.examp(). Visualize os argumentos
+  pedindo ajuda: ?clt.examp
+\item
+  Use a funÃ§Ã£o windows() para abrir um dispositivo grÃ¡fico.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    clt.examp()
+  \item
+    clt.examp(5)
+  \item
+    clt.examp(30)
+  \item
+    clt.examp(50)
+  \end{itemize}
+\end{itemize}
+
+
+\end{document}

@@ -7308,11 +7308,11 @@ ylim([0.5 3])
 %legend('Mixed Copula', 'Distance','Location','northwest');
 set(legend,'FontSize',7);
 %legend boxoff;
-set(gca,'XTick',xData2, 'FontSize', 9);
+set(gca,'XTick',xData2, 'FontSize', 8);
 datetick('x','yy','keepticks');
 ylabel('Cumulative Excess Return', 'FontSize', 8);
 xlabel('Year');
-title('(a) Top 5 pairs, Committed Capital, after costs','FontSize', 8);
+title('(a) Top 5 pairs, Committed Capital, after costs','FontSize', 5);
 grid on
 
 % h = findobj(gca, 'type', 'text');
@@ -7328,11 +7328,11 @@ ylim([0 20])
 %legend('Mixed Copula', 'Distance','Location','northwest');
 set(legend,'FontSize',7);
 %legend boxoff;
-set(gca,'XTick',xData2, 'FontSize', 9);
+set(gca,'XTick',xData2, 'FontSize', 8);
 datetick('x','yy','keepticks');
 ylabel('Cumulative Excess Return', 'FontSize', 8);
 xlabel('Year');
-title('(a) Top 5 pairs, Fully Invested, after costs','FontSize', 8);
+title('(a) Top 5 pairs, Fully Invested, after costs','FontSize', 5);
 grid on
 
 subplot(3,2,3);
@@ -7341,11 +7341,11 @@ ylim([0.5 2.5])
 %legend('Mixed Copula', 'Distance','Location','northwest');
 set(legend,'FontSize',7);
 %legend boxoff;
-set(gca,'XTick',xData2, 'FontSize', 9);
+set(gca,'XTick',xData2, 'FontSize', 8);
 datetick('x','yy','keepticks');
 ylabel('Cumulative Excess Return', 'FontSize', 8);
 xlabel('Year');
-title('(a) Top 20 pairs, Committed Capital, after costs','FontSize', 8);
+title('(a) Top 20 pairs, Committed Capital, after costs','FontSize', 5);
 grid on
 
 subplot(3,2,4);
@@ -7354,11 +7354,11 @@ ylim([0 20])
 %legend('Mixed Copula', 'Distance','Location','northwest');
 set(legend,'FontSize',7);
 %legend boxoff;
-set(gca,'XTick',xData2, 'FontSize', 9);
+set(gca,'XTick',xData2, 'FontSize', 8);
 datetick('x','yy','keepticks');
 ylabel('Cumulative Excess Return', 'FontSize', 8);
 xlabel('Year');
-title('(a) Top 20 pairs, Fully Invested, after costs', 'FontSize', 8);
+title('(a) Top 20 pairs, Fully Invested, after costs', 'FontSize', 5);
 grid on
 
 subplot(3,2,5);
@@ -7367,11 +7367,11 @@ ylim([0.5 2.5])
 %legend('Mixed Copula', 'Distance','Location','northwest');
 set(legend,'FontSize',7);
 %legend boxoff;
-set(gca,'XTick',xData2, 'FontSize', 9);
+set(gca,'XTick',xData2, 'FontSize', 8);
 datetick('x','yy','keepticks');
 ylabel('Cumulative Excess Return', 'FontSize', 8);
 xlabel('Year');
-title('(a) Top 35 pairs, Committed Capital, after costs', 'FontSize', 8);
+title('(a) Top 35 pairs, Committed Capital, after costs', 'FontSize', 5);
 grid on
 
 subplot(3,2,6);
@@ -7380,11 +7380,11 @@ ylim([0 25])
 legend('Mixed Copula', 'Distance','Location','northwest');
 set(legend,'FontSize',7);
 %legend boxoff;
-set(gca,'XTick',xData2, 'FontSize', 9);
+set(gca,'XTick',xData2, 'FontSize', 8);
 datetick('x','yy','keepticks');
 ylabel('Cumulative Excess Return', 'FontSize', 8);
 xlabel('Year');
-title('(a) Top 35 pairs, Fully Invested, after costs', 'FontSize', 8);
+title('(a) Top 35 pairs, Fully Invested, after costs', 'FontSize', 5);
 grid on
 
 legend1 = legend(p6,'Mixed Copula','Distance');
@@ -7456,12 +7456,13 @@ ylim([-0.5 1.5])
 %legend('Mixed Copula','Distance','Location','southoutside','Orientation','horizontal');
 set(legend,'FontSize',6);
 legend boxoff;
-set(gca,'XTick',xData2, 'FontSize', 9);
+set(gca,'XTick',xData2, 'FontSize', 8);
 datetick('x','yy','keepticks');
-ylabel('Sharpe Ratio');
-xlabel('Year');
-title('(a) Top 5 pairs, Committed Capital, after costs', 'FontSize', 8);
+ylabel('Sharpe Ratio','FontSize', 8);
+xlabel('Year','FontSize', 8);
+title('(a) Top 5 pairs, Committed Capital, after costs', 'FontSize', 5);
 grid on
+
 
 subplot(3,2,2);
 p2=plot(xData,sq_mix_d0p5c1_020fi_SR,'-.',xData,d0p5c1_sq20fi_SR);
@@ -7469,11 +7470,11 @@ p2=plot(xData,sq_mix_d0p5c1_020fi_SR,'-.',xData,d0p5c1_sq20fi_SR);
 ylim([-0.5 2])
 set(legend,'FontSize',6);
 legend boxoff;
-set(gca,'XTick',xData2, 'FontSize', 9);
+set(gca,'XTick',xData2, 'FontSize', 8);
 datetick('x','yy','keepticks');
-ylabel('Sharpe Ratio');
-xlabel('Year');
-title('(a) Top 5 pairs, Fully Invested, after costs', 'FontSize', 8);
+ylabel('Sharpe Ratio','FontSize', 8);
+xlabel('Year','FontSize', 8);
+title('(a) Top 5 pairs, Fully Invested, after costs', 'FontSize', 5);
 grid on
 
 subplot(3,2,3);
@@ -7482,11 +7483,11 @@ ylim([-0.5 2])
 %legend('Mixed Copula','Distance','Location','southoutside','Orientation','horizontal');
 set(legend,'FontSize',6);
 legend boxoff;
-set(gca,'XTick',xData2, 'FontSize', 9);
+set(gca,'XTick',xData2, 'FontSize', 8);
 datetick('x','yy','keepticks');
-ylabel('Sharpe Ratio');
-xlabel('Year');
-title('(a) Top 20 pairs, Committed Capital, after costs', 'FontSize', 8);
+ylabel('Sharpe Ratio','FontSize', 8);
+xlabel('Year','FontSize', 8);
+title('(a) Top 20 pairs, Committed Capital, after costs', 'FontSize', 5);
 grid on
 
 subplot(3,2,4);
@@ -7495,11 +7496,11 @@ ylim([-0.5 2])
 %legend('Mixed Copula','Distance','Location','southoutside','Orientation','horizontal');
 set(legend,'FontSize',6);
 legend boxoff;
-set(gca,'XTick',xData2, 'FontSize', 9);
+set(gca,'XTick',xData2, 'FontSize', 8);
 datetick('x','yy','keepticks');
-ylabel('Sharpe Ratio');
-xlabel('Year');
-title('(a) Top 20 pairs, Fully Invested, after costs', 'FontSize', 8);
+ylabel('Sharpe Ratio','FontSize', 8);
+xlabel('Year','FontSize', 8);
+title('(a) Top 20 pairs, Fully Invested, after costs', 'FontSize', 5);
 grid on
 
 subplot(3,2,5);
@@ -7508,11 +7509,11 @@ ylim([-0.5 2.5])
 %legend('Mixed Copula','Distance','Location','southoutside','Orientation','horizontal');
 set(legend,'FontSize',6);
 legend boxoff;
-set(gca,'XTick',xData2, 'FontSize', 9);
+set(gca,'XTick',xData2, 'FontSize', 8);
 datetick('x','yy','keepticks');
-ylabel('Sharpe Ratio');
-xlabel('Year');
-title('(a) Top 35 pairs, Committed Capital, after costs', 'FontSize', 8);
+ylabel('Sharpe Ratio','FontSize', 8);
+xlabel('Year','FontSize', 8);
+title('(a) Top 35 pairs, Committed Capital, after costs', 'FontSize', 5);
 grid on
 
 subplot(3,2,6);
@@ -7521,17 +7522,17 @@ ylim([-0.5 2.5])
 legend('Mixed Copula','Distance','Orientation','horizontal');
 set(legend,'FontSize',6);
 %legend boxoff;
-set(gca,'XTick',xData2, 'FontSize', 9);
+set(gca,'XTick',xData2, 'FontSize', 8);
 datetick('x','yy','keepticks');
-ylabel('Sharpe Ratio');
-xlabel('Year');
-title('(a) Top 35 pairs, Fully Invested, after costs', 'FontSize', 8);
+ylabel('Sharpe Ratio','FontSize', 8);
+xlabel('Year','FontSize', 8);
+title('(a) Top 35 pairs, Fully Invested, after costs', 'FontSize', 5);
 grid on
 
 legend1 = legend(p6,'Mixed Copula','Distance');
 set(legend1,'Orientation','horizontal',...
     'Position',[0.361904761904761 0.0341269841269841 0.335119047619048 0.0428571428571429],...
-    'FontSize',9);
+    'FontSize',8);
 
 a=gcf;
 set(a,'PaperOrientation','landscape');

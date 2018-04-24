@@ -1,0 +1,54 @@
+\contentsline {section}{\numberline {1}Probabilidade de eventos}{1}{section.1}
+\contentsline {subsection}{\numberline {1.1}O conceito de probabilidade}{1}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Experimento real}{2}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Outro experimento}{2}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}Defini\IeC {\c c}\IeC {\~o}es}{3}{subsection.1.4}
+\contentsline {subsection}{\numberline {1.5}Probabilidades te\IeC {\'o}ricas de dois eventos}{3}{subsection.1.5}
+\contentsline {subsection}{\numberline {1.6}Probabilidade Condicional}{4}{subsection.1.6}
+\contentsline {subsubsection}{\numberline {1.6.1}Exemplo com os dados das revistas:}{5}{subsubsection.1.6.1}
+\contentsline {subsection}{\numberline {1.7}Probabilidade condicional e independ\IeC {\^e}ncia}{6}{subsection.1.7}
+\contentsline {subsubsection}{\numberline {1.7.1}Dados das revistas revisitados}{6}{subsubsection.1.7.1}
+\contentsline {subsection}{\numberline {1.8}Um pouco mais de formalidade}{6}{subsection.1.8}
+\contentsline {subsubsection}{\numberline {1.8.1}Modelos de Probabilidade}{6}{subsubsection.1.8.1}
+\contentsline {subsection}{\numberline {1.9}Axiomas de Probabilidade}{7}{subsection.1.9}
+\contentsline {subsection}{\numberline {1.10}Regras de Probabilidade}{7}{subsection.1.10}
+\contentsline {subsection}{\numberline {1.11}Regra de Bayes}{7}{subsection.1.11}
+\contentsline {subsection}{\numberline {1.12}Regra de Bayes (Continua\IeC {\c c}\IeC {\~a}o)}{8}{subsection.1.12}
+\contentsline {subsection}{\numberline {1.13}Exerc\IeC {\'\i }cio: Problema de Diagn\IeC {\'o}stico M\IeC {\'e}dico}{9}{subsection.1.13}
+\contentsline {subsection}{\numberline {1.14}Exerc\IeC {\'\i }cio: Problema de Controle de Qualidade}{9}{subsection.1.14}
+\contentsline {subsection}{\numberline {1.15}Solu\IeC {\c c}\IeC {\~a}o para o problema do diagn\IeC {\'o}stico m\IeC {\'e}dico}{9}{subsection.1.15}
+\contentsline {subsection}{\numberline {1.16}Solu\IeC {\c c}\IeC {\~a}o para o Problema de Controle de Qualidade}{12}{subsection.1.16}
+\contentsline {subsection}{\numberline {1.17}Distribui\IeC {\c c}\IeC {\~a}o discreta}{14}{subsection.1.17}
+\contentsline {subsubsection}{\numberline {1.17.1}Exemplo: Dados das revistas}{14}{subsubsection.1.17.1}
+\contentsline {subsubsection}{\numberline {1.17.2}Distribui\IeC {\c c}\IeC {\~a}o discreta}{14}{subsubsection.1.17.2}
+\contentsline {subsubsection}{\numberline {1.17.3}Exemplo: Tr\IeC {\^e}s lan\IeC {\c c}amentos de uma moeda}{15}{subsubsection.1.17.3}
+\contentsline {section}{\numberline {2}Distribui\IeC {\c c}\IeC {\~a}o de vari\IeC {\'a}veis aleat\IeC {\'o}rias}{15}{section.2}
+\contentsline {subsection}{\numberline {2.1}Distribui\IeC {\c c}\IeC {\~a}o de probabilidade}{15}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Vari\IeC {\'a}veis Aleat\IeC {\'o}rias Discretas}{16}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Vari\IeC {\'a}veis Aleat\IeC {\'o}rias Cont\IeC {\'\i }nuas}{16}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Independ\IeC {\^e}ncia entre Vari\IeC {\'a}veis Aleat\IeC {\'o}rias}{17}{subsection.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}Amostra Aleat\IeC {\'o}ria}{17}{subsubsection.2.4.1}
+\contentsline {subsection}{\numberline {2.5}Par\IeC {\^a}metros populacionais}{17}{subsection.2.5}
+\contentsline {subsubsection}{\numberline {2.5.1}Distribui\IeC {\c c}\IeC {\~a}o de uma vari\IeC {\'a}vel aleat\IeC {\'o}ria discreta}{18}{subsubsection.2.5.1}
+\contentsline {subsection}{\numberline {2.6}Esperan\IeC {\c c}a}{18}{subsection.2.6}
+\contentsline {subsection}{\numberline {2.7}Verossimilhan\IeC {\c c}a (Likelihood)}{19}{subsection.2.7}
+\contentsline {subsection}{\numberline {2.8}Valor esperado (m\IeC {\'e}dia) para uma distribui\IeC {\c c}\IeC {\~a}o discreta}{19}{subsection.2.8}
+\contentsline {subsubsection}{\numberline {2.8.1}Exemplo: n\IeC {\'u}mero de caras em 3 lan\IeC {\c c}amentos de uma moeda}{19}{subsubsection.2.8.1}
+\contentsline {subsection}{\numberline {2.9}Vari\IeC {\^a}ncia e desvio padr\IeC {\~a}o de uma distribui\IeC {\c c}\IeC {\~a}o discreta}{19}{subsection.2.9}
+\contentsline {subsubsection}{\numberline {2.9.1}Exemplo: n\IeC {\'u}mero de caras em 3 lan\IeC {\c c}amentos de uma moeda}{20}{subsubsection.2.9.1}
+\contentsline {subsection}{\numberline {2.10}A distribui\IeC {\c c}\IeC {\~a}o binomial}{20}{subsection.2.10}
+\contentsline {subsection}{\numberline {2.11}Distribui\IeC {\c c}\IeC {\~a}o de uma vari\IeC {\'a}vel aleat\IeC {\'o}ria cont\IeC {\'\i }nua}{21}{subsection.2.11}
+\contentsline {subsection}{\numberline {2.12}Fun\IeC {\c c}\IeC {\~a}o Densidade}{23}{subsection.2.12}
+\contentsline {subsubsection}{\numberline {2.12.1}Aumentando o n\IeC {\'u}mero de observa\IeC {\c c}\IeC {\~o}es}{23}{subsubsection.2.12.1}
+\contentsline {subsubsection}{\numberline {2.12.2}Formatos das densidades}{24}{subsubsection.2.12.2}
+\contentsline {subsection}{\numberline {2.13}Distribui\IeC {\c c}\IeC {\~a}o Normal}{24}{subsection.2.13}
+\contentsline {subsubsection}{\numberline {2.13.1}Alcance da distribui\IeC {\c c}\IeC {\~a}o normal}{25}{subsubsection.2.13.1}
+\contentsline {subsubsection}{\numberline {2.13.2}Escore \(z\)}{25}{subsubsection.2.13.2}
+\contentsline {subsubsection}{\numberline {2.13.3}Calculando probabilidades na distribui\IeC {\c c}\IeC {\~a}o normal padr\IeC {\~a}o}{26}{subsubsection.2.13.3}
+\contentsline {subsubsection}{\numberline {2.13.4}Exemplo}{26}{subsubsection.2.13.4}
+\contentsline {section}{\numberline {3}Distribui\IeC {\c c}\IeC {\~a}o da estat\IeC {\'\i }stica amostral}{27}{section.3}
+\contentsline {subsection}{\numberline {3.1}Estimativas e sua variabilidade}{27}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Distribui\IeC {\c c}\IeC {\~a}o da m\IeC {\'e}dia amostral}{27}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}Teorema Central do Limite}{27}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}Ilustra\IeC {\c c}\IeC {\~a}o do TCL}{28}{subsubsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.3}Exemplo}{28}{subsubsection.3.2.3}
