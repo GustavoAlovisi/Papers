@@ -15,7 +15,7 @@
 \end{Schunk}
   \end{block}
   \begin{itemize}
-    \item We have developed a system that carries out massive collection and then uploads the information to a database, based on a logical and scalable architecture solution
+    \item We have developed a system that builds and then uploads the information to a database, based on a logical and scalable architecture solution.
     \item It interacts with the web pages, extracts the information and stores the data
     \item Data Collectors: Google, Facebook.
   \end{itemize}
