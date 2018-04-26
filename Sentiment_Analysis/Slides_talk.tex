@@ -56,7 +56,8 @@
 
 \begin{frame}\frametitle{Introduction and Motivation}
   \begin{itemize}
-  \item Economic Science has evolved over several decades toward a greater emphasis on empirical work. Hamermesh (2013) reviewed publications of the leading journals for the period 1963 to 2011:
+  \item Economic Science has evolved over several decades towards a greater emphasis on empirical work. Hamermesh (2013) reviewed publications of the leading journals in the period of 1963 to 2011:
+  
     \begin{itemize}
       \item Until the mid-1980s, most articles were theoretical. After that the share of empirical articles rose more than 70\% 
       \item Most data are assembled or obtained by the authors or generated through controlled experiments 
@@ -77,11 +78,11 @@
     	\item Discuss computational natural
     	language processing (NLP) techniques
     	\item Investigate whether the
-    	sentiment conveyed by Central Bank of Brazil (BCB) about the economy in their statements using \emph{Web Scraping} (the process of extracting text from a web page) and \emph{Text Mining} affects the short-term inflation 
+    	sentiment conveyed by Central Bank of Brazil (BCB) about the economy in their statements using \emph{Web Scraping} (the process of extracts texts from a web page) and \emph{Text Mining} affects the short-term inflation 
     \end{itemize}
   \item Some Results and Conclusions:
     \begin{itemize}
-      \item We create an algorithm that extracts all text from minutes of Copom (Monetary Policy Committee of the Central Bank of Brazil) from BCB website and transform the pdf format into textual format to create a corpus;
+      \item We created an algorithm that extracts all texts from minutes of Copom (Monetary Policy Committee of the Central Bank of Brazil) from BCB website and transforms the pdf format into textual format to create a corpus;
       \item We constructed a sentiment index for the monetary authority based on a dictionary of feelings (Inquider) maintained by Harvard
       University
       \item Our results confirm that such approach can contribute to the economic evaluation given that the time series of the index seems to be related to important macroeconomic variables
@@ -99,9 +100,9 @@
   \begin{itemize}
   \item \emph{Web Scraping}:
     \begin{itemize}
-      \item The information available on the Internet (\emph{Web}) is rearely in a suitable format to be extracted in an automatic and efficient way
+      \item The information available on the Internet (\emph{Web}) is rarely in a suitable format to be extracted in an automatic and efficient way
       \item \emph{Web Scraping} makes easier the process of collecting such data;
-      \item We design an algorithm to extract information from unstructured text:
+      \item We designed an algorithm to extract information from unstructured text:
       \begin{itemize}
         \item The web pages are constructed using HTML language (HTML)
         \item The codes have \emph{tags}, such as <title> and <p>;
@@ -147,7 +148,7 @@
   	\item It is the computational study of opinions, attitudes and emotions behind a series of words expressed within an online mention;
     \item The applications of sentiment analysis are broad and powerful. It allows us to gain an overview of the wider public opinion behind certain topics.;
     \item Two main approaches: (1) based on lexical resources and neutral language processing (it uses semantic dictionaries) and (2) employing machine learning algorithms;
-    \item We follow the simpler approach of Hu and Liu (2004) and Kim and Hovy (2004), i.e., we focus in a dictionary-based approach for polarity identifications;
+    \item We follow the simpler approach of Hu and Liu (2004) and Kim and Hovy (2004), i.e., we focus on a dictionary-based approach for polarity identifications;
     \end{itemize}
 \end{frame}
 
@@ -161,7 +162,7 @@
 
 \begin{frame}\frametitle{Methodology - Sentiment Analysis}
 \begin{itemize}
-		\item The strategy is to first collect a small set of opinion words manually with known orientations, and then to grow this set by searching in an online dictionary for their synonyms and antonyms.
+		\item The strategy is to first collect a small set of opinion words manually with known orientations, and then to grow this set by searching on an online dictionary for their synonyms and antonyms.
 		\item The newly found words are added to the seed list. Then, the next iteration starts. It stops when no more words are found.
 		\item We use the Inquirer dictionary provided by Harvard University (Stone, Dumphy and Smith (1966)) which classifies 11,788 words into semantic groups (\emph{positive}, \emph{negative}, \emph{strong}, \emph{weak}, among others).
 \end{itemize}
@@ -177,16 +178,16 @@
 {I}_{t} = \frac {{NP}_{t} - {NN}_{t}}{N} 
 \]
   \end{exampleblock}
-\noindent where ${I}_{t}$ is the sentiment index for each minute disclosed in $t$, ${NP}_{t}$ is the number of \textbf{positive} words present in the minutes reported in $t$ while ${NN}_{t}$ is the number of \textbf{negative} words and $N$ is the total number of words in the minutes. A higher value of the index ${I}_{t}$, signifies that the monetary authority has better expectations about the economyr.
+\noindent where ${I}_{t}$ is the sentiment index for each minute disclosed in $t$, ${NP}_{t}$ is the number of \textbf{positive} words present in the minutes reported in $t$, while ${NN}_{t}$ is the number of \textbf{negative} words and $N$ is the total number of words in the minutes. A higher value of the index ${I}_{t}$, signifies that the monetary authority has better expectations about the economy.
 \end{frame}
 
 \begin{frame}\frametitle{Methodology - Data}
   \begin{itemize}
-  	\item We use Copom's minutes to evaluate the BCB's sentiment about the economy;
-    \item We use the English version available on the Internet and in PDF format since the 42nd Meeting;
+  	\item We used Copom's minutes to evaluate the BCB's sentiment about the economy;
+    \item We used the English version available on the Internet and in PDF format since the 42nd Meeting;
     \item Total minutes available: 159 (until July 2016 meeting);
-    \item We remove the minutes of meetings 42 and 43 from the sample due to differences in the layout of the files compared to the other minutes 
-    \item In addition, using Quandl R package we collect the following time series to compare how well the sentiment index performs:
+    \item We removed the minutes of meetings 42 and 43 from the sample due to differences in the layout of the files compared to the other minutes 
+    \item In addition, using Quandl R package we collected the following time series to compare how well the sentiment index performs:
     \begin{itemize}
       \item Annual IPCA (National Consumer Price Index);
       \item Nominal interest rate (Selic);

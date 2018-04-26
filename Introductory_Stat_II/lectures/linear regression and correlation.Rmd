@@ -1,0 +1,248 @@
+---
+title: "Regressão Linear e Correlação"
+author: "Fernando B. Sabino da Silva"
+output:
+  pdf_document:
+    fig_caption: no
+    highlight: tango
+    number_section: yes
+    toc: yes
+  beamer_presentation:
+    highlight: tango
+  html_document:
+    df_print: paged
+    toc: yes
+  slidy_presentation:
+    css: https://asta.math.aau.dk/course/asta/2018-1/?file=lecture_style.css
+    fig_caption: no
+    highlight: tango
+    theme: cerulean
+---
+
+```{r, include = FALSE}
+## Remember to add all packages used in the code below!
+missing_pkgs <- setdiff(c("mosaic"), rownames(installed.packages()))
+if(length(missing_pkgs)>0) install.packages(missing_pkgs)
+```
+
+## Previsões
+
+* Vamos estudar o conjunto de dados `trees`.
+```{r}
+trees <- read.delim("C:/Users/fsabino/Desktop/Codes/papers/Introductory_Stat_II/notebook/trees.txt")
+```
+
+* Neste experimento temos medições de 3 variáveis para 31 árvores escolhidas aleatoriamente:
+* [,1] `Girth` numérica. Diâmetro da árvore em polegadas.
+* [,2] `Height` numérica. Altura em pés.
+* [,3] `Volume` numérica. Volume de madeira em pés cúbicos.
+* Queremos prever o volume da árvore, dadas as medições da altura da árvore e/ou da circunferência da árvore (diâmetro).
+* Este tipo de problema é chamado de **regressão**.
+* Terminologia relevante:
+    + Nós medimos uma **resposta** quantitativa  **$y$**, por exemplo, `Volume`.
+    + Em conexão com a resposta $y$ nós também medimos uma potencial variável **explicativa** $x$. Outro nome para variável explicativa é **preditor**.
+
+## Gráficos
+
+```{r scatterplotMatrix, message=FALSE}
+library(mosaic)
+splom(trees) # Scatter Plot Matrix
+``` 
+
+* Aparentemente `Girth` é um bom preditor para o `Volume`.
+
+
+## Regressão Linear Simples
+
+* Nós escolhemos usar `x=Girth` como preditor para `y=Volume`. Quando estimamos uma expectativa condicional com apenas um preditor nós dizemos que estamos estimando um modelo de **regressão linear simples**. Buscamos descrever a associação entre a **resposta** $y$ e um **preditor** $x$.
+* Mais detalhes podem ser encontrados [aqui](https://www.slideshare.net/FernandoBoeiraSabino1/regresso-linear-54936692), por exemplo.
+
+* Seja $$y(x)=\alpha +\beta x$$ onde
+    + $\alpha$ é chamado de `Intercepto`.
+    + $\beta$ é chamado de `Inclinação` (Slope), correspondente a mudança na resposta, quando variamos o valor do preditor (é a derivada, mede o efeito marginal). 
+
+```{r scatter-vol-girth}
+gf_point(Volume ~ Girth, data = trees) %>% gf_lm()
+```
+
+## Modelo para uma regressão linear
+
+* Assuma que temos uma amostra de medidas $(x,y)$ do preditor e da resposta.
+* Idealmente o modelo afirma que $$y(x)=\alpha +\beta f(x),$$ mas devido à variação aleatória há desvios na curva. Vamos assumir, por simplicidade, que $f(x)=x$.
+* O que nós observamos pode ser então descrito por $$y=\alpha + \beta x + \varepsilon, $$ onde $\varepsilon$ é dito um **erro aleatório**, contendo fatores que não afetam (não causam) a resposta de maneira sistemática.
+* Uma **suposição** usual é de que:
+    + os $\varepsilon$ tem média zero e variância $\sigma^2_{y|x}$.
+
+* Nós chamamos de $\sigma^2_{y|x}$ a **variância condicional** de $y$ dado $x$.
+
+
+## Mínimos Quadrados
+
+* Em resumo, nós temos um modelo com 3 parâmetros:
+    + $(\alpha,\beta)$ 
+    + $\sigma^2_{y|x}$.
+* Como estimamos estes parâmetros?? Há mais de um método. Abaixo focaremos na minimização da soma dos quadrados dos erros para estimar $\alpha$ e $\beta)$. Tais estimadores serão chamados de estimadores de mínimos quadrados ordinários dentro deste contexto. 
+* Nota: O método de mínimos quadrados é uma projeção em um subespaço. 
+* Os parâmetros serão escolhidos de maneira que minimizem a soma dos quadrados dos erros: $$\sum \varepsilon^2=\sum(y-\alpha-\beta x)^2.$$
+* Igualando as derivadas parciais a zero, nós obtemos duas equações lineares para os parâmetros $(\alpha,\beta)$, cujas soluções $(\hat{\alpha},\hat{\beta})$ são dadas por: $$\hat{\beta}=\frac{\sum(x-\bar{x})(y-\bar{y})}{\sum(x-\bar{x})^2} \quad \mbox{ and } \quad \hat{\alpha}=\bar{y}-\hat{\beta}\bar{x}$$
+
+
+## Resíduos
+
+* Dadas as estimativas $(\hat{\alpha},\hat{\beta})$, temos $$\hat{y}=\hat{\alpha}+\hat{\beta}x$$.
+* Nota: A equação acima é determinada pela amostra, i.e. há uma incerteza sobre a robustez de tal equação. Uma nova amostra, sem dúvida, daria uma equação de previsão diferente.
+* A nossa melhor estimativa para os erros (resíduos) é $$e=y-\hat{y}=y-\hat{\alpha}-\hat{\beta}x, $$ i.e. os desvios em relação a função de predição $\hat{y}$.
+
+Exemplo:
+```{r}
+library(plotly) 
+data(USArrests)
+
+model <- lm(Murder ~ Assault + Rape, data = USArrests)
+
+x_grid <- unique(round(seq(min(USArrests$Assault), max(USArrests$Assault), l = 300), 0))
+y_grid <- unique(round(seq(min(USArrests$Rape),    max(USArrests$Rape),    l = 300), 0))
+grid   <- expand.grid(x = x_grid, y = y_grid)
+z_grid <- coef(model)[1] + coef(model)[2]*grid$x + coef(model)[3]*grid$y
+
+z_grid_aux <- matrix(z_grid, ncol = length(x_grid), byrow = T)
+
+est <- matrix(NA, nrow = max(y_grid), ncol = max(x_grid))
+est[y_grid, x_grid] <- z_grid_aux
+
+# Gráfico interativo (na matriz, colunas são os índices do eixo x, e as linhas do eixo y)
+USArrests %>%
+  plot_ly(x = ~Assault, y = ~Rape, z = ~Murder) %>% 
+  add_surface(x = NULL, y = NULL, z = ~est) %>%
+  add_markers()
+```
+
+* + No caso bivariado, a superfície de predição passa pelo ponto $(\bar{x},\bar{y})$.
+    + A soma dos resíduos amostrais é zero.
+
+## Estimação da variância condicional
+
+* Para estimar $\sigma^2_{y|x}$ nós usamos a **Soma dos Quadrados dos Resíduos** (SSE - sum of squares of errors).
+$$
+SSE=\sum e^2=\sum(y-\hat{y})^2,
+$$ 
+  que representa a distância ao quadrado entre os dados e os valores estimados pelo modelo.
+
+* Nós estimamos $\sigma^2_{y|x}$ por
+$$
+s^2_{y|x}={\frac{SSE}{n-2}}
+$$
+
+* Ao invés de dividir $SSE$ por $n$ nós dividimos pelo número de **graus de liberdade** $df=n-2$. Este estimador é não viesado.
+* Os graus de liberdade $df$ são iguais ao tamanho da amostra menos o número de parâmetros estimados na equação de regressão.
+* Na regressão linear simples, temos 2 parâmetros: $(\alpha,\beta)$.
+
+## Exemplo no R
+
+```{r}
+model <- lm(Volume ~ Girth, data = trees)
+summary(model)
+```
+
+* Os resíduos estimados variam de -8.065 a 9.578 com mediana igual a
+  0.152.
+* A estimativa do `Intercepto` é $\hat{\alpha}=-36.9435$
+* A estimativa a inclinação de `Girth` é $\hat{\beta}=5.0659$
+* A estimativa do desvio padrão condicional (chamado de erro padrão dos resíduos) é $s_{y|x}=4.252$ com
+  $31-2=29$ graus de liberdade.
+
+## Teste de Hipótese
+
+* Considere o modelo de regressão $$y=\alpha+\beta x+\varepsilon$$ onde nós usamos uma amostra para obter estimativas $(\hat{\alpha},\hat{\beta})$ de
+$(\alpha,\beta)$, uma estimativa $s_{y|x}$ de $\sigma_{y|x}$ e graus de liberdade $df=n-2$.
+* Queremos testar $$H_0:\, \beta=0 \quad \mbox{ vs } \quad H_1:\, \beta\not=0$$
+* A hipótese nula especifica que $y$ **não** depende linearmente de $x$.
+* Em outras palavras a questão é: com base na amostra, há evidências suficientes para refutar que \beta seja diferente de zero?
+* Podemos mostrar que o erro padrão de $\hat{\beta}$ é $$ep_(\hat{\beta})=\frac{s_{y|x}}{\sqrt{\sum(x-\bar{x})^2}}$$ com $df$ graus de liberdade.
+* Para testar a hipótese acima, nós usamos a seguinte estatística de teste: $$t_\text{obs}=\frac{\hat{\beta}}{ep_\hat{\beta}}$$ que deve ser avaliada usando uma distribuição t com $df$ graus de liberdade.
+
+## Exemplo
+
+* Relembrando:
+
+```{r}
+summary(model)
+```
+
+* Como observamos anteriormente $\hat{\beta}=5.0659$ e $s_{y|x}=4.252$ com $df=29$ graus de liberdade.
+* Na segunda coluna (`Std. Error`) da tabela de `Coefficients` nós encontramos $se_\hat{\beta}=0.2474$.
+* O escore-t observado (a estatística de teste) é então $$t_\text{obs}=\frac{\hat{\beta}}{ep_\hat{\beta}}=\frac{5.0659}{0.2474}=20.48$$. Este resultado pode ser visto na terceira coluna (`t value`).
+* O correspondente p-valor é encontrado da maneira usual usando a  distribuição t com 29 graus de liberdade.
+* Na quarta coluna (`Pr(>|t|)`) nós vemos que o p-valor é menor do que $2\times 10^{-16}$.
+
+## Intervalo de Confiança para a Inclinação
+
+* Quando temos o erro padrão e a distribuição de referência, nós podemos construir um intervalo de confiança da maneira usual: $$\hat{\beta}\pm t_{crit} ep_\hat{\beta}, $$ onde o escore-t é determinado pelo nível de confiança e pelo número de graus de liberdade (no **R** nós encontramos o valor usando a função `qdist`).
+* No nosso exemplo temos 29 graus de liberdade e dado um nível de confiança de $95\%$ nós obtermos $t_{crit} =$ `qdist("t", 0.975, df = 29)`= 2.045.
+
+* Podemos usar a função confint do **R** 
+
+```{r}
+confint(model)
+```
+
+* i.e. $(4.56, 5.57)$ é um intervalo de confiança $95\%$ para a inclinação de `Girth`.
+
+## Correlação
+
+* A inclinação estimada $\hat{\beta}$ em uma regressão linear nos informa o efeito marginal de $x$ em $y$, porém não nos informa sobre a 'força' da associação entre $y$ e $x$.
+* `Girth` (circunferência) foi medida em polegadas. Se tivéssemos medido em quilômetros, a inclinação seria muito maior, pois o aumento de 1km em `Girth` produziria um enorme aumento no `Volume`.
+* Sejam $s_y$ e $s_x$ os desvios padrão amostrais de $y$ e $x$, respectivamente.
+* Os escores-t correspondentes $$y_t=\frac{y}{s_y} \quad \mbox{ and } \quad x_t=\frac{x}{s_x}$$ são independentes da escala de medida escolhida (por quê?).
+* A equação de predição correspondente é então $$\hat{y}_t=\frac{\hat{\alpha}}{s_y}+\frac{s_x}{s_y}\hat{\beta} x_t$$
+* i.e. o **coeficiente de regressão padronizado** (inclinação) é $$r=\frac{s_x}{s_y}\hat{\beta}$$. Podemos mostrar que $r$ é a **correlação** entre $y$ e $x$.
+
+
+----
+
+* Podemos mostrar que:
+    + $-1\leq r\leq 1$
+    + O valor absoluto de $r$ mede a força de dependência (linear) entre $y$ e $x$.
+    + Quando $r=1$ não temos resíduos, isto é, $y$ pode ser descrito como um função de $x$ e, portanto, todos os pontos (observações amostrais) estarão na superfície de regressão, que terá inclinação positiva.
+    + Quando $r=-1$ todos os pontos estarão na superfície de regressão, porém esta terá inclinação negativa.
+* Para calcular a correlação no **R** use:
+```{r}
+cor(trees)
+```
+* Existe uma forte correlação (linear) positiva entre `Volume` e `Girth` (r=0.967).
+* Nota: A função `cor` aplicada a um `data.frame` (como o arquivo `trees`) só funciona quando todas as colunas são numéricas. Caso contrário, podemos extrair as colunas (numéricas) relevantes da seguinte forma:
+```{r eval=FALSE}
+cor(trees[,c("Height", "Girth", "Volume")])
+```
+que produzirá o mesmo resultado visto acima. 
+
+* Alternativamente, nós podemos calcular a correlação entre duas variáveis de interesse usando:
+```{r}
+cor(trees$Height, trees$Volume)
+```
+
+
+# R-quadrado: Redução no erro de predição
+## R-quadrado: Redução no erro de predição
+
+* Vamos comparar dois modelos diferentes para prever a resposta $y$.
+* Modelo 1: Nós não usamos as informações do possível preditor $x$ para estimar a média condicional de $y$ dado $x$. Neste caso, o nosso melhor preditor para a média de $y$ é $\bar{y}$, isto é, um preditor para a média não condicional de $y$. O correspondente erro de predição é definido por
+  $$SQT=\sum(y-\bar{y})^2$$ e é chamado de  **Soma de Quadrados Total**.
+* Modelo 2: Nós usamos a equação de predição $\hat{y}=\hat{\alpha}+\hat{\beta}x$ para predizer $y$. O correspondente erro de predição é chamado de **Soma de Quadrados dos Resíduos** e é definido por $$SQR=\sum(y-\hat{y})^2.$$
+* Em seguida, definimos $$ r^2=\frac{SQT-SQR}{SQT} $$, o que pode ser interpretado como a redução relativa no erro de previsão, quando incluímos $x$ como variável explicativa. 
+* Isto também é chamado de **fração da variação explicada**, **coeficiente de determinação** ou simplesmente **r-quadrado**.
+* Por exemplo, se $r^2 = 0.65$, a interpretação é que a variação de $x$ (ou simplesmente dizemos $x$) explica $65\%$ da variação em $y$, enquanto que o restante é devido a outras fontes (outras variáveis).
+
+
+## Ilustração Gráfica
+![](https://asta.math.aau.dk/static-files/asta/img/agrRsq.png)
+
+
+## $r^2$: Redução no erro de predição
+
+* Para uma regressão linear simples,  $$r^2=\frac{SQT-SQR}{SQT}$$ é igual ao quadrado da correlação entre $y$ e $x$, então faz sentido denotar $r^2$. Para uma regressão múltipla ou de maneira geral, usamos $R^2$.
+* Na parte inferior da saída abaixo, podemos ler o valor $r^2=0.9353=93.53\%$, o que significa que variações na circunferência (`Girth`) explicam $93.53\%$ das variações no volume $y$.
+
+```{r}
+summary(model)
+```
