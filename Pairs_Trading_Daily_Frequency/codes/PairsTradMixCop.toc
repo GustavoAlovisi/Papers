@@ -1,0 +1,12 @@
+\beamer@sectionintoc {1}{History of the Arbitrage Strategy}{2}{0}{1}
+\beamer@sectionintoc {2}{Two-Dimensional Pairs Trading}{3}{0}{2}
+\beamer@sectionintoc {3}{What is Pairs Trading?}{4}{0}{3}
+\beamer@sectionintoc {4}{Distance}{5}{0}{4}
+\beamer@sectionintoc {5}{Copula}{7}{0}{5}
+\beamer@sectionintoc {6}{Data}{10}{0}{6}
+\beamer@sectionintoc {7}{Models}{11}{0}{7}
+\beamer@subsectionintoc {7}{1}{Distance}{11}{0}{7}
+\beamer@sectionintoc {8}{Methodology}{13}{0}{8}
+\beamer@sectionintoc {9}{Empirical Results}{23}{0}{9}
+\beamer@sectionintoc {10}{Fama-French}{32}{0}{10}
+\beamer@sectionintoc {11}{Conclusions}{35}{0}{11}
