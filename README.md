@@ -5,7 +5,7 @@ This repository aims to provide information (data, codes) of my current working 
 
 Further studies should pursue applications to asset allocation under conditions of market distress or to a user-specified scenario. In addition, I want to identify impactful news articles and construct news factor. One can apply machine learning techniques to identify relevant tags for a story and to understand which patterns can impact the market most.
 
-* Fernando A.B. Sabino da Silva, Flavio A. Ziegelmann, and Cristina Tessari. **[Robust Portfolio Optimization with Multivariate Copulas: a Worst-Case CVaR approach](https://bitbucket.org/fsabino/papers/src/8c2891b93c632ee77fcc5639738a005c17530cd1/Portfolio_Optimization_with_Multidimensional_Copulas/?at=master).**
+* Fernando A.B. Sabino da Silva, Flavio A. Ziegelmann, and Cristina Tessari. **[Robust Portfolio Optimization with Multivariate Copulas: a Worst-Case CVaR approach](https://github.com/FernandoSdaSilva/papers/tree/master/Portfolio_Optimization_with_Multidimensional_Copulas).**
 
 Software: R, Matlab.
 
@@ -16,7 +16,7 @@ JEL Codes: G11; G12; G17.
 Data used: Daily data of adjusted closing prices of all stocks that belong to S&P 500 market index from July 2st, 1990 to December 31st, 2015.
 
 
-* Fernando A.B. Sabino da Silva, Flavio A. Ziegelmann, Joao F. Caldeira. **[Pairs Trading: Optimizing via Mixed Copula versus Distance Method for S&P 500 Assets](https://bitbucket.org/fsabino/papers/src/8c2891b93c632ee77fcc5639738a005c17530cd1/Pairs_Trading_Daily_Frequency/?at=master).**
+* Fernando A.B. Sabino da Silva, Flavio A. Ziegelmann, Joao F. Caldeira. **[Pairs Trading: Optimizing via Mixed Copula versus Distance Method for S&P 500 Assets](https://github.com/FernandoSdaSilva/papers/tree/master/Pairs_Trading_Daily_Frequency).**
 
 Software: Matlab, R.
 
@@ -29,7 +29,7 @@ Data used: Daily data of adjusted closing prices of all stocks that belong to S&
 Press Coverage: **[Quantpedia](https://quantpedia.com/Blog/Details/mixed-copula-pairs-trading-strategy).**
 
 
-* Fernando A.B. Sabino da Silva and Tainan B.F. Boff. **[Mixed Copula Pairs Trading Strategy with High Frequency Data](https://bitbucket.org/fsabino/papers/src/482db82bfc3b109b6ce3408792bfb38adae63fd3/Pairs_Trading_High_Frequency/?at=master).**
+* Fernando A.B. Sabino da Silva and Tainan B.F. Boff. **[Mixed Copula Pairs Trading Strategy with High Frequency Data](https://github.com/FernandoSdaSilva/papers/tree/master/Pairs_Trading_High_Frequency).**
 
 Software: R, Matlab.
 
@@ -41,7 +41,7 @@ JEL: G11, G12, G14.
 Data used: We select 41 assets that had non-zero returns in more than eighty percent of the time intervals at a sampling frequency of 5 minutes. All stocks belong to BMF&BOVESPA (Brazil) from January 2nd, 2010 to December 31st, 2016.
 
 
-* Hudson C. Costa, Fernando A. B. Sabino da Silva,  Sabino P. da Silva Junior. **[Macroeconomic Forecasting: Optimizing via Natural Language Processing and Text Mining Analytics]https://bitbucket.org/fsabino/papers/src/8c2891b93c632ee77fcc5639738a005c17530cd1/Sentiment_Analysis/?at=master)**
+* Hudson C. Costa, Fernando A. B. Sabino da Silva,  Sabino P. da Silva Junior. **[Macroeconomic Forecasting: Optimizing via Natural Language Processing and Text Mining Analytics](https://github.com/FernandoSdaSilva/papers/tree/master/Sentiment_Analysis)**
 
 Software: R.
 
@@ -63,7 +63,7 @@ Data used: Downloaded from Professor Kenneth French's data library website (http
 Published
 ==============
 
-* Fernando A. B. Sabino da Silva. **[Additive nonparametric regression estimation via backfitting and marginal integration: Small sample performance](https://bitbucket.org/fsabino/papers/src/8c2891b93c632ee77fcc5639738a005c17530cd1/Nonparametric_Smoothing/?at=master).** 
+* Fernando A. B. Sabino da Silva. **[Additive nonparametric regression estimation via backfitting and marginal integration: Small sample performance](https://github.com/FernandoSdaSilva/papers/tree/master/Nonparametric_Smoothing).** 
 
 Software: Originally, the codes had been written in Gauss. The attached code written in R is a modified version, including Smooth Backfitting Estimator (SBE).
 
@@ -77,25 +77,25 @@ JEL Code: C14, C15.
 Teaching
 ==============
 
-* Econometrics. **[Diagnostics](https://bitbucket.org/fsabino/papers/src/27466fb393107c4b44b13ec38b377e692cee6869/Econometrics/?at=master).**
+* Econometrics. **[Diagnostics](https://github.com/FernandoSdaSilva/papers/tree/master/Econometrics).**
 
 Software: R.
 
 *Data used: Simulated and downloaded from Professor Kenneth French's data library website (http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/Data_Library/det_st_rev_factor_daily.html).
 
-* Data Science. **[Data Science Homework Solutions](https://bitbucket.org/fsabino/papers/src/27466fb393107c4b44b13ec38b377e692cee6869/Data%20Science/?at=master).**
+* Data Science. **[Data Science Homework Solutions](https://github.com/FernandoSdaSilva/papers/tree/master/Data_Science).**
 
 Software: R.
 
 *Data used: Simulated and official datasets for the Medicare.gov downloaded from (https://data.medicare.gov/data/physician-compare).
 
-* Introductory Statistics I (in portuguese). **[Intro Statistics I](https://bitbucket.org/fsabino/papers/src/ec1dad89c69217b15a113f3129b6214e6464c4ea/Introductory_Stat_I/?at=master).**
+* Introductory Statistics I (in portuguese). **[Intro Statistics I](https://github.com/FernandoSdaSilva/papers/tree/master/Introductory_Stat_I).**
 
-* Introductory Statistics II (in portuguese). **[Intro Statistics II](https://bitbucket.org/fsabino/papers/src/63f37d602bba6d4b08556de12ce0f787d9f6ca5b/Introductory_Stat_II/?at=master).**
+* Introductory Statistics II (in portuguese). **[Intro Statistics II](https://github.com/FernandoSdaSilva/papers/tree/master/Introductory_Stat_II).**
 
 Software: R, Latex.
 
 ---
-** Note **: Any code and data available here can be used as long as it is referenced. Please contact me at fsabino@ufrgs.br or create an issue (https://bitbucket.org/fsabino/papers/issues?status=new&status=open) if you have any questions or suggestions or want any additional material. As soon as possible I will try to solve and leave comments so that other people also have access to the requested information.
+** Note **: Any code and data available here can be used as long as it is referenced. Please contact me at dasilvafbs@gmail.com or create an issue (https://github.com/FernandoSdaSilva/papers/issues?status=new&status=open) if you have any questions or suggestions or want any additional material. As soon as possible I will try to solve and leave comments so that other people also have access to the requested information.
 
 ---
