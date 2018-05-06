@@ -6,6 +6,9 @@
 \usetheme{Frankfurt}                      % theme
 \usecolortheme{orchid}                    % colors
 \usefonttheme[onlymath]{serif}            % font mathematical mode
+\setbeamerfont{page number in head/foot}{size=\large} % font size for footer
+\setbeamercolor{footline}{fg=blue} % foot line color
+\setbeamertemplate{footline}[frame number] % insert page number
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%    PACOTES      %%%%%
@@ -58,9 +61,11 @@
   \begin{itemize}
   \item Economic Science has evolved over several decades towards a greater emphasis on empirical work. Hamermesh (2013) reviewed publications of the leading journals in the period of 1963 to 2011:
   
+  
     \begin{itemize}
       \item Until the mid-1980s, most articles were theoretical. After that the share of empirical articles rose more than 70\% 
       \item Most data are assembled or obtained by the authors or generated through controlled experiments 
+      % montados
     \end{itemize}
   \item Currently, there are a greater availability of data which may affect economic research
     \begin{itemize}
@@ -119,11 +124,11 @@
 \begin{Sinput}
 > main.page = read_html(x = "http://www.bcb.gov.br/?MINUTES")
 > urls = main.page %>% 
-+   html_nodes("#cronoAno a") %>%  
-+   html_attr("href")  
+    html_nodes("#cronoAno a") %>%  
+    html_attr("href")  
 > ano = main.page %>% 
-+   html_nodes("#cronoAno a") %>% 
-+   html_text() 
+    html_nodes("#cronoAno a") %>% 
+    html_text() 
 > 
 > # 2016 http://www.bcb.gov.br/?id=MINUTES&ano=2016                                               
 \end{Sinput}
@@ -131,6 +136,8 @@
   \end{block}
   \begin{itemize}
     \item We have developed a system that builds and then uploads the information to a database, based on a logical and scalable architecture solution.
+    % Replicável para qualquer quantidade de atas
+    % Web scraping escalável e necessário para que ele consiga pegar dados da maior quantidade de sites possível
     \item It interacts with the web pages, extracts the information and stores the data
     \item Data Collectors: Google, Facebook.
   \end{itemize}
@@ -157,6 +164,7 @@
 	\item When human readers approach a text, we use our understanding of the emotional intent of words to infer whether a section of text is positive or negative, or perhaps characterized by some other more nuanced emotion like surprise or disgust (Robinson and Silge, 2017).
 	\item An often-used approach to analyze the sentiment of a text is to consider the text as a combination of its individual words and the sentiment content of the whole text as the sum of the sentiment content of the individual words. 
 	\item We use lexicon that are based on unigrams, i.e., single words. 
+	% ML uses n-grams
 \end{itemize}
 \end{frame}
 

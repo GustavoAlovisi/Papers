@@ -1,4 +1,7 @@
 \documentclass[pdf,9pt,xcolor=dvipsnames,hide notes]{beamer}
+\setbeamerfont{page number in head/foot}{size=\large}
+\setbeamercolor{footline}{fg=blue}
+\setbeamertemplate{footline}[frame number]
 \usetheme{Rochester}
 %\usecolortheme{beaver}
 \usepackage{verbatim}
@@ -12,6 +15,7 @@
 \usepackage{booktabs}
 \usepackage{pdfpages}
 \usepackage{graphicx}  
+\usepackage{pgfplots}
 \DeclareCaptionLabelSeparator{horse}{:\quad} % change according to your needs
 \captionsetup{
 	labelsep = horse,
@@ -175,7 +179,60 @@
 			
 		\end{itemize}	
 	\end{frame}
+
+
+\begin{frame}
+\frametitle{Bivariate Normal Distribution}
 	
+\begin{exampleblock}{Bivariate Normal Distribution}
+
+\[
+f(x,y)=\frac{\exp \left\{ -\frac 1{2(1-\rho ^2)}\left[ \left( \frac{x-\mu _x%
+	}{\sigma _x}\right) ^2-2\rho \left( \frac{x-\mu _x}{\sigma _x}\right) \left( 
+	\frac{y-\mu _y}{\sigma _y}\right) +\left( \frac{y-\mu _y}{\sigma _y}\right)
+	^2\right] \right\} }{2\pi \sigma _x\sigma _y\sqrt{1-\rho ^2}} 
+\]
+
+%where $(\mu _x,\mu _y)$ is the mean vector and the variance-covariance
+%matrix is
+%
+%\[
+%\left( 
+%\begin{array}{cc}
+%Var(X) & Cov(X,Y) \\ 
+%Cov(X,Y) & Var(Y)
+%\end{array}
+%\right) =\left( 
+%\begin{array}{cc}
+%\sigma _x^2 & \rho \sigma _x\sigma _y \\ 
+%\rho \sigma _x\sigma _y & \sigma _y^2
+%\end{array}
+%\right), 
+%\]
+%
+%where $\sigma _x>0, \sigma _y>0$ and $-1<\rho <1.$
+
+\end{exampleblock}
+
+\def\centerx{2}
+\def\centery{-1}
+
+	\begin{tikzpicture}[thick,scale=0.8, every node/.style={scale=0.8}]
+		\begin{axis}
+			\addplot3[surf,domain=-2:6,domain y=-5:3] 
+			{exp(-( (x-\centerx)^2 + (y-\centery)^2)/3 )};
+			\node[circle,inner sep=1pt,fill=blue,pin=90:$\mu$] 
+			at (axis cs:\centerx,\centery,1) {};
+			\end{axis}
+			
+		\hspace{6cm}
+			\begin{figure}[!h]
+				\includegraphics[scale=0.7]{taildep_gaussian.png}
+			\end{figure}
+			
+	\end{tikzpicture}
+	
+\end{frame}
 	
 	
 	\begin{frame}[label=frame1c]
@@ -184,7 +241,7 @@
 		\begin{itemize}
 			\justifying
 			
-			\item Linear correlation fully describes the dependence between securities if the series have joint normal distribution. 
+			\item Linear correlation ($\rho$) fully describes the dependence between securities if the series have joint normal distribution. 
 			
 			\vspace{0.3cm}
 			
@@ -208,6 +265,7 @@
 	
 		\begin{frame}[label=frame1c2]
 	\frametitle{Sklar's Theorem}
+	
 	
 \begin{theorem}
 	Let $X_{1},...,X_{d}$ be random variables with distribution functions $F_{1},...,F_{d}$, respectively. Then, there exists an d-copula C such that,
@@ -447,6 +505,7 @@
 		\begin{itemize}
 			\item 	Given current realizations $r_{t}^{X}$ and $r_{t}^{Y}$, if $F_{X}$ and $F_{Y} $ are the marginal distribution functions of $R_{t}^{X}$ and $R_{t}^{Y} $ and C is the copula connecting $F_{X}$ and $F_{Y}$ , we define $u_{1}=F_{X}\left( r_{t}^{X}\right) $ and $u_{2}=F_{Y}\left( r_{t}^{Y}\right) $, and have
 		\end{itemize}
+	
 				
 		\begin{equation}
 		\begin{aligned}
