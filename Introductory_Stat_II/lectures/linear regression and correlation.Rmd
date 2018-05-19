@@ -2,15 +2,15 @@
 title: "Regressão Linear e Correlação"
 author: "Fernando B. Sabino da Silva"
 output:
+  html_document:
+    df_print: paged
+    toc: yes
+  beamer_presentation:
+    highlight: tango
   pdf_document:
     fig_caption: no
     highlight: tango
     number_section: yes
-    toc: yes
-  beamer_presentation:
-    highlight: tango
-  html_document:
-    df_print: paged
     toc: yes
   slidy_presentation:
     css: https://asta.math.aau.dk/course/asta/2018-1/?file=lecture_style.css
