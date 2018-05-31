@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.8.22)  18 MAY 2018 14:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.8.22)  31 MAY 2018 04:07
 entering extended mode
-**./PairsTradCop.tex
-(PairsTradCop.tex
+**./Presentation.tex
+(Presentation.tex
 LaTeX2e <2017-04-15>
 Babel <3.10> and hyphenation patterns for 75 language(s) loaded.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\beamer\beamer.cls"
@@ -652,19 +652,16 @@ ault.sty"
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\beamer\themes\outer\beamerouterthemedef
 ault.sty")))
-("C:\Program Files\MiKTeX 2.9\tex\latex\beamer\themes\theme\beamerthemeRocheste
-r.sty"
-("C:\Program Files\MiKTeX 2.9\tex\latex\beamer\themes\outer\beamerouterthemesid
-ebar.sty"
-\beamer@sidebarwidth=\dimen187
-\beamer@headheight=\dimen188
-)
-("C:\Program Files\MiKTeX 2.9\tex\latex\beamer\themes\inner\beamerinnerthemerec
-tangles.sty")
-("C:\Program Files\MiKTeX 2.9\tex\latex\beamer\themes\color\beamercolorthemewha
-le.sty")
-("C:\Program Files\MiKTeX 2.9\tex\latex\beamer\themes\color\beamercolorthemeorc
-hid.sty")) ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\verbatim.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\beamer\themes\theme\beamerthemeCambridg
+eUS.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\beamer\themes\inner\beamerinnerthemerou
+nded.sty")
+("C:\Program Files\MiKTeX 2.9\tex\latex\beamer\themes\outer\beamerouterthemeinf
+olines.sty")
+("C:\Program Files\MiKTeX 2.9\tex\latex\beamer\themes\color\beamercolorthemebea
+ver.sty"))
+("C:\Program Files\MiKTeX 2.9\tex\latex\beamer\themes\color\beamercolorthemecra
+ne.sty") ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\verbatim.sty"
 Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks43
 \verbatim@line=\toks44
@@ -752,13 +749,13 @@ Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 ("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption3.sty"
 Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 67.
-\captionmargin=\dimen189
-\captionmargin@=\dimen190
-\captionwidth=\dimen191
-\caption@tempdima=\dimen192
-\caption@indent=\dimen193
-\caption@parindent=\dimen194
-\caption@hangindent=\dimen195
+\captionmargin=\dimen187
+\captionmargin@=\dimen188
+\captionwidth=\dimen189
+\caption@tempdima=\dimen190
+\caption@indent=\dimen191
+\caption@parindent=\dimen192
+\caption@hangindent=\dimen193
 )
 \c@ContinuedFloat=\count154
 Package caption Info: beamer document class.
@@ -770,7 +767,7 @@ Package caption Info: Hyperref support is turned off
 Package: subfig 2005/06/28 ver: 1.3 subfig package
 \c@KVtest=\count155
 \sf@farskip=\skip57
-\sf@captopadj=\dimen196
+\sf@captopadj=\dimen194
 \sf@capskip=\skip58
 \sf@nearskip=\skip59
 \c@subfigure=\count156
@@ -786,39 +783,39 @@ Package: tabularx 2016/02/03 v2.11 `tabularx' package (DPC)
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
 Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
-\col@sep=\dimen197
-\extrarowheight=\dimen198
+\col@sep=\dimen195
+\extrarowheight=\dimen196
 \NC@list=\toks45
 \extratabsurround=\skip62
 \backup@length=\skip63
 )
-\TX@col@width=\dimen199
-\TX@old@table=\dimen256
-\TX@old@col=\dimen257
-\TX@target=\dimen258
-\TX@delta=\dimen259
+\TX@col@width=\dimen197
+\TX@old@table=\dimen198
+\TX@old@col=\dimen199
+\TX@target=\dimen256
+\TX@delta=\dimen257
 \TX@cols=\count161
 \TX@ftn=\toks46
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\booktabs\booktabs.sty"
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
-\heavyrulewidth=\dimen260
-\lightrulewidth=\dimen261
-\cmidrulewidth=\dimen262
-\belowrulesep=\dimen263
-\belowbottomsep=\dimen264
-\aboverulesep=\dimen265
-\abovetopsep=\dimen266
-\cmidrulesep=\dimen267
-\cmidrulekern=\dimen268
-\defaultaddspace=\dimen269
+\heavyrulewidth=\dimen258
+\lightrulewidth=\dimen259
+\cmidrulewidth=\dimen260
+\belowrulesep=\dimen261
+\belowbottomsep=\dimen262
+\aboverulesep=\dimen263
+\abovetopsep=\dimen264
+\cmidrulesep=\dimen265
+\cmidrulekern=\dimen266
+\defaultaddspace=\dimen267
 \@cmidla=\count162
 \@cmidlb=\count163
-\@aboverulesep=\dimen270
-\@belowrulesep=\dimen271
+\@aboverulesep=\dimen268
+\@belowrulesep=\dimen269
 \@thisruleclass=\count164
 \@lastruleclass=\count165
-\@thisrulewidth=\dimen272
+\@thisrulewidth=\dimen270
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\pdfpages\pdfpages.sty"
 Package: pdfpages 2017/07/14 v0.5j Insert pages of external PDF documents (AM)
@@ -830,8 +827,8 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count166
 \calc@Bcount=\count167
-\calc@Adimen=\dimen273
-\calc@Bdimen=\dimen274
+\calc@Adimen=\dimen271
+\calc@Bdimen=\dimen272
 \calc@Askip=\skip64
 \calc@Bskip=\skip65
 LaTeX Info: Redefining \setlength on input line 80.
@@ -842,8 +839,8 @@ LaTeX Info: Redefining \addtolength on input line 81.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\eso-pic\eso-pic.sty"
 Package: eso-pic 2015/07/21 v2.0g eso-pic (RN)
 )
-\AM@pagewidth=\dimen275
-\AM@pageheight=\dimen276
+\AM@pagewidth=\dimen273
+\AM@pageheight=\dimen274
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\pdfpages\pppdftex.def"
 File: pppdftex.def 2017/07/14 v0.5j Pdfpages driver for pdfTeX (AM)
@@ -871,8 +868,8 @@ File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
 ("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\compatibility\pgfcomp-version-0-65.
 sty"
 Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
-\pgf@nodesepstart=\dimen277
-\pgf@nodesepend=\dimen278
+\pgf@nodesepstart=\dimen275
+\pgf@nodesepend=\dimen276
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\compatibility\pgfcomp-version-1-18.
 sty"
@@ -886,8 +883,8 @@ Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
 Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmath.code.tex")
-\pgffor@iter=\dimen279
-\pgffor@skip=\dimen280
+\pgffor@iter=\dimen277
+\pgffor@skip=\dimen278
 \pgffor@stack=\toks49
 \pgffor@toks=\toks50
 ))
@@ -898,14 +895,14 @@ Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
 code.tex"
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
 \pgf@plot@mark@count=\count170
-\pgfplotmarksize=\dimen281
+\pgfplotmarksize=\dimen279
 )
-\tikz@lastx=\dimen282
-\tikz@lasty=\dimen283
-\tikz@lastxsaved=\dimen284
-\tikz@lastysaved=\dimen285
-\tikzleveldistance=\dimen286
-\tikzsiblingdistance=\dimen287
+\tikz@lastx=\dimen280
+\tikz@lasty=\dimen281
+\tikz@lastxsaved=\dimen282
+\tikz@lastysaved=\dimen283
+\tikzleveldistance=\dimen284
+\tikzsiblingdistance=\dimen285
 \tikz@figbox=\box56
 \tikz@figbox@bg=\box57
 \tikz@tempbox=\box58
@@ -932,7 +929,7 @@ File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
 \t@pgfplots@toka=\toks51
 \t@pgfplots@tokb=\toks52
 \t@pgfplots@tokc=\toks53
-\pgfplots@tmpa=\dimen288
+\pgfplots@tmpa=\dimen286
 \c@pgfplots@coordindex=\count179
 \c@pgfplots@scanlineindex=\count180
 
@@ -1005,14 +1002,14 @@ ex")))
 librarydecorations.code.tex"
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\modules\pgfmoduledecorations.code
 .tex"
-\pgfdecoratedcompleteddistance=\dimen289
-\pgfdecoratedremainingdistance=\dimen290
-\pgfdecoratedinputsegmentcompleteddistance=\dimen291
-\pgfdecoratedinputsegmentremainingdistance=\dimen292
-\pgf@decorate@distancetomove=\dimen293
+\pgfdecoratedcompleteddistance=\dimen287
+\pgfdecoratedremainingdistance=\dimen288
+\pgfdecoratedinputsegmentcompleteddistance=\dimen289
+\pgfdecoratedinputsegmentremainingdistance=\dimen290
+\pgf@decorate@distancetomove=\dimen291
 \pgf@decorate@repeatstate=\count185
-\pgfdecorationsegmentamplitude=\dimen294
-\pgfdecorationsegmentlength=\dimen295
+\pgfdecorationsegmentamplitude=\dimen292
+\pgfdecorationsegmentlength=\dimen293
 )
 \tikz@lib@dec@box=\box60
 )
@@ -1025,12 +1022,12 @@ librarydecorations.pathreplacing.code.tex"
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\libraries\decorations\pgflibraryd
 ecorations.pathreplacing.code.tex"))
 \pgfplots@numplots=\count186
-\pgfplots@xmin@reg=\dimen296
-\pgfplots@xmax@reg=\dimen297
-\pgfplots@ymin@reg=\dimen298
-\pgfplots@ymax@reg=\dimen299
-\pgfplots@zmin@reg=\dimen300
-\pgfplots@zmax@reg=\dimen301
+\pgfplots@xmin@reg=\dimen294
+\pgfplots@xmax@reg=\dimen295
+\pgfplots@ymin@reg=\dimen296
+\pgfplots@ymax@reg=\dimen297
+\pgfplots@zmin@reg=\dimen298
+\pgfplots@zmax@reg=\dimen299
 )
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikz
 libraryplotmarks.code.tex"
@@ -1044,7 +1041,7 @@ Package: multirow 2016/11/25 v2.2 Span multiple rows of a table
 \multirow@colwidth=\skip67
 \multirow@cntb=\count187
 \multirow@dima=\skip68
-\bigstrutjot=\dimen302
+\bigstrutjot=\dimen300
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\ms\ragged2e.sty"
 Package: ragged2e 2009/05/21 v2.1 ragged2e Package (MS)
@@ -1083,12 +1080,12 @@ Smallest possible random number: 0
 Largest possible random number: 9
 The pseudo random numbers will be stored in the LaTeX counter `rand'
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 81.
+Package hyperref Info: Option `colorlinks' set `true' on input line 82.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\threeparttable\threeparttable.sty"
 Package: threeparttable 2003/06/13  v 3.0
 \@tempboxb=\box61
 )
-(PairsTradCop.aux
+(Presentation.aux
 
 LaTeX Warning: Label `frame1<1>' multiply defined.
 
@@ -1135,23 +1132,23 @@ LaTeX Warning: Label `fig:fig3' multiply defined.
 LaTeX Warning: Label `tab:table106' multiply defined.
 
 )
-\openout1 = `PairsTradCop.aux'.
+\openout1 = `Presentation.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 86.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 87.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmr.fd"
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -1163,14 +1160,14 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: includehead includefoot 
-* h-part:(L,W,R)=(28.45274pt, 307.28987pt, 28.45274pt)
+* h-part:(L,W,R)=(9.24994pt, 345.69548pt, 9.24994pt)
 * v-part:(T,H,B)=(0.0pt, 273.14662pt, 0.0pt)
 * \paperwidth=364.19536pt
 * \paperheight=273.14662pt
-* \textwidth=307.28987pt
+* \textwidth=345.69548pt
 * \textheight=244.6939pt
-* \oddsidemargin=-43.81725pt
-* \evensidemargin=-43.81725pt
+* \oddsidemargin=-63.02005pt
+* \evensidemargin=-63.02005pt
 * \topmargin=-72.26999pt
 * \headheight=14.22636pt
 * \headsep=0.0pt
@@ -1192,13 +1189,13 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count192
-\scratchdimen=\dimen303
+\scratchdimen=\dimen301
 \scratchbox=\box62
 \nofMPsegments=\count193
 \nofMParguments=\count194
 \everyMPshowfont=\toks56
 \MPscratchCnt=\count195
-\MPscratchDim=\dimen304
+\MPscratchDim=\dimen302
 \MPnumerator=\count196
 \makeMPintoPDFobject=\count197
 \everyMPtoPDFconversion=\toks57
@@ -1217,7 +1214,7 @@ G,.JBIG2,.JB2,.eps]
 )
 ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box63
-Package hyperref Info: Link coloring ON on input line 86.
+Package hyperref Info: Link coloring ON on input line 87.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1227,13 +1224,13 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count198
 )
-LaTeX Info: Redefining \ref on input line 86.
-LaTeX Info: Redefining \pageref on input line 86.
-LaTeX Info: Redefining \nameref on input line 86.
+LaTeX Info: Redefining \ref on input line 87.
+LaTeX Info: Redefining \pageref on input line 87.
+LaTeX Info: Redefining \nameref on input line 87.
 
-(PairsTradCop.out) (PairsTradCop.out)
+(Presentation.out) (Presentation.out)
 \@outlinefile=\write5
-\openout5 = `PairsTradCop.out'.
+\openout5 = `Presentation.out'.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\beamer\translator\dicts\translator-basi
@@ -1277,39 +1274,39 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.15} into 
 your preamble.
- on input line 86.
+ on input line 87.
 
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 86.
- (PairsTradCop.nav)
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 89.
+LaTeX Info: Redefining \selectfont on input line 87.
+ (Presentation.nav)
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 90.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 89.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 90.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omllmm.fd"
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 89.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 90.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omslmsy.fd"
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 89.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 90.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omxlmex.fd"
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 89.
+(Font)              <9> on input line 90.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 89.
+(Font)              <6> on input line 90.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 89.
+(Font)              <5> on input line 90.
  [1
 
 {C:/Users/fsabino/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2
@@ -1323,16 +1320,16 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 ] [6
 
 ]
-<fig1.png, id=250, 166.37157pt x 63.98906pt>
+<fig1.png, id=278, 166.37157pt x 63.98906pt>
 File: fig1.png Graphic file (type png)
  <use fig1.png>
-Package pdftex.def Info: fig1.png used on input line 142.
+Package pdftex.def Info: fig1.png used on input line 143.
 (pdftex.def)             Requested size: 83.18556pt x 31.99445pt.
 
-<fig2.png, id=251, 700.86844pt x 440.39531pt>
+<fig2.png, id=279, 700.86844pt x 440.39531pt>
 File: fig2.png Graphic file (type png)
  <use fig2.png>
-Package pdftex.def Info: fig2.png used on input line 142.
+Package pdftex.def Info: fig2.png used on input line 143.
 (pdftex.def)             Requested size: 266.33278pt x 167.35194pt.
  [7
 
@@ -1340,59 +1337,59 @@ Package pdftex.def Info: fig2.png used on input line 142.
 ntifier (name{frame1<1>}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.187 	\end{frame}
+l.188 	\end{frame}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{frame1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.187 	\end{frame}
+l.188 	\end{frame}
                    [8
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{frame1<2>}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.187 	\end{frame}
+l.188 	\end{frame}
                    [9
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{frame1<3>}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.187 	\end{frame}
+l.188 	\end{frame}
                    [10
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{frame1<4>}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.187 	\end{frame}
+l.188 	\end{frame}
                    [11
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{frame1<5>}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.187 	\end{frame}
+l.188 	\end{frame}
                    [12
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{frame1<1>}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.218 	\end{frame}
+l.219 	\end{frame}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{frame1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.218 	\end{frame}
+l.219 	\end{frame}
                    [13
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{frame1<2>}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.218 	\end{frame}
+l.219 	\end{frame}
                    [14
 
 ]
@@ -1403,7 +1400,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.272 \end{frame}
+l.273 \end{frame}
                  
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1415,7 +1412,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.272 \end{frame}
+l.273 \end{frame}
                  
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1427,16 +1424,16 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.272 \end{frame}
+l.273 \end{frame}
                  
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-<taildep_gaussian.png, id=477, 194.22563pt x 180.675pt>
+<taildep_gaussian.png, id=523, 194.22563pt x 180.675pt>
 File: taildep_gaussian.png Graphic file (type png)
 
 <use taildep_gaussian.png>
-Package pdftex.def Info: taildep_gaussian.png used on input line 272.
+Package pdftex.def Info: taildep_gaussian.png used on input line 273.
 (pdftex.def)             Requested size: 135.957pt x 126.47162pt.
 
 
@@ -1446,7 +1443,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.272 \end{frame}
+l.273 \end{frame}
                  
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1458,7 +1455,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.272 \end{frame}
+l.273 \end{frame}
                  
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1470,56 +1467,22 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.272 \end{frame}
+l.273 \end{frame}
                  
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \vbox (5.11853pt too high) detected at line 272
- []
 
 [15
 
- <./taildep_gaussian.png>]
-Overfull \hbox (11.29062pt too wide) in paragraph at lines 318--318
-[][]\T1/lmr/m/n/9 Lie and Wu[] [](2013)[] pro-posed a pairs trad-ing strat-egy 
-based on 2-dimensional
- []
+ <./taildep_gaussian.png>] [16
 
-[16
+] [17
 
-]
-Overfull \hbox (11.29062pt too wide) in paragraph at lines 318--318
-[][]\T1/lmr/m/n/9 Lie and Wu[] [](2013)[] pro-posed a pairs trad-ing strat-egy 
-based on 2-dimensional
- []
+] [18
 
-[17
+] [19
 
-]
-Overfull \hbox (11.29062pt too wide) in paragraph at lines 318--318
-[][]\T1/lmr/m/n/9 Lie and Wu[] [](2013)[] pro-posed a pairs trad-ing strat-egy 
-based on 2-dimensional
- []
-
-[18
-
-]
-Overfull \hbox (11.29062pt too wide) in paragraph at lines 318--318
-[][]\T1/lmr/m/n/9 Lie and Wu[] [](2013)[] pro-posed a pairs trad-ing strat-egy 
-based on 2-dimensional
- []
-
-[19
-
-]
-Overfull \hbox (11.29062pt too wide) in paragraph at lines 318--318
-[][]\T1/lmr/m/n/9 Lie and Wu[] [](2013)[] pro-posed a pairs trad-ing strat-egy 
-based on 2-dimensional
- []
-
-[20
+] [20
 
 ] [21
 
@@ -1527,11 +1490,26 @@ based on 2-dimensional
 
 ] [23
 
-] [24
+]
+Underfull \hbox (badness 10000) in paragraph at lines 428--428
+\T1/lmr/m/n/9 cop-ula ``cor-re-la-tion ma-trix'' since they con-ve-niently se
+ []
 
-] [25
+[24
 
-] [26
+]
+Underfull \hbox (badness 10000) in paragraph at lines 428--428
+\T1/lmr/m/n/9 cop-ula ``cor-re-la-tion ma-trix'' since they con-ve-niently se
+ []
+
+[25
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 428--428
+\T1/lmr/m/n/9 cop-ula ``cor-re-la-tion ma-trix'' since they con-ve-niently se
+ []
+
+[26
 
 ] [27
 
@@ -1549,19 +1527,18 @@ based on 2-dimensional
 
 ] [34
 
-]
-[35
+] [35
 
 ] [36
 
 ]
-Overfull \vbox (31.56422pt too high) detected at line 613
+Overfull \vbox (29.222pt too high) detected at line 614
  []
 
 [37
 
 ]
-Overfull \vbox (31.56422pt too high) detected at line 613
+Overfull \vbox (29.222pt too high) detected at line 614
  []
 
 [38
@@ -1576,192 +1553,98 @@ Overfull \vbox (31.56422pt too high) detected at line 613
 
 ] [43
 
-]
-Overfull \hbox (3.63222pt too wide) detected at line 749
- []\T1/lmr/m/n/6 (1) 
- []
+] [44
 
+] [45
 
-Overfull \hbox (3.63222pt too wide) detected at line 749
- []\T1/lmr/m/n/6 (2) 
- []
+] [46
 
-[44
+] [47
 
 ]
-Overfull \hbox (3.63222pt too wide) detected at line 749
- []\T1/lmr/m/n/6 (1) 
- []
-
-
-Overfull \hbox (3.63222pt too wide) detected at line 749
- []\T1/lmr/m/n/6 (2) 
- []
-
-[45
-
-]
-Overfull \hbox (3.63222pt too wide) detected at line 749
- []\T1/lmr/m/n/6 (1) 
- []
-
-
-Overfull \hbox (3.63222pt too wide) detected at line 749
- []\T1/lmr/m/n/6 (2) 
- []
-
-[46
-
-]
-Overfull \hbox (10.5522pt too wide) in alignment at lines 766--766
- [][][] []
- []
-
-
-Overfull \hbox (13.30205pt too wide) in alignment at lines 766--766
- [][][] []
- []
-
-[47
-
-] <taildep.png, id=1437, 663.22781pt x 329.73187pt>
+<taildep.png, id=1583, 663.22781pt x 329.73187pt>
 File: taildep.png Graphic file (type png)
  <use taildep.png>
-Package pdftex.def Info: taildep.png used on input line 777.
+Package pdftex.def Info: taildep.png used on input line 778.
 (pdftex.def)             Requested size: 331.6131pt x 164.86552pt.
 pdfTeX warning (ext4): destination with the same identifier (name{fig:fig1}) ha
 s been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.777 \end{frame}
-                 
-Overfull \hbox (24.32323pt too wide) in paragraph at lines 777--777
- [] 
- []
-
-[48
+l.778 \end{frame}
+                  [48
 
  <./taildep.png>]
 
 LaTeX Warning: The counter will not be printed.
-             The label is: (3) on input line 822.
-
-
-Overfull \hbox (3.63222pt too wide) detected at line 822
- []\T1/lmr/m/n/6 (3) 
- []
+             The label is: (3) on input line 823.
 
 
 LaTeX Warning: The counter will not be printed.
-             The label is: (4) on input line 822.
-
-
-Overfull \hbox (3.63222pt too wide) detected at line 822
- []\T1/lmr/m/n/6 (4) 
- []
+             The label is: (4) on input line 823.
 
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 822.
+(Font)              <8> on input line 823.
 [49
 
 ]
 
 LaTeX Warning: The counter will not be printed.
-             The label is: (3) on input line 822.
-
-
-Overfull \hbox (3.63222pt too wide) detected at line 822
- []\T1/lmr/m/n/6 (3) 
- []
+             The label is: (3) on input line 823.
 
 
 LaTeX Warning: The counter will not be printed.
-             The label is: (4) on input line 822.
-
-
-Overfull \hbox (3.63222pt too wide) detected at line 822
- []\T1/lmr/m/n/6 (4) 
- []
+             The label is: (4) on input line 823.
 
 [50
 
 ]
 
 LaTeX Warning: The counter will not be printed.
-             The label is: (3) on input line 822.
-
-
-Overfull \hbox (3.63222pt too wide) detected at line 822
- []\T1/lmr/m/n/6 (3) 
- []
+             The label is: (3) on input line 823.
 
 
 LaTeX Warning: The counter will not be printed.
-             The label is: (4) on input line 822.
-
-
-Overfull \hbox (3.63222pt too wide) detected at line 822
- []\T1/lmr/m/n/6 (4) 
- []
+             The label is: (4) on input line 823.
 
 [51
 
 ]
 
 LaTeX Warning: The counter will not be printed.
-             The label is: (3) on input line 822.
-
-
-Overfull \hbox (3.63222pt too wide) detected at line 822
- []\T1/lmr/m/n/6 (3) 
- []
+             The label is: (3) on input line 823.
 
 
 LaTeX Warning: The counter will not be printed.
-             The label is: (4) on input line 822.
-
-
-Overfull \hbox (3.63222pt too wide) detected at line 822
- []\T1/lmr/m/n/6 (4) 
- []
+             The label is: (4) on input line 823.
 
 [52
 
 ]
 
 LaTeX Warning: The counter will not be printed.
-             The label is: (3) on input line 822.
-
-
-Overfull \hbox (3.63222pt too wide) detected at line 822
- []\T1/lmr/m/n/6 (3) 
- []
+             The label is: (3) on input line 823.
 
 
 LaTeX Warning: The counter will not be printed.
-             The label is: (4) on input line 822.
-
-
-Overfull \hbox (3.63222pt too wide) detected at line 822
- []\T1/lmr/m/n/6 (4) 
- []
+             The label is: (4) on input line 823.
 
 [53
 
-] <trading_opt.png, id=1601, 648.17157pt x 302.63063pt>
+] <trading_opt.png, id=1765, 648.17157pt x 302.63063pt>
 File: trading_opt.png Graphic file (type png)
 
 <use trading_opt.png>
-Package pdftex.def Info: trading_opt.png used on input line 839.
+Package pdftex.def Info: trading_opt.png used on input line 840.
 (pdftex.def)             Requested size: 220.37541pt x 102.89305pt.
- <trading_opt2.png, id=1602, 435.87843pt x 347.79938pt>
+ <trading_opt2.png, id=1766, 435.87843pt x 347.79938pt>
 File: trading_opt2.png Graphic file (type png)
 
 <use trading_opt2.png>
-Package pdftex.def Info: trading_opt2.png used on input line 839.
+Package pdftex.def Info: trading_opt2.png used on input line 840.
 (pdftex.def)             Requested size: 148.1967pt x 118.25021pt.
 
-Overfull \vbox (16.80911pt too high) detected at line 839
+Overfull \vbox (14.7323pt too high) detected at line 840
  []
 
 [54
@@ -1775,30 +1658,21 @@ Package epstopdf Info: Source file: <Figure1.eps>
 (epstopdf)                    size: 6254 bytes
 (epstopdf)             Command: <epstopdf --outfile=Figure1-eps-converted-to.pd
 f Figure1.eps>
-(epstopdf)             \includegraphics on input line 859.
+(epstopdf)             \includegraphics on input line 860.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figure1-eps-converted-to.pdf, id=1634, 1027.84pt x 490.83376pt>
+<Figure1-eps-converted-to.pdf, id=1801, 1027.84pt x 490.83376pt>
 File: Figure1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figure1-eps-converted-to.pdf>
-Package pdftex.def Info: Figure1-eps-converted-to.pdf used on input line 859.
+Package pdftex.def Info: Figure1-eps-converted-to.pdf used on input line 860.
 (pdftex.def)             Requested size: 341.431pt x 142.26324pt.
-
-Overfull \hbox (34.14113pt too wide) in paragraph at lines 859--859
- [] 
- []
-
 pdfTeX warning (ext4): destination with the same identifier (name{fig:fig1}) ha
 s been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.859 \end{frame}
-                 
-Overfull \vbox (11.52908pt too high) detected at line 859
- []
-
-[55
+l.860 \end{frame}
+                  [55
 
  <./Figure1-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <Figure2.eps>
@@ -1809,58 +1683,43 @@ Package epstopdf Info: Source file: <Figure2.eps>
 (epstopdf)                    size: 6018 bytes
 (epstopdf)             Command: <epstopdf --outfile=Figure2-eps-converted-to.pd
 f Figure2.eps>
-(epstopdf)             \includegraphics on input line 875.
+(epstopdf)             \includegraphics on input line 876.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figure2-eps-converted-to.pdf, id=1669, 1027.84pt x 490.83376pt>
+<Figure2-eps-converted-to.pdf, id=1838, 1027.84pt x 490.83376pt>
 File: Figure2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figure2-eps-converted-to.pdf>
-Package pdftex.def Info: Figure2-eps-converted-to.pdf used on input line 875.
+Package pdftex.def Info: Figure2-eps-converted-to.pdf used on input line 876.
 (pdftex.def)             Requested size: 341.431pt x 142.26324pt.
-
-Overfull \hbox (34.14113pt too wide) in paragraph at lines 875--875
- [] 
- []
-
 pdfTeX warning (ext4): destination with the same identifier (name{fig:fig2}) ha
 s been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.875 \end{frame}
+l.876 \end{frame}
                   [56
 
  <./Figure2-eps-converted-to.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 930--930
+Underfull \hbox (badness 10000) in paragraph at lines 931--931
 []|\T1/lmr/m/n/6 Mixed
  []
 
 
-Overfull \vbox (139.6724pt too high) detected at line 930
+Overfull \vbox (130.59558pt too high) detected at line 931
  []
 
 [57
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 963--963
+Underfull \hbox (badness 10000) in paragraph at lines 964--964
 []|\T1/lmr/m/n/6 Mixed
  []
 
 [58
 
-]
-Overfull \hbox (3.06895pt too wide) in alignment at lines 1006--1006
-[] [] [] [] [] [] [] [] 
- []
+] [59
 
-[59
-
-]
-Overfull \hbox (0.70781pt too wide) in alignment at lines 1045--1045
-[] [] [] [] [] [] [] [] 
- []
-
-[60
+] [60
 
 ]
 Package epstopdf Info: Source file: <Figure3.eps>
@@ -1871,16 +1730,16 @@ Package epstopdf Info: Source file: <Figure3.eps>
 (epstopdf)                    size: 127610 bytes
 (epstopdf)             Command: <epstopdf --outfile=Figure3-eps-converted-to.pd
 f Figure3.eps>
-(epstopdf)             \includegraphics on input line 1062.
+(epstopdf)             \includegraphics on input line 1063.
 Package epstopdf Info: Output file is already uptodate.
- <Figure3-eps-converted-to.pdf, id=1817, 421.575pt x 483.8075pt>
+ <Figure3-eps-converted-to.pdf, id=1995, 421.575pt x 483.8075pt>
 File: Figure3-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figure3-eps-converted-to.pdf>
-Package pdftex.def Info: Figure3-eps-converted-to.pdf used on input line 1062.
+Package pdftex.def Info: Figure3-eps-converted-to.pdf used on input line 1063.
 (pdftex.def)             Requested size: 202.3537pt x 232.22496pt.
 
-Overfull \vbox (47.6908pt too high) detected at line 1062
+Overfull \vbox (39.61398pt too high) detected at line 1063
  []
 
 [61
@@ -1894,17 +1753,17 @@ Package epstopdf Info: Source file: <Figure5.eps>
 (epstopdf)                    size: 75918 bytes
 (epstopdf)             Command: <epstopdf --outfile=Figure5-eps-converted-to.pd
 f Figure5.eps>
-(epstopdf)             \includegraphics on input line 1079.
+(epstopdf)             \includegraphics on input line 1080.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figure5-eps-converted-to.pdf, id=1851, 505.89pt x 505.89pt>
+<Figure5-eps-converted-to.pdf, id=2031, 505.89pt x 505.89pt>
 File: Figure5-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figure5-eps-converted-to.pdf>
-Package pdftex.def Info: Figure5-eps-converted-to.pdf used on input line 1079.
+Package pdftex.def Info: Figure5-eps-converted-to.pdf used on input line 1080.
 (pdftex.def)             Requested size: 263.0643pt x 263.0643pt.
 
-Overfull \vbox (78.53014pt too high) detected at line 1079
+Overfull \vbox (90.95332pt too high) detected at line 1080
  []
 
 [62
@@ -1913,27 +1772,12 @@ Overfull \vbox (78.53014pt too high) detected at line 1079
 ame identifier (name{tab:table103}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1139 \end{frame}
-                  
-Overfull \hbox (9.92036pt too wide) in alignment at lines 1139--1139
-[] [] [] [] [] [] [] [] [] [] [] 
- []
+l.1140 \end{frame}
+                   [63
 
-[63
+] [64
 
-]
-Overfull \hbox (9.92036pt too wide) in alignment at lines 1139--1139
-[] [] [] [] [] [] [] [] [] [] [] 
- []
-
-[64
-
-]
-Overfull \hbox (9.92036pt too wide) in alignment at lines 1139--1139
-[] [] [] [] [] [] [] [] [] [] [] 
- []
-
-[65
+] [65
 
 ] [66
 
@@ -1941,25 +1785,24 @@ Overfull \hbox (9.92036pt too wide) in alignment at lines 1139--1139
 
 ] [68
 
-] <fig4.png, id=2059, 219.82124pt x 106.14656pt>
+]
+<fig4.png, id=2253, 219.82124pt x 106.14656pt>
 File: fig4.png Graphic file (type png)
-
-<use fig4.png>
-Package pdftex.def Info: fig4.png used on input line 1200.
+ <use fig4.png>
+Package pdftex.def Info: fig4.png used on input line 1201.
 (pdftex.def)             Requested size: 131.89375pt x 63.68842pt.
  [69
 
- <./fig4.png>]
-<fig3.png, id=2089, 1542.51282pt x 489.32813pt>
+ <./fig4.png>] <fig3.png, id=2285, 1542.51282pt x 489.32813pt>
 File: fig3.png Graphic file (type png)
  <use fig3.png>
-Package pdftex.def Info: fig3.png used on input line 1228.
+Package pdftex.def Info: fig3.png used on input line 1229.
 (pdftex.def)             Requested size: 215.95032pt x 68.50546pt.
 pdfTeX warning (ext4): destination with the same identifier (name{fig:fig3}) ha
 s been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1228 \end{frame}
+l.1229 \end{frame}
                    [70
 
  <./fig3.png>] [71
@@ -1967,73 +1810,49 @@ l.1228 \end{frame}
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\translate ' on input line 1238.
+(hyperref)                removing `\translate ' on input line 1239.
 
 \c@finalframe=\count199
 pdfTeX warning (ext4): destination with the same identifier (name{tab:table106}
 ) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1286 \end{frame}
-                  
-Overfull \vbox (9.6724pt too high) detected at line 1286
- []
+l.1287 \end{frame}
+                   [72
 
-[72
+] [73
 
-]
-Overfull \vbox (9.6724pt too high) detected at line 1335
- []
+] [74
 
-[73
+] [75
 
-]
-Overfull \vbox (9.6724pt too high) detected at line 1383
- []
+] [76
 
-[74
-
-]
-Overfull \vbox (9.6724pt too high) detected at line 1432
- []
-
-[75
-
-]
-Overfull \vbox (9.6724pt too high) detected at line 1480
- []
-
-[76
-
-]
-Overfull \vbox (9.6724pt too high) detected at line 1529
- []
-
-[77
+] [77
 
 ]
 \tf@nav=\write6
-\openout6 = `PairsTradCop.nav'.
+\openout6 = `Presentation.nav'.
 
 \tf@toc=\write7
-\openout7 = `PairsTradCop.toc'.
+\openout7 = `Presentation.toc'.
 
 \tf@snm=\write8
-\openout8 = `PairsTradCop.snm'.
+\openout8 = `Presentation.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1533.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1533.
- (PairsTradCop.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1533.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1533.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1534.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1534.
+ (Presentation.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1534.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1534.
 
 
 
-Package rerunfilecheck Warning: File `PairsTradCop.out' has changed.
+Package rerunfilecheck Warning: File `Presentation.out' has changed.
 (rerunfilecheck)                Rerun to get outlines right
 (rerunfilecheck)                or use package `bookmark'.
 
-Package rerunfilecheck Info: Checksums for `PairsTradCop.out':
+Package rerunfilecheck Info: Checksums for `Presentation.out':
 (rerunfilecheck)             Before: EB00C10B621F237080DA1F321BFE76A4;733
 (rerunfilecheck)             After:  CF11CF55B477B5F00F8B4C7E27E332E8;733.
 
@@ -2045,13 +1864,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 33732 strings out of 493323
- 794611 string characters out of 3139060
- 1327219 words of memory out of 3000000
- 36301 multiletter control sequences out of 15000+200000
- 108796 words of font info for 72 fonts, out of 3000000 for 9000
+ 33811 strings out of 493323
+ 797182 string characters out of 3139060
+ 1332121 words of memory out of 3000000
+ 36380 multiletter control sequences out of 15000+200000
+ 108497 words of font info for 71 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,15n,98p,834b,2052s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 64i,17n,98p,834b,2054s stack positions out of 5000i,500n,10000p,200000b,50000s
 pdfTeX warning (dest): name{Outline0.7.1.27} has been referenced but does not
  exist, replaced by a fixed one
 
@@ -2076,9 +1895,9 @@ nts/type1/public/lm/lmri8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/l
 m/lmri9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy5.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy6.pfb><C:/Program Files/MiKTeX
  2.9/fonts/type1/public/lm/lmsy9.pfb>
-Output written on PairsTradCop.pdf (77 pages, 1583190 bytes).
+Output written on Presentation.pdf (77 pages, 1679229 bytes).
 PDF statistics:
- 2441 PDF objects out of 2487 (max. 8388607)
+ 2648 PDF objects out of 2984 (max. 8388607)
  251 named destinations out of 1000 (max. 500000)
- 223 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 313 words of extra memory for PDF output out of 10000 (max. 10000000)
 
