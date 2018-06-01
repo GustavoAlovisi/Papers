@@ -119,6 +119,11 @@
 				\item It is well-planned assault on the Efficient Market Hypothesis.
 			\end{itemize}
 		
+			\begin{figure}[htbp]
+				\centering
+				\includegraphics[scale=0.5]{algo_trading.png}
+			\end{figure}
+		
 	
 	\end{itemize}	
 \end{frame}
@@ -435,20 +440,20 @@ f(x,y)=\frac{\exp \left\{ -\frac 1{2(1-\rho ^2)}\left[ \left( \frac{x-\mu _x%
 		\setlength\itemsep{1em}
 		\justifying
 		
-		\item 	Adjusted closing prices of all shares that belongs to the S\&P 500 market index from July 2nd, 1990 to December 31st, 2015. 
-		\begin{itemize}
-			\setlength\itemsep{1em}
-			\item 6,426 days
-			\item 1100 stocks over all periods
-			\item Eliminate survivorship bias 
-			\item Bloomberg
-			\item Fama and French factors 
+		\item 	\textbf{Sources} Adjusted closing prices, Fama-French factors
+		\item \textbf{Universe} All shares that belongs to the S\&P 500 market index  
+		%\begin{itemize}
+		%	\setlength\itemsep{1em}
+		\item \textbf{Dates} July 2nd, 1990 to December 31st, 2015
+		\item \textbf{Totals} 1100 stocks during 6426 days
+	
+		% \item Eliminate survivorship bias 
+		%	\item Bloomberg
+		%	\item Fama and French factors 
 			%and the returns on the from French's website. 
 			%We obtain the adjusted closing prices from
 			% Daily data of
 		\end{itemize}
-	\end{itemize}
-
 			%from our database, only stocks that are listed during the formation period are included in the analysis, \emph{i.e.}, around 500 stocks in each trading period.
 			%With the objective of eliminating
 		
@@ -707,7 +712,7 @@ f(x,y)=\frac{\exp \left\{ -\frac 1{2(1-\rho ^2)}\left[ \left( \frac{x-\mu _x%
 	
 	
 \begin{frame}[label=frame4h]
-	\frametitle{Pairs Methodology: Copula}
+	\frametitle{Pairs Implementation: Copula}
 	
 	\setbeamercovered{transparent}
 	
@@ -750,7 +755,7 @@ f(x,y)=\frac{\exp \left\{ -\frac 1{2(1-\rho ^2)}\left[ \left( \frac{x-\mu _x%
 	\end{frame}
 
 \begin{frame}[label=frame4i]
-\frametitle{Methodology: Mixed Copula}
+\frametitle{Mixed Copula}
 
 \begin{eqnarray*}
 	\mathcal{C}_{\theta}^{CFG}\left(u_{1},u_{2}\right)=\pi_{1}\mathcal{C}_{\alpha}^{C}\left(u_{1},u_{2}\right)+\pi_{2}\mathcal{C}_{\beta}^{F}\left(u_{1},u_{2}\right)+\left(1-\pi_{1}-\pi_{2}\right)\mathcal{C}_{\delta}^{G}\left(u_{1},u_{2}\right),
@@ -827,13 +832,13 @@ where $\theta=\left(\alpha,\beta,\delta\right)'$ are the Clayton, Frank and Gumb
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[scale=0.34]{trading_opt.png}
+	\includegraphics[scale=0.33]{trading_opt.png}
 	\label{fig:trad_opt}
 \end{figure}
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[scale=0.34]{trading_opt2.png}
+	\includegraphics[scale=0.33]{trading_opt2.png}
 	\label{fig:trad_opt2}
 \end{figure}
 
@@ -892,18 +897,19 @@ where $\theta=\left(\alpha,\beta,\delta\right)'$ are the Clayton, Frank and Gumb
 		& &  \\
 		Average price deviation trigger for opening pairs & 0.0594 & 0.0665  \\
 		Total number of pairs opened & \cellcolor{corn} 352   & \cellcolor{corn} 348   \\
-		Average number of pairs traded per six-month period & 7.18 & 7.10    \\
+		Average number of pairs traded per 6-month & 7.18 & 7.10    \\
 		Average number of round-trip trades per pair & 1.44 & 1.42   \\
 		~~Standard Deviation & 1.0128 & 1.33   \\
 		Average time pairs are open in days & \cellcolor{corn} 50.70 & \cellcolor{corn} 37.70  \\
 		~~Standard Deviation & 39.24 & 38.93    \\
 		Median time pairs are open in days & \cellcolor{corn} 38.5  & \cellcolor{corn} 19          \\
 		& &  \\
+		& &  \\
 		& \multicolumn{4}{c}{\textit{Panel B: Top20}} \\
 		& & \\
 		Average price deviation trigger for opening pairs & 0.0681 & 0.0821    \\
 		Total number of pairs opened & \cellcolor{celadon} 1312  & \cellcolor{celadon} 749     \\
-		Average number of pairs traded per six-month period & 26.78 & 15.29   \\
+		Average number of pairs traded per 6-month & 26.78 & 15.29   \\
 		Average number of round-trip trades per pair & 1.34 & 0.76  \\
 		~Standard Deviation & 0.99 & 0.99    \\
 		Average time pairs are open in days & 51.65 & 23.60   \\
@@ -914,7 +920,7 @@ where $\theta=\left(\alpha,\beta,\delta\right)'$ are the Clayton, Frank and Gumb
 		& & \\
 		Average price deviation trigger for opening pairs & 0.0729 & 0.0893   \\
 		Total number of pairs opened & 2238  & 941   \\
-		Average number of pairs traded per six-month period & 45.68 & 19.20 \\
+		Average number of pairs traded per 6-month & 45.68 & 19.20 \\
 		Average number of round-trip trades per pair & 1.30 & 0.55   \\
 		~Standard Deviation & 1.02 & 0.84   \\
 		Average time pairs are open in days & 52.72 &  19.35   \\
@@ -1051,7 +1057,7 @@ where $\theta=\left(\alpha,\beta,\delta\right)'$ are the Clayton, Frank and Gumb
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[scale=0.48]{Figure3.eps}
+	\includegraphics[scale=0.46]{Figure3.eps}
 	\captionsetup{justification=raggedright,
 		singlelinecheck=false
 	}
@@ -1068,7 +1074,7 @@ where $\theta=\left(\alpha,\beta,\delta\right)'$ are the Clayton, Frank and Gumb
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[scale=0.52]{Figure5.eps}
+	\includegraphics[scale=0.47]{Figure5.eps}
 	\captionsetup{justification=raggedright,
 		singlelinecheck=false
 	}
@@ -1173,12 +1179,12 @@ where $\theta=\left(\alpha,\beta,\delta\right)'$ are the Clayton, Frank and Gumb
 
 
 \begin{frame}
-	\frametitle{Future Research}
+	\frametitle{Extensions}
 	
 \begin{itemize}
-	\item Varying Threshold
+%	\item Varying Threshold
 	
-	\vspace{0.3cm}
+%	\vspace{0.3cm}
 	
 	\item Copula-based arbitrage for triplets to increase information dependency information and measure relative pricing more comprehensively.
 	
@@ -1201,25 +1207,29 @@ where $\theta=\left(\alpha,\beta,\delta\right)'$ are the Clayton, Frank and Gumb
 \end{frame}
 
 \begin{frame}
-\frametitle{Future Research}
+\frametitle{Extensions}
 
 	\begin{figure}[htbp]
 	\centering
-	\includegraphics[scale=0.14]{fig3.png}
+%	\includegraphics[scale=0.14]{fig3.png}
+\includegraphics[scale=0.35]{man_machine2.png}
 	\label{fig:fig3}
 \end{figure}
 
 \begin{itemize}
-		\item Machine Learning and AI-based methodologies 
+		\item Machine Learning and AI-based solutions (Man + Machine and NOT Man vs Machine) 
 		%(e.g. learning automata)
-	\begin{itemize}
-		\item Explore non-linear approaches
-	\end{itemize}
+	%\begin{itemize}
+	%	\item Explore non-linear approaches
+	%\end{itemize}
 \vspace{0.3cm}
-	\item News Sentiment Factor
+	\item News Sentiment
 	\begin{itemize}
-		\item Contain relevant information about the economic activity
-		\item Can provide increased risk-adjusted returns
+%		\item Contain relevant information about the economic activity
+%		\item Can provide increased risk-adjusted returns
+       % \item Sentiment-based long/short strategies
+		\item Enhances a pairs-trading strategy using an abnormal news volume and sentiment overlay
+		\item Effect of negative news is bigger than positive news and can lead to bigger sell-offs (asymmetry)
 	\end{itemize}
 	
 
@@ -1231,7 +1241,7 @@ where $\theta=\left(\alpha,\beta,\delta\right)'$ are the Clayton, Frank and Gumb
 \begin{frame}
 
 	\centering
-	\Large{Thanks! Any questions?}
+	\Large{Thank you! Questions?}
 	
 \end{frame}
 
