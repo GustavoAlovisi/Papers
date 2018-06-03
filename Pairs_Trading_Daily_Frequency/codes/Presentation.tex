@@ -288,6 +288,9 @@ f(x,y)=\frac{\exp \left\{ -\frac 1{2(1-\rho ^2)}\left[ \left( \frac{x-\mu _x%
 			
 			\item Linear correlation ($\rho$) fully describes the dependence between securities if the series have joint normal distribution. 
 			
+			%Since the copula of a distribution does not depend on purely marginal parameters such as the expected value and the standard deviation, for elliptical random variable the copula is fully determined by the correlations.
+			% As a consequence, since the measures of concordance are defined in terms of the copula of a distribution, the measures of concordance between the entries of an elliptical random variable X are fully determined by the correlation matrix.
+			
 			\pause
 			
 			\vspace{0.3cm}
@@ -371,13 +374,15 @@ f(x,y)=\frac{\exp \left\{ -\frac 1{2(1-\rho ^2)}\left[ \left( \frac{x-\mu _x%
 	\vspace{0.3cm}
 	\pause
 	
-	\begin{itemize}
-		\item Estimate the multivariate distribution in two parts: (i) finding the marginal distributions; (ii) finding the dependency between the filtered data from (i). 
-	\end{itemize}
+	\begin{exampleblock}{}
+		\centering
+	multivariate = "1-dim" (marginals) + "joint" (copula)	
+	\end{exampleblock}
+	
+%	\begin{itemize}
+%		\item Estimate the distribution in two parts: (i) finding the marginal distributions; (ii) finding the "joint" component between the filtered data from (i). 
+%	\end{itemize}
 
-	
-	%From a modelling perspective, Sklar's Theorem allow us to
-	
 \end{frame}
 
 \begin{frame}[label=frame4b]
@@ -388,13 +393,23 @@ f(x,y)=\frac{\exp \left\{ -\frac 1{2(1-\rho ^2)}\left[ \left( \frac{x-\mu _x%
 	\begin{itemize}
 	\justifying
 		
-		\item Any multivariate joint distribution can be written in terms of their univariate marginal distribution function and the dependence structure (represented in $C$) between the variables.
+		\item Any multivariate distribution can be factored into its purely univariate features (marginal distributions) and its purely "joint" component (copula).
 		%Sklar's theorem states that
+		%multivariate joint 
 		
 		\pause
 		\vspace{0.3cm}
 		
-		\item Copulas accommodate various forms of dependence through suitable choice of the copula ``correlation matrix'' since they conveniently se \linebreak parate marginals from dependence component.
+		\item The copula represents the true interdependence structure of a random variable.
+		
+		\end{itemize}
+		
+		\pause
+		\vspace{0.3cm}
+			
+		%In practical terms, the copula
+		
+%		\item Copulas accommodate various forms of dependence through suitable choice of the copula ``correlation matrix'' since they conveniently separate marginals from dependence component.
 		
 		\pause
 		\vspace{0.3cm}
@@ -428,8 +443,15 @@ f(x,y)=\frac{\exp \left\{ -\frac 1{2(1-\rho ^2)}\left[ \left( \frac{x-\mu _x%
 				\hline
 			\end{tabular}
 		\end{table}
+	
+			\begin{exampleblock}
+		\centering
+		In practical terms, the copula provides an effective tool to monitor and hedge the risks in the markets.
+	\end{exampleblock}
+
+%In defining the concordance summary statistics we relied on copulas, because copulas capture the core interdependence among variables: indeed the copula of one random variable with any of a set of co-monotonic variables is the same, although the co-monotonic variables might have very different
+%marginal distributions.
 		
-	\end{itemize}
 \end{frame}
 
 	\section{Data}	
@@ -558,7 +580,9 @@ f(x,y)=\frac{\exp \left\{ -\frac 1{2(1-\rho ^2)}\left[ \left( \frac{x-\mu _x%
 	
 	\vspace{0.3cm}
 	
-	\item Trades that do not converge can result in a loss if they are still open at the end of the trading period when they are automatically closed. 
+	\item Trades that do not converge can result in a loss if they are still open at the end of the trading period.
+	
+	 %when they are automatically closed. 
 	
 	\pause
 	
@@ -719,8 +743,10 @@ f(x,y)=\frac{\exp \left\{ -\frac 1{2(1-\rho ^2)}\left[ \left( \frac{x-\mu _x%
 	\begin{enumerate}[(1)]
 		\justifying
 		
-		\item  Calculate daily returns for each stock during the formation period and estimate the marginal distributions of returns separately.
+		\item  Estimate the marginal distributions of returns.
 		\vspace{0.3cm}
+		
+		%Calculate daily returns for each stock during the formation period and, separately
 		
 		\begin{itemize}	
 			\item ARMA(p,q)-GARCH(1,1).
@@ -816,7 +842,9 @@ where $\theta=\left(\alpha,\beta,\delta\right)'$ are the Clayton, Frank and Gumb
 
 	\pause
 		\begin{itemize}
-	\item  All positions are closed if $M_{1,t}$ reaches $\Delta_{3}$ or $M_{2,t}$ reaches $\Delta_{4}$, where $\Delta_{1},\Delta_{2},\Delta_{3}$ and $\Delta_{4}$ are predetermined thresholds or are automatically closed out on the last day of the trading period if they do not reach the thresholds. 
+	\item  All positions are closed if $M_{1,t}$ reaches $\Delta_{3}$ or $M_{2,t}$ reaches $\Delta_{4}$, where $\Delta_{1},\Delta_{2},\Delta_{3}$ and $\Delta_{4}$ are predetermined thresholds or are automatically closed out on the last day of the trading period. 
+	
+	%if they do not reach the thresholds. 
 	
 	\vspace{0.3cm}
 	\pause

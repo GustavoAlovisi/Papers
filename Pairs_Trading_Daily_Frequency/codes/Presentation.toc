@@ -3,12 +3,12 @@
 \beamer@sectionintoc {3}{What is Pairs Trading?}{8}{0}{3}
 \beamer@sectionintoc {4}{Distance}{13}{0}{4}
 \beamer@sectionintoc {5}{Copula}{21}{0}{5}
-\beamer@sectionintoc {6}{Data}{27}{0}{6}
-\beamer@sectionintoc {7}{Models}{28}{0}{7}
-\beamer@subsectionintoc {7}{1}{Distance}{28}{0}{7}
-\beamer@sectionintoc {8}{Methodology}{34}{0}{8}
-\beamer@sectionintoc {9}{Methodology}{35}{0}{9}
-\beamer@sectionintoc {10}{Methodology}{36}{0}{10}
-\beamer@sectionintoc {11}{Empirical Results}{55}{0}{11}
-\beamer@sectionintoc {12}{Fama-French}{63}{0}{12}
-\beamer@sectionintoc {13}{Conclusions}{66}{0}{13}
+\beamer@sectionintoc {6}{Data}{28}{0}{6}
+\beamer@sectionintoc {7}{Models}{29}{0}{7}
+\beamer@subsectionintoc {7}{1}{Distance}{29}{0}{7}
+\beamer@sectionintoc {8}{Methodology}{35}{0}{8}
+\beamer@sectionintoc {9}{Methodology}{36}{0}{9}
+\beamer@sectionintoc {10}{Methodology}{37}{0}{10}
+\beamer@sectionintoc {11}{Empirical Results}{56}{0}{11}
+\beamer@sectionintoc {12}{Fama-French}{64}{0}{12}
+\beamer@sectionintoc {13}{Conclusions}{67}{0}{13}
