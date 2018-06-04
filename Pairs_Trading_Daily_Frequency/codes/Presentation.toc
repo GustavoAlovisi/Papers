@@ -9,6 +9,6 @@
 \beamer@sectionintoc {8}{Methodology}{35}{0}{8}
 \beamer@sectionintoc {9}{Methodology}{36}{0}{9}
 \beamer@sectionintoc {10}{Methodology}{37}{0}{10}
-\beamer@sectionintoc {11}{Empirical Results}{56}{0}{11}
-\beamer@sectionintoc {12}{Fama-French}{64}{0}{12}
-\beamer@sectionintoc {13}{Conclusions}{67}{0}{13}
+\beamer@sectionintoc {11}{Empirical Results}{57}{0}{11}
+\beamer@sectionintoc {12}{Fama-French}{65}{0}{12}
+\beamer@sectionintoc {13}{Conclusions}{68}{0}{13}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.8.22)  3 JUN 2018 17:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.8.22)  4 JUN 2018 16:22
 entering extended mode
 **./Presentation.tex
 (Presentation.tex
@@ -1594,93 +1594,95 @@ Overfull \vbox (29.222pt too high) detected at line 643
 
 ] [48
 
+] [49
+
 ]
-<taildep.png, id=1613, 663.22781pt x 329.73187pt>
+<taildep.png, id=1645, 663.22781pt x 329.73187pt>
 File: taildep.png Graphic file (type png)
  <use taildep.png>
-Package pdftex.def Info: taildep.png used on input line 809.
+Package pdftex.def Info: taildep.png used on input line 818.
 (pdftex.def)             Requested size: 331.6131pt x 164.86552pt.
 pdfTeX warning (ext4): destination with the same identifier (name{fig:fig1}) ha
 s been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.809 \end{frame}
-                  [49
+l.818 \end{frame}
+                  [50
 
  <./taildep.png>]
 
 LaTeX Warning: The counter will not be printed.
-             The label is: (3) on input line 856.
+             The label is: (3) on input line 865.
 
 
 LaTeX Warning: The counter will not be printed.
-             The label is: (4) on input line 856.
+             The label is: (4) on input line 865.
 
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 856.
-[50
-
-]
-
-LaTeX Warning: The counter will not be printed.
-             The label is: (3) on input line 856.
-
-
-LaTeX Warning: The counter will not be printed.
-             The label is: (4) on input line 856.
-
+(Font)              <8> on input line 865.
 [51
 
 ]
 
 LaTeX Warning: The counter will not be printed.
-             The label is: (3) on input line 856.
+             The label is: (3) on input line 865.
 
 
 LaTeX Warning: The counter will not be printed.
-             The label is: (4) on input line 856.
+             The label is: (4) on input line 865.
 
 [52
 
 ]
 
 LaTeX Warning: The counter will not be printed.
-             The label is: (3) on input line 856.
+             The label is: (3) on input line 865.
 
 
 LaTeX Warning: The counter will not be printed.
-             The label is: (4) on input line 856.
+             The label is: (4) on input line 865.
 
 [53
 
 ]
 
 LaTeX Warning: The counter will not be printed.
-             The label is: (3) on input line 856.
+             The label is: (3) on input line 865.
 
 
 LaTeX Warning: The counter will not be printed.
-             The label is: (4) on input line 856.
+             The label is: (4) on input line 865.
 
 [54
 
-] <trading_opt.png, id=1796, 648.17157pt x 302.63063pt>
+]
+
+LaTeX Warning: The counter will not be printed.
+             The label is: (3) on input line 865.
+
+
+LaTeX Warning: The counter will not be printed.
+             The label is: (4) on input line 865.
+
+[55
+
+] <trading_opt.png, id=1827, 648.17157pt x 302.63063pt>
 File: trading_opt.png Graphic file (type png)
 
 <use trading_opt.png>
-Package pdftex.def Info: trading_opt.png used on input line 873.
+Package pdftex.def Info: trading_opt.png used on input line 882.
 (pdftex.def)             Requested size: 213.89728pt x 99.86841pt.
- <trading_opt2.png, id=1797, 435.87843pt x 347.79938pt>
+ <trading_opt2.png, id=1828, 435.87843pt x 347.79938pt>
 File: trading_opt2.png Graphic file (type png)
 
 <use trading_opt2.png>
-Package pdftex.def Info: trading_opt2.png used on input line 873.
+Package pdftex.def Info: trading_opt2.png used on input line 882.
 (pdftex.def)             Requested size: 143.84032pt x 114.77414pt.
 
-Overfull \vbox (8.23158pt too high) detected at line 873
+Overfull \vbox (8.23158pt too high) detected at line 882
  []
 
-[55
+[56
 
  <./trading_opt.png> <./trading_opt2.png>]
 Package epstopdf Info: Source file: <Figure1.eps>
@@ -1691,21 +1693,21 @@ Package epstopdf Info: Source file: <Figure1.eps>
 (epstopdf)                    size: 6254 bytes
 (epstopdf)             Command: <epstopdf --outfile=Figure1-eps-converted-to.pd
 f Figure1.eps>
-(epstopdf)             \includegraphics on input line 893.
+(epstopdf)             \includegraphics on input line 902.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figure1-eps-converted-to.pdf, id=1830, 1027.84pt x 490.83376pt>
+<Figure1-eps-converted-to.pdf, id=1863, 1027.84pt x 490.83376pt>
 File: Figure1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figure1-eps-converted-to.pdf>
-Package pdftex.def Info: Figure1-eps-converted-to.pdf used on input line 893.
+Package pdftex.def Info: Figure1-eps-converted-to.pdf used on input line 902.
 (pdftex.def)             Requested size: 341.431pt x 142.26324pt.
 pdfTeX warning (ext4): destination with the same identifier (name{fig:fig1}) ha
 s been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.893 \end{frame}
-                  [56
+l.902 \end{frame}
+                  [57
 
  <./Figure1-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <Figure2.eps>
@@ -1716,43 +1718,43 @@ Package epstopdf Info: Source file: <Figure2.eps>
 (epstopdf)                    size: 6018 bytes
 (epstopdf)             Command: <epstopdf --outfile=Figure2-eps-converted-to.pd
 f Figure2.eps>
-(epstopdf)             \includegraphics on input line 909.
+(epstopdf)             \includegraphics on input line 918.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figure2-eps-converted-to.pdf, id=1868, 1027.84pt x 490.83376pt>
+<Figure2-eps-converted-to.pdf, id=1899, 1027.84pt x 490.83376pt>
 File: Figure2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figure2-eps-converted-to.pdf>
-Package pdftex.def Info: Figure2-eps-converted-to.pdf used on input line 909.
+Package pdftex.def Info: Figure2-eps-converted-to.pdf used on input line 918.
 (pdftex.def)             Requested size: 341.431pt x 142.26324pt.
 pdfTeX warning (ext4): destination with the same identifier (name{fig:fig2}) ha
 s been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.909 \end{frame}
-                  [57
+l.918 \end{frame}
+                  [58
 
  <./Figure2-eps-converted-to.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 965--965
+Underfull \hbox (badness 10000) in paragraph at lines 974--974
 []|\T1/lmr/m/n/6 Mixed
  []
 
 
-Overfull \vbox (116.59558pt too high) detected at line 965
- []
-
-[58
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 998--998
-[]|\T1/lmr/m/n/6 Mixed
+Overfull \vbox (116.59558pt too high) detected at line 974
  []
 
 [59
 
-] [60
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1007--1007
+[]|\T1/lmr/m/n/6 Mixed
+ []
+
+[60
 
 ] [61
+
+] [62
 
 ]
 Package epstopdf Info: Source file: <Figure3.eps>
@@ -1763,19 +1765,19 @@ Package epstopdf Info: Source file: <Figure3.eps>
 (epstopdf)                    size: 127610 bytes
 (epstopdf)             Command: <epstopdf --outfile=Figure3-eps-converted-to.pd
 f Figure3.eps>
-(epstopdf)             \includegraphics on input line 1097.
+(epstopdf)             \includegraphics on input line 1106.
 Package epstopdf Info: Output file is already uptodate.
- <Figure3-eps-converted-to.pdf, id=2027, 421.575pt x 483.8075pt>
+ <Figure3-eps-converted-to.pdf, id=2057, 421.575pt x 483.8075pt>
 File: Figure3-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figure3-eps-converted-to.pdf>
-Package pdftex.def Info: Figure3-eps-converted-to.pdf used on input line 1097.
+Package pdftex.def Info: Figure3-eps-converted-to.pdf used on input line 1106.
 (pdftex.def)             Requested size: 193.92685pt x 222.55415pt.
 
-Overfull \vbox (29.94318pt too high) detected at line 1097
+Overfull \vbox (29.94318pt too high) detected at line 1106
  []
 
-[62
+[63
 
  <./Figure3-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <Figure5.eps>
@@ -1786,29 +1788,27 @@ Package epstopdf Info: Source file: <Figure5.eps>
 (epstopdf)                    size: 75918 bytes
 (epstopdf)             Command: <epstopdf --outfile=Figure5-eps-converted-to.pd
 f Figure5.eps>
-(epstopdf)             \includegraphics on input line 1114.
+(epstopdf)             \includegraphics on input line 1123.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figure5-eps-converted-to.pdf, id=2062, 505.89pt x 505.89pt>
+<Figure5-eps-converted-to.pdf, id=2092, 505.89pt x 505.89pt>
 File: Figure5-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figure5-eps-converted-to.pdf>
-Package pdftex.def Info: Figure5-eps-converted-to.pdf used on input line 1114.
+Package pdftex.def Info: Figure5-eps-converted-to.pdf used on input line 1123.
 (pdftex.def)             Requested size: 237.76833pt x 237.76833pt.
 
-Overfull \vbox (65.65735pt too high) detected at line 1114
+Overfull \vbox (65.65735pt too high) detected at line 1123
  []
 
-[63
+[64
 
  <./Figure5-eps-converted-to.pdf>]pdfTeX warning (ext4): destination with the s
 ame identifier (name{tab:table103}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1174 \end{frame}
-                   [64
-
-] [65
+l.1183 \end{frame}
+                   [65
 
 ] [66
 
@@ -1818,42 +1818,42 @@ l.1174 \end{frame}
 
 ] [69
 
+] [70
+
 ]
-<fig4.png, id=2283, 219.82124pt x 106.14656pt>
+<fig4.png, id=2314, 219.82124pt x 106.14656pt>
 File: fig4.png Graphic file (type png)
  <use fig4.png>
-Package pdftex.def Info: fig4.png used on input line 1235.
+Package pdftex.def Info: fig4.png used on input line 1244.
 (pdftex.def)             Requested size: 131.89375pt x 63.68842pt.
- [70
+ [71
 
- <./fig4.png>] <man_machine2.png, id=2316, 804.75656pt x 298.11375pt>
+ <./fig4.png>] <man_machine2.png, id=2346, 804.75656pt x 298.11375pt>
 File: man_machine2.png Graphic file (type png)
  <use man_machine2.png>
-Package pdftex.def Info: man_machine2.png used on input line 1267.
+Package pdftex.def Info: man_machine2.png used on input line 1276.
 (pdftex.def)             Requested size: 281.669pt x 104.34137pt.
 pdfTeX warning (ext4): destination with the same identifier (name{fig:fig3}) ha
 s been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1267 \end{frame}
-                   [71
+l.1276 \end{frame}
+                   [72
 
- <./man_machine2.png>] [72
+ <./man_machine2.png>] [73
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\translate ' on input line 1277.
+(hyperref)                removing `\translate ' on input line 1286.
 
 \c@finalframe=\count199
 pdfTeX warning (ext4): destination with the same identifier (name{tab:table106}
 ) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1325 \end{frame}
-                   [73
-
-] [74
+l.1334 \end{frame}
+                   [74
 
 ] [75
 
@@ -1862,6 +1862,8 @@ l.1325 \end{frame}
 ] [77
 
 ] [78
+
+] [79
 
 ]
 \tf@nav=\write6
@@ -1873,11 +1875,11 @@ l.1325 \end{frame}
 \tf@snm=\write8
 \openout8 = `Presentation.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1572.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1572.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1581.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1581.
  (Presentation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1572.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1572.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1581.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1581.
 
 Package rerunfilecheck Info: File `Presentation.out' has not changed.
 (rerunfilecheck)             Checksum: 139D3573055205FE1E8E52320CAF7AA1;733.
@@ -1891,10 +1893,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 33821 strings out of 493323
- 797365 string characters out of 3139060
+ 33825 strings out of 493323
+ 797406 string characters out of 3139060
  1332249 words of memory out of 3000000
- 36387 multiletter control sequences out of 15000+200000
+ 36388 multiletter control sequences out of 15000+200000
  108497 words of font info for 71 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,17n,98p,834b,2054s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1919,9 +1921,9 @@ fonts/type1/public/lm/lmri8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
 /lm/lmri9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy5.pfb><C:/
 Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy6.pfb><C:/Program Files/MiKT
 eX 2.9/fonts/type1/public/lm/lmsy9.pfb>
-Output written on Presentation.pdf (78 pages, 2401664 bytes).
+Output written on Presentation.pdf (79 pages, 2412628 bytes).
 PDF statistics:
- 2680 PDF objects out of 2984 (max. 8388607)
- 253 named destinations out of 1000 (max. 500000)
+ 2712 PDF objects out of 2984 (max. 8388607)
+ 256 named destinations out of 1000 (max. 500000)
  318 words of extra memory for PDF output out of 10000 (max. 10000000)
 
