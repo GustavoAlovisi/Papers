@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.8.22)  17 JUN 2018 22:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.8.22)  18 JUN 2018 16:12
 entering extended mode
 **./pair_ebfin2018.tex
 (pair_ebfin2018.tex
@@ -1319,13 +1319,13 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 ] [4
 
 ]
-<fig1.png, id=204, 166.37157pt x 63.98906pt>
+<fig1.png, id=196, 166.37157pt x 63.98906pt>
 File: fig1.png Graphic file (type png)
  <use fig1.png>
 Package pdftex.def Info: fig1.png used on input line 141.
 (pdftex.def)             Requested size: 83.18556pt x 31.99445pt.
 
-<fig2.png, id=205, 700.86844pt x 440.39531pt>
+<fig2.png, id=197, 700.86844pt x 440.39531pt>
 File: fig2.png Graphic file (type png)
  <use fig2.png>
 Package pdftex.def Info: fig2.png used on input line 141.
@@ -1400,9 +1400,89 @@ has been already used, duplicate ignored
 l.315 	\end{frame}
                    [11
 
-] [12
+]
 
-] [13
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.368 \end{frame}
+                 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.368 \end{frame}
+                 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.368 \end{frame}
+                 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+<taildep_gaussian.png, id=420, 194.22563pt x 180.675pt>
+File: taildep_gaussian.png Graphic file (type png)
+
+<use taildep_gaussian.png>
+Package pdftex.def Info: taildep_gaussian.png used on input line 368.
+(pdftex.def)             Requested size: 135.957pt x 126.47162pt.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.368 \end{frame}
+                 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.368 \end{frame}
+                 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.368 \end{frame}
+                 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[12
+
+ <./taildep_gaussian.png>] [13
 
 ] [14
 
@@ -1444,7 +1524,7 @@ l.315 	\end{frame}
 ] [32
 
 ]
-<taildep.png, id=1095, 663.22781pt x 329.73187pt>
+<taildep.png, id=1088, 663.22781pt x 329.73187pt>
 File: taildep.png Graphic file (type png)
  <use taildep.png>
 Package pdftex.def Info: taildep.png used on input line 754.
@@ -1470,7 +1550,7 @@ f Figure1.eps>
 (epstopdf)             \includegraphics on input line 797.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figure1-eps-converted-to.pdf, id=1157, 1027.84pt x 490.83376pt>
+<Figure1-eps-converted-to.pdf, id=1150, 1027.84pt x 490.83376pt>
 File: Figure1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figure1-eps-converted-to.pdf>
@@ -1495,7 +1575,7 @@ f Figure2.eps>
 (epstopdf)             \includegraphics on input line 812.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figure2-eps-converted-to.pdf, id=1193, 1027.84pt x 490.83376pt>
+<Figure2-eps-converted-to.pdf, id=1186, 1027.84pt x 490.83376pt>
 File: Figure2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figure2-eps-converted-to.pdf>
@@ -1541,7 +1621,7 @@ Package epstopdf Info: Source file: <Figure3.eps>
 f Figure3.eps>
 (epstopdf)             \includegraphics on input line 999.
 Package epstopdf Info: Output file is already uptodate.
- <Figure3-eps-converted-to.pdf, id=1352, 421.575pt x 483.8075pt>
+ <Figure3-eps-converted-to.pdf, id=1345, 421.575pt x 483.8075pt>
 File: Figure3-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figure3-eps-converted-to.pdf>
@@ -1565,7 +1645,7 @@ f Figure5.eps>
 (epstopdf)             \includegraphics on input line 1016.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figure5-eps-converted-to.pdf, id=1388, 505.89pt x 505.89pt>
+<Figure5-eps-converted-to.pdf, id=1381, 505.89pt x 505.89pt>
 File: Figure5-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figure5-eps-converted-to.pdf>
@@ -1593,14 +1673,14 @@ l.1074 \end{frame}
 ] [47
 
 ]
-<fig4.png, id=1582, 219.82124pt x 106.14656pt>
+<fig4.png, id=1576, 219.82124pt x 106.14656pt>
 File: fig4.png Graphic file (type png)
  <use fig4.png>
 Package pdftex.def Info: fig4.png used on input line 1134.
 (pdftex.def)             Requested size: 131.89375pt x 63.68842pt.
  [48
 
- <./fig4.png>] <man_machine2.png, id=1615, 804.75656pt x 298.11375pt>
+ <./fig4.png>] <man_machine2.png, id=1609, 804.75656pt x 298.11375pt>
 File: man_machine2.png Graphic file (type png)
  <use man_machine2.png>
 Package pdftex.def Info: man_machine2.png used on input line 1163.
@@ -1649,15 +1729,9 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 1468.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1468.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1468.
 
+Package rerunfilecheck Info: File `pair_ebfin2018.out' has not changed.
+(rerunfilecheck)             Checksum: 702A69E3C570868A0ED12D70F53742B0;444.
 
-
-Package rerunfilecheck Warning: File `pair_ebfin2018.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `pair_ebfin2018.out':
-(rerunfilecheck)             Before: 113167AC93C1D0492B7174C43024B56D;544
-(rerunfilecheck)             After:  702A69E3C570868A0ED12D70F53742B0;444.
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 3.35pt have occurred.
@@ -1667,13 +1741,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 33216 strings out of 493323
- 782320 string characters out of 3139060
- 1017771 words of memory out of 3000000
- 35842 multiletter control sequences out of 15000+200000
+ 33691 strings out of 493323
+ 795688 string characters out of 3139060
+ 1333678 words of memory out of 3000000
+ 36316 multiletter control sequences out of 15000+200000
  115458 words of font info for 77 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,17n,98p,836b,780s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 64i,17n,98p,836b,2054s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Fil
 es/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/MiKTeX 2.9/fonts/e
 nc/dvips/lm/lm-mathit.enc} <C:\Users\fsabino\AppData\Local\MiKTeX\2.9\fonts\pk\
@@ -1697,9 +1771,9 @@ Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy5.pfb><C:/Program Files/MiKT
 eX 2.9/fonts/type1/public/lm/lmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
 /public/lm/lmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy8.p
 fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy9.pfb>
-Output written on pair_ebfin2018.pdf (56 pages, 1971649 bytes).
+Output written on pair_ebfin2018.pdf (56 pages, 2006497 bytes).
 PDF statistics:
- 1973 PDF objects out of 2073 (max. 8388607)
+ 1968 PDF objects out of 2073 (max. 8388607)
  191 named destinations out of 1000 (max. 500000)
- 272 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 261 words of extra memory for PDF output out of 10000 (max. 10000000)
 

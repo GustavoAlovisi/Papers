@@ -350,20 +350,20 @@ f(x,y)=\frac{\exp \left\{ -\frac 1{2(1-\rho ^2)}\left[ \left( \frac{x-\mu _x%
 \def\centerx{2}
 \def\centery{-1}
 
-%	\begin{tikzpicture}[thick,scale=0.8, every node/.style={scale=0.8}]
-%		\begin{axis}
-%			\addplot3[surf,domain=-2:6,domain y=-5:3] 
-%			{exp(-( (x-\centerx)^2 + (y-\centery)^2)/3 )};
-%			\node[circle,inner sep=1pt,fill=blue,pin=90:$\mu$] 
-%			at (axis cs:\centerx,\centery,1) {};
-%			\end{axis}
-%			
-%		\hspace{6cm}
-%			\begin{figure}[!h]
-%				\includegraphics[scale=0.7]{taildep_gaussian.png}
-%			\end{figure}
-%			
-%	\end{tikzpicture}
+	\begin{tikzpicture}[thick,scale=0.8, every node/.style={scale=0.8}]
+		\begin{axis}
+			\addplot3[surf,domain=-2:6,domain y=-5:3] 
+			{exp(-( (x-\centerx)^2 + (y-\centery)^2)/3 )};
+			\node[circle,inner sep=1pt,fill=blue,pin=90:$\mu$] 
+			at (axis cs:\centerx,\centery,1) {};
+			\end{axis}
+			
+		\hspace{6cm}
+			\begin{figure}[!h]
+				\includegraphics[scale=0.7]{taildep_gaussian.png}
+			\end{figure}
+			
+	\end{tikzpicture}
 %	
 \end{frame}
 	
