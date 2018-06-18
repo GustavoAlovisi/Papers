@@ -1,0 +1,9 @@
+\beamer@sectionintoc {5}{Distance}{9}{0}{1}
+\beamer@sectionintoc {6}{Models}{9}{0}{2}
+\beamer@subsectionintoc {6}{1}{Distance}{9}{0}{2}
+\beamer@sectionintoc {7}{Models}{10}{0}{3}
+\beamer@subsectionintoc {7}{1}{Distance}{10}{0}{3}
+\beamer@sectionintoc {8}{Models}{11}{0}{4}
+\beamer@subsectionintoc {8}{1}{Distance}{11}{0}{4}
+\beamer@sectionintoc {9}{Copula}{17}{0}{5}
+\beamer@sectionintoc {11}{Trading Performance}{35}{0}{6}

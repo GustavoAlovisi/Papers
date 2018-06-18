@@ -85,9 +85,59 @@
 
 
 \begin{document}
+	
 	\justifying
 	
 	\frame{\titlepage}
+	
+	\begin{frame}[label=frame1]
+	\frametitle{Pairs Trading is one type of Statistical “Arbitrage”}
+	
+	\setbeamercovered{transparent}
+	
+	\begin{itemize}
+		\justifying
+		
+		\item Identify a pair of stocks that move in tandem 
+		
+		\item When they diverge 
+		
+		\begin{itemize}
+			\setlength\itemsep{1em}
+			
+			\item short the higher one 
+			
+			\pause
+			
+			\item buy the lower one
+
+		\end{itemize}
+	
+	\item Reverse your positions when the two prices converge $\Rightarrow$ Profit from the reversal in trend
+		\end{itemize}
+		
+
+\end{frame}
+
+		\section{Two-Dimensional Pairs Trading}	
+
+\begin{frame}
+\frametitle{Two-Dimensional Pairs Trading}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[scale=0.5]{fig1.png}
+	\label{fig:fig1}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[scale=0.38]{fig2.png}
+	\label{fig:fig2}
+\end{figure}
+
+\end{frame}
+
 	
 		\section{History}
 	
@@ -99,58 +149,75 @@
 	\begin{itemize}
 		\justifying
 				
-		\item Gerry Bamberger and Nunzio Tartaglia's quantitative group at Morgan Stanley in the early 1980s.
+		\item Developed in the 1980’s by a group of Quants at Morgan Stanley, who reportedly made over $50$ million profit for the firm in 1987
+		\begin{itemize}
+			\setlength\itemsep{0.5em}
+		\item
+		\end{itemize}
+		\item Hedge Funds (Long-short)
 			\begin{itemize}
 				\setlength\itemsep{0.5em}
 %				\item Morgan Stanley's black box strategy earned the firm a lot of money, and of course, bolster its reputation on Wall Street;
 				\pause
-				\item David Shaw founded one of the most successfull statistical arbitrage hedge funds to this day (D. E. Shaw \& Co).
+				\item D. E. Shaw
 				
-				\pause
-				\item Foundation of statistical arbitrage and consequently, algorithmic trading.
+%				\pause
+%				\item Foundation of statistical arbitrage and consequently, algorithmic trading.
 			\end{itemize}
 		
-		\vspace{0.3cm}
+%		\vspace{0.3cm}
+%		
+%		\pause
+%		\item Pairs Trading is a contrarian strategy designed to generate abnormal profits from the mean-reverting behavior between a pair of stocks. 
+%		\pause
+%			\begin{itemize} 
+%				\item It is well-planned assault on the Efficient Market Hypothesis.
+%			\end{itemize}
 		
-		\pause
-		\item Pairs Trading is a contrarian strategy designed to generate abnormal profits from the mean-reverting behavior between a pair of stocks. 
-		\pause
-			\begin{itemize} 
-				\item It is well-planned assault on the Efficient Market Hypothesis.
-			\end{itemize}
-		
-			\begin{figure}[htbp]
-				\centering
-				\includegraphics[scale=0.5]{algo_trading.png}
-			\end{figure}
+%			\begin{figure}[htbp]
+%				\centering
+%				\includegraphics[scale=0.5]{algo_trading.png}
+%			\end{figure}
 		
 	
 	\end{itemize}	
 \end{frame}
-	
-		\section{Two-Dimensional Pairs Trading}	
 
-	\begin{frame}
-		\frametitle{Two-Dimensional Pairs Trading}
-		
-		\begin{figure}[htbp]
-			\centering
-			\includegraphics[scale=0.5]{fig1.png}
-			\label{fig:fig1}
-		\end{figure}
-		
-		\begin{figure}[htbp]
-			\centering
-			\includegraphics[scale=0.38]{fig2.png}
-			\label{fig:fig2}
-		\end{figure}
-		
-	\end{frame}
+\section{What is Pairs Trading?}
+
+\begin{frame}[label=frame1]
+\frametitle{Economic Rationale}
+
+
+\begin{itemize}
+	\justifying
 	
-	\section{What is Pairs Trading?}
+	\setbeamercovered{transparent}
+	
+	\item Tartaglia:
+	
+	\pause
+	
+	\vspace{0.1cm}
+	
+	\begin{itemize}
+		\setlength\itemsep{1em}
+		\item "Human beings don't like to trade against human nature, which wants to buy stocks after they go up, not down``
+		
+	\end{itemize}
+	
+		\item Imperfect Markets? 
+	
+	\end{itemize}
+	
+\end{itemize}
+\end{frame}
+	
+
+	\section{Relative Pricing}
 	
 	\begin{frame}[label=frame1]
-		\frametitle{What is Pairs Trading?}
+		\frametitle{Relative Pricing}
 		
 			
 		\begin{itemize}
@@ -158,34 +225,34 @@
 			
 			\setbeamercovered{transparent}
 			
-			\item Pairs Trading is statistical arbitrage that involves the simultaneous long and short positions of two relatively mispriced stocks which have strong historical co-movements.
+			\item Approximate APT Models
 			
-			\pause
-			
-			\vspace{0.1cm}
-			
+		
 			\begin{itemize}
 				\setlength\itemsep{1em}
-			\item Market-neutral strategy.
+			\item Long-short "arbitrage in expectations"
+%			\item Market-neutral strategy.
 			\pause
 			\item Self-financing. 
 			\pause
-			\item Exploit the mean reverting behaviour of co-integrated pairs.
+			\item Eliminate relative mispricing
 %This means that the investors do not need to invest their own money.
 			
 		\end{itemize}
+	
+	\item Mechanism: risk-matched securities/portfolios
 			
 %			\item The idea is to exploit the mean reverting behaviour of co-integrated pairs. 
 %			\begin{itemize}
 %				\item If there is a spread between the prices and the further it deviates from its long-term mean value, the greater the probability of a reversal.
 %			\end{itemize}
 			
-			\vspace{0.3cm}
-			
-			\pause 
-			\item However, pairs trading strategy is by no means risk free. 
-				\begin{itemize}
-					\item Trend rather than mean-reverting.
+%			\vspace{0.3cm}
+%			
+%			\pause 
+%			\item However, pairs trading strategy is by no means risk free. 
+%				\begin{itemize}
+%					\item Trend rather than mean-reverting.
 %					The strategy could perform poorly on stock pairs that pick up a trend rather than mean-reverting.
 				\end{itemize}
 			
@@ -202,19 +269,19 @@
 \begin{itemize}
 	\justifying
 			
-			\item The most popular strategy is known as distance method (see \textcolor{blue}{Gatev \emph{et al}}., \textcolor{blue}{2006}). 
+			\item Distance method (\textcolor{blue}{Gatev \emph{et al}}., \textcolor{blue}{2006}). 
 			
 		   \begin{itemize}
 		   	\setlength\itemsep{1em}
 			
-			\item It uses the distance between normalized prices to capture the degree of mispricing stocks. 
+			\item Distance between normalized prices $\Rightarrow$ Capture the degree of mispricing stocks. 
 			
 			\pause
 		
-			\item According to \textcolor{blue}{Xie \emph{et al}}. \textcolor{blue}{(2014)} the distance method has a multivariate normal nature.
+			\item  \textcolor{blue}{Xie \emph{et al}}. \textcolor{blue}{(2014)}: "distance method has a multivariate normal nature..."
 %			 since it assumes a symmetric distribution of the spread between normalized prices of the stocks within a pair and it uses a single distance measure, which can be seen as an
-				\begin{itemize} 
-			 	\item Alternative measurement of the linear association.
+%				\begin{itemize} 
+%			 	\item Alternative measurement of the linear association.
 			 	%, to describe the relationship between two stocks.
 			 	% asymmetric conditional variance, nonlinear temporal dependence
 				\end{itemize}
@@ -297,8 +364,8 @@ f(x,y)=\frac{\exp \left\{ -\frac 1{2(1-\rho ^2)}\left[ \left( \frac{x-\mu _x%
 			
 			\item  Tail dependence
 				\begin{itemize}
-					\item Heavy tails.
-					\item Possibly Asymmetric.
+					\item Heavy tails
+					\item Possibly Asymmetric
 				\end{itemize}
 			
 			% is the presence of heavy and possibly asymmetric tails. 
@@ -308,17 +375,18 @@ f(x,y)=\frac{\exp \left\{ -\frac 1{2(1-\rho ^2)}\left[ \left( \frac{x-\mu _x%
 	
 	\pause
 			
-		\item A single distance measure may fail to catch the dynamics of the spread between a pair of securities.
+		\item A single distance measure $\Rightarrow$ fail to catch the dynamics of the spread between a pair of securities?
 		
 	\pause
 		\begin{itemize}
-			\item Initiate and close the trades at non-optimal positions.
+			\item We may initiate and close the trades at non-optimal positions.
 		\end{itemize}
 
 	\pause	
 			\vspace{0.3cm}
 			
-			\item \textcolor{blue}{Lie and Wu} \textcolor{blue}{(2013)} proposed a pairs trading strategy based on 2-dimensional copulas to overcome the limitations of the distance method.
+			\item \textcolor{blue}{Lie and Wu} \textcolor{blue}{(2013)}:  pairs trading strategy based on 2-dimensional copulas 
+%			to overcome the limitations of the distance method.
 			
 			\vspace{0.3cm}
 			
@@ -454,37 +522,6 @@ f(x,y)=\frac{\exp \left\{ -\frac 1{2(1-\rho ^2)}\left[ \left( \frac{x-\mu _x%
 		
 \end{frame}
 
-	\section{Data}	
-
-\begin{frame}[label=frame2b]
-	\frametitle{Data}
-		\begin{itemize}
-		\setlength\itemsep{1em}
-		\justifying
-		
-		\item 	\textbf{Sources} Adjusted closing prices, Fama-French factors
-		\item \textbf{Universe} All shares that belongs to the S\&P 500 market index  
-		%\begin{itemize}
-		%	\setlength\itemsep{1em}
-		\item \textbf{Dates} July 2nd, 1990 to December 31st, 2015
-		\item \textbf{Totals} 1100 stocks during 6426 days
-	
-		% \item Eliminate survivorship bias 
-		%	\item Bloomberg
-		%	\item Fama and French factors 
-			%and the returns on the from French's website. 
-			%We obtain the adjusted closing prices from
-			% Daily data of
-		\end{itemize}
-			%from our database, only stocks that are listed during the formation period are included in the analysis, \emph{i.e.}, around 500 stocks in each trading period.
-			%With the objective of eliminating
-		
-	%\begin{flushright}
-	%\hyperlink{counterexample}{\beamerreturnbutton{Counterexample}}
-	%\end{flushright}
-	
-\end{frame}
-
 	\section{Models}
 \subsection{Distance}
 
@@ -493,14 +530,49 @@ f(x,y)=\frac{\exp \left\{ -\frac 1{2(1-\rho ^2)}\left[ \left( \frac{x-\mu _x%
 
 \setbeamercovered{transparent}
 
-\begin{itemize}
-\justifying
-\item  The matching partner for each stock is found by looking for the security that minimizes the sum of squared deviations between two normalized price series over a twelve-month period (formation period).
 
+\begin{itemize}
+	\item Two stages:
 	\begin{itemize}
-	\item January to December or from July to June.
-	\item Adjust them by dividends, stock splits and other corporate actions.
+		\item 1. Pairs Formation
+		\begin{itemize}
+			\item  Matching partner: Minimize the sum of squared deviations between normalized prices $\Rightarrow$ twelve-month (formation) period
+			\item Equivalent to matching on state-prices
+			\begin{itemize}
+				\item Each day is a different state
+				\item Assumes stationarity
+				\item Assumes a year capture all states
+			\end{itemize}
+			\end{itemize}
+		\item 2. Pairs Trading: Next 6-month period
 	\end{itemize}
+
+		\item  Committed capital
+		\begin{itemize}
+			\item Sum of  payoffs over all pairs in period/# pairs
+			\item Allow $1$/per pair and fully invested capital
+		\end{itemize}
+		
+		\item Fully invested capital 
+			\begin{itemize}
+			\item All $1$/pair used
+		\end{itemize}
+		
+
+%\pause
+%\begin{itemize}
+%	\item These pairs are then traded in the next six-month period (trading period).
+%\end{itemize}
+
+\vspace{0.3cm}
+%\begin{itemize}
+%\justifying
+%\item  Matching partner for each stock is found by looking for the security that minimizes the sum of squared deviations between two normalized price series over a twelve-month period (formation period).
+%
+%	\begin{itemize}
+%	\item January to December or from July to June.
+%	\item Adjust them by dividends, stock splits and other corporate actions.
+%	\end{itemize}
 
 %Specifically, the pairs are formed using data from January to December or from July to June.
 
@@ -511,21 +583,18 @@ f(x,y)=\frac{\exp \left\{ -\frac 1{2(1-\rho ^2)}\left[ \left( \frac{x-\mu _x%
 %	\item They evolve using the return series.
 %	\end{itemize}
 
-\vspace{0.3cm}
-
-\pause
-\item Select the top 5, 10, $\ldots$, 35 of those combinations that have the smallest sum of squared spreads, allowing re-selection of a specific pair, during the formation period. 
-
-\pause
-	\begin{itemize}
-		\item These pairs are then traded in the next six-month period (trading period).
-	\end{itemize}
-
-\vspace{0.3cm}
+%\vspace{0.3cm}
+%
+%\pause
+%\item Top 5, 10, $\ldots$, 35 
+%of those combinations that have the smallest sum of squared spreads, allowing re-selection of a specific pair, during the formation period. 
 
 \pause 
 
-\item In \textcolor{blue}{Gatev \emph{et al}}. \textcolor{blue}{(2006)}, the long-short position is opened when pair prices have diverged by 2$\sigma$ and the position is closed when prices revert back.
+\item \textcolor{blue}{Gatev \emph{et al}}. \textcolor{blue}{(2006)}: long-short position is opened when pair prices have diverged by 2$\sigma$ (historical $\sigma$ over leading year)
+\item Close positions when prices converge, i.e. spread = 0, or at the end of six-month period
+\item Excess return on pair = sum of payoffs over interval
+
 
 %when the spread diverges by 2$\sigma$ or more from the mean, the stocks are assumed to be mispriced in terms of their relative value to each other.
 % (which is calculated in the formation period
@@ -535,37 +604,37 @@ f(x,y)=\frac{\exp \left\{ -\frac 1{2(1-\rho ^2)}\left[ \left( \frac{x-\mu _x%
 
 \end{frame}
 
-\begin{frame}[label=frame3]
-	\frametitle{Pairs Methodology}
-	
-	\setbeamercovered{transparent}
-	
-	\begin{itemize}
-		\justifying
-		\item To calculate the daily percentage excess returns for a pair, we compute
-		\begin{equation}
-		\begin{aligned}
-		r_{pt}=w_{1t}r_{t}^{L}-w_{2t}r_{t}^{S},
-		\end{aligned}
-		\label{eq:eq01}
-		\end{equation}
-		where $L$ and $S$ stands for long and short, respectively. 
-		
-		\vspace{0.3cm}
-		
-		%To calculate the daily percentage excess returns for a pair, we compute
-		
-		\item The weights $w_{1t}$ and $w_{2t}$ are initially assumed to be one. After that, they change according to the changes in the value of the stocks, \emph{i.e.}, $w_{it}=w_{it-1}(1+r_{it-1})$.
-		
-		\vspace{0.3cm}
-		
-		\pause
-		\item  Committed capital and fully invested capital. 
-		% Following \textcolor{blue}{Gatev \emph{et al}}. \textcolor{blue}{(2006)}, We calculate returns using two weighting schemes: the return on
-	
-	\end{itemize}
-	
-\end{frame}
+%\begin{frame}[label=frame3]
+%	\frametitle{Pairs Methodology}
+%	
+%	\setbeamercovered{transparent}
+%	
+%	\begin{itemize}
+%		\justifying
+%		\item To calculate the daily percentage excess returns for a pair, we compute
+%		\begin{equation}
+%		\begin{aligned}
+%		r_{pt}=w_{1t}r_{t}^{L}-w_{2t}r_{t}^{S},
+%		\end{aligned}
+%		\label{eq:eq01}
+%		\end{equation}
+%		where $L$ and $S$ stands for long and short, respectively. 
+%		
+%		\vspace{0.3cm}
+%		
+%		%To calculate the daily percentage excess returns for a pair, we compute
+%		
+%		\item The weights $w_{1t}$ and $w_{2t}$ are initially assumed to be one. After that, they change according to the changes in the value of the stocks, \emph{i.e.}, $w_{it}=w_{it-1}(1+r_{it-1})$.
+%		
+%		\vspace{0.3cm}
+%		
+%		\pause
+%		\item  Committed capital and fully invested capital. 
+%		% Following \textcolor{blue}{Gatev \emph{et al}}. \textcolor{blue}{(2006)}, We calculate returns using two weighting schemes: the return on
+%	
+%	\end{itemize}
+%	
+%\end{frame}
 
 \begin{frame}[label=frame2d]
 	\frametitle{Distance}
@@ -580,7 +649,7 @@ f(x,y)=\frac{\exp \left\{ -\frac 1{2(1-\rho ^2)}\left[ \left( \frac{x-\mu _x%
 	
 	\vspace{0.3cm}
 	
-	\item Trades that do not converge can result in a loss if they are still open at the end of the trading period.
+	\item Trades that do not converge can result in a loss $\Rightarrow$ Open at the end of the trading period?
 	
 	 %when they are automatically closed. 
 	
@@ -594,7 +663,7 @@ f(x,y)=\frac{\exp \left\{ -\frac 1{2(1-\rho ^2)}\left[ \left( \frac{x-\mu _x%
 	\vspace{0.3cm}
 	
 	\pause
-	\item It may be inappropriate to use constant trigger points because the volatility differs at different price levels.
+	\item Volatility differs at different price levels $\Rightarrow$ inappropriate to use constant trigger points?
 	
 \end{itemize}
 
@@ -608,7 +677,7 @@ f(x,y)=\frac{\exp \left\{ -\frac 1{2(1-\rho ^2)}\left[ \left( \frac{x-\mu _x%
 	\setbeamercovered{transparent}
 	
 	\begin{itemize}
-			\item By using the fact that the partial derivative of the copula function gives the conditional distribution function, i.e., 
+			\item Partial derivative of the copula function gives the conditional distribution function 
 			
 			\begin{eqnarray*}
 				P\left( U_{1}\leq u_{1}\left\vert U_{2}=u_{2}\right. \right)  &=&\frac{%
@@ -665,8 +734,8 @@ f(x,y)=\frac{\exp \left\{ -\frac 1{2(1-\rho ^2)}\left[ \left( \frac{x-\mu _x%
 		
 			\begin{itemize}
 			\justifying
-			\item A conditional value of 0.5 means that
-			the two underlying stocks are considered fairly-valued.
+			\item A conditional value of 0.5 $\Rightarrow$
+			two underlying stocks are considered fairly-valued
 			\end{itemize}
 \end{frame}
 
@@ -677,11 +746,11 @@ f(x,y)=\frac{\exp \left\{ -\frac 1{2(1-\rho ^2)}\left[ \left( \frac{x-\mu _x%
 	
 	\begin{itemize}
 		\item The conditional probabilities, $M_{t}^{X\left\vert Y\right. }$ and $%
-		M_{t}^{Y\left\vert X\right. }$, only measure the degrees of relative
+		M_{t}^{Y\left\vert X\right. }$: measure the degrees of relative
 		mispricing for a single day. 
 		\begin{itemize}
-			\item To determine an overall degree of relative
-			mispricing we follow \textcolor{blue}{Rad \emph{et al}}. \textcolor{blue}{(2016)}.
+			\item Overall degree of relative
+			mispricing ( \textcolor{blue}{Rad \emph{et al}}. \textcolor{blue}{(2016)}).
 		\end{itemize} 
 		
 		\vspace{0.3cm}
@@ -716,9 +785,14 @@ f(x,y)=\frac{\exp \left\{ -\frac 1{2(1-\rho ^2)}\left[ \left( \frac{x-\mu _x%
 %		
 %		\vspace{0.3cm}
 		
-		\item Sensitivity analysis to open a long-short position once one of the
+		\item Sensitivity analysis: open a long-short position once one of the
 		cumulative indexes is above 0.05, 0.10, $\ldots$, 0.55 and the other one is below
-		-0.05, -0.10, $\ldots$, -0.55 at the same time for Top 5, 10, $\ldots$, 35 pairs.
+		-0.05, -0.10, $\ldots$, -0.55 at the same time
+		
+		\item How many pairs do we use?
+		\begin{itemize}
+			\item 5, 10, 15, 20, 25, 30 and 35
+		\end{itemize}
 		
 		% We perform a 
 		
@@ -819,73 +893,107 @@ where $\theta=\left(\alpha,\beta,\delta\right)'$ are the Clayton, Frank and Gumb
 
 \end{frame}
 
-\begin{frame}
-\frametitle{Methodology: Mixed Copula}
+%\begin{frame}
+%\frametitle{Methodology: Mixed Copula}
+%
+%	\begin{enumerate}[(3)]
+%	\justifying
+%	
+%	\setbeamercovered{transparent}
+%	
+%	\pause
+%		
+%		\item Take the first derivative of the copula function to compute conditional
+%		probabilities and measure mispricing degrees $MI_{X\mid Y}$ and $MI_{Y\mid X}$ for each day.
+%		
+%		% in the trading period using the copula and estimated parameters.
+%		
+%		\vspace{0.3cm}
+%		
+%	\end{enumerate}
+%
+%	\pause
+%	\begin{enumerate}[(4)]
+%	\justifying
+%		
+%		\item Build long and short positions of $Y$ and $X$ on the days that $M_{1,t}>\Delta_{1}$ and $M_{2,t}<\Delta_{2}$ if there is no positions in $X$ or $Y$. 
+%		
+%		\vspace{0.1cm}
+%		\begin{itemize}
+%			\item Conversely, build positions long/short of $X$ and $Y$ on the day that $M_{1,t}<\Delta_{2}$ and $M_{2,t}>\Delta_{1}$ if there is no positions in $X$ or $Y$.
+%		\end{itemize}
+%		
+%	\end{enumerate}
+%
+%	\pause
+%		\begin{itemize}
+%	\item  All positions are closed if $M_{1,t}$ reaches $\Delta_{3}$ or $M_{2,t}$ reaches $\Delta_{4}$, where $\Delta_{1},\Delta_{2},\Delta_{3}$ and $\Delta_{4}$ are predetermined thresholds or are automatically closed out on the last day of the trading period. 
+%	
+%	%if they do not reach the thresholds. 
+%	
+%	\vspace{0.3cm}
+%	\pause
+%	
+%	\item Here we use $\Delta_{1}=0.2, \Delta_{2}=-0.2$ and $\Delta_{3}=\Delta_{4}=0$.
+%	
+%	\end{itemize}
+%	
+%\end{frame}
 
-	\begin{enumerate}[(3)]
+%	\begin{frame}
+%\frametitle{Illustration}
+%
+%\begin{figure}[htbp]
+%	\centering
+%	\includegraphics[scale=0.33]{trading_opt.png}
+%	\label{fig:trad_opt}
+%\end{figure}
+%
+%\begin{figure}[htbp]
+%	\centering
+%	\includegraphics[scale=0.33]{trading_opt2.png}
+%	\label{fig:trad_opt2}
+%\end{figure}
+%
+%\end{frame}
+
+	\section{Data}	
+
+\begin{frame}[label=frame2b]
+\frametitle{Data}
+\begin{itemize}
+	\setlength\itemsep{1em}
 	\justifying
 	
-	\setbeamercovered{transparent}
-	
-	\pause
-		
-		\item Take the first derivative of the copula function to compute conditional
-		probabilities and measure mispricing degrees $MI_{X\mid Y}$ and $MI_{Y\mid X}$ for each day.
-		
-		% in the trading period using the copula and estimated parameters.
-		
-		\vspace{0.3cm}
-		
-	\end{enumerate}
-
-	\pause
-	\begin{enumerate}[(4)]
-	\justifying
-		
-		\item Build long and short positions of $Y$ and $X$ on the days that $M_{1,t}>\Delta_{1}$ and $M_{2,t}<\Delta_{2}$ if there is no positions in $X$ or $Y$. 
-		
-		\vspace{0.1cm}
-		\begin{itemize}
-			\item Conversely, build positions long/short of $X$ and $Y$ on the day that $M_{1,t}<\Delta_{2}$ and $M_{2,t}>\Delta_{1}$ if there is no positions in $X$ or $Y$.
-		\end{itemize}
-		
-	\end{enumerate}
-
-	\pause
-		\begin{itemize}
-	\item  All positions are closed if $M_{1,t}$ reaches $\Delta_{3}$ or $M_{2,t}$ reaches $\Delta_{4}$, where $\Delta_{1},\Delta_{2},\Delta_{3}$ and $\Delta_{4}$ are predetermined thresholds or are automatically closed out on the last day of the trading period. 
-	
-	%if they do not reach the thresholds. 
-	
-	\vspace{0.3cm}
-	\pause
-	
-	\item Here we use $\Delta_{1}=0.2, \Delta_{2}=-0.2$ and $\Delta_{3}=\Delta_{4}=0$.
-	
+	\item 	\textbf{Sources} Adjusted closing prices, Fama-French factors
+	\begin{itemize}
+		\item Cumulative total return index for each stock
 	\end{itemize}
+	\item \textbf{Universe} All shares that belongs to the S\&P 500 market index  
+	%\begin{itemize}
+	%	\setlength\itemsep{1em}
+	\item \textbf{Dates} July 2nd, 1990 to December 31st, 2015
+	\item \textbf{Totals} 1100 stocks during 6426 days
 	
-\end{frame}
+	% \item Eliminate survivorship bias 
+	%	\item Bloomberg
+	%	\item Fama and French factors 
+	%and the returns on the from French's website. 
+	%We obtain the adjusted closing prices from
+	% Daily data of
+\end{itemize}
+%from our database, only stocks that are listed during the formation period are included in the analysis, \emph{i.e.}, around 500 stocks in each trading period.
+%With the objective of eliminating
 
-	\begin{frame}
-\frametitle{Illustration}
-
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[scale=0.33]{trading_opt.png}
-	\label{fig:trad_opt}
-\end{figure}
-
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[scale=0.33]{trading_opt2.png}
-	\label{fig:trad_opt2}
-\end{figure}
+%\begin{flushright}
+%\hyperlink{counterexample}{\beamerreturnbutton{Counterexample}}
+%\end{flushright}
 
 \end{frame}
 
 
 
-\section{Empirical Results}
+\section{Trading Performance}
 
 \begin{frame}
 	\frametitle{Risk-Return characteristics}
@@ -1013,7 +1121,7 @@ where $\theta=\left(\alpha,\beta,\delta\right)'$ are the Clayton, Frank and Gumb
 		\definecolor{corn}{rgb}{0.98, 0.93, 0.36}
 		\definecolor{celadon}{rgb}{0.67, 0.88, 0.69}
 		
-		\frametitle{Empirical Results}
+		\frametitle{Trading Performance}
 			\begin{threeparttable}[H]
 			\centering \tiny
 			\caption{Excess returns on committed capital of pairs trading strategies on portfolios of Top 5, 20 and 35 pairs after costs. }
@@ -1054,7 +1162,7 @@ where $\theta=\left(\alpha,\beta,\delta\right)'$ are the Clayton, Frank and Gumb
 \begin{frame}
 	\definecolor{corn}{rgb}{0.98, 0.93, 0.36}
 	\definecolor{celadon}{rgb}{0.67, 0.88, 0.69}
-	\frametitle{Empirical Results}
+	\frametitle{Trading Performance}
 	\begin{threeparttable}[H]
 		\centering \tiny
 		\caption{Excess returns on fully invested capital of pairs trading strategies on portfolios of Top 5, 20 and 35 pairs after costs. }
@@ -1125,7 +1233,7 @@ where $\theta=\left(\alpha,\beta,\delta\right)'$ are the Clayton, Frank and Gumb
 \end{frame}
 
 
-\section{Fama-French}
+\section{Systematic Risk Exposure}
 
 \begin{frame}
 
@@ -1133,7 +1241,7 @@ where $\theta=\left(\alpha,\beta,\delta\right)'$ are the Clayton, Frank and Gumb
 
 \definecolor{corn}{rgb}{0.98, 0.93, 0.36}
 \definecolor{celadon}{rgb}{0.67, 0.88, 0.69}
-\frametitle{Fama-French}
+\frametitle{Systematic Risk Exposure}
 
 \begin{table}
 	\centering \srcsize
@@ -1184,7 +1292,7 @@ where $\theta=\left(\alpha,\beta,\delta\right)'$ are the Clayton, Frank and Gumb
 
 \end{frame}
 
-\section{Conclusions}
+\section{Summary of findings}
 
 \begin{frame}[label=frame5b2]
 \frametitle{Conclusions}
