@@ -41,6 +41,7 @@ install.packages("RColorBrewer", dependencies=TRUE) # color palettes
 install.packages("lsa", dependencies = TRUE)
 install.packages("text2vec", dependencies = TRUE)
 install.packages("corrplot", dependencies = TRUE)
+install.packages("pdftools", dependencies = TRUE)
 
 require(NLP)
 require(slam)
@@ -76,6 +77,7 @@ require(RColorBrewer)
 require(lsa)
 require(text2vec)
 require(corrplot)
+require(pdftools)
 
 ##############################################
 ######### OPTIONS #######
@@ -218,25 +220,25 @@ for(i in 1:length(urls.yearly)) {
 # Merge "link" and "urls" into a data.frame
 atas = data.frame(reuniao = unlist(links.yearly), urls = unlist(urls.yearly), stringsAsFactors = FALSE)
 # atas(minutes of Copom in Portuguese)
-atas = atas[-c(170,171),] # remove minutes that are from 1999 or double publication of the first minute in 2000
+atas = atas[-c(174,175),] # remove minutes that are from 1999 or double publication of the first minute in 2000
 
-atas[2,"reuniao"] = "2017/October - 210th Copom Minutes" # Change minute with wrong name
+atas[6,"reuniao"] = "2017/October - 210th Copom Minutes" # Change minute with wrong name
 
 # rename the column "reuniao"(meeting in Portuguese) with the numbers of the minutes to make it easier to save the files
 # sub and gsub perform replacement of the first and all matches respectively.
-for (i in 1:108) {
+for (i in 1:112) {
   atas$reuniao[i] = sub("Copom Minutes", "", atas$reuniao[i])
   atas$reuniao[i] = sub('.*(?=.{6}$)', '', atas$reuniao[i], perl = T)
   atas$reuniao[i] = gsub(" ", "", atas$reuniao[i], fixed = TRUE)
 }
 
-for (i in 109:112) {
+for (i in 113:116) {
   atas$reuniao[i] = sub("Copom minutes", "", atas$reuniao[i])
   atas$reuniao[i] = sub('.*(?=.{6}$)', '', atas$reuniao[i], perl = T)
   atas$reuniao[i] = gsub(" ", "", atas$reuniao[i], fixed = TRUE)
 }
 
-for (i in 113:169) {
+for (i in 117:173) {
   atas$reuniao[i] = sub("Copom minutes", "", atas$reuniao[i])
   atas$reuniao[i] = sub('.*(?=.{5}$)', '', atas$reuniao[i], perl = T)
   atas$reuniao[i] = gsub(" ", "", atas$reuniao[i], fixed = TRUE)
@@ -246,7 +248,7 @@ for (i in 113:169) {
 ## COLLECT THE DATE OF EACH COPOM MINUTE
 #####
 
-dates = c("06-12-2017", "25-10-2017", "06-09-2017", 
+dates = c("20-06-2018", "16-05-2018", "21-03-2018", "07-02-2018", "06-12-2017", "25-10-2017", "06-09-2017", 
           "26-07-2017", "31-05-2017", "12-04-2017", "22-02-2017", "11-01-2017", "30-11-2016", "19-10-2016", "31-08-2016",
           "20-07-2016", "08-06-2016", "27-04-2016", "02-03-2016", "20-01-2016", "25-11-2015", "21-10-2015", "02-09-2015", 
           "29-07-2015", "03-06-2015", "29-04-2015", "04-03-2015", "21-01-2015", "03-12-2014", "29-10-2014", "03-09-2014",
