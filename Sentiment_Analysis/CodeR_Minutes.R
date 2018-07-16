@@ -448,7 +448,7 @@ scores = data.frame(document.scores, data = atas$data[1:nrow(atas)], reuniao = a
 # Here, we use data from the Central Bank of Brazil extracted from quandl.
 
 data.inicio = "2000-01-19" # beginning date
-data.fim = "2016-07-20" # ending date
+data.fim = "2018-06-20" # ending date
 tipo = "ts" # type
 
 Quandl.api_key('xvSrAztygUphvYp9q1bs')
