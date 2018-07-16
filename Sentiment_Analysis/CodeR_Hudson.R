@@ -16,7 +16,7 @@
 # install.packages("rvest")
 # install.packages("schoolmath")
 # install.packages("openNLP")
-# # install the openNLPmodels.pt package available at this link(http://datacube.wu.ac.at/src/contrib/) to # add Portuguese to openNLP
+# install the openNLPmodels.pt package available at this link(http://datacube.wu.ac.at/src/contrib/) to # add Portuguese to openNLP
 # install.packages("openNLPmodels.pt", repos = "http://datacube.wu.ac.at/", type = "source")
 # install.packages("dplyr")
 # install.packages("Quandl")
@@ -143,8 +143,6 @@ main.page = read_html(x = "http://www.bcb.gov.br/?MINUTES")
 urls = main.page %>% # feed the `main.page` to the next step
 
   html_nodes("#cronoAno a") %>% # get the CSS nodes. Here I use http://selectorgadget.com to get the rule "#cronoAno a"
-
-  html_nodes("#cronoAno a") %>% # get the CSS nodes. Here I use http://selectorgadget.com/to get the rule "#cronoAno a"
 
   html_attr("href") # extract the text of the link
 
