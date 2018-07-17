@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.8.22)  15 JUL 2018 19:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.8.22)  16 JUL 2018 15:47
 entering extended mode
 **./pair_ebfin2018.tex
 (pair_ebfin2018.tex
@@ -1795,7 +1795,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  33662 strings out of 493323
  794413 string characters out of 3139060
- 1331451 words of memory out of 3000000
+ 1331469 words of memory out of 3000000
  36300 multiletter control sequences out of 15000+200000
  125298 words of font info for 93 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1823,7 +1823,7 @@ ogram Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy6.pfb><C:/Program Files/MiKTeX
 ublic/lm/lmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy9.pfb
 ><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam5.pfb><C:
 /Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on pair_ebfin2018.pdf (55 pages, 1866456 bytes).
+Output written on pair_ebfin2018.pdf (55 pages, 1867622 bytes).
 PDF statistics:
  1877 PDF objects out of 2073 (max. 8388607)
  188 named destinations out of 1000 (max. 500000)

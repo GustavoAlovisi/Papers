@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.8.22)  11 MAY 2018 10:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.8.22)  16 JUL 2018 16:09
 entering extended mode
 **"./sbfin_worst case.tex"
 ("sbfin_worst case.tex"
@@ -99,8 +99,8 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@dimlist=\toks15
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
-("C:\Program Files\MiKTeX 2.9\tex\latex\extsizes\size9.clo"
-File: size9.clo 1999/11/11 v1.4a NON-Standard LaTeX file (size option)
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\size10.clo"
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\basiclayer\pgfcore.sty"
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
@@ -652,19 +652,18 @@ ault.sty"
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\beamer\themes\outer\beamerouterthemedef
 ault.sty")))
-("C:\Program Files\MiKTeX 2.9\tex\latex\beamer\themes\theme\beamerthemeRocheste
-r.sty"
-("C:\Program Files\MiKTeX 2.9\tex\latex\beamer\themes\outer\beamerouterthemesid
-ebar.sty"
-\beamer@sidebarwidth=\dimen187
-\beamer@headheight=\dimen188
-)
-("C:\Program Files\MiKTeX 2.9\tex\latex\beamer\themes\inner\beamerinnerthemerec
-tangles.sty")
-("C:\Program Files\MiKTeX 2.9\tex\latex\beamer\themes\color\beamercolorthemewha
-le.sty")
-("C:\Program Files\MiKTeX 2.9\tex\latex\beamer\themes\color\beamercolorthemeorc
-hid.sty")) ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\verbatim.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\beamer\themes\theme\beamerthemeboadilla
+.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\beamer\themes\color\beamercolorthemeros
+e.sty")
+("C:\Program Files\MiKTeX 2.9\tex\latex\beamer\themes\inner\beamerinnerthemerou
+nded.sty")
+("C:\Program Files\MiKTeX 2.9\tex\latex\beamer\themes\color\beamercolorthemedol
+phin.sty")
+("C:\Program Files\MiKTeX 2.9\tex\latex\beamer\themes\outer\beamerouterthemeinf
+olines.sty"))
+("C:\Program Files\MiKTeX 2.9\tex\latex\beamer\themes\color\beamercolorthemesea
+horse.sty") ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\verbatim.sty"
 Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks43
 \verbatim@line=\toks44
@@ -752,13 +751,13 @@ Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 ("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption3.sty"
 Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 67.
-\captionmargin=\dimen189
-\captionmargin@=\dimen190
-\captionwidth=\dimen191
-\caption@tempdima=\dimen192
-\caption@indent=\dimen193
-\caption@parindent=\dimen194
-\caption@hangindent=\dimen195
+\captionmargin=\dimen187
+\captionmargin@=\dimen188
+\captionwidth=\dimen189
+\caption@tempdima=\dimen190
+\caption@indent=\dimen191
+\caption@parindent=\dimen192
+\caption@hangindent=\dimen193
 )
 \c@ContinuedFloat=\count154
 Package caption Info: beamer document class.
@@ -770,7 +769,7 @@ Package caption Info: Hyperref support is turned off
 Package: subfig 2005/06/28 ver: 1.3 subfig package
 \c@KVtest=\count155
 \sf@farskip=\skip57
-\sf@captopadj=\dimen196
+\sf@captopadj=\dimen194
 \sf@capskip=\skip58
 \sf@nearskip=\skip59
 \c@subfigure=\count156
@@ -786,39 +785,39 @@ Package: tabularx 2016/02/03 v2.11 `tabularx' package (DPC)
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
 Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
-\col@sep=\dimen197
-\extrarowheight=\dimen198
+\col@sep=\dimen195
+\extrarowheight=\dimen196
 \NC@list=\toks45
 \extratabsurround=\skip62
 \backup@length=\skip63
 )
-\TX@col@width=\dimen199
-\TX@old@table=\dimen256
-\TX@old@col=\dimen257
-\TX@target=\dimen258
-\TX@delta=\dimen259
+\TX@col@width=\dimen197
+\TX@old@table=\dimen198
+\TX@old@col=\dimen199
+\TX@target=\dimen256
+\TX@delta=\dimen257
 \TX@cols=\count161
 \TX@ftn=\toks46
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\booktabs\booktabs.sty"
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
-\heavyrulewidth=\dimen260
-\lightrulewidth=\dimen261
-\cmidrulewidth=\dimen262
-\belowrulesep=\dimen263
-\belowbottomsep=\dimen264
-\aboverulesep=\dimen265
-\abovetopsep=\dimen266
-\cmidrulesep=\dimen267
-\cmidrulekern=\dimen268
-\defaultaddspace=\dimen269
+\heavyrulewidth=\dimen258
+\lightrulewidth=\dimen259
+\cmidrulewidth=\dimen260
+\belowrulesep=\dimen261
+\belowbottomsep=\dimen262
+\aboverulesep=\dimen263
+\abovetopsep=\dimen264
+\cmidrulesep=\dimen265
+\cmidrulekern=\dimen266
+\defaultaddspace=\dimen267
 \@cmidla=\count162
 \@cmidlb=\count163
-\@aboverulesep=\dimen270
-\@belowrulesep=\dimen271
+\@aboverulesep=\dimen268
+\@belowrulesep=\dimen269
 \@thisruleclass=\count164
 \@lastruleclass=\count165
-\@thisrulewidth=\dimen272
+\@thisrulewidth=\dimen270
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\pdfpages\pdfpages.sty"
 Package: pdfpages 2017/07/14 v0.5j Insert pages of external PDF documents (AM)
@@ -830,8 +829,8 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count166
 \calc@Bcount=\count167
-\calc@Adimen=\dimen273
-\calc@Bdimen=\dimen274
+\calc@Adimen=\dimen271
+\calc@Bdimen=\dimen272
 \calc@Askip=\skip64
 \calc@Bskip=\skip65
 LaTeX Info: Redefining \setlength on input line 80.
@@ -842,8 +841,8 @@ LaTeX Info: Redefining \addtolength on input line 81.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\eso-pic\eso-pic.sty"
 Package: eso-pic 2015/07/21 v2.0g eso-pic (RN)
 )
-\AM@pagewidth=\dimen275
-\AM@pageheight=\dimen276
+\AM@pagewidth=\dimen273
+\AM@pageheight=\dimen274
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\pdfpages\pppdftex.def"
 File: pppdftex.def 2017/07/14 v0.5j Pdfpages driver for pdfTeX (AM)
@@ -859,7 +858,7 @@ Package: multirow 2016/11/25 v2.2 Span multiple rows of a table
 \multirow@colwidth=\skip67
 \multirow@cntb=\count170
 \multirow@dima=\skip68
-\bigstrutjot=\dimen277
+\bigstrutjot=\dimen275
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\ms\ragged2e.sty"
 Package: ragged2e 2009/05/21 v2.1 ragged2e Package (MS)
@@ -895,8 +894,8 @@ File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
 ("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\compatibility\pgfcomp-version-0-65.
 sty"
 Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
-\pgf@nodesepstart=\dimen278
-\pgf@nodesepend=\dimen279
+\pgf@nodesepstart=\dimen276
+\pgf@nodesepend=\dimen277
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\compatibility\pgfcomp-version-1-18.
 sty"
@@ -910,8 +909,8 @@ Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
 Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmath.code.tex")
-\pgffor@iter=\dimen280
-\pgffor@skip=\dimen281
+\pgffor@iter=\dimen278
+\pgffor@skip=\dimen279
 \pgffor@stack=\toks49
 \pgffor@toks=\toks50
 ))
@@ -922,14 +921,14 @@ Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
 code.tex"
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
 \pgf@plot@mark@count=\count171
-\pgfplotmarksize=\dimen282
+\pgfplotmarksize=\dimen280
 )
-\tikz@lastx=\dimen283
-\tikz@lasty=\dimen284
-\tikz@lastxsaved=\dimen285
-\tikz@lastysaved=\dimen286
-\tikzleveldistance=\dimen287
-\tikzsiblingdistance=\dimen288
+\tikz@lastx=\dimen281
+\tikz@lasty=\dimen282
+\tikz@lastxsaved=\dimen283
+\tikz@lastysaved=\dimen284
+\tikzleveldistance=\dimen285
+\tikzsiblingdistance=\dimen286
 \tikz@figbox=\box56
 \tikz@figbox@bg=\box57
 \tikz@tempbox=\box58
@@ -957,7 +956,7 @@ Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
 \minrowclearance=\skip83
 )
 \c@proposition=\count180
-Package hyperref Info: Option `colorlinks' set `true' on input line 70.
+Package hyperref Info: Option `colorlinks' set `true' on input line 69.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\threeparttable\threeparttable.sty"
 Package: threeparttable 2003/06/13  v 3.0
@@ -985,21 +984,21 @@ LaTeX Warning: Label `tab:table02' multiply defined.
 )
 \openout1 = `"sbfin_worst case.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 74.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 73.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmr.fd"
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -1011,23 +1010,23 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: includehead includefoot 
-* h-part:(L,W,R)=(28.45274pt, 307.28987pt, 28.45274pt)
+* h-part:(L,W,R)=(10.00002pt, 344.19533pt, 10.00002pt)
 * v-part:(T,H,B)=(0.0pt, 273.14662pt, 0.0pt)
 * \paperwidth=364.19536pt
 * \paperheight=273.14662pt
-* \textwidth=307.28987pt
+* \textwidth=344.19533pt
 * \textheight=244.6939pt
-* \oddsidemargin=-43.81725pt
-* \evensidemargin=-43.81725pt
+* \oddsidemargin=-62.26997pt
+* \evensidemargin=-62.26997pt
 * \topmargin=-72.26999pt
 * \headheight=14.22636pt
 * \headsep=0.0pt
-* \topskip=9.0pt
+* \topskip=10.0pt
 * \footskip=14.22636pt
-* \marginparwidth=4.0pt
-* \marginparsep=10.0pt
+* \marginparwidth=3.0pt
+* \marginparsep=11.0pt
 * \columnsep=10.0pt
-* \skip\footins=8.0pt plus 4.0pt minus 2.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -1040,13 +1039,13 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count181
-\scratchdimen=\dimen289
+\scratchdimen=\dimen287
 \scratchbox=\box61
 \nofMPsegments=\count182
 \nofMParguments=\count183
 \everyMPshowfont=\toks52
 \MPscratchCnt=\count184
-\MPscratchDim=\dimen290
+\MPscratchDim=\dimen288
 \MPnumerator=\count185
 \makeMPintoPDFobject=\count186
 \everyMPtoPDFconversion=\toks53
@@ -1065,7 +1064,7 @@ G,.JBIG2,.JB2,.eps]
 )
 ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box62
-Package hyperref Info: Link coloring ON on input line 74.
+Package hyperref Info: Link coloring ON on input line 73.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1075,9 +1074,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count187
 )
-LaTeX Info: Redefining \ref on input line 74.
-LaTeX Info: Redefining \pageref on input line 74.
-LaTeX Info: Redefining \nameref on input line 74.
+LaTeX Info: Redefining \ref on input line 73.
+LaTeX Info: Redefining \pageref on input line 73.
+LaTeX Info: Redefining \nameref on input line 73.
 
 ("sbfin_worst case.out") ("sbfin_worst case.out")
 \@outlinefile=\write5
@@ -1122,39 +1121,45 @@ Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 74.
+LaTeX Info: Redefining \selectfont on input line 73.
  ("sbfin_worst case.nav")
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 77.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 76.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 77.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 76.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omllmm.fd"
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 77.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 76.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omslmsy.fd"
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 77.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 76.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omxlmex.fd"
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 77.
+(Font)              <10> on input line 76.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 77.
+(Font)              <7> on input line 76.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 77.
+(Font)              <5> on input line 76.
  [1
 
-{C:/Users/fsabino/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2
+{C:/Users/fsabino/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+Overfull \hbox (2.18187pt too wide) in paragraph at lines 109--109
+[]\T1/lmr/m/n/10 The sem-i-nal ar-ti-cle \T1/lmr/m/it/10 Port-fo-lio Se-lec-tio
+n \T1/lmr/m/n/10 pub-lished by Harry Markowitz (1952)
+ []
+
+[2
 
 ] [3
 
@@ -1162,27 +1167,17 @@ LaTeX Font Info:    External font `lmex10' loaded for size
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.173 \end{frame}
+l.172 \end{frame}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{frame1d}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.173 \end{frame}
+l.172 \end{frame}
                   [4
 
 ] [5
 
-]
-Overfull \hbox (3.63222pt too wide) detected at line 235
- []\T1/lmr/m/n/6 (1) 
- []
-
-
-Overfull \hbox (3.63222pt too wide) detected at line 235
- []\T1/lmr/m/n/6 (2) 
- []
-
-[6
+] [6
 
 ] [7
 
@@ -1191,7 +1186,7 @@ Overfull \hbox (3.63222pt too wide) detected at line 235
 ] [9
 
 ]
-Overfull \vbox (0.63683pt too high) detected at line 402
+Overfull \vbox (22.28888pt too high) detected at line 401
  []
 
 [10
@@ -1200,32 +1195,17 @@ Overfull \vbox (0.63683pt too high) detected at line 402
 
 ] [12
 
-]
-Overfull \hbox (15.44762pt too wide) in paragraph at lines 522--522
-\T1/lmr/m/n/9 op-ti-mal $\OML/lmm/m/it/9 VaR$\T1/lmr/m/n/9 , $\OML/lmm/m/it/9 
-[]$\T1/lmr/m/n/9 , and con-se-quently the op-ti-mal $\OML/lmm/m/it/9 CVaR$\T1/l
-mr/m/n/9 , $[] []$. 
- []
-
-[13
+] [13
 
 ] [14
 
 ]
-Overfull \hbox (0.74533pt too wide) in alignment at lines 641--641
- [][][] []
+Overfull \vbox (15.80283pt too high) detected at line 640
  []
 
 [15
 
-]
-Overfull \hbox (5.34102pt too wide) in paragraph at lines 695--695
-\T1/lmr/m/n/9 sat-is-fies $\OML/lmm/m/it/9 WCVaR[] [] \OMS/lmsy/m/n/9  \OML/lm
-m/m/it/9 CVaR[] [] \OMS/lmsy/m/n/9  \OML/lmm/m/it/9 VaR[] []$\T1/lmr/m/n/9 . T
-hus, $\OML/lmm/m/it/9 WCVaR[] []$
- []
-
-[16
+] [16
 
 ] [17
 
@@ -1241,19 +1221,21 @@ hus, $\OML/lmm/m/it/9 WCVaR[] []$
 
 ] [23
 
-] [24
-
 ]
-Overfull \hbox (0.38431pt too wide) in paragraph at lines 1177--1177
-[]\T1/lmr/m/n/9 Compute the stan-dard de-vi-a-tion $[]$ us-ing the es-ti-mated 
-GARCH model. 
+Overfull \hbox (1.20694pt too wide) in paragraph at lines 1148--1148
+[]\T1/lmr/m/n/10 Estimate the cop-ula model, i.e., fits the mul-ti-vari-ate Cla
+yton-Frank-Gumbel
  []
 
-[25
+[24
+
+] [25
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 1222.
+(Font)              <9> on input line 1221.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 1221.
  [26
 
 ] [27
@@ -1262,12 +1244,12 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1277 \end{frame}
+l.1276 \end{frame}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{frame7}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1277 \end{frame}
+l.1276 \end{frame}
                    [28
 
 ] [29
@@ -1279,26 +1261,30 @@ l.1277 \end{frame}
 ] [32
 
 ]
-Overfull \hbox (21.69887pt too wide) detected at line 1477
-[] \OT1/lmr/m/n/9 = [] [][] [] \OML/lmm/m/it/9 ;
+Overfull \hbox (9.41576pt too wide) detected at line 1476
+[] \OT1/lmr/m/n/10 = [] [][] [] \OML/lmm/m/it/10 ;
  []
 
 [33
 
 ] [34
 
-] [35
+]
+Overfull \vbox (4.33623pt too high) detected at line 1562
+ []
+
+[35
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{tab:tabletwo
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1606 \end{frame}
+l.1605 \end{frame}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{tab:table02}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1606 \end{frame}
+l.1605 \end{frame}
                    [36
 
 ]
@@ -1310,25 +1296,37 @@ Package epstopdf Info: Source file: <fig1_nogrid.eps>
 (epstopdf)                    size: 175645 bytes
 (epstopdf)             Command: <epstopdf --outfile=fig1_nogrid-eps-converted-t
 o.pdf fig1_nogrid.eps>
-(epstopdf)             \includegraphics on input line 1712.
+(epstopdf)             \includegraphics on input line 1711.
 Package epstopdf Info: Output file is already uptodate.
 
-<fig1_nogrid-eps-converted-to.pdf, id=1071, 482.80376pt x 371.3875pt>
+<fig1_nogrid-eps-converted-to.pdf, id=1124, 482.80376pt x 371.3875pt>
 File: fig1_nogrid-eps-converted-to.pdf Graphic file (type pdf)
 
 <use fig1_nogrid-eps-converted-to.pdf>
 Package pdftex.def Info: fig1_nogrid-eps-converted-to.pdf used on input line 17
-12.
+11.
 (pdftex.def)             Requested size: 280.02637pt x 215.40489pt.
 
-Overfull \vbox (20.17073pt too high) detected at line 1712
+Overfull \vbox (19.27657pt too high) detected at line 1711
  []
 
 [37
 
  <./fig1_nogrid-eps-converted-to.pdf>] [38
 
-] [39
+]
+Overfull \hbox (5.45749pt too wide) in paragraph at lines 1760--1760
+[]\T1/lmr/m/n/10 We com-pare the per-for-mance of Gaus-sian, Worst-Case and Equ
+ally Weighted
+ []
+
+
+Overfull \hbox (10.71967pt too wide) in paragraph at lines 1760--1760
+[]\T1/lmr/m/n/10 Copula-based mod-els show a su-pe-rior per-for-mance af-ter th
+e sub-prime mortage
+ []
+
+[39
 
 ] [40
 
@@ -1342,11 +1340,11 @@ Overfull \vbox (20.17073pt too high) detected at line 1712
 \tf@snm=\write8
 \openout8 = `"sbfin_worst case.snm"'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1771.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1771.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1770.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1770.
  ("sbfin_worst case.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1771.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1771.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1770.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1770.
 
 Package rerunfilecheck Info: File `"sbfin_worst case".out' has not changed.
 (rerunfilecheck)             Checksum: D1E9C37B6230806AE63A33E9C40EE3C9;672.
@@ -1356,40 +1354,44 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 23338 strings out of 493323
- 449938 string characters out of 3139060
- 539345 words of memory out of 3000000
- 26138 multiletter control sequences out of 15000+200000
- 65790 words of font info for 53 fonts, out of 3000000 for 9000
+ 23411 strings out of 493323
+ 451771 string characters out of 3139060
+ 540100 words of memory out of 3000000
+ 26204 multiletter control sequences out of 15000+200000
+ 77944 words of font info for 59 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,15n,59p,807b,580s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc} <C:\Users\fsabino\
-AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\concmath-fonts\dpi600\xccbm8.pk
->{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program File
-s/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program Files/MiKTeX 2.9/font
-s/enc/dvips/lm/lm-rm.enc} <C:\Users\fsabino\AppData\Local\MiKTeX\2.9\fonts\pk\l
-jfour\public\concmath-fonts\dpi600\xccbm6.pk>{C:/Program Files/MiKTeX 2.9/fonts
-/enc/dvips/lm/lm-mathex.enc} <C:\Users\fsabino\AppData\Local\MiKTeX\2.9\fonts\p
-k\ljfour\public\concmath-fonts\dpi600\xccbm9.pk><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/lm/lmbx5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/l
-m/lmbx6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx8.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx9.pfb><C:/Program Files/MiKTeX
- 2.9/fonts/type1/public/lm/lmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
-public/lm/lmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi6.pf
-b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi8.pfb><C:/Program File
-s/MiKTeX 2.9/fonts/type1/public/lm/lmmi9.pfb><C:/Program Files/MiKTeX 2.9/fonts
-/type1/public/lm/lmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/l
-mr5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr6.pfb><C:/Program
- Files/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Program Files/MiKTeX 2.9/f
-onts/type1/public/lm/lmr9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/l
-m/lmri7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmri9.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy5.pfb><C:/Program Files/MiKTeX
- 2.9/fonts/type1/public/lm/lmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
-ublic/lm/lmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy9.pfb
->
-Output written on "sbfin_worst case.pdf" (40 pages, 782391 bytes).
+ 56i,16n,59p,806b,611s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/M
+iKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/d
+vips/lm/lm-mathit.enc} <C:\Users\fsabino\AppData\Local\MiKTeX\2.9\fonts\pk\ljfo
+ur\public\concmath-fonts\dpi600\xccbm9.pk>{C:/Program Files/MiKTeX 2.9/fonts/en
+c/dvips/lm/lm-mathsy.enc} <C:\Users\fsabino\AppData\Local\MiKTeX\2.9\fonts\pk\l
+jfour\public\concmath-fonts\dpi600\xccam5.pk> <C:\Users\fsabino\AppData\Local\M
+iKTeX\2.9\fonts\pk\ljfour\public\concmath-fonts\dpi600\xccbm7.pk>{C:/Program Fi
+les/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathex.enc} <C:\Users\fsabino\AppData\Loca
+l\MiKTeX\2.9\fonts\pk\ljfour\public\concmath-fonts\dpi600\xccbm10.pk><C:/Progra
+m Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb><C:/Program Files/MiKTeX 2.
+9/fonts/type1/public/lm/lmbx5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
+ic/lm/lmbx7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx9.pfb><C
+:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmcsc10.pfb><C:/Program Files/
+MiKTeX 2.9/fonts/type1/public/lm/lmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/
+type1/public/lm/lmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/l
+mmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi6.pfb><C:/Progr
+am Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi7.pfb><C:/Program Files/MiKTeX 2.
+9/fonts/type1/public/lm/lmmi9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
+ic/lm/lmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C
+:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr5.pfb><C:/Program Files/MiK
+TeX 2.9/fonts/type1/public/lm/lmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
+/public/lm/lmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr9.pfb
+><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Program File
+s/MiKTeX 2.9/fonts/type1/public/lm/lmri7.pfb><C:/Program Files/MiKTeX 2.9/fonts
+/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/
+lmsy5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy6.pfb><C:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy7.pfb><C:/Program Files/MiKTeX 2
+.9/fonts/type1/public/lm/lmsy9.pfb>
+Output written on "sbfin_worst case.pdf" (40 pages, 850041 bytes).
 PDF statistics:
- 1306 PDF objects out of 1440 (max. 8388607)
+ 1380 PDF objects out of 1440 (max. 8388607)
  175 named destinations out of 1000 (max. 500000)
- 136 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 166 words of extra memory for PDF output out of 10000 (max. 10000000)
 
