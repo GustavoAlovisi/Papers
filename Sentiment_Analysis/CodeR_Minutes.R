@@ -42,6 +42,7 @@ install.packages("lsa", dependencies = TRUE)
 install.packages("text2vec", dependencies = TRUE)
 install.packages("corrplot", dependencies = TRUE)
 install.packages("pdftools", dependencies = TRUE)
+install.packages("BINCOR", dependencies = TRUE) # Estimate the Correlation Between Two Irregular Time Series
 
 require(NLP)
 require(slam)
@@ -78,6 +79,7 @@ require(lsa)
 require(text2vec)
 require(corrplot)
 require(pdftools)
+require(BINCOR)
 
 ##############################################
 ######### OPTIONS #######
@@ -468,8 +470,8 @@ selic.m = Quandl("BCB/4189", type = tipo, collapse = "monthly", start_date = dat
 # Comparison of the sentiment index with macroeconomic variables
 par(mfrow = c(2,2))
 plot(x = scores$data, y = scores$document.scores, type = "l", xlab = "", ylab = "Sentiment Score")
-plot(selic.m, type = "l", xlab = "", ylab = "Cumulative annual rate in month")
 plot(ipca.m, type = "l", xlab = "", ylab = "IPCA in 12 months")
+plot(selic.m, type = "l", xlab = "", ylab = "Cumulative annual rate in month")
 plot(ipca.meta, type = "l", xlab = "", ylab = "Annual Inflation Target")
 
 # Positive and negative word clouds presented in the text
@@ -492,29 +494,6 @@ scoresLM = data.frame(sentiment$SentimentLM, data = atas$data[1:nrow(atas)], reu
 scoresQDAP = data.frame(sentiment$SentimentQDAP, data = atas$data[1:nrow(atas)], reuniao = atas$reuniao[1:nrow(atas)], stringsAsFactors = FALSE)
 
 
-# convertToBinaryResponse(sentiment)$SentimentHE
-# 
-# # Extract dictionary-based sentiment according to the HE dictionary
-# sentiment$SentimentHE
-# 
-# # View sentiment direction (i.e. positive, neutral and negative)
-# convertToDirection(sentiment$SentimentHE)
-# 
-# ## Loading required package: NLP
-# corpus <- VCorpus(VectorSource(dtm2))
-# convertToDirection(analyzeSentiment(corpus)$SentimentHE)
-
-# # Make dictionary available in the current R environment
-# data(DictionaryHE)
-# 
-# # Display the internal structure 
-# str(DictionaryHE)
-# 
-# # Access dictionary as an object of type SentimentDictionary
-# dict.HE <- loadDictionaryHE()
-# # Print summary statistics of dictionary
-# summary(dict.HE)
-
 # Comparison of the sentiment indexes with macroeconomic variables
 par(mfrow = c(2,2))
 plot(x = scoresGI$data, y = scoresGI$sentiment.SentimentGI, type = "l", xlab = "", ylab = "Sentiment Score")
@@ -530,8 +509,8 @@ plot(ipca.meta, type = "l", xlab = "", ylab = "Annual Inflation Target")
 
 par(mfrow = c(2,2))
 plot(x = scoresLM$data, y = scoresLM$sentiment.SentimentLM, type = "l", xlab = "", ylab = "Sentiment Score")
-plot(selic.m, type = "l", xlab = "", ylab = "Cumulative annual rate in month")
 plot(ipca.m, type = "l", xlab = "", ylab = "IPCA in 12 months")
+plot(selic.m, type = "l", xlab = "", ylab = "Cumulative annual rate in month")
 plot(ipca.meta, type = "l", xlab = "", ylab = "Annual Inflation Target")
 
 par(mfrow = c(2,2))
@@ -612,4 +591,72 @@ for (i in m) {
 #   n <- names(which(ct == i))
 #   print(n)
 # }
+
+
+## Using package BINCOR to measure correlation of unequal time series
+seq <- seq(1,221,1)
+selic <- data.frame(seq,selic.m)
+
+# 4 dictionaries in package SentimentAnalysis
+seq2 <- seq(1,173,1)
+GI <- data.frame(seq2,sentiment$SentimentGI)
+HE <- data.frame(seq2,sentiment$SentimentHE)
+LM <- data.frame(seq2,sentiment$SentimentLM)
+QDAP <- data.frame(seq2,sentiment$SentimentQDAP)
+
+binGI <- bin_cor(selic,GI, 3, "outputGI.tmp") # 3 is the default
+binHE <- bin_cor(selic,HE, 3, "outputHE.tmp")
+binLM <- bin_cor(selic,LM, 3, "outputLM.tmp")
+binQDAP <- bin_cor(selic,QDAP, 3, "outputQDAP.tmp")
+
+# IPCA vs Sentiment
+ipca <- data.frame(seq,ipca.m)
+
+binGI <- bin_cor(ipca,GI, 3, "outputGI.tmp") # 3 is the default
+binHE <- bin_cor(ipca,HE, 3, "outputHE.tmp")
+binLM <- bin_cor(ipca,LM, 3, "outputLM.tmp")
+binQDAP <- bin_cor(ipca,QDAP, 3, "outputQDAP.tmp")
+
+binnedtsGI <- binGI$Binned_time_series
+binnedtsHE <- binHE$Binned_time_series
+binnedtsLM <- binLM$Binned_time_series
+binnedtsQDAP <- binQDAP$Binned_time_series
+
+coripcaGI <- cor_ts(binnedtsGI[,1:2], binnedtsGI[,c(1,3)], KoCM = "pearson")
+coripcaHE <- cor_ts(binnedtsHE[,1:2], binnedtsHE[,c(1,3)], KoCM = "pearson")
+coripcaLM <- cor_ts(binnedtsLM[,1:2], binnedtsLM[,c(1,3)], KoCM = "pearson")
+coripcaQDAP <- cor_ts(binnedtsQDAP[,1:2], binnedtsQDAP[,c(1,3)], KoCM = "pearson")
+
+binnedtsGI <- binGI$Binned_time_series
+binnedtsHE <- binHE$Binned_time_series
+binnedtsLM <- binLM$Binned_time_series
+binnedtsQDAP <- binQDAP$Binned_time_series
+
+corSelicGI <- cor_ts(binnedtsGI[,1:2], binnedtsGI[,c(1,3)], KoCM = "pearson")
+corSelicHE <- cor_ts(binnedtsHE[,1:2], binnedtsHE[,c(1,3)], KoCM = "pearson")
+corSelicLM <- cor_ts(binnedtsLM[,1:2], binnedtsLM[,c(1,3)], KoCM = "pearson")
+corSelicQDAP <- cor_ts(binnedtsQDAP[,1:2], binnedtsQDAP[,c(1,3)], KoCM = "pearson")
+
+# Sentiment vs IPCA.m
+
+ipca_m <- data.frame(seq,ipca.m)
+
+binGI <- bin_cor(ipca_m,GI, 3, "outputGI.tmp") # 3 is the default
+binHE <- bin_cor(ipca_m,HE, 3, "outputHE.tmp")
+binLM <- bin_cor(ipca_m,LM, 3, "outputLM.tmp")
+binQDAP <- bin_cor(ipca_m,QDAP, 3, "outputQDAP.tmp")
+
+binnedtsGI <- binGI$Binned_time_series
+binnedtsHE <- binHE$Binned_time_series
+binnedtsLM <- binLM$Binned_time_series
+binnedtsQDAP <- binQDAP$Binned_time_series
+
+coripca_mGI <- cor_ts(binnedtsGI[,1:2], binnedtsGI[,c(1,3)], KoCM = "pearson")
+coripca_mHE <- cor_ts(binnedtsHE[,1:2], binnedtsHE[,c(1,3)], KoCM = "pearson")
+coripca_mLM <- cor_ts(binnedtsLM[,1:2], binnedtsLM[,c(1,3)], KoCM = "pearson")
+coripca_mQDAP <- cor_ts(binnedtsQDAP[,1:2], binnedtsQDAP[,c(1,3)], KoCM = "pearson")
+
+
+
+
 
