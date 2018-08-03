@@ -42,7 +42,7 @@ JEL: G11, G12, G14.
 Data used: We select 41 assets that had non-zero returns in more than eighty percent of the time intervals at a sampling frequency of 5 minutes. All stocks belong to BMF&BOVESPA (Brazil) from January 2nd, 2010 to December 31st, 2016.
 
 
-* Hudson C. Costa, Fernando A. B. Sabino da Silva,  Sabino P. da Silva Junior. **[Macroeconomic Forecasting: Optimizing via Natural Language Processing and Text Mining Analytics](https://github.com/FernandoSdaSilva/papers/tree/master/Sentiment_Analysis)**
+* Hudson C. Costa, Fernando A. B. Sabino da Silva,  Sabino P. da Silva Junior. **[Macroeconomic Forecasting: Optimizing via Natural Language Processing and Text Mining Analytics](https://github.com/FernandoSdaSilva/papers/tree/master/Sentiment_Analysis).**
 
 Software: R.
 
