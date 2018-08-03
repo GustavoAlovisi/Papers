@@ -46,7 +46,7 @@ Data used: We select 41 assets that had non-zero returns in more than eighty per
 
 Software: R.
 
-Data used: Web scraping minutes of the Copom (Monetary Policy Committee of the Central Bank of Brazil - https://www.bcb.gov.br/?id=MINUTES) from 2000 to 2017. Auxiliary data is collected from the Quandl API (public data platform from around the world).
+Data used: Web scraping minutes of the Copom (Monetary Policy Committee of the Central Bank of Brazil - https://www.bcb.gov.br/?id=MINUTES) from 2000 to 2018. Auxiliary data is collected from the Quandl API (public data platform from around the world).
 
 Published
 ==============
