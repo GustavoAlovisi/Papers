@@ -1,0 +1,137 @@
+\documentclass[a4paper,10t]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\usepackage{times}
+\usepackage[T1]{fontenc}
+\usepackage[affil-it]{authblk}
+\usepackage{authblk}
+\usepackage{amssymb,amsmath,amsthm,ragged2e}
+\usepackage{setspace,lipsum}
+\usepackage[pdftex]{color,graphicx}
+\usepackage{adjustbox}
+\usepackage{lmodern,caption}
+\usepackage{booktabs,array}
+\usepackage{epstopdf}
+\usepackage[figuresright]{rotating}
+\usepackage{pgfplots} 
+\usepackage{pgfgantt}
+\usepackage{pdflscape}
+\usepackage{algpseudocode}
+\pgfplotsset{compat=newest} 
+\pgfplotsset{plot coordinates/math parser=false}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\usepackage{array,longtable}
+\usepackage[top=3cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\newcommand{\otoprule}{\midrule[\heavyrulewidth]}
+\newcolumntype{Z}{>{\centering\arraybackslash}X}
+\usepackage{latexsym,hhline}
+\usepackage[round]{natbib} % use author-year citation style
+\usepackage[colorlinks=true,allcolors=blue]{hyperref} % simplify color scheme ...
+%\usepackage{cite}
+\usepackage{setspace}
+\onehalfspacing
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\Ima}{Im}
+\DeclareCaptionLabelSeparator{horse}{:\quad} % change according to your needs
+\captionsetup{
+	labelsep = horse,
+	figureposition = bottom % proper spacing between figure and caption
+}
+\usepackage{tikz,color,listings,float,booktabs,enumerate,multirow,multicol,subcaption}
+\usepackage{parskip}
+\setlength{\parindent}{15pt}
+\usepackage{bigstrut,hyperref,tabularx,ctable,array,longtable,tikz}
+\hypersetup{
+	pdftitle={TITLE},
+	pdfauthor={AUTHOR},
+	pdfsubject={SUBJECT},
+	pdfkeywords={KEYWORD} {KEYWORD} {KEYWORD},
+	colorlinks=true,
+	linkcolor=blue,
+	citecolor=blue,
+	filecolor=magenta,
+	urlcolor=blue
+}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{definition}{Definition}
+\newtheorem{corollary}{Corollary}[theorem]
+\usepackage{rotating}
+
+% Real Number
+\newcommand{\R}{\mathbb R}
+% natural numbers
+\newcommand{\Nat}{\mathbb N}
+% complex numbers
+\newcommand{\C}{\mathbb C}
+\newcommand{\Pstar}{\mathbb{P}^{\ast}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Expect}{{\rm I\kern-.3em E}}
+\usepackage[listings]{tcolorbox}
+\tcbuselibrary{listings,theorems}
+\usepackage{fancyheadings,xspace,amsmath,tikz-qtree}
+\usetikzlibrary{matrix}
+
+\usepackage[labelfont=bf]{caption} %% for the figure and Tables Caption%%
+%\usepackage[textfont=bf]{caption}
+\usepackage{threeparttable}
+\usepackage{standalone}
+
+\pgfplotsset{every axis/.append style={
+%		axis x line=middle,    % put the x axis in the middle
+%		axis y line=middle,    % put the y axis in the middle
+%		axis line style={<->}, % arrows on the axis
+%		xlabel={$x$},          % default put x on x-axis
+%		ylabel={$y$},          % default put y on y-axis
+		label style={font=\LARGE},
+		ticklabel style={font=\LARGE}  
+}}
+
+\begin{document}
+
+	
+	\title{A Computationally Efficient Pairs Trading Strategy with Reinforcement Learning \\ or \\ A New Pairs Trading Strategy based on Reinforcement Lerarning}
+	\author[]{ Fernando A. B. Sabino da Silva\thanks{\texttt{Department of Statistics, Federal University of Rio Grande do Sul, Porto Alegre, RS 91509-900, Brazil, e-mail: dasilvafbs@gmail.com}; Corresponding author.}}
+	\author[]{Elton F. Sbruzzi\thanks{\texttt{Division of Computer Science, Brazilian Air Force, Technological Institute of Aeronautics (ITA), São José dos Campos, SP 12228-900, Brazil, e-mail: elton@ita.br}}}
+	\thanks{We thank Tainan Boff for helping us obtaining the data we use.}
+	\affil[]{}
+	%\affil[2]{}
+	\date{}
+	\maketitle
+	
+	
+	\begin{abstract}
+		We carry out a study to evaluate and compare the relative performance of the distance and (a ver) pairs trading strategies. Using data from 41 assets listed on the B3 from 2010 to 2016, we find that the (a ver) strategy is able to generate a higher mean excess return than the traditional distance method. Particularly, the (a ver) and distance methods show a mean annualized value-weighted excess returns after costs on committed and fully invested capital as high as ()\% and ()\% and ()\% and ()\%, respectively, with annual Sharpe ratios up to (). The () strategy shows positive and significant alphas during the sample period after accounting for various risk-factors. We also provide some evidence on the performance of the strategies over different market states. 
+		
+		\smallskip
+		
+		\noindent \textbf{Keywords:} Pairs Trading;Reinformcement Learning; Distance; Long-Short; Quantitative Trading Strategies; Statistical Arbitrage.
+	\end{abstract}
+	
+	% Add various lists on new pages.
+	%\pagebreak
+	%\tableofcontents
+	
+	%\pagebreak
+	%\listoffigures
+	
+	%\pagebreak
+	%\listoftables
+	
+	\include{Introduction}
+	\include{Methodology}
+	\include{Model}
+	\include{Results}
+	\include{Conclusion}
+	\include{Appendix}
+	
+		
+	\addcontentsline{toc}{section}{References}
+	\bibliographystyle{rfs}
+	\bibliography{mypapers}
+	
+
+	\end{document} 

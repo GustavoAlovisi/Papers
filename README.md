@@ -1,11 +1,11 @@
 Working Papers
 ==============
 
-This repository aims to provide information (data, codes) of my current working papers in empirical finance, econometrics, and text mining/webscraping. 
+This repository aims to provide information (data, codes) of my current working papers in empirical finance, econometrics, artificial intelligence, and text mining/webscraping. 
 
-Further studies should pursue applications to asset allocation under conditions of market distress or to a user-specified scenario. In addition, I want to identify impactful news articles and construct news factor. One can apply machine learning techniques to identify relevant tags for a story and to understand which patterns can impact the market most.
+Further studies should pursue applications to asset allocation under conditions of market distress (tail-risk hedging strategy) or to a user-specified scenario (calibrate a financial portfolio to the goals and risk tolerance of the user). In addition, I want to identify impactful news articles and construct news factor. One can apply machine learning techniques to identify relevant tags for a story and to understand which patterns can impact the market most.
 
-* Fernando A.B. Sabino da Silva, Flavio A. Ziegelmann, and Cristina Tessari. **[Robust Portfolio Optimization with Multivariate Copulas: a Worst-Case CVaR approach](https://github.com/FernandoSdaSilva/papers/tree/master/Portfolio_Optimization_with_Multidimensional_Copulas).**
+* Fernando A.B. Sabino da Silva and Flavio A. Ziegelmann. **[Robust Portfolio Optimization with Multivariate Copulas: a Worst-Case CVaR approach](https://github.com/FernandoSdaSilva/papers/tree/master/Portfolio_Optimization_with_Multidimensional_Copulas).**
 
 Software: R, Matlab.
 
@@ -29,12 +29,13 @@ Data used: Daily data of adjusted closing prices of all stocks that belong to S&
 Press Coverage: **[Quantpedia](https://quantpedia.com/Blog/Details/mixed-copula-pairs-trading-strategy).**
 
 
-* Fernando A.B. Sabino da Silva and Tainan B.F. Boff. **[Mixed Copula Pairs Trading Strategy with High Frequency Data](https://github.com/FernandoSdaSilva/papers/tree/master/Pairs_Trading_High_Frequency).**
+* Fernando A.B. Sabino da Silva, Elton Sbruzzi and Tainan B.F. Boff. **[A Computationally Efficient Pairs Trading Strategy with
+Reinforcement Learning](https://github.com/FernandoSdaSilva/papers/tree/master/Pairs_Trading_Reinforcement_Learning).**
 
 Software: R, Matlab.
 
 Keywords: Pairs Trading; Copula, Distance, Long-
-Short; Quantitative Strategies; Statistical Arbitrage, High-Frequency, Realized Variance.
+Short; Quantitative Strategies; Statistical Arbitrage, High-Frequency, Realized Variance, Reinforcement Learning.
 
 JEL: G11, G12, G14.
 
@@ -46,19 +47,6 @@ Data used: We select 41 assets that had non-zero returns in more than eighty per
 Software: R.
 
 Data used: Web scraping minutes of the Copom (Monetary Policy Committee of the Central Bank of Brazil - https://www.bcb.gov.br/?id=MINUTES) from 2000 to 2017. Auxiliary data is collected from the Quandl API (public data platform from around the world).
-
-* Fernando A. B. Sabino da Silva and Cristina Tessari. **A Nonparametric Approach to Conditional Factor Models.**
-
-Software: Python, R.
-
-Data used: Downloaded from Professor Kenneth French's data library website (http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/Data_Library/det_st_rev_factor_daily.html).
-
-* Fernando A. B. Sabino da Silva. **An Application of Suppes-Bayes Causal Nets to Scenario Modeling.**
-
-Software: R.
-
-Data used: Downloaded from Professor Kenneth French's data library website (http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/Data_Library/det_st_rev_factor_daily.html).
-
 
 Published
 ==============

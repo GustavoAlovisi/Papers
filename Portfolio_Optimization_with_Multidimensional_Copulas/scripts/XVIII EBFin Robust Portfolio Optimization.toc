@@ -1,12 +1,11 @@
 \beamer@sectionintoc {1}{Introduction}{2}{0}{1}
-\beamer@sectionintoc {2}{Conditional Value-at-Risk}{7}{0}{2}
-\beamer@subsectionintoc {2}{1}{CVaR Minimization with Finite Number of Scenarios}{11}{0}{2}
+\beamer@sectionintoc {2}{Conditional Value-at-Risk}{10}{0}{2}
+\beamer@subsectionintoc {2}{1}{CVaR Minimization with Finite Number of Scenarios}{12}{0}{2}
 \beamer@sectionintoc {3}{The Models}{14}{0}{3}
-\beamer@subsectionintoc {3}{1}{The Worst Case CVaR}{14}{0}{3}
-\beamer@subsectionintoc {3}{2}{Worst Case Copula-CVaR}{17}{0}{3}
-\beamer@sectionintoc {4}{Data}{21}{0}{4}
-\beamer@sectionintoc {5}{Methodology}{22}{0}{5}
-\beamer@subsectionintoc {5}{1}{Strategies Under Analysis}{23}{0}{5}
-\beamer@subsubsectionintoc {5}{1}{1}{Worst Case Copula-CVaR Portfolio Optimization}{23}{0}{5}
-\beamer@sectionintoc {6}{Performance Measures}{29}{0}{6}
-\beamer@sectionintoc {7}{Empirical Results}{35}{0}{7}
+\beamer@subsectionintoc {3}{1}{Worst Case CVaR}{14}{0}{3}
+\beamer@sectionintoc {4}{Data}{19}{0}{4}
+\beamer@sectionintoc {5}{Methodology}{20}{0}{5}
+\beamer@subsectionintoc {5}{1}{Strategies Under Analysis}{22}{0}{5}
+\beamer@subsubsectionintoc {5}{1}{1}{Worst Case Copula-CVaR Portfolio Optimization}{22}{0}{5}
+\beamer@sectionintoc {6}{Performance Measures}{27}{0}{6}
+\beamer@sectionintoc {7}{Empirical Results}{29}{0}{7}

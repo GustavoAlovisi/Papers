@@ -1,0 +1,9 @@
+LINKS INTERESSANTES
+
+- https://www.cis.upenn.edu/~mkearns/papers/KearnsNevmyvakaHFTRiskBooks.pdf
+
+- http://discovery.ucl.ac.uk/1461997/1/SergioAlvarez_Thesis_SystematicTrading_CAML_2014.pdf
+
+- https://github.com/yuriak/RLFinance
+
+- https://github.com/shenyichen105/Deep-Reinforcement-Learning-in-Stock-Trading

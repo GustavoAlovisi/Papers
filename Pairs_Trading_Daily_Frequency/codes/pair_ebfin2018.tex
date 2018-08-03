@@ -90,12 +90,33 @@
 	
 	\frame{\titlepage}
 	
+	\section{}	
+	
+	\begin{frame}
+	\frametitle{Pairs Trading}
+	
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[scale=0.5]{fig1.png}
+		\label{fig:fig1}
+	\end{figure}
+	
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[scale=0.38]{fig2.png}
+		\label{fig:fig2}
+	\end{figure}
+	
+\end{frame}
+%The proceeds from the short sale are fully invested by purchasing an equivalent dollar amount of the cheap stock. At convergence, two trades happen, the cheap stock is sold and the short position is covered. The difference in the cash flows on the convergence trade is the payoff. The return on the long position less the return on the short position is the excess return of this pair.
+%O produto da venda a descoberto é totalmente investido pela compra de uma quantia equivalente em dólares do estoque barato. Na convergência, dois negócios acontecem, o estoque barato é vendido e a posição vendida é coberta. A diferença nos fluxos de caixa no comércio de convergência é o retorno. O retorno na posição longa menos o retorno na posição curta é o excesso de retorno deste par.
+	
 	\begin{frame}[label=frame1]
 	\frametitle{Main Idea}
 	
 	\setbeamercovered{transparent}
 	
-	\begin{itemize}
+	\begin{itemize} 
 		\justifying
 		
 		\item Pairs Trading is one type of Statistical ``Arbitrage''.
@@ -116,33 +137,16 @@
 %			\item short the higher one 
 %			\item buy the lower one
 
-		\end{itemize}
-	\pause
-	\item<3> Reverse your positions when the two prices converge $\Rightarrow$ Reversal profits.
-		\end{itemize}
+%		\end{itemize}
+%	\pause
+%	\item<3> Reverse your positions when the two prices converge $\Rightarrow$ Reversal profits.
+%		\end{itemize}
 	%This convergence of stock prices relate to the mean reversion documented by DeBondt and Thaler (1985, 1987) and Jegadeesh and Titman (1993)pairs trading bets on price reversals, it is an example of a contrarian investment strategy	
+	
+	\end{itemize}
 
-\end{frame}
+\end{itemize}
 
-		\section{}	
-
-\begin{frame}
-\frametitle{Pairs Trading}
-
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[scale=0.5]{fig1.png}
-	\label{fig:fig1}
-\end{figure}
-
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[scale=0.38]{fig2.png}
-	\label{fig:fig2}
-\end{figure}
-
-%The proceeds from the short sale are fully invested by purchasing an equivalent dollar amount of the cheap stock. At convergence, two trades happen, the cheap stock is sold and the short position is covered. The difference in the cash flows on the convergence trade is the payoff. The return on the long position less the return on the short position is the excess return of this pair.
-%O produto da venda a descoberto é totalmente investido pela compra de uma quantia equivalente em dólares do estoque barato. Na convergência, dois negócios acontecem, o estoque barato é vendido e a posição vendida é coberta. A diferença nos fluxos de caixa no comércio de convergência é o retorno. O retorno na posição longa menos o retorno na posição curta é o excesso de retorno deste par.
 \end{frame}
 
 	
@@ -186,14 +190,14 @@
 	
 	\setbeamercovered{transparent}
 	
-	\item Tartaglia:
+	%\item Tartaglia:
 	
-	\begin{itemize}
-		\setlength\itemsep{1em}
-		\item "Human beings don't like to trade against human nature, which wants to buy stocks after they go up, not down``.
-	\end{itemize}
-
-	\vspace{0.3cm}
+%	\begin{itemize}
+%		\setlength\itemsep{1em}
+%		\item "Human beings don't like to trade against human nature, which wants to buy stocks after they go up, not down``.
+%	\end{itemize}
+%
+%	\vspace{0.3cm}
 	
 	\item Over-reaction? 
 	\begin{itemize} 
@@ -241,21 +245,27 @@
 			\setbeamercovered{transparent}
 
 \setlength\itemsep{1em}
+\setlength{\parskip}{15pt}
 		
 \item<1> Pairs Trading does not seek to determine the absolute price of any stock.
 
-\vspace{0.3cm}
 	%Two securities that are close substitutes for each other should sell for the same price
 		%to figure out the whether it is overvalued or undervalued
 \item<1> Long-short "arbitrage in expectations".
 
-\vspace{0.3cm}
+\setlength{\parskip}{0pt}
+
+\begin{itemize}
+		\item Provide a positive expected return on capital with a minimal exposure to systematic sources of risk.
+\end{itemize}
+% That is, they seek to provide a positive expected return on capital with aminimal exposure to systematic sources of risk by “hedging away” exposure to traditional asset classes typically held in the investment portfolio
+
+\setlength{\parskip}{15pt}
+
 \pause
 
 \item<2> Market-neutral. 
 %\item Eliminate relative mispricing
-
-\vspace{0.3cm}
 
 \item<2> Self-financing.
 %where all stocks are infinitely divisible and there is no transaction cost. 
@@ -282,7 +292,7 @@
 		   	\item<1>  Evidence that a
 		   	simple strategy produced statistically significant excess returns for the period 1962-2002 in the US market.
 			\pause
-			\item<2> Matching partner (12-month): Minimize the sum of squared deviations (distance) between normalized daily prices $\Rightarrow$ Capture the degree of mispricing stocks.
+%			\item<2> Matching partner (12-month): Minimize the sum of squared deviations (distance) between normalized daily prices $\Rightarrow$ Capture the degree of mispricing stocks.
 			\begin{itemize}
 				\item Trading period (6-month): A trade is initiated when the
 				distance exceeds 2$\sigma$ and exits when the distance is 0, or at the end of six-month.  %(fat left tail)
@@ -390,20 +400,19 @@ f(x,y)=\frac{\exp \left\{ -\frac 1{2(1-\rho ^2)}\left[ \left( \frac{x-\mu _x%
 		\frametitle{Motivation}
 		
 		\setbeamercovered{transparent}
-		
+			
 		\begin{itemize}
 			\justifying
+			
+			\setlength{\parskip}{15pt}
 			
 			\item Joint normal distribution $\Rightarrow$ Linear correlation fully describes the dependence. 
 			
 			%Since the copula of a distribution does not depend on purely marginal parameters such as the expected value and the standard deviation, for elliptical random variable the copula is fully determined by the correlations.
 			% As a consequence, since the measures of concordance are defined in terms of the copula of a distribution, the measures of concordance between the entries of an elliptical random variable X are fully determined by the correlation matrix.
 			
-			\pause
-			
-			\vspace{0.3cm}
-			
 			\item  Tail dependence
+			\setlength{\parskip}{0pt}
 				\begin{itemize}
 					\item Heavy tails
 					\item Possibly Asymmetric
@@ -413,27 +422,21 @@ f(x,y)=\frac{\exp \left\{ -\frac 1{2(1-\rho ^2)}\left[ \left( \frac{x-\mu _x%
 			% is the presence of heavy and possibly asymmetric tails. 
 			
 %			 However, a main feature of joint distributions characterized by 
-	\vspace{0.3cm}
-	
-	\pause
+
+\setlength{\parskip}{15pt}
 			
 		\item A single distance measure may fail to catch the dynamics of the spread between a pair of securities.
+		\setlength{\parskip}{0pt}
 			\begin{itemize}
 				\item Volatility differs at different price levels $\Rightarrow$ inappropriate to use constant trigger points.
 				\item We may initiate and close the trades at non-optimal positions.
 				%\item Trades that do not converge can result in a loss $\Rightarrow$ Open at the end of the trading period?
 			\end{itemize}
-		
-		
-	\pause	
-			\vspace{0.3cm}
-			
-			\item \textcolor{blue}{Lie and Wu} \textcolor{blue}{(2013)}:  pairs trading strategy based on 2-dimensional copulas .
+
+	\setlength{\parskip}{15pt}			
+			\item \textcolor{blue}{Lie and Wu} \textcolor{blue}{(2013)}:  pairs trading strategy based on 2-dimensional copulas.
 %			to overcome the limitations of the distance method.
 			
-			\vspace{0.3cm}
-			
-		
 		\end{itemize}
 	\end{frame}
 
@@ -479,7 +482,6 @@ f(x,y)=\frac{\exp \left\{ -\frac 1{2(1-\rho ^2)}\left[ \left( \frac{x-\mu _x%
 	where $u_{i}$=$F_{i}\left( x_{i}\right) $, $i=1,...,d$.
 	
 	\vspace{0.3cm}
-	\pause
 	
 	\begin{exampleblock}{}
 		\centering
@@ -615,19 +617,12 @@ f(x,y)=\frac{\exp \left\{ -\frac 1{2(1-\rho ^2)}\left[ \left( \frac{x-\mu _x%
 	\frametitle{Copula Method}
 	
 \setbeamercovered{transparent}
-	
+\setlength{\parskip}{15pt}	
 	\begin{itemize}
-		\item<1> $M_{t}^{X\left\vert Y\right. }$ and $%
+		\item $M_{t}^{X\left\vert Y\right. }$ and $%
 		M_{t}^{Y\left\vert X\right. }$ $\Rightarrow$ measure the degrees of relative mispricing for a single day.
 		
-	\end{itemize} 
-
-		
-		\pause
-		\vspace{0.3cm}
-		
-	\begin{itemize}
-		\item<2> Overall degree of relative mispricing ( \textcolor{blue}{Rad \emph{et al}}. \textcolor{blue}{(2016)}).
+		\item Overall degree of relative mispricing (\textcolor{blue}{Rad \emph{et al}}. \textcolor{blue}{(2016)}).
 		
 		\vspace{0.2cm}
 		
@@ -662,27 +657,23 @@ f(x,y)=\frac{\exp \left\{ -\frac 1{2(1-\rho ^2)}\left[ \left( \frac{x-\mu _x%
 	\frametitle{Copula}
 	
 	\setbeamercovered{transparent}
-	
-	\vspace{0.3cm}
-	
+			
 	\begin{itemize}
+		
+		\setlength{\parskip}{15pt}
 		
 		\item Sensitivity analysis: open a long-short position once one of the
 		cumulative indexes is above 0.05, 0.10, $\ldots$, 0.55 and the other one is below
 		-0.05, -0.10, $\ldots$, -0.55 at the same time.
 		
-		\vspace{0.3cm}
-		
 		\item How many pairs do we use?
+		\setlength{\parskip}{0pt}
 		\begin{itemize}
 			\item 5, 10, 15, 20, 25, 30 and 35.
 		\end{itemize}
 		
 		% We perform a 
-		
-		\vspace{0.3cm}
-		\pause
-		
+		\setlength{\parskip}{15pt}
 		\item The
 		positions are unwound when both cumulative mispriced indexes return to zero.
 
@@ -694,13 +685,13 @@ f(x,y)=\frac{\exp \left\{ -\frac 1{2(1-\rho ^2)}\left[ \left( \frac{x-\mu _x%
 	\frametitle{Pairs Implementation: Copula}
 	
 	\setbeamercovered{transparent}
+	\setlength{\parskip}{15pt}
 	
 	\begin{enumerate}[(1)]
 		\justifying
 		
 		\item  Estimate the marginal distributions of returns.
-		\vspace{0.3cm}
-		
+				
 		%Calculate daily returns for each stock during the formation period and, separately
 		
 		\begin{itemize}	
@@ -708,9 +699,6 @@ f(x,y)=\frac{\exp \left\{ -\frac 1{2(1-\rho ^2)}\left[ \left( \frac{x-\mu _x%
 			% We fit an appropriate  model to each univariate time series.
 		\end{itemize}
 		
-		\vspace{0.3cm}
-		
-		\pause
 		\item Estimate the two-dimensional copula model to data that has been transformed to [0,1] margins, i.e.,
 		\[
 		H\left( r_{t}^{X},r_{t}^{Y}\right) =C\left(F_{X}\left( r_{t}^{X}\right)
@@ -719,15 +707,8 @@ f(x,y)=\frac{\exp \left\{ -\frac 1{2(1-\rho ^2)}\left[ \left( \frac{x-\mu _x%
 		where $H$ is the joint distribution, $r_{t}^{X}$ e $r_{t}^{Y}$ are stock
 		returns and $C$ is the copula.
 		
-		\vspace{0.3cm}
-		
-		\pause
-		
 		\begin{itemize}	
 			\item Gaussian, t, Clayton, Frank, Gumbel.
-			
-			\pause
-			\vspace{0.3cm}
 			
 			\begin{exampleblock}
 				\centering		
@@ -788,7 +769,7 @@ where $\theta=\left(\alpha,\beta,\delta\right)'$ are the Clayton, Frank and Gumb
 	%\begin{itemize}
 	%	\setlength\itemsep{1em}
 	\item \textbf{Dates}: July 2nd, 1990 to December 31st, 2015.
-	\item \textbf{Totals}: 1100 stocks during 6426 days
+	\item \textbf{Totals}: 1100 stocks during 6426 days.
 
 \end{itemize}
 
@@ -844,7 +825,7 @@ where $\theta=\left(\alpha,\beta,\delta\right)'$ are the Clayton, Frank and Gumb
 		\midrule
 		& \multicolumn{4}{c}{\textit{Panel A: Top 5}} \\
 		& &  \\
-		Average price deviation trigger for opening pairs & 0.0594 & 0.0665  \\
+		Average price deviation trigger for opening & 0.0594 & 0.0665  \\
 		Total number of pairs opened & \cellcolor{corn} 352   & \cellcolor{corn} 348   \\
 		Average number of pairs traded per 6-month & 7.18 & 7.10    \\
 		Average number of round-trip trades per pair & 1.44 & 1.42   \\
@@ -856,7 +837,7 @@ where $\theta=\left(\alpha,\beta,\delta\right)'$ are the Clayton, Frank and Gumb
 		& &  \\
 		& \multicolumn{4}{c}{\textit{Panel B: Top20}} \\
 		& & \\
-		Average price deviation trigger for opening pairs & 0.0681 & 0.0821    \\
+		Average price deviation trigger for opening & 0.0681 & 0.0821    \\
 		Total number of pairs opened & \cellcolor{celadon} 1312  & \cellcolor{celadon} 749     \\
 		Average number of pairs traded per 6-month & 26.78 & 15.29   \\
 		Average number of round-trip trades per pair & 1.34 & 0.76  \\
@@ -1157,12 +1138,12 @@ where $\theta=\left(\alpha,\beta,\delta\right)'$ are the Clayton, Frank and Gumb
 \begin{frame}
 \frametitle{Extensions}
 
-	\begin{figure}[htbp]
-	\centering
-%	\includegraphics[scale=0.14]{fig3.png}
-\includegraphics[scale=0.35]{man_machine2.png}
-	\label{fig:fig3}
-\end{figure}
+%	\begin{figure}[htbp]
+%	\centering
+%%	\includegraphics[scale=0.14]{fig3.png}
+%\includegraphics[scale=0.35]{man_machine2.png}
+%	\label{fig:fig3}
+%\end{figure}
 
 \begin{itemize}
 		\item Machine Learning and AI-based solutions 
@@ -1170,8 +1151,12 @@ where $\theta=\left(\alpha,\beta,\delta\right)'$ are the Clayton, Frank and Gumb
 		\begin{itemize}
 			\item Reinforcement Learning
 		\end{itemize}
-\vspace{0.3cm}
+	
+\setlength{\parskip}{15pt}
+
 	\item News Sentiment
+	\setlength{\parskip}{0pt}
+	
 	\begin{itemize}
 		%\item Enhances a pairs-trading strategy using an abnormal news volume and sentiment overlay
 		\item Effect of negative news is bigger than positive news.

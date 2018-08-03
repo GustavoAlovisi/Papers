@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.8.22)  2 MAY 2018 10:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.8.22)  19 JUL 2018 03:54
 entering extended mode
 **./Pairs_Trading_MixCopDist.tex
 (Pairs_Trading_MixCopDist.tex
@@ -2307,7 +2307,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 919.
 Here is how much of TeX's memory you used:
  36687 strings out of 493323
  838442 string characters out of 3139060
- 1138596 words of memory out of 3000000
+ 1138595 words of memory out of 3000000
  39344 multiletter control sequences out of 15000+200000
  94944 words of font info for 69 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191

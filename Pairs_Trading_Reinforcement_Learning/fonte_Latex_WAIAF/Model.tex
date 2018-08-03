@@ -1,0 +1,72 @@
+\section{Model} \label{model}
+
+Usually, the components of the individual portfolio are given is often assumed in the literature of portfolio optimization problem \cite{Brandt2007}. Nonetheless, we highlight that our objective is to find out a subset of components, among a extensive list of securities, aiming to construct a portfolio. The model for the portfolio level of risk is:
+
+\begin{equation}
+\begin{aligned}
+& \underset{\mathcal{W}}{\text{Min}}
+& & \sigma = (\mathcal{W}' * \Sigma * \mathcal{W})^{0.5} \\
+%& \text{subject to}
+%& & \sum_{n=1}^{10} w_n = 1 \\
+%&&& 0 =< w_n =<1.
+\end{aligned}
+\label{eq: portfolio_risk}
+\end{equation}
+where $\sigma$ is the level of risk, $\mathcal{W} = \{w_1, w_2, ..., w_{10}\}$ is the vector of weights and $\Sigma$ is the covariance matrix based on the historical returns of a given set of components. And the model for the portfolio Sharpe ratio is:
+
+\begin{equation}
+\begin{aligned}
+& \underset{\mathcal{W}}{\text{Max}}
+& & Sharpe= \frac{\mathcal{W}'E(Ret)}{\sigma} \\
+%& \text{subject to}
+%& & \sum_{n=1}^{10} w_n = 1 \\
+%&&& 0 =< w_n =<1.
+\end{aligned}
+\label{eq: portfolio_sharpe}
+\end{equation}
+where $Sharpe$ is the Sharpe ratio, $E(Ret) = \{E(ret_1), E(ret_2), ... , E(ret_{10})\}$ is the vector of expected return. The constraints for $w$ is at both of the (\ref{eq: portfolio_risk}) and (\ref{eq: portfolio_sharpe}) are $\sum_{n=1}^{10} w_n = 1$ and $0 =< w_n =<1$.
+
+For the purpose of this work, our model is divided in two steps. Firstly, we employ learning automata to select the components of an individual portfolio. And secondly, we use a traditional solver in order to find the vector of weights that optimize this portfolio.
+
+For example, let's use learning automata to find out the components of an individual portfolio that has the most accurate minimal risk. In order to do so, our list of variables is composed as below (see details in Section \ref{methodology}):
+\begin{itemize}
+\item $\mathcal{P}_t$ is vector of probabilities of each component to be selected at moment $t$.
+\item action-set $\mathcal{A}$ is the list of 500 components of the S\&P 500 Index, $N=500$.
+\item $\mathcal{A}_t = \{a^1_t,a^2_t,...,a^{10}_t\}$ is the list of ten stocks selected to risk optimization at moment $t$.
+\item $\mathcal{A}^*_T$ is the list of ten stocks that belongs to the action-set $\mathcal{A}$ with the highest probabilities.
+\item $\sigma^*_T$ is the optimal portfolio risk along of the algorithm.
+\item $\sigma^*_t$ is the optimal portfolio risk at time $t$.
+\item reinforcement signal $\mathcal{R}$ is the set signal.
+\item learning scheme $\tau$ is the function that update the vector of probabilities.
+\item $\mathcal{W}$ is the vector of portfolio weights.
+\end{itemize}
+
+\begin{figure}[hbt]
+\small
+\setstretch{1.25}
+\begin{algorithmic}[1]
+\Require $\mathcal{A}$
+\Ensure $\sigma^*_T$ , $\mathcal{A}^*_T$ , $\mathcal{W}^*_T $
+\For {$n=1$ to 30} \Comment{Number of runs}
+	\State $\sigma^*_T \gets 10 $ \Comment{Initiate optimal global risk $\sigma^*_T$ }
+    \State $\mathcal{P}_t(\mathcal{A})  \gets 1/N$\Comment{Initiate vector of probabilities $\mathcal{P}_t(\mathcal{A})$}
+  \While{$\sum_1^{10}{\mathcal{P}_t(\mathcal{A}^*_T)}<0.99$ and $t<1000$}  \label{alg:while}
+	\State $\mathcal{A}_t \gets \mathcal{P}_t(\mathcal{A})$\Comment{ Select ten components randomly}
+	\State $\sigma^*_t \gets SD(\mathcal{A}_t)$\Comment{ Optimal risk by using (\ref{eq: portfolio_risk})}
+	\If{$\sigma^*_t<\sigma^*_T$} \label{alg:receivedSignalV}%\COMMENT{from $v$}
+		\State $\sigma^*_T\gets\sigma^*_t$
+        \State $\mathcal{A}^*_T \gets \mathcal{A}_t$
+        \State $\mathcal{W}^*_T \gets \mathcal{W}_t$
+	\EndIf
+	\State $\mathcal{R}(\mathcal{A}^*) \gets 0.001$ \Comment{Reinforcement signal}
+	\State $\mathcal{P}_{t+1}(\mathcal{A}) \gets \mathcal{P}_t(\mathcal{A}) + \mathcal{R}(\mathcal{A}^*_T)$ \Comment{Transition function}
+	\State $\mathcal{P}_{t+1}(\mathcal{A}) \gets \mathcal{P}_{t+1}(\mathcal{A})/ \sum \mathcal{P}_{t+1}(\mathcal{A}) $. \Comment{Normalization}
+    \State $t  \gets t+1$
+  \EndWhile
+\EndFor
+\end{algorithmic}
+\caption{Application of learning automata to select the portfolio components in terms of risk}
+\label{alg: ls}
+\end{figure}
+
+Figure \ref{alg: ls} shows the algorithm based on learning automata to select the components of an individual portfolio in terms of risk $\sigma$. From this figure, notice the following. Firstly, the algorithm will be terminated whether the sum of the top-ten probabilities of a component to be selected $\sum_1^{10}{\mathcal{P}_t(\mathcal{A}^*_T)}<0.99$ is superior to the threshold of $0.99$, or the amount of loops $t$ is equal to 1000. Secondly, the components that results in the lowest level of risk $\sigma^*_T$ of this algorithm is updated whether the minimal risk of the portfolio at algorithm $\sigma^*_t$ is inferior to this value. Thirdly, the probability of the components that shows the lowest level of risk along of the algorithm process $\sigma^*_T$ is updated according to the reinforcement signal $\mathcal{R}(\mathcal{A}^*)=0.001$. Finally, the transition function is updated according the reinforcement signal received $\mathcal{P}_{t+1}(\mathcal{A}) \gets \mathcal{P}_t(\mathcal{A}) + \mathcal{R}(\mathcal{A}^*_T)$.

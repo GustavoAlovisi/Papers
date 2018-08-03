@@ -1,0 +1,151 @@
+\documentclass[titlepage]{elsarticle}
+%\documentclass[review]{elsarticle}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{lscape}
+\usepackage{fullpage}
+\usepackage{graphicx,color} % Para escrever em cores
+\usepackage{graphics}
+\usepackage{subfig}
+\usepackage{ae}
+\usepackage[T1]{fontenc}
+\usepackage[ansinew]{inputenc}
+\usepackage{pdflscape}
+\usepackage{url}
+\usepackage{setspace}
+\usepackage{tabularx}
+\usepackage{dcolumn}
+\usepackage{rotating}
+\usepackage{a4wide}
+\usepackage{supertabular}
+\usepackage[lmargin=2cm, rmargin=2cm,tmargin=2.5cm,bmargin=2.5cm]{geometry}
+\usepackage{fullpage}
+\usepackage{multirow}
+\usepackage{longtable}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage[autostyle]{csquotes}
+\usepackage{comment}
+\usepackage{tikz}
+\usepackage{indentfirst}
+\usepackage{times}
+\usepackage{pgfplots}
+\usepackage{pgfgantt}
+\pgfplotsset{compat=newest}
+\pgfplotsset{plot coordinates/math parser=false}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\usepackage{array,longtable}
+
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{definition}{Definition}
+\newtheorem{corollary}{Corollary}[theorem]
+\usepackage{rotating}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\Ima}{Im}
+
+
+\usepackage{lineno,hyperref}
+\hypersetup{
+  colorlinks = true,
+  linkcolor=blue,   % color of internal links
+  citecolor=blue,   % color of links to bibliography
+  urlcolor=blue,    % color of external links
+  pagebackref=true,
+  implicit=false,
+  bookmarks=true,
+  bookmarksopen=true,
+  pdfdisplaydoctitle=true
+}
+\modulolinenumbers[5]
+
+\journal{Journal of Empirical Finance}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%% Elsevier bibliography styles
+%%%%%%%%%%%%%%%%%%%%%%%
+%% To change the style, put a % in front of the second line of the current style and
+%% remove the % from the second line of the style you would like to use.
+%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Numbered
+%\bibliographystyle{model1-num-names}
+
+%% Numbered without titles
+%\bibliographystyle{model1a-num-names}
+
+%% Harvard
+%\bibliographystyle{model2-names.bst}\biboptions{authoryear}
+
+%% Vancouver numbered
+%\usepackage{numcompress}\bibliographystyle{model3-num-names}
+
+%% Vancouver name/year
+%\usepackage{numcompress}\bibliographystyle{model4-names}\biboptions{authoryear}
+
+%% APA style
+\bibliographystyle{model5-names}\biboptions{authoryear}
+
+%% AMA style
+%\usepackage{numcompress}\bibliographystyle{model6-num-names}
+
+%% `Elsevier LaTeX' style
+%\bibliographystyle{elsarticle-num}
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+		
+\setcounter{table}{1}
+
+	\begin{table}[!http]
+		\centering
+		\caption{Trading statistics.}
+		\begin{tabular}{lcccc}
+			\toprule
+			\multicolumn{1}{c}{Strategy} & \ \ \ \ \ Distance \ \ \ \ \ \ & Mixed Copula \\
+			\midrule
+			&&\vspace{-.3cm}\\
+			 \multicolumn{1}{l}{\textit{Panel A: Top 5}} \\
+			&&\vspace{-.3cm}\\
+			Average price deviation trigger for opening pairs & 0.0594 & 0.0665  \\
+			Total number of pairs opened &  352   &  348   \\
+			Average number of pairs traded per six-month period & 7.18 & 7.10    \\
+			Average number of round-trip trades per pair & 1.44 & 1.42   \\
+			~~Standard Deviation & 1.0128 & 1.33   \\
+			Average time pairs are open in days &  50.70 &  37.70  \\
+			~~Standard Deviation & 39.24 & 38.93    \\
+			Median time pairs are open in days &  38.5  &  19          \\
+			&&\vspace{0cm}\\
+			 \multicolumn{1}{l}{\textit{Panel B: Top20}} \\
+			&&\vspace{-.3cm}\\
+			Average price deviation trigger for opening pairs & 0.0681 & 0.0821    \\
+			Total number of pairs opened &  1312  &  749     \\
+			Average number of pairs traded per six-month period & 26.78 & 15.29   \\
+			Average number of round-trip trades per pair & 1.34 & 0.76  \\
+			~Standard Deviation & 0.99 & 0.99    \\
+			Average time pairs are open in days & 51.65 & 23.60   \\
+			~Standard Deviation & 39.62 & 32.90    \\
+			Median time pairs are open in days & 41    & 9           \\
+			& & \\
+			 \multicolumn{1}{l}{\textit{Panel C: Top 35}} \\
+			&&\vspace{-.3cm}\\
+			Average price deviation trigger for opening pairs & 0.0729 & 0.0893   \\
+			Total number of pairs opened & 2238  & 941   \\
+			Average number of pairs traded per six-month period & 45.68 & 19.20 \\
+			Average number of round-trip trades per pair & 1.30 & 0.55   \\
+			~Standard Deviation & 1.02 & 0.84   \\
+			Average time pairs are open in days & 52.72 &  19.35   \\
+			~Standard Deviation & 40.48 & 30.56  \\
+			Median time pairs are open in days & 42    & 6           \\
+	\bottomrule
+\end{tabular}%
+\begin{quote}
+\item \textit{Note:} \footnotesize  Trading statistics for portfolio of top 5, 20 and 35 pairs between July 1991 and December 2015 (49 periods). \textcolor{blue} {Pairs are formed over a 12-month period according to a minimum-distance (sum of squared deviations) criterion} and then traded over the subsequent 6-month period. Average price deviation trigger for opening a pair is calculated as the price difference divided by the average of the prices.
+\end{quote}
+\label{tab:table102}%
+\end{table}%
+		
+
+\end{document}

@@ -1,0 +1,5 @@
+\select@language {brazil}
+\beamer@subsectionintoc {0}{1}{Introdu\IeC {\c c}\IeC {\~a}o/Motiva\IeC {\c c}\IeC {\~a}o}{3}{0}{0}
+\beamer@subsectionintoc {0}{2}{Metodologia}{5}{0}{0}
+\beamer@subsectionintoc {0}{3}{Resultados}{11}{0}{0}
+\beamer@subsectionintoc {0}{4}{Conclus\IeC {\~a}o}{14}{0}{0}

@@ -1,0 +1,21 @@
+\frametitle{Metodologia - Web Scraping}
+  \begin{block}{Exemplo do algoritmo de coleta das atas}
+\begin{Schunk}
+	\begin{Sinput}
+		> main.page = read_html(x = "http://www.bcb.gov.br/?MINUTES")
+		> urls = main.page %>%
+		html_nodes("#cronoAno a") %>%
+		html_attr("href")
+		> ano = main.page %>%
+		html_nodes("#cronoAno a") %>%
+		html_text()
+		>
+		> # 2016 http://www.bcb.gov.br/?id=MINUTES&ano=2016
+	\end{Sinput}
+\end{Schunk}
+  \end{block}
+  \begin{itemize}
+    \item Desenvolvemos um coletor capaz de arquiteturar e executar de forma lógica e escalável todo esse processo.
+    \item Ele iterage com as páginas da \emph{Web}, extrai a informação e armazena os dados
+    \item Exemplos de coletores: Google e Buscapé
+  \end{itemize}
