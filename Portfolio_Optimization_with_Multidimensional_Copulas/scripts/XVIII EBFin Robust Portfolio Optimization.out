@@ -1,10 +1,11 @@
 \BOOKMARK [2][]{Outline0.1}{Introduction}{}% 1
-\BOOKMARK [2][]{Outline0.2}{Conditional Value-at-Risk}{}% 2
-\BOOKMARK [3][]{Outline0.2.1.12}{CVaR Minimization with Finite Number of Scenarios}{Outline0.2}% 3
-\BOOKMARK [2][]{Outline0.3}{The Models}{}% 4
-\BOOKMARK [3][]{Outline0.3.1.14}{Worst Case CVaR}{Outline0.3}% 5
-\BOOKMARK [2][]{Outline0.4}{Data}{}% 6
-\BOOKMARK [2][]{Outline0.5}{Methodology}{}% 7
-\BOOKMARK [3][]{Outline0.5.1.22}{Strategies Under Analysis}{Outline0.5}% 8
-\BOOKMARK [2][]{Outline0.6}{Performance Measures}{}% 9
-\BOOKMARK [2][]{Outline0.7}{Empirical Results}{}% 10
+\BOOKMARK [2][]{Outline0.2}{Copula}{}% 2
+\BOOKMARK [2][]{Outline0.3}{Conditional Value-at-Risk}{}% 3
+\BOOKMARK [3][]{Outline0.3.1.14}{CVaR Minimization with Finite Number of Scenarios}{Outline0.3}% 4
+\BOOKMARK [2][]{Outline0.4}{The Models}{}% 5
+\BOOKMARK [3][]{Outline0.4.1.16}{Worst Case CVaR}{Outline0.4}% 6
+\BOOKMARK [2][]{Outline0.5}{Data}{}% 7
+\BOOKMARK [2][]{Outline0.6}{Methodology}{}% 8
+\BOOKMARK [3][]{Outline0.6.1.24}{Strategies Under Analysis}{Outline0.6}% 9
+\BOOKMARK [2][]{Outline0.7}{Performance Measures}{}% 10
+\BOOKMARK [2][]{Outline0.8}{Empirical Results}{}% 11

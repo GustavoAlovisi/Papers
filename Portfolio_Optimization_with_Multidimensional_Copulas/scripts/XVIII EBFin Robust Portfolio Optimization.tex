@@ -49,8 +49,9 @@
     }{}
 \makeatother
 \title[\sc{XVIII EBFin}]{Robust Portfolio Optimization with Multivariate Copulas: A Worst-Case CVaR Approach}
-\author[Sao Paulo/SP, July 20th]{\textbf{Fernando Sabino da Silva}\inst{1}, Flavio A. Ziegelmann\inst{1,2}, Cristina Tessari\inst{3}}
-\institute[]{\inst{1} Department of Statistics - UFRGS, \inst{2} Graduate Program in Economics - UFRGS, \inst{3} Finance Division - Columbia Business School}
+\author[Sao Paulo/SP, July 20th]{\textbf{Fernando Sabino da Silva}\inst{1}, Flavio A. Ziegelmann\inst{1,2}}
+\institute[]{\inst{1} Department of Statistics - UFRGS, \inst{2} Graduate Program in Economics - UFRGS}
+%, Cristina Tessari\inst{3}, \inst{3} Finance Division - Columbia Business School
 %\date{\today} % (optional)
 \date{} % (optional)
 
@@ -175,6 +176,56 @@
 	\end{itemize}
 	
     \end{itemize}
+
+\end{frame}
+
+\section{Copula}
+
+\begin{frame}[label=frame1c2]
+\frametitle{Sklar's Theorem (1959)}
+
+
+\begin{theorem}
+	Let $X_{1},...,X_{d}$ be random variables with distribution functions $F_{1},...,F_{d}$, respectively. Then, there exists an d-copula C such that,
+	\begin{equation}
+	F\left( x_{1},...,x_{d}\right) =C\left( F_{1}\left( x_{1}\right)
+	,...,F_{d}\left( x_{d}\right) \right) ,  \label{1} 
+	\end{equation}
+	\noindent for all $\mathbf{x}=\left( x_{1},...,x_{d}\right) \in
+	\mathbb{R}^{d}$. If $F_{1},...,F_{d}$ are all continuous, then the function $C$ is unique; otherwise $C$ is determined only on $\Ima F_{1}\times ...\times \Ima F_{d}$. 
+\end{theorem}
+
+\end{frame}
+
+\begin{frame}[label=frame2]
+\frametitle{Why should we care about copulas?}
+
+\setbeamercovered{transparent}
+
+\begin{itemize}
+\justifying
+
+\item Assuming that $F\left( \cdot \right) $ and $C\left( \cdot
+\right) $ are differentiable, by $\left( \ref{1}\right)$ we have
+
+\end{itemize}
+
+\begin{eqnarray}
+\frac{\partial ^{d}F\left( x_{1},...,x_{d}\right) }{\partial
+x_{1}...\partial x_{d}} &\equiv &f\left( x_{1},...,x_{d}\right) =\frac{
+\partial ^{d}C\left( F_{1}\left( x_{1}\right) ,...,F_{d}\left( x_{d}\right)
+\right) }{\partial x_{1}...\partial x_{d}} \\
+&=&c\left( u_{1},...,u_{d}\right) \prod_{i=1}^{d}f_{i}\left( x_{i}\right),
+\label{23}
+\end{eqnarray}%
+where $u_{i}$=$F_{i}\left( x_{i}\right) $, $i=1,...,d$.
+
+\vspace{0.3cm}
+
+\begin{exampleblock}{}
+\centering
+multivariate = "1-dim" (marginals) + "joint" (copula).	
+\end{exampleblock}
 
 \end{frame}
 
@@ -1045,7 +1096,7 @@ any reba-lancing date $t$.
 				\item Optimizer Search with Reinforcement Learning.
 				\begin{itemize}
 					\item Stability issues.
-					\item Finding the portfolio with the highest Sharpe Ratio.
+					\item Finding the portfolio with the highest downside risk-adjusted performance (Sortino ratio, Omega, Kappa).
 				\end{itemize}
 				% maximize Sharpe ratio
 			\end{itemize}
