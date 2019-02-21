@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.8.22)  18 AUG 2018 01:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.8.22)  13 FEB 2019 20:28
 entering extended mode
 **"./XVIII EBFin Robust Portfolio Optimization.tex"
 ("XVIII EBFin Robust Portfolio Optimization.tex"
@@ -1335,10 +1335,10 @@ l.1055 \end{frame}
 
 ]
 Package epstopdf Info: Source file: <fig1_nogrid.eps>
-(epstopdf)                    date: 2018-03-31 21:02:55
+(epstopdf)                    date: 2018-03-31 20:02:55
 (epstopdf)                    size: 266907 bytes
 (epstopdf)             Output file: <fig1_nogrid-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-05-11 10:12:06
+(epstopdf)                    date: 2018-05-11 09:12:06
 (epstopdf)                    size: 175645 bytes
 (epstopdf)             Command: <epstopdf --outfile=fig1_nogrid-eps-converted-t
 o.pdf fig1_nogrid.eps>
@@ -1392,7 +1392,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  23366 strings out of 493323
  451912 string characters out of 3139060
- 536689 words of memory out of 3000000
+ 536690 words of memory out of 3000000
  26192 multiletter control sequences out of 15000+200000
  88912 words of font info for 69 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
