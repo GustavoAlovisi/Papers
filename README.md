@@ -16,7 +16,7 @@ JEL Codes: G11; G12; G17.
 Data used: Daily data of adjusted closing prices of all stocks that belong to S&P 500 market index from July 2st, 1990 to December 31st, 2015.
 
 
-* Fernando A.B. Sabino da Silva, Flavio A. Ziegelmann, Joao F. Caldeira. **[Pairs Trading: Optimizing via Mixed Copula versus Distance Method for S&P 500 Assets](https://github.com/FernandoSdaSilva/papers/tree/master/Pairs_Trading_Daily_Frequency).**
+* Fernando A.B. Sabino da Silva, Flavio A. Ziegelmann, Joao F. Caldeira. **[Mixed Copula Pairs Trading Strategy on S&P 500](https://github.com/FernandoSdaSilva/papers/tree/master/Pairs_Trading_Daily_Frequency).**
 
 Software: Matlab, R.
 
@@ -29,8 +29,8 @@ Data used: Daily data of adjusted closing prices of all stocks that belong to S&
 Press Coverage: **[Quantpedia](https://quantpedia.com/Blog/Details/mixed-copula-pairs-trading-strategy).**
 
 
-* Fernando A.B. Sabino da Silva, Elton Sbruzzi and Tainan B.F. Boff. **[A Computationally Efficient Pairs Trading Strategy with
-Reinforcement Learning](https://github.com/FernandoSdaSilva/papers/tree/master/Pairs_Trading_Reinforcement_Learning).**
+* Fernando A.B. Sabino da Silva, Tainan B.F. Boff. **[Pairs Trading Strategy using
+Q-Learning and Sortino Ratio Maximization](https://github.com/FernandoSdaSilva/papers/tree/master/Pairs_Trading_Reinforcement_Learning).**
 
 Software: R, Matlab.
 
