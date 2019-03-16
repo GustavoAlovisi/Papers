@@ -29,7 +29,7 @@ Data used: Daily data of adjusted closing prices of all stocks that belong to S&
 Press Coverage: **[Quantpedia](https://quantpedia.com/Blog/Details/mixed-copula-pairs-trading-strategy).**
 
 
-* Fernando A.B. Sabino da Silva, Tainan B.F. Boff. **[Man vs. Machine: Pairs Trading Strategy Combining Copula and Random Forest](https://github.com/FernandoSdaSilva/papers/tree/master/Pairs_Trading_Random_Forest).**
+* Fernando A.B. Sabino da Silva, Tainan B.F. Boff. **[Pairs Trading Strategy Combining Copula and Random Forest](https://github.com/FernandoSdaSilva/papers/tree/master/Pairs_Trading_Random_Forest).**
 
 Software: R, Matlab.
 
