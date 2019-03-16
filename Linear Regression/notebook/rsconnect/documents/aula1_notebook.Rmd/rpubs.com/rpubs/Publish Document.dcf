@@ -1,0 +1,10 @@
+name: Publish Document
+title:
+username:
+account: rpubs
+server: rpubs.com
+hostUrl: rpubs.com
+appId: https://api.rpubs.com/api/v1/document/476242/3f6bb2d92979412f9334675f48a5660e
+bundleId: https://api.rpubs.com/api/v1/document/476242/3f6bb2d92979412f9334675f48a5660e
+url: http://rpubs.com/fsabino_da_silva/476242
+when: 1552581881.89648

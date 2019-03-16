@@ -1,0 +1,18 @@
+\select@language {brazil}
+\beamer@sectionintoc {1}{Objetivos}{3}{0}{1}
+\beamer@sectionintoc {2}{Introdu\IeC {\c c}\IeC {\~a}o}{4}{0}{2}
+\beamer@subsectionintoc {2}{1}{Econometria e Teoria Econ\IeC {\^o}mica}{4}{0}{2}
+\beamer@subsectionintoc {2}{2}{Econometria e Teoria Econ\IeC {\^o}mica}{5}{0}{2}
+\beamer@subsectionintoc {2}{3}{Modelo Econ\IeC {\^o}mico}{6}{0}{2}
+\beamer@subsectionintoc {2}{4}{Modelo Econom\IeC {\'e}trico}{7}{0}{2}
+\beamer@subsectionintoc {2}{5}{A Estrutura dos Dados Econ\IeC {\^o}micos}{8}{0}{2}
+\beamer@subsubsectionintoc {2}{5}{1}{Dados de Corte Transversal}{8}{0}{2}
+\beamer@subsubsectionintoc {2}{5}{2}{S\IeC {\'e}rie Temporal}{9}{0}{2}
+\beamer@subsubsectionintoc {2}{5}{3}{Dados em Painel}{10}{0}{2}
+\beamer@subsectionintoc {2}{6}{Ci\IeC {\^e}ncia de Dados}{11}{0}{2}
+\beamer@subsubsectionintoc {2}{6}{1}{Defini\IeC {\c c}\IeC {\~a}o}{11}{0}{2}
+\beamer@subsubsectionintoc {2}{6}{2}{\IeC {\'A}reas de Conhecimento}{12}{0}{2}
+\beamer@subsubsectionintoc {2}{6}{3}{O Processo de Ci\IeC {\^e}ncia de Dados}{13}{0}{2}
+\beamer@subsectionintoc {2}{7}{Big Data}{14}{0}{2}
+\beamer@subsubsectionintoc {2}{7}{1}{Dados Gerados por Minuto}{14}{0}{2}
+\beamer@subsubsectionintoc {2}{7}{2}{Velocidade de Crescimento dos Dados}{15}{0}{2}
