@@ -1,0 +1,133 @@
+\documentclass[titlepage]{elsarticle}
+%\documentclass[review]{elsarticle}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{lscape}
+\usepackage{fullpage}
+\usepackage{graphicx,color} % Para escrever em cores
+\usepackage{graphics}
+\usepackage{subfig}
+\usepackage{ae}
+\usepackage[T1]{fontenc}
+\usepackage[ansinew]{inputenc}
+\usepackage{pdflscape}
+\usepackage{url}
+\usepackage{setspace}
+\usepackage{tabularx}
+\usepackage{dcolumn}
+\usepackage{rotating}
+\usepackage{a4wide}
+\usepackage{supertabular}
+\usepackage[lmargin=2cm, rmargin=2cm,tmargin=2.5cm,bmargin=2.5cm]{geometry}
+\usepackage{fullpage}
+\usepackage{multirow}
+\usepackage{longtable}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage[autostyle]{csquotes}
+\usepackage{comment}
+\usepackage{tikz}
+\usepackage{indentfirst}
+\usepackage{times}
+\usepackage{pgfplots}
+\usepackage{pgfgantt}
+\pgfplotsset{compat=newest}
+\pgfplotsset{plot coordinates/math parser=false}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\usepackage{array,longtable}
+
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{definition}{Definition}
+\newtheorem{corollary}{Corollary}[theorem]
+\usepackage{rotating}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\Ima}{Im}
+
+
+\usepackage{lineno,hyperref}
+\hypersetup{
+  colorlinks = true,
+  linkcolor=blue,   % color of internal links
+  citecolor=blue,   % color of links to bibliography
+  urlcolor=blue,    % color of external links
+  pagebackref=true,
+  implicit=false,
+  bookmarks=true,
+  bookmarksopen=true,
+  pdfdisplaydoctitle=true
+}
+\modulolinenumbers[5]
+
+\journal{Journal of Empirical Finance}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%% Elsevier bibliography styles
+%%%%%%%%%%%%%%%%%%%%%%%
+%% To change the style, put a % in front of the second line of the current style and
+%% remove the % from the second line of the style you would like to use.
+%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Numbered
+%\bibliographystyle{model1-num-names}
+
+%% Numbered without titles
+%\bibliographystyle{model1a-num-names}
+
+%% Harvard
+%\bibliographystyle{model2-names.bst}\biboptions{authoryear}
+
+%% Vancouver numbered
+%\usepackage{numcompress}\bibliographystyle{model3-num-names}
+
+%% Vancouver name/year
+%\usepackage{numcompress}\bibliographystyle{model4-names}\biboptions{authoryear}
+
+%% APA style
+\bibliographystyle{model5-names}\biboptions{authoryear}
+
+%% AMA style
+%\usepackage{numcompress}\bibliographystyle{model6-num-names}
+
+%% `Elsevier LaTeX' style
+%\bibliographystyle{elsarticle-num}
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+		
+\setcounter{table}{0}
+\renewcommand{\thetable}{A.\arabic{table}}
+
+		\begin{table}[!ht]
+		\centering \scriptsize
+		\caption{Monthly risk profile of Top 20 pairs: \textcolor{blue}{Fama and French} \textcolor{blue}{(2016)}'s five factors plus Momentum and Long-Term Reversal.}
+			\begin{tabularx}{\textwidth}{@{\extracolsep{\fill}} lllllllllll@{}}
+				\toprule
+				\multicolumn{1}{c}{Strategy} & \multicolumn{1}{c}{Intercept} &  \multicolumn{1}{c}{Rm-Rf} &  \multicolumn{1}{c}{SMB} &  \multicolumn{1}{c}{HML} &  \multicolumn{1}{c}{RMW} &  \multicolumn{1}{c}{CMA} &
+				\multicolumn{1}{c}{Mom} &  \multicolumn{1}{c}{LRev} &  \multicolumn{1}{c}{$R^{2}$} & \multicolumn{1}{c}{$R^{2}_{adj}$} \\
+				\midrule
+				\multicolumn{11}{c}{\textbf{Section 1: Return on Committed Capital}} \\
+				\multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \\
+				\multicolumn{1}{c}{Distance} & 0.0028 & 0.0056 & -0.0017 & 0.0013 & -0.0031 & 0.0059 & -0.0070 & -0.0068 & 0.028 & 0.027 \\
+				\multicolumn{1}{c}{} & $(3.47)^{***}$ & $(5.02)^{***}$ & (-0.63) & (0.38) & (-0.85) & $(1.82)^{*}$ & $(-4.90)^{***}$ & $(-2.37)^{**}$ & & \\
+				\multicolumn{1}{c}{Mixed Copula} & 0.0010 & 0.0015 & -0.0006 & 0.0002 & -0.0005 & 0.0007 & -0.0013 & -0.0012 & 0.0091 & 0.008 \\
+				\multicolumn{1}{c}{} & $(3.53)^{***}$ & $(3.52)^{***}$ & (-0.75) & (0.22) & (-0.49) & (0.57) & $(-2.19)^{**}$ & (-1.10) & & \\
+				
+				&       &       &       &       &       &       &       &       &       &       \\
+				\midrule
+				\multicolumn{11}{c}{\textbf{Section 2: Return on Fully Invested Capital}} \\
+				&       &       &       &       &       &       &       &       &       &    \\
+				\multicolumn{1}{c}{Distance} & 0.0054 & 0.0103 & -0.0035 & 0.0068 & -0.0050 & 0.0106 & -0.0142 & -0.0121 & 0.030 & 0.029 \\
+				\multicolumn{1}{c}{} & $(3.68)^{***}$ & $(5.18)^{***}$ & (-0.55) & (0.90) & (-0.34) & $(1.78)^{*}$ & $(-4.94)^{***}$ & $(-2.08)^{**}$ & & \\
+				\multicolumn{1}{c}{Mixed Copula} & 0.0103 & 0.0142 & -0.0088 & 0.0136 & -0.0062 & 0.0086 & -0.0049 & -0.0246 & 0.016 & 0.015 \\
+				\multicolumn{1}{c}{} & $(4.50)^{***}$ & $(3.39)^{***}$ & (-1.54) & (1.47) & (-0.70) & (0.75) & (-1.36) & $(-2.36)^{**}$ & & \\
+				\bottomrule
+			\end{tabularx}
+			\begin{quote}  \textit{Note:} \scriptsize  This table shows results of regressing monthly portfolio return series onto \textcolor{blue}{Fama and French} \textcolor{blue}{(2016)}'s five factors factors plus momentum and long-term reversal over July 1991 and December 2015 (6173 observations). Section 1 shows the Return on Committed Capital and Section 2 on Fully Invested Capital after transaction costs. Pairs are formed based on the smallest sum of squared deviations. The t-statistics (shown in parentheses) are computed using Newey-West standard errors with six lags. \footnotesize $^{\ast\ast\ast}$, $^{\ast\ast}$, $^{\ast}$  significant at 1\%, 5\% and 10\% levels, respectively.
+			\end{quote}
+		\label{tab:table104}%
+	\end{table}%
+
+\end{document}

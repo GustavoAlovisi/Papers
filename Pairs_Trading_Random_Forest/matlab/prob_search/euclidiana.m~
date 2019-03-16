@@ -1,0 +1,54 @@
+function[wopt, fitness, distancia] = euclidiana(ret)
+
+%2. Set Parameters to the optimization
+    [T, N] = size(ret);
+    w0 = ones(N/2,1)*(1/(N/2));
+    rL = ret(:,1:(N/2))*w0;
+    rS = ret(:,(1+N/2:end))*w0;
+    Rt = [rL rS]
+    %Obs: sizeP quando o n�mero � �mpar.
+
+i=1
+    for j=1:2
+        m = 0;
+        for i2=1:375 %Two_mo(250) + Six_mo(125)
+            if Pt(i+i2-1,j)>0 && m == 0
+                IPt(i2,j)= 1;  m= 1;
+         elseif Pt(i+i2-1,j)>0 && m == 1
+                IPt(i2,j) = IPt(i2-1,j) * (1 + Rt(i+i2-1,j));
+            end
+        end
+    end
+
+
+wopt = w0;
+fitness = sum((ipt1 - ipt2).^2);
+distancia = ipt1(end) - ipt2(end); 
+% Obs: A dist�ncia j� � a fitness. 
+% Por�m, a fitness dividiu as a��es em dois grupos.
+% Deveriam ser todos contra todos. Estas a��es foram
+% as escolhidas (long e short)?
+
+% 
+% 
+% w = 1*ones(sizePortfolio,1)./sizePortfolio;
+% Aeq = ones(sizePortfolio,sizePortfolio);
+% beq = 1*ones(sizePortfolio,1);
+% % A = ones(1,sizePortfolio);
+% % B = 20;
+% lb = zeros(1,sizePortfolio);
+% ub = 1*ones(1,sizePortfolio);
+% options = optimset('Display','off', 'Algorithm', 'sqp');
+
+% nonlcon = @extra;
+
+%wopt= fmincon(@(w) -(exp(mean(ret*w)*252)-1)/(std(ret*w)*sqrt(252)) ...
+ %        ,w,[],[],Aeq,beq,lb,ub,[],options);
+
+%if jbtest(ret*wopt) == 0    
+%    sharpe = (exp(mean(ret*wopt)*252)-1)/(std(ret*wopt)*sqrt(252));
+%else
+%    sharpe = 0;
+%end
+
+end

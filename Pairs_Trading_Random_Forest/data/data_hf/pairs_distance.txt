@@ -1,0 +1,287 @@
+Period 1
+Time series mean no of stock series 41
+Max number of stock series 41
+Min number of stock series 41
+  Columns 1 through 5
+
+    33     2    23     5     4
+    34     3    24    40    27
+
+  Columns 6 through 10
+
+     5     3     3    40    11
+    41    37    27    41    39
+
+  Columns 11 through 15
+
+    10     2     3    27    11
+    39    37     4    37    15
+
+  Columns 16 through 20
+
+    15     1    11     1     4
+    39    10    13    15    40
+
+Period 2
+Time series mean no of stock series 41
+Max number of stock series 41
+Min number of stock series 41
+  Columns 1 through 5
+
+    33    40     3    13     3
+    34    41     4    14    27
+
+  Columns 6 through 10
+
+    27     2    23     4     4
+    32     3    24    32    27
+
+  Columns 11 through 15
+
+    11    15     4    11     3
+    15    39    16    17    32
+
+  Columns 16 through 20
+
+     3    11    30    39    11
+    16    13    36    40    14
+
+Period 3
+Time series mean no of stock series 41
+Max number of stock series 41
+Min number of stock series 41
+  Columns 1 through 5
+
+     5    33     1    13    40
+    40    34     4    29    41
+
+  Columns 6 through 10
+
+     4     4     4     1     4
+    27    40    34    40     5
+
+  Columns 11 through 15
+
+    23    11    13    28     5
+    24    13    14    36    41
+
+  Columns 16 through 20
+
+     4    11     1     1    31
+    33    29     5    41    39
+
+Period 4
+Time series mean no of stock series 41
+Max number of stock series 41
+Min number of stock series 41
+  Columns 1 through 5
+
+     2     5    33    23     2
+     3    40    34    24     4
+
+  Columns 6 through 10
+
+     4    10    20    28    20
+    34    31    27    36    34
+
+  Columns 11 through 15
+
+     3     4    15    20     8
+     4    20    32    33    10
+
+  Columns 16 through 20
+
+     4     1    27     1     4
+    27    33    34     4    33
+
+Period 5
+Time series mean no of stock series 41
+Max number of stock series 41
+Min number of stock series 41
+  Columns 1 through 5
+
+     5    33    23     2     5
+    41    34    24     3    40
+
+  Columns 6 through 10
+
+    40     4     7     1     4
+    41    37    34    34    14
+
+  Columns 11 through 15
+
+     1    14     1     4     1
+    27    37     7    34    33
+
+  Columns 16 through 20
+
+    28    27     7    11    31
+    30    34    33    39    32
+
+Period 6
+Time series mean no of stock series 41
+Max number of stock series 41
+Min number of stock series 41
+  Columns 1 through 5
+
+    40    23     3     3    16
+    41    24    27    10    35
+
+  Columns 6 through 10
+
+    31    11    19    19    33
+    32    39    31    36    34
+
+  Columns 11 through 15
+
+    10    26    19     8    36
+    27    30    32    36    38
+
+  Columns 16 through 20
+
+    32    28    31     8     6
+    36    30    36    25    16
+
+Period 7
+Time series mean no of stock series 41
+Max number of stock series 41
+Min number of stock series 41
+  Columns 1 through 5
+
+    23    28    27     5    17
+    24    31    37    41    38
+
+  Columns 6 through 10
+
+    40    28     3     2     2
+    41    36    10    37    27
+
+  Columns 11 through 15
+
+    13    14     1     4     4
+    31    19    27    30    28
+
+  Columns 16 through 20
+
+    31    30    13     3    28
+    36    31    28    19    30
+
+Period 8
+Time series mean no of stock series 41
+Max number of stock series 41
+Min number of stock series 41
+  Columns 1 through 5
+
+    23    40    33     8    16
+    24    41    34    31    19
+
+  Columns 6 through 10
+
+     2     5     5    16    14
+     3    40    41    31    31
+
+  Columns 11 through 15
+
+     2    10    30     3     8
+     4    28    31    28    16
+
+  Columns 16 through 20
+
+     2    27    15    14    32
+    28    36    36    16    39
+
+Period 9
+Time series mean no of stock series 41
+Max number of stock series 41
+Min number of stock series 41
+  Columns 1 through 5
+
+    23    33    40     5     4
+    24    34    41    41    14
+
+  Columns 6 through 10
+
+     3     4    14    10     5
+    27    36    36    26    40
+
+  Columns 11 through 15
+
+    10    10    19    28    26
+    31    16    32    30    31
+
+  Columns 16 through 20
+
+     2     2     4     2     4
+    36     4    31    14     8
+
+Period 10
+Time series mean no of stock series 41
+Max number of stock series 41
+Min number of stock series 41
+  Columns 1 through 5
+
+     3    40     2     4     2
+    27    41     3    14    27
+
+  Columns 6 through 10
+
+    33    14    12     4    31
+    34    36    26    36    36
+
+  Columns 11 through 15
+
+     5     4    26    10     8
+    41    31    35    11    10
+
+  Columns 16 through 20
+
+    14    23     6     2    14
+    31    40    21    15    37
+
+Period 11
+Time series mean no of stock series 41
+Max number of stock series 41
+Min number of stock series 41
+  Columns 1 through 5
+
+    40     4    21     2    14
+    41    27    39    10    27
+
+  Columns 6 through 10
+
+     2     4     2     1     3
+     3    14    27     3     8
+
+  Columns 11 through 15
+
+    28    10    10     1    11
+    38    27    14    14    32
+
+  Columns 16 through 20
+
+    12     8    32     2    28
+    37    19    36    14    39
+
+Period 12
+Time series mean no of stock series 41
+Max number of stock series 41
+Min number of stock series 41
+  Columns 1 through 5
+
+     4    40    10    19     4
+    27    41    14    30    30
+
+  Columns 6 through 10
+
+     3    31    13     2     4
+    30    37    29    27    19
+
+  Columns 11 through 15
+
+     8    19    14    12     2
+    14    27    30    30     4
+
+  Columns 16 through 20
+
+     4    14     8    14    11
+    14    19    19    27    35

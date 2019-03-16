@@ -1,0 +1,347 @@
+﻿Top20, Logistic rating, some parts, Manhattan distance
+
+   table1 = 
+
+                                         VW_CC  
+                                        ________
+
+    Annualized Mean Return (%)            2.4977
+    Sharpe_Ratio                         0.31159
+    Sortino Ratio                        0.58417
+    t-stat                               0.84958
+    Share of negative excess returns      48.814
+    MDD1                                  5.9039
+    MDD2                                  15.007
+    Annualized Std Dev (%)                8.0159
+    Skewness                            -0.16149
+    Kurtosis                              3.1759
+    Minimum Daily Return (%)             -3.2218
+    Maximum Daily Return (%)              2.4998
+    Cumulative Excess Return              1.1553
+
+
+                                         VW_FI  
+                                        ________
+
+    Annualized Mean Return (%)            2.3283
+    Sharpe_Ratio                         0.26279
+    Sortino Ratio                        0.50435
+    t-stat                               0.73312
+    Share of negative excess returns      48.814
+    MDD1                                  6.9808
+    MDD2                                   17.37
+    Annualized Std Dev (%)                8.8601
+    Skewness                            -0.28498
+    Kurtosis                              3.5074
+    Minimum Daily Return (%)              -3.718
+    Maximum Daily Return (%)              2.4998
+    Cumulative Excess Return              1.1442
+
+
+                                        Benchmark
+                                        _________
+
+    Annualized Mean Return (%)            -7.0967
+    Sharpe_Ratio                         -0.36316
+    Sortino Ratio                        -0.44017
+    t-stat                               -0.64844
+    Share of negative excess returns       51.186
+    MDD1                                    7.636
+    MDD2                                    32.35
+    Annualized Std Dev (%)                 19.542
+    Skewness                            -0.019842
+    Kurtosis                               1.8276
+    Minimum Daily Return (%)              -7.5985
+    Maximum Daily Return (%)                6.127
+    Cumulative Excess Return              0.64995
+	
+	                                                       Trading_Statistics
+                                                              __________________
+
+    Av_Price_Dev_trigger_openpa                               0.045505          
+    Total_number_of_pairs_opened                                   735          
+    Average_number_of_pairs_opened_per_six-month_period          61.25          
+    Average_number_of_round-trip_trades_per_pair_in_months      3.0625          
+    Standard_Dev                                                 2.159          
+    Average_time_pairs_are_open_in_days                          36.38          
+    Standard_Deviation                                          39.778          
+    Median_time_pairs_are_open_in_days                              18    
+	
+	           VW_CC       VW_FI  
+                 ________    ________
+
+    Intercept    0.015145    0.015115
+    t_alpha         1.191      1.0632
+    Market         6.3078      6.8446
+    t_beta         3.7924      3.7787
+    SMB           -1.0786     -1.2142
+    t_SMB        -0.30513    -0.30524
+    HML           0.15461     0.19586
+    t_HML        0.068431    0.078062
+    WML           -2.7667     -2.9673
+    t_WML         -1.2475     -1.2224
+    IML            2.3534      2.6547
+    t_IML         0.66604     0.67315
+    R2           0.032643    0.031267
+    R2adj        0.029351     0.02797
+	
+	Top20, C= 0.001, Prob Search
+	
+	table1 = 
+
+                                         VW_CC       VW_FI  
+                                        ________    ________
+
+    Annualized Mean Return (%)            2.9151      2.8704
+    Sharpe_Ratio                         0.35879     0.31913
+    Sortino Ratio                        0.65985     0.59612
+    t-stat                               0.95626      0.8593
+    Share of negative excess returns      48.814      48.814
+    MDD1                                  5.9039      6.9808
+    MDD2                                  15.007       17.37
+    Annualized Std Dev (%)                8.1249      8.9944
+    Skewness                            -0.23908    -0.34085
+    Kurtosis                              3.1639      3.5813
+    Minimum Daily Return (%)             -3.2218      -3.718
+    Maximum Daily Return (%)              2.2562      2.3977
+    Cumulative Excess Return              1.1832      1.1802
+
+
+
+	
+	                                                      Trading_Statistics
+                                                              __________________
+
+    Av_Price_Dev_trigger_openpa                               0.046735          
+    Total_number_of_pairs_opened                                   737          
+    Average_number_of_pairs_opened_per_six-month_period         61.417          
+    Average_number_of_round-trip_trades_per_pair_in_months      3.0708          
+    Standard_Dev                                                 2.201          
+    Average_time_pairs_are_open_in_days                         36.318          
+    Standard_Deviation                                          39.935          
+    Median_time_pairs_are_open_in_days                              17          
+
+	
+	           VW_CC       VW_FI  
+                 ________    ________
+
+    Intercept    0.017207     0.01775
+    t_alpha         1.332      1.2242
+    Market         5.6908      6.1984
+    t_beta         3.2814       3.269
+    SMB           0.20584     0.24798
+    t_SMB        0.055087    0.059257
+    HML           0.11356    0.073146
+    t_HML        0.047592    0.027495
+    WML            -3.825     -4.1018
+    t_WML         -1.5803     -1.5486
+    IML           0.17942     0.35627
+    t_IML        0.048654    0.086746
+    R2            0.03522    0.033467
+    R2adj        0.031937    0.030177
+	
+	table1 = 
+
+                                         VW_CC 
+                                        _______
+
+    Annualized Mean Return (%)           4.1247
+    Sharpe_Ratio                        0.50803
+    Sortino Ratio                       0.91607
+    t-stat                               1.3192
+    Share of negative excess returns     48.814
+    MDD1                                 5.6341
+    MDD2                                 12.739
+    Annualized Std Dev (%)               8.1189
+    Skewness                            -0.1541
+    Kurtosis                             3.0359
+    Minimum Daily Return (%)            -3.0304
+    Maximum Daily Return (%)             2.4998
+    Cumulative Excess Return             1.2669
+
+
+                                         VW_FI  
+                                        ________
+
+    Annualized Mean Return (%)            4.0154
+    Sharpe_Ratio                         0.44752
+    Sortino Ratio                        0.81376
+    t-stat                                1.1752
+    Share of negative excess returns      48.814
+    MDD1                                  6.4648
+    MDD2                                  14.857
+    Annualized Std Dev (%)                8.9726
+    Skewness                            -0.24443
+    Kurtosis                              3.1707
+    Minimum Daily Return (%)             -3.4941
+    Maximum Daily Return (%)              2.4998
+    Cumulative Excess Return              1.2591
+
+    Av_Price_Dev_trigger_openpa                               0.046901          
+    Total_number_of_pairs_opened                                   735          
+    Average_number_of_pairs_opened_per_six-month_period          61.25          
+    Average_number_of_round-trip_trades_per_pair_in_months      3.0625          
+    Standard_Dev                                                2.1435          
+    Average_time_pairs_are_open_in_days                         36.328          
+    Standard_Deviation                                          39.747          
+    Median_time_pairs_are_open_in_days                              17          
+
+	table3 = 
+
+                  VW_CC       VW_FI  
+                 ________    ________
+
+    Intercept    0.021643    0.021884
+    t_alpha        1.6922      1.5382
+    Market         6.8945      7.3875
+    t_beta         3.8689      3.8125
+    SMB           -2.6982      -2.961
+    t_SMB        -0.78749    -0.76917
+    HML          0.054989    0.017536
+    t_HML        0.024077    0.006897
+    WML           -3.1738     -3.5598
+    t_WML         -1.3578     -1.3847
+    IML            3.8573      4.1058
+    t_IML           1.118      1.0736
+    R2           0.036963    0.035348
+    R2adj        0.033685    0.032064
+	
+	
+	
+	Top20, C= 0.001, Prob Search
+	
+	 VW_CC  
+                                        _________
+
+    Annualized Mean Return (%)             2.6743
+    Sharpe_Ratio                          0.33837
+    Sortino Ratio                         0.64174
+    t-stat                                0.92899
+    Share of negative excess returns       49.356
+    MDD1                                   4.1936
+    MDD2                                   12.319
+    Annualized Std Dev (%)                 7.9033
+    Skewness                            0.0044687
+    Kurtosis                               2.6173
+    Minimum Daily Return (%)              -3.0613
+    Maximum Daily Return (%)               2.4998
+    Cumulative Excess Return                1.167
+
+
+                                          VW_FI  
+                                        _________
+
+    Annualized Mean Return (%)             2.5739
+    Sharpe_Ratio                          0.29648
+    Sortino Ratio                         0.57209
+    t-stat                                0.82647
+    Share of negative excess returns       49.356
+    MDD1                                   4.9915
+    MDD2                                    14.09
+    Annualized Std Dev (%)                 8.6817
+    Skewness                            -0.085198
+    Kurtosis                               2.6428
+    Minimum Daily Return (%)              -3.4407
+    Maximum Daily Return (%)               2.4998
+    Cumulative Excess Return               1.1604
+
+	
+	                                                          Trading_Statistics
+                                                              __________________
+
+    Av_Price_Dev_trigger_openpa                               0.046706          
+    Total_number_of_pairs_opened                                   737          
+    Average_number_of_pairs_opened_per_six-month_period         61.417          
+    Average_number_of_round-trip_trades_per_pair_in_months      3.0708          
+    Standard_Dev                                                2.1915          
+    Average_time_pairs_are_open_in_days                          36.38          
+    Standard_Deviation                                          39.746          
+    Median_time_pairs_are_open_in_days                              17    
+	
+	              VW_CC       VW_FI  
+                 ________    ________
+
+    Intercept    0.016788    0.017091
+    t_alpha        1.3726        1.26
+    Market         6.8503      7.4507
+    t_beta         3.8771      3.8427
+    SMB            -2.451     -2.3815
+    t_SMB        -0.74661    -0.65183
+    HML           0.82444     0.98335
+    t_HML         0.33868     0.36698
+    WML           -3.5095     -3.6262
+    t_WML          -1.441     -1.3464
+    IML            4.2944      4.6127
+    t_IML          1.3125      1.2746
+    R2           0.042479    0.041198
+    R2adj         0.03922    0.037935
+	
+	                                  VW_CC  
+                                        _________
+
+    Annualized Mean Return (%)             3.3377
+    Sharpe_Ratio                          0.41461
+    Sortino Ratio                         0.76509
+    t-stat                                   1.08
+    Share of negative excess returns       48.407
+    MDD1                                   5.5935
+    MDD2                                   14.212
+    Annualized Std Dev (%)                 8.0502
+    Skewness                            -0.066695
+    Kurtosis                               2.9177
+    Minimum Daily Return (%)              -2.9891
+    Maximum Daily Return (%)               2.8865
+    Cumulative Excess Return               1.2119
+
+
+                                         VW_FI  
+                                        ________
+
+    Annualized Mean Return (%)             3.488
+    Sharpe_Ratio                         0.38909
+    Sortino Ratio                        0.72155
+    t-stat                                 1.015
+    Share of negative excess returns      48.407
+    MDD1                                  6.8237
+    MDD2                                  16.691
+    Annualized Std Dev (%)                8.9646
+    Skewness                            -0.20786
+    Kurtosis                              3.4395
+    Minimum Daily Return (%)             -3.5146
+    Maximum Daily Return (%)              3.0676
+    Cumulative Excess Return              1.2222
+	
+	table2 = 
+
+                                                              Trading_Statistics
+                                                              __________________
+
+    Av_Price_Dev_trigger_openpa                               0.046095          
+    Total_number_of_pairs_opened                                   750          
+    Average_number_of_pairs_opened_per_six-month_period           62.5          
+    Average_number_of_round-trip_trades_per_pair_in_months       3.125          
+    Standard_Dev                                                2.2014          
+    Average_time_pairs_are_open_in_days                         35.555          
+    Standard_Deviation                                          39.614          
+    Median_time_pairs_are_open_in_days                              17   
+
+table3 = 
+
+                   VW_CC        VW_FI  
+                 _________    _________
+
+    Intercept     0.018363     0.019661
+    t_alpha         1.4118       1.3401
+    Market          5.7216       6.3005
+    t_beta          3.3849       3.4083
+    SMB          -0.067678     -0.14052
+    t_SMB        -0.018696    -0.034528
+    HML           -0.92555      -1.1756
+    t_HML         -0.39541     -0.45114
+    WML            -3.0037      -3.2704
+    t_WML          -1.3496      -1.3427
+    IML             1.4133       1.7924
+    t_IML          0.39492      0.44548
+    R2            0.027132     0.025844
+    R2adj         0.023821     0.022528	
+

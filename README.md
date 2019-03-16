@@ -1,7 +1,7 @@
 Working Papers
 ==============
 
-This repository aims to provide information (data, codes) of my current working papers in empirical finance, econometrics, artificial intelligence, and text mining/webscraping. 
+This repository aims to provide information (data, codes) of my current working papers in investment management, computational econometrics, data science, artificial intelligence, and text mining/webscraping. 
 
 Further studies should pursue applications to asset allocation under conditions of market distress (tail-risk hedging strategy) or to a user-specified scenario (calibrate a financial portfolio to the goals and risk tolerance of the user). In addition, I want to identify impactful news articles and construct news factor. One can apply machine learning techniques to identify relevant tags for a story and to understand which patterns can impact the market most.
 
@@ -29,13 +29,12 @@ Data used: Daily data of adjusted closing prices of all stocks that belong to S&
 Press Coverage: **[Quantpedia](https://quantpedia.com/Blog/Details/mixed-copula-pairs-trading-strategy).**
 
 
-* Fernando A.B. Sabino da Silva, Tainan B.F. Boff. **[Pairs Trading Strategy using
-Q-Learning and Sortino Ratio Maximization](https://github.com/FernandoSdaSilva/papers/tree/master/Pairs_Trading_Reinforcement_Learning).**
+* Fernando A.B. Sabino da Silva, Tainan B.F. Boff. **[Man vs. Machine: Pairs Trading Strategy Combining Copula and Random Forest](https://github.com/FernandoSdaSilva/papers/tree/master/Pairs_Trading_Random_Forest).**
 
 Software: R, Matlab.
 
 Keywords: Pairs Trading; Copula, Distance, Long-
-Short; Quantitative Strategies; Statistical Arbitrage, High-Frequency, Realized Variance, Reinforcement Learning.
+Short; Quantitative Strategies; Statistical Arbitrage, High-Frequency, Realized Variance, Random Forest.
 
 JEL: G11, G12, G14.
 
