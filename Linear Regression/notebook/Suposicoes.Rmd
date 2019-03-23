@@ -1,0 +1,431 @@
+---
+title: <center> <h2> <b> Quebras nas Suposições do Modelo Clássico de Regressão
+  Linear no R </b> </h2> </center>
+author: "<center> Fernando A. B. Sabino da Silva - UFRGS </center>"
+linkcolor: blue
+output:
+  html_notebook:
+    fig_caption: yes
+    theme: cerulean
+  html_document:
+    df_print: paged
+  pdf_document: default
+nocite: |
+  @wooldridge2015introductory, @moura2009
+references:
+- author:
+  - family: Wooldridge
+    given: Jeffrey M
+  id: wooldridge2015introductory
+  issued:
+    year: 2015
+  publisher: Nelson Education
+  title: Introductory econometrics - A modern approach
+  type: book
+- URL: https://epge.fgv.br/we/RodrigoMoura?action=AttachFile&do=view&target=Econometric_Lecture_Notes.pdf
+  author:
+  - family: Moura
+    given: Rodrigo
+  id: moura2009
+  issued:
+    year: 2009
+  title: Lecture Notes - Econometria
+graphics: yes
+---
+
+Este material tem como objetivo ajudar na compreensão das hipóteses do modelo clássico de regressão linear. Com este propósito em mente, iremos simular modelos onde as suposições são válidas e não são válidas.
+
+Iremos investigar as hipóteses de homocedasticidade, autocorrelação, exogeneidade, multicolinearidade e normalidade.
+
+Analisamos a média das estimativas simuladas (10000 simulações) para verificar os viéses. Também calculamos intervalos de confianca e testamos se eles contém o verdadeiro valor dos parâmetros em 95% das simulações (adotamos $\alpha$=5\%).
+
+O comando **paste(print(i))** mostra em que simulação o software está. 
+
+##### **Exogeneidade**
+
+Se uma variável explicativa (regressor) possui correlação com o resíduo, o estimador de MQO será viesado e inconsistente!
+
+Simularemos 1e4 (10000) regressões com e sem endogeneidade, e mostraremos que o viés cresce proporcionalmente à covariancia dos resíduos com os regressores (veja o exemplo nas páginas 89 e 90 das [Notas de Aula de Econometria R](https://epge.fgv.br/we/RodrigoMoura?action=AttachFile&do=view&target=Econometric_Lecture_Notes.pdf).
+ 
+
+```{r, warning = FALSE}
+# Instalar pacotes (só executar uma vez, depois comentar a linha abaixo)
+# install.packages(c("mvtnorm")) 
+
+# Carregar pacotes necessários
+suppressMessages(require(mvtnorm)) # distribuição normal multivariada
+
+################################
+####     EXOGENEIDADE      #####
+################################
+
+# Inicializando: Erro do tipo I sob a hipótese de exogeneidade
+errotipo1exo = 0
+
+# Inicializando: Erro do tipo I com endogeneidade
+errotipo1endo = 0
+
+# Cria um vetor lógico para alocar os parâmetros
+beta = vector()
+
+# Atribuição de valores para o vetor
+beta[1] = 8
+beta[2] = 6
+beta[3] = 3
+
+# Tamanho da amostra
+n = 300
+
+# Desvio padrão dos resíduos
+sigma = 5
+
+# Vetores para guardar os betas de cada simulação
+betaexo = vector()
+betaendo = vector()
+vies = vector()
+
+# Simulações
+for(i in 1:1e4){
+# Normal bivariada sem correlação: Veja estimador delta1 na página 89 das notas de aula de econometria  
+  e= rmvnorm(n,rep(0,2),sigma=matrix(c(1,0,0,10),ncol=2)) 
+  x1 = e[,1]
+  x2 = e[,2]
+  y = beta[1] + beta[2]*x1 + beta[3]*x2 + rnorm(n,mean=0,sd=5)
+  m = lm(y~x1)
+  
+  
+  betaexo[i] = m$coef[2]
+  if(confint(m)[2,1]>beta[2] || confint(m)[2,2]<beta[2]){
+    errotipo1exo= errotipo1exo + 1 }
+
+# Normal bivariada com covariância diferente de zero!
+  e= rmvnorm(n,rep(0,2),sigma=matrix(c(1,3,3,10),ncol=2)) 
+  
+  x1 = e[,1]
+  x2 = e[,2]
+  y = beta[1] + beta[2]*x1 + beta[3]*x2 + rnorm(n,mean=0,sd=5)
+  m = lm(y~x1)
+  betaendo[i] = m$coef[2]
+# Confint calcula intervalos de confiança para os parâmetros do modelo no R. Por default o nível de confiança adotado é de 95%, mas podemos alterar.
+  # || significa ou, && significa "e", e !p significa não p.
+  if(confint(m)[2,1]>beta[2] || confint(m)[2,2]<beta[2]){
+    errotipo1endo= errotipo1endo + 1 }
+  paste(print(i))
+  
+  # Viés da variavel omitida, veja Wooldridge p.87 e as notas auxiliares de econometria, pagina 89 
+  vies = beta[3]*cov(x1,x2)/var(x1) 
+} 
+
+# Erro em cada caso
+invisible(errotipo1exo)
+invisible(errotipo1endo)
+
+# Verificando o viés
+invisible(mean(betaexo))
+invisible(mean(betaendo))
+
+# A soma do verdadeiro valor do parâmetro mais o viés deve ser próximo ao valor encontrado acima
+invisible(6+mean(vies))
+
+# Testando se adere aos 5% de chance de rejeitar a hipótese
+invisible(binom.test(errotipo1exo,1e4,p=.05)$p.value)
+invisible(binom.test(errotipo1endo,1e4,p=.05)$p.value)
+
+cat("errotipo1exo = ", errotipo1exo, "\n")
+cat("errotipo1endo = ", errotipo1endo, "\n")
+cat("mean(betaexo) = ", mean(betaexo), "\n")
+cat("mean(betaendo) = ", mean(betaendo), "\n")
+cat("6 + mean(vies) = ", 6+mean(vies), "\n")
+cat("p.value exo = ", binom.test(errotipo1exo,1e4,p=.05)$p.value, "\n")
+cat("p.value endo = ", binom.test(errotipo1endo,1e4,p=.05)$p.value, "\n")
+```
+
+#### **Heterocedasticidade**
+
+Sob heterocedasticidade, tudo o mais constante, os estimadores de mínimos quadrados ordinários continuam não viesados, porém não serão os mais eficientes dentro da classe de estimadores lineares não viesados. Logo, os intervalos de confiança e testes usando as estatísticas $t$ e $F$ não serão mais confiáveis.
+
+Sob homocedasticidade, simularemos 1e4 (10000) regressões e verificaremos em quantas delas o intervalo de confiança não contém o verdadeiro valor do parâmetro. Faremos o mesmo sob heterocedasticidade.
+
+```{r, warning = FALSE}
+################################
+####  HETEROCEDASTICIDADE  #####
+################################
+
+# Inicializando: Erro do tipo I sob a hipótese de homocedasticidade
+errotipo1homo = 0
+
+# Inicializando: Erro do tipo I com heterocedasticidade
+errotipo1hetero = 0
+
+# Cria um vetor lógico para alocar os parâmetros
+betahomo = vector()
+betahetero=vector()
+beta=vector()
+
+# Atribuição de valores para o vetor
+beta[1] = 8 # b0
+beta[2] = 6 # b1
+
+# Tamanho da amostra
+n = 300
+
+# Desvio padrão dos resíduos
+sigma = 5
+
+# Sequência de n valores entre 1 e 3. Servirá para dar uma "dinâmica" a variância.
+seq = as.matrix(seq(1,3,length=n)) 
+
+# Simulação sob homocedasticidade
+for(i in 1:1e4){
+  x = 1:n
+  y = beta[1] + beta[2]*x + rnorm(n,mean=0,sd=5)
+  m = lm(y~x) #
+  betahomo[i] = m$coef[2]
+  if(confint(m)[2,1]>beta[2] || confint(m)[2,2]<beta[2]){
+    errotipo1homo = errotipo1homo + 1 }
+  
+# Simulação com heterocedasticidade
+e= vector() # vetor logico
+e = apply(seq,1,function(t) rnorm(1,0,t*sigma)) # Simulando dados com a variancia aumentando ao longo do tempo
+
+# apply: retorna um vetor ou array
+# seq: 1 a 300
+# 1 margin: indica linha (vetor seq tem dimensão 300 x 1).
+# rnorm(1,0,x*sigma):  n= 1;  mean = 0 e variancia aumentando ao longo do tempo.           
+  y = beta[1] + beta[2]*x + e
+  m = lm(y~x)
+  betahetero[i] = m$coef[2]
+  if(confint(m)[2,1]>beta[2] || confint(m)[2,2]<beta[2]){
+    errotipo1hetero = errotipo1hetero + 1 }
+  paste(print(i))
+}
+
+# Erro em cada caso
+invisible(errotipo1homo)
+invisible(errotipo1hetero)
+
+# Verificando o viés
+invisible(mean(betahomo))
+invisible(mean(betahetero))
+
+
+# Testando se adere aos 5% de chance de rejeitar a hipótese nula
+invisible(binom.test(errotipo1homo,1e4,p=.05)$p.value)
+invisible(binom.test(errotipo1hetero,1e4,p=.05)$p.value)
+
+# Note que o teste rejeita a hipótese nula de que a probabilidade de um erro do tipo sob heterocedasticidade é de 5%.
+
+cat("errotipo1homo = ", errotipo1homo, "\n")
+cat("errotipo1hetero = ", errotipo1hetero, "\n")
+cat("mean(betahomo) = ", mean(betahomo), "\n")
+cat("mean(betahetero) = ", mean(betahetero), "\n")
+cat("p.value homo = ", binom.test(errotipo1homo,1e4,p=.05)$p.value, "\n")
+cat("p.value hetero = ", binom.test(errotipo1hetero,1e4,p=.05)$p.value, "\n")
+```
+
+Sob autocorrelação, tudo o mais constante, os estimadores de mínimos quadrados ordinários continuam não viesados, porém não serão os mais eficientes dentro da classe de estimadores lineares não viesados. Logo, os intervalos de confiança e testes usando as estatísticas $t$ e $F$ não serão mais confiáveis/válidos.
+
+Sob autocorrelação, simularemos 1e4 (10000) regressões e verificaremos em quantas delas o intervalo de confiança não contém o verdadeiro valor do parâmetro. Faremos o mesmo sem autocorrelação dos resíduos.
+
+
+```{r, warning=FALSE}
+################################
+####    AUTOCORRELAÇÃO     #####
+################################
+
+# Inicializando: Erro do tipo I sob a hipótese de ausência de autocorrelação
+errotipo1sauto = 0
+
+# Inicializando: Erro do tipo I com autocorrelação
+errotipo1cauto = 0
+
+# Cria um vetor lógico para alocar os parâmetros
+betasauto= vector()
+betacauto=vector()
+beta=vector()
+
+# Atribuição de valores para o vetor
+beta[1] = 8 # b0
+beta[2] = 6 # b1
+
+# Tamanho da amostra
+n = 300
+
+# Desvio padrão dos resíduos
+sigma = 5
+
+# Simulação sob a ausência de autocorrelação
+for(i in 1:1e4){
+  x = 1:n
+  y = beta[1] + beta[2]*x + rnorm(n,mean=0,sd=5)
+  m = lm(y~x) #
+  betasauto[i] = m$coef[2]
+  if(confint(m)[2,1]>beta[2] || confint(m)[2,2]<beta[2]){
+    errotipo1sauto= errotipo1sauto + 1 }
+  
+# Simulação com autocorrelação: AR(1) com p = 0.3
+e= vector() # vetor logico
+e = arima.sim(n = n, list(ar = c(0.3), sd = sigma))
+
+y = beta[1] + beta[2]*x + e
+  m = lm(y~x)
+  betacauto[i] = m$coef[2]
+  if(confint(m)[2,1]>beta[2] || confint(m)[2,2]<beta[2]){
+    errotipo1cauto= errotipo1cauto + 1 }
+  paste(print(i))
+}
+
+# Erro em cada caso
+invisible(errotipo1sauto)
+invisible(errotipo1cauto)
+
+# Verificando o viés
+invisible(mean(betasauto))
+invisible(mean(betacauto))
+
+
+# Testando se adere aos 5% de chance de rejeitar a hipótese nula
+invisible(binom.test(errotipo1sauto,1e4,p=.05)$p.value)
+invisible(binom.test(errotipo1cauto,1e4,p=.05)$p.value)
+
+cat("errotipo1sauto = ", errotipo1sauto, "\n")
+cat("errotipo1cauto = ", errotipo1cauto, "\n")
+cat("mean(betasauto) = ", mean(betasauto), "\n")
+cat("mean(betacauto) = ", mean(betacauto), "\n")
+cat("p.value sauto = ", binom.test(errotipo1sauto,1e4,p=.05)$p.value, "\n")
+cat("p.value cauto = ", binom.test(errotipo1cauto,1e4,p=.05)$p.value, "\n")
+
+```
+
+#### **Multicolinearidade**
+
+Vamos agora checar o que acontece quando a correlação entre dois regressores é alta.
+
+Iremos reparar que a variância dos estimadores aumenta e que apesar do teste global de significância ser significativo (estatística de teste $F$ significativa), nenhuma coeficiente associado aos regressores é considerado significativo.
+
+Simularemos uma regressão onde os regressores possuem correlação muito alta, e mostraremos
+que seus parâmetros acabam sendo aceitos como zero pelos testes de significância individuais.
+
+
+```{r, warning=FALSE}
+# Carregar pacotes necessários
+suppressMessages(require(mvtnorm)) # distribuição normal multivariada
+
+################################
+####  MULTICOLINEARIDADE   #####
+################################
+
+e = rmvnorm(n,rep(0,2), sigma = matrix(c(3,2.9999,2.9999,3),ncol=2))
+# rep(0,2)= 0 0 (vetor de médias)
+# sigma = matrix(c(3,2.9999,2.9999,3),ncol=2) # matriz de variâncias e covâriancias
+# [,1]   [,2]
+# [1,] 3.0000 2.9999
+# [2,] 2.9999 3.0000
+
+# Cria um vetor lógico para alocar os parâmetros
+beta= vector()
+beta[1] = 8
+beta[2] = 6
+beta[3] = 3
+
+
+# Atribuição de valores para o vetor
+beta[1] = 8 # b0
+beta[2] = 6 # b1
+
+# Tamanho da amostra
+n = 300
+
+x1 = 1:n + e[,1]
+x2 = 1:n + e[,2]
+y = beta[1] + beta[2]*x1 + beta[3]*x2 + rnorm(n,mean=0,sd=5)
+# corr(x1,x2)  é quase 1
+
+m = lm(y~x1+x2)
+summary(m)
+  
+# Note que o p-valor da regressão (global) é baixo (a regressão é significativa), enquanto os p-valores associados aos regressores é alto. Mas os coeficientes seriam significativos se regredíssemos y sobre x1 e x2 individualmente? 
+
+summary(lm(y~x1))
+summary(lm(y~x2))
+
+```
+#### **Normalidade**
+
+Sabemos que para um tamanho de amostra grande a distribuicao amostral dos estimadores terá aproximadamente distribuicao normal se algumas condições de regularidade forem atendidadas (amostragem aleatória é suficiente, por exemplo).
+ 
+Iremos agorar gerar resíduos com distribuição exponencial e extraíremos a média para obtermos resíduos com média 0, porém com uma distribuição bastante diferentes da distribuição normal. Vamos verificar o comportamento do erro do tipo I, utilizando uma amostra pequena (n = 5, por exemplo).
+
+
+```{r, warning=FALSE}
+
+################################
+####      NORMALIDADE      #####
+################################
+
+# Inicializando: Erro do tipo I sob a hipótese de normalidade
+errotipo1norm = 0
+
+# Inicializando: Erro do tipo I sob a distribuição exponencial
+errotipo1exp = 0
+
+# Cria um vetor lógico para alocar os parâmetros
+beta= vector()
+beta[1] = 8
+beta[2] = 6
+betanorm = vector()
+betaexp = vector()
+
+
+# Tamanho da amostra
+n = 5
+
+# Simulação sob a hipótese de normalidade dos resíduos
+for(i in 1:1e4){
+  x = 1:n
+  y = beta[1] + beta[2]*x + rnorm(n)
+  # rnorm(n) gera n valores com distribuição N(0,1)
+  m = lm(y~x) #
+  betanorm[i] = m$coef[2]
+  if(confint(m)[2,1]>beta[2] || confint(m)[2,2]<beta[2]){
+    errotipo1norm= errotipo1norm + 1 }
+  
+# Simulação sob a hipótese de distribuição exponencial
+x = 1:n
+  y = beta[1] + beta[2]*x + (rexp(n,rate=1/5) -5) ## distribuicao exponencial com media 0 e variância 25
+  m = lm(y~x)
+  betaexp[i] = m$coef[2]
+  if(confint(m)[2,1]>beta[2] || confint(m)[2,2]<beta[2]){
+    errotipo1exp= errotipo1exp + 1 }
+  paste(print(i))
+}
+
+# Erro em cada caso
+invisible(errotipo1norm)
+invisible(errotipo1exp)
+
+# Verificando o viés
+#Lembrem que desvios de normalidade nao afeta o viés. A hipótese que afeta é a covariância entre um regressor e o termo residual). 
+invisible(mean(betanorm))
+invisible(mean(betaexp))
+
+invisible(var(betanorm))
+invisible(var(betaexp)) # Deverá ser 25 vezes maior utilizando os valores utilizados no exemplo
+
+
+# Testando se adere aos 5% de chance de rejeitar a hipótese nula
+invisible(binom.test(errotipo1norm,1e4,p=.05)$p.value)
+invisible(binom.test(errotipo1exp,1e4,p=.05)$p.value)
+
+cat("errotipo1norm = ", errotipo1norm, "\n")
+cat("errotipo1exp = ", errotipo1exp, "\n")
+cat("mean(betanorm) = ", mean(betanorm), "\n")
+cat("mean(betaexp) = ", mean(betaexp), "\n")
+cat("var(betanorm) = ", var(betanorm), "\n")
+cat("var(betaexp) = ", var(betaexp), "\n")
+cat("p.value norm = ", binom.test(errotipo1norm,1e4,p=.05)$p.value, "\n")
+cat("p.value exp = ", binom.test(errotipo1exp,1e4,p=.05)$p.value, "\n")
+
+```
+
+#### **REFERÊNCIAS**
