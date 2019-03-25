@@ -1,0 +1,528 @@
+---
+title: <center> <h2> <b> Análise de Regressão Linear no R </b> </h2> </center>
+author: "<center> Fernando A. B. Sabino da Silva - UFRGS </center>"
+linkcolor: blue
+output:
+  html_notebook:
+    fig_caption: yes
+    theme: cerulean
+  html_document:
+    df_print: paged
+  pdf_document: default
+nocite: |
+  @fama1993, @fama2015, @pena2006, @gromping2006, @lindeman1980, @feldman2005, @newey1987, @box1964, @kutner2005, @belsley1980, @faraway2005, @cook1982
+references:
+- author:
+  - family: Fama
+    given: Eugene F and French, Kenneth R
+  id: fama1993
+  issued:
+    year: 1993
+  publisher: Journal of financial economics, 33(1), 3-56
+  title: Common risk factors in the returns on stocks and bonds
+  type: article
+- URL: http://fir.nes.ru/~agoriaev/Papers/Fama-French%20APT%20three-factor%20model%20JFE93m.pdf
+  author:
+  - family: Fama
+    given: Eugene F and French, Kenneth R
+  id: fama2015
+  issued:
+    year: 2015
+  publisher: Journal of financial economics, 116(1), 1-22
+  title: A five-factor asset pricing model
+  type: article
+- URL: https://tevgeniou.github.io/EquityRiskFactors/bibliography/FiveFactor.pdf
+  author:
+  - family: Peña
+    given: Edsel A. and Slate, Elizabeth H.
+  id: pena2006
+  issued:
+    year: 2006
+  publisher: Journal of the American Statistical Association, 101(473), 341-354.
+  title: Global Validation of Linear Model Assumptions
+  type: article
+- URL: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2820257
+  author:
+  - family: Grömping
+    given: Ulrike
+  id: gromping2006
+  issued:
+    year: 2006
+  publisher: Journal of Statistical Software, 17(1), 1-27.
+  title: Relative importance for linear regression in R $:$ the package relaimpo
+  type: article
+- URL: https://core.ac.uk/download/pdf/6305006.pdf
+  author:
+  - family: Lindeman
+    given: Richard H., P. F. Merenda, and Ruth Z. Gold.
+  id: lindeman1980
+  issued:
+    year: 1980
+  publisher: Scott$:$ Foresman and company.
+  title: Introduction to bivariate and multivariate analysis
+  type: book
+- URL: 
+  author:
+  - family: Feldman
+    given: Barry E.
+  id: feldman2005
+  issued:
+    year: 2005
+  publisher: Manuscript version $1.1$, $2005-03-19$.
+  title: Relative Importance and Value
+  type: article
+- URL: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2255827
+  author:
+  - family: Newey
+    given: Whitney K., and Kenneth D. West. 
+  id: newey1987
+  issued:
+    year: 1987
+  publisher: Econometrica, 55(3), 703–08.
+  title: A simple, positive semi-definite, heteroskedasticity and autocorrelationconsistent covariance matrix
+  type: article
+- URL: https://teach.business.uq.edu.au/courses/FINM6905/files/module-1/readings/Newey%20West.pdf
+  author:
+  - family: Box
+    given: George EP, and David R. Cox
+  id: box1964
+  issued:
+    year: 1964
+  publisher: Journal of the Royal Statistical Society, Series B, 26, 211-252.
+  title: An analysis of transformations
+  type: article
+- URL: https://www.ime.usp.br/~abe/lista/pdfQWaCMboK68.pdf
+  author:
+  - family: Kutner
+    given: M. H., Nachtsheim, C. J., Neter, J., & Li, W
+  id: kutner2005
+  issued:
+    year: 2005
+  publisher: McGraw-Hill/Irwin, Homewood, IL.
+  title: Applied Linear Statistical Models
+  type: book
+- URL: 
+  author:
+  - family: Belsley
+    given: David, Edwin Kuh, and Roy Welsch.
+  id: belsley1980
+  issued:
+    year: 1980
+  publisher: John Wiley & Sons
+  title: Regression diagnostics$:$ identifying influential data and sources of collinearity.
+  type: book
+- URL:
+  author: 
+  - family: Faraway 
+    given: Julian, J.
+  id: faraway2005
+  issued:
+    year: 2005
+  publisher: Chapman & Hall/CRC
+  title: Extending the Linear Model with R (Texts in Statistical Science).
+  type: book
+- URL:
+  author: 
+  - family: Cook 
+    given: R. Dennis, and Sanford Weisberg.
+  id: cook1982
+  issued:
+    year: 1982
+  publisher: Chapman and Hall
+  title: Residuals and influence in regression.
+  type: book
+- URL:
+graphics: yes
+---
+
+Neste material iremos ajustar uma regressão linear aos dados obtidos na página do [Professor Kenneth French](http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html). Dados brasileiros similares podem ser encontrados na página do [Brazilian Center for Research in Financial Economics - NEFIN/USP](http://www.nefin.com.br/).
+
+Na tentativa de entender os impulsionadores econômicos por trás dos dados, bem como avaliar se or retornos são uma compensação para o risco, nós iremos regredir os retornos excedentes diários sobre vários fatores de risco: os cinco fatores de Fama-French, isto é, os retornos excedentes em uma ampla carteira de mercado (fator mercado, $R_m$-$R_f$), a diferença entre os retornos de uma carteira de ações de empresas pequenas e os retornos de uma carteira de ações de empresas grandes (o fator tamanho SMB, small minus big), a diferença entre os retornos de um carteira com alta razão "valor contábil-valor de mercado" e os retornos de uma carteira com baixa razão (HML, High minus Low), a diferenca entre os retornos das empresas com alta rentabilidade opeacional e os retornos daquelas com baixa rentabilidade operacional (fator rentabilidade (RMW), robusto menos fraco), a diferença entre os retornos de empresas com investimento agressivos e os retornos daquelas que investem de maneira mais conservadora (fator investimento (CMA), conservador menos agressivo), a diferença entre os retornos de empresas "vencedoras" e "perdedoras" (fator momentum (Mom)), mais os fatores de reversão de curto prazo (SRev) e de reversão de longo prazo (LRev).
+
+
+```{r, warning = FALSE}
+# Instalar pacotes (só executar uma vez, depois comentar a linha abaixo)
+# install.packages(c("readxl", "readr", "car", "faraway", "nlme", "lmtest", "Hmisc", "perturb", "gvlma", "MASS", "leaps", "relaimpo", "nortest")) 
+
+# Carregar pacotes necessários
+suppressMessages(require(readxl)) # ler excel (arquivos xls e xlsx)
+suppressMessages(require(readr)) # ler arquivos csv
+suppressMessages(require(car)) # Fator de Inflação da Variância, crPlots, Durbin-Watson, outliers
+suppressMessages(require(leaps)) # seleção do modelo
+suppressMessages(require(perturb)) # índice de condição
+suppressMessages(require(Hmisc)) # para testar a significância das correlações
+suppressMessages(require(nlme))
+suppressMessages(require(lmtest)) # Teste LM, Durbin-Watson
+suppressMessages(require(gvlma)) # Teste Global de Validação das Suposições de um Modelo Linear
+suppressMessages(require(relaimpo)) # Importância Relativa dos Regressores
+suppressMessages(require(faraway))
+suppressMessages(require(MASS))
+suppressMessages(require(nortest)) # Teste de Anderson-Darling
+
+
+################################
+###  Fatores de Fama-French ####
+################################
+
+# Carregando os fatores de Fama-French
+FF_factors <- read_csv("FamaFrenchFactors_Jul90_Apr17.csv", 
+    col_types = cols(Date = col_date(format = "%Y%m%d")))
+# O regressando a ser utilizado é um dos 49 portfolios (carteiras) disponíveis para a indústria (escolhi dados diários).
+
+dim(FF_factors) # checando a dimensão da matriz
+
+suppressMessages(attach(FF_factors))
+Ret_Other <- Other - RF # Excesso de Retorno da Carteira Other
+# Faça o download das definições de cada setor em http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/Data_Library/det_49_ind_port.html
+
+# Análise Exploratória: Matriz de Correlação (Ret_Other vs fatores)
+rcorr(as.matrix(cbind(FF_factors[,2:9], Ret_Other)), type = "pearson")
+
+# Renomeando o nome da coluna Mkt-RF na coluna 2
+colnames(FF_factors)[2] <- "RmRf"
+suppressMessages(attach(FF_factors))
+
+# Ajustando a regressão
+fit <- lm(Ret_Other~ RmRf + SMB + HML + RMW + CMA + Mom + ST_Rev + LT_Rev, data = FF_factors)
+summary(fit)
+
+# Abrindo um dispositivo de gráficos 
+# x11() 
+
+# Scatterplot (relações bivariadas)
+pairs(Ret_Other~ RmRf + SMB + HML + RMW + CMA + Mom + ST_Rev + LT_Rev, main = "Matriz de Dispersão", data = FF_factors)
+```
+Agora iremos fazer a seleção do modelo.
+
+```{r, warning = FALSE}
+
+# Seleção do Modelo
+
+# Use help(regsubests) se você quiser ver as opções da função
+leaps <- regsubsets(Ret_Other~ RmRf + SMB + HML + RMW + CMA + Mom + ST_Rev + LT_Rev, 
+data = FF_factors, nbest = 1) 
+# regsubest faz a seleção de modelo por busca exaustiva (todas as combinações possíveis) e também pelos métodos backward (retrocesso gradual), forward (avanço gradual) e stepwise (substituição sequencial)
+
+summary.out <- summary(leaps)
+as.data.frame(summary.out$outmat) # Mostra o melhor ajuste para cada número de regressores.
+
+# Abrindo um dispositivo de gráficos 
+#x11()
+
+# Selecione o modelo usando o R2 ajustado
+plot(leaps,scale="adjr2")
+
+# Agora usando BIC
+plot(leaps,scale="bic")
+
+# Adicionando um título
+plot(leaps, scale = "bic", main = "BIC") 
+
+
+################################
+## Procedimentos automáticos ###
+################################
+# backward, forward, stepwise.
+
+# Estes métodos surgiram na época em que com um grande número de variáveis era inviável fazer uma busca extensiva.
+
+step(fit, data = FF_factors, direction= "backward", k=log(6758))
+
+back <- stepAIC(fit, direction="backward")
+
+step <- stepAIC(fit, direction="both")
+
+# Mostre os resultados
+back$anova
+step$anova
+
+fit_bic <- lm(Ret_Other ~ RmRf + HML + Mom
+              , data = FF_factors)
+summary(fit_bic)
+
+
+################################
+## Observações Influentes    ###
+################################
+
+plot(fit) # Com todos os regressores
+plot(fit_bic) # Apenas com os regressores selecionados pelo critério bayesiano de informação 
+
+# Análise Exploratória novamente
+#x11() 
+pairs(Ret_Other ~ RmRf + HML + Mom , main ="Matriz de Dispersão", data = FF_factors)
+
+```
+##### **Importância Relativa de cada regressor**
+
+```{r, warning = FALSE}
+
+calc.relimp(fit_bic, type = c("lmg","last","first","pratt","betasq","genizi","car"), rela = TRUE)
+# Os métodos mais recomendados são o lmg e o pmvd (veja os comentários na página 2 do pacote relaimpo (http://137.132.33.20/web/packages/relaimpo/relaimpo.pdf) e na página 2 do artigo (https://core.ac.uk/download/pdf/6305006.pdf)
+
+# Intervalos de confiança para as métricas de importância relativa (usando reamostragens "bootstrap")
+
+ic.boot <- boot.relimp(fit_bic, b = 1000, type = c("lmg"), rank = TRUE, diff = TRUE, rela = TRUE) # Pode demorar alguns minutos
+plot(booteval.relimp(ic.boot,sort=TRUE))
+
+booteval.relimp(ic.boot) # Imprime o resultado na tela
+```
+
+##### **Diagnósticos**
+
+```{r, warning = FALSE}
+
+# Gráfico dos resíduos do modelo ajustado
+plot(residuals(fit_bic))
+
+# Mostra a observação com maior valor dos resíduos
+which.max(abs(residuals(fit_bic)))
+
+# Gráfico de Influência da Regressão
+influencePlot(fit_bic, id.method = "identify", main = "Gráfico de Influência", sub = "O tamanho do círculo é proporcional a distância de Cook" )
+
+# Esta função cria um gráfico contendo os resíduos studentizados (mede o afastamento entre Y e Y^) e valores da matriz de alavancagem H. O tamanho do círculo é proporcional às distância de Cook (utilizado para captar a influência das observações)
+
+# As linhas de referência verticais são iguais a 2 e 3 vezes o valor médio da matriz H. As linhas de referência horizontais são iguais a -2, 0 e 2 na escala dos resíduos estudentizados.
+# Linhas de referência verticais são desenhadas duas vezes e três vezes
+
+#x11()
+par(mfrow = c(3,2))
+  
+for (i in 1:6) {
+    plot(fit_bic, which=i)} # which vai de 1 a 6
+# Uma discussão de como interpretar os gráficos pode ser vista aqui: https://stats.stackexchange.com/questions/58141/interpreting-plot-lm
+
+# [1] gráfico dos resíduos vs valores ajustados, [2] gráfico quantil-quantil (QQ) - distribuição normal como referência, [3] raiz dos valores absolutos dos resíduos vs valores ajustados, [4] distâncias de Cook, [5] resíduos vs alavancagens, e [6] distâncias de Cook vs uma medida de alavancagem.
+
+# Outra opção parecida
+par(mfrow = c(2,2))
+plot(fit_bic, ask = TRUE)
+
+# Gráficos de resíduos parciais
+crPlots(fit_bic, data = FF_factors)
+# Uma grande diferença entre as linhas sólida e quebrada indica uma possível relação não linear entre os preditores e a variável dependente.
+# Veja alguns exemplos em http://www.r-bloggers.com/r-regression-diagnostics-part-1/
+
+# Outras opções são as funções ceresPlot contida na biblioteca car e prplot contida na library faraway
+ceresPlots(lm(Ret_Other ~ RmRf + HML + Mom, data = FF_factors))
+prplot(fit_bic,3) # Exemplo com o fator Momentum. Se você quiser usar os fatores mercado (RmRf) ou High Minus Low (HML) use 1 ou 2.
+
+# Gráficos de Regressão Parcial
+avPlots(lm(Ret_Other ~ RmRf + HML + Mom, data = FF_factors))
+
+# Para cada preditor (X's), temos um gráfico de dispersão dos (a) resíduos de uma regressão de Y sobre todos os outros regressores vs. (b) os resíduos de uma regressão da variável excluída sobre todos os outros regressores
+
+# Se o gráfico tiver uma inclinação próxima de zero, isto indica que não há indícios de que o regressor (que está explicíto no eixo X) adiciona algum poder explicativo ao modelo, quando os demais regressores estão incluídos.
+
+# Resumidamente: Fazemos uma regressão de e(Y|X2,X3) vs. e(X1|X2,X3). O gráfico nos mostra então a relação entre Y e X1, por exemplo, após retirar o efeito de X2 e X3 de ambas as regressões. Busca, portanto, medir um efeito direto entre Y e X1.
+
+# Também é utilizado para encontrar outliers e não-linearidade.
+
+leveragePlots(lm(Ret_Other ~ RmRf + HML + Mom, data = FF_factors))
+# É uma versão um pouco diferente da função avPlots. 
+
+
+# Gráficos de Diagnóstico
+influenceIndexPlot(lm(Ret_Other ~ RmRf + HML + Mom, data = FF_factors)) 
+# Contém gráficos com as distâncias de Cook, resíduos studentizados, p-valores para o teste de (outliers) Bonferroni e alavancagens.
+# Você pode usar usar fit_bic no lugar de lm(Ret_Other ~ RmRf + HML + Mom
+
+
+## Gráficos dos DFBetas
+dfbetaPlots(lm(Ret_Other ~ RmRf + HML + Mom, data = FF_factors))
+# Mede o efeito nos coeficientes após a exclusão de uma observação (padronizado por uma estimativa do erro padrão dos coeficientes com a observação excluída)
+
+
+### Outliers
+invisible(rstandard(fit_bic)) # resíduos padronizados
+stud <- rstudent(fit_bic)  # resíduos "studentizados"
+stud[which.max(abs(stud))] # Maior valor
+
+qt(.05/(6758*2), 6754) # valor crítico para o teste de significância com a correção de Bonferroni (alpha = 5%)
+
+outlierTest(fit_bic) # p-valor para o teste de Bonferroni
+# Mostra os 10 maiores por default. É possível trocar (olhe a função pedindo help(outlierTest))
+
+# Se o número de observações for muito grande para ver na tela, é possível direcionar os resultados para um arquivo txt no lugar em que você quiser
+
+
+
+### Medidas de Influência e Alavancagem
+
+# influence é uma função que permite uma ampla variedade de diagnósticos para verificar a qualidade dos ajustes da regressão.
+help(influence)
+fit_inf <- influence(fit_bic) 
+invisible(fit_inf$hat) # alavancagens
+invisible(hatvalues(fit_bic)) # outra opção
+invisible(fit_inf$coef[,2]) # olhando a mudança apenas no segundo coeficiente (exemplo)
+which.max(abs(fit_inf$coef[,2])) # observação com o maior valor (no segundo coeficiente) 
+
+# Neste exemplo, p = 4 (com o intercepto) e n = 6758, logo 2p/n = 0.001183782
+which(fit_inf$hat > 0.001183432) # Quais observações são maiores do que o valor médio da diagonal da matriz H?
+sum(fit_inf$hat) # Checando se a soma é o número de parâmetros estimados
+sum(hatvalues(fit_bic)) # outra opção
+
+options(max.print=1000000)
+# options permite que o usuário defina e examine uma variedade de opções globais que afetam a maneira pela qual R calcula e exibe seus resultados.
+sink("C:/Users/fsabino/Desktop/EconometricsII/desenvolvimento/influence.txt")
+influence.measures(fit_bic)
+sink() 
+
+# Se quisermos ver as medidas individualmente
+# dffits(fit_bic)
+# dfbeta(fit_bic)
+plot(dffits(fit_bic))
+plot(dfbeta(fit_bic))
+which.max(dffits(fit_bic)) 
+which.max(dfbeta(fit_bic))
+
+cooksd <- cooks.distance(fit_bic)
+plot(cooks.distance(fit_bic))
+which.max(cooks.distance(fit_bic))
+plot(fit_bic, which=4) # Distância de Cook
+
+# D de Cook 
+# identifica valores D  > 4/(n-k-1) 
+cutoff <- 4/((nrow(FF_factors)-length(fit_bic$coefficients)-1)) 
+plot(fit, which = 4, cook.levels = cutoff)
+
+# Exemplo (retirando alguns valores - cuidado ao fazer isso)
+# Podemos adaptar para as outras medidas.
+fit.new <- lm(fit_bic, data = FF_factors, subset = (cooksd < max(cooksd)))
+summary(fit.new) 
+
+```
+##### **Multicolinearidade**
+```{r, warning = FALSE}
+
+################################
+#####  Multicolinearidade  #####
+################################
+
+# Fator de Inflação da Variância (VIF)
+vif(fit_bic)
+```
+
+```{r,warning = FALSE}
+# Índice de Condição
+colldiag(fit_bic)
+```
+
+
+
+##### **Transformação de Box-Cox**
+
+```{r, warning = FALSE}
+
+################################
+########     Box Cox     #######
+################################
+min(Ret_Other)
+Ret_Other.bc <- Ret_Other - min(Ret_Other) + 0.001
+# A variável dependente tem que ser estritamente maior que zero para utilizar o procedimento abaixo
+
+boxCox(lm(Ret_Other.bc ~ RmRf + HML + Mom, data = FF_factors))
+# Para mais detalhes veja http://onlinestatbook.com/2/transformations/box-cox.html, https://www.isixsigma.com/tools-templates/normality/making-data-normal-using-box-cox-power-transformation/
+
+spreadLevelPlot(lm(Ret_Other.bc ~ RmRf + HML + Mom, data = FF_factors))
+
+```
+
+##### **Homocedasticidade e Autocorrelação**
+
+```{r, warning = FALSE}
+
+################################################
+#####  Homocedasticidade e Autocorrelação   ####
+################################################
+
+### Homocedasticidade
+# Faraway (2005) sugere rodar uma regressão de |ui| sobre Yi^ como uma maneira rápida de encontrar evidência de variância não constante
+
+summary(lm(abs(residuals(fit_bic)) ~ fitted(fit_bic)))
+
+
+## Teste de escores
+
+# H0: a variância dos resíduos, isto é, Var(u|X) = sigma^2, vs H1: a variância muda de acordo com o nivel de resposta dos valores ajustados ou uma combinação linear dos preditores 
+ncvTest(fit_bic)
+
+# Teste de de Breusch-Pagan
+bptest(fit_bic)
+# Veja as notas de aula de Econometria, página 80
+
+
+### Autocorrelação dos resíduos
+
+# Análise Exploratória
+# Gráfico dos resíduos sucessivos ui [1,6758] vs ui+1 [2,6758]
+plot(residuals(fit_bic)[-6758], residuals(fit_bic)[-1],xlab = expression(hat(epsilon)[i]), ylab = expression(hat(epsilon)[i+1]))
+summary(lm(residuals(fit_bic)[-6758] ~ -1 + residuals(fit_bic)[-1]))
+
+
+# Teste de Durbin-Watson
+# A hipótese nula H0 é de que os resíduos não são correlacionados. A hipótese alternativa é de que os resíduos seguem um padrão AR(1).
+durbinWatsonTest(fit_bic)
+
+# Outra opção (teste unilateral)
+dwtest(Ret_Other ~ RmRf + HML + Mom, data = FF_factors)
+
+# Se houver autocorrelação os EMQO não serão mais eficientes. Neste caso devemos utilizar outros estimadores (mínimos quadrados generalizados) ou fazer correções (Newey-West (HAC), por exemplo).
+
+# Não se esqueça de que os testes não são independentes, isto é, se você realizar qualquer alteração os resultados dos outros testes serão afetados. Uma sugestão razoável é analisar todos juntos e daí tomar as decisões.
+
+# Exemplo de Análise Residual e Diagnósticos: http://rstudio-pubs-static.s3.amazonaws.com/2134_ad476c5e509f4224b8ab542abb0d115d.html
+
+
+### Validação Global das Suposições de um modelo linear
+# Veja Pena, EA and Slate, EH, Global Validation of Linear Model Assumptions, J. American Statistical Association, 101(473): 341-354, 2006 (O Working paper de 2003 pode ser visto em http://people.stat.sc.edu/pena/TechReports/PenaSlate2003.pdf)
+
+gvmodel <- gvlma(fit_bic) 
+summary(gvmodel) 
+
+# Os autores construíram um testes global (conjunto) para quatro suposições. Um dos objetivos é evitar um erro do tipo I grande que pode acontecer quando realizamos os testes separados.
+
+# Assimetria e curtose medem desvios da hipótese de normalidade. A função de ligação testa se a função está corretamente especificada ou se há um regressor ausente no modelo. Por fim, a hipótese de homocedasticidade dos resíduos é também testada.
+
+```
+
+##### **Normalidade dos Resíduos**
+
+```{r, warning = FALSE}
+
+############################
+# Normalidade dos Resíduos #
+############################
+
+## Análise exploratória
+
+plot(residuals(fit_bic), ylab = "Resíduos")
+# qqPlot para os residuos studentizados
+qqPlot(fit_bic, main = "QQ Plot")
+
+# Distribuição dos resíduos "studentizados"
+sresid <- studres(fit_bic) 
+
+#x11()
+hist(sresid, freq=FALSE, main = "Distribuição dos Resíduos Studentizados", ylim = c(0,0.4))
+xfit<-seq(min(sresid),max(sresid),length=40) 
+yfit<-dnorm(xfit) 
+lines(xfit, yfit)
+# Histogramas e Box-plot ajudam a visualizar indícios de que os resíduos sejam assimétricos e com curtose "desviada" em relação a da normal
+par(mfrow=c(1,2))
+hist(residuals(fit_bic))
+boxplot(residuals(fit_bic))
+
+
+## Testes de Normalidade
+# Existem vários testes de Normalidade (H0: os resíduos seguem uma distribuição normal)
+
+# Shapiro-Wilk
+# shapiro.test(residuals(fit_bic)) # Ops!
+# Anderson-Darling
+ad.test(residuals(fit_bic))
+```
+Você pode encontrar discussões sobre os tópicos vistos em muitos lugares. Por exemplo, veja as notas de aula 5-8 do curso [Econometrics for Sustainable Development II](http://www.columbia.edu/~so33/SusDev/SusDev.htm) ensinado no Departamento de Ciência Política e Escola de Relações Internacionais e Públicas da Columbia University. Veja algumas funções utilizadas em análise de regressão no **R** [aqui](http://www.galileu.esalq.usp.br/mostra_topico.php?cod=984) e outras notas [aqui](http://www.odelama.com/data-analysis/Notes-about-Linear-Regression/).
+
+#### **REFERÊNCIAS**

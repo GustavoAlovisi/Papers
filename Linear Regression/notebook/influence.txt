@@ -1,0 +1,3 @@
+Influence measures of
+	 lm(formula = Ret_Other ~ RmRf + HML + Mom, data = FF_factors) :
+
