@@ -1,0 +1,89 @@
+---
+title: <center> <h2> <b>Projeto (Trabalho) do Final do Semestre </b> </h2> </center> 
+author: "<center> Fernando A. B. Sabino da Silva - UFRGS </center>"
+linkcolor: blue
+output:
+  html_notebook:
+    fig_caption: yes
+    theme: cerulean
+  html_document:
+    df_print: paged
+  pdf_document: default
+nocite: |
+  @cock2011, @fama1993, @fama2015
+references:
+- author:
+  - family: Fama
+    given: Eugene F and French, Kenneth R
+  id: fama1993
+  issued:
+    year: 1993
+  publisher: Journal of financial economics, 33(1), 3-56
+  title: Common risk factors in the returns on stocks and bonds
+  type: article
+  URL: http://fir.nes.ru/~agoriaev/Papers/Fama-French%20APT%20three-factor%20model%20JFE93m.pdf
+- author:
+  - family: Fama
+    given: Eugene F and French, Kenneth R
+  id: fama2015
+  issued:
+    year: 2015
+  publisher: Journal of financial economics, 116(1), 1-22
+  title: A five-factor asset pricing model
+  type: article
+  URL: https://tevgeniou.github.io/EquityRiskFactors/bibliography/FiveFactor.pdf
+- author:
+  - family: De Cock
+    given: Dean
+  id: cock2011
+  issued:
+    year: 2011
+  publisher: Journal of Statistics Education, 19(3)
+  title: Ames, Iowa$:$ Alternative to the Boston housing data as an end of semester regression project.
+  type: article
+  URL: https://www.tandfonline.com/doi/pdf/10.1080/10691898.2011.11889627
+graphics: yes
+---
+
+O projeto para ser entregue no final do semestre deve conter uma análise completa de um conjunto de dados moderadamente grande usando as ferramentas que aprendemos ao longo do curso.
+
+O projeto poderá ser feito individualmente ou em duplas. A data de entrega previsa é no dia 02 de julho de 2019 às 18h30 (antes do início da prova final).
+
+Os dados que utilizaremos no projeto final podem ser obtidos na página do [Professor Kenneth French](http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html). Baixe dados similares aos utilizados no arquivo **Fatores de Fama-French**, porém até o final de 2018 (julho de 1990 a dezembro de 2018). Isto incluí **dados diários** para os 5 fatores de Fama-French (ao fazer o download você também irá baixar a taxa livre de risco $R_f$) e os fatores Momentum, *Short-Term Reversal* e *Long-Term Reversal*. A variável dependente será uma das Carteiras da Indústria (49 *Industry Portfolios*). Uma descrição dos dados pode ser encontrada clicando em *Details*.
+
+#### **Divida seus dados**
+O trabalho necessita ser dividido em dois conjuntos - um para selecionar o modelo (*amostra de treinamento*) e uma segunda parte para validação (*amostra de teste*). Os tamanhos dos conjuntos podem ser variáveis, mas para o projeto podemos usar 30 dias ou dois meses para validação (21 dias = 1 mês).
+
+### **Tarefa Principal**
+A sua tarefa é construir um modelo para prever os retornos de uma carteira da indústria com base nos fatores encontrados na página do Professor Kenneth French.
+
+O projeto final deve ter no máximo 10 páginas, tirando as figuras e códigos. Ele deve conter as seguintes partes:
+
+1. Descreva o conjunto de dados utilizado
+ + Quais os objetivos do estudo? Há algum efeito de interesse em particular?
+ + Faça uma análise exploratória dos dados.
+ + Como é a distribuição das variáveis preditoras? Existe alguma característica notável em sua distribuição que poderiam ser causadas por observações altamente influentes? Exemplos podem ser vistos [aqui](http://www.socr.umich.edu/people/dinov/courses/DSPA_notes/09_RegressionForecasting.html).
+ + Alguma das variáveis preditoras é altamente correlacionada?
+ 
+2. Modelos
++ Nesta seção você deve desenvolver um modelo para os dados que lhe permitam responder a alguns dos objetivos específicos do estudo. Possíveis questões a serem abordadas aqui são as seguintes:  
+$(i)$ Quais variáveis preditoras, se houver, devem ser incluídas no modelo a priori?  
+$(ii)$ Há alguma interação que deva ser considerada para inclusão no modelo? Alguma de terceira ordem? Dica: olhe a função expand.grid
+
+3. Resultados
++ Nesta seção você deve relatar seus resultados obtidos ajustando os modelos propostos na seção anterior. A ênfase deve ser dada à clareza, como se o relatório fosse de um consultor. Gráficos e tabelas bem organizadas são bem vindas nesta seção. Páginas e páginas de saídas do R podem ser colocadas no apêndice (para este curso). Possíveis questões a serem abordadas aqui são as seguintes:  
+$(i)$ Qual o modelo final de regressão para os seus dados?  $(ii)$ Como este modelo foi obtido?  
+$(iii)$ Usando os testes de diagnóstico padrão, o modelo parece estar bem ajustado aos dados?  
+$(iv)$ Quais são os intervalos de confiança finais para os efeitos de interesse do modelo final? Use seus dados de validação para construir esses intervalos. Esses intervalos parecem muito sensíveis à escolha do modelo, ou seja, eles variam muito para diferentes opções de variáveis no modelo?  
+$(v)$ Qual a acurácia da predição estimada para o seu modelo? (Avaliada no conjunto de validação) Procure pela função accuracy do R. Veja exemplos [aqui](https://rpubs.com/RatherBit/90267) e [aqui](https://www.pedronl.com/post/previsao-de-series-temporais-com-o-r/).  
+$(vi)$ Compare os intervalos construídos usando o seu modelo final ajustado ao conjunto de validação para os mesmos intervalos construídos usando o conjunto de treinamento. Eles são muito diferentes? Em qual você confia mais?
+
+4. Apêndice: Nesta seção você deve anexar uma cópia final, editada, do código R que você utilizou na análise. Idealmente, haverá comentários no arquivo, isto é, use linhas começando com # para esclarecer o que cada parte do código está fazendo.
+
+5. Cite as referências utilizadas.
+
+Não há respostas fechadas (certas ou erradas) para muitas destas questões. O objetivo do projeto é tentar imitar a análise de um conjunto de dados real que você pode encontrar em seu próprio campo de aplicação.
+
+
+
+#### **REFERÊNCIAS**

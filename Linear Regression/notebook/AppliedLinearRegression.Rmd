@@ -21,8 +21,8 @@ references:
   publisher: Journal of financial economics, 33(1), 3-56
   title: Common risk factors in the returns on stocks and bonds
   type: article
-- URL: http://fir.nes.ru/~agoriaev/Papers/Fama-French%20APT%20three-factor%20model%20JFE93m.pdf
-  author:
+  URL: http://fir.nes.ru/~agoriaev/Papers/Fama-French%20APT%20three-factor%20model%20JFE93m.pdf
+- author:
   - family: Fama
     given: Eugene F and French, Kenneth R
   id: fama2015
@@ -31,8 +31,8 @@ references:
   publisher: Journal of financial economics, 116(1), 1-22
   title: A five-factor asset pricing model
   type: article
-- URL: https://tevgeniou.github.io/EquityRiskFactors/bibliography/FiveFactor.pdf
-  author:
+  URL: https://tevgeniou.github.io/EquityRiskFactors/bibliography/FiveFactor.pdf
+- author:
   - family: Peña
     given: Edsel A. and Slate, Elizabeth H.
   id: pena2006
@@ -41,8 +41,8 @@ references:
   publisher: Journal of the American Statistical Association, 101(473), 341-354.
   title: Global Validation of Linear Model Assumptions
   type: article
-- URL: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2820257
-  author:
+  URL: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2820257
+- author:
   - family: Grömping
     given: Ulrike
   id: gromping2006
@@ -51,8 +51,8 @@ references:
   publisher: Journal of Statistical Software, 17(1), 1-27.
   title: Relative importance for linear regression in R $:$ the package relaimpo
   type: article
-- URL: https://core.ac.uk/download/pdf/6305006.pdf
-  author:
+  URL: https://core.ac.uk/download/pdf/6305006.pdf
+- author:
   - family: Lindeman
     given: Richard H., P. F. Merenda, and Ruth Z. Gold.
   id: lindeman1980
@@ -62,7 +62,7 @@ references:
   title: Introduction to bivariate and multivariate analysis
   type: book
 - URL: 
-  author:
+- author:
   - family: Feldman
     given: Barry E.
   id: feldman2005
@@ -71,8 +71,8 @@ references:
   publisher: Manuscript version $1.1$, $2005-03-19$.
   title: Relative Importance and Value
   type: article
-- URL: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2255827
-  author:
+  URL: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2255827
+- author:
   - family: Newey
     given: Whitney K., and Kenneth D. West. 
   id: newey1987
@@ -81,8 +81,8 @@ references:
   publisher: Econometrica, 55(3), 703–08.
   title: A simple, positive semi-definite, heteroskedasticity and autocorrelationconsistent covariance matrix
   type: article
-- URL: https://teach.business.uq.edu.au/courses/FINM6905/files/module-1/readings/Newey%20West.pdf
-  author:
+  URL: https://teach.business.uq.edu.au/courses/FINM6905/files/module-1/readings/Newey%20West.pdf
+- author:
   - family: Box
     given: George EP, and David R. Cox
   id: box1964
@@ -91,8 +91,8 @@ references:
   publisher: Journal of the Royal Statistical Society, Series B, 26, 211-252.
   title: An analysis of transformations
   type: article
-- URL: https://www.ime.usp.br/~abe/lista/pdfQWaCMboK68.pdf
-  author:
+  URL: https://www.ime.usp.br/~abe/lista/pdfQWaCMboK68.pdf
+- author:
   - family: Kutner
     given: M. H., Nachtsheim, C. J., Neter, J., & Li, W
   id: kutner2005
@@ -102,7 +102,7 @@ references:
   title: Applied Linear Statistical Models
   type: book
 - URL: 
-  author:
+- author:
   - family: Belsley
     given: David, Edwin Kuh, and Roy Welsch.
   id: belsley1980
@@ -112,7 +112,7 @@ references:
   title: Regression diagnostics$:$ identifying influential data and sources of collinearity.
   type: book
 - URL:
-  author: 
+- author:
   - family: Faraway 
     given: Julian, J.
   id: faraway2005
@@ -122,7 +122,7 @@ references:
   title: Extending the Linear Model with R (Texts in Statistical Science).
   type: book
 - URL:
-  author: 
+- author: 
   - family: Cook 
     given: R. Dennis, and Sanford Weisberg.
   id: cook1982
@@ -481,7 +481,7 @@ dwtest(Ret_Other ~ RmRf + HML + Mom, data = FF_factors)
 gvmodel <- gvlma(fit_bic) 
 summary(gvmodel) 
 
-# Os autores construíram um testes global (conjunto) para quatro suposições. Um dos objetivos é evitar um erro do tipo I grande que pode acontecer quando realizamos os testes separados.
+# Os autores construíram um teste global (conjunto) para quatro suposições. Um dos objetivos é evitar um erro do tipo I grande que pode acontecer quando realizamos os testes separados.
 
 # Assimetria e curtose medem desvios da hipótese de normalidade. A função de ligação testa se a função está corretamente especificada ou se há um regressor ausente no modelo. Por fim, a hipótese de homocedasticidade dos resíduos é também testada.
 
